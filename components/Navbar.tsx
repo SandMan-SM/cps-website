@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, Brain } from "lucide-react";
 
 const PHONE = "(801) 483-1600";
@@ -51,19 +50,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
-            <div className="px-4 py-4 space-y-1">
-              {navLinks.map((link) => (
-                <a key={link.label} href={link.href} onClick={() => setOpen(false)} className="block px-4 py-3 rounded-lg text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{link.label}</a>
-              ))}
-              <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-3 text-[var(--cps-blue)] font-semibold"><Phone className="w-4 h-4" /> {PHONE}</a>
-              <a href="/#contact" onClick={() => setOpen(false)} className="block w-full text-center px-4 py-3 bg-[var(--cps-blue)] text-white rounded-lg font-semibold">Book Evaluation</a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {open && (
+        <div className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
+          <div className="px-4 py-4 space-y-1">
+            {navLinks.map((link) => (
+              <a key={link.label} href={link.href} onClick={() => setOpen(false)} className="block px-4 py-3 rounded-lg text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{link.label}</a>
+            ))}
+            <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-3 text-[var(--cps-blue)] font-semibold"><Phone className="w-4 h-4" /> {PHONE}</a>
+            <a href="/#contact" onClick={() => setOpen(false)} className="block w-full text-center px-4 py-3 bg-[var(--cps-blue)] text-white rounded-lg font-semibold">Book Evaluation</a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

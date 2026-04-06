@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   Phone, Mail, MapPin, Clock, ChevronRight,
   Shield, Award, Star, CheckCircle2, ArrowRight,
@@ -129,9 +128,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
+        {mobileMenuOpen && (
+            <div className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
               <div className="px-4 py-4 space-y-1">
                 {["Services", "Locations", "About", "Contact"].map((item) => (
                   <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-lg text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
@@ -141,9 +139,8 @@ export default function HomePage() {
                 </a>
                 <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 bg-[var(--cps-blue)] text-white rounded-lg font-semibold">Book Evaluation</a>
               </div>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
       </nav>
 
       <main id="main">
@@ -155,7 +152,7 @@ export default function HomePage() {
           </div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
             <div className="max-w-3xl">
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <div>
                 <div className="flex items-center gap-2 mb-6">
                   <Award className="w-5 h-5 text-[var(--cps-teal)]" />
                   <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
@@ -176,17 +173,17 @@ export default function HomePage() {
                     {PHONE}
                   </a>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center md:text-left">
                   <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</div>
                   <div className="text-sm text-white/60 mt-1">{stat.label}</div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -205,7 +202,7 @@ export default function HomePage() {
         {/* ──────── SERVICES ──────── */}
         <section id="services" className="py-20 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <div>
               <div className="text-center mb-16">
                 <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Our Specialties</p>
                 <h2 className="section-heading text-[var(--cps-gray-900)]">Evaluation & Treatment Services</h2>
@@ -213,13 +210,13 @@ export default function HomePage() {
                   Evidence-based assessments and treatments delivered by licensed professionals with decades of experience.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {serviceCategories.map((svc, index) => {
                 const Icon = svc.icon;
                 return (
-                  <motion.a key={svc.title} href={svc.href} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.08 }} viewport={{ once: true }} className="group block p-8 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all duration-300">
+                  <a key={svc.title} href={svc.href} className="group block p-8 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all duration-300">
                     <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 mb-5">
                       <Icon className="w-7 h-7 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
                     </div>
@@ -228,12 +225,12 @@ export default function HomePage() {
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </span>
-                  </motion.a>
+                  </a>
                 );
               })}
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="mt-16 p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
+            <div className="mt-16 p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
               <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-4">Additional Services</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 {additionalServices.map((svc) => (
@@ -243,7 +240,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -251,7 +248,7 @@ export default function HomePage() {
         <section id="about" className="py-20 md:py-28 bg-[var(--cps-gray-50)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+              <div>
                 <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">About CPS</p>
                 <h2 className="section-heading text-[var(--cps-gray-900)] mb-6">
                   Utah&apos;s Trusted Behavioral Health Practice Since 1986
@@ -267,9 +264,9 @@ export default function HomePage() {
                     From police and fire department pre-employment screenings to pediatric autism assessments, CPS serves individuals, families, employers, courts, and healthcare systems across the Wasatch Front.
                   </p>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="space-y-6">
+              <div className="space-y-6">
                 {[
                   { icon: Shield, title: "Evidence-Based Practice", desc: "Every assessment and treatment follows validated, research-backed protocols. We measure outcomes, not just activity." },
                   { icon: Award, title: "Best Practice Award", desc: "Recognized for clinical excellence by professional organizations. Our team upholds the highest standards of competence." },
@@ -289,7 +286,7 @@ export default function HomePage() {
                     </div>
                   );
                 })}
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -297,15 +294,15 @@ export default function HomePage() {
         {/* ──────── TESTIMONIALS ──────── */}
         <section className="py-20 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <div>
               <div className="text-center mb-16">
                 <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Patient Experiences</p>
                 <h2 className="section-heading text-[var(--cps-gray-900)]">What Our Patients Say</h2>
               </div>
-            </motion.div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true }} className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
+                <div key={i} className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
                   <div className="flex gap-1 mb-4">
                     {Array.from({ length: t.rating }).map((_, j) => (
                       <Star key={j} className="w-5 h-5 text-[var(--cps-warning)] fill-[var(--cps-warning)]" />
@@ -313,7 +310,7 @@ export default function HomePage() {
                   </div>
                   <p className="text-[var(--cps-gray-700)] leading-relaxed mb-6">&ldquo;{t.text}&rdquo;</p>
                   <p className="text-sm font-semibold text-[var(--cps-gray-500)]">— {t.author}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -322,15 +319,15 @@ export default function HomePage() {
         {/* ──────── LOCATIONS ──────── */}
         <section id="locations" className="py-20 md:py-28 bg-[var(--cps-gray-50)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <div>
               <div className="text-center mb-16">
                 <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Find Us</p>
                 <h2 className="section-heading text-[var(--cps-gray-900)]">Three Locations Across the Wasatch Front</h2>
               </div>
-            </motion.div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {offices.map((office, i) => (
-                <motion.div key={office.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true }} className="bg-white p-8 rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
+                <div key={office.name} className="bg-white p-8 rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
                   <div className="w-12 h-12 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-5">
                     <MapPin className="w-6 h-6 text-[var(--cps-blue)]" />
                   </div>
@@ -341,7 +338,7 @@ export default function HomePage() {
                   <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
                     <Phone className="w-4 h-4" /> {PHONE}
                   </a>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -351,7 +348,7 @@ export default function HomePage() {
         <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-[var(--cps-dark)] via-[#0f3460] to-[var(--cps-dark)] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+              <div>
                 <p className="text-[var(--cps-teal)] font-semibold text-sm uppercase tracking-wider mb-3">Get Started</p>
                 <h2 className="section-heading text-white mb-6">Schedule Your Evaluation Today</h2>
                 <p className="text-white/70 body-large mb-8">
@@ -380,9 +377,9 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+              <div>
                 {formSubmitted ? (
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/10">
                     <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" />
@@ -436,7 +433,7 @@ export default function HomePage() {
                     <p className="text-xs text-white/40 text-center">Your information is confidential. We&apos;ll respond within 1 business day.</p>
                   </form>
                 )}
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>

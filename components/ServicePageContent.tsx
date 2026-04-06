@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Phone, MapPin, CheckCircle2, ArrowRight,
   ChevronDown, Calendar, Shield, Award, Building2,
@@ -52,7 +51,7 @@ export default function ServicePageContent({ service, location, relatedServices 
           <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-3xl">
+          <div className="max-w-3xl">
             {location && (
               <div className="flex items-center gap-2 mb-4">
                 <MapPin className="w-4 h-4 text-[var(--cps-teal)]" />
@@ -73,7 +72,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                 {PHONE}
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -92,7 +91,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       {/* ──── Overview ──── */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+          <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">
               {location ? `${service.shortName} in ${locationName}` : `About ${service.shortName}`}
             </h2>
@@ -106,14 +105,14 @@ export default function ServicePageContent({ service, location, relatedServices 
                 </p>
               )}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ──── What to Expect ──── */}
       <section className="py-16 md:py-24 bg-[var(--cps-gray-50)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+          <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">What to Expect</h2>
             <div className="space-y-4">
               {service.whatToExpect.map((step, i) => (
@@ -125,14 +124,14 @@ export default function ServicePageContent({ service, location, relatedServices 
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ──── Benefits ──── */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+          <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Why Choose CPS</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {service.benefits.map((benefit, i) => (
@@ -142,7 +141,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -150,7 +149,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       {location && (
         <section className="py-16 md:py-24 bg-[var(--cps-gray-50)]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <div>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">
                 Nearest Office — {location.nearestOffice}
               </h2>
@@ -168,7 +167,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       )}
@@ -176,7 +175,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       {/* ──── FAQ ──── */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+          <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {service.faqItems.map((faq, i) => (
@@ -191,7 +190,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                 </details>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -199,7 +198,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       {relatedServices.length > 0 && (
         <section className="py-16 md:py-24 bg-[var(--cps-gray-50)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+            <div>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Related Services</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedServices.map((rel) => (
@@ -212,7 +211,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   </a>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       )}
@@ -220,7 +219,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       {/* ──── Bottom CTA ──── */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-[var(--cps-dark)] via-[#0f3460] to-[var(--cps-dark)] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+          <div>
             <h2 className="section-heading text-white mb-4">Ready to Get Started?</h2>
             <p className="text-white/70 body-large mb-8 max-w-2xl mx-auto">
               {location
@@ -237,7 +236,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                 {PHONE}
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>
