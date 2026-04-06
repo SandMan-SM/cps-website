@@ -1,65 +1,520 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Phone, Mail, MapPin, Clock, ChevronRight,
+  Shield, Award, Star, CheckCircle2, ArrowRight,
+  Menu, X, Brain, HeartPulse, Scale, Users,
+  ClipboardCheck, GraduationCap, Building2,
+  Calendar, MessageCircle,
+} from "lucide-react";
+
+/* ─────────────────── DATA ─────────────────── */
+
+const PHONE = "(801) 483-1600";
+const PHONE_HREF = "tel:8014831600";
+const EMAIL = "cps@wecanhelpout.com";
+
+const serviceCategories = [
+  {
+    icon: Brain,
+    title: "Neuropsychological Evaluations",
+    description: "Comprehensive brain-behavior assessments for ADHD, TBI, memory, learning disabilities, and cognitive concerns.",
+    href: "/neuropsychologist-near-me",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "ADHD Evaluation & Diagnosis",
+    description: "Thorough multi-method ADHD testing for children, teens, and adults. Clear diagnosis and treatment planning.",
+    href: "/adhd-evaluation-near-me",
+  },
+  {
+    icon: Users,
+    title: "Autism Assessment & ADOS-2",
+    description: "Gold-standard autism evaluations including ADOS-2 testing for all ages — children through adults.",
+    href: "/autism-assessment",
+  },
+  {
+    icon: Scale,
+    title: "Custody & Parental Evaluations",
+    description: "Court-accepted child custody evaluations, parental fitness assessments, and expert testimony for family law.",
+    href: "/custody-evaluator-near-me",
+  },
+  {
+    icon: HeartPulse,
+    title: "Ketamine & Spravato Therapy",
+    description: "FDA-approved ketamine and esketamine treatment for depression that hasn't responded to traditional medication.",
+    href: "/ketamine-depression-treatment-near-me",
+  },
+  {
+    icon: GraduationCap,
+    title: "Cognitive & IQ Testing",
+    description: "Standardized cognitive evaluations for giftedness, learning disabilities, disability applications, and academic planning.",
+    href: "/cognitive-evaluation-near-me",
+  },
+];
+
+const additionalServices = [
+  "Intensive Outpatient Programs (IOP)",
+  "Counseling & Psychotherapy",
+  "Medication Management",
+  "Neurofeedback / Brain Training",
+  "Substance Abuse Treatment",
+  "Telehealth Services",
+  "Employer & Fitness-for-Duty Evaluations",
+  "Health & Wellness Programs",
+];
+
+const offices = [
+  { name: "Salt Lake City", address: "1208 East 3300 South", city: "Salt Lake City, UT 84106", serving: "Salt Lake County" },
+  { name: "Layton", address: "1916 North 700 West, Suite 190", city: "Layton, UT 84041", serving: "Davis & Weber Counties" },
+  { name: "West Jordan", address: "9069 South 1300 West, Suite D", city: "West Jordan, UT 84088", serving: "South Valley" },
+];
+
+const testimonials = [
+  { text: "The neuropsychological evaluation at CPS gave us the answers we had been searching for. The report was thorough and the staff made our son feel comfortable throughout the process.", author: "Parent of a 9-year-old patient", rating: 5 },
+  { text: "After years of struggling, I finally got an accurate ADHD diagnosis as an adult. The team at CPS was professional, compassionate, and incredibly thorough.", author: "Adult ADHD patient", rating: 5 },
+  { text: "The ketamine therapy program changed my life. After trying multiple antidepressants with no relief, I felt a difference after just two sessions.", author: "Ketamine therapy patient", rating: 5 },
+];
+
+const stats = [
+  { value: "38+", label: "Years Serving Utah" },
+  { value: "3", label: "Convenient Locations" },
+  { value: "20+", label: "Licensed Professionals" },
+  { value: "5★", label: "Best Practice Award" },
+];
+
+/* ─────────────────── COMPONENT ─────────────────── */
+
+export default function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* ──────── NAV ──────── */}
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            <a href="/" className="flex items-center gap-3" aria-label="CPS Home">
+              <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
+                <Brain className="w-5 h-5 text-white" />
+              </div>
+              <div className="hidden sm:block">
+                <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Comprehensive Psychological</div>
+                <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — Since 1986</div>
+              </div>
+            </a>
+
+            <div className="hidden lg:flex items-center gap-8">
+              <a href="#services" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Services</a>
+              <a href="#locations" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Locations</a>
+              <a href="#about" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">About</a>
+              <a href="#contact" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Contact</a>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <a href={PHONE_HREF} className="hidden md:flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors" aria-label={`Call us at ${PHONE}`}>
+                <Phone className="w-4 h-4" />
+                {PHONE}
+              </a>
+              <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-sm font-semibold rounded-lg transition-colors">
+                Book Evaluation
+              </a>
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 rounded-lg hover:bg-[var(--cps-gray-100)] transition-colors" aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
+              <div className="px-4 py-4 space-y-1">
+                {["Services", "Locations", "About", "Contact"].map((item) => (
+                  <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-lg text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
+                ))}
+                <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-3 text-[var(--cps-blue)] font-semibold">
+                  <Phone className="w-4 h-4" /> {PHONE}
+                </a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 bg-[var(--cps-blue)] text-white rounded-lg font-semibold">Book Evaluation</a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+
+      <main id="main">
+        {/* ──────── HERO ──────── */}
+        <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[#0f3460] to-[var(--cps-dark)] text-white overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
+            <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
+          </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div className="max-w-3xl">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+                <div className="flex items-center gap-2 mb-6">
+                  <Award className="w-5 h-5 text-[var(--cps-teal)]" />
+                  <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
+                </div>
+                <h1 className="display-heading text-white mb-6">
+                  Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
+                </h1>
+                <p className="body-large text-white/80 mb-8 max-w-2xl">
+                  Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+                    <Calendar className="w-5 h-5" />
+                    Schedule an Evaluation
+                  </a>
+                  <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border border-white/20">
+                    <Phone className="w-5 h-5" />
+                    {PHONE}
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center md:text-left">
+                  <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</div>
+                  <div className="text-sm text-white/60 mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ──────── TRUST BAR ──────── */}
+        <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-sm text-[var(--cps-gray-500)]">
+              <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
+              <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" /> Best Practice Award 2024</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" /> Most Insurance Accepted</div>
+              <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" /> 3 Utah Locations</div>
+            </div>
+          </div>
+        </section>
+
+        {/* ──────── SERVICES ──────── */}
+        <section id="services" className="py-20 md:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+              <div className="text-center mb-16">
+                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Our Specialties</p>
+                <h2 className="section-heading text-[var(--cps-gray-900)]">Evaluation & Treatment Services</h2>
+                <p className="mt-4 text-[var(--cps-gray-500)] max-w-2xl mx-auto body-large">
+                  Evidence-based assessments and treatments delivered by licensed professionals with decades of experience.
+                </p>
+              </div>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {serviceCategories.map((svc, index) => {
+                const Icon = svc.icon;
+                return (
+                  <motion.a key={svc.title} href={svc.href} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.08 }} viewport={{ once: true }} className="group block p-8 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all duration-300">
+                    <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 mb-5">
+                      <Icon className="w-7 h-7 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-2 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
+                    <p className="text-[var(--cps-gray-500)] text-sm leading-relaxed mb-4">{svc.description}</p>
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
+                      Learn More <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </motion.a>
+                );
+              })}
+            </div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="mt-16 p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
+              <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-4">Additional Services</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {additionalServices.map((svc) => (
+                  <div key={svc} className="flex items-center gap-2 text-sm text-[var(--cps-gray-600)]">
+                    <CheckCircle2 className="w-4 h-4 text-[var(--cps-success)] shrink-0" />
+                    {svc}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ──────── ABOUT ──────── */}
+        <section id="about" className="py-20 md:py-28 bg-[var(--cps-gray-50)]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">About CPS</p>
+                <h2 className="section-heading text-[var(--cps-gray-900)] mb-6">
+                  Utah&apos;s Trusted Behavioral Health Practice Since 1986
+                </h2>
+                <div className="space-y-4 text-[var(--cps-gray-600)] body-large">
+                  <p>
+                    Founded by Steven Szykula, Ph.D., Comprehensive Psychological Services has grown into one of Utah&apos;s most respected behavioral health organizations — a full-service practice offering evaluations, therapy, medication management, and specialized treatment programs.
+                  </p>
+                  <p>
+                    Our team of 20+ licensed professionals includes psychologists, licensed clinical social workers, and clinical mental health counselors. Every clinician uses evidence-based approaches and outcomes feedback to deliver measurable results.
+                  </p>
+                  <p>
+                    From police and fire department pre-employment screenings to pediatric autism assessments, CPS serves individuals, families, employers, courts, and healthcare systems across the Wasatch Front.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="space-y-6">
+                {[
+                  { icon: Shield, title: "Evidence-Based Practice", desc: "Every assessment and treatment follows validated, research-backed protocols. We measure outcomes, not just activity." },
+                  { icon: Award, title: "Best Practice Award", desc: "Recognized for clinical excellence by professional organizations. Our team upholds the highest standards of competence." },
+                  { icon: Building2, title: "Three Convenient Locations", desc: "Offices in Salt Lake City, Layton, and West Jordan — plus telehealth — so care is always accessible." },
+                  { icon: Star, title: "Trusted Since 1986", desc: "Over 38 years of serving Utah families, courts, employers, and healthcare systems with integrity and expertise." },
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="flex gap-4 p-5 bg-white rounded-xl border border-[var(--cps-gray-200)]">
+                      <div className="w-12 h-12 rounded-lg bg-[var(--cps-light)] flex items-center justify-center shrink-0">
+                        <Icon className="w-6 h-6 text-[var(--cps-blue)]" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-[var(--cps-gray-900)]">{item.title}</h3>
+                        <p className="text-sm text-[var(--cps-gray-500)] mt-1">{item.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ──────── TESTIMONIALS ──────── */}
+        <section className="py-20 md:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+              <div className="text-center mb-16">
+                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Patient Experiences</p>
+                <h2 className="section-heading text-[var(--cps-gray-900)]">What Our Patients Say</h2>
+              </div>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((t, i) => (
+                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true }} className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: t.rating }).map((_, j) => (
+                      <Star key={j} className="w-5 h-5 text-[var(--cps-warning)] fill-[var(--cps-warning)]" />
+                    ))}
+                  </div>
+                  <p className="text-[var(--cps-gray-700)] leading-relaxed mb-6">&ldquo;{t.text}&rdquo;</p>
+                  <p className="text-sm font-semibold text-[var(--cps-gray-500)]">— {t.author}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ──────── LOCATIONS ──────── */}
+        <section id="locations" className="py-20 md:py-28 bg-[var(--cps-gray-50)]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+              <div className="text-center mb-16">
+                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Find Us</p>
+                <h2 className="section-heading text-[var(--cps-gray-900)]">Three Locations Across the Wasatch Front</h2>
+              </div>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {offices.map((office, i) => (
+                <motion.div key={office.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} viewport={{ once: true }} className="bg-white p-8 rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-5">
+                    <MapPin className="w-6 h-6 text-[var(--cps-blue)]" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-1">{office.name}</h3>
+                  <p className="text-sm text-[var(--cps-blue)] font-medium mb-4">Serving {office.serving}</p>
+                  <p className="text-[var(--cps-gray-600)] text-sm mb-1">{office.address}</p>
+                  <p className="text-[var(--cps-gray-600)] text-sm mb-4">{office.city}</p>
+                  <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
+                    <Phone className="w-4 h-4" /> {PHONE}
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ──────── CONTACT / CTA ──────── */}
+        <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-[var(--cps-dark)] via-[#0f3460] to-[var(--cps-dark)] text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                <p className="text-[var(--cps-teal)] font-semibold text-sm uppercase tracking-wider mb-3">Get Started</p>
+                <h2 className="section-heading text-white mb-6">Schedule Your Evaluation Today</h2>
+                <p className="text-white/70 body-large mb-8">
+                  Call us or fill out the form to schedule an appointment. Our team will verify your insurance, answer your questions, and find a time that works.
+                </p>
+                <div className="space-y-4">
+                  <a href={PHONE_HREF} className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
+                    <Phone className="w-6 h-6 text-[var(--cps-teal)]" />
+                    <div>
+                      <div className="font-bold">{PHONE}</div>
+                      <div className="text-sm text-white/60">Mon–Fri, 8am–6pm</div>
+                    </div>
+                  </a>
+                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
+                    <Mail className="w-6 h-6 text-[var(--cps-teal)]" />
+                    <div>
+                      <div className="font-bold">{EMAIL}</div>
+                      <div className="text-sm text-white/60">We respond within 24 hours</div>
+                    </div>
+                  </a>
+                  <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
+                    <Clock className="w-6 h-6 text-[var(--cps-teal)]" />
+                    <div>
+                      <div className="font-bold">Office Hours</div>
+                      <div className="text-sm text-white/60">Monday–Friday, 8:00 AM – 6:00 PM</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                {formSubmitted ? (
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/10">
+                    <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
+                    <p className="text-white/70">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-5">
+                    <h3 className="text-xl font-bold mb-2">Request an Appointment</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="firstName" className="block text-sm font-medium mb-1.5 text-white/80">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="First name" />
+                      </div>
+                      <div>
+                        <label htmlFor="lastName" className="block text-sm font-medium mb-1.5 text-white/80">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="Last name" />
+                      </div>
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-1.5 text-white/80">Email</label>
+                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="you@email.com" />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium mb-1.5 text-white/80">Phone</label>
+                      <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="(801) 555-0123" />
+                    </div>
+                    <div>
+                      <label htmlFor="service" className="block text-sm font-medium mb-1.5 text-white/80">Service Needed</label>
+                      <select id="service" name="service" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors">
+                        <option value="" className="text-gray-900">Select a service...</option>
+                        <option value="neuropsych" className="text-gray-900">Neuropsychological Evaluation</option>
+                        <option value="adhd" className="text-gray-900">ADHD Evaluation / Testing</option>
+                        <option value="autism" className="text-gray-900">Autism Assessment / ADOS-2</option>
+                        <option value="custody" className="text-gray-900">Custody Evaluation</option>
+                        <option value="ketamine" className="text-gray-900">Ketamine / Spravato Therapy</option>
+                        <option value="cognitive" className="text-gray-900">Cognitive / IQ Evaluation</option>
+                        <option value="iop" className="text-gray-900">Intensive Outpatient Program</option>
+                        <option value="therapy" className="text-gray-900">Therapy / Counseling</option>
+                        <option value="other" className="text-gray-900">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium mb-1.5 text-white/80">Message (optional)</label>
+                      <textarea id="message" name="message" rows={3} className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors resize-none" placeholder="Tell us about your concerns or questions..." />
+                    </div>
+                    <button type="submit" className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
+                      <MessageCircle className="w-5 h-5" />
+                      Request Appointment
+                    </button>
+                    <p className="text-xs text-white/40 text-center">Your information is confidential. We&apos;ll respond within 1 business day.</p>
+                  </form>
+                )}
+              </motion.div>
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      {/* ──────── FOOTER ──────── */}
+      <footer className="bg-[var(--cps-gray-900)] text-white/60 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
+                  <Brain className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white leading-tight">Comprehensive Psychological</div>
+                  <div className="text-xs text-white/40 leading-tight">Services — Since 1986</div>
+                </div>
+              </div>
+              <p className="text-sm text-white/50 leading-relaxed">
+                Evidence-based behavioral health evaluations and treatment serving Utah for over 38 years.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Evaluations</h4>
+              <ul className="space-y-2">
+                {[
+                  { label: "Neuropsychological Evaluations", href: "/neuropsychologist-near-me" },
+                  { label: "ADHD Evaluation", href: "/adhd-evaluation-near-me" },
+                  { label: "ADHD Diagnosis", href: "/adhd-diagnosis-near-me" },
+                  { label: "ADHD Testing", href: "/adhd-testing" },
+                  { label: "Autism Assessment", href: "/autism-assessment" },
+                  { label: "ADOS-2 Testing", href: "/ados-2-testing-near-me" },
+                  { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me" },
+                  { label: "Custody Evaluation", href: "/custody-evaluator-near-me" },
+                ].map((link) => (
+                  <li key={link.href}><a href={link.href} className="text-sm hover:text-white transition-colors">{link.label}</a></li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
+              <ul className="space-y-2">
+                <li><a href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</a></li>
+                <li><span className="text-sm">Spravato (Esketamine)</span></li>
+                <li><span className="text-sm">Intensive Outpatient (IOP)</span></li>
+                <li><span className="text-sm">Counseling & Psychotherapy</span></li>
+                <li><span className="text-sm">Medication Management</span></li>
+                <li><span className="text-sm">Neurofeedback</span></li>
+                <li><span className="text-sm">Telehealth</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+              <ul className="space-y-3">
+                <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Phone className="w-4 h-4 shrink-0" /> {PHONE}</a></li>
+                <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Mail className="w-4 h-4 shrink-0" /> {EMAIL}</a></li>
+                <li className="flex items-start gap-2 text-sm">
+                  <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+                  <div>
+                    <div>1208 E 3300 S, SLC, UT 84106</div>
+                    <div>1916 N 700 W #190, Layton, UT 84041</div>
+                    <div>9069 S 1300 W #D, W. Jordan, UT 84088</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-white/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
+            <p className="text-xs text-white/40">Salt Lake City • Layton • West Jordan</p>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }

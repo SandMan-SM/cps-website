@@ -1,0 +1,69 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Phone, Menu, X, Brain } from "lucide-react";
+
+const PHONE = "(801) 483-1600";
+const PHONE_HREF = "tel:8014831600";
+
+const navLinks = [
+  { label: "Services", href: "/#services" },
+  { label: "Locations", href: "/#locations" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <a href="/" className="flex items-center gap-3" aria-label="CPS Home">
+            <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
+              <Brain className="w-5 h-5 text-white" />
+            </div>
+            <div className="hidden sm:block">
+              <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Comprehensive Psychological</div>
+              <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — Since 1986</div>
+            </div>
+          </a>
+
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a key={link.label} href={link.href} className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">{link.label}</a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <a href={PHONE_HREF} className="hidden md:flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors" aria-label={`Call us at ${PHONE}`}>
+              <Phone className="w-4 h-4" /> {PHONE}
+            </a>
+            <a href="/#contact" className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-sm font-semibold rounded-lg transition-colors">
+              Book Evaluation
+            </a>
+            <button onClick={() => setOpen(!open)} className="lg:hidden p-2 rounded-lg hover:bg-[var(--cps-gray-100)] transition-colors" aria-label="Toggle menu" aria-expanded={open}>
+              {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
+            <div className="px-4 py-4 space-y-1">
+              {navLinks.map((link) => (
+                <a key={link.label} href={link.href} onClick={() => setOpen(false)} className="block px-4 py-3 rounded-lg text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{link.label}</a>
+              ))}
+              <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-3 text-[var(--cps-blue)] font-semibold"><Phone className="w-4 h-4" /> {PHONE}</a>
+              <a href="/#contact" onClick={() => setOpen(false)} className="block w-full text-center px-4 py-3 bg-[var(--cps-blue)] text-white rounded-lg font-semibold">Book Evaluation</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+}
