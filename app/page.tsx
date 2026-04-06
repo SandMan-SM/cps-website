@@ -216,8 +216,8 @@ export default function HomePage() {
                     <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 mb-6">
                       <Icon className="w-7 h-7 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
                     </div>
-                    <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-3 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
-                    <p className="text-[var(--cps-gray-500)] text-sm leading-relaxed mb-5">{svc.description}</p>
+                    <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-3 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
+                    <p className="text-[var(--cps-gray-500)] leading-relaxed mb-5">{svc.description}</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </span>
@@ -271,13 +271,13 @@ export default function HomePage() {
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.title} className="flex gap-5 p-6 bg-white rounded-xl border border-[var(--cps-gray-200)]">
+                    <div key={item.title} className="flex items-start gap-5 p-7 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:shadow-md transition-shadow">
                       <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0">
                         <Icon className="w-7 h-7 text-[var(--cps-blue)]" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-[var(--cps-gray-900)]">{item.title}</h3>
-                        <p className="text-sm text-[var(--cps-gray-500)] mt-1 leading-relaxed">{item.desc}</p>
+                        <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-2">{item.title}</h3>
+                        <p className="text-[var(--cps-gray-500)] leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   );
