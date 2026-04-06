@@ -118,10 +118,10 @@ export default function HomePage() {
                 <Phone className="w-4 h-4" />
                 {PHONE}
               </a>
-              <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-sm font-semibold rounded-lg transition-colors">
+              <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-6 py-3 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-sm font-semibold rounded-lg transition-colors">
                 Book Evaluation
               </a>
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 rounded-lg hover:bg-[var(--cps-gray-100)] transition-colors" aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-3 min-w-11 min-h-11 rounded-lg hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
@@ -145,7 +145,7 @@ export default function HomePage() {
 
       <main id="main">
         {/* ──────── HERO ──────── */}
-        <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[#0f3460] to-[var(--cps-dark)] text-white overflow-hidden">
+        <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
             <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
@@ -345,7 +345,7 @@ export default function HomePage() {
         </section>
 
         {/* ──────── CONTACT / CTA ──────── */}
-        <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-[var(--cps-dark)] via-[#0f3460] to-[var(--cps-dark)] text-white">
+        <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>

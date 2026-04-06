@@ -40,10 +40,10 @@ export default function Navbar() {
             <a href={PHONE_HREF} className="hidden md:flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors" aria-label={`Call us at ${PHONE}`}>
               <Phone className="w-4 h-4" /> {PHONE}
             </a>
-            <a href="/#contact" className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-sm font-semibold rounded-lg transition-colors">
+            <a href="/#contact" className="hidden sm:inline-flex items-center gap-2 px-6 py-3 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-sm font-semibold rounded-lg transition-colors">
               Book Evaluation
             </a>
-            <button onClick={() => setOpen(!open)} className="lg:hidden p-2 rounded-lg hover:bg-[var(--cps-gray-100)] transition-colors" aria-label="Toggle menu" aria-expanded={open}>
+            <button onClick={() => setOpen(!open)} className="lg:hidden p-3 min-w-11 min-h-11 rounded-lg hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={open}>
               {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>

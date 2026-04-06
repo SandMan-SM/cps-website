@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Phone, MapPin, CheckCircle2, ArrowRight,
   ChevronDown, Calendar, Shield, Award, Building2,
@@ -45,7 +43,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       </div>
 
       {/* ──── Hero ──── */}
-      <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[#0f3460] to-[var(--cps-dark)] text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
           <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
@@ -217,7 +215,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       )}
 
       {/* ──── Bottom CTA ──── */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[var(--cps-dark)] via-[#0f3460] to-[var(--cps-dark)] text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div>
             <h2 className="section-heading text-white mb-4">Ready to Get Started?</h2>
