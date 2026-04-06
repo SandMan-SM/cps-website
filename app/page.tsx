@@ -94,7 +94,7 @@ export default function HomePage() {
     <>
       {/* ──────── NAV ──────── */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16 md:h-20">
             <a href="/" className="flex items-center gap-3" aria-label="CPS Home">
               <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
@@ -118,10 +118,10 @@ export default function HomePage() {
                 <Phone className="w-4 h-4" />
                 {PHONE}
               </a>
-              <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-6 py-3 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-sm font-semibold rounded-lg transition-colors">
+              <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-sm font-semibold rounded-xl transition-colors">
                 Book Evaluation
               </a>
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-3 min-w-11 min-h-11 rounded-lg hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-3 min-w-11 min-h-11 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
@@ -129,18 +129,18 @@ export default function HomePage() {
         </div>
 
         {mobileMenuOpen && (
-            <div className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
-              <div className="px-4 py-4 space-y-1">
-                {["Services", "Locations", "About", "Contact"].map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-lg text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
-                ))}
-                <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-3 text-[var(--cps-blue)] font-semibold">
-                  <Phone className="w-4 h-4" /> {PHONE}
-                </a>
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-4 py-3 bg-[var(--cps-blue)] text-white rounded-lg font-semibold">Book Evaluation</a>
-              </div>
+          <div className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
+            <div className="px-6 py-4 space-y-1">
+              {["Services", "Locations", "About", "Contact"].map((item) => (
+                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
+              ))}
+              <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-3 text-[var(--cps-blue)] font-semibold">
+                <Phone className="w-4 h-4" /> {PHONE}
+              </a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-7 py-3.5 bg-[var(--cps-blue)] text-white rounded-xl font-semibold">Book Evaluation</a>
             </div>
-          )}
+          </div>
+        )}
       </nav>
 
       <main id="main">
@@ -150,37 +150,35 @@ export default function HomePage() {
             <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
             <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-            <div className="max-w-3xl">
-              <div>
-                <div className="flex items-center gap-2 mb-6">
-                  <Award className="w-5 h-5 text-[var(--cps-teal)]" />
-                  <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
-                </div>
-                <h1 className="display-heading text-white mb-6">
-                  Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
-                </h1>
-                <p className="body-large text-white/80 mb-8 max-w-2xl">
-                  Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
-                    <Calendar className="w-5 h-5" />
-                    Schedule an Evaluation
-                  </a>
-                  <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border border-white/20">
-                    <Phone className="w-5 h-5" />
-                    {PHONE}
-                  </a>
-                </div>
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-24 md:py-36">
+            <div className="max-w-3xl mx-auto text-center lg:mx-0 lg:text-left">
+              <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
+                <Award className="w-5 h-5 text-[var(--cps-teal)]" />
+                <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
+              </div>
+              <h1 className="display-heading text-white mb-4">
+                Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
+              </h1>
+              <p className="body-large text-white/80 mb-8 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <a href="#contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+                  <Calendar className="w-5 h-5" />
+                  Schedule an Evaluation
+                </a>
+                <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border border-white/20">
+                  <Phone className="w-5 h-5" />
+                  {PHONE}
+                </a>
               </div>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               {stats.map((stat) => (
-                <div key={stat.label} className="text-center md:text-left">
-                  <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</div>
-                  <div className="text-sm text-white/60 mt-1">{stat.label}</div>
+                <div key={stat.label} className="text-center">
+                  <div className="text-4xl font-extrabold text-white">{stat.value}</div>
+                  <div className="text-sm text-white/70 mt-1.5">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -188,9 +186,9 @@ export default function HomePage() {
         </section>
 
         {/* ──────── TRUST BAR ──────── */}
-        <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-sm text-[var(--cps-gray-500)]">
+        <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-5">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14 text-sm text-[var(--cps-gray-500)]">
               <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
               <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" /> Best Practice Award 2024</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" /> Most Insurance Accepted</div>
@@ -201,27 +199,25 @@ export default function HomePage() {
 
         {/* ──────── SERVICES ──────── */}
         <section id="services" className="py-20 md:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div>
-              <div className="text-center mb-16">
-                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Our Specialties</p>
-                <h2 className="section-heading text-[var(--cps-gray-900)]">Evaluation & Treatment Services</h2>
-                <p className="mt-4 text-[var(--cps-gray-500)] max-w-2xl mx-auto body-large">
-                  Evidence-based assessments and treatments delivered by licensed professionals with decades of experience.
-                </p>
-              </div>
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div className="text-center mb-16">
+              <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Our Specialties</p>
+              <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Evaluation & Treatment Services</h2>
+              <p className="text-[var(--cps-gray-500)] max-w-2xl mx-auto body-large leading-relaxed">
+                Evidence-based assessments and treatments delivered by licensed professionals with decades of experience.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {serviceCategories.map((svc, index) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {serviceCategories.map((svc) => {
                 const Icon = svc.icon;
                 return (
-                  <a key={svc.title} href={svc.href} className="group block p-8 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all duration-300">
-                    <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 mb-5">
+                  <a key={svc.title} href={svc.href} className="group block p-8 md:p-10 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 mb-6">
                       <Icon className="w-7 h-7 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
                     </div>
-                    <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-2 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
-                    <p className="text-[var(--cps-gray-500)] text-sm leading-relaxed mb-4">{svc.description}</p>
+                    <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-3 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
+                    <p className="text-[var(--cps-gray-500)] text-sm leading-relaxed mb-5">{svc.description}</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </span>
@@ -230,9 +226,9 @@ export default function HomePage() {
               })}
             </div>
 
-            <div className="mt-16 p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
-              <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-4">Additional Services</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="mt-20 p-10 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
+              <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-6">Additional Services</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {additionalServices.map((svc) => (
                   <div key={svc} className="flex items-center gap-2 text-sm text-[var(--cps-gray-600)]">
                     <CheckCircle2 className="w-4 h-4 text-[var(--cps-success)] shrink-0" />
@@ -246,14 +242,14 @@ export default function HomePage() {
 
         {/* ──────── ABOUT ──────── */}
         <section id="about" className="py-20 md:py-28 bg-[var(--cps-gray-50)]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div>
-                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">About CPS</p>
-                <h2 className="section-heading text-[var(--cps-gray-900)] mb-6">
+                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">About CPS</p>
+                <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">
                   Utah&apos;s Trusted Behavioral Health Practice Since 1986
                 </h2>
-                <div className="space-y-4 text-[var(--cps-gray-600)] body-large">
+                <div className="space-y-5 text-[var(--cps-gray-600)] body-large leading-relaxed">
                   <p>
                     Founded by Steven Szykula, Ph.D., Comprehensive Psychological Services has grown into one of Utah&apos;s most respected behavioral health organizations — a full-service practice offering evaluations, therapy, medication management, and specialized treatment programs.
                   </p>
@@ -266,7 +262,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {[
                   { icon: Shield, title: "Evidence-Based Practice", desc: "Every assessment and treatment follows validated, research-backed protocols. We measure outcomes, not just activity." },
                   { icon: Award, title: "Best Practice Award", desc: "Recognized for clinical excellence by professional organizations. Our team upholds the highest standards of competence." },
@@ -275,13 +271,13 @@ export default function HomePage() {
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.title} className="flex gap-4 p-5 bg-white rounded-xl border border-[var(--cps-gray-200)]">
-                      <div className="w-12 h-12 rounded-lg bg-[var(--cps-light)] flex items-center justify-center shrink-0">
-                        <Icon className="w-6 h-6 text-[var(--cps-blue)]" />
+                    <div key={item.title} className="flex gap-5 p-6 bg-white rounded-xl border border-[var(--cps-gray-200)]">
+                      <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0">
+                        <Icon className="w-7 h-7 text-[var(--cps-blue)]" />
                       </div>
                       <div>
                         <h3 className="font-bold text-[var(--cps-gray-900)]">{item.title}</h3>
-                        <p className="text-sm text-[var(--cps-gray-500)] mt-1">{item.desc}</p>
+                        <p className="text-sm text-[var(--cps-gray-500)] mt-1 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   );
@@ -293,22 +289,20 @@ export default function HomePage() {
 
         {/* ──────── TESTIMONIALS ──────── */}
         <section className="py-20 md:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div>
-              <div className="text-center mb-16">
-                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Patient Experiences</p>
-                <h2 className="section-heading text-[var(--cps-gray-900)]">What Our Patients Say</h2>
-              </div>
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div className="text-center mb-16">
+              <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Patient Experiences</p>
+              <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">What Our Patients Say</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
-                <div key={i} className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
-                  <div className="flex gap-1 mb-4">
+                <div key={i} className="p-10 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
+                  <div className="flex gap-1 mb-5">
                     {Array.from({ length: t.rating }).map((_, j) => (
                       <Star key={j} className="w-5 h-5 text-[var(--cps-warning)] fill-[var(--cps-warning)]" />
                     ))}
                   </div>
-                  <p className="text-[var(--cps-gray-700)] leading-relaxed mb-6">&ldquo;{t.text}&rdquo;</p>
+                  <p className="text-[var(--cps-gray-700)] leading-relaxed mb-8">&ldquo;{t.text}&rdquo;</p>
                   <p className="text-sm font-semibold text-[var(--cps-gray-500)]">— {t.author}</p>
                 </div>
               ))}
@@ -318,23 +312,21 @@ export default function HomePage() {
 
         {/* ──────── LOCATIONS ──────── */}
         <section id="locations" className="py-20 md:py-28 bg-[var(--cps-gray-50)]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div>
-              <div className="text-center mb-16">
-                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-3">Find Us</p>
-                <h2 className="section-heading text-[var(--cps-gray-900)]">Three Locations Across the Wasatch Front</h2>
-              </div>
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div className="text-center mb-16">
+              <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Find Us</p>
+              <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Three Locations Across the Wasatch Front</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {offices.map((office, i) => (
-                <div key={office.name} className="bg-white p-8 rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-5">
-                    <MapPin className="w-6 h-6 text-[var(--cps-blue)]" />
+              {offices.map((office) => (
+                <div key={office.name} className="bg-white p-10 rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
+                    <MapPin className="w-7 h-7 text-[var(--cps-blue)]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-1">{office.name}</h3>
-                  <p className="text-sm text-[var(--cps-blue)] font-medium mb-4">Serving {office.serving}</p>
-                  <p className="text-[var(--cps-gray-600)] text-sm mb-1">{office.address}</p>
-                  <p className="text-[var(--cps-gray-600)] text-sm mb-4">{office.city}</p>
+                  <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-2">{office.name}</h3>
+                  <p className="text-sm text-[var(--cps-blue)] font-medium mb-5">Serving {office.serving}</p>
+                  <p className="text-[var(--cps-gray-600)] text-sm mb-1.5">{office.address}</p>
+                  <p className="text-[var(--cps-gray-600)] text-sm mb-5">{office.city}</p>
                   <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
                     <Phone className="w-4 h-4" /> {PHONE}
                   </a>
@@ -346,30 +338,30 @@ export default function HomePage() {
 
         {/* ──────── CONTACT / CTA ──────── */}
         <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
               <div>
-                <p className="text-[var(--cps-teal)] font-semibold text-sm uppercase tracking-wider mb-3">Get Started</p>
-                <h2 className="section-heading text-white mb-6">Schedule Your Evaluation Today</h2>
-                <p className="text-white/70 body-large mb-8">
+                <p className="text-[var(--cps-teal)] font-semibold text-sm uppercase tracking-wider mb-6">Get Started</p>
+                <h2 className="section-heading text-white mb-4">Schedule Your Evaluation Today</h2>
+                <p className="text-white/70 body-large mb-8 leading-relaxed">
                   Call us or fill out the form to schedule an appointment. Our team will verify your insurance, answer your questions, and find a time that works.
                 </p>
-                <div className="space-y-4">
-                  <a href={PHONE_HREF} className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
+                <div className="space-y-5">
+                  <a href={PHONE_HREF} className="flex items-center gap-5 p-5 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
                     <Phone className="w-6 h-6 text-[var(--cps-teal)]" />
                     <div>
                       <div className="font-bold">{PHONE}</div>
                       <div className="text-sm text-white/60">Mon–Fri, 8am–6pm</div>
                     </div>
                   </a>
-                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
+                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-5 p-5 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
                     <Mail className="w-6 h-6 text-[var(--cps-teal)]" />
                     <div>
                       <div className="font-bold">{EMAIL}</div>
                       <div className="text-sm text-white/60">We respond within 24 hours</div>
                     </div>
                   </a>
-                  <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
+                  <div className="flex items-center gap-5 p-5 bg-white/10 rounded-xl">
                     <Clock className="w-6 h-6 text-[var(--cps-teal)]" />
                     <div>
                       <div className="font-bold">Office Hours</div>
@@ -384,32 +376,32 @@ export default function HomePage() {
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 text-center border border-white/10">
                     <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" />
                     <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-                    <p className="text-white/70">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
+                    <p className="text-white/70 leading-relaxed">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
                   </div>
                 ) : (
-                  <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-5">
+                  <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }} className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 border border-white/10 space-y-6">
                     <h3 className="text-xl font-bold mb-2">Request an Appointment</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="firstName" className="block text-sm font-medium mb-1.5 text-white/80">First Name</label>
-                        <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="First name" />
+                        <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="First name" />
                       </div>
                       <div>
                         <label htmlFor="lastName" className="block text-sm font-medium mb-1.5 text-white/80">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="Last name" />
+                        <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="Last name" />
                       </div>
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-1.5 text-white/80">Email</label>
-                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="you@email.com" />
+                      <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="you@email.com" />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium mb-1.5 text-white/80">Phone</label>
-                      <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="(801) 555-0123" />
+                      <input type="tel" id="phone" name="phone" required className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="(801) 555-0123" />
                     </div>
                     <div>
                       <label htmlFor="service" className="block text-sm font-medium mb-1.5 text-white/80">Service Needed</label>
-                      <select id="service" name="service" required className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors">
+                      <select id="service" name="service" required className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors">
                         <option value="" className="text-gray-900">Select a service...</option>
                         <option value="neuropsych" className="text-gray-900">Neuropsychological Evaluation</option>
                         <option value="adhd" className="text-gray-900">ADHD Evaluation / Testing</option>
@@ -424,7 +416,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium mb-1.5 text-white/80">Message (optional)</label>
-                      <textarea id="message" name="message" rows={3} className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors resize-none" placeholder="Tell us about your concerns or questions..." />
+                      <textarea id="message" name="message" rows={3} className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors resize-none" placeholder="Tell us about your concerns or questions..." />
                     </div>
                     <button type="submit" className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
                       <MessageCircle className="w-5 h-5" />
@@ -440,9 +432,9 @@ export default function HomePage() {
       </main>
 
       {/* ──────── FOOTER ──────── */}
-      <footer className="bg-[var(--cps-gray-900)] text-white/60 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <footer className="bg-[var(--cps-gray-900)] text-white/60 py-20">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
@@ -460,7 +452,7 @@ export default function HomePage() {
 
             <div>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Evaluations</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {[
                   { label: "Neuropsychological Evaluations", href: "/neuropsychologist-near-me" },
                   { label: "ADHD Evaluation", href: "/adhd-evaluation-near-me" },
@@ -478,7 +470,7 @@ export default function HomePage() {
 
             <div>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 <li><a href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</a></li>
                 <li><span className="text-sm">Spravato (Esketamine)</span></li>
                 <li><span className="text-sm">Intensive Outpatient (IOP)</span></li>
