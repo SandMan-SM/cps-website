@@ -22,8 +22,8 @@ export default function ServicePageContent({ service, location, relatedServices 
   return (
     <main id="main">
       {/* ──── Breadcrumb ──── */}
-      <div className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-4">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <nav aria-label="Breadcrumb" className="text-sm text-[var(--cps-gray-500)]">
             <ol className="flex items-center gap-2 flex-wrap">
               <li><a href="/" className="hover:text-[var(--cps-blue)] transition-colors">Home</a></li>
@@ -48,7 +48,7 @@ export default function ServicePageContent({ service, location, relatedServices 
           <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
           <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-12 md:py-16">
           <div className="max-w-3xl">
             {location && (
               <div className="flex items-center gap-2 mb-4">
@@ -58,14 +58,14 @@ export default function ServicePageContent({ service, location, relatedServices 
                 </span>
               </div>
             )}
-            <h1 className="display-heading text-white mb-5">{h1}</h1>
+            <h1 className="display-heading text-white mb-6">{h1}</h1>
             <p className="body-large text-white/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <a href="/#contact" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" />
                 {service.ctaText}
               </a>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border border-white/20">
+              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
                 <Phone className="w-5 h-5" />
                 {PHONE}
               </a>
@@ -75,9 +75,9 @@ export default function ServicePageContent({ service, location, relatedServices 
       </section>
 
       {/* ──── Trust bar ──── */}
-      <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm text-[var(--cps-gray-500)]">
+      <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-4">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-14 text-sm text-[var(--cps-gray-500)]">
             <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
             <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" /> Since 1986</div>
             <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" /> Insurance Accepted</div>
@@ -87,13 +87,13 @@ export default function ServicePageContent({ service, location, relatedServices 
       </section>
 
       {/* ──── Overview ──── */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">
               {location ? `${service.shortName} in ${locationName}` : `About ${service.shortName}`}
             </h2>
-            <div className="space-y-5 text-[var(--cps-gray-600)] body-large leading-relaxed">
+            <div className="space-y-6 text-[var(--cps-gray-600)] body-large leading-relaxed">
               {service.overview.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
@@ -108,13 +108,13 @@ export default function ServicePageContent({ service, location, relatedServices 
       </section>
 
       {/* ──── What to Expect ──── */}
-      <section className="py-16 md:py-24 bg-[var(--cps-gray-50)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">What to Expect</h2>
             <div className="space-y-4">
               {service.whatToExpect.map((step, i) => (
-                <div key={i} className="flex gap-4 p-5 bg-white rounded-xl border border-[var(--cps-gray-200)]">
+                <div key={i} className="flex gap-4 p-6 bg-white rounded-xl border border-[var(--cps-gray-200)]">
                   <div className="w-10 h-10 rounded-lg bg-[var(--cps-light)] flex items-center justify-center shrink-0 text-[var(--cps-blue)] font-bold text-sm">
                     {String(i + 1).padStart(2, "0")}
                   </div>
@@ -127,8 +127,8 @@ export default function ServicePageContent({ service, location, relatedServices 
       </section>
 
       {/* ──── Benefits ──── */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Why Choose CPS</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -145,8 +145,8 @@ export default function ServicePageContent({ service, location, relatedServices 
 
       {/* ──── Location Info (if location page) ──── */}
       {location && (
-        <section className="py-16 md:py-24 bg-[var(--cps-gray-50)]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
             <div>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">
                 Nearest Office — {location.nearestOffice}
@@ -171,8 +171,8 @@ export default function ServicePageContent({ service, location, relatedServices 
       )}
 
       {/* ──── FAQ ──── */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Frequently Asked Questions</h2>
             <div className="space-y-4">
@@ -194,15 +194,15 @@ export default function ServicePageContent({ service, location, relatedServices 
 
       {/* ──── Related Services ──── */}
       {relatedServices.length > 0 && (
-        <section className="py-16 md:py-24 bg-[var(--cps-gray-50)]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Related Services</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedServices.map((rel) => (
                   <a key={rel.slug} href={`/${rel.slug}`} className="group block p-6 bg-white rounded-xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
                     <h3 className="font-bold text-[var(--cps-gray-900)] group-hover:text-[var(--cps-blue)] transition-colors mb-2">{rel.title}</h3>
-                    <p className="text-sm text-[var(--cps-gray-500)] leading-relaxed mb-3">{rel.heroSubtitle.slice(0, 120)}...</p>
+                    <p className="text-sm text-[var(--cps-gray-500)] leading-relaxed mb-4">{rel.heroSubtitle.slice(0, 120)}...</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </span>
@@ -215,8 +215,8 @@ export default function ServicePageContent({ service, location, relatedServices 
       )}
 
       {/* ──── Bottom CTA ──── */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
           <div>
             <h2 className="section-heading text-white mb-4">Ready to Get Started?</h2>
             <p className="text-white/70 body-large mb-8 max-w-2xl mx-auto">
@@ -225,11 +225,11 @@ export default function ServicePageContent({ service, location, relatedServices 
                 : `Schedule your ${service.shortName.toLowerCase()} at one of our three Utah locations. Call us today or book online.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <a href="/#contact" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" />
                 {service.ctaText}
               </a>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border border-white/20">
+              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
                 <Phone className="w-5 h-5" />
                 {PHONE}
               </a>
