@@ -66,9 +66,30 @@ const additionalServices = [
 ];
 
 const offices = [
-  { name: "Salt Lake City", address: "1208 East 3300 South", city: "Salt Lake City, UT 84106", serving: "Salt Lake County" },
-  { name: "Layton", address: "1916 North 700 West, Suite 190", city: "Layton, UT 84041", serving: "Davis & Weber Counties" },
-  { name: "West Jordan", address: "9069 South 1300 West, Suite D", city: "West Jordan, UT 84088", serving: "South Valley" },
+  {
+    name: "Salt Lake City",
+    address: "1208 East 3300 South",
+    city: "Salt Lake City, UT 84106",
+    serving: "Salt Lake County",
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9!2d-111.854!3d40.710!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875289f1e3a1bf4d%3A0x1!2s1208+East+3300+South%2C+Salt+Lake+City%2C+UT+84106!5e0!3m2!1sen!2sus!4v1",
+    mapQuery: "1208+East+3300+South,+Salt+Lake+City,+UT+84106",
+  },
+  {
+    name: "Layton",
+    address: "1916 North 700 West, Suite 190",
+    city: "Layton, UT 84041",
+    serving: "Davis & Weber Counties",
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9!2d-111.969!3d41.060!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875289f1e3a1bf4d%3A0x2!2s1916+North+700+West+Suite+190%2C+Layton%2C+UT+84041!5e0!3m2!1sen!2sus!4v1",
+    mapQuery: "1916+North+700+West,+Suite+190,+Layton,+UT+84041",
+  },
+  {
+    name: "West Jordan",
+    address: "9069 South 1300 West, Suite D",
+    city: "West Jordan, UT 84088",
+    serving: "South Valley",
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9!2d-111.939!3d40.601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875289f1e3a1bf4d%3A0x3!2s9069+South+1300+West+Suite+D%2C+West+Jordan%2C+UT+84088!5e0!3m2!1sen!2sus!4v1",
+    mapQuery: "9069+South+1300+West,+Suite+D,+West+Jordan,+UT+84088",
+  },
 ];
 
 const testimonials = [
@@ -89,6 +110,8 @@ const stats = [
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formLoading, setFormLoading] = useState(false);
+  const [formError, setFormError] = useState("");
 
   return (
     <>
@@ -121,7 +144,7 @@ export default function HomePage() {
               <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors">
                 Book Evaluation
               </a>
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen}>
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
@@ -129,7 +152,7 @@ export default function HomePage() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
+          <div id="mobile-menu" className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
             <div className="px-6 py-4 space-y-2">
               {["Services", "Locations", "About", "Contact"].map((item) => (
                 <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
@@ -146,7 +169,7 @@ export default function HomePage() {
       <main id="main">
         {/* ──────── HERO ──────── */}
         <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
             <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
             <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
           </div>
@@ -274,7 +297,7 @@ export default function HomePage() {
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="flex items-start gap-6 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:shadow-md transition-shadow">
-                      <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0">
+                      <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0" aria-hidden="true">
                         <Icon className="w-7 h-7 text-[var(--cps-blue)]" />
                       </div>
                       <div>
@@ -299,9 +322,9 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
                 <div key={i} className="p-6 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
-                  <div className="flex gap-1 mb-6">
+                  <div className="flex gap-1 mb-6" aria-label={`${t.rating} out of 5 stars`} role="img">
                     {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} className="w-5 h-5 text-[var(--cps-warning)] fill-[var(--cps-warning)]" />
+                      <Star key={j} className="w-5 h-5 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
                     ))}
                   </div>
                   <p className="text-[var(--cps-gray-700)] leading-relaxed mb-8">&ldquo;{t.text}&rdquo;</p>
@@ -321,17 +344,31 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {offices.map((office) => (
-                <div key={office.name} className="bg-white p-6 rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
-                    <MapPin className="w-7 h-7 text-[var(--cps-blue)]" />
+                <div key={office.name} className="bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                  <div className="h-48 bg-[var(--cps-gray-100)]">
+                    <iframe
+                      title={`Map of CPS ${office.name} office`}
+                      src={`https://maps.google.com/maps?q=${office.mapQuery}&output=embed&z=15`}
+                      width="100%"
+                      height="100%"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="border-0 w-full h-full"
+                      aria-label={`Google Maps location of CPS ${office.name} office`}
+                    />
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-2">{office.name}</h3>
-                  <p className="text-sm text-[var(--cps-blue)] font-medium mb-6">Serving {office.serving}</p>
-                  <p className="text-[var(--cps-gray-600)] text-sm mb-2">{office.address}</p>
-                  <p className="text-[var(--cps-gray-600)] text-sm mb-6">{office.city}</p>
-                  <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
-                    <Phone className="w-4 h-4" /> {PHONE}
-                  </a>
+                  <div className="p-6">
+                    <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
+                      <MapPin className="w-7 h-7 text-[var(--cps-blue)]" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-2">{office.name}</h3>
+                    <p className="text-sm text-[var(--cps-blue)] font-medium mb-6">Serving {office.serving}</p>
+                    <p className="text-[var(--cps-gray-600)] text-sm mb-2">{office.address}</p>
+                    <p className="text-[var(--cps-gray-600)] text-sm mb-6">{office.city}</p>
+                    <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
+                      <Phone className="w-4 h-4" /> {PHONE}
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
@@ -381,7 +418,26 @@ export default function HomePage() {
                     <p className="text-white/70 leading-relaxed">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
                   </div>
                 ) : (
-                  <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6">
+                  <form onSubmit={async (e) => {
+                    e.preventDefault();
+                    setFormLoading(true);
+                    setFormError("");
+                    const form = e.currentTarget as HTMLFormElement;
+                    const data = Object.fromEntries(new FormData(form));
+                    try {
+                      const res = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data),
+                      });
+                      if (!res.ok) throw new Error("Server error");
+                      setFormSubmitted(true);
+                    } catch {
+                      setFormError("Something went wrong. Please call us directly at (801) 483-1600.");
+                    } finally {
+                      setFormLoading(false);
+                    }
+                  }} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6">
                     <h3 className="text-xl font-bold mb-2">Request an Appointment</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
@@ -420,9 +476,12 @@ export default function HomePage() {
                       <label htmlFor="message" className="block text-sm font-medium mb-2 text-white/80">Message (optional)</label>
                       <textarea id="message" name="message" rows={3} className="w-full px-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors resize-none" placeholder="Tell us about your concerns or questions..." />
                     </div>
-                    <button type="submit" className="w-full py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
+                    {formError && (
+                      <p className="text-sm text-[var(--cps-warning)] bg-white/10 rounded-xl px-4 py-4">{formError}</p>
+                    )}
+                    <button type="submit" disabled={formLoading} className="w-full py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-white font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
                       <MessageCircle className="w-5 h-5" />
-                      Request Appointment
+                      {formLoading ? "Sending…" : "Request Appointment"}
                     </button>
                     <p className="text-xs text-white/40 text-center">Your information is confidential. We&apos;ll respond within 1 business day.</p>
                   </form>
