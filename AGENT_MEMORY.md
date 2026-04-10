@@ -1,72 +1,43 @@
 # 🧠 AGENT_MEMORY — CPS
-> Synthetic Intelligence Memory File
-> Last updated: April 10, 2026 at 01:47 PM
-> This file is your brain. Read it first. Never repeat completed work.
+> Synthetic Intelligence Memory | Updated: April 10, 2026 02:08 PM
+> READ THIS FIRST. Never repeat completed work.
 
----
-
-## 📊 Project Health Scores
+## 📊 Health Scores
 | Metric | Score | Bar |
 |---|---|---|
-| Build Health | 90/100 | █████████░ 90/100 |
-| SEO | 97/100 | █████████░ 97/100 |
-| Performance | 50/100 | █████░░░░░ 50/100 |
-| Backend | 20/100 | ██░░░░░░░░ 20/100 |
-| Mobile | 60/100 | ██████░░░░ 60/100 |
-| **OVERALL** | **68/100** | ██████░░░░ 68/100 |
+| Build | 90/100 | █████████░ |
+| SEO | 87/100 | ████████░░ |
+| Performance | 50/100 | █████░░░░░ |
+| Backend | 20/100 | ██░░░░░░░░ |
+| Mobile | 56/100 | █████░░░░░ |
+| **OVERALL** | **65/100** | ██████░░░░ |
 
----
+## 🎯 This Session: Do These In Order
+1. Wire all forms to real API routes
+2. Replace img tags with next/image
+3. Add loading.tsx files
 
-## 🎯 What To Do This Session
-> AI-generated priorities based on health scores + cross-project learning
+## 🔬 Why
+- No backend (20/100) — forms go nowhere
+- Performance is low (50/100)
 
-1. Create API routes for any forms that currently only update state
-2. Replace <img> tags with next/image for all images
-3. Add loading.tsx files for data-fetching routes
+## 📚 Stats
+- Sessions: 0
+- Lines written: 0
 
-
----
-
-## 🔬 Why I Decided This
-> Agent reasoning — understanding behind the priorities
-
-- Backend score is 20/100. Forms likely not submitting data.
-- Performance score is 50/100.
-
----
-
-## 📚 Lifetime Stats
-- Sessions completed: **0**
-- Total lines written: **0**
-- Biggest win: **None**
-
----
-
-## 🔄 Edit History (last 30)
+## 🔄 Edit History (last 30 — DO NOT REPEAT)
 | Date | Category | What Was Done | Lines |
 |---|---|---|---|
 | - | - | No history yet | - |
 
----
+## 🌐 Patterns To Apply
+- No patterns assigned yet
 
-## 🌐 Cross-Project Pattern Library
-> Patterns discovered across all 6 projects — apply these before inventing new solutions
-
-- **form-backend-nodemailer** — Next.js API route that handles form submissions and sends email via nodemailer with SMTP fallback logging `[📚 Reference]`
-- **google-maps-no-api-key** — Embed Google Maps using maps.google.com/maps?q= URL with no API key required `[📚 Reference]`
-- **seo-metadata-nextjs** — Standard Next.js metadata export with title, description, openGraph, and robots fields `[📚 Reference]`
-- **css-variable-migration** — Move all hardcoded hex colors to CSS custom properties in globals.css `[📚 Reference]`
-
----
-
-## ⚡ Agent Rules
-- ALWAYS read this file before starting
-- NEVER repeat work listed in Edit History
-- ALWAYS check Pattern Library before writing new code
-- ALWAYS run `npm run build` before and after changes
-- NEVER modify .env files
-- COMMIT after each logical unit of work
-- PUSH when session is complete
-
----
-*Powered by Omni Intelligence System — synthetic memory across all client projects*
+## ⚡ Rules
+- Read this file first, every session
+- Never repeat anything in Edit History
+- Check patterns before writing new code
+- Build before and after every change
+- Never touch .env files
+- Commit every logical unit: `git commit -m 'agent: [what]'`
+- Push when done
