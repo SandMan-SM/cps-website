@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
-  Phone, Mail, MapPin, Clock, ChevronRight,
+  Phone, Mail, MapPin, Clock,
   Shield, Award, Star, CheckCircle2, ArrowRight,
   Menu, X, Brain, HeartPulse, Scale, Users,
   ClipboardCheck, GraduationCap, Building2,
@@ -119,7 +120,7 @@ export default function HomePage() {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <a href="/" className="flex items-center gap-3" aria-label="CPS Home">
+            <Link href="/" className="flex items-center gap-3" aria-label="CPS Home">
               <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
                 <Brain className="w-5 h-5 text-white" />
               </div>
@@ -127,7 +128,7 @@ export default function HomePage() {
                 <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Comprehensive Psychological</div>
                 <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — Since 1986</div>
               </div>
-            </a>
+            </Link>
 
             <div className="hidden lg:flex items-center gap-8">
               <a href="#services" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Services</a>
@@ -532,7 +533,7 @@ export default function HomePage() {
             <div>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
               <ul className="space-y-4">
-                <li><a href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</a></li>
+                <li><Link href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</Link></li>
                 <li><span className="text-sm">Spravato (Esketamine)</span></li>
                 <li><span className="text-sm">Intensive Outpatient (IOP)</span></li>
                 <li><span className="text-sm">Counseling & Psychotherapy</span></li>

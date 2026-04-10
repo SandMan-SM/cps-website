@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone, Mail, MapPin, Brain } from "lucide-react";
 
 const PHONE = "(801) 483-1600";
@@ -37,7 +38,7 @@ export default function Footer() {
                 { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me" },
                 { label: "Custody Evaluation", href: "/custody-evaluator-near-me" },
               ].map((link) => (
-                <li key={link.href}><a href={link.href} className="text-sm hover:text-white transition-colors">{link.label}</a></li>
+                <li key={link.href}><Link href={link.href} className="text-sm hover:text-white transition-colors">{link.label}</Link></li>
               ))}
             </ul>
           </div>
@@ -45,7 +46,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
             <ul className="space-y-2">
-              <li><a href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</a></li>
+              <li><Link href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</Link></li>
               <li><span className="text-sm">Spravato (Esketamine)</span></li>
               <li><span className="text-sm">Intensive Outpatient (IOP)</span></li>
               <li><span className="text-sm">Counseling & Psychotherapy</span></li>

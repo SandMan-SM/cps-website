@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Phone, MapPin, CheckCircle2, ArrowRight,
   ChevronDown, Calendar, Shield, Award, Building2,
@@ -26,11 +27,11 @@ export default function ServicePageContent({ service, location, relatedServices 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <nav aria-label="Breadcrumb" className="text-sm text-[var(--cps-gray-500)]">
             <ol className="flex items-center gap-2 flex-wrap">
-              <li><a href="/" className="hover:text-[var(--cps-blue)] transition-colors">Home</a></li>
+              <li><Link href="/" className="hover:text-[var(--cps-blue)] transition-colors">Home</Link></li>
               <li>/</li>
               {location ? (
                 <>
-                  <li><a href={`/${service.slug}`} className="hover:text-[var(--cps-blue)] transition-colors">{service.title}</a></li>
+                  <li><Link href={`/${service.slug}`} className="hover:text-[var(--cps-blue)] transition-colors">{service.title}</Link></li>
                   <li>/</li>
                   <li className="text-[var(--cps-gray-700)] font-medium">{locationName}</li>
                 </>
@@ -61,10 +62,10 @@ export default function ServicePageContent({ service, location, relatedServices 
             <h1 className="display-heading text-white mb-6">{h1}</h1>
             <p className="body-large text-white/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/#contact" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <Link href="/#contact" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" />
                 {service.ctaText}
-              </a>
+              </Link>
               <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
                 <Phone className="w-5 h-5" />
                 {PHONE}
@@ -225,10 +226,10 @@ export default function ServicePageContent({ service, location, relatedServices 
                 : `Schedule your ${service.shortName.toLowerCase()} at one of our three Utah locations. Call us today or book online.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/#contact" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <Link href="/#contact" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" />
                 {service.ctaText}
-              </a>
+              </Link>
               <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
                 <Phone className="w-5 h-5" />
                 {PHONE}
