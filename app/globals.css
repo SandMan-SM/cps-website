@@ -2,19 +2,19 @@
 
 :root {
   /* Brand Colors — CPS */
-  --cps-blue: #1f7cec;
-  --cps-blue-hover: #3993ff;
+  --cps-blue: #1565C0;
+  --cps-blue-hover: #0D47A1;
   --cps-teal: #10b2e0;
   --cps-dark: #0a284b;
   --cps-accent: #105ee0;
   --cps-navy: #0d1b2a;
   --cps-gradient-mid: #0f3460;
-  --cps-light: #f0f6ff;
+  --cps-light: #dce8ff;
   --cps-white: #ffffff;
   --cps-gray-50: #f8fafc;
   --cps-gray-100: #f1f5f9;
   --cps-gray-200: #e2e8f0;
-  --cps-gray-400: #94a3b8;
+  --cps-gray-400: #56677a;
   --cps-gray-500: #64748b;
   --cps-gray-600: #475569;
   --cps-gray-700: #334155;

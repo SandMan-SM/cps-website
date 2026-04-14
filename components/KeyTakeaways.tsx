@@ -33,7 +33,7 @@ export default function KeyTakeaways({ service }: Props) {
   ];
 
   return (
-    <section className="py-8 md:py-12 bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)]">
+    <section className="mt-12 md:mt-16 py-8 md:py-12 bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)]">
       <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="bg-white rounded-2xl border border-[var(--cps-gray-200)] overflow-hidden shadow-sm">
           <div className="bg-[var(--cps-blue)] px-6 py-4">

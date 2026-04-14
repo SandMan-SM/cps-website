@@ -406,7 +406,7 @@ export default function HomePage() {
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Patient Experiences</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">What Our Patients Say</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
                 <div key={i} className="bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]" style={{ padding: "1.75rem" }}>
                   <div className="flex gap-1 mb-6" aria-label={`${t.rating} out of 5 stars`} role="img">
@@ -433,7 +433,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {/* Google */}
               <a href="https://www.google.com/maps/place/Comprehensive+Psychological+Services/@40.7099,-111.8542" target="_blank" rel="noopener noreferrer" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
@@ -489,7 +489,7 @@ export default function HomePage() {
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Find Us</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Three Locations Across the Wasatch Front</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {offices.map((office) => (
                 <div key={office.name} className="bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
                   <div className="h-56 bg-[var(--cps-gray-100)]">
@@ -638,6 +638,27 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+
+      {/* ──────── STICKY MOBILE CTA ──────── */}
+      <div className="lg:hidden sticky bottom-0 z-40 bg-white border-t border-[var(--cps-gray-200)] shadow-2xl" aria-label="Quick actions">
+        <div className="flex items-center gap-3 px-4 py-3">
+          <a
+            href="tel:8014831600"
+            className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm transition-colors border-2 border-[var(--cps-blue)] text-[var(--cps-blue)]"
+            aria-label="Call us at (801) 483-1600"
+          >
+            <Phone className="w-5 h-5" />
+            Call Now
+          </a>
+          <a
+            href="#contact"
+            className="flex-[2] flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white transition-colors"
+          >
+            <Calendar className="w-5 h-5" />
+            Book Evaluation
+          </a>
+        </div>
+      </div>
 
       {/* ──────── FOOTER ──────── */}
       <footer className="bg-[var(--cps-gray-900)] text-white/60 py-16">

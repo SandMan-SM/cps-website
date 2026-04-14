@@ -156,7 +156,8 @@ export default function ServicePageContent({ service, location, relatedServices 
         <section className="py-12 md:py-16 bg-white">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">{service.comparisonTable.title}</h2>
-            <div className="overflow-x-auto rounded-xl overflow-hidden border border-[var(--cps-gray-200)]">
+            {/* Desktop table — hidden on mobile */}
+            <div className="hidden md:block overflow-x-auto rounded-xl overflow-hidden border border-[var(--cps-gray-200)]">
               <table className="w-full text-sm text-left">
                 <thead className="bg-[var(--cps-gray-100)] text-[var(--cps-blue)]">
                   <tr>
@@ -185,6 +186,23 @@ export default function ServicePageContent({ service, location, relatedServices 
                   ))}
                 </tbody>
               </table>
+            </div>
+            {/* Mobile cards — stacked layout */}
+            <div className="md:hidden space-y-4">
+              {service.comparisonTable.rows.map((row, ri) => (
+                <div key={ri} className={`rounded-xl border overflow-hidden ${ri % 2 === 1 ? 'bg-[var(--cps-gray-50)] border-[var(--cps-gray-200)]' : 'bg-white border-[var(--cps-gray-200)]'}`}>
+                  {row.map((cell, ci) => (
+                    <div key={ci} className={`flex flex-col px-5 py-4 ${ci === 0 ? 'bg-[var(--cps-light)] border-b border-[var(--cps-gray-200)]' : 'border-b last:border-b-0 border-[var(--cps-gray-100)]'}`}>
+                      <span className="text-xs font-semibold text-[var(--cps-gray-500)] uppercase tracking-wider mb-1">
+                        {service.comparisonTable.headers[ci]}
+                      </span>
+                      <span className={`text-sm ${ci === 0 ? 'font-bold text-[var(--cps-gray-900)]' : 'text-[var(--cps-gray-700)]'}`}>
+                        {cell}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
         </section>
