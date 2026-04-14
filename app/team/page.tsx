@@ -206,7 +206,7 @@ function ClinicianCard({ clinician }: { clinician: Clinician }) {
         <div className="p-8 md:p-12">
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-2">
-              <div className="inline-flex items-center gap-2 bg-[var(--cps-blue)]/20 text-[var(--cps-teal)] px-3 py-1 rounded-full text-sm font-semibold mb-4">
+              <div className="inline-flex items-center gap-2 bg-[var(--cps-blue)]/20 text-[var(--cps-teal)] px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 <Award className="w-3 h-3" />
                 Founder & Clinical Director
               </div>
@@ -219,7 +219,7 @@ function ClinicianCard({ clinician }: { clinician: Clinician }) {
                 {specialties.map((s) => (
                   <span
                     key={s}
-                    className="bg-[var(--cps-blue)]/20 text-[var(--cps-teal)] text-xs font-medium px-3 py-1 rounded-full"
+                    className="bg-[var(--cps-blue)]/20 text-[var(--cps-teal)] text-xs font-medium px-4 py-2 rounded-full"
                   >
                     {s}
                   </span>
@@ -268,7 +268,7 @@ function ClinicianCard({ clinician }: { clinician: Clinician }) {
             <p className="text-[var(--cps-blue)] font-semibold text-sm mt-1">{role}</p>
           </div>
           <p className="text-[var(--cps-gray-600)] text-sm leading-relaxed mb-4">{bio}</p>
-          <div className="space-y-3">
+          <div className="space-y-4">
             <div>
               <div className="text-[var(--cps-gray-400)] text-xs uppercase tracking-widest mb-2">
                 Specialties

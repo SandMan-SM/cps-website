@@ -32,9 +32,9 @@ export default function ResourcesPage() {
                 <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
                   <FileText className="w-7 h-7 text-[var(--cps-blue)]" />
                 </div>
-                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-3">Forms & Documents</h2>
+                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4">Forms & Documents</h2>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-6">Download new patient forms, insurance cards, and what to bring to your first appointment.</p>
-                <ul className="space-y-3 text-sm text-[var(--cps-gray-600)]">
+                <ul className="space-y-4 text-sm text-[var(--cps-gray-600)]">
                   <li className="flex items-start gap-2"><FileText className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> New Patient Intake Form</li>
                   <li className="flex items-start gap-2"><FileText className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> Insurance Verification Form</li>
                   <li className="flex items-start gap-2"><FileText className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> What to Bring Checklist</li>
@@ -47,9 +47,9 @@ export default function ResourcesPage() {
                 <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
                   <CreditCard className="w-7 h-7 text-[var(--cps-blue)]" />
                 </div>
-                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-3">Insurance & Billing</h2>
+                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4">Insurance & Billing</h2>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-6">Accepted plans, self-pay options, and how we handle insurance verification before your visit.</p>
-                <ul className="space-y-3 text-sm text-[var(--cps-gray-600)]">
+                <ul className="space-y-4 text-sm text-[var(--cps-gray-600)]">
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> Most major insurance accepted</li>
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> Self-pay rates available</li>
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> We verify benefits before your visit</li>
@@ -62,9 +62,9 @@ export default function ResourcesPage() {
                 <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
                   <HelpCircle className="w-7 h-7 text-[var(--cps-blue)]" />
                 </div>
-                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-3">Frequently Asked Questions</h2>
+                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4">Frequently Asked Questions</h2>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-6">Quick answers to the most common questions about scheduling, evaluations, and what to expect.</p>
-                <ul className="space-y-3 text-sm text-[var(--cps-gray-600)]">
+                <ul className="space-y-4 text-sm text-[var(--cps-gray-600)]">
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> Do I need a referral?</li>
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> How long is the evaluation?</li>
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> What ages do you serve?</li>
@@ -77,9 +77,9 @@ export default function ResourcesPage() {
                 <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
                   <Shield className="w-7 h-7 text-[var(--cps-blue)]" />
                 </div>
-                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-3">Patient Rights</h2>
+                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4">Patient Rights</h2>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-6">Your rights regarding your health information, how to request records, and how to file a complaint.</p>
-                <ul className="space-y-3 text-sm text-[var(--cps-gray-600)]">
+                <ul className="space-y-4 text-sm text-[var(--cps-gray-600)]">
                   <li><Link href="/hipaa" className="text-[var(--cps-blue)] hover:underline">HIPAA Notice of Privacy Practices</Link></li>
                   <li><Link href="/privacy" className="text-[var(--cps-blue)] hover:underline">Privacy Policy</Link></li>
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)] shrink-0 mt-0.5" /> Request your records</li>
@@ -92,7 +92,7 @@ export default function ResourcesPage() {
                 <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
                   <Calendar className="w-7 h-7 text-[var(--cps-blue)]" />
                 </div>
-                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-3">Scheduling</h2>
+                <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4">Scheduling</h2>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-6">Call or use our online form. Same-month appointments often available.</p>
                 <a href="tel:8014831600" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)]">
                   <Phone className="w-4 h-4" /> (801) 483-1600

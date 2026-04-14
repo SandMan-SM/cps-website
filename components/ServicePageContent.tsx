@@ -63,11 +63,11 @@ export default function ServicePageContent({ service, location, relatedServices 
             <h1 className="display-heading text-white mb-6">{h1}</h1>
             <p className="body-large text-white/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/#contact" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <Link href="/#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" />
                 {service.ctaText}
               </Link>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
+              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
                 <Phone className="w-5 h-5" />
                 {PHONE}
               </a>
@@ -308,11 +308,11 @@ export default function ServicePageContent({ service, location, relatedServices 
                 : `Schedule your ${service.shortName.toLowerCase()} at one of our three Utah locations. Call us today or book online.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/#contact" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <Link href="/#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" />
                 {service.ctaText}
               </Link>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
+              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
                 <Phone className="w-5 h-5" />
                 {PHONE}
               </a>

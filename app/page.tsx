@@ -254,7 +254,7 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Our Specialties</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Evaluation & Treatment Services</h2>
-              <p className="text-[var(--cps-gray-500)] max-w-[70ch] mx-auto body-large mt-5">
+              <p className="text-[var(--cps-gray-500)] max-w-[70ch] mx-auto body-large mt-4">
                 Evidence-based assessments and treatments delivered by licensed professionals with decades of experience.
               </p>
             </div>
@@ -334,9 +334,9 @@ export default function HomePage() {
                       <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
                         Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. A doctoral-level psychologist with advanced training in neuropsychology, he founded CPS to provide evidence-based psychological services to individuals, families, courts, and healthcare systems across the Wasatch Front. He has provided testimony in Utah family courts, conducted thousands of evaluations, and mentored dozens of clinicians.
                       </p>
-                      <div className="flex flex-wrap gap-2 mt-3">
+                      <div className="flex flex-wrap gap-2 mt-4">
                         {["Ph.D. — Licensed Psychologist", "Neuropsychology Specialist", "Utah Family Court Expert", "Since 1979 in Practice"].map((tag) => (
-                          <span key={tag} className="inline-block text-xs bg-[var(--cps-light)] text-[var(--cps-blue)] px-3 py-1 rounded-full font-medium">{tag}</span>
+                          <span key={tag} className="inline-block text-xs bg-[var(--cps-light)] text-[var(--cps-blue)] px-4 py-2 rounded-full font-medium">{tag}</span>
                         ))}
                       </div>
                     </div>

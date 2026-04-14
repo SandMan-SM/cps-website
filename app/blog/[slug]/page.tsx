@@ -774,7 +774,7 @@ export default async function BlogPostPage({
             </div>
             <div className="flex items-center gap-4 mb-6 flex-wrap">
               <span
-                className={`text-xs font-semibold px-3 py-1 rounded-full ${categoryColors[post.category] ?? "bg-[var(--cps-gray-100)] text-[var(--cps-gray-600)]"}`}
+                className={`text-xs font-semibold px-4 py-2 rounded-full ${categoryColors[post.category] ?? "bg-[var(--cps-gray-100)] text-[var(--cps-gray-600)]"}`}
               >
                 <Tag className="w-3 h-3 inline mr-1" />
                 {post.category}
