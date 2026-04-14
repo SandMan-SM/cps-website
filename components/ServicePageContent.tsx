@@ -112,16 +112,18 @@ export default function ServicePageContent({ service, location, relatedServices 
             {/* ── About the Evaluator (E-E-A-T) ── */}
             <div className="mt-8 bg-[var(--cps-gray-50)] border-l-4 border-[var(--cps-blue)] p-6 rounded-r-xl">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[var(--cps-light)] flex items-center justify-center shrink-0">
-                  <Brain className="w-5 h-5 text-[var(--cps-blue)]" aria-hidden="true" />
+                <div className="w-12 h-12 rounded-full bg-[var(--cps-light)] flex items-center justify-center shrink-0" aria-hidden="true">
+                  <Brain className="w-6 h-6 text-[var(--cps-blue)]" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-[var(--cps-blue)] uppercase tracking-wider mb-2">About the Evaluator</p>
-                  <p className="text-sm text-[var(--cps-gray-700)] leading-relaxed">
-                    Dr. Steven Szykula, Ph.D. has been evaluating and treating behavioral health conditions in Utah since 1979. As the founder of Comprehensive Psychological Services, he has conducted thousands of neuropsychological, ADHD, autism, and custody evaluations. Dr. Szykula has provided expert testimony in Utah family courts and is a member of the American Academy of Clinical Neuropsychology (AACN) and the Society for Personality and Social Psychology (SPSP). Call{" "}
-                    <a href="tel:8014831600" className="text-[var(--cps-blue)] font-semibold hover:text-[var(--cps-blue-hover)] transition-colors">(801) 483-1600</a>{" "}
-                    to schedule.
+                  <p className="text-xs text-[var(--cps-blue)] font-semibold uppercase tracking-wider mb-1">About the Evaluator</p>
+                  <p className="text-sm font-bold text-[var(--cps-gray-900)] mb-1">Steven Szykula, Ph.D. — Licensed Psychologist</p>
+                  <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
+                    Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. As the founder of Comprehensive Psychological Services, he has conducted thousands of neuropsychological, ADHD, autism, and custody evaluations. He has provided expert testimony in Utah family courts and is a member of the American Academy of Clinical Neuropsychology (AACN).
                   </p>
+                  <a href="tel:8014831600" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors mt-2">
+                    <Phone className="w-4 h-4" /> (801) 483-1600
+                  </a>
                 </div>
               </div>
             </div>

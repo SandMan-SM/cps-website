@@ -367,6 +367,15 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                <div className="mt-6 pt-6 border-t border-[var(--cps-gray-200)]">
+                  <p className="text-xs text-[var(--cps-gray-400)] uppercase tracking-wider mb-4">Professional Memberships &amp; Affiliations</p>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-white border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">APA — American Psychological Association</span>
+                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-white border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">AACN — American Academy of Clinical Neuropsychology</span>
+                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-white border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">UPA — Utah Psychological Association</span>
+                  </div>
+                </div>
+
                 {[
                   { icon: Shield, title: "Evidence-Based Practice", desc: "Every assessment and treatment follows validated, research-backed protocols. We measure outcomes, not just activity." },
                   { icon: Award, title: "Best Practice Award", desc: "Recognized for clinical excellence by professional organizations. Our team upholds the highest standards of competence." },

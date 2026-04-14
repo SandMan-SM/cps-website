@@ -114,7 +114,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "Comprehensive brain-behavior assessments by doctoral-level psychologists. Understand cognitive strengths, identify conditions, and get a clear path forward.",
     icon: "Brain",
     overview: [
-      "A neuropsychologist specializes in understanding the relationship between the brain and behavior. At Comprehensive Psychological Services, our doctoral-level psychologists administer standardized tests that measure memory, attention, language, problem-solving, and executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks).",
+      "A neuropsychologist specializes in understanding the relationship between the brain and behavior. At Comprehensive Psychological Services, our doctoral-level psychologists administer standardized tests that measure memory, attention, language, problem-solving, and executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks). This page is for individuals or families seeking a comprehensive neuropsychological evaluation in Utah.",
       "Neuropsychological evaluations help diagnose conditions like ADHD, traumatic brain injury, dementia, learning disabilities, and neurodevelopmental disorders. Results guide treatment planning, academic accommodations, workplace modifications, and legal proceedings.",
       "With three Utah locations and over 38 years of clinical experience, CPS provides evidence-based neuropsychological assessments for children, adolescents, and adults. Our Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week) offers additional support for patients who need more than weekly therapy.",
     ],
@@ -169,7 +169,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "Get clear answers about attention, focus, and executive functioning with a thorough ADHD evaluation from experienced psychologists.",
     icon: "Focus",
     overview: [
-      "An ADHD evaluation at CPS goes beyond a simple questionnaire. Our psychologists conduct a comprehensive assessment that includes cognitive testing, behavioral rating scales, clinical interviews, and a review of developmental and academic history.",
+      "An ADHD evaluation at CPS goes beyond a simple questionnaire. Our psychologists conduct a comprehensive assessment that includes cognitive testing, behavioral rating scales, clinical interviews, and a review of developmental and academic history. This page is for parents seeking an ADHD evaluation for their child, or adults who suspect they may have undiagnosed ADHD.",
       "We evaluate for all three ADHD presentations — predominantly inattentive, predominantly hyperactive-impulsive, and combined type — in children, adolescents, and adults. We also screen for common co-occurring conditions like anxiety, depression, and learning disabilities. For patients needing structured treatment, we offer an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "A thorough ADHD evaluation provides the foundation for effective treatment, whether that includes medication, therapy, behavioral strategies, or academic accommodations.",
     ],
@@ -224,7 +224,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "A professional ADHD diagnosis gives you clarity, access to treatment, and the accommodations you need to thrive at school, work, and life.",
     icon: "ClipboardCheck",
     overview: [
-      "Getting an accurate ADHD diagnosis is the first step toward effective treatment. At CPS, our licensed psychologists use validated diagnostic criteria from the DSM-5-TR (the standard diagnostic tool used by mental health professionals in the United States to classify mental health conditions) combined with comprehensive testing to ensure an accurate diagnosis.",
+      "Getting an accurate ADHD diagnosis is the first step toward effective treatment. At CPS, our licensed psychologists use validated diagnostic criteria from the DSM-5-TR (the standard diagnostic tool used by mental health professionals in the United States to classify mental health conditions) combined with comprehensive testing to ensure an accurate diagnosis. This page is for parents seeking an ADHD evaluation for their child, or adults who suspect they may have undiagnosed ADHD.",
       "An ADHD diagnosis from CPS is more than a label — it's a roadmap. Our evaluation identifies your specific ADHD presentation, rules out conditions that mimic ADHD, and uncovers co-occurring issues that may need attention. For patients who need structured support beyond weekly therapy, we offer an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "Whether you're a parent concerned about your child's performance or an adult who suspects undiagnosed ADHD, our team provides the thorough, evidence-based evaluation you deserve.",
     ],
@@ -334,7 +334,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "Objective, thorough custody evaluations conducted by licensed psychologists with decades of experience in Utah family courts.",
     icon: "Scale",
     overview: [
-      "Child custody evaluations are among the most sensitive assessments in psychology. At CPS, our licensed psychologists conduct objective, comprehensive evaluations that serve the best interests of the child while meeting the standards required by Utah family courts.",
+      "Child custody evaluations are among the most sensitive assessments in psychology. At CPS, our licensed psychologists conduct objective, comprehensive evaluations that serve the best interests of the child while meeting the standards required by Utah family courts. This page is for parents going through or anticipating a custody dispute who need a court-qualified evaluation.",
       "Our custody evaluators have decades of experience working with attorneys, judges, and family court systems. Evaluations include individual interviews with each parent, parent-child observations, psychological testing, collateral interviews, and a detailed written report.",
       "CPS also provides parental fitness evaluations, parental capacity assessments, and relocation evaluations. Our reports are thorough, evidence-based, and regularly admitted in court proceedings across Utah.",
     ],
@@ -463,7 +463,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "The ADOS-2 is the gold standard in autism diagnostic assessment. Our trained psychologists administer this validated tool for accurate autism spectrum evaluations.",
     icon: "Puzzle",
     overview: [
-      "The Autism Diagnostic Observation Schedule, Second Edition (ADOS-2 — the gold-standard instrument for autism assessment) is the most widely used and validated instrument for assessing autism spectrum disorder. At CPS, our psychologists are trained in ADOS-2 administration and scoring.",
+      "The Autism Diagnostic Observation Schedule, Second Edition (ADOS-2 — the gold-standard instrument for autism assessment) is the most widely used and validated instrument for assessing autism spectrum disorder. At CPS, our psychologists are trained in ADOS-2 administration and scoring. This page is for parents of young children or adults who suspect they (or their child) may be on the autism spectrum.",
       "The ADOS-2 uses structured and semi-structured activities to observe communication, social interaction, play, and restricted/repetitive behaviors. Different modules are available for toddlers through adults, including a module specifically for verbally fluent adolescents and adults. For patients needing additional support beyond the assessment process, CPS offers an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "An ADOS-2 evaluation at CPS is part of a comprehensive autism assessment that includes developmental history, cognitive testing, adaptive behavior measures, and clinical observation.",
     ],
@@ -518,7 +518,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "Whether you're seeking answers for your child or yourself, our comprehensive autism assessment provides clarity, diagnosis, and a roadmap for support.",
     icon: "Users",
     overview: [
-      "Autism spectrum disorder (ASD) presents differently in every individual. A comprehensive autism assessment at CPS evaluates social communication, restricted and repetitive behaviors, sensory processing, and adaptive functioning using multiple validated tools.",
+      "Autism spectrum disorder (ASD) presents differently in every individual. A comprehensive autism assessment at CPS evaluates social communication, restricted and repetitive behaviors, sensory processing, and adaptive functioning using multiple validated tools. This page is for parents of young children or adults who suspect they (or their child) may be on the autism spectrum.",
       "We assess children, adolescents, and adults — including individuals seeking a late diagnosis. Our evaluations are especially thorough for complex presentations, including autism in females, gifted individuals, and those with co-occurring ADHD or anxiety.",
       "Every autism assessment at CPS includes the gold-standard ADOS-2 observation, cognitive testing, adaptive behavior measures, developmental history, and a comprehensive report with recommendations for therapy, school support, and community resources.",
     ],
