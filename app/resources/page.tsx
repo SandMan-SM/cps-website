@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "Patient Resources & Forms | Comprehensive Psychological Services",
     description: "Resources, forms, and information for CPS patients including insurance, billing, what to bring, and patient rights.",
     url: "https://psychandcustodyevaluations.com/resources",
+    siteName: "Comprehensive Psychological Services",
     type: "website",
   },
   twitter: {

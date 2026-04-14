@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description:
       "Privacy Policy for Comprehensive Psychological Services. Learn how we collect, use, and protect your personal and health information in compliance with HIPAA and Utah law.",
     url: "https://psychandcustodyevaluations.com/privacy",
+    siteName: "Comprehensive Psychological Services",
     type: "website",
   },
   twitter: {

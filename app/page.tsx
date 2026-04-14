@@ -654,7 +654,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm text-white/50 leading-relaxed">
-                Evidence-based behavioral health evaluations and treatment serving Utah for over 38 years.
+                Evidence-based behavioral health evaluations and treatment serving Utah for over 40 years.
               </p>
             </div>
 
@@ -715,6 +715,10 @@ export default function HomePage() {
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-white/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
+            <div className="flex gap-6 text-xs text-white/40">
+              <Link href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
+              <Link href="/hipaa" className="hover:text-white/60 transition-colors">HIPAA Notice</Link>
+            </div>
             <p className="text-xs text-white/40">Salt Lake City • Layton • West Jordan</p>
           </div>
         </div>

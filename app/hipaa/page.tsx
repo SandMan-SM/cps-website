@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     description:
       "HIPAA Notice of Privacy Practices for Comprehensive Psychological Services. Your rights regarding the use and disclosure of your protected health information.",
     url: "https://psychandcustodyevaluations.com/hipaa",
+    siteName: "Comprehensive Psychological Services",
     type: "website",
   },
   twitter: {

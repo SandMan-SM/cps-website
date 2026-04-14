@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       "Expert articles on neuropsychological evaluations, ADHD, autism assessments, custody evaluations, and mental health — from Utah's trusted practice since 1986.",
     url: "https://psychandcustodyevaluations.com/blog",
+    siteName: "Comprehensive Psychological Services",
     type: "website",
   },
   twitter: {

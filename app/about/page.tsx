@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Utah's trusted behavioral health practice since 1986. Expert psychologists, therapists, and psychiatrists across Salt Lake City, Layton, and West Jordan.",
     url: "https://psychandcustodyevaluations.com/about",
+    siteName: "Comprehensive Psychological Services",
     type: "website",
   },
   twitter: {
