@@ -267,7 +267,7 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
                     <p className="text-[var(--cps-gray-500)] leading-relaxed mb-6 flex-1">{svc.description}</p>
                     <div className="flex items-end justify-between" style={{ marginTop: "auto" }}>
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all" style={{ marginTop: "1.5rem" }}>
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-gray-700)] group-hover:text-[var(--cps-blue)] group-hover:gap-2 transition-all font-semibold" style={{ marginTop: "1.5rem" }}>
                         Learn More <ArrowRight className="w-4 h-4" />
                       </span>
                       <div className="rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300" style={{ marginTop: "1.5rem", width: "3.5rem", height: "3.5rem" }}>
@@ -492,17 +492,37 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {offices.map((office) => (
                 <div key={office.name} className="bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
-                  <div className="h-56 bg-[var(--cps-gray-100)]">
+                  <div className="h-56 bg-[var(--cps-gray-100)] relative">
                     <iframe
                       title={`Map of CPS ${office.name} office`}
-                      src={`https://maps.google.com/maps?q=${office.mapQuery}&output=embed&z=15`}
+                      src={office.mapSrc}
                       width="100%"
                       height="100%"
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       className="border-0 w-full h-full"
                       aria-label={`Google Maps location of CPS ${office.name} office`}
+                      onError={(e) => {
+                        const iframe = e.target as HTMLIFrameElement;
+                        iframe.style.display = 'none';
+                        const fallback = iframe.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
                     />
+                    {/* Fallback when iframe fails to load */}
+                    <div className="hidden absolute inset-0 flex-col items-center justify-center bg-[var(--cps-gray-100)] gap-3 text-[var(--cps-gray-400)]">
+                      <MapPin className="w-10 h-10" />
+                      <p className="text-sm font-medium">{office.name}</p>
+                      <p className="text-xs text-center px-4">{office.address}<br />{office.city}</p>
+                      <a
+                        href={`https://maps.google.com/maps?q=${office.mapQuery}&output=embed`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-[var(--cps-blue)] hover:underline"
+                      >
+                        Open in Google Maps
+                      </a>
+                    </div>
                   </div>
                   <div className="p-8">
                     <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">

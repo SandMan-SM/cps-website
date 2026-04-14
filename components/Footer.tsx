@@ -27,7 +27,7 @@ export default function Footer() {
 
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Evaluations</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 { label: "Neuropsychological Evaluations", href: "/neuropsychologist-near-me" },
                 { label: "ADHD Evaluation", href: "/adhd-evaluation-near-me" },
@@ -38,36 +38,36 @@ export default function Footer() {
                 { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me" },
                 { label: "Custody Evaluation", href: "/custody-evaluator-near-me" },
               ].map((link) => (
-                <li key={link.href}><Link href={link.href} className="text-sm hover:text-white transition-colors">{link.label}</Link></li>
+                <li key={link.href}><Link href={link.href} className="block text-sm hover:text-white transition-colors py-2">{link.label}</Link></li>
               ))}
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
-            <ul className="space-y-2">
-              <li><Link href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</Link></li>
-              <li><span className="text-sm">Spravato (Esketamine)</span></li>
-              <li><span className="text-sm">Intensive Outpatient (IOP)</span></li>
-              <li><span className="text-sm">Counseling & Psychotherapy</span></li>
-              <li><span className="text-sm">Medication Management</span></li>
-              <li><span className="text-sm">Neurofeedback</span></li>
-              <li><span className="text-sm">Telehealth</span></li>
+            <ul className="space-y-3">
+              <li><Link href="/ketamine-depression-treatment-near-me" className="block text-sm hover:text-white transition-colors py-2">Ketamine Therapy</Link></li>
+              <li><span className="block text-sm py-2">Spravato (Esketamine)</span></li>
+              <li><span className="block text-sm py-2">Intensive Outpatient (IOP)</span></li>
+              <li><span className="block text-sm py-2">Counseling & Psychotherapy</span></li>
+              <li><span className="block text-sm py-2">Medication Management</span></li>
+              <li><span className="block text-sm py-2">Neurofeedback</span></li>
+              <li><span className="block text-sm py-2">Telehealth</span></li>
             </ul>
             <h4 className="text-white font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
-            <ul className="space-y-2">
-              <li><Link href="/resources#forms" className="text-sm hover:text-white transition-colors">Forms & Documents</Link></li>
-              <li><Link href="/resources#insurance" className="text-sm hover:text-white transition-colors">Insurance & Billing</Link></li>
-              <li><Link href="/resources#faq" className="text-sm hover:text-white transition-colors">FAQs</Link></li>
-              <li><Link href="/resources#patient-rights" className="text-sm hover:text-white transition-colors">Patient Rights</Link></li>
+            <ul className="space-y-3">
+              <li><Link href="/resources#forms" className="block text-sm hover:text-white transition-colors py-2">Forms & Documents</Link></li>
+              <li><Link href="/resources#insurance" className="block text-sm hover:text-white transition-colors py-2">Insurance & Billing</Link></li>
+              <li><Link href="/resources#faq" className="block text-sm hover:text-white transition-colors py-2">FAQs</Link></li>
+              <li><Link href="/resources#patient-rights" className="block text-sm hover:text-white transition-colors py-2">Patient Rights</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal & Compliance</h4>
-            <ul className="space-y-2">
-              <li><Link href="/privacy" className="text-sm hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/hipaa" className="text-sm hover:text-white transition-colors">HIPAA Notice of Privacy Practices</Link></li>
+            <ul className="space-y-3">
+              <li><Link href="/privacy" className="block text-sm hover:text-white transition-colors py-2">Privacy Policy</Link></li>
+              <li><Link href="/hipaa" className="block text-sm hover:text-white transition-colors py-2">HIPAA Notice of Privacy Practices</Link></li>
             </ul>
           </div>
 
