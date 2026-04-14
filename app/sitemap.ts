@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services, locations } from "@/lib/services";
+import { blogPosts } from "@/lib/blog-posts";
 
 const BASE = "https://psychandcustodyevaluations.com";
 
@@ -30,6 +31,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
       });
     }
+  }
+
+  // Blog pages
+  pages.push({
+    url: `${BASE}/blog`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  });
+
+  for (const post of blogPosts) {
+    pages.push({
+      url: `${BASE}/blog/${post.slug}`,
+      lastModified: post.date,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
   }
 
   return pages;
