@@ -12,6 +12,17 @@ export interface LocationData {
   description: string;
 }
 
+export interface ComparisonTable {
+  title: string;
+  headers: string[];
+  rows: string[][];
+}
+
+export interface Citation {
+  text: string;
+  url?: string;
+}
+
 export interface ServiceData {
   slug: string;
   title: string;
@@ -27,6 +38,8 @@ export interface ServiceData {
   faqItems: { q: string; a: string }[];
   ctaText: string;
   relatedServices: string[];
+  comparisonTable?: ComparisonTable;
+  citations?: Citation[];
 }
 
 /* ─── LOCATIONS ─── */
@@ -101,7 +114,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "Comprehensive brain-behavior assessments by doctoral-level psychologists. Understand cognitive strengths, identify conditions, and get a clear path forward.",
     icon: "Brain",
     overview: [
-      "A neuropsychologist specializes in understanding the relationship between the brain and behavior. At Comprehensive Psychological Services, our doctoral-level psychologists administer standardized tests that measure memory, attention, language, problem-solving, and executive functioning.",
+      "A neuropsychologist specializes in understanding the relationship between the brain and behavior. At Comprehensive Psychological Services, our doctoral-level psychologists administer standardized tests that measure memory, attention, language, problem-solving, and executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks).",
       "Neuropsychological evaluations help diagnose conditions like ADHD, traumatic brain injury, dementia, learning disabilities, and neurodevelopmental disorders. Results guide treatment planning, academic accommodations, workplace modifications, and legal proceedings.",
       "With three Utah locations and over 38 years of clinical experience, CPS provides evidence-based neuropsychological assessments for children, adolescents, and adults.",
     ],
@@ -127,6 +140,24 @@ export const services: ServiceData[] = [
     ],
     ctaText: "Schedule a Neuropsychological Evaluation",
     relatedServices: ["adhd-evaluation-near-me", "cognitive-evaluation-near-me", "autism-assessment"],
+    comparisonTable: {
+      title: "Neuropsychological Evaluation vs. Psychological Screening",
+      headers: ["Feature", "Neuropsychological Evaluation", "Psychological Screening"],
+      rows: [
+        ["Duration", "3–6 hours of testing", "15–30 minutes"],
+        ["What it measures", "Memory, attention, language, executive function, IQ, processing speed", "Basic symptom checklist or questionnaire"],
+        ["Administered by", "Doctoral-level psychologist", "Varies — physician, teacher, or self-report"],
+        ["Output", "Comprehensive diagnostic report with recommendations", "Score indicating possible concern or referral"],
+        ["Diagnoses conditions", "Yes — provides formal diagnoses", "No — flags areas for further evaluation"],
+        ["Best for", "Diagnosis, treatment planning, legal/academic documentation", "Initial triage or annual wellness check"],
+        ["Insurance coverage", "Usually covered when medically necessary", "Often included in routine office visit"],
+      ],
+    },
+    citations: [
+      { text: "American Academy of Clinical Neuropsychology (AACN). (2023). Practice standards for neuropsychological assessment.", url: "https://www.aacn.org" },
+      { text: "International Neuropsychological Society (INS). (2023). About neuropsychology.", url: "https://www.the-ins.org" },
+      { text: "National Institute of Neurological Disorders and Stroke. (2024). Neurological diagnostic tests and procedures.", url: "https://www.ninds.nih.gov/health-information/patient-caregiver-education/neurological-diagnostic-tests-and-procedures" },
+    ],
   },
   {
     slug: "adhd-evaluation-near-me",
@@ -164,6 +195,24 @@ export const services: ServiceData[] = [
     ],
     ctaText: "Book an ADHD Evaluation",
     relatedServices: ["adhd-diagnosis-near-me", "adhd-testing", "neuropsychological-testing-for-adhd"],
+    comparisonTable: {
+      title: "ADHD Evaluation vs. ADHD Screening — What's the Difference?",
+      headers: ["Feature", "ADHD Evaluation (CPS)", "ADHD Screening"],
+      rows: [
+        ["Duration", "2–4 hours", "5–15 minutes"],
+        ["What it includes", "Cognitive testing, rating scales, clinical interview, developmental history", "Short questionnaire (e.g., Conners, Vanderbilt)"],
+        ["Who administers", "Licensed psychologist", "Pediatrician, teacher, or self-report"],
+        ["Can diagnose ADHD", "Yes — formal diagnosis provided", "No — indicates need for further evaluation"],
+        ["Screens co-occurring conditions", "Yes (anxiety, depression, learning disabilities)", "No"],
+        ["Output", "Detailed report with diagnosis and treatment recommendations", "Score suggesting whether evaluation is warranted"],
+        ["Insurance coverage", "Usually covered when medically necessary", "Typically included in routine office visit"],
+      ],
+    },
+    citations: [
+      { text: "American Psychiatric Association. (2022). Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR). American Psychiatric Publishing.", url: "https://www.psychiatry.org/psychiatrists/practice/dsm" },
+      { text: "National Institute of Mental Health. (2023). Attention-Deficit/Hyperactivity Disorder (ADHD).", url: "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" },
+      { text: "Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD). (2024). About ADHD — Overview.", url: "https://chadd.org/about-adhd/overview" },
+    ],
   },
   {
     slug: "adhd-diagnosis-near-me",
@@ -175,7 +224,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "A professional ADHD diagnosis gives you clarity, access to treatment, and the accommodations you need to thrive at school, work, and life.",
     icon: "ClipboardCheck",
     overview: [
-      "Getting an accurate ADHD diagnosis is the first step toward effective treatment. At CPS, our licensed psychologists use validated diagnostic criteria (DSM-5-TR) combined with comprehensive testing to ensure an accurate diagnosis.",
+      "Getting an accurate ADHD diagnosis is the first step toward effective treatment. At CPS, our licensed psychologists use validated diagnostic criteria from the DSM-5-TR (Diagnostic and Statistical Manual of Mental Disorders, 5th Edition Text Revision — the standard diagnostic tool used by mental health professionals in the US) combined with comprehensive testing to ensure an accurate diagnosis.",
       "An ADHD diagnosis from CPS is more than a label — it's a roadmap. Our evaluation identifies your specific ADHD presentation, rules out conditions that mimic ADHD, and uncovers co-occurring issues that may need attention.",
       "Whether you're a parent concerned about your child's performance or an adult who suspects undiagnosed ADHD, our team provides the thorough, evidence-based evaluation you deserve.",
     ],
@@ -201,6 +250,24 @@ export const services: ServiceData[] = [
     ],
     ctaText: "Get Your ADHD Diagnosis",
     relatedServices: ["adhd-evaluation-near-me", "adhd-testing", "neuropsychological-testing-for-adhd"],
+    comparisonTable: {
+      title: "Private ADHD Diagnosis vs. School-Based ADHD Assessment",
+      headers: ["Feature", "Private Diagnosis (CPS)", "School-Based Assessment"],
+      rows: [
+        ["Purpose", "Clinical diagnosis for medical and personal use", "Educational planning and academic accommodations"],
+        ["Conducted by", "Licensed psychologist", "School psychologist"],
+        ["Scope", "Full medical and clinical diagnosis", "Focus on academic impact and eligibility for services"],
+        ["Turnaround", "Report within 1–2 weeks", "Up to 60–90 school days"],
+        ["Cost", "Insurance or self-pay", "Free through your school district"],
+        ["Valid for medication", "Yes — accepted by prescribers and psychiatrists", "Not always accepted by medical providers"],
+        ["Usable outside school", "Yes — courts, employers, disability, and medical use", "Primarily for school purposes"],
+      ],
+    },
+    citations: [
+      { text: "American Psychiatric Association. (2022). Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR). American Psychiatric Publishing.", url: "https://www.psychiatry.org/psychiatrists/practice/dsm" },
+      { text: "National Institute of Mental Health. (2023). Attention-Deficit/Hyperactivity Disorder (ADHD).", url: "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" },
+      { text: "Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD). (2024). Diagnosis of ADHD in Adults.", url: "https://chadd.org/about-adhd/diagnosis-of-adhd-in-adults" },
+    ],
   },
   {
     slug: "neuropsychological-testing-for-adhd",
@@ -212,7 +279,7 @@ export const services: ServiceData[] = [
     heroSubtitle: "Go deeper than a standard ADHD screening. Neuropsychological testing measures the specific cognitive patterns behind attention and executive function challenges.",
     icon: "ScanSearch",
     overview: [
-      "Neuropsychological testing for ADHD provides a detailed map of cognitive strengths and weaknesses. Unlike a simple screening, this evaluation measures attention, processing speed, working memory, executive functioning, and impulse control through standardized tests.",
+      "Neuropsychological testing for ADHD provides a detailed map of cognitive strengths and weaknesses. Unlike a simple screening, this evaluation measures attention, processing speed, working memory, executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks), and impulse control through standardized tests.",
       "This level of testing is especially valuable for complex cases — when ADHD co-occurs with learning disabilities, anxiety, brain injury, or giftedness. It reveals whether attention difficulties stem from ADHD, another condition, or a combination.",
       "Our psychologists use validated neuropsychological test batteries selected for each patient's age and presenting concerns. Results inform medication decisions, therapy approaches, and academic or workplace accommodations.",
     ],
@@ -238,6 +305,24 @@ export const services: ServiceData[] = [
     ],
     ctaText: "Schedule Neuropsychological ADHD Testing",
     relatedServices: ["adhd-evaluation-near-me", "neuropsychologist-near-me", "cognitive-evaluation-near-me"],
+    comparisonTable: {
+      title: "Neuropsychological ADHD Testing vs. Standard ADHD Evaluation",
+      headers: ["Feature", "Neuropsychological Testing", "Standard ADHD Evaluation"],
+      rows: [
+        ["Duration", "3–5 hours", "2–3 hours"],
+        ["Cognitive areas measured", "Full profile: attention, memory, language, processing speed, executive function, visual-spatial skills", "Primarily attention, impulsivity, and working memory"],
+        ["Detects co-occurring conditions", "Yes — learning disabilities, TBI, giftedness, anxiety", "Limited screening only"],
+        ["Ideal for", "Complex presentations, multiple concerns, or when prior evaluations were inconclusive", "Straightforward ADHD with no other suspected conditions"],
+        ["Report detail", "Comprehensive cognitive profile with differential diagnosis", "Diagnostic report with ADHD subtype and recommendations"],
+        ["Cost", "Higher — reflects additional testing time and depth", "Standard evaluation cost"],
+        ["Insurance coverage", "Usually covered when medically necessary", "Usually covered when medically necessary"],
+      ],
+    },
+    citations: [
+      { text: "American Academy of Clinical Neuropsychology (AACN). (2023). Practice standards for neuropsychological assessment.", url: "https://www.aacn.org" },
+      { text: "National Institute of Mental Health. (2023). Attention-Deficit/Hyperactivity Disorder (ADHD).", url: "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" },
+      { text: "Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD). (2024). About ADHD — Overview.", url: "https://chadd.org/about-adhd/overview" },
+    ],
   },
   {
     slug: "custody-evaluator-near-me",
@@ -386,6 +471,24 @@ export const services: ServiceData[] = [
     ],
     ctaText: "Schedule ADOS-2 Testing",
     relatedServices: ["autism-assessment", "neuropsychologist-near-me", "cognitive-evaluation-near-me"],
+    comparisonTable: {
+      title: "ADOS-2 vs. Other Autism Screeners",
+      headers: ["Feature", "ADOS-2", "M-CHAT-R/F", "SRS-2"],
+      rows: [
+        ["Type", "Structured clinician observation", "Parent questionnaire", "Parent/teacher rating scale"],
+        ["Age range", "12 months through adult", "16–30 months", "2.5–18 years"],
+        ["Time to complete", "40–60 minutes", "5–10 minutes", "15–20 minutes"],
+        ["Administered by", "Trained psychologist (required)", "Any provider or parent", "Any provider or parent"],
+        ["Diagnoses ASD", "Yes — gold standard (as part of full evaluation)", "No — screens for risk only", "No — screens for social impairment only"],
+        ["Research validation", "Highest — used in thousands of studies worldwide", "Moderate", "Moderate"],
+        ["Best use", "Formal autism evaluation, school/agency documentation", "Early childhood triage", "School-age screening"],
+      ],
+    },
+    citations: [
+      { text: "Lord, C., Rutter, M., DiLavore, P., et al. (2012). Autism Diagnostic Observation Schedule, Second Edition (ADOS-2). Western Psychological Services.", url: "https://www.autismspeaks.org/autism-diagnosis" },
+      { text: "American Academy of Pediatrics. (2020). Identification, evaluation, and management of children with autism spectrum disorder. Pediatrics, 145(1).", url: "https://publications.aap.org/pediatrics/article/145/1/e20193447/36917" },
+      { text: "Centers for Disease Control and Prevention. (2024). Autism Spectrum Disorder (ASD) — Screening and Diagnosis.", url: "https://www.cdc.gov/autism/screening/index.html" },
+    ],
   },
   {
     slug: "autism-assessment",
