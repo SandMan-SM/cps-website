@@ -10,7 +10,8 @@ const PHONE_HREF = "tel:8014831600";
 const navLinks = [
   { label: "Services", href: "/#services" },
   { label: "Locations", href: "/#locations" },
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
+  { label: "Team", href: "/team" },
   { label: "Blog", href: "/blog" },
   { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/#contact" },
