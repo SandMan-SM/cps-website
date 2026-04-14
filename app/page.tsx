@@ -240,11 +240,10 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10" style={{ paddingTop: "1.25rem", paddingBottom: "1.25rem" }}>
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 md:gap-x-12 gap-y-2 text-sm text-[var(--cps-gray-500)]">
               <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
-              <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" /> Best Practice Award 2024</div>
+              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--cps-blue)]" /> 40+ Years Serving Utah</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" /> Most Insurance Accepted</div>
               <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" /> 3 Utah Locations</div>
               <div className="flex items-center gap-2"><Star className="w-4 h-4 text-[var(--cps-blue)] fill-[var(--cps-blue)]" /> Rated 5.0 on Healthline</div>
-              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--cps-blue)]" /> 40+ Years Serving Utah</div>
             </div>
           </div>
         </section>
@@ -423,67 +422,63 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ──────── REVIEW US ──────── */}
-        <section className="py-12 md:py-16 bg-[var(--cps-gray-50)] border-t border-[var(--cps-gray-200)]">
+        {/* ──────── SHARE YOUR EXPERIENCE ──────── */}
+        <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
-            <div className="text-center mb-10">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                {[1,2,3,4,5].map((i) => (
-                  <Star key={i} className="w-7 h-7 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
-                ))}
-              </div>
+            <div className="text-center mb-16">
+              <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Reviews</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Share Your Experience</h2>
-              <p className="text-[var(--cps-gray-600)] body-large max-w-2xl mx-auto">
+              <p className="text-[var(--cps-gray-500)] max-w-[60ch] mx-auto body-large">
                 We&apos;re committed to continuous improvement. If you&apos;ve had a positive experience at CPS, we&apos;d love to hear from you. Your feedback helps us serve you and our community better.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <a
-                href="https://www.google.com/search?q=Comprehensive+Psychological+Services+Utah+reviews"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
-              >
-                <div className="w-12 h-12 rounded-full bg-[var(--cps-light)] flex items-center justify-center group-hover:bg-[var(--cps-gray-100)] transition-colors">
-                  <Star className="w-6 h-6 text-[var(--cps-blue)] fill-[var(--cps-blue)]" />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {/* Google */}
+              <a href="https://www.google.com/maps/place/Comprehensive+Psychological+Services/@40.7099,-111.8542" target="_blank" rel="noopener noreferrer" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <span className="text-2xl font-bold text-[#4285F4]">G</span>
                 </div>
-                <div>
-                  <div className="font-semibold text-[var(--cps-gray-900)] mb-1">Google Reviews</div>
-                  <div className="text-sm text-[var(--cps-gray-500)]">Leave us a Google review</div>
+                <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Google</h3>
+                <p className="text-sm text-[var(--cps-gray-500)] mb-4">Leave a Google review</p>
+                <div className="flex justify-center gap-1" aria-label="5 stars">
+                  {[1,2,3,4,5].map((s) => (
+                    <Star key={s} className="w-4 h-4 text-[var(--cps-warning)] fill-[var(--cps-warning)]" />
+                  ))}
                 </div>
-                <ExternalLink className="w-4 h-4 text-[var(--cps-gray-400)] group-hover:text-[var(--cps-blue)] transition-colors" />
               </a>
-              <a
-                href="https://www.healthline.com/find-care/provider/comprehensive-psychological-services"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
-              >
-                <div className="w-12 h-12 rounded-full bg-[var(--cps-light)] flex items-center justify-center group-hover:bg-[var(--cps-gray-100)] transition-colors">
-                  <ThumbsUp className="w-6 h-6 text-[var(--cps-teal)]" />
+
+              {/* Healthline */}
+              <a href="https://www.healthline.com/health-directory/comprehensive-psychological-services" target="_blank" rel="noopener noreferrer" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <span className="text-sm font-bold text-[var(--cps-gray-700)]">HL</span>
                 </div>
-                <div>
-                  <div className="font-semibold text-[var(--cps-gray-900)] mb-1">Healthline</div>
-                  <div className="text-sm text-[var(--cps-gray-500)]">Rate us on Healthline</div>
+                <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Healthline</h3>
+                <p className="text-sm text-[var(--cps-gray-500)] mb-4">Rated 5.0 on Healthline</p>
+                <div className="flex justify-center gap-1" aria-label="5 stars">
+                  {[1,2,3,4,5].map((s) => (
+                    <Star key={s} className="w-4 h-4 text-[var(--cps-warning)] fill-[var(--cps-warning)]" />
+                  ))}
                 </div>
-                <ExternalLink className="w-4 h-4 text-[var(--cps-gray-400)] group-hover:text-[var(--cps-blue)] transition-colors" />
               </a>
-              <a
-                href="https://www.bbb.org/search?find_text=Comprehensive+Psychological+Services&find_loc=Salt+Lake+City%2C+UT"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
-              >
-                <div className="w-12 h-12 rounded-full bg-[var(--cps-light)] flex items-center justify-center group-hover:bg-[var(--cps-gray-100)] transition-colors">
-                  <Award className="w-6 h-6 text-[var(--cps-accent)]" />
+
+              {/* BBB */}
+              <a href="https://www.bbb.org/us/ut/salt-lake-city/psychologists" target="_blank" rel="noopener noreferrer" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <span className="text-xs font-bold text-[#007847]">BBB</span>
                 </div>
-                <div>
-                  <div className="font-semibold text-[var(--cps-gray-900)] mb-1">BBB</div>
-                  <div className="text-sm text-[var(--cps-gray-500)]">See our BBB profile</div>
+                <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Better Business Bureau</h3>
+                <p className="text-sm text-[var(--cps-gray-500)] mb-4">View our BBB profile</p>
+                <div className="flex justify-center gap-1" aria-label="Accredited business">
+                  <Shield className="w-4 h-4 text-[#007847]" />
+                  <span className="text-xs text-[#007847] font-semibold">Accredited</span>
                 </div>
-                <ExternalLink className="w-4 h-4 text-[var(--cps-gray-400)] group-hover:text-[var(--cps-blue)] transition-colors" />
               </a>
             </div>
+
+            <p className="text-center text-sm text-[var(--cps-gray-400)]">
+              Your review helps others find the care they need. Thank you for trusting CPS.
+            </p>
           </div>
         </section>
 
