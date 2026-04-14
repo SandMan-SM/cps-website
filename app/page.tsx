@@ -174,8 +174,8 @@ export default function HomePage() {
             <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
             <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
           </div>
-          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-16 md:py-24">
-            <div className="max-w-4xl text-left">
+          <div className="relative max-w-7xl mx-auto px-8 sm:px-10 lg:px-10 py-16 md:py-24">
+            <div className="max-w-4xl">
               <div className="flex items-center justify-start gap-2 mb-6">
                 <Award className="w-5 h-5 text-[var(--cps-teal)]" />
                 <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
@@ -183,11 +183,11 @@ export default function HomePage() {
               <h1 className="display-heading text-white mb-4">
                 Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
               </h1>
-              <p className="body-large text-white/80 mb-8 max-w-[70ch] leading-relaxed">
+              <p className="body-large text-white/80 mb-10">
                 Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <a href="#contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
+                <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                   <Calendar className="w-5 h-5" />
                   Schedule an Evaluation
                 </a>
@@ -198,7 +198,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 max-w-4xl mt-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 max-w-4xl" style={{ marginTop: "4rem" }}>
               {stats.map((stat) => (
                 <div key={stat.label} className="text-left">
                   <div className="text-4xl font-extrabold text-white mb-3">{stat.value}</div>
@@ -210,8 +210,8 @@ export default function HomePage() {
         </section>
 
         {/* ──────── TRUST BAR ──────── */}
-        <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-4">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)]">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10" style={{ paddingTop: "1.25rem", paddingBottom: "1.25rem" }}>
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 md:gap-x-12 gap-y-2 text-sm text-[var(--cps-gray-500)]">
               <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
               <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" /> Best Practice Award 2024</div>
@@ -222,8 +222,8 @@ export default function HomePage() {
         </section>
 
         {/* ──────── SERVICES ──────── */}
-        <section id="services" className="py-12 md:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10" style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
+        <section id="services" className="py-12 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Our Specialties</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Evaluation & Treatment Services</h2>
@@ -267,8 +267,8 @@ export default function HomePage() {
         </section>
 
         {/* ──────── ABOUT ──────── */}
-        <section id="about" className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <section id="about" className="py-12 md:py-20 bg-[var(--cps-gray-50)]">
+          <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">About CPS</p>
@@ -314,15 +314,15 @@ export default function HomePage() {
         </section>
 
         {/* ──────── TESTIMONIALS ──────── */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <section className="py-12 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Patient Experiences</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">What Our Patients Say</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
-                <div key={i} className="p-6 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]">
+                <div key={i} className="bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]" style={{ padding: "1.75rem" }}>
                   <div className="flex gap-1 mb-6" aria-label={`${t.rating} out of 5 stars`} role="img">
                     {Array.from({ length: t.rating }).map((_, j) => (
                       <Star key={j} className="w-5 h-5 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
@@ -337,8 +337,8 @@ export default function HomePage() {
         </section>
 
         {/* ──────── LOCATIONS ──────── */}
-        <section id="locations" className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <section id="locations" className="py-12 md:py-20 bg-[var(--cps-gray-50)]">
+          <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Find Us</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Three Locations Across the Wasatch Front</h2>
@@ -346,7 +346,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {offices.map((office) => (
                 <div key={office.name} className="bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
-                  <div className="h-48 bg-[var(--cps-gray-100)]">
+                  <div className="h-56 bg-[var(--cps-gray-100)]">
                     <iframe
                       title={`Map of CPS ${office.name} office`}
                       src={`https://maps.google.com/maps?q=${office.mapQuery}&output=embed&z=15`}
@@ -358,7 +358,7 @@ export default function HomePage() {
                       aria-label={`Google Maps location of CPS ${office.name} office`}
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-8">
                     <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
                       <MapPin className="w-7 h-7 text-[var(--cps-blue)]" />
                     </div>
@@ -377,8 +377,8 @@ export default function HomePage() {
         </section>
 
         {/* ──────── CONTACT / CTA ──────── */}
-        <section id="contact" className="py-12 md:py-16 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+        <section id="contact" className="py-12 md:py-20 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
+          <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               <div>
                 <p className="text-[var(--cps-teal)] font-semibold text-sm uppercase tracking-wider mb-6">Get Started</p>
