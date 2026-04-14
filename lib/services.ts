@@ -116,7 +116,7 @@ export const services: ServiceData[] = [
     overview: [
       "A neuropsychologist specializes in understanding the relationship between the brain and behavior. At Comprehensive Psychological Services, our doctoral-level psychologists administer standardized tests that measure memory, attention, language, problem-solving, and executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks).",
       "Neuropsychological evaluations help diagnose conditions like ADHD, traumatic brain injury, dementia, learning disabilities, and neurodevelopmental disorders. Results guide treatment planning, academic accommodations, workplace modifications, and legal proceedings.",
-      "With three Utah locations and over 38 years of clinical experience, CPS provides evidence-based neuropsychological assessments for children, adolescents, and adults.",
+      "With three Utah locations and over 38 years of clinical experience, CPS provides evidence-based neuropsychological assessments for children, adolescents, and adults. Our Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week) offers additional support for patients who need more than weekly therapy.",
     ],
     whatToExpect: [
       "Initial clinical interview to review your history, symptoms, and goals",
@@ -170,7 +170,7 @@ export const services: ServiceData[] = [
     icon: "Focus",
     overview: [
       "An ADHD evaluation at CPS goes beyond a simple questionnaire. Our psychologists conduct a comprehensive assessment that includes cognitive testing, behavioral rating scales, clinical interviews, and a review of developmental and academic history.",
-      "We evaluate for all three ADHD presentations — predominantly inattentive, predominantly hyperactive-impulsive, and combined type — in children, adolescents, and adults. We also screen for common co-occurring conditions like anxiety, depression, and learning disabilities.",
+      "We evaluate for all three ADHD presentations — predominantly inattentive, predominantly hyperactive-impulsive, and combined type — in children, adolescents, and adults. We also screen for common co-occurring conditions like anxiety, depression, and learning disabilities. For patients needing structured treatment, we offer an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "A thorough ADHD evaluation provides the foundation for effective treatment, whether that includes medication, therapy, behavioral strategies, or academic accommodations.",
     ],
     whatToExpect: [
@@ -224,8 +224,8 @@ export const services: ServiceData[] = [
     heroSubtitle: "A professional ADHD diagnosis gives you clarity, access to treatment, and the accommodations you need to thrive at school, work, and life.",
     icon: "ClipboardCheck",
     overview: [
-      "Getting an accurate ADHD diagnosis is the first step toward effective treatment. At CPS, our licensed psychologists use validated diagnostic criteria from the DSM-5-TR (Diagnostic and Statistical Manual of Mental Disorders, 5th Edition Text Revision — the standard diagnostic tool used by mental health professionals in the US) combined with comprehensive testing to ensure an accurate diagnosis.",
-      "An ADHD diagnosis from CPS is more than a label — it's a roadmap. Our evaluation identifies your specific ADHD presentation, rules out conditions that mimic ADHD, and uncovers co-occurring issues that may need attention.",
+      "Getting an accurate ADHD diagnosis is the first step toward effective treatment. At CPS, our licensed psychologists use validated diagnostic criteria from the DSM-5-TR (the standard diagnostic tool used by mental health professionals in the United States to classify mental health conditions) combined with comprehensive testing to ensure an accurate diagnosis.",
+      "An ADHD diagnosis from CPS is more than a label — it's a roadmap. Our evaluation identifies your specific ADHD presentation, rules out conditions that mimic ADHD, and uncovers co-occurring issues that may need attention. For patients who need structured support beyond weekly therapy, we offer an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "Whether you're a parent concerned about your child's performance or an adult who suspects undiagnosed ADHD, our team provides the thorough, evidence-based evaluation you deserve.",
     ],
     whatToExpect: [
@@ -279,8 +279,8 @@ export const services: ServiceData[] = [
     heroSubtitle: "Go deeper than a standard ADHD screening. Neuropsychological testing measures the specific cognitive patterns behind attention and executive function challenges.",
     icon: "ScanSearch",
     overview: [
-      "Neuropsychological testing for ADHD provides a detailed map of cognitive strengths and weaknesses. Unlike a simple screening, this evaluation measures attention, processing speed, working memory, executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks), and impulse control through standardized tests.",
-      "This level of testing is especially valuable for complex cases — when ADHD co-occurs with learning disabilities, anxiety, brain injury, or giftedness. It reveals whether attention difficulties stem from ADHD, another condition, or a combination.",
+      "Neuropsychological testing for ADHD provides a detailed map of cognitive strengths and weaknesses. Unlike a simple screening, this evaluation measures attention, processing speed, working memory, executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks simultaneously), and impulse control through standardized tests.",
+      "This level of testing is especially valuable for complex cases — when ADHD co-occurs with learning disabilities, anxiety, brain injury, or giftedness. It reveals whether attention difficulties stem from ADHD, another condition, or a combination. For patients requiring structured support alongside testing, CPS offers an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "Our psychologists use validated neuropsychological test batteries selected for each patient's age and presenting concerns. Results inform medication decisions, therapy approaches, and academic or workplace accommodations.",
     ],
     whatToExpect: [
@@ -360,6 +360,24 @@ export const services: ServiceData[] = [
     ],
     ctaText: "Request a Custody Evaluation",
     relatedServices: ["cognitive-evaluation-near-me", "neuropsychologist-near-me", "neuropsychologist"],
+    comparisonTable: {
+      title: "Custody Evaluation vs. Parenting Coordinator — How Do They Differ?",
+      headers: ["Aspect", "Custody Evaluation", "Parenting Coordinator"],
+      rows: [
+        ["Purpose", "Comprehensive assessment of parental fitness and child's best interests", "Ongoing conflict resolution and parenting plan implementation"],
+        ["Conducted by", "Licensed psychologist or mental health professional", "Trained parenting coordinator (often an attorney or therapist)"],
+        ["Court involvement", "Ordered by the court; report submitted to the judge", "Appointed by the court but functions independently between hearings"],
+        ["Duration", "Weeks to months of evaluation; one-time report to court", "Months to years; ongoing role throughout case"],
+        ["Outcome", "Binding custody and visitation recommendations to the judge", "Parenting plan modifications; recommendations to court as needed"],
+        ["Scope", "Parent psychological profile, parenting capacity, parent-child relationships, child's needs", "Parenting communication, conflict resolution, logistical coordination"],
+        ["Authority", "Makes formal recommendations; judge typically defers", "Facilitates agreements; can report non-compliance to court"],
+      ],
+    },
+    citations: [
+      { text: "American Psychological Association. (2023). Guidelines for child custody evaluations in divorce proceedings. ", url: "https://www.apa.org/practice/guidelines/child-custody" },
+      { text: "American Academy of Family Mediators. (2022). Standards of practice for custody evaluators.", url: "https://www.aafm-mediation.com" },
+      { text: "Utah Code § 30-3-11. Court-appointed custody evaluators and their duties under Utah law.", url: "https://le.utah.gov" },
+    ],
   },
   {
     slug: "ketamine-depression-treatment-near-me",
@@ -445,8 +463,8 @@ export const services: ServiceData[] = [
     heroSubtitle: "The ADOS-2 is the gold standard in autism diagnostic assessment. Our trained psychologists administer this validated tool for accurate autism spectrum evaluations.",
     icon: "Puzzle",
     overview: [
-      "The Autism Diagnostic Observation Schedule, Second Edition (ADOS-2) is the most widely used and validated instrument for assessing autism spectrum disorder. At CPS, our psychologists are trained in ADOS-2 administration and scoring.",
-      "The ADOS-2 uses structured and semi-structured activities to observe communication, social interaction, play, and restricted/repetitive behaviors. Different modules are available for toddlers through adults, including a module specifically for verbally fluent adolescents and adults.",
+      "The Autism Diagnostic Observation Schedule, Second Edition (ADOS-2 — the gold-standard instrument for autism assessment) is the most widely used and validated instrument for assessing autism spectrum disorder. At CPS, our psychologists are trained in ADOS-2 administration and scoring.",
+      "The ADOS-2 uses structured and semi-structured activities to observe communication, social interaction, play, and restricted/repetitive behaviors. Different modules are available for toddlers through adults, including a module specifically for verbally fluent adolescents and adults. For patients needing additional support beyond the assessment process, CPS offers an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "An ADOS-2 evaluation at CPS is part of a comprehensive autism assessment that includes developmental history, cognitive testing, adaptive behavior measures, and clinical observation.",
     ],
     whatToExpect: [

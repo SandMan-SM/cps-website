@@ -145,7 +145,7 @@ export default function AboutPage() {
             ].map(({ stat, label }) => (
               <div key={label}>
                 <div className="text-3xl md:text-4xl font-bold">{stat}</div>
-                <div className="text-blue-100 text-sm mt-1">{label}</div>
+                <div className="text-[var(--cps-light)] text-sm mt-1">{label}</div>
               </div>
             ))}
           </div>
@@ -186,7 +186,7 @@ export default function AboutPage() {
               <div className="mt-8">
                 <Link
                   href="/team"
-                  className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold hover:gap-4 transition-all"
                 >
                   Meet Dr. Szykula and our full team
                   <ArrowRight className="w-4 h-4" />
@@ -258,7 +258,7 @@ export default function AboutPage() {
                   "Dr. Szykula remains actively involved in clinical supervision, ensuring the practice-wide standard of care stays consistent with our founding principles.",
                   "We offer telehealth across the full practice — not just some providers — so geography is never a barrier to care.",
                 ].map((point, i) => (
-                  <li key={i} className="flex gap-3">
+                  <li key={i} className="flex gap-4">
                     <CheckCircle2 className="w-5 h-5 text-[var(--cps-blue)] flex-shrink-0 mt-0.5" />
                     <span className="text-[var(--cps-gray-600)] leading-relaxed">{point}</span>
                   </li>
@@ -275,7 +275,7 @@ export default function AboutPage() {
                 or to discuss self-pay options.
               </p>
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
                   <Phone className="w-5 h-5 text-[var(--cps-blue)]" />
                   <Link
                     href={PHONE_HREF}
@@ -285,7 +285,7 @@ export default function AboutPage() {
                   </Link>
                 </div>
                 {locations.map(({ name, address, city }) => (
-                  <div key={name} className="flex gap-3">
+                  <div key={name} className="flex gap-4">
                     <MapPin className="w-5 h-5 text-[var(--cps-blue)] flex-shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-[var(--cps-gray-800)] text-sm">{name}</div>

@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   title: "HIPAA Notice of Privacy Practices",
   description:
     "HIPAA Notice of Privacy Practices for Comprehensive Psychological Services. Your rights regarding the use and disclosure of your protected health information.",
+  openGraph: {
+    title: "HIPAA Notice of Privacy Practices | CPS Utah",
+    description:
+      "HIPAA Notice of Privacy Practices for Comprehensive Psychological Services. Your rights regarding the use and disclosure of your protected health information.",
+    url: "https://psychandcustodyevaluations.com/hipaa",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "HIPAA Notice of Privacy Practices | CPS Utah",
+    description:
+      "HIPAA Notice of Privacy Practices for Comprehensive Psychological Services. Your rights regarding the use and disclosure of your protected health information.",
+  },
   alternates: { canonical: "https://psychandcustodyevaluations.com/hipaa" },
 };
 

@@ -249,9 +249,9 @@ const POST_CONTENT: Record<
           CPS accepts most major insurance plans, including BlueCross BlueShield, Aetna, UnitedHealthcare, Cigna, Medicare, and many others. Our billing team verifies your benefits before your appointment at no cost to you. Self-pay rates and payment plans are available for uninsured patients. Call us at <a href="tel:8014831600" className="text-[var(--cps-blue)] hover:underline font-semibold">(801) 483-1600</a> to check your coverage.
         </p>
 
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 my-8">
-          <p className="text-sm font-semibold text-amber-800 mb-1">Medical Disclaimer (YMYL)</p>
-          <p className="text-sm text-amber-700">
+        <div className="rounded-xl p-6 my-8" style={{ background: "color-mix(in srgb, var(--cps-warning) 10%, white)", border: "1px solid color-mix(in srgb, var(--cps-warning) 30%, white)" }}>
+          <p className="text-sm font-semibold mb-1" style={{ color: "color-mix(in srgb, var(--cps-warning) 80%, #000)" }}>Medical Disclaimer (YMYL)</p>
+          <p className="text-sm" style={{ color: "color-mix(in srgb, var(--cps-warning) 70%, #000)" }}>
             This article is for educational purposes only and does not constitute medical or clinical advice. Neuropsychological evaluation findings should be interpreted by a licensed professional in the context of a complete clinical assessment. Contact a qualified healthcare provider for guidance specific to your situation.
           </p>
         </div>
@@ -394,9 +394,9 @@ const POST_CONTENT: Record<
           <li><strong>ADHD coaching</strong> — Practical, goal-focused support for organization, planning, and follow-through.</li>
         </ul>
 
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 my-8">
-          <p className="text-sm font-semibold text-amber-800 mb-1">Medical Disclaimer (YMYL)</p>
-          <p className="text-sm text-amber-700">
+        <div className="rounded-xl p-6 my-8" style={{ background: "color-mix(in srgb, var(--cps-warning) 10%, white)", border: "1px solid color-mix(in srgb, var(--cps-warning) 30%, white)" }}>
+          <p className="text-sm font-semibold mb-1" style={{ color: "color-mix(in srgb, var(--cps-warning) 80%, #000)" }}>Medical Disclaimer (YMYL)</p>
+          <p className="text-sm" style={{ color: "color-mix(in srgb, var(--cps-warning) 70%, #000)" }}>
             This article is for educational purposes only and does not constitute medical or clinical advice. ADHD diagnosis and treatment should be conducted by a licensed healthcare professional. The information here does not replace an individualized clinical evaluation.
           </p>
         </div>
@@ -524,9 +524,9 @@ const POST_CONTENT: Record<
           Our reports include specific recommendations for IEP/504 planning, therapeutic supports, and community resources — and are accepted by Utah school districts, regional autism service providers, and medical providers.
         </p>
 
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 my-8">
-          <p className="text-sm font-semibold text-amber-800 mb-1">Medical Disclaimer (YMYL)</p>
-          <p className="text-sm text-amber-700">
+        <div className="rounded-xl p-6 my-8" style={{ background: "color-mix(in srgb, var(--cps-warning) 10%, white)", border: "1px solid color-mix(in srgb, var(--cps-warning) 30%, white)" }}>
+          <p className="text-sm font-semibold mb-1" style={{ color: "color-mix(in srgb, var(--cps-warning) 80%, #000)" }}>Medical Disclaimer (YMYL)</p>
+          <p className="text-sm" style={{ color: "color-mix(in srgb, var(--cps-warning) 70%, #000)" }}>
             This article is intended for educational purposes only and does not constitute medical or clinical advice. Autism diagnosis requires a comprehensive, individualized evaluation by a qualified licensed professional. Do not rely on this article as a substitute for professional assessment.
           </p>
         </div>
@@ -679,9 +679,9 @@ const POST_CONTENT: Record<
           <li><strong>Bring documentation if relevant.</strong> School report cards, medical records, activity schedules, and photos of your home environment can be helpful context.</li>
         </ul>
 
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 my-8">
-          <p className="text-sm font-semibold text-amber-800 mb-1">Legal & Medical Disclaimer (YMYL)</p>
-          <p className="text-sm text-amber-700">
+        <div className="rounded-xl p-6 my-8" style={{ background: "color-mix(in srgb, var(--cps-warning) 10%, white)", border: "1px solid color-mix(in srgb, var(--cps-warning) 30%, white)" }}>
+          <p className="text-sm font-semibold mb-1" style={{ color: "color-mix(in srgb, var(--cps-warning) 80%, #000)" }}>Legal & Medical Disclaimer (YMYL)</p>
+          <p className="text-sm" style={{ color: "color-mix(in srgb, var(--cps-warning) 70%, #000)" }}>
             This article is for general educational purposes only and does not constitute legal or psychological advice. Custody evaluation processes and applicable laws vary by jurisdiction and individual case. Consult a licensed attorney and qualified mental health professional for guidance specific to your situation.
           </p>
         </div>
@@ -692,11 +692,11 @@ const POST_CONTENT: Record<
 
 /* ── Helpers ── */
 const categoryColors: Record<string, string> = {
-  ADHD: "bg-blue-100 text-blue-700",
-  Autism: "bg-purple-100 text-purple-700",
-  Neuropsychology: "bg-teal-100 text-teal-700",
-  "Custody & Family Law": "bg-orange-100 text-orange-700",
-  "Ketamine Treatment": "bg-green-100 text-green-700",
+  ADHD: "bg-[var(--cps-light)] text-[var(--cps-blue)]",
+  Autism: "bg-[var(--cps-light)] text-[var(--cps-accent)]",
+  Neuropsychology: "bg-[var(--cps-light)] text-[var(--cps-teal)]",
+  "Custody & Family Law": "bg-[var(--cps-light)] text-[var(--cps-dark)]",
+  "Ketamine Treatment": "bg-[var(--cps-light)] text-[var(--cps-gradient-mid)]",
 };
 
 function formatDate(iso: string) {
@@ -772,9 +772,9 @@ export default async function BlogPostPage({
               <ChevronRight className="w-4 h-4" />
               <span className="text-sm font-medium text-white/60 line-clamp-1">{post.title}</span>
             </div>
-            <div className="flex items-center gap-3 mb-5 flex-wrap">
+            <div className="flex items-center gap-4 mb-6 flex-wrap">
               <span
-                className={`text-xs font-semibold px-3 py-1 rounded-full ${categoryColors[post.category] ?? "bg-gray-100 text-gray-700"}`}
+                className={`text-xs font-semibold px-3 py-1 rounded-full ${categoryColors[post.category] ?? "bg-[var(--cps-gray-100)] text-[var(--cps-gray-600)]"}`}
               >
                 <Tag className="w-3 h-3 inline mr-1" />
                 {post.category}
@@ -831,7 +831,7 @@ export default async function BlogPostPage({
         {/* CTA */}
         <section className="py-12 md:py-16 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
           <div className="max-w-4xl mx-auto px-8 sm:px-10 lg:px-10 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Ready to Schedule an Evaluation?
             </h2>
             <p className="text-white/75 mb-8 max-w-xl mx-auto">

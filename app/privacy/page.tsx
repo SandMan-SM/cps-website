@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Privacy Policy for Comprehensive Psychological Services. Learn how we collect, use, and protect your personal and health information in compliance with HIPAA and Utah law.",
+  openGraph: {
+    title: "Privacy Policy | Comprehensive Psychological Services",
+    description:
+      "Privacy Policy for Comprehensive Psychological Services. Learn how we collect, use, and protect your personal and health information in compliance with HIPAA and Utah law.",
+    url: "https://psychandcustodyevaluations.com/privacy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | Comprehensive Psychological Services",
+    description:
+      "Privacy Policy for Comprehensive Psychological Services. Learn how we collect, use, and protect your personal and health information in compliance with HIPAA and Utah law.",
+  },
   alternates: { canonical: "https://psychandcustodyevaluations.com/privacy" },
 };
 

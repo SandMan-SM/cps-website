@@ -128,21 +128,21 @@ export default function ServicePageContent({ service, location, relatedServices 
 
             {/* ── References & Resources ── */}
             {service.citations && service.citations.length > 0 && (
-              <div className="mt-8">
-                <h3 className="text-sm font-semibold text-[var(--cps-gray-700)] uppercase tracking-wider mb-4">References &amp; Resources</h3>
-                <ol className="space-y-2 list-decimal list-inside">
+              <div className="mt-8 pt-6 border-t border-[var(--cps-gray-100)]">
+                <h3 className="text-sm font-bold text-[var(--cps-gray-700)] mb-3">References &amp; Resources</h3>
+                <ul className="space-y-2 text-xs text-[var(--cps-gray-400)]">
                   {service.citations.map((cite, i) => (
-                    <li key={i} className="text-xs text-[var(--cps-gray-500)] leading-relaxed">
+                    <li key={i}>
                       {cite.url ? (
-                        <a href={cite.url} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--cps-blue)] transition-colors underline underline-offset-2">
-                          {cite.text}
+                        <a href={cite.url} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--cps-blue)] transition-colors">
+                          {i + 1}. {cite.text}
                         </a>
                       ) : (
-                        cite.text
+                        <span>{i + 1}. {cite.text}</span>
                       )}
                     </li>
                   ))}
-                </ol>
+                </ul>
               </div>
             )}
           </div>
@@ -154,9 +154,9 @@ export default function ServicePageContent({ service, location, relatedServices 
         <section className="py-12 md:py-16 bg-white">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">{service.comparisonTable.title}</h2>
-            <div className="overflow-x-auto rounded-xl border border-[var(--cps-gray-200)]">
+            <div className="overflow-x-auto rounded-xl overflow-hidden border border-[var(--cps-gray-200)]">
               <table className="w-full text-sm text-left">
-                <thead className="bg-[var(--cps-light)] text-[var(--cps-blue)]">
+                <thead className="bg-[var(--cps-gray-100)] text-[var(--cps-blue)]">
                   <tr>
                     {service.comparisonTable.headers.map((header, i) => (
                       <th key={i} scope="col" className="px-6 py-4 font-semibold border-b border-[var(--cps-gray-200)]">
@@ -167,7 +167,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                 </thead>
                 <tbody className="bg-white divide-y divide-[var(--cps-gray-200)]">
                   {service.comparisonTable.rows.map((row, ri) => (
-                    <tr key={ri} className="hover:bg-[var(--cps-gray-50)] transition-colors">
+                    <tr key={ri} className={`transition-colors ${ri % 2 === 1 ? 'bg-[var(--cps-gray-50)]' : 'bg-white'}`}>
                       {row.map((cell, ci) => (
                         ci === 0 ? (
                           <th key={ci} scope="row" className="px-6 py-4 font-semibold text-[var(--cps-gray-800)]">

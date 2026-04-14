@@ -10,6 +10,18 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Patient Resources | Comprehensive Psychological Services",
   description: "Forms, insurance information, FAQs, and patient rights for Comprehensive Psychological Services patients across Utah.",
+  openGraph: {
+    title: "Patient Resources | Comprehensive Psychological Services",
+    description: "Forms, insurance information, FAQs, and patient rights for Comprehensive Psychological Services patients across Utah.",
+    url: "https://psychandcustodyevaluations.com/resources",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Patient Resources | Comprehensive Psychological Services",
+    description: "Forms, insurance information, FAQs, and patient rights for Comprehensive Psychological Services patients across Utah.",
+  },
+  alternates: { canonical: "https://psychandcustodyevaluations.com/resources" },
 };
 
 const PHONE = "(801) 483-1600";
@@ -107,7 +119,7 @@ export default function ResourcesPage() {
         {/* Quick nav */}
         <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-4">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               {sections.map((s) => (
                 <a
                   key={s.id}
@@ -136,9 +148,9 @@ export default function ResourcesPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {section.items.map((item, i) => (
-                    <div key={i} className="flex items-start gap-4 p-5 rounded-xl border border-[var(--cps-gray-200)] bg-[var(--cps-gray-50)] hover:border-[var(--cps-gray-300)] transition-colors">
+                    <div key={i} className="flex items-start gap-4 p-6 rounded-xl border border-[var(--cps-gray-200)] bg-[var(--cps-gray-50)] hover:border-[var(--cps-gray-300)] transition-colors">
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-start gap-3 mb-1">
+                        <div className="flex items-start gap-2 mb-1">
                           <span className="font-semibold text-[var(--cps-gray-900)] text-sm leading-snug">{item.label}</span>
                           {"tag" in item && item.tag && (
                             <span className={`shrink-0 text-xs font-semibold px-2 py-0.5 rounded-full ${colors.badge}`}>{item.tag}</span>
@@ -162,7 +174,7 @@ export default function ResourcesPage() {
         {/* Contact CTA */}
         <section className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10 text-center">
-            <h2 className="text-2xl font-bold text-[var(--cps-gray-900)] mb-3">Still Have Questions?</h2>
+            <h2 className="text-2xl font-bold text-[var(--cps-gray-900)] mb-4">Still Have Questions?</h2>
             <p className="text-[var(--cps-gray-600)] mb-8 max-w-xl mx-auto">Our team is happy to help you with forms, insurance questions, or anything else you need before your appointment.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href={PHONE_HREF} className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-semibold rounded-xl transition-colors">

@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     url: "https://psychandcustodyevaluations.com/team",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Clinical Team | Comprehensive Psychological Services Utah",
+    description:
+      "Expert psychologists, therapists, and psychiatrists led by Dr. Steven Szykula, PhD. Serving Salt Lake City, Layton, and West Jordan since 1986.",
+  },
   alternates: { canonical: "https://psychandcustodyevaluations.com/team" },
 };
 

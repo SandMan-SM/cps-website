@@ -26,11 +26,11 @@ export const metadata: Metadata = {
 };
 
 const categoryColors: Record<string, string> = {
-  ADHD: "bg-blue-100 text-blue-700",
-  Autism: "bg-purple-100 text-purple-700",
-  Neuropsychology: "bg-teal-100 text-teal-700",
-  "Custody & Family Law": "bg-orange-100 text-orange-700",
-  "Ketamine Treatment": "bg-green-100 text-green-700",
+  ADHD: "bg-[var(--cps-light)] text-[var(--cps-blue)]",
+  Autism: "bg-[var(--cps-light)] text-[var(--cps-accent)]",
+  Neuropsychology: "bg-[var(--cps-light)] text-[var(--cps-teal)]",
+  "Custody & Family Law": "bg-[var(--cps-light)] text-[var(--cps-dark)]",
+  "Ketamine Treatment": "bg-[var(--cps-light)] text-[var(--cps-gradient-mid)]",
 };
 
 function formatDate(iso: string) {
@@ -69,7 +69,7 @@ export default function BlogPage() {
         {/* Category filters */}
         <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-4">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               {blogCategories.map((cat) => (
                 <span
                   key={cat}
@@ -94,8 +94,8 @@ export default function BlogPage() {
                   className="group flex flex-col rounded-2xl border border-[var(--cps-gray-200)] bg-[var(--cps-gray-50)] hover:border-[var(--cps-blue)] hover:shadow-md transition-all overflow-hidden"
                 >
                   <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColors[post.category] ?? "bg-gray-100 text-gray-700"}`}>
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColors[post.category] ?? "bg-[var(--cps-gray-100)] text-[var(--cps-gray-600)]"}`}>
                         <Tag className="w-3 h-3 inline mr-1" />
                         {post.category}
                       </span>
@@ -104,7 +104,7 @@ export default function BlogPage() {
                         {post.readTime}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-3 leading-snug group-hover:text-[var(--cps-blue)] transition-colors">
+                    <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-4 leading-snug group-hover:text-[var(--cps-blue)] transition-colors">
                       {post.title}
                     </h3>
                     <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed flex-1 mb-4">
@@ -135,11 +135,11 @@ export default function BlogPage() {
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group flex items-start gap-4 p-5 rounded-xl border border-[var(--cps-gray-200)] bg-white hover:border-[var(--cps-blue)] hover:shadow-sm transition-all"
+                    className="group flex items-start gap-4 p-6 rounded-xl border border-[var(--cps-gray-200)] bg-white hover:border-[var(--cps-blue)] hover:shadow-sm transition-all"
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${categoryColors[post.category] ?? "bg-gray-100 text-gray-700"}`}>
+                        <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${categoryColors[post.category] ?? "bg-[var(--cps-gray-100)] text-[var(--cps-gray-600)]"}`}>
                           {post.category}
                         </span>
                         <span className="text-xs text-[var(--cps-gray-400)]">{post.readTime}</span>
@@ -163,7 +163,7 @@ export default function BlogPage() {
         {/* CTA */}
         <section className="py-12 md:py-16 bg-white border-t border-[var(--cps-gray-200)]">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10 text-center">
-            <h2 className="text-2xl font-bold text-[var(--cps-gray-900)] mb-3">Ready to Schedule an Evaluation?</h2>
+            <h2 className="text-2xl font-bold text-[var(--cps-gray-900)] mb-4">Ready to Schedule an Evaluation?</h2>
             <p className="text-[var(--cps-gray-600)] mb-8 max-w-xl mx-auto">
               Our licensed psychologists serve patients across Salt Lake City, Layton, and West Jordan. Call us today to get started.
             </p>
