@@ -90,10 +90,10 @@ const sections = [
 ];
 
 const colorMap: Record<string, { bg: string; icon: string; badge: string }> = {
-  blue: { bg: "bg-blue-50", icon: "text-blue-600", badge: "bg-blue-100 text-blue-700" },
-  green: { bg: "bg-green-50", icon: "text-green-600", badge: "bg-green-100 text-green-700" },
-  purple: { bg: "bg-purple-50", icon: "text-purple-600", badge: "bg-purple-100 text-purple-700" },
-  orange: { bg: "bg-orange-50", icon: "text-orange-600", badge: "bg-orange-100 text-orange-700" },
+  blue: { bg: "bg-[var(--cps-light)]", icon: "text-[var(--cps-blue)]", badge: "bg-[var(--cps-light)] text-[var(--cps-blue)]" },
+  green: { bg: "bg-[var(--cps-light)]", icon: "text-[var(--cps-teal)]", badge: "bg-[var(--cps-light)] text-[var(--cps-teal)]" },
+  purple: { bg: "bg-[var(--cps-light)]", icon: "text-[var(--cps-accent)]", badge: "bg-[var(--cps-light)] text-[var(--cps-accent)]" },
+  orange: { bg: "bg-[var(--cps-light)]", icon: "text-[var(--cps-gradient-mid)]", badge: "bg-[var(--cps-light)] text-[var(--cps-gradient-mid)]" },
 };
 
 export default function ResourcesPage() {

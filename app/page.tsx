@@ -331,7 +331,7 @@ export default function HomePage() {
                     <div className="flex-1">
                       <p className="text-xs text-[var(--cps-blue)] font-semibold uppercase tracking-wider mb-1">Founded by</p>
                       <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-1">Steven Szykula, Ph.D.</h3>
-                      <p className="text-sm text-[var(--cps-gray-500)] mb-3">Licensed Psychologist · Neuropsychologist · Founder, CPS</p>
+                      <p className="text-sm text-[var(--cps-gray-500)] mb-4">Licensed Psychologist · Neuropsychologist · Founder, CPS</p>
                       <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
                         Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. A doctoral-level psychologist with advanced training in neuropsychology, he founded CPS to provide evidence-based psychological services to individuals, families, courts, and healthcare systems across the Wasatch Front. He has provided testimony in Utah family courts, conducted thousands of evaluations, and mentored dozens of clinicians.
                       </p>
@@ -347,7 +347,7 @@ export default function HomePage() {
                 {/* ── Professional Memberships & Affiliations (E-E-A-T) ── */}
                 <div className="bg-white rounded-2xl border border-[var(--cps-gray-200)] p-6">
                   <p className="text-xs font-semibold text-[var(--cps-blue)] uppercase tracking-wider mb-4">Professional Memberships &amp; Affiliations</p>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {[
                       { label: "American Psychological Association", abbr: "APA" },
                       { label: "Utah Psychological Association", abbr: "UPA" },
@@ -433,10 +433,10 @@ export default function HomePage() {
                 href="https://www.google.com/search?q=Comprehensive+Psychological+Services+Utah+reviews"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
+                className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
               >
-                <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                  <Star className="w-6 h-6 text-blue-600 fill-blue-600" />
+                <div className="w-12 h-12 rounded-full bg-[var(--cps-light)] flex items-center justify-center group-hover:bg-[var(--cps-gray-100)] transition-colors">
+                  <Star className="w-6 h-6 text-[var(--cps-blue)] fill-[var(--cps-blue)]" />
                 </div>
                 <div>
                   <div className="font-semibold text-[var(--cps-gray-900)] mb-1">Google Reviews</div>
@@ -448,10 +448,10 @@ export default function HomePage() {
                 href="https://www.healthline.com/find-care/provider/comprehensive-psychological-services"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
+                className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
               >
-                <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
-                  <ThumbsUp className="w-6 h-6 text-green-600" />
+                <div className="w-12 h-12 rounded-full bg-[var(--cps-light)] flex items-center justify-center group-hover:bg-[var(--cps-gray-100)] transition-colors">
+                  <ThumbsUp className="w-6 h-6 text-[var(--cps-teal)]" />
                 </div>
                 <div>
                   <div className="font-semibold text-[var(--cps-gray-900)] mb-1">Healthline</div>
@@ -463,10 +463,10 @@ export default function HomePage() {
                 href="https://www.bbb.org/search?find_text=Comprehensive+Psychological+Services&find_loc=Salt+Lake+City%2C+UT"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
+                className="flex flex-col items-center gap-4 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
               >
-                <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-orange-100 transition-colors">
-                  <Award className="w-6 h-6 text-orange-600" />
+                <div className="w-12 h-12 rounded-full bg-[var(--cps-light)] flex items-center justify-center group-hover:bg-[var(--cps-gray-100)] transition-colors">
+                  <Award className="w-6 h-6 text-[var(--cps-accent)]" />
                 </div>
                 <div>
                   <div className="font-semibold text-[var(--cps-gray-900)] mb-1">BBB</div>
@@ -603,16 +603,16 @@ export default function HomePage() {
                     <div>
                       <label htmlFor="service" className="block text-sm font-medium mb-2 text-white/80">Service Needed</label>
                       <select id="service" name="service" required className="w-full px-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors">
-                        <option value="" className="text-gray-900">Select a service...</option>
-                        <option value="neuropsych" className="text-gray-900">Neuropsychological Evaluation</option>
-                        <option value="adhd" className="text-gray-900">ADHD Evaluation / Testing</option>
-                        <option value="autism" className="text-gray-900">Autism Assessment / ADOS-2</option>
-                        <option value="custody" className="text-gray-900">Custody Evaluation</option>
-                        <option value="ketamine" className="text-gray-900">Ketamine / Spravato Therapy</option>
-                        <option value="cognitive" className="text-gray-900">Cognitive / IQ Evaluation</option>
-                        <option value="iop" className="text-gray-900">Intensive Outpatient Program</option>
-                        <option value="therapy" className="text-gray-900">Therapy / Counseling</option>
-                        <option value="other" className="text-gray-900">Other</option>
+                        <option value="" className="text-[var(--cps-gray-900)]">Select a service...</option>
+                        <option value="neuropsych" className="text-[var(--cps-gray-900)]">Neuropsychological Evaluation</option>
+                        <option value="adhd" className="text-[var(--cps-gray-900)]">ADHD Evaluation / Testing</option>
+                        <option value="autism" className="text-[var(--cps-gray-900)]">Autism Assessment / ADOS-2</option>
+                        <option value="custody" className="text-[var(--cps-gray-900)]">Custody Evaluation</option>
+                        <option value="ketamine" className="text-[var(--cps-gray-900)]">Ketamine / Spravato Therapy</option>
+                        <option value="cognitive" className="text-[var(--cps-gray-900)]">Cognitive / IQ Evaluation</option>
+                        <option value="iop" className="text-[var(--cps-gray-900)]">Intensive Outpatient Program</option>
+                        <option value="therapy" className="text-[var(--cps-gray-900)]">Therapy / Counseling</option>
+                        <option value="other" className="text-[var(--cps-gray-900)]">Other</option>
                       </select>
                     </div>
                     <div>

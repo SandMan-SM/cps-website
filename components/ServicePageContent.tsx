@@ -129,7 +129,7 @@ export default function ServicePageContent({ service, location, relatedServices 
             {/* ── References & Resources ── */}
             {service.citations && service.citations.length > 0 && (
               <div className="mt-8 pt-6 border-t border-[var(--cps-gray-100)]">
-                <h3 className="text-sm font-bold text-[var(--cps-gray-700)] mb-3">References &amp; Resources</h3>
+                <h3 className="text-sm font-bold text-[var(--cps-gray-700)] mb-4">References &amp; Resources</h3>
                 <ul className="space-y-2 text-xs text-[var(--cps-gray-400)]">
                   {service.citations.map((cite, i) => (
                     <li key={i}>

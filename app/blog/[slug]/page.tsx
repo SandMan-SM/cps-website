@@ -804,7 +804,7 @@ export default async function BlogPostPage({
         {/* Article Body */}
         <article className="py-10 md:py-14 bg-white">
           <div className="max-w-4xl mx-auto px-8 sm:px-10 lg:px-10">
-            <div className="prose prose-lg max-w-none text-[var(--cps-gray-700)] [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-[var(--cps-gray-900)] [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-[var(--cps-gray-900)] [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-5 [&_p]:leading-relaxed [&_ul]:mb-5 [&_ul]:pl-6 [&_li]:mb-2 [&_li]:leading-relaxed [&_strong]:text-[var(--cps-gray-900)]">
+            <div className="prose prose-lg max-w-none text-[var(--cps-gray-700)] [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-[var(--cps-gray-900)] [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-[var(--cps-gray-900)] [&_h3]:mt-8 [&_h3]:mb-4 [&_p]:mb-6 [&_p]:leading-relaxed [&_ul]:mb-6 [&_ul]:pl-6 [&_li]:mb-2 [&_li]:leading-relaxed [&_strong]:text-[var(--cps-gray-900)]">
               {content.body}
             </div>
           </div>
