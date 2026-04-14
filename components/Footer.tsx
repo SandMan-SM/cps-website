@@ -17,11 +17,11 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-sm font-bold text-white leading-tight">Comprehensive Psychological</div>
-                <div className="text-xs text-white/40 leading-tight">Services — Since 1986</div>
+                <div className="text-xs text-white/40 leading-tight">Services — 40+ Years in Utah</div>
               </div>
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Evidence-based behavioral health evaluations and treatment serving Utah for over 38 years.
+              Evidence-based behavioral health evaluations and treatment serving Utah for over 40 years.
             </p>
           </div>
 
@@ -53,6 +53,13 @@ export default function Footer() {
               <li><span className="text-sm">Medication Management</span></li>
               <li><span className="text-sm">Neurofeedback</span></li>
               <li><span className="text-sm">Telehealth</span></li>
+            </ul>
+            <h4 className="text-white font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
+            <ul className="space-y-2">
+              <li><Link href="/resources#forms" className="text-sm hover:text-white transition-colors">Forms & Documents</Link></li>
+              <li><Link href="/resources#insurance" className="text-sm hover:text-white transition-colors">Insurance & Billing</Link></li>
+              <li><Link href="/resources#faq" className="text-sm hover:text-white transition-colors">FAQs</Link></li>
+              <li><Link href="/resources#patient-rights" className="text-sm hover:text-white transition-colors">Patient Rights</Link></li>
             </ul>
           </div>
 

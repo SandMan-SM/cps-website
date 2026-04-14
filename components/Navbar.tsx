@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Services", href: "/#services" },
   { label: "Locations", href: "/#locations" },
   { label: "About", href: "/#about" },
+  { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -27,7 +28,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Comprehensive Psychological</div>
-              <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — Since 1986</div>
+              <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — 40+ Years in Utah</div>
             </div>
           </Link>
 

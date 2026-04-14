@@ -7,7 +7,7 @@ import {
   Shield, Award, Star, CheckCircle2, ArrowRight,
   Menu, X, Brain, HeartPulse, Scale, Users,
   ClipboardCheck, GraduationCap, Building2,
-  Calendar, MessageCircle, User,
+  Calendar, MessageCircle, User, ExternalLink, ThumbsUp,
 } from "lucide-react";
 
 /* ─────────────────── DATA ─────────────────── */
@@ -100,7 +100,7 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: "38+", label: "Years Serving Utah" },
+  { value: "40+", label: "Years Serving Utah" },
   { value: "3", label: "Convenient Locations" },
   { value: "20+", label: "Licensed Professionals" },
   { value: "5★", label: "Best Practice Award" },
@@ -150,7 +150,7 @@ export default function HomePage() {
               </div>
               <div className="hidden sm:block">
                 <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Comprehensive Psychological</div>
-                <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — Since 1986</div>
+                <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — 40+ Years in Utah</div>
               </div>
             </Link>
 
@@ -158,6 +158,7 @@ export default function HomePage() {
               <a href="#services" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Services</a>
               <a href="#locations" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Locations</a>
               <a href="#about" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">About</a>
+              <Link href="/resources" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Resources</Link>
               <a href="#contact" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Contact</a>
             </div>
 
@@ -182,6 +183,7 @@ export default function HomePage() {
               {["Services", "Locations", "About", "Contact"].map((item) => (
                 <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
               ))}
+              <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
               <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-4 text-[var(--cps-blue)] font-semibold">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
@@ -241,6 +243,8 @@ export default function HomePage() {
               <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" /> Best Practice Award 2024</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" /> Most Insurance Accepted</div>
               <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" /> 3 Utah Locations</div>
+              <div className="flex items-center gap-2"><Star className="w-4 h-4 text-[var(--cps-blue)] fill-[var(--cps-blue)]" /> Rated 5.0 on Healthline</div>
+              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--cps-blue)]" /> 40+ Years Serving Utah</div>
             </div>
           </div>
         </section>
@@ -383,6 +387,70 @@ export default function HomePage() {
                   <p className="text-sm font-semibold text-[var(--cps-gray-500)]">— {t.author}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ──────── REVIEW US ──────── */}
+        <section className="py-12 md:py-16 bg-[var(--cps-gray-50)] border-t border-[var(--cps-gray-200)]">
+          <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
+            <div className="text-center mb-10">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                {[1,2,3,4,5].map((i) => (
+                  <Star key={i} className="w-7 h-7 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
+                ))}
+              </div>
+              <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Share Your Experience</h2>
+              <p className="text-[var(--cps-gray-600)] body-large max-w-2xl mx-auto">
+                We&apos;re committed to continuous improvement. If you&apos;ve had a positive experience at CPS, we&apos;d love to hear from you. Your feedback helps us serve you and our community better.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              <a
+                href="https://www.google.com/search?q=Comprehensive+Psychological+Services+Utah+reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
+              >
+                <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                  <Star className="w-6 h-6 text-blue-600 fill-blue-600" />
+                </div>
+                <div>
+                  <div className="font-semibold text-[var(--cps-gray-900)] mb-1">Google Reviews</div>
+                  <div className="text-sm text-[var(--cps-gray-500)]">Leave us a Google review</div>
+                </div>
+                <ExternalLink className="w-4 h-4 text-[var(--cps-gray-400)] group-hover:text-[var(--cps-blue)] transition-colors" />
+              </a>
+              <a
+                href="https://www.healthline.com/find-care/provider/comprehensive-psychological-services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
+              >
+                <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                  <ThumbsUp className="w-6 h-6 text-green-600" />
+                </div>
+                <div>
+                  <div className="font-semibold text-[var(--cps-gray-900)] mb-1">Healthline</div>
+                  <div className="text-sm text-[var(--cps-gray-500)]">Rate us on Healthline</div>
+                </div>
+                <ExternalLink className="w-4 h-4 text-[var(--cps-gray-400)] group-hover:text-[var(--cps-blue)] transition-colors" />
+              </a>
+              <a
+                href="https://www.bbb.org/search?find_text=Comprehensive+Psychological+Services&find_loc=Salt+Lake+City%2C+UT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/40 hover:shadow-lg transition-all duration-200 text-center group"
+              >
+                <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-orange-100 transition-colors">
+                  <Award className="w-6 h-6 text-orange-600" />
+                </div>
+                <div>
+                  <div className="font-semibold text-[var(--cps-gray-900)] mb-1">BBB</div>
+                  <div className="text-sm text-[var(--cps-gray-500)]">See our BBB profile</div>
+                </div>
+                <ExternalLink className="w-4 h-4 text-[var(--cps-gray-400)] group-hover:text-[var(--cps-blue)] transition-colors" />
+              </a>
             </div>
           </div>
         </section>
@@ -555,7 +623,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <div className="text-sm font-bold text-white leading-tight">Comprehensive Psychological</div>
-                  <div className="text-xs text-white/40 leading-tight">Services — Since 1986</div>
+                  <div className="text-xs text-white/40 leading-tight">Services — 40+ Years in Utah</div>
                 </div>
               </div>
               <p className="text-sm text-white/50 leading-relaxed">
@@ -591,6 +659,13 @@ export default function HomePage() {
                 <li><span className="text-sm">Medication Management</span></li>
                 <li><span className="text-sm">Neurofeedback</span></li>
                 <li><span className="text-sm">Telehealth</span></li>
+              </ul>
+              <h4 className="text-white font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
+              <ul className="space-y-2">
+                <li><Link href="/resources#forms" className="text-sm hover:text-white transition-colors">Forms & Documents</Link></li>
+                <li><Link href="/resources#insurance" className="text-sm hover:text-white transition-colors">Insurance & Billing</Link></li>
+                <li><Link href="/resources#faq" className="text-sm hover:text-white transition-colors">FAQs</Link></li>
+                <li><Link href="/resources#patient-rights" className="text-sm hover:text-white transition-colors">Patient Rights</Link></li>
               </ul>
             </div>
 
