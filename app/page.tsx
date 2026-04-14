@@ -344,6 +344,29 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                {/* ── Professional Memberships & Affiliations (E-E-A-T) ── */}
+                <div className="bg-white rounded-2xl border border-[var(--cps-gray-200)] p-6">
+                  <p className="text-xs font-semibold text-[var(--cps-blue)] uppercase tracking-wider mb-4">Professional Memberships &amp; Affiliations</p>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      { label: "American Psychological Association", abbr: "APA" },
+                      { label: "Utah Psychological Association", abbr: "UPA" },
+                      { label: "American Academy of Clinical Neuropsychology", abbr: "AACN" },
+                      { label: "Society for Personality and Social Psychology", abbr: "SPSP" },
+                    ].map((org) => (
+                      <span
+                        key={org.abbr}
+                        aria-label={org.label}
+                        title={org.label}
+                        className="inline-flex items-center gap-1.5 px-4 py-2 bg-[var(--cps-light)] text-[var(--cps-blue)] text-sm font-semibold rounded-lg border border-[var(--cps-blue)]/20"
+                      >
+                        <Shield className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                        {org.abbr}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
                 {[
                   { icon: Shield, title: "Evidence-Based Practice", desc: "Every assessment and treatment follows validated, research-backed protocols. We measure outcomes, not just activity." },
                   { icon: Award, title: "Best Practice Award", desc: "Recognized for clinical excellence by professional organizations. Our team upholds the highest standards of competence." },
