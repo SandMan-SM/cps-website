@@ -510,7 +510,7 @@ export default function HomePage() {
                       }}
                     />
                     {/* Fallback when iframe fails to load */}
-                    <div className="hidden absolute inset-0 flex-col items-center justify-center bg-[var(--cps-gray-100)] gap-3 text-[var(--cps-gray-400)]">
+                    <div className="hidden absolute inset-0 flex-col items-center justify-center bg-[var(--cps-gray-100)] gap-4 text-[var(--cps-gray-400)]">
                       <MapPin className="w-10 h-10" />
                       <p className="text-sm font-medium">{office.name}</p>
                       <p className="text-xs text-center px-4">{office.address}<br />{office.city}</p>
@@ -661,7 +661,7 @@ export default function HomePage() {
 
       {/* ──────── STICKY MOBILE CTA ──────── */}
       <div className="lg:hidden sticky bottom-0 z-40 bg-white border-t border-[var(--cps-gray-200)] shadow-2xl" aria-label="Quick actions">
-        <div className="flex items-center gap-3 px-4 py-3">
+        <div className="flex items-center gap-4 px-4 py-4">
           <a
             href="tel:8014831600"
             className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm transition-colors border-2 border-[var(--cps-blue)] text-[var(--cps-blue)]"
