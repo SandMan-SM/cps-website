@@ -31,6 +31,17 @@
   --space-xl: 3rem;
   --space-2xl: 5rem;
 
+  /* Component spacing */
+  --card-padding: 1.75rem;
+  --section-py: 5rem;
+  --section-py-sm: 3rem;
+  --stats-gap: 2.5rem;
+  --card-gap: 2rem;
+  --stat-number-gap: 0.75rem;
+  --trust-bar-py: 1rem;
+  --hero-stats-py: 4rem;
+  --btn-py: 0.875rem;
+
   /* Type */
   --font-display: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   --font-body: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
@@ -113,5 +124,5 @@ body {
 
 .body-large {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  line-height: 1.6;
+  line-height: 1.75;
 }

@@ -137,12 +137,12 @@ export default function HomePage() {
               <a href="#contact" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Contact</a>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <a href={PHONE_HREF} className="hidden md:flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors" aria-label={`Call us at ${PHONE}`}>
                 <Phone className="w-4 h-4" />
                 {PHONE}
               </a>
-              <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors">
+              <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors">
                 Book Evaluation
               </a>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
@@ -161,7 +161,7 @@ export default function HomePage() {
               <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-4 text-[var(--cps-blue)] font-semibold">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-12 py-5 bg-[var(--cps-blue)] text-white rounded-xl font-semibold text-base">Book Evaluation</a>
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-8 py-4 bg-[var(--cps-blue)] text-white rounded-xl font-semibold text-base">Book Evaluation</a>
             </div>
           </div>
         )}
@@ -174,7 +174,7 @@ export default function HomePage() {
             <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
             <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
           </div>
-          <div className="relative max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16 md:py-24">
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-16 md:py-24">
             <div className="max-w-4xl text-left">
               <div className="flex items-center justify-start gap-2 mb-6">
                 <Award className="w-5 h-5 text-[var(--cps-teal)]" />
@@ -187,22 +187,22 @@ export default function HomePage() {
                 Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
-                <a href="#contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-12 py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+                <a href="#contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                   <Calendar className="w-5 h-5" />
                   Schedule an Evaluation
                 </a>
-                <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-12 py-5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
+                <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
                   <Phone className="w-5 h-5" />
                   {PHONE}
                 </a>
               </div>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-4xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 max-w-4xl mt-16">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-left">
-                  <div className="text-4xl font-extrabold text-white">{stat.value}</div>
-                  <div className="text-sm text-white/70 mt-2">{stat.label}</div>
+                  <div className="text-4xl font-extrabold text-white mb-3">{stat.value}</div>
+                  <div className="text-sm text-white/70 mt-3">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
 
         {/* ──────── TRUST BAR ──────── */}
         <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-4">
-          <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 md:gap-x-12 gap-y-2 text-sm text-[var(--cps-gray-500)]">
               <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
               <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" /> Best Practice Award 2024</div>
@@ -223,27 +223,27 @@ export default function HomePage() {
 
         {/* ──────── SERVICES ──────── */}
         <section id="services" className="py-12 md:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10" style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Our Specialties</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Evaluation & Treatment Services</h2>
-              <p className="text-[var(--cps-gray-500)] max-w-[70ch] mx-auto body-large leading-relaxed">
+              <p className="text-[var(--cps-gray-500)] max-w-[70ch] mx-auto body-large mt-5">
                 Evidence-based assessments and treatments delivered by licensed professionals with decades of experience.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ gap: "2rem" }}>
               {serviceCategories.map((svc) => {
                 const Icon = svc.icon;
                 return (
-                  <a key={svc.title} href={svc.href} className="group flex flex-col p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <a key={svc.title} href={svc.href} className="group flex flex-col bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style={{ padding: "1.75rem" }}>
                     <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
                     <p className="text-[var(--cps-gray-500)] leading-relaxed mb-6 flex-1">{svc.description}</p>
-                    <div className="flex items-end justify-between">
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
+                    <div className="flex items-end justify-between" style={{ marginTop: "auto" }}>
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all" style={{ marginTop: "1.5rem" }}>
                         Learn More <ArrowRight className="w-4 h-4" />
                       </span>
-                      <div className="w-12 h-12 rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300">
+                      <div className="rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300" style={{ marginTop: "1.5rem", width: "3.5rem", height: "3.5rem" }}>
                         <Icon className="w-6 h-6 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
                       </div>
                     </div>
@@ -268,7 +268,7 @@ export default function HomePage() {
 
         {/* ──────── ABOUT ──────── */}
         <section id="about" className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
-          <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">About CPS</p>
@@ -297,7 +297,7 @@ export default function HomePage() {
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.title} className="flex items-start gap-6 p-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:shadow-md transition-shadow">
+                    <div key={item.title} className="flex items-start gap-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:shadow-md transition-shadow" style={{ padding: "1.75rem" }}>
                       <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0" aria-hidden="true">
                         <Icon className="w-7 h-7 text-[var(--cps-blue)]" />
                       </div>
@@ -315,7 +315,7 @@ export default function HomePage() {
 
         {/* ──────── TESTIMONIALS ──────── */}
         <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Patient Experiences</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">What Our Patients Say</h2>
@@ -338,7 +338,7 @@ export default function HomePage() {
 
         {/* ──────── LOCATIONS ──────── */}
         <section id="locations" className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
-          <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Find Us</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Three Locations Across the Wasatch Front</h2>
@@ -378,7 +378,7 @@ export default function HomePage() {
 
         {/* ──────── CONTACT / CTA ──────── */}
         <section id="contact" className="py-12 md:py-16 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
-          <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               <div>
                 <p className="text-[var(--cps-teal)] font-semibold text-sm uppercase tracking-wider mb-6">Get Started</p>
@@ -480,7 +480,7 @@ export default function HomePage() {
                     {formError && (
                       <p className="text-sm text-[var(--cps-warning)] bg-white/10 rounded-xl px-4 py-4">{formError}</p>
                     )}
-                    <button type="submit" disabled={formLoading} className="w-full py-5 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-white font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
+                    <button type="submit" disabled={formLoading} className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-white font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
                       <MessageCircle className="w-5 h-5" />
                       {formLoading ? "Sending…" : "Request Appointment"}
                     </button>
@@ -495,10 +495,10 @@ export default function HomePage() {
 
       {/* ──────── FOOTER ──────── */}
       <footer className="bg-[var(--cps-gray-900)] text-white/60 py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-4 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
                   <Brain className="w-5 h-5 text-white" />
                 </div>
@@ -514,7 +514,7 @@ export default function HomePage() {
 
             <div>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Evaluations</h4>
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 {[
                   { label: "Neuropsychological Evaluations", href: "/neuropsychologist-near-me" },
                   { label: "ADHD Evaluation", href: "/adhd-evaluation-near-me" },
@@ -532,7 +532,7 @@ export default function HomePage() {
 
             <div>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 <li><Link href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</Link></li>
                 <li><span className="text-sm">Spravato (Esketamine)</span></li>
                 <li><span className="text-sm">Intensive Outpatient (IOP)</span></li>
