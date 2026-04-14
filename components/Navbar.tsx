@@ -44,7 +44,7 @@ export default function Navbar() {
             <a href={PHONE_HREF} className="hidden md:flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors" aria-label={`Call us at ${PHONE}`}>
               <Phone className="w-4 h-4" /> {PHONE}
             </a>
-            <Link href="/#contact" className="hidden sm:inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors">
+            <Link href="/#contact" className="hidden sm:inline-flex items-center justify-center px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors min-h-[3rem]">
               Book Evaluation
             </Link>
             <button onClick={() => setOpen(!open)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={open}>

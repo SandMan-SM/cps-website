@@ -5,8 +5,20 @@ import Footer from "@/components/Footer";
 import { Phone, FileText, Shield, HelpCircle, Calendar, CreditCard, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Patient Resources & Forms",
+  title: "Patient Resources & Forms | Comprehensive Psychological Services",
   description: "Resources, forms, and information for CPS patients including insurance, billing, what to bring, and patient rights.",
+  openGraph: {
+    title: "Patient Resources & Forms | Comprehensive Psychological Services",
+    description: "Resources, forms, and information for CPS patients including insurance, billing, what to bring, and patient rights.",
+    url: "https://psychandcustodyevaluations.com/resources",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Patient Resources & Forms | CPS Utah",
+    description: "Insurance info, patient forms, billing FAQs, and patient rights for CPS patients.",
+  },
+  alternates: { canonical: "https://psychandcustodyevaluations.com/resources" },
 };
 
 export default function ResourcesPage() {

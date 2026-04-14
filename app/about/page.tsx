@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     url: "https://psychandcustodyevaluations.com/about",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "About CPS | Utah's Trusted Behavioral Health Practice Since 1986",
+    description:
+      "Expert psychologists and therapists across Salt Lake City, Layton, and West Jordan. Evidence-based care since 1986.",
+  },
   alternates: { canonical: "https://psychandcustodyevaluations.com/about" },
 };
 
