@@ -21,7 +21,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center gap-3" aria-label="CPS Home">
+          <Link href="/" className="flex items-center gap-4" aria-label="CPS Home">
             <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
               <Brain className="w-5 h-5 text-white" />
             </div>
@@ -37,7 +37,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <a href={PHONE_HREF} className="hidden md:flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors" aria-label={`Call us at ${PHONE}`}>
               <Phone className="w-4 h-4" /> {PHONE}
             </a>

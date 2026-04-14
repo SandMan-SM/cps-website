@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { OrganizationSchema } from "@/components/JsonLd";
+import { OrganizationSchema, PhysicianSchema } from "@/components/JsonLd";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -63,6 +63,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <OrganizationSchema />
+        <PhysicianSchema />
         {children}
       </body>
     </html>

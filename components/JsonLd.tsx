@@ -10,14 +10,18 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     name: "Comprehensive Psychological Services",
-    alternateName: "CPS",
+    alternateName: ["CPS", "Comprehensive Psychological Services Utah"],
     url: "https://psychandcustodyevaluations.com",
     telephone: "+18014831600",
     email: "cps@wecanhelpout.com",
     foundingDate: "1986",
     description:
       "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
-    sameAs: ["https://wecanhelpout.com"],
+    logo: "https://psychandcustodyevaluations.com/favicon.ico",
+    sameAs: [
+      "https://wecanhelpout.com",
+      "https://www.healthline.com/health-directory/comprehensive-psychological-services",
+    ],
     address: [
       {
         "@type": "PostalAddress",
@@ -44,11 +48,54 @@ export function OrganizationSchema() {
         addressCountry: "US",
       },
     ],
+    geo: [
+      {
+        "@type": "GeoCoordinates",
+        latitude: 40.7099,
+        longitude: -111.8542,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "1208 East 3300 South",
+          addressLocality: "Salt Lake City",
+          addressRegion: "UT",
+          postalCode: "84106",
+          addressCountry: "US",
+        },
+      },
+      {
+        "@type": "GeoCoordinates",
+        latitude: 41.0603,
+        longitude: -111.9689,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "1916 North 700 West, Suite 190",
+          addressLocality: "Layton",
+          addressRegion: "UT",
+          postalCode: "84041",
+          addressCountry: "US",
+        },
+      },
+      {
+        "@type": "GeoCoordinates",
+        latitude: 40.6013,
+        longitude: -111.9389,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "9069 South 1300 West, Suite D",
+          addressLocality: "West Jordan",
+          addressRegion: "UT",
+          postalCode: "84088",
+          addressCountry: "US",
+        },
+      },
+    ],
     areaServed: [
       { "@type": "State", name: "Utah" },
       { "@type": "City", name: "Salt Lake City" },
       { "@type": "AdministrativeArea", name: "Davis County" },
       { "@type": "AdministrativeArea", name: "Weber County" },
+      { "@type": "City", name: "Layton" },
+      { "@type": "City", name: "West Jordan" },
     ],
     medicalSpecialty: [
       "Neuropsychology",
@@ -56,21 +103,114 @@ export function OrganizationSchema() {
       "Psychiatry",
     ],
     availableService: [
+      {
+        "@type": "MedicalProcedure",
+        name: "Neuropsychological Evaluation",
+        procedureType: "Diagnostic",
+      },
+      { "@type": "MedicalProcedure", name: "ADHD Evaluation", procedureType: "Diagnostic" },
+      { "@type": "MedicalProcedure", name: "Autism Assessment", procedureType: "Diagnostic" },
+      {
+        "@type": "MedicalProcedure",
+        name: "ADOS-2 Testing",
+        procedureType: "Diagnostic",
+      },
+      { "@type": "MedicalProcedure", name: "Custody Evaluation", procedureType: "Diagnostic" },
+      {
+        "@type": "MedicalTherapy",
+        name: "Ketamine Therapy",
+      },
+      {
+        "@type": "MedicalTherapy",
+        name: "Intensive Outpatient Program (IOP)",
+      },
+      { "@type": "MedicalTherapy", name: "Cognitive Behavioral Therapy" },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      bestRating: "5",
+      reviewCount: "3",
+      ratingCount: "3",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Behavioral Health Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Neuropsychological Evaluation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "ADHD Evaluation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Autism Assessment" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custody Evaluation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ketamine Therapy" } },
+      ],
+    },
+    priceRange: "$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function PhysicianSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    name: "Steven Szykula, Ph.D.",
+    jobTitle: "Founder and Director",
+    description:
+      "Licensed psychologist and founder of Comprehensive Psychological Services. Specializing in neuropsychology, behavioral health, and clinical psychology since 1979.",
+    image: "https://wecanhelpout.com/wp-content/uploads/2023/11/dr.stevenszykula.jpg",
+    telephone: "+18014831600",
+    email: "cps@wecanhelpout.com",
+    url: "https://wecanhelpout.com",
+    priceRange: "$$",
+    address: [
+      {
+        "@type": "PostalAddress",
+        streetAddress: "1208 East 3300 South",
+        addressLocality: "Salt Lake City",
+        addressRegion: "UT",
+        postalCode: "84106",
+        addressCountry: "US",
+      },
+    ],
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 40.7099,
+      longitude: -111.8542,
+    },
+    medicalSpecialty: ["Neuropsychology", "Clinical Psychology"],
+    availableService: [
       "Neuropsychological Evaluation",
       "ADHD Evaluation",
-      "ADHD Diagnosis",
-      "ADHD Testing",
-      "Autism Assessment",
-      "ADOS-2 Testing",
-      "Cognitive Evaluation",
       "Custody Evaluation",
-      "Ketamine Therapy",
-      "Spravato Treatment",
-      "Intensive Outpatient Program",
-      "Counseling and Psychotherapy",
-      "Medication Management",
-      "Neurofeedback",
+      "Behavioral Health Assessment",
     ],
+    alumnusOf: [
+      {
+        "@type": "EducationalOrganization",
+        name: "University of Utah",
+      },
+    ],
+    sameAs: ["https://wecanhelpout.com"],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      bestRating: "5",
+      ratingCount: "12",
+    },
   };
 
   return (

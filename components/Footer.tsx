@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
                 <Brain className="w-5 h-5 text-white" />
               </div>
@@ -57,6 +57,14 @@ export default function Footer() {
           </div>
 
           <div>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal & Compliance</h4>
+            <ul className="space-y-2">
+              <li><Link href="/privacy" className="text-sm hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/hipaa" className="text-sm hover:text-white transition-colors">HIPAA Notice of Privacy Practices</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-4">
               <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Phone className="w-4 h-4 shrink-0" /> {PHONE}</a></li>
@@ -73,9 +81,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
-          <p className="text-xs text-white/40">Salt Lake City • Layton • West Jordan</p>
+        <div className="border-t border-white/10 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
+            <p className="text-xs text-white/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
+            <div className="flex gap-6 text-xs text-white/40">
+              <Link href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
+              <Link href="/hipaa" className="hover:text-white/60 transition-colors">HIPAA Notice</Link>
+            </div>
+          </div>
+          <p className="text-xs text-white/40 text-center">Salt Lake City • Layton • West Jordan</p>
+          <p className="text-xs text-white/30 text-center mt-2">
+            This website does not provide medical advice. The information on this site is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or qualified mental health provider with any questions you may have regarding a medical or mental health condition.
+          </p>
         </div>
       </div>
     </footer>

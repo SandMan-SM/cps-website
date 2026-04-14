@@ -4,6 +4,7 @@ import {
   ChevronDown, Calendar, Shield, Award, Building2,
 } from "lucide-react";
 import type { ServiceData, LocationData } from "@/lib/services";
+import KeyTakeaways from "./KeyTakeaways";
 
 const PHONE = "(801) 483-1600";
 const PHONE_HREF = "tel:8014831600";
@@ -75,6 +76,9 @@ export default function ServicePageContent({ service, location, relatedServices 
         </div>
       </section>
 
+      {/* ──── Key Takeaways (SEO: O02) ──── */}
+      <KeyTakeaways service={service} />
+
       {/* ──── Trust bar ──── */}
       <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-4">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
@@ -134,7 +138,7 @@ export default function ServicePageContent({ service, location, relatedServices 
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Why Choose CPS</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {service.benefits.map((benefit, i) => (
-                <div key={i} className="flex items-start gap-3 p-4">
+                <div key={i} className="flex items-start gap-4 p-4">
                   <CheckCircle2 className="w-5 h-5 text-[var(--cps-success)] shrink-0 mt-0.5" />
                   <span className="text-[var(--cps-gray-700)]">{benefit}</span>
                 </div>
@@ -236,6 +240,15 @@ export default function ServicePageContent({ service, location, relatedServices 
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ──── YMYL Disclaimer (T08) ──── */}
+      <section className="py-8 bg-[var(--cps-gray-50)] border-t border-[var(--cps-gray-200)]">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
+          <p className="text-xs text-[var(--cps-gray-400)] text-center leading-relaxed">
+            <strong>Disclaimer:</strong> The information on this page is for educational purposes only and does not constitute medical advice, diagnosis, or treatment. The information provided reflects general descriptions of psychological services and is not a substitute for a professional evaluation. If you believe you or someone you know may benefit from these services, please contact CPS at <a href="tel:8014831600" className="underline hover:text-[var(--cps-blue)]">(801) 483-1600</a>. For mental health emergencies, please call 988 (Suicide & Crisis Lifeline) or 911.
+          </p>
         </div>
       </section>
     </main>

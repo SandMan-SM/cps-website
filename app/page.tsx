@@ -7,7 +7,7 @@ import {
   Shield, Award, Star, CheckCircle2, ArrowRight,
   Menu, X, Brain, HeartPulse, Scale, Users,
   ClipboardCheck, GraduationCap, Building2,
-  Calendar, MessageCircle,
+  Calendar, MessageCircle, User,
 } from "lucide-react";
 
 /* ─────────────────── DATA ─────────────────── */
@@ -114,13 +114,37 @@ export default function HomePage() {
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState("");
 
+  const homepageFAQ = [
+    { q: "Do I need a referral to schedule an evaluation?", a: "A referral is not always required. Many of our patients self-refer. However, some insurance plans may require a referral for coverage. Call us at (801) 483-1600 and we'll verify your benefits." },
+    { q: "What age groups do you serve?", a: "We provide evaluations and treatment for children (as young as 2–4 for certain assessments), adolescents, adults, and geriatric patients. Our ADOS-2 and autism assessments are available across the full lifespan." },
+    { q: "How long does a typical evaluation take?", a: "Most evaluations range from 2–6 hours depending on the type. ADHD testing takes 2–4 hours. A full neuropsychological evaluation may take 3–6 hours. We offer flexible scheduling including telehealth options for initial consultations." },
+    { q: "Do you accept insurance?", a: "Yes. We accept most major insurance plans. Our team verifies your benefits before your first appointment. Self-pay options are also available for those without coverage." },
+    { q: "What is the difference between an ADHD evaluation and a neuropsychological evaluation?", a: "An ADHD evaluation focuses specifically on attention and executive functioning. A neuropsychological evaluation provides a broader assessment of cognitive function including memory, language, processing speed, and visuospatial skills, and is better suited for complex presentations or co-occurring conditions." },
+    { q: "Can adults be evaluated for ADHD or autism?", a: "Yes. Many adults seek and receive accurate diagnoses for ADHD and autism for the first time in adulthood. Our clinicians specialize in recognizing these presentations in adults, including those who may have been missed or misdiagnosed in childhood." },
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: homepageFAQ.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a },
+            })),
+          }),
+        }}
+      />
+
       {/* ──────── NAV ──────── */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <Link href="/" className="flex items-center gap-3" aria-label="CPS Home">
+            <Link href="/" className="flex items-center gap-4" aria-label="CPS Home">
               <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
                 <Brain className="w-5 h-5 text-white" />
               </div>
@@ -201,8 +225,8 @@ export default function HomePage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 max-w-4xl" style={{ marginTop: "4rem" }}>
               {stats.map((stat) => (
                 <div key={stat.label} className="text-left">
-                  <div className="text-4xl font-extrabold text-white mb-3">{stat.value}</div>
-                  <div className="text-sm text-white/70 mt-3">{stat.label}</div>
+                  <div className="text-4xl font-extrabold text-white mb-4">{stat.value}</div>
+                  <div className="text-sm text-white/70 mt-4">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -289,6 +313,33 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-6">
+                {/* ── Meet Dr. Szykula (E-E-A-T: Ept01, Ept02, A04) ── */}
+                <div className="bg-white rounded-2xl border border-[var(--cps-gray-200)] p-8 mb-8">
+                  <div className="flex items-start gap-6">
+                    <div className="w-20 h-20 rounded-full bg-[var(--cps-light)] flex items-center justify-center shrink-0 overflow-hidden">
+                      <img
+                        src="https://wecanhelpout.com/wp-content/uploads/2023/11/dr.stevenszykula.jpg"
+                        alt="Dr. Steven Szykula, Ph.D. — Founder of Comprehensive Psychological Services"
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-xs text-[var(--cps-blue)] font-semibold uppercase tracking-wider mb-1">Founded by</p>
+                      <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-1">Steven Szykula, Ph.D.</h3>
+                      <p className="text-sm text-[var(--cps-gray-500)] mb-3">Licensed Psychologist · Neuropsychologist · Founder, CPS</p>
+                      <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
+                        Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. A doctoral-level psychologist with advanced training in neuropsychology, he founded CPS to provide evidence-based psychological services to individuals, families, courts, and healthcare systems across the Wasatch Front. He has provided testimony in Utah family courts, conducted thousands of evaluations, and mentored dozens of clinicians.
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {["Ph.D. — Licensed Psychologist", "Neuropsychology Specialist", "Utah Family Court Expert", "Since 1979 in Practice"].map((tag) => (
+                          <span key={tag} className="inline-block text-xs bg-[var(--cps-light)] text-[var(--cps-blue)] px-3 py-1 rounded-full font-medium">{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {[
                   { icon: Shield, title: "Evidence-Based Practice", desc: "Every assessment and treatment follows validated, research-backed protocols. We measure outcomes, not just activity." },
                   { icon: Award, title: "Best Practice Award", desc: "Recognized for clinical excellence by professional organizations. Our team upholds the highest standards of competence." },
