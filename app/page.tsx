@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone, Mail, MapPin, Clock,
   Shield, Award, Star, CheckCircle2, ArrowRight,
@@ -187,7 +188,7 @@ export default function HomePage() {
               <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-4 text-[var(--cps-blue)] font-semibold">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
-              <div className="pt-2 pb-1">
+              <div className="pt-2 pb-2">
                 <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center p-2 bg-[var(--cps-blue)] text-white rounded-xl font-semibold text-base">Book Evaluation</a>
               </div>
             </div>
@@ -241,11 +242,11 @@ export default function HomePage() {
         <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)]">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-4">
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 md:gap-x-12 gap-y-2 text-sm text-[var(--cps-gray-500)]">
-              <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
-              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--cps-blue)]" /> 40+ Years Serving Utah</div>
-              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" /> Most Insurance Accepted</div>
-              <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" /> 3 Utah Locations</div>
-              <div className="flex items-center gap-2"><Star className="w-4 h-4 text-[var(--cps-blue)] fill-[var(--cps-blue)]" /> Rated 5.0 on Healthline</div>
+              <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> Licensed Psychologists</div>
+              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> 40+ Years Serving Utah</div>
+              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> Most Insurance Accepted</div>
+              <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> 3 Utah Locations</div>
+              <div className="flex items-center gap-2"><Star className="w-4 h-4 text-[var(--cps-blue)] fill-[var(--cps-blue)]" aria-hidden="true" /> Rated 5.0 on Healthline</div>
             </div>
           </div>
         </section>
@@ -272,7 +273,7 @@ export default function HomePage() {
                       <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-gray-700)] group-hover:text-[var(--cps-blue)] group-hover:gap-2 transition-all">
                         Learn More <ArrowRight className="w-4 h-4" />
                       </span>
-                      <div className="rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 w-14 h-14">
+                      <div className="rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 w-14 h-14" aria-hidden="true">
                         <Icon className="w-6 h-6 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
                       </div>
                     </div>
@@ -286,7 +287,7 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {additionalServices.map((svc) => (
                   <div key={svc} className="flex items-center gap-2 text-sm text-[var(--cps-gray-600)]">
-                    <CheckCircle2 className="w-4 h-4 text-[var(--cps-success)] shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[var(--cps-success)] shrink-0" aria-hidden="true" />
                     {svc}
                   </div>
                 ))}
@@ -322,11 +323,12 @@ export default function HomePage() {
                 <div className="bg-white rounded-2xl border border-[var(--cps-gray-200)] p-8 mb-8">
                   <div className="flex items-start gap-6">
                     <div className="w-20 h-20 rounded-full bg-[var(--cps-light)] flex items-center justify-center shrink-0 overflow-hidden">
-                      <img
+                      <Image
                         src="https://wecanhelpout.com/wp-content/uploads/2023/11/dr.stevenszykula.jpg"
                         alt="Dr. Steven Szykula, Ph.D. — Founder of Comprehensive Psychological Services"
+                        width={80}
+                        height={80}
                         className="w-full h-full object-cover"
-                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                       />
                     </div>
                     <div className="flex-1">
@@ -437,7 +439,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {/* Google */}
-              <a href="https://www.google.com/maps/place/Comprehensive+Psychological+Services/@40.7099,-111.8542" target="_blank" rel="noopener noreferrer" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+              <a href="https://www.google.com/maps/place/Comprehensive+Psychological+Services/@40.7099,-111.8542" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for CPS (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-2xl font-bold text-[#4285F4]">G</span>
                 </div>
@@ -451,7 +453,7 @@ export default function HomePage() {
               </a>
 
               {/* Healthline */}
-              <a href="https://www.healthline.com/health-directory/comprehensive-psychological-services" target="_blank" rel="noopener noreferrer" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+              <a href="https://www.healthline.com/health-directory/comprehensive-psychological-services" target="_blank" rel="noopener noreferrer" aria-label="View CPS on Healthline (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-sm font-bold text-[var(--cps-gray-700)]">HL</span>
                 </div>
@@ -465,7 +467,7 @@ export default function HomePage() {
               </a>
 
               {/* BBB */}
-              <a href="https://www.bbb.org/us/ut/salt-lake-city/psychologists" target="_blank" rel="noopener noreferrer" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+              <a href="https://www.bbb.org/us/ut/salt-lake-city/psychologists" target="_blank" rel="noopener noreferrer" aria-label="View CPS on Better Business Bureau (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-xs font-bold text-[#007847]">BBB</span>
                 </div>

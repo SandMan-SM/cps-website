@@ -83,10 +83,10 @@ export default function ServicePageContent({ service, location, relatedServices 
       <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)] py-4">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-14 text-sm text-[var(--cps-gray-500)]">
-            <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
-            <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" /> Since 1986</div>
-            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" /> Insurance Accepted</div>
-            <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" /> 3 Locations</div>
+            <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> Licensed Psychologists</div>
+            <div className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> Since 1986</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> Insurance Accepted</div>
+            <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> 3 Locations</div>
           </div>
         </div>
       </section>
@@ -238,7 +238,7 @@ export default function ServicePageContent({ service, location, relatedServices 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {service.benefits.map((benefit, i) => (
                 <div key={i} className="flex items-start gap-4 p-4">
-                  <CheckCircle2 className="w-5 h-5 text-[var(--cps-success)] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[var(--cps-success)] shrink-0 mt-0.5" aria-hidden="true" />
                   <span className="text-[var(--cps-gray-700)]">{benefit}</span>
                 </div>
               ))}
