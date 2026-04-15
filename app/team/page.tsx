@@ -208,7 +208,7 @@ function ClinicianCard({ clinician }: { clinician: Clinician }) {
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-2">
               <div className="inline-flex items-center gap-2 bg-[var(--cps-blue)]/20 text-[var(--cps-teal)] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                <Award className="w-3 h-3" />
+                <Award className="w-3 h-3" aria-hidden="true" />
                 Founder & Clinical Director
               </div>
               <h2 className="text-2xl md:text-3xl font-bold mb-1">
@@ -251,7 +251,7 @@ function ClinicianCard({ clinician }: { clinician: Clinician }) {
                   </div>
                   {locations.map((l) => (
                     <div key={l} className="flex items-center gap-2 text-white text-sm mt-1">
-                      <MapPin className="w-3 h-3 text-[var(--cps-teal)]" />
+                      <MapPin className="w-3 h-3 text-[var(--cps-teal)]" aria-hidden="true" />
                       {l}
                     </div>
                   ))}
@@ -287,13 +287,13 @@ function ClinicianCard({ clinician }: { clinician: Clinician }) {
             </div>
             {ageRanges && (
               <div className="flex items-center gap-2 text-[var(--cps-gray-500)] text-sm">
-                <Users className="w-4 h-4 text-[var(--cps-blue)]" />
+                <Users className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" />
                 {ageRanges}
               </div>
             )}
             {locations && locations.length > 0 && (
               <div className="flex items-start gap-2 text-[var(--cps-gray-500)] text-sm">
-                <MapPin className="w-4 h-4 text-[var(--cps-blue)] mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-[var(--cps-blue)] mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span>{locations.join(" · ")}</span>
               </div>
             )}
@@ -317,7 +317,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-[var(--cps-blue)]/20 text-[var(--cps-teal)] px-4 py-2 rounded-full text-sm font-semibold mb-8">
-              <GraduationCap className="w-4 h-4" />
+              <GraduationCap className="w-4 h-4" aria-hidden="true" />
               20+ Expert Clinicians Across Utah
             </div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
@@ -377,7 +377,7 @@ export default function TeamPage() {
           {/* More staff note */}
           <div className="mt-12 bg-[var(--cps-white)] rounded-2xl p-8 text-center">
             <div className="w-12 h-12 rounded-xl bg-[var(--cps-blue)]/10 flex items-center justify-center mx-auto mb-4">
-              <Users className="w-6 h-6 text-[var(--cps-blue)]" />
+              <Users className="w-6 h-6 text-[var(--cps-blue)]" aria-hidden="true" />
             </div>
             <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-2">
               Additional Specialists Available
@@ -421,7 +421,7 @@ export default function TeamPage() {
                 key={cred}
                 className="flex items-center gap-2 bg-[var(--cps-light)] text-[var(--cps-gray-700)] px-4 py-2 rounded-full text-sm font-medium"
               >
-                <Award className="w-4 h-4 text-[var(--cps-blue)]" />
+                <Award className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" />
                 {cred}
               </div>
             ))}

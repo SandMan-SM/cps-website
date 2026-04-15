@@ -206,7 +206,7 @@ export default function HomePage() {
           <div className="relative max-w-7xl mx-auto px-8 sm:px-10 lg:px-10 py-16 md:py-24">
             <div className="max-w-4xl">
               <div className="flex items-center justify-start gap-2 mb-6">
-                <Award className="w-5 h-5 text-[var(--cps-teal)]" />
+                <Award className="w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
                 <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
               </div>
               <h1 className="display-heading text-white mb-4">
@@ -447,7 +447,7 @@ export default function HomePage() {
                 <p className="text-sm text-[var(--cps-gray-500)] mb-4">Leave a Google review</p>
                 <div className="flex justify-center gap-1" aria-label="5 stars">
                   {[1,2,3,4,5].map((s) => (
-                    <Star key={s} className="w-4 h-4 text-[var(--cps-warning)] fill-[var(--cps-warning)]" />
+                    <Star key={s} className="w-4 h-4 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
                   ))}
                 </div>
               </a>
@@ -461,7 +461,7 @@ export default function HomePage() {
                 <p className="text-sm text-[var(--cps-gray-500)] mb-4">Rated 5.0 on Healthline</p>
                 <div className="flex justify-center gap-1" aria-label="5 stars">
                   {[1,2,3,4,5].map((s) => (
-                    <Star key={s} className="w-4 h-4 text-[var(--cps-warning)] fill-[var(--cps-warning)]" />
+                    <Star key={s} className="w-4 h-4 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
                   ))}
                 </div>
               </a>
@@ -474,7 +474,7 @@ export default function HomePage() {
                 <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Better Business Bureau</h3>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-4">View our BBB profile</p>
                 <div className="flex justify-center gap-1" aria-label="Accredited business">
-                  <Shield className="w-4 h-4 text-[#007847]" />
+                  <Shield className="w-4 h-4 text-[#007847]" aria-hidden="true" />
                   <span className="text-xs text-[#007847] font-semibold">Accredited</span>
                 </div>
               </a>
@@ -530,7 +530,7 @@ export default function HomePage() {
                   </div>
                   <div className="p-8">
                     <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
-                      <MapPin className="w-7 h-7 text-[var(--cps-blue)]" />
+                      <MapPin className="w-7 h-7 text-[var(--cps-blue)]" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-2">{office.name}</h3>
                     <p className="text-sm text-[var(--cps-blue)] font-medium mb-6">Serving {office.serving}</p>
@@ -572,7 +572,7 @@ export default function HomePage() {
                     </div>
                   </a>
                   <div className="flex items-center gap-6 p-6 bg-white/10 rounded-xl">
-                    <Clock className="w-6 h-6 text-[var(--cps-teal)]" />
+                    <Clock className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">Office Hours</div>
                       <div className="text-sm text-white/60">Monday–Friday, 8:00 AM – 6:00 PM</div>
@@ -584,7 +584,7 @@ export default function HomePage() {
               <div>
                 {formSubmitted ? (
                   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
-                    <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" />
+                    <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" aria-hidden="true" />
                     <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
                     <p className="text-white/70 leading-relaxed">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
                   </div>
@@ -651,7 +651,7 @@ export default function HomePage() {
                       <p className="text-sm text-[var(--cps-warning)] bg-white/10 rounded-xl px-4 py-4">{formError}</p>
                     )}
                     <button type="submit" disabled={formLoading} className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-white font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
-                      <MessageCircle className="w-5 h-5" />
+                      <MessageCircle className="w-5 h-5" aria-hidden="true" />
                       {formLoading ? "Sending…" : "Request Appointment"}
                     </button>
                     <p className="text-xs text-white/40 text-center">Your information is confidential. We&apos;ll respond within 1 business day.</p>
@@ -691,7 +691,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
-                  <Brain className="w-5 h-5 text-white" />
+                  <Brain className="w-5 h-5 text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="text-sm font-bold text-white leading-tight">Comprehensive Psychological</div>

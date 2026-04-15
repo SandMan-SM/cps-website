@@ -767,20 +767,20 @@ export default async function BlogPostPage({
           <div className="max-w-4xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="flex items-center gap-2 mb-6 text-[var(--cps-teal)] flex-wrap">
               <Link href="/" className="text-sm font-medium hover:text-white transition-colors">Home</Link>
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4" aria-hidden="true" />
               <Link href="/blog" className="text-sm font-medium hover:text-white transition-colors">Blog</Link>
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4" aria-hidden="true" />
               <span className="text-sm font-medium text-white/60 line-clamp-1">{post.title}</span>
             </div>
             <div className="flex items-center gap-4 mb-6 flex-wrap">
               <span
                 className={`text-xs font-semibold px-4 py-2 rounded-full ${categoryColors[post.category] ?? "bg-[var(--cps-gray-100)] text-[var(--cps-gray-600)]"}`}
               >
-                <Tag className="w-3 h-3 inline mr-1" />
+                <Tag className="w-3 h-3 inline mr-1" aria-hidden="true" />
                 {post.category}
               </span>
               <span className="flex items-center gap-1 text-xs text-white/60">
-                <Clock className="w-3 h-3" />
+                <Clock className="w-3 h-3" aria-hidden="true" />
                 {post.readTime}
               </span>
               <time className="text-xs text-white/60" dateTime={post.date}>

@@ -55,7 +55,7 @@ export default function BlogPage() {
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="flex items-center gap-2 mb-6 text-[var(--cps-teal)]">
               <Link href="/" className="text-sm font-medium hover:text-white transition-colors">Home</Link>
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4" aria-hidden="true" />
               <span className="text-sm font-medium">Blog</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -97,11 +97,11 @@ export default function BlogPage() {
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-4 mb-4">
                       <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColors[post.category] ?? "bg-[var(--cps-gray-100)] text-[var(--cps-gray-600)]"}`}>
-                        <Tag className="w-3 h-3 inline mr-1" />
+                        <Tag className="w-3 h-3 inline mr-1" aria-hidden="true" />
                         {post.category}
                       </span>
                       <span className="flex items-center gap-1 text-xs text-[var(--cps-gray-500)]">
-                        <Clock className="w-3 h-3" />
+                        <Clock className="w-3 h-3" aria-hidden="true" />
                         {post.readTime}
                       </span>
                     </div>

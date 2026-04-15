@@ -266,7 +266,7 @@ export default function AboutPage() {
                   "We offer telehealth across the full practice — not just some providers — so geography is never a barrier to care.",
                 ].map((point, i) => (
                   <li key={i} className="flex gap-4">
-                    <CheckCircle2 className="w-5 h-5 text-[var(--cps-blue)] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[var(--cps-blue)] flex-shrink-0 mt-0.5" aria-hidden="true" />
                     <span className="text-[var(--cps-gray-600)] leading-relaxed">{point}</span>
                   </li>
                 ))}
@@ -283,7 +283,7 @@ export default function AboutPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <Phone className="w-5 h-5 text-[var(--cps-blue)]" />
+                  <Phone className="w-5 h-5 text-[var(--cps-blue)]" aria-hidden="true" />
                   <Link
                     href={PHONE_HREF}
                     className="text-[var(--cps-blue)] font-semibold hover:text-[var(--cps-blue-hover)] transition-colors"
@@ -293,7 +293,7 @@ export default function AboutPage() {
                 </div>
                 {locations.map(({ name, address, city }) => (
                   <div key={name} className="flex gap-4">
-                    <MapPin className="w-5 h-5 text-[var(--cps-blue)] flex-shrink-0 mt-0.5" />
+                    <MapPin className="w-5 h-5 text-[var(--cps-blue)] flex-shrink-0 mt-0.5" aria-hidden="true" />
                     <div>
                       <div className="font-semibold text-[var(--cps-gray-800)] text-sm">{name}</div>
                       <div className="text-[var(--cps-gray-500)] text-sm">{address}</div>

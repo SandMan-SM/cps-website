@@ -284,7 +284,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                 <details key={i} className="group bg-[var(--cps-gray-50)] rounded-xl border border-[var(--cps-gray-200)] overflow-hidden">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-[var(--cps-gray-900)] hover:text-[var(--cps-blue)] transition-colors">
                     {faq.q}
-                    <ChevronDown className="w-5 h-5 text-[var(--cps-gray-400)] group-open:rotate-180 transition-transform shrink-0 ml-4" />
+                    <ChevronDown className="w-5 h-5 text-[var(--cps-gray-400)] group-open:rotate-180 transition-transform shrink-0 ml-4" aria-hidden="true" />
                   </summary>
                   <div className="px-6 pb-6 text-[var(--cps-gray-600)] leading-relaxed">
                     {faq.a}
