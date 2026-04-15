@@ -165,7 +165,7 @@ export default function HomePage() {
 
             <div className="flex items-center gap-4">
               <a href={PHONE_HREF} className="hidden md:flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors" aria-label={`Call us at ${PHONE}`}>
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4" aria-hidden="true" />
                 {PHONE}
               </a>
               <a href="#contact" className="hidden sm:inline-flex items-center justify-center px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors min-h-[3rem]">
@@ -186,7 +186,7 @@ export default function HomePage() {
               ))}
               <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
               <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-4 text-[var(--cps-blue)] font-semibold">
-                <Phone className="w-4 h-4" /> {PHONE}
+                <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
               </a>
               <div className="pt-2 pb-2">
                 <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center p-2 bg-[var(--cps-blue)] text-white rounded-xl font-semibold text-base">Book Evaluation</a>
@@ -217,11 +217,11 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
                 <a href="#contact" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
-                  <Calendar className="w-5 h-5" />
+                  <Calendar className="w-5 h-5" aria-hidden="true" />
                   Schedule an Evaluation
                 </a>
                 <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
-                  <Phone className="w-5 h-5" />
+                  <Phone className="w-5 h-5" aria-hidden="true" />
                   {PHONE}
                 </a>
               </div>
@@ -271,7 +271,7 @@ export default function HomePage() {
                     <p className="text-[var(--cps-gray-500)] leading-relaxed mb-6 flex-1">{svc.description}</p>
                     <div className="flex items-end justify-between mt-6">
                       <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-gray-700)] group-hover:text-[var(--cps-blue)] group-hover:gap-2 transition-all">
-                        Learn More <ArrowRight className="w-4 h-4" />
+                        Learn More <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </span>
                       <div className="rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 w-14 h-14" aria-hidden="true">
                         <Icon className="w-6 h-6 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
@@ -537,7 +537,7 @@ export default function HomePage() {
                     <p className="text-[var(--cps-gray-600)] text-sm mb-2">{office.address}</p>
                     <p className="text-[var(--cps-gray-600)] text-sm mb-6">{office.city}</p>
                     <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
-                      <Phone className="w-4 h-4" /> {PHONE}
+                      <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
                     </a>
                   </div>
                 </div>
@@ -558,14 +558,14 @@ export default function HomePage() {
                 </p>
                 <div className="space-y-4">
                   <a href={PHONE_HREF} className="flex items-center gap-6 p-6 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
-                    <Phone className="w-6 h-6 text-[var(--cps-teal)]" />
+                    <Phone className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">{PHONE}</div>
                       <div className="text-sm text-white/60">Mon–Fri, 8am–6pm</div>
                     </div>
                   </a>
                   <a href={`mailto:${EMAIL}`} className="flex items-center gap-6 p-6 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
-                    <Mail className="w-6 h-6 text-[var(--cps-teal)]" />
+                    <Mail className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">{EMAIL}</div>
                       <div className="text-sm text-white/60">We respond within 24 hours</div>
@@ -671,14 +671,14 @@ export default function HomePage() {
             className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm transition-colors border-2 border-[var(--cps-blue)] text-[var(--cps-blue)]"
             aria-label="Call us at (801) 483-1600"
           >
-            <Phone className="w-5 h-5" />
+            <Phone className="w-5 h-5" aria-hidden="true" />
             Call Now
           </a>
           <a
             href="#contact"
             className="flex-[2] flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white transition-colors"
           >
-            <Calendar className="w-5 h-5" />
+            <Calendar className="w-5 h-5" aria-hidden="true" />
             Book Evaluation
           </a>
         </div>
@@ -744,10 +744,10 @@ export default function HomePage() {
             <div>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
               <ul className="space-y-4">
-                <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Phone className="w-4 h-4 shrink-0" /> {PHONE}</a></li>
-                <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Mail className="w-4 h-4 shrink-0" /> {EMAIL}</a></li>
+                <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
+                <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
                 <li className="flex items-start gap-2 text-sm">
-                  <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
                   <div>
                     <div>1208 E 3300 S, SLC, UT 84106</div>
                     <div>1916 N 700 W #190, Layton, UT 84041</div>

@@ -54,7 +54,7 @@ export default function ServicePageContent({ service, location, relatedServices 
           <div className="max-w-3xl">
             {location && (
               <div className="flex items-center gap-2 mb-4">
-                <MapPin className="w-4 h-4 text-[var(--cps-teal)]" />
+                <MapPin className="w-4 h-4 text-[var(--cps-teal)]" aria-hidden="true" />
                 <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">
                   Serving {locationName}{location.county ? `, ${location.county}` : ""}
                 </span>
@@ -64,11 +64,11 @@ export default function ServicePageContent({ service, location, relatedServices 
             <p className="body-large text-white/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
-                <Calendar className="w-5 h-5" />
+                <Calendar className="w-5 h-5" aria-hidden="true" />
                 {service.ctaText}
               </Link>
               <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
               </a>
             </div>
@@ -122,7 +122,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                     Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. As the founder of Comprehensive Psychological Services, he has conducted thousands of neuropsychological, ADHD, autism, and custody evaluations. He has provided expert testimony in Utah family courts and is a member of the American Academy of Clinical Neuropsychology (AACN).
                   </p>
                   <a href="tel:8014831600" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors mt-2">
-                    <Phone className="w-4 h-4" /> (801) 483-1600
+                    <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
                   </a>
                 </div>
               </div>
@@ -194,7 +194,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   {row.map((cell, ci) => {
                     const headers = service.comparisonTable?.headers ?? [];
                     return (
-                    <div key={ci} className={`flex flex-col px-5 py-4 ${ci === 0 ? 'bg-[var(--cps-light)] border-b border-[var(--cps-gray-200)]' : 'border-b last:border-b-0 border-[var(--cps-gray-100)]'}`}>
+                    <div key={ci} className={`flex flex-col px-4 py-4 ${ci === 0 ? 'bg-[var(--cps-light)] border-b border-[var(--cps-gray-200)]' : 'border-b last:border-b-0 border-[var(--cps-gray-100)]'}`}>
                       <span className="text-xs font-semibold text-[var(--cps-gray-500)] uppercase tracking-wider mb-1">
                         {headers[ci]}
                       </span>
@@ -258,13 +258,13 @@ export default function ServicePageContent({ service, location, relatedServices 
               <div className="bg-white p-8 rounded-2xl border border-[var(--cps-gray-200)]">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-[var(--cps-blue)]" />
+                    <MapPin className="w-6 h-6 text-[var(--cps-blue)]" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-1">CPS {location.nearestOffice}</h3>
                     <p className="text-[var(--cps-gray-600)] mb-4">{location.nearestAddress}</p>
                     <a href={PHONE_HREF} className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold hover:text-[var(--cps-blue-hover)] transition-colors">
-                      <Phone className="w-4 h-4" /> {PHONE}
+                      <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
                     </a>
                   </div>
                 </div>
@@ -308,7 +308,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                     <h3 className="font-bold text-[var(--cps-gray-900)] group-hover:text-[var(--cps-blue)] transition-colors mb-2">{rel.title}</h3>
                     <p className="text-sm text-[var(--cps-gray-500)] leading-relaxed mb-4">{rel.heroSubtitle.slice(0, 120)}...</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
-                      Learn More <ArrowRight className="w-4 h-4" />
+                      Learn More <ArrowRight className="w-4 h-4" aria-hidden="true" />
                     </span>
                   </a>
                 ))}
@@ -330,11 +330,11 @@ export default function ServicePageContent({ service, location, relatedServices 
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
-                <Calendar className="w-5 h-5" />
+                <Calendar className="w-5 h-5" aria-hidden="true" />
                 {service.ctaText}
               </Link>
               <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
               </a>
             </div>

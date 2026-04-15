@@ -107,7 +107,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-[var(--cps-blue)]/20 text-[var(--cps-teal)] px-4 py-2 rounded-full text-sm font-semibold mb-8">
-              <Award className="w-4 h-4" />
+              <Award className="w-4 h-4" aria-hidden="true" />
               Established 1986 — Utah&apos;s Trusted Practice
             </div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
@@ -125,7 +125,7 @@ export default function AboutPage() {
                 href={PHONE_HREF}
                 className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
               </Link>
               <Link
@@ -133,7 +133,7 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-2 border border-[var(--cps-gray-200)]/30 hover:border-[var(--cps-teal)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 Meet Our Team
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold hover:gap-4 transition-all"
                 >
                   Meet Dr. Szykula and our full team
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -322,14 +322,14 @@ export default function AboutPage() {
               href={PHONE_HREF}
               className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-5 h-5" aria-hidden="true" />
               {PHONE}
             </Link>
             <Link
               href="/team"
               className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
-              <Users className="w-5 h-5" />
+              <Users className="w-5 h-5" aria-hidden="true" />
               Meet Our Team
             </Link>
           </div>

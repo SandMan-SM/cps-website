@@ -103,12 +103,12 @@ export default function ResourcesPage() {
               {/* Scheduling */}
               <div className="bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] p-8">
                 <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
-                  <Calendar className="w-7 h-7 text-[var(--cps-blue)]" />
+                  <Calendar className="w-7 h-7 text-[var(--cps-blue)]" aria-hidden="true" />
                 </div>
                 <h2 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4">Scheduling</h2>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-6">Call or use our online form. Same-month appointments often available.</p>
                 <a href="tel:8014831600" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)]">
-                  <Phone className="w-4 h-4" /> (801) 483-1600
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
                 </a>
               </div>
             </div>

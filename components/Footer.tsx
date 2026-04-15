@@ -74,10 +74,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-4">
-              <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Phone className="w-4 h-4 shrink-0" /> {PHONE}</a></li>
-              <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Mail className="w-4 h-4 shrink-0" /> {EMAIL}</a></li>
+              <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
+              <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
               <li className="flex items-start gap-2 text-sm">
-                <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
                   <div>1208 E 3300 S, SLC, UT 84106</div>
                   <div>1916 N 700 W #190, Layton, UT 84041</div>

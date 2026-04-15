@@ -116,7 +116,7 @@ export default function BlogPage() {
                         {formatDate(post.date)}
                       </time>
                       <span className="flex items-center gap-1 text-sm font-medium text-[var(--cps-blue)] group-hover:gap-2 transition-all">
-                        Read more <ArrowRight className="w-4 h-4" />
+                        Read more <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </span>
                     </div>
                   </div>
@@ -153,7 +153,7 @@ export default function BlogPage() {
                         {formatDate(post.date)}
                       </time>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-[var(--cps-gray-400)] group-hover:text-[var(--cps-blue)] shrink-0 mt-1 transition-colors" />
+                    <ArrowRight className="w-5 h-5 text-[var(--cps-gray-400)] group-hover:text-[var(--cps-blue)] shrink-0 mt-1 transition-colors" aria-hidden="true" />
                   </Link>
                 ))}
               </div>

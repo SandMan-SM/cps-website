@@ -335,7 +335,7 @@ export default function TeamPage() {
                 href={PHONE_HREF}
                 className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
               </Link>
               <Link
@@ -343,7 +343,7 @@ export default function TeamPage() {
                 className="inline-flex items-center gap-2 border border-white/30 hover:border-[var(--cps-teal)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 About CPS
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -391,7 +391,7 @@ export default function TeamPage() {
               href={PHONE_HREF}
               className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-5 h-5" aria-hidden="true" />
               {PHONE}
             </Link>
           </div>
@@ -445,7 +445,7 @@ export default function TeamPage() {
               href={PHONE_HREF}
               className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-5 h-5" aria-hidden="true" />
               {PHONE}
             </Link>
             <Link

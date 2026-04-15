@@ -842,7 +842,7 @@ export default async function BlogPostPage({
                 href="tel:8014831600"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-semibold rounded-xl transition-colors"
               >
-                <Phone className="w-4 h-4" /> (801) 483-1600
+                <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
               </a>
               <Link
                 href="/#contact"
