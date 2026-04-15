@@ -167,7 +167,7 @@ export default function HomePage() {
                 <Phone className="w-4 h-4" />
                 {PHONE}
               </a>
-              <a href="#contact" className="hidden sm:inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors">
+              <a href="#contact" className="hidden sm:inline-flex items-center justify-center px-6 py-3 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors min-h-[3rem]">
                 Book Evaluation
               </a>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
@@ -179,15 +179,17 @@ export default function HomePage() {
 
         {mobileMenuOpen && (
           <div id="mobile-menu" className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
-            <div className="px-6 py-4 space-y-2">
+            <div className="px-6 pt-4 pb-2 space-y-1">
               {["Services", "Locations", "About", "Contact"].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
+                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
               ))}
-              <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
-              <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-4 text-[var(--cps-blue)] font-semibold">
+              <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
+              <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-3 text-[var(--cps-blue)] font-semibold">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center px-8 py-4 bg-[var(--cps-blue)] text-white rounded-xl font-semibold text-base">Book Evaluation</a>
+              <div className="pt-2 pb-1">
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center p-2 bg-[var(--cps-blue)] text-white rounded-xl font-semibold text-base">Book Evaluation</a>
+              </div>
             </div>
           </div>
         )}
@@ -212,12 +214,12 @@ export default function HomePage() {
               <p className="body-large text-white/80 mb-10">
                 Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
               </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
-                <a href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
+                <a href="#contact" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                   <Calendar className="w-5 h-5" />
                   Schedule an Evaluation
                 </a>
-                <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
+                <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
                   <Phone className="w-5 h-5" />
                   {PHONE}
                 </a>
