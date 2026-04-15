@@ -63,11 +63,11 @@ export default function ServicePageContent({ service, location, relatedServices 
             <h1 className="display-heading text-white mb-6">{h1}</h1>
             <p className="body-large text-white/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" />
                 {service.ctaText}
               </Link>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
+              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
                 <Phone className="w-5 h-5" />
                 {PHONE}
               </a>
@@ -191,16 +191,19 @@ export default function ServicePageContent({ service, location, relatedServices 
             <div className="md:hidden space-y-4">
               {service.comparisonTable.rows.map((row, ri) => (
                 <div key={ri} className={`rounded-xl border overflow-hidden ${ri % 2 === 1 ? 'bg-[var(--cps-gray-50)] border-[var(--cps-gray-200)]' : 'bg-white border-[var(--cps-gray-200)]'}`}>
-                  {row.map((cell, ci) => (
+                  {row.map((cell, ci) => {
+                    const headers = service.comparisonTable?.headers ?? [];
+                    return (
                     <div key={ci} className={`flex flex-col px-5 py-4 ${ci === 0 ? 'bg-[var(--cps-light)] border-b border-[var(--cps-gray-200)]' : 'border-b last:border-b-0 border-[var(--cps-gray-100)]'}`}>
                       <span className="text-xs font-semibold text-[var(--cps-gray-500)] uppercase tracking-wider mb-1">
-                        {service.comparisonTable.headers[ci]}
+                        {headers[ci]}
                       </span>
                       <span className={`text-sm ${ci === 0 ? 'font-bold text-[var(--cps-gray-900)]' : 'text-[var(--cps-gray-700)]'}`}>
                         {cell}
                       </span>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               ))}
             </div>
@@ -326,11 +329,11 @@ export default function ServicePageContent({ service, location, relatedServices 
                 : `Schedule your ${service.shortName.toLowerCase()} at one of our three Utah locations. Call us today or book online.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" />
                 {service.ctaText}
               </Link>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white/50">
+              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
                 <Phone className="w-5 h-5" />
                 {PHONE}
               </a>

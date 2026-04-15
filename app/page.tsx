@@ -167,7 +167,7 @@ export default function HomePage() {
                 <Phone className="w-4 h-4" />
                 {PHONE}
               </a>
-              <a href="#contact" className="hidden sm:inline-flex items-center justify-center px-6 py-3 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors min-h-[3rem]">
+              <a href="#contact" className="hidden sm:inline-flex items-center justify-center px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors min-h-[3rem]">
                 Book Evaluation
               </a>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
@@ -181,10 +181,10 @@ export default function HomePage() {
           <div id="mobile-menu" className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
             <div className="px-6 pt-4 pb-2 space-y-1">
               {["Services", "Locations", "About", "Contact"].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
+                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
               ))}
-              <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
-              <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-3 text-[var(--cps-blue)] font-semibold">
+              <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
+              <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-4 text-[var(--cps-blue)] font-semibold">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
               <div className="pt-2 pb-1">
