@@ -226,7 +226,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 max-w-4xl" style={{ marginTop: "4rem" }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 max-w-4xl mt-16">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-left">
                   <div className="text-4xl font-extrabold text-white mb-4">{stat.value}</div>
@@ -239,7 +239,7 @@ export default function HomePage() {
 
         {/* ──────── TRUST BAR ──────── */}
         <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10" style={{ paddingTop: "1.25rem", paddingBottom: "1.25rem" }}>
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-4">
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 md:gap-x-12 gap-y-2 text-sm text-[var(--cps-gray-500)]">
               <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" /> Licensed Psychologists</div>
               <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--cps-blue)]" /> 40+ Years Serving Utah</div>
@@ -261,18 +261,18 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ gap: "2rem" }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {serviceCategories.map((svc) => {
                 const Icon = svc.icon;
                 return (
-                  <a key={svc.title} href={svc.href} className="group flex flex-col bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style={{ padding: "1.75rem" }}>
+                  <a key={svc.title} href={svc.href} className="group flex flex-col bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                     <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
                     <p className="text-[var(--cps-gray-500)] leading-relaxed mb-6 flex-1">{svc.description}</p>
-                    <div className="flex items-end justify-between" style={{ marginTop: "auto" }}>
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-gray-700)] group-hover:text-[var(--cps-blue)] group-hover:gap-2 transition-all font-semibold" style={{ marginTop: "1.5rem" }}>
+                    <div className="flex items-end justify-between mt-6">
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-gray-700)] group-hover:text-[var(--cps-blue)] group-hover:gap-2 transition-all">
                         Learn More <ArrowRight className="w-4 h-4" />
                       </span>
-                      <div className="rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300" style={{ marginTop: "1.5rem", width: "3.5rem", height: "3.5rem" }}>
+                      <div className="rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 w-14 h-14">
                         <Icon className="w-6 h-6 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
                       </div>
                     </div>
@@ -385,7 +385,7 @@ export default function HomePage() {
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.title} className="flex items-start gap-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:shadow-md transition-shadow" style={{ padding: "1.75rem" }}>
+                    <div key={item.title} className="flex items-start gap-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:shadow-md transition-shadow p-6">
                       <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0" aria-hidden="true">
                         <Icon className="w-7 h-7 text-[var(--cps-blue)]" />
                       </div>
@@ -410,7 +410,7 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
-                <div key={i} className="bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)]" style={{ padding: "1.75rem" }}>
+                <div key={i} className="bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] p-6">
                   <div className="flex gap-1 mb-6" aria-label={`${t.rating} out of 5 stars`} role="img">
                     {Array.from({ length: t.rating }).map((_, j) => (
                       <Star key={j} className="w-5 h-5 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
