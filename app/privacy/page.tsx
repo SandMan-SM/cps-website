@@ -27,7 +27,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Navbar />
-      <main id="main" className="py-16 md:py-24 bg-white">
+      <main id="main" className="py-16 md:py-24 bg-[var(--cps-white)]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="mb-12">
             <p className="text-sm text-[var(--cps-gray-500)] mb-4">Effective Date: April 14, 2026</p>

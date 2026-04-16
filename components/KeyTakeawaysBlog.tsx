@@ -7,9 +7,9 @@ interface Props {
  */
 export default function KeyTakeawaysBlog({ items }: Props) {
   return (
-    <div className="bg-white rounded-2xl border border-[var(--cps-gray-200)] overflow-hidden shadow-sm my-8">
+    <div className="bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] overflow-hidden shadow-sm my-8">
       <div className="bg-[var(--cps-blue)] px-6 py-4">
-        <h2 className="text-sm font-bold text-white uppercase tracking-wider">
+        <h2 className="text-sm font-bold text-[var(--cps-white)] uppercase tracking-wider">
           Key Takeaways
         </h2>
       </div>

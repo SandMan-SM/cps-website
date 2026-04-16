@@ -142,12 +142,12 @@ export default function HomePage() {
       />
 
       {/* ──────── NAV ──────── */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
+      <nav className="sticky top-0 z-50 bg-[var(--cps-white)]/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link href="/" className="flex items-center gap-4" aria-label="CPS Home">
               <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
-                <Brain className="w-5 h-5 text-white" />
+                <Brain className="w-5 h-5 text-[var(--cps-white)]" />
               </div>
               <div className="hidden sm:block">
                 <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Comprehensive Psychological</div>
@@ -168,7 +168,7 @@ export default function HomePage() {
                 <Phone className="w-4 h-4" aria-hidden="true" />
                 {PHONE}
               </a>
-              <a href="#contact" className="hidden sm:inline-flex items-center justify-center px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white text-base font-semibold rounded-xl transition-colors min-h-[3rem]">
+              <a href="#contact" className="hidden sm:inline-flex items-center justify-center px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] text-base font-semibold rounded-xl transition-colors min-h-[3rem]">
                 Book Evaluation
               </a>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
@@ -179,7 +179,7 @@ export default function HomePage() {
         </div>
 
         {mobileMenuOpen && (
-          <div id="mobile-menu" className="lg:hidden border-t border-[var(--cps-gray-200)] bg-white overflow-hidden">
+          <div id="mobile-menu" className="lg:hidden border-t border-[var(--cps-gray-200)] bg-[var(--cps-white)] overflow-hidden">
             <div className="px-6 pt-4 pb-2 space-y-1">
               {["Services", "Locations", "About", "Contact"].map((item) => (
                 <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
@@ -189,7 +189,7 @@ export default function HomePage() {
                 <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
               </a>
               <div className="pt-2 pb-2">
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center p-2 bg-[var(--cps-blue)] text-white rounded-xl font-semibold text-base">Book Evaluation</a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center p-2 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base">Book Evaluation</a>
               </div>
             </div>
           </div>
@@ -198,7 +198,7 @@ export default function HomePage() {
 
       <main id="main">
         {/* ──────── HERO ──────── */}
-        <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white overflow-hidden">
+        <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] overflow-hidden">
           <div className="absolute inset-0 opacity-10" aria-hidden="true">
             <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
             <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
@@ -209,18 +209,18 @@ export default function HomePage() {
                 <Award className="w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
                 <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
               </div>
-              <h1 className="display-heading text-white mb-4">
+              <h1 className="display-heading text-[var(--cps-white)] mb-4">
                 Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
               </h1>
-              <p className="body-large text-white/80 mb-10">
+              <p className="body-large text-[var(--cps-white)]/80 mb-10">
                 Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
-                <a href="#contact" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+                <a href="#contact" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
                   <Calendar className="w-5 h-5" aria-hidden="true" />
                   Schedule an Evaluation
                 </a>
-                <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
+                <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
                   <Phone className="w-5 h-5" aria-hidden="true" />
                   {PHONE}
                 </a>
@@ -230,8 +230,8 @@ export default function HomePage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 max-w-4xl mt-16">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-left">
-                  <div className="text-4xl font-extrabold text-white mb-4">{stat.value}</div>
-                  <div className="text-sm text-white/70 mt-4">{stat.label}</div>
+                  <div className="text-4xl font-extrabold text-[var(--cps-white)] mb-4">{stat.value}</div>
+                  <div className="text-sm text-[var(--cps-white)]/70 mt-4">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -252,7 +252,7 @@ export default function HomePage() {
         </section>
 
         {/* ──────── SERVICES ──────── */}
-        <section id="services" className="py-12 md:py-20 bg-white">
+        <section id="services" className="py-12 md:py-20 bg-[var(--cps-white)]">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Our Specialties</p>
@@ -266,7 +266,7 @@ export default function HomePage() {
               {serviceCategories.map((svc) => {
                 const Icon = svc.icon;
                 return (
-                  <a key={svc.title} href={svc.href} className="group flex flex-col bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
+                  <a key={svc.title} href={svc.href} className="group flex flex-col bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                     <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
                     <p className="text-[var(--cps-gray-500)] leading-relaxed mb-6 flex-1">{svc.description}</p>
                     <div className="flex items-end justify-between mt-6">
@@ -274,7 +274,7 @@ export default function HomePage() {
                         Learn More <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </span>
                       <div className="rounded-xl bg-[var(--cps-light)] group-hover:bg-[var(--cps-blue)] flex items-center justify-center transition-colors duration-300 w-14 h-14" aria-hidden="true">
-                        <Icon className="w-6 h-6 text-[var(--cps-blue)] group-hover:text-white transition-colors duration-300" />
+                        <Icon className="w-6 h-6 text-[var(--cps-blue)] group-hover:text-[var(--cps-white)] transition-colors duration-300" />
                       </div>
                     </div>
                   </a>
@@ -320,7 +320,7 @@ export default function HomePage() {
 
               <div className="space-y-6">
                 {/* ── Meet Dr. Szykula (E-E-A-T: Ept01, Ept02, A04) ── */}
-                <div className="bg-white rounded-2xl border border-[var(--cps-gray-200)] p-8 mb-8">
+                <div className="bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] p-8 mb-8">
                   <div className="flex items-start gap-6">
                     <div className="w-20 h-20 rounded-full bg-[var(--cps-light)] flex items-center justify-center shrink-0 overflow-hidden">
                       <Image
@@ -348,7 +348,7 @@ export default function HomePage() {
                 </div>
 
                 {/* ── Professional Memberships & Affiliations (E-E-A-T) ── */}
-                <div className="bg-white rounded-2xl border border-[var(--cps-gray-200)] p-6">
+                <div className="bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] p-6">
                   <p className="text-xs font-semibold text-[var(--cps-blue)] uppercase tracking-wider mb-4">Professional Memberships &amp; Affiliations</p>
                   <div className="flex flex-wrap gap-2">
                     {[
@@ -373,9 +373,9 @@ export default function HomePage() {
                 <div className="mt-6 pt-6 border-t border-[var(--cps-gray-200)]">
                   <p className="text-xs text-[var(--cps-gray-400)] uppercase tracking-wider mb-4">Professional Memberships &amp; Affiliations</p>
                   <div className="flex flex-wrap items-center gap-4">
-                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-white border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">APA — American Psychological Association</span>
-                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-white border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">AACN — American Academy of Clinical Neuropsychology</span>
-                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-white border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">UPA — Utah Psychological Association</span>
+                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-[var(--cps-white)] border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">APA — American Psychological Association</span>
+                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-[var(--cps-white)] border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">AACN — American Academy of Clinical Neuropsychology</span>
+                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-[var(--cps-white)] border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">UPA — Utah Psychological Association</span>
                   </div>
                 </div>
 
@@ -387,7 +387,7 @@ export default function HomePage() {
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.title} className="flex items-start gap-6 bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:shadow-md transition-shadow p-6">
+                    <div key={item.title} className="flex items-start gap-6 bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] hover:shadow-md transition-shadow p-6">
                       <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0" aria-hidden="true">
                         <Icon className="w-7 h-7 text-[var(--cps-blue)]" />
                       </div>
@@ -404,7 +404,7 @@ export default function HomePage() {
         </section>
 
         {/* ──────── TESTIMONIALS ──────── */}
-        <section className="py-12 md:py-20 bg-white">
+        <section className="py-12 md:py-20 bg-[var(--cps-white)]">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Patient Experiences</p>
@@ -427,7 +427,7 @@ export default function HomePage() {
         </section>
 
         {/* ──────── SHARE YOUR EXPERIENCE ──────── */}
-        <section className="py-12 md:py-20 bg-white">
+        <section className="py-12 md:py-20 bg-[var(--cps-white)]">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Reviews</p>
@@ -440,7 +440,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {/* Google */}
               <a href="https://www.google.com/maps/place/Comprehensive+Psychological+Services/@40.7099,-111.8542" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for CPS (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                <div className="w-14 h-14 bg-[var(--cps-white)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-2xl font-bold text-[#4285F4]">G</span>
                 </div>
                 <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Google</h3>
@@ -454,7 +454,7 @@ export default function HomePage() {
 
               {/* Healthline */}
               <a href="https://www.healthline.com/health-directory/comprehensive-psychological-services" target="_blank" rel="noopener noreferrer" aria-label="View CPS on Healthline (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                <div className="w-14 h-14 bg-[var(--cps-white)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-sm font-bold text-[var(--cps-gray-700)]">HL</span>
                 </div>
                 <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Healthline</h3>
@@ -468,7 +468,7 @@ export default function HomePage() {
 
               {/* BBB */}
               <a href="https://www.bbb.org/us/ut/salt-lake-city/psychologists" target="_blank" rel="noopener noreferrer" aria-label="View CPS on Better Business Bureau (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                <div className="w-14 h-14 bg-[var(--cps-white)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-xs font-bold text-[#007847]">BBB</span>
                 </div>
                 <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Better Business Bureau</h3>
@@ -495,7 +495,7 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {offices.map((office) => (
-                <div key={office.name} className="bg-white rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div key={office.name} className="bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
                   <div className="h-56 bg-[var(--cps-gray-100)] relative">
                     <iframe
                       title={`Map of CPS ${office.name} office`}
@@ -547,35 +547,35 @@ export default function HomePage() {
         </section>
 
         {/* ──────── CONTACT / CTA ──────── */}
-        <section id="contact" className="py-12 md:py-20 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
+        <section id="contact" className="py-12 md:py-20 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)]">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               <div>
                 <p className="text-[var(--cps-teal)] font-semibold text-sm uppercase tracking-wider mb-6">Get Started</p>
-                <h2 className="section-heading text-white mb-4">Schedule Your Evaluation Today</h2>
-                <p className="text-white/70 body-large mb-8 leading-relaxed">
+                <h2 className="section-heading text-[var(--cps-white)] mb-4">Schedule Your Evaluation Today</h2>
+                <p className="text-[var(--cps-white)]/70 body-large mb-8 leading-relaxed">
                   Call us or fill out the form to schedule an appointment. Our team will verify your insurance, answer your questions, and find a time that works.
                 </p>
                 <div className="space-y-4">
-                  <a href={PHONE_HREF} className="flex items-center gap-6 p-6 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
+                  <a href={PHONE_HREF} className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl hover:bg-[var(--cps-white)]/15 transition-colors">
                     <Phone className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">{PHONE}</div>
-                      <div className="text-sm text-white/60">Mon–Fri, 8am–6pm</div>
+                      <div className="text-sm text-[var(--cps-white)]/60">Mon–Fri, 8am–6pm</div>
                     </div>
                   </a>
-                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-6 p-6 bg-white/10 rounded-xl hover:bg-white/15 transition-colors">
+                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl hover:bg-[var(--cps-white)]/15 transition-colors">
                     <Mail className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">{EMAIL}</div>
-                      <div className="text-sm text-white/60">We respond within 24 hours</div>
+                      <div className="text-sm text-[var(--cps-white)]/60">We respond within 24 hours</div>
                     </div>
                   </a>
-                  <div className="flex items-center gap-6 p-6 bg-white/10 rounded-xl">
+                  <div className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl">
                     <Clock className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">Office Hours</div>
-                      <div className="text-sm text-white/60">Monday–Friday, 8:00 AM – 6:00 PM</div>
+                      <div className="text-sm text-[var(--cps-white)]/60">Monday–Friday, 8:00 AM – 6:00 PM</div>
                     </div>
                   </div>
                 </div>
@@ -583,10 +583,10 @@ export default function HomePage() {
 
               <div>
                 {formSubmitted ? (
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
+                  <div className="bg-[var(--cps-white)]/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
                     <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" aria-hidden="true" />
                     <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-                    <p className="text-white/70 leading-relaxed">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
+                    <p className="text-[var(--cps-white)]/70 leading-relaxed">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
                   </div>
                 ) : (
                   <form onSubmit={async (e) => {
@@ -608,29 +608,29 @@ export default function HomePage() {
                     } finally {
                       setFormLoading(false);
                     }
-                  }} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6">
+                  }} className="bg-[var(--cps-white)]/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6">
                     <h3 className="text-xl font-bold mb-2">Request an Appointment</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium mb-2 text-white/80">First Name</label>
-                        <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="First name" />
+                        <label htmlFor="firstName" className="block text-sm font-medium mb-2 text-[var(--cps-white)]/80">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)]/10 border border-white/20 text-[var(--cps-white)] placeholder:text-[var(--cps-white)]/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="First name" />
                       </div>
                       <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium mb-2 text-white/80">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="Last name" />
+                        <label htmlFor="lastName" className="block text-sm font-medium mb-2 text-[var(--cps-white)]/80">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)]/10 border border-white/20 text-[var(--cps-white)] placeholder:text-[var(--cps-white)]/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="Last name" />
                       </div>
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2 text-white/80">Email</label>
-                      <input type="email" id="email" name="email" required className="w-full px-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="you@email.com" />
+                      <label htmlFor="email" className="block text-sm font-medium mb-2 text-[var(--cps-white)]/80">Email</label>
+                      <input type="email" id="email" name="email" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)]/10 border border-white/20 text-[var(--cps-white)] placeholder:text-[var(--cps-white)]/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="you@email.com" />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium mb-2 text-white/80">Phone</label>
-                      <input type="tel" id="phone" name="phone" required className="w-full px-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="(801) 555-0123" />
+                      <label htmlFor="phone" className="block text-sm font-medium mb-2 text-[var(--cps-white)]/80">Phone</label>
+                      <input type="tel" id="phone" name="phone" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)]/10 border border-white/20 text-[var(--cps-white)] placeholder:text-[var(--cps-white)]/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors" placeholder="(801) 555-0123" />
                     </div>
                     <div>
-                      <label htmlFor="service" className="block text-sm font-medium mb-2 text-white/80">Service Needed</label>
-                      <select id="service" name="service" required className="w-full px-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors">
+                      <label htmlFor="service" className="block text-sm font-medium mb-2 text-[var(--cps-white)]/80">Service Needed</label>
+                      <select id="service" name="service" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)]/10 border border-white/20 text-[var(--cps-white)] focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors">
                         <option value="" className="text-[var(--cps-gray-900)]">Select a service...</option>
                         <option value="neuropsych" className="text-[var(--cps-gray-900)]">Neuropsychological Evaluation</option>
                         <option value="adhd" className="text-[var(--cps-gray-900)]">ADHD Evaluation / Testing</option>
@@ -644,17 +644,17 @@ export default function HomePage() {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2 text-white/80">Message (optional)</label>
-                      <textarea id="message" name="message" rows={3} className="w-full px-4 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors resize-none" placeholder="Tell us about your concerns or questions..." />
+                      <label htmlFor="message" className="block text-sm font-medium mb-2 text-[var(--cps-white)]/80">Message (optional)</label>
+                      <textarea id="message" name="message" rows={3} className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)]/10 border border-white/20 text-[var(--cps-white)] placeholder:text-[var(--cps-white)]/40 focus:border-[var(--cps-teal)] focus:ring-1 focus:ring-[var(--cps-teal)] outline-none transition-colors resize-none" placeholder="Tell us about your concerns or questions..." />
                     </div>
                     {formError && (
-                      <p className="text-sm text-[var(--cps-warning)] bg-white/10 rounded-xl px-4 py-4">{formError}</p>
+                      <p className="text-sm text-[var(--cps-warning)] bg-[var(--cps-white)]/10 rounded-xl px-4 py-4">{formError}</p>
                     )}
-                    <button type="submit" disabled={formLoading} className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-white font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
+                    <button type="submit" disabled={formLoading} className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
                       <MessageCircle className="w-5 h-5" aria-hidden="true" />
                       {formLoading ? "Sending…" : "Request Appointment"}
                     </button>
-                    <p className="text-xs text-white/40 text-center">Your information is confidential. We&apos;ll respond within 1 business day.</p>
+                    <p className="text-xs text-[var(--cps-white)]/40 text-center">Your information is confidential. We&apos;ll respond within 1 business day.</p>
                   </form>
                 )}
               </div>
@@ -664,7 +664,7 @@ export default function HomePage() {
       </main>
 
       {/* ──────── STICKY MOBILE CTA ──────── */}
-      <div className="lg:hidden sticky bottom-0 z-40 bg-white border-t border-[var(--cps-gray-200)] shadow-2xl" aria-label="Quick actions">
+      <div className="lg:hidden sticky bottom-0 z-40 bg-[var(--cps-white)] border-t border-[var(--cps-gray-200)] shadow-2xl" aria-label="Quick actions">
         <div className="flex items-center gap-4 px-4 py-4">
           <a
             href="tel:8014831600"
@@ -676,7 +676,7 @@ export default function HomePage() {
           </a>
           <a
             href="#contact"
-            className="flex-[2] flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white transition-colors"
+            className="flex-[2] flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] transition-colors"
           >
             <Calendar className="w-5 h-5" aria-hidden="true" />
             Book Evaluation
@@ -685,26 +685,26 @@ export default function HomePage() {
       </div>
 
       {/* ──────── FOOTER ──────── */}
-      <footer className="bg-[var(--cps-gray-900)] text-white/60 py-16">
+      <footer className="bg-[var(--cps-gray-900)] text-[var(--cps-white)]/60 py-16">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
-                  <Brain className="w-5 h-5 text-white" aria-hidden="true" />
+                  <Brain className="w-5 h-5 text-[var(--cps-white)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-white leading-tight">Comprehensive Psychological</div>
-                  <div className="text-xs text-white/40 leading-tight">Services — 40+ Years in Utah</div>
+                  <div className="text-sm font-bold text-[var(--cps-white)] leading-tight">Comprehensive Psychological</div>
+                  <div className="text-xs text-[var(--cps-white)]/40 leading-tight">Services — 40+ Years in Utah</div>
                 </div>
               </div>
-              <p className="text-sm text-white/50 leading-relaxed">
+              <p className="text-sm text-[var(--cps-white)]/50 leading-relaxed">
                 Evidence-based behavioral health evaluations and treatment serving Utah for over 40 years.
               </p>
             </div>
 
             <div>
-              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Evaluations</h4>
+              <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Evaluations</h4>
               <ul className="space-y-2">
                 {[
                   { label: "Neuropsychological Evaluations", href: "/neuropsychologist-near-me" },
@@ -716,15 +716,15 @@ export default function HomePage() {
                   { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me" },
                   { label: "Custody Evaluation", href: "/custody-evaluator-near-me" },
                 ].map((link) => (
-                  <li key={link.href}><a href={link.href} className="text-sm hover:text-white transition-colors">{link.label}</a></li>
+                  <li key={link.href}><a href={link.href} className="text-sm hover:text-[var(--cps-white)] transition-colors">{link.label}</a></li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
+              <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
               <ul className="space-y-2">
-                <li><Link href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-white transition-colors">Ketamine Therapy</Link></li>
+                <li><Link href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-[var(--cps-white)] transition-colors">Ketamine Therapy</Link></li>
                 <li><span className="text-sm">Spravato (Esketamine)</span></li>
                 <li><span className="text-sm">Intensive Outpatient (IOP)</span></li>
                 <li><span className="text-sm">Counseling & Psychotherapy</span></li>
@@ -732,20 +732,20 @@ export default function HomePage() {
                 <li><span className="text-sm">Neurofeedback</span></li>
                 <li><span className="text-sm">Telehealth</span></li>
               </ul>
-              <h4 className="text-white font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
+              <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
               <ul className="space-y-2">
-                <li><Link href="/resources#forms" className="text-sm hover:text-white transition-colors">Forms & Documents</Link></li>
-                <li><Link href="/resources#insurance" className="text-sm hover:text-white transition-colors">Insurance & Billing</Link></li>
-                <li><Link href="/resources#faq" className="text-sm hover:text-white transition-colors">FAQs</Link></li>
-                <li><Link href="/resources#patient-rights" className="text-sm hover:text-white transition-colors">Patient Rights</Link></li>
+                <li><Link href="/resources#forms" className="text-sm hover:text-[var(--cps-white)] transition-colors">Forms & Documents</Link></li>
+                <li><Link href="/resources#insurance" className="text-sm hover:text-[var(--cps-white)] transition-colors">Insurance & Billing</Link></li>
+                <li><Link href="/resources#faq" className="text-sm hover:text-[var(--cps-white)] transition-colors">FAQs</Link></li>
+                <li><Link href="/resources#patient-rights" className="text-sm hover:text-[var(--cps-white)] transition-colors">Patient Rights</Link></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+              <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
               <ul className="space-y-4">
-                <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
-                <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-white transition-colors"><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
+                <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors"><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
+                <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors"><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
                 <li className="flex items-start gap-2 text-sm">
                   <MapPin className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
                   <div>
@@ -759,12 +759,12 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-white/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
-            <div className="flex gap-6 text-xs text-white/40">
-              <Link href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
-              <Link href="/hipaa" className="hover:text-white/60 transition-colors">HIPAA Notice</Link>
+            <p className="text-xs text-[var(--cps-white)]/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
+            <div className="flex gap-6 text-xs text-[var(--cps-white)]/40">
+              <Link href="/privacy" className="hover:text-[var(--cps-white)]/60 transition-colors">Privacy Policy</Link>
+              <Link href="/hipaa" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>
             </div>
-            <p className="text-xs text-white/40">Salt Lake City • Layton • West Jordan</p>
+            <p className="text-xs text-[var(--cps-white)]/40">Salt Lake City • Layton • West Jordan</p>
           </div>
         </div>
       </footer>

@@ -123,7 +123,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href={PHONE_HREF}
-                className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
@@ -143,7 +143,7 @@ export default function AboutPage() {
       {/* Stats bar */}
       <section className="bg-[var(--cps-blue)] py-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-[var(--cps-white)]">
             {[
               { stat: "1986", label: "Year Founded" },
               { stat: "20+", label: "Expert Clinicians" },
@@ -308,7 +308,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-[var(--cps-dark)] text-white">
+      <section className="py-12 md:py-16 bg-[var(--cps-dark)] text-[var(--cps-white)]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Get Started?
@@ -320,14 +320,14 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href={PHONE_HREF}
-              className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
               {PHONE}
             </Link>
             <Link
               href="/team"
-              className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Users className="w-5 h-5" aria-hidden="true" />
               Meet Our Team

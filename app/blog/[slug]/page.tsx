@@ -763,14 +763,14 @@ export default async function BlogPostPage({
       <BlogPostingSchema post={post} />
       <main id="main">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white py-14 md:py-20">
+        <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] py-14 md:py-20">
           <div className="max-w-4xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="flex items-center gap-2 mb-6 text-[var(--cps-teal)] flex-wrap">
-              <Link href="/" className="text-sm font-medium hover:text-white transition-colors">Home</Link>
+              <Link href="/" className="text-sm font-medium hover:text-[var(--cps-white)] transition-colors">Home</Link>
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
-              <Link href="/blog" className="text-sm font-medium hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog" className="text-sm font-medium hover:text-[var(--cps-white)] transition-colors">Blog</Link>
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
-              <span className="text-sm font-medium text-white/60 line-clamp-1">{post.title}</span>
+              <span className="text-sm font-medium text-[var(--cps-white)]/60 line-clamp-1">{post.title}</span>
             </div>
             <div className="flex items-center gap-4 mb-6 flex-wrap">
               <span
@@ -779,18 +779,18 @@ export default async function BlogPostPage({
                 <Tag className="w-3 h-3 inline mr-1" aria-hidden="true" />
                 {post.category}
               </span>
-              <span className="flex items-center gap-1 text-xs text-white/60">
+              <span className="flex items-center gap-1 text-xs text-[var(--cps-white)]/60">
                 <Clock className="w-3 h-3" aria-hidden="true" />
                 {post.readTime}
               </span>
-              <time className="text-xs text-white/60" dateTime={post.date}>
+              <time className="text-xs text-[var(--cps-white)]/60" dateTime={post.date}>
                 {formatDate(post.date)}
               </time>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-[var(--cps-white)] leading-tight mb-4">
               {post.title}
             </h1>
-            <p className="text-lg text-white/75 max-w-2xl">{post.excerpt}</p>
+            <p className="text-lg text-[var(--cps-white)]/75 max-w-2xl">{post.excerpt}</p>
           </div>
         </section>
 
@@ -802,7 +802,7 @@ export default async function BlogPostPage({
         </section>
 
         {/* Article Body */}
-        <article className="py-10 md:py-14 bg-white">
+        <article className="py-10 md:py-14 bg-[var(--cps-white)]">
           <div className="max-w-4xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="prose prose-lg max-w-none text-[var(--cps-gray-700)] [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-[var(--cps-gray-900)] [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-[var(--cps-gray-900)] [&_h3]:mt-8 [&_h3]:mb-4 [&_p]:mb-6 [&_p]:leading-relaxed [&_ul]:mb-6 [&_ul]:pl-6 [&_li]:mb-2 [&_li]:leading-relaxed [&_strong]:text-[var(--cps-gray-900)]">
               {content.body}
@@ -818,7 +818,7 @@ export default async function BlogPostPage({
               {content.faq.map((item, i) => (
                 <div
                   key={i}
-                  className="rounded-xl border border-[var(--cps-gray-200)] bg-white p-6"
+                  className="rounded-xl border border-[var(--cps-gray-200)] bg-[var(--cps-white)] p-6"
                 >
                   <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">{item.q}</h3>
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">{item.a}</p>
@@ -829,24 +829,24 @@ export default async function BlogPostPage({
         </section>
 
         {/* CTA */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
+        <section className="py-12 md:py-16 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)]">
           <div className="max-w-4xl mx-auto px-8 sm:px-10 lg:px-10 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--cps-white)] mb-4">
               Ready to Schedule an Evaluation?
             </h2>
-            <p className="text-white/75 mb-8 max-w-xl mx-auto">
+            <p className="text-[var(--cps-white)]/75 mb-8 max-w-xl mx-auto">
               Comprehensive Psychological Services has been serving Utah patients since 1986. We have three convenient locations in Salt Lake City, Layton, and West Jordan.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="tel:8014831600"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-semibold rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-semibold rounded-xl transition-colors"
               >
                 <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
               </a>
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 hover:border-white text-white font-semibold rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 hover:border-white text-[var(--cps-white)] font-semibold rounded-xl transition-colors"
               >
                 Schedule Online
               </Link>

@@ -51,17 +51,17 @@ export default function BlogPage() {
       <Navbar />
       <main id="main">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white py-16 md:py-24">
+        <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="flex items-center gap-2 mb-6 text-[var(--cps-teal)]">
-              <Link href="/" className="text-sm font-medium hover:text-white transition-colors">Home</Link>
+              <Link href="/" className="text-sm font-medium hover:text-[var(--cps-white)] transition-colors">Home</Link>
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
               <span className="text-sm font-medium">Blog</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-[var(--cps-white)] mb-4 leading-tight">
               Psychology & Mental Health Insights
             </h1>
-            <p className="text-lg text-white/80 max-w-2xl">
+            <p className="text-lg text-[var(--cps-white)]/80 max-w-2xl">
               Evidence-based articles from our licensed psychologists in Utah — covering neuropsychology, ADHD, autism, custody evaluations, and more.
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function BlogPage() {
               {blogCategories.map((cat) => (
                 <span
                   key={cat}
-                  className="px-4 py-2 rounded-lg bg-white border border-[var(--cps-gray-200)] text-sm font-medium text-[var(--cps-gray-700)] cursor-default"
+                  className="px-4 py-2 rounded-lg bg-[var(--cps-white)] border border-[var(--cps-gray-200)] text-sm font-medium text-[var(--cps-gray-700)] cursor-default"
                 >
                   {cat}
                 </span>
@@ -84,7 +84,7 @@ export default function BlogPage() {
         </section>
 
         {/* Featured Articles */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-12 md:py-16 bg-[var(--cps-white)]">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <h2 className="text-2xl font-bold text-[var(--cps-gray-900)] mb-8">Featured Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -136,7 +136,7 @@ export default function BlogPage() {
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group flex items-start gap-4 p-6 rounded-xl border border-[var(--cps-gray-200)] bg-white hover:border-[var(--cps-blue)] hover:shadow-sm transition-all"
+                    className="group flex items-start gap-4 p-6 rounded-xl border border-[var(--cps-gray-200)] bg-[var(--cps-white)] hover:border-[var(--cps-blue)] hover:shadow-sm transition-all"
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2">
@@ -162,7 +162,7 @@ export default function BlogPage() {
         )}
 
         {/* CTA */}
-        <section className="py-12 md:py-16 bg-white border-t border-[var(--cps-gray-200)]">
+        <section className="py-12 md:py-16 bg-[var(--cps-white)] border-t border-[var(--cps-gray-200)]">
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10 text-center">
             <h2 className="text-2xl font-bold text-[var(--cps-gray-900)] mb-4">Ready to Schedule an Evaluation?</h2>
             <p className="text-[var(--cps-gray-600)] mb-8 max-w-xl mx-auto">
@@ -170,7 +170,7 @@ export default function BlogPage() {
             </p>
             <a
               href="tel:8014831600"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-semibold rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-semibold rounded-xl transition-colors"
             >
               Call (801) 483-1600
             </a>

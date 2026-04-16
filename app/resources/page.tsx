@@ -28,15 +28,15 @@ export default function ResourcesPage() {
       <Navbar />
       <main id="main">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white py-16 md:py-20">
+        <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Patient Resources</h1>
-            <p className="text-white/70 body-large max-w-[60ch]">Everything you need to prepare for your appointment, understand your insurance, and know your rights as a patient.</p>
+            <p className="text-[var(--cps-white)]/70 body-large max-w-[60ch]">Everything you need to prepare for your appointment, understand your insurance, and know your rights as a patient.</p>
           </div>
         </section>
 
         {/* Resource Cards */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[var(--cps-white)]">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 

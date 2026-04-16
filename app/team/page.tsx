@@ -199,7 +199,7 @@ function ClinicianCard({ clinician }: { clinician: Clinician }) {
     <div
       className={`rounded-2xl overflow-hidden shadow-sm ${
         isFounder
-          ? "bg-[var(--cps-dark)] text-white col-span-full"
+          ? "bg-[var(--cps-dark)] text-[var(--cps-white)] col-span-full"
           : "bg-[var(--cps-white)]"
       }`}
     >
@@ -228,29 +228,29 @@ function ClinicianCard({ clinician }: { clinician: Clinician }) {
               </div>
             </div>
             <div className="space-y-4">
-              <div className="bg-white/5 rounded-xl p-4">
+              <div className="bg-[var(--cps-white)]/5 rounded-xl p-4">
                 <div className="text-[var(--cps-gray-400)] text-xs uppercase tracking-widest mb-2">
                   Education
                 </div>
-                <div className="text-white font-semibold text-sm">PhD — University of Tennessee at Knoxville (1977)</div>
+                <div className="text-[var(--cps-white)] font-semibold text-sm">PhD — University of Tennessee at Knoxville (1977)</div>
               </div>
-              <div className="bg-white/5 rounded-xl p-4">
+              <div className="bg-[var(--cps-white)]/5 rounded-xl p-4">
                 <div className="text-[var(--cps-gray-400)] text-xs uppercase tracking-widest mb-2">
                   Published Works
                 </div>
-                <div className="text-white text-sm space-y-1">
+                <div className="text-[var(--cps-white)] text-sm space-y-1">
                   <div className="font-semibold">&ldquo;Get Off the Bus&rdquo;</div>
                   <div className="text-[var(--cps-gray-400)] text-xs">Depression, Anxiety and Obsession</div>
                   <div className="font-semibold mt-2">&ldquo;Good Parent&rdquo;</div>
                 </div>
               </div>
               {locations && (
-                <div className="bg-white/5 rounded-xl p-4">
+                <div className="bg-[var(--cps-white)]/5 rounded-xl p-4">
                   <div className="text-[var(--cps-gray-400)] text-xs uppercase tracking-widest mb-2">
                     Locations
                   </div>
                   {locations.map((l) => (
-                    <div key={l} className="flex items-center gap-2 text-white text-sm mt-1">
+                    <div key={l} className="flex items-center gap-2 text-[var(--cps-white)] text-sm mt-1">
                       <MapPin className="w-3 h-3 text-[var(--cps-teal)]" aria-hidden="true" />
                       {l}
                     </div>
@@ -313,7 +313,7 @@ export default function TeamPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="bg-[var(--cps-dark)] text-white py-16 md:py-24">
+      <section className="bg-[var(--cps-dark)] text-[var(--cps-white)] py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-[var(--cps-blue)]/20 text-[var(--cps-teal)] px-4 py-2 rounded-full text-sm font-semibold mb-8">
@@ -333,14 +333,14 @@ export default function TeamPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href={PHONE_HREF}
-                className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 border border-white/30 hover:border-[var(--cps-teal)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 border border-white/30 hover:border-[var(--cps-teal)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 About CPS
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
@@ -389,7 +389,7 @@ export default function TeamPage() {
             </p>
             <Link
               href={PHONE_HREF}
-              className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
               {PHONE}
@@ -430,7 +430,7 @@ export default function TeamPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-[var(--cps-dark)] text-white">
+      <section className="py-12 md:py-16 bg-[var(--cps-dark)] text-[var(--cps-white)]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Not Sure Who to See?
@@ -443,14 +443,14 @@ export default function TeamPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href={PHONE_HREF}
-              className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
               {PHONE}
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white px-8 py-4 text-lg font-bold rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               Learn About CPS
             </Link>

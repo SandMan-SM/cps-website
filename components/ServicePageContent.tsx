@@ -45,7 +45,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       </div>
 
       {/* ──── Hero ──── */}
-      <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
           <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
@@ -60,14 +60,14 @@ export default function ServicePageContent({ service, location, relatedServices 
                 </span>
               </div>
             )}
-            <h1 className="display-heading text-white mb-6">{h1}</h1>
-            <p className="body-large text-white/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
+            <h1 className="display-heading text-[var(--cps-white)] mb-6">{h1}</h1>
+            <p className="body-large text-[var(--cps-white)]/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" aria-hidden="true" />
                 {service.ctaText}
               </Link>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
+              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
               </a>
@@ -92,7 +92,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       </section>
 
       {/* ──── Overview ──── */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16 bg-[var(--cps-white)]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">
@@ -153,7 +153,7 @@ export default function ServicePageContent({ service, location, relatedServices 
 
       {/* ──── Comparison Table ──── */}
       {service.comparisonTable && (
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-12 md:py-16 bg-[var(--cps-white)]">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">{service.comparisonTable.title}</h2>
             {/* Desktop table — hidden on mobile */}
@@ -168,9 +168,9 @@ export default function ServicePageContent({ service, location, relatedServices 
                     ))}
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-[var(--cps-gray-200)]">
+                <tbody className="bg-[var(--cps-white)] divide-y divide-[var(--cps-gray-200)]">
                   {service.comparisonTable.rows.map((row, ri) => (
-                    <tr key={ri} className={`transition-colors ${ri % 2 === 1 ? 'bg-[var(--cps-gray-50)]' : 'bg-white'}`}>
+                    <tr key={ri} className={`transition-colors ${ri % 2 === 1 ? 'bg-[var(--cps-gray-50)]' : 'bg-[var(--cps-white)]'}`}>
                       {row.map((cell, ci) => (
                         ci === 0 ? (
                           <th key={ci} scope="row" className="px-6 py-4 font-semibold text-[var(--cps-gray-800)]">
@@ -190,7 +190,7 @@ export default function ServicePageContent({ service, location, relatedServices 
             {/* Mobile cards — stacked layout */}
             <div className="md:hidden space-y-4">
               {service.comparisonTable.rows.map((row, ri) => (
-                <div key={ri} className={`rounded-xl border overflow-hidden ${ri % 2 === 1 ? 'bg-[var(--cps-gray-50)] border-[var(--cps-gray-200)]' : 'bg-white border-[var(--cps-gray-200)]'}`}>
+                <div key={ri} className={`rounded-xl border overflow-hidden ${ri % 2 === 1 ? 'bg-[var(--cps-gray-50)] border-[var(--cps-gray-200)]' : 'bg-[var(--cps-white)] border-[var(--cps-gray-200)]'}`}>
                   {row.map((cell, ci) => {
                     const headers = service.comparisonTable?.headers ?? [];
                     return (
@@ -218,7 +218,7 @@ export default function ServicePageContent({ service, location, relatedServices 
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">What to Expect</h2>
             <div className="space-y-4">
               {service.whatToExpect.map((step, i) => (
-                <div key={i} className="flex gap-4 p-6 bg-white rounded-xl border border-[var(--cps-gray-200)]">
+                <div key={i} className="flex gap-4 p-6 bg-[var(--cps-white)] rounded-xl border border-[var(--cps-gray-200)]">
                   <div className="w-10 h-10 rounded-lg bg-[var(--cps-light)] flex items-center justify-center shrink-0 text-[var(--cps-blue)] font-bold text-sm">
                     {String(i + 1).padStart(2, "0")}
                   </div>
@@ -231,7 +231,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       </section>
 
       {/* ──── Benefits ──── */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16 bg-[var(--cps-white)]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Why Choose CPS</h2>
@@ -255,7 +255,7 @@ export default function ServicePageContent({ service, location, relatedServices 
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">
                 Nearest Office — {location.nearestOffice}
               </h2>
-              <div className="bg-white p-8 rounded-2xl border border-[var(--cps-gray-200)]">
+              <div className="bg-[var(--cps-white)] p-8 rounded-2xl border border-[var(--cps-gray-200)]">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[var(--cps-light)] flex items-center justify-center shrink-0">
                     <MapPin className="w-6 h-6 text-[var(--cps-blue)]" aria-hidden="true" />
@@ -275,7 +275,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       )}
 
       {/* ──── FAQ ──── */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16 bg-[var(--cps-white)]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div>
             <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Frequently Asked Questions</h2>
@@ -304,7 +304,7 @@ export default function ServicePageContent({ service, location, relatedServices 
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Related Services</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedServices.map((rel) => (
-                  <a key={rel.slug} href={`/${rel.slug}`} className="group block p-6 bg-white rounded-xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
+                  <a key={rel.slug} href={`/${rel.slug}`} className="group block p-6 bg-[var(--cps-white)] rounded-xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
                     <h3 className="font-bold text-[var(--cps-gray-900)] group-hover:text-[var(--cps-blue)] transition-colors mb-2">{rel.title}</h3>
                     <p className="text-sm text-[var(--cps-gray-500)] leading-relaxed mb-4">{rel.heroSubtitle.slice(0, 120)}...</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
@@ -319,21 +319,21 @@ export default function ServicePageContent({ service, location, relatedServices 
       )}
 
       {/* ──── Bottom CTA ──── */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-white">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
           <div>
-            <h2 className="section-heading text-white mb-4">Ready to Get Started?</h2>
-            <p className="text-white/70 body-large mb-8 max-w-2xl mx-auto">
+            <h2 className="section-heading text-[var(--cps-white)] mb-4">Ready to Get Started?</h2>
+            <p className="text-[var(--cps-white)]/70 body-large mb-8 max-w-2xl mx-auto">
               {location
                 ? `Schedule your ${service.shortName.toLowerCase()} at our ${location.nearestOffice} office. Call us today or book online.`
                 : `Schedule your ${service.shortName.toLowerCase()} at one of our three Utah locations. Call us today or book online.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-white font-bold rounded-xl transition-colors text-lg">
+              <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" aria-hidden="true" />
                 {service.ctaText}
               </Link>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-white/10 text-white font-bold rounded-xl transition-colors text-lg border-2 border-white">
+              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
               </a>
