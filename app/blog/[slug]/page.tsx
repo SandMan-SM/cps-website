@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Clock, Tag, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import KeyTakeawaysBlog from "@/components/KeyTakeawaysBlog";
 import { getPostBySlug, blogPosts } from "@/lib/blog-posts";
+import { blogHero } from "@/lib/stock-images";
 
 /* ── Static generation ── */
 export function generateStaticParams() {
@@ -32,20 +34,11 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       siteName: "Comprehensive Psychological Services",
-      images: [
-        {
-          url: "https://psychandcustodyevaluations.com/og-blog-default.jpg",
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: ["https://psychandcustodyevaluations.com/og-blog-default.jpg"],
     },
     alternates: { canonical: url },
   };
@@ -734,7 +727,6 @@ function BlogPostingSchema({
       "@type": "WebPage",
       "@id": `https://psychandcustodyevaluations.com/blog/${post.slug}`,
     },
-    image: "https://psychandcustodyevaluations.com/og-blog-default.jpg",
   };
   return (
     <script
@@ -793,6 +785,24 @@ export default async function BlogPostPage({
             <p className="text-lg text-[var(--cps-white)]/75 max-w-2xl">{post.excerpt}</p>
           </div>
         </section>
+
+        {/* Hero image */}
+        {blogHero[post.slug] && (
+          <section className="bg-[var(--cps-white)]">
+            <div className="max-w-4xl mx-auto px-8 sm:px-10 lg:px-10 -mt-10 md:-mt-16 relative z-10">
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-xl ring-1 ring-[var(--cps-gray-200)]">
+                <Image
+                  src={blogHero[post.slug].src}
+                  alt={blogHero[post.slug].alt}
+                  fill
+                  sizes="(max-width: 896px) 100vw, 896px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Key Takeaways */}
         <section className="py-8 bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)]">

@@ -1,10 +1,33 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Phone, MapPin, CheckCircle2, ArrowRight,
   ChevronDown, Calendar, Shield, Award, Building2, Brain,
 } from "lucide-react";
 import type { ServiceData, LocationData } from "@/lib/services";
+import { serviceHero } from "@/lib/stock-images";
+import { conditions as allConditions } from "@/lib/conditions";
+import type { ConditionSlug } from "@/lib/conditions";
 import KeyTakeaways from "./KeyTakeaways";
+
+// Service slug → related condition slugs
+const SERVICE_CONDITIONS: Record<string, ConditionSlug[]> = {
+  "adhd-evaluation-near-me": ["adhd-in-adults"],
+  "adhd-diagnosis-near-me": ["adhd-in-adults"],
+  "adhd-testing": ["adhd-in-adults"],
+  "neuropsychological-testing-for-adhd": ["adhd-in-adults"],
+  "autism-assessment": ["autism-in-adults"],
+  "ados-2-testing-near-me": ["autism-in-adults"],
+  "neuropsychologist-near-me": ["concussion-tbi", "dementia-memory"],
+  "neuropsychologist": ["concussion-tbi", "dementia-memory"],
+  "cognitive-evaluation-near-me": ["dementia-memory", "learning-disability"],
+  "ketamine-depression-treatment-near-me": ["treatment-resistant-depression"],
+  "spravato-esketamine-therapy": ["treatment-resistant-depression"],
+  "intensive-outpatient-program-iop": ["treatment-resistant-depression"],
+  "medication-management": ["treatment-resistant-depression", "adhd-in-adults"],
+  "neurofeedback-therapy": ["adhd-in-adults", "concussion-tbi"],
+  "counseling-and-psychotherapy": ["treatment-resistant-depression", "adhd-in-adults"],
+};
 
 const PHONE = "(801) 483-1600";
 const PHONE_HREF = "tel:8014831600";
@@ -51,27 +74,41 @@ export default function ServicePageContent({ service, location, relatedServices 
           <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-12 md:py-16">
-          <div className="max-w-3xl">
-            {location && (
-              <div className="flex items-center gap-2 mb-4">
-                <MapPin className="w-4 h-4 text-[var(--cps-teal)]" aria-hidden="true" />
-                <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">
-                  Serving {locationName}{location.county ? `, ${location.county}` : ""}
-                </span>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              {location && (
+                <div className="flex items-center gap-2 mb-4">
+                  <MapPin className="w-4 h-4 text-[var(--cps-teal)]" aria-hidden="true" />
+                  <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">
+                    Serving {locationName}{location.county ? `, ${location.county}` : ""}
+                  </span>
+                </div>
+              )}
+              <h1 className="display-heading text-[var(--cps-white)] mb-6">{h1}</h1>
+              <p className="body-large text-[var(--cps-white)]/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
+                  <Calendar className="w-5 h-5" aria-hidden="true" />
+                  {service.ctaText}
+                </Link>
+                <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
+                  <Phone className="w-5 h-5" aria-hidden="true" />
+                  {PHONE}
+                </a>
+              </div>
+            </div>
+            {serviceHero[service.slug] && (
+              <div className="hidden lg:block relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+                <Image
+                  src={serviceHero[service.slug].src}
+                  alt={serviceHero[service.slug].alt}
+                  fill
+                  sizes="(max-width: 1024px) 0px, 560px"
+                  className="object-cover"
+                  priority
+                />
               </div>
             )}
-            <h1 className="display-heading text-[var(--cps-white)] mb-6">{h1}</h1>
-            <p className="body-large text-[var(--cps-white)]/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
-                <Calendar className="w-5 h-5" aria-hidden="true" />
-                {service.ctaText}
-              </Link>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
-                <Phone className="w-5 h-5" aria-hidden="true" />
-                {PHONE}
-              </a>
-            </div>
           </div>
         </div>
       </section>
@@ -148,6 +185,27 @@ export default function ServicePageContent({ service, location, relatedServices 
               </div>
             )}
           </div>
+        </div>
+      </section>
+
+      {/* ──── Inline CTA (mid-page) ──── */}
+      <section className="py-8 bg-[var(--cps-light)] border-y border-[var(--cps-gray-200)]">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+          <div>
+            <p className="text-lg font-bold text-[var(--cps-gray-900)]">
+              Ready to schedule a {service.shortName.toLowerCase()}?
+            </p>
+            <p className="text-sm text-[var(--cps-gray-600)] mt-2">
+              Insurance verification on your first call. Most patients scheduled within 1–2 weeks.
+            </p>
+          </div>
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
+            aria-label={`Call CPS at ${PHONE} to schedule ${service.shortName}`}
+          >
+            <Phone className="w-5 h-5" aria-hidden="true" /> {PHONE}
+          </a>
         </div>
       </section>
 
@@ -295,6 +353,39 @@ export default function ServicePageContent({ service, location, relatedServices 
           </div>
         </div>
       </section>
+
+      {/* ──── Related Conditions ──── */}
+      {(() => {
+        const relatedConditionSlugs = SERVICE_CONDITIONS[service.slug] ?? [];
+        const relatedConditions = allConditions.filter((c) => relatedConditionSlugs.includes(c.slug));
+        if (relatedConditions.length === 0) return null;
+        return (
+          <section className="py-12 md:py-16 bg-[var(--cps-white)]">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+              <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Related Conditions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {relatedConditions.map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/conditions/${c.slug}`}
+                    className="group block p-6 bg-[var(--cps-light)] rounded-2xl hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
+                  >
+                    <h3 className="font-bold text-[var(--cps-gray-900)] group-hover:text-[var(--cps-blue)] transition-colors mb-2">
+                      {c.name}
+                    </h3>
+                    <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-4">
+                      {c.shortDescription}
+                    </p>
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
+                      Read the condition guide <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ──── Related Services ──── */}
       {relatedServices.length > 0 && (

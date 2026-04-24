@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
 import {
   Phone, Mail, MapPin, Clock,
   Shield, Award, Star, CheckCircle2, ArrowRight,
   Menu, X, Brain, HeartPulse, Scale, Users,
   ClipboardCheck, GraduationCap, Building2,
-  Calendar, MessageCircle, User, ExternalLink, ThumbsUp,
+  Calendar, MessageCircle,
 } from "lucide-react";
 
 /* ─────────────────── DATA ─────────────────── */
@@ -140,6 +141,8 @@ export default function HomePage() {
           }),
         }}
       />
+      <SpeakableSchema url="https://psychandcustodyevaluations.com" />
+      <ReviewSchema reviews={testimonials.map((t) => ({ author: t.author, text: t.text, rating: t.rating }))} />
 
       {/* ──────── NAV ──────── */}
       <nav className="sticky top-0 z-50 bg-[var(--cps-white)]/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
@@ -155,21 +158,21 @@ export default function HomePage() {
               </div>
             </Link>
 
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8">
               <a href="#services" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Services</a>
+              <Link href="/conditions" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Conditions</Link>
               <a href="#locations" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Locations</a>
               <a href="#about" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">About</a>
+              <Link href="/team" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Team</Link>
+              <Link href="/blog" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Blog</Link>
               <Link href="/resources" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Resources</Link>
               <a href="#contact" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Contact</a>
             </div>
 
             <div className="flex items-center gap-4">
-              <a href={PHONE_HREF} className="hidden md:flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors" aria-label={`Call us at ${PHONE}`}>
+              <a href={PHONE_HREF} className="hidden sm:inline-flex items-center justify-center gap-2 whitespace-nowrap px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] text-base font-semibold rounded-xl transition-colors min-h-[3rem]" aria-label={`Call us at ${PHONE}`}>
                 <Phone className="w-4 h-4" aria-hidden="true" />
                 {PHONE}
-              </a>
-              <a href="#contact" className="hidden sm:inline-flex items-center justify-center px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] text-base font-semibold rounded-xl transition-colors min-h-[3rem]">
-                Book Evaluation
               </a>
               <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
                 {mobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
@@ -184,12 +187,15 @@ export default function HomePage() {
               {["Services", "Locations", "About", "Contact"].map((item) => (
                 <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
               ))}
+              <Link href="/conditions" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Conditions</Link>
+              <Link href="/team" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Team</Link>
+              <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Blog</Link>
               <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
-              <a href={PHONE_HREF} className="flex items-center gap-2 px-4 py-4 text-[var(--cps-blue)] font-semibold">
-                <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
-              </a>
+              <Link href="/newsletter" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Newsletter</Link>
               <div className="pt-2 pb-2">
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block w-full text-center p-2 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base">Book Evaluation</a>
+                <a href={PHONE_HREF} onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base">
+                  <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
+                </a>
               </div>
             </div>
           </div>
@@ -204,26 +210,38 @@ export default function HomePage() {
             <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
           </div>
           <div className="relative max-w-7xl mx-auto px-8 sm:px-10 lg:px-10 py-16 md:py-24">
-            <div className="max-w-4xl">
-              <div className="flex items-center justify-start gap-2 mb-6">
-                <Award className="w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
-                <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div>
+                <div className="flex items-center justify-start gap-2 mb-6">
+                  <Award className="w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
+                  <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
+                </div>
+                <h1 className="display-heading text-[var(--cps-white)] mb-4">
+                  Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
+                </h1>
+                <p className="body-large text-[var(--cps-white)]/80 mb-10">
+                  Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
+                </p>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
+                  <a href="#contact" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
+                    <Calendar className="w-5 h-5" aria-hidden="true" />
+                    Schedule an Evaluation
+                  </a>
+                  <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
+                    <Phone className="w-5 h-5" aria-hidden="true" />
+                    {PHONE}
+                  </a>
+                </div>
               </div>
-              <h1 className="display-heading text-[var(--cps-white)] mb-4">
-                Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
-              </h1>
-              <p className="body-large text-[var(--cps-white)]/80 mb-10">
-                Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
-              </p>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
-                <a href="#contact" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
-                  <Calendar className="w-5 h-5" aria-hidden="true" />
-                  Schedule an Evaluation
-                </a>
-                <a href={PHONE_HREF} className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
-                  <Phone className="w-5 h-5" aria-hidden="true" />
-                  {PHONE}
-                </a>
+              <div className="hidden lg:block relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+                <Image
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80"
+                  alt="Sunrise above mountains rising through clouds — clarity, calm, and new beginnings for your mental health"
+                  fill
+                  sizes="(max-width: 1024px) 0px, 600px"
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
 
@@ -322,13 +340,13 @@ export default function HomePage() {
                 {/* ── Meet Dr. Szykula (E-E-A-T: Ept01, Ept02, A04) ── */}
                 <div className="bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] p-8 mb-8">
                   <div className="flex items-start gap-6">
-                    <div className="w-20 h-20 rounded-full bg-[var(--cps-light)] flex items-center justify-center shrink-0 overflow-hidden">
+                    <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-[var(--cps-blue)]/30">
                       <Image
-                        src="https://wecanhelpout.com/wp-content/uploads/2023/11/dr.stevenszykula.jpg"
+                        src="https://wecanhelpout.com/wp-content/uploads/2018/05/StevenSzykula.jpg"
                         alt="Dr. Steven Szykula, Ph.D. — Founder of Comprehensive Psychological Services"
-                        width={80}
-                        height={80}
-                        className="w-full h-full object-cover"
+                        fill
+                        sizes="80px"
+                        className="object-cover"
                       />
                     </div>
                     <div className="flex-1">
@@ -367,15 +385,6 @@ export default function HomePage() {
                         {org.abbr}
                       </span>
                     ))}
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-6 border-t border-[var(--cps-gray-200)]">
-                  <p className="text-xs text-[var(--cps-gray-400)] uppercase tracking-wider mb-4">Professional Memberships &amp; Affiliations</p>
-                  <div className="flex flex-wrap items-center gap-4">
-                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-[var(--cps-white)] border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">APA — American Psychological Association</span>
-                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-[var(--cps-white)] border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">AACN — American Academy of Clinical Neuropsychology</span>
-                    <span className="inline-block text-xs font-semibold text-[var(--cps-gray-600)] bg-[var(--cps-white)] border border-[var(--cps-gray-200)] px-4 py-2 rounded-full">UPA — Utah Psychological Association</span>
                   </div>
                 </div>
 
@@ -439,21 +448,21 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {/* Google */}
-              <a href="https://www.google.com/maps/place/Comprehensive+Psychological+Services/@40.7099,-111.8542" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for CPS (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+              <div className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] text-center">
                 <div className="w-14 h-14 bg-[var(--cps-white)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-2xl font-bold text-[#4285F4]">G</span>
                 </div>
                 <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Google</h3>
-                <p className="text-sm text-[var(--cps-gray-500)] mb-4">Leave a Google review</p>
+                <p className="text-sm text-[var(--cps-gray-500)] mb-4">5.0 on Google Reviews</p>
                 <div className="flex justify-center gap-1" aria-label="5 stars">
                   {[1,2,3,4,5].map((s) => (
                     <Star key={s} className="w-4 h-4 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
                   ))}
                 </div>
-              </a>
+              </div>
 
               {/* Healthline */}
-              <a href="https://www.healthline.com/health-directory/comprehensive-psychological-services" target="_blank" rel="noopener noreferrer" aria-label="View CPS on Healthline (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+              <div className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] text-center">
                 <div className="w-14 h-14 bg-[var(--cps-white)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-sm font-bold text-[var(--cps-gray-700)]">HL</span>
                 </div>
@@ -464,20 +473,20 @@ export default function HomePage() {
                     <Star key={s} className="w-4 h-4 text-[var(--cps-warning)] fill-[var(--cps-warning)]" aria-hidden="true" />
                   ))}
                 </div>
-              </a>
+              </div>
 
               {/* BBB */}
-              <a href="https://www.bbb.org/us/ut/salt-lake-city/psychologists" target="_blank" rel="noopener noreferrer" aria-label="View CPS on Better Business Bureau (opens in a new tab)" className="group p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-lg transition-all text-center">
+              <div className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] text-center">
                 <div className="w-14 h-14 bg-[var(--cps-white)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <span className="text-xs font-bold text-[#007847]">BBB</span>
                 </div>
                 <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Better Business Bureau</h3>
-                <p className="text-sm text-[var(--cps-gray-500)] mb-4">View our BBB profile</p>
+                <p className="text-sm text-[var(--cps-gray-500)] mb-4">Accredited Business</p>
                 <div className="flex justify-center gap-1" aria-label="Accredited business">
                   <Shield className="w-4 h-4 text-[#007847]" aria-hidden="true" />
                   <span className="text-xs text-[#007847] font-semibold">Accredited</span>
                 </div>
-              </a>
+              </div>
             </div>
 
             <p className="text-center text-sm text-[var(--cps-gray-400)]">
@@ -601,15 +610,24 @@ export default function HomePage() {
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(data),
                       });
-                      if (!res.ok) throw new Error("Server error");
+                      const json = await res.json().catch(() => ({}));
+                      if (!res.ok || json.ok === false) {
+                        throw new Error(json.error || "Server error");
+                      }
                       setFormSubmitted(true);
-                    } catch {
-                      setFormError("Something went wrong. Please call us directly at (801) 483-1600.");
+                    } catch (err) {
+                      const msg = err instanceof Error ? err.message : "Something went wrong.";
+                      setFormError(`${msg} You can also call us directly at (801) 483-1600.`);
                     } finally {
                       setFormLoading(false);
                     }
                   }} className="bg-[var(--cps-white)]/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6">
                     <h3 className="text-xl font-bold mb-2">Request an Appointment</h3>
+                    {/* Honeypot — hidden from real users, bots will fill it */}
+                    <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+                      <label htmlFor="website">Website</label>
+                      <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+                    </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="firstName" className="block text-sm font-medium mb-2 text-[var(--cps-white)]/80">First Name</label>

@@ -11,7 +11,7 @@ const pages = [
 ];
 
 for (const page of pages) {
-  test(`screenshot ${page.name}`, async ({ page: pw, viewport }, testInfo) => {
+  test(`screenshot ${page.name}`, async ({ page: pw, viewport }) => {
     await pw.goto(page.url, { waitUntil: "networkidle" });
     const width = viewport?.width ?? 1440;
     const outDir = path.join(process.cwd(), "screenshots");

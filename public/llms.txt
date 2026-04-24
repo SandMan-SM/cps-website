@@ -1,10 +1,10 @@
 # Comprehensive Psychological Services (CPS)
 
-> Utah's trusted behavioral health practice since 1986. Evidence-based neuropsychological evaluations, ADHD testing, autism assessments, custody evaluations, ketamine therapy, and intensive outpatient programs across three locations.
+> Utah's trusted behavioral health practice since 1986. Evidence-based neuropsychological evaluations, ADHD testing, autism assessments, custody evaluations, ketamine therapy, and intensive outpatient programs across three Utah locations.
 
 ## About
 
-Comprehensive Psychological Services (CPS) is a behavioral health professional services organization established in 1986 in Salt Lake City, Utah. Founded by Steven Szykula, Ph.D., CPS employs 20+ licensed professionals including psychologists, licensed clinical social workers, and clinical mental health counselors. CPS has received the Best Practice Award for clinical excellence and serves individuals, families, employers, courts, and healthcare systems.
+Comprehensive Psychological Services (CPS) is a licensed behavioral health organization established in 1986 in Salt Lake City, Utah. Founded by Steven Szykula, Ph.D., CPS employs 20+ licensed professionals including doctoral-level psychologists, licensed clinical social workers, and clinical mental health counselors. CPS holds the Best Practice Award for clinical excellence and serves individuals, families, employers, courts, attorneys, and healthcare systems across the Wasatch Front. CPS is a HIPAA-compliant practice; all evaluations follow evidence-based, validated protocols.
 
 ## Contact
 
@@ -12,21 +12,18 @@ Comprehensive Psychological Services (CPS) is a behavioral health professional s
 - Fax: (801) 483-1610
 - Email: cps@wecanhelpout.com
 - Website: https://psychandcustodyevaluations.com
-- Legacy site: https://wecanhelpout.com
+- Hours: Monday–Friday, 8:00 AM – 6:00 PM Mountain Time
 
 ## Locations
 
 ### Salt Lake City (Main Office)
-1208 East 3300 South, Salt Lake City, UT 84106
-Serving: Salt Lake County
+1208 East 3300 South, Salt Lake City, UT 84106 — Serving Salt Lake County.
 
-### Layton Market Center
-1916 North 700 West, Suite 190, Layton, UT 84041
-Serving: Davis County, Weber County
+### Layton
+1916 North 700 West, Suite 190, Layton, UT 84041 — Serving Davis & Weber Counties.
 
 ### West Jordan
-9069 South 1300 West, Suite D, West Jordan, UT 84088
-Serving: South Valley
+9069 South 1300 West, Suite D, West Jordan, UT 84088 — Serving South Valley (West Jordan, South Jordan, Draper, Sandy, Riverton, Herriman).
 
 ## Evaluation Services
 
@@ -43,13 +40,56 @@ Serving: South Valley
 ## Treatment Services
 
 - [Ketamine & Spravato Therapy](/ketamine-depression-treatment-near-me): FDA-approved ketamine and esketamine for treatment-resistant depression.
-- Intensive Outpatient Programs (IOP): Adult and child/teen programs.
+- Intensive Outpatient Programs (IOP): Adult and adolescent programs.
 - Counseling & Psychotherapy: Individual, couples, and family therapy.
 - Medication Management: Psychiatric medication therapy.
-- Neurofeedback / Brain Training: EEG-based brain training with 20+ years experience.
+- Neurofeedback / Brain Training: EEG-based brain training.
 - Substance Abuse Treatment: Court-admissible evaluations and Prime for Life classes.
-- Telehealth: Virtual therapy and consultation available.
+- Telehealth: Virtual therapy and consultation.
+
+## Conditions We Evaluate & Treat
+
+- [Adult ADHD](/conditions/adhd-in-adults): Evaluation and treatment for ADHD diagnosed in adulthood.
+- [Adult Autism](/conditions/autism-in-adults): Gold-standard ADOS-2 evaluation for adults, including those who mask.
+- [Concussion & TBI](/conditions/concussion-tbi): Post-concussion and traumatic brain injury neuropsychological evaluation.
+- [Dementia & Memory Concerns](/conditions/dementia-memory): Cognitive profiling for MCI, Alzheimer's, and other dementias.
+- [Learning Disability](/conditions/learning-disability): Psychoeducational testing for dyslexia, dysgraphia, dyscalculia, and NVLD — accepted for IEP/504.
+- [Treatment-Resistant Depression](/conditions/treatment-resistant-depression): Ketamine, Spravato, IOP, and medication management for depression that hasn't responded to first-line therapy.
+
+## Audiences Served
+
+- [Parents & Families](/for/parents): Pediatric evaluations, custody support, school-related testing.
+- [Attorneys](/for/attorneys): Court-accepted custody and forensic psychological evaluations.
+- [Schools](/for/schools): Learning disability, ADHD, and autism evaluations for IEP/504 processes.
+- [Employers](/for/employers): Fitness-for-duty, pre-employment psychological, and police/fire evaluations.
+- [Primary-Care Referrers](/for/referrers): Referral pathway for PCPs and psychiatrists needing diagnostic clarification.
+
+## Blog & Resources
+
+- [Patient Resources](/resources): Forms, insurance, what to bring, patient rights.
+- [HIPAA Notice of Privacy Practices](/hipaa): How CPS protects your health information.
+- [About CPS](/about): Practice history and mission.
+- [Our Team](/team): Licensed psychologists and clinicians.
+- [Blog](/blog): Evidence-based articles on ADHD, autism, custody, neuropsychology, and ketamine therapy.
+- [Newsletter](/newsletter): Evaluation-prep tips and evidence-based updates for caregivers, attorneys, and referrers.
+
+## Insurance
+
+Most major insurance plans accepted including Blue Cross Blue Shield, Aetna, Cigna, United Healthcare, Medicare, and Utah Medicaid plans. Benefits verification performed before first appointment. Self-pay rates and payment plans available.
 
 ## Service Areas
 
-Utah, Salt Lake City, Salt Lake County, Davis County (Layton, Bountiful, Farmington, Kaysville, Clearfield), Weber County (Ogden, Roy, Riverdale), West Jordan, South Jordan, Sandy, Draper, Murray, Midvale
+Utah, Salt Lake City, Salt Lake County, Davis County (Layton, Bountiful, Farmington, Kaysville, Clearfield), Weber County (Ogden, Roy, Riverdale), West Jordan, South Jordan, Sandy, Draper, Murray, Midvale, Riverton, Herriman.
+
+## Credentials & Affiliations
+
+- American Psychological Association (APA)
+- American Academy of Clinical Neuropsychology (AACN)
+- Utah Psychological Association (UPA)
+- Society for Personality and Social Psychology (SPSP)
+- HIPAA-compliant practice
+- Best Practice Award recipient
+
+## Last Updated
+
+This index is generated dynamically from the CPS content system. For the most current service catalog and location details, visit https://psychandcustodyevaluations.com/sitemap.xml

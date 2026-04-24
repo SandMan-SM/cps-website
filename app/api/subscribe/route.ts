@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
 
   if (!rateLimit(ip)) {
     return NextResponse.json(
-      { ok: false, error: "Too many requests. Please try again in a minute or call (801) 483-1600." },
+      { ok: false, error: "Too many requests. Please try again in a minute." },
       { status: 429 },
     );
   }
@@ -42,21 +42,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "Invalid request body." }, { status: 400 });
   }
 
-  const { firstName, lastName, email, phone, service, message, website } = body;
+  const { email, audience = "other", website } = body;
 
-  // Honeypot: silently accept but do nothing
   if (typeof website === "string" && website.trim().length > 0) {
     return NextResponse.json({ ok: true });
   }
 
-  if (!firstName || !lastName || !email || !phone || !service) {
-    return NextResponse.json(
-      { ok: false, error: "Please fill in all required fields." },
-      { status: 400 },
-    );
-  }
-
-  if (!isEmail(email)) {
+  if (!email || !isEmail(email)) {
     return NextResponse.json(
       { ok: false, error: "Please enter a valid email address." },
       { status: 400 },
@@ -64,14 +56,10 @@ export async function POST(req: NextRequest) {
   }
 
   const text = [
-    `New appointment request from CPS website`,
+    `New newsletter subscriber`,
     ``,
-    `Name: ${firstName} ${lastName}`,
     `Email: ${email}`,
-    `Phone: ${phone}`,
-    `Service: ${service}`,
-    `Message: ${message || "(none)"}`,
-    ``,
+    `Audience: ${audience}`,
     `Source IP: ${ip}`,
     `Submitted: ${new Date().toISOString()}`,
   ].join("\n");
@@ -81,7 +69,7 @@ export async function POST(req: NextRequest) {
     SMTP_PORT,
     SMTP_USER,
     SMTP_PASS,
-    CONTACT_TO_EMAIL = "cps@wecanhelpout.com",
+    NEWSLETTER_TO_EMAIL = "cps@wecanhelpout.com",
   } = process.env;
 
   if (SMTP_HOST && SMTP_USER && SMTP_PASS) {
@@ -94,26 +82,17 @@ export async function POST(req: NextRequest) {
       });
 
       await transporter.sendMail({
-        from: `"CPS Website" <${SMTP_USER}>`,
-        to: CONTACT_TO_EMAIL,
-        replyTo: email,
-        subject: `New Appointment Request — ${firstName} ${lastName}`,
+        from: `"CPS Newsletter" <${SMTP_USER}>`,
+        to: NEWSLETTER_TO_EMAIL,
+        subject: `New newsletter subscriber — ${audience}`,
         text,
       });
     } catch (err) {
-      console.error("[contact form] SMTP send failed:", err);
-      console.log("[contact form] RETRY QUEUE — captured message:", text);
-      return NextResponse.json(
-        {
-          ok: false,
-          error:
-            "We couldn't send your request automatically, but we've logged it for our team. Please call (801) 483-1600 to confirm your appointment.",
-        },
-        { status: 502 },
-      );
+      console.error("[newsletter] SMTP send failed:", err);
+      console.log("[newsletter] RETRY QUEUE — captured subscriber:", text);
     }
   } else {
-    console.log("[contact form] no SMTP configured, message captured:", text);
+    console.log("[newsletter] no SMTP configured, subscriber captured:", text);
   }
 
   return NextResponse.json({ ok: true });

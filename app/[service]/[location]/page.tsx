@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { services, locations, getServiceBySlug } from "@/lib/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 import ServicePageContent from "@/components/ServicePageContent";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/JsonLd";
 
@@ -71,6 +72,7 @@ export default async function LocationPage({ params }: Props) {
       <FAQSchema service={svc} />
       <Navbar />
       <ServicePageContent service={svc} location={loc} relatedServices={related} />
+      <StickyMobileCTA />
       <Footer />
     </>
   );

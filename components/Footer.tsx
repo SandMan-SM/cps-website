@@ -47,12 +47,21 @@ export default function Footer() {
             <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
             <ul className="space-y-3">
               <li><Link href="/ketamine-depression-treatment-near-me" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Ketamine Therapy</Link></li>
-              <li><span className="block text-sm py-2">Spravato (Esketamine)</span></li>
-              <li><span className="block text-sm py-2">Intensive Outpatient (IOP)</span></li>
-              <li><span className="block text-sm py-2">Counseling & Psychotherapy</span></li>
-              <li><span className="block text-sm py-2">Medication Management</span></li>
-              <li><span className="block text-sm py-2">Neurofeedback</span></li>
-              <li><span className="block text-sm py-2">Telehealth</span></li>
+              <li><Link href="/spravato-esketamine-therapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Spravato (Esketamine)</Link></li>
+              <li><Link href="/intensive-outpatient-program-iop" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Intensive Outpatient (IOP)</Link></li>
+              <li><Link href="/counseling-and-psychotherapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Counseling & Psychotherapy</Link></li>
+              <li><Link href="/medication-management" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Medication Management</Link></li>
+              <li><Link href="/neurofeedback-therapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Neurofeedback</Link></li>
+              <li><Link href="/telehealth-therapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Telehealth</Link></li>
+            </ul>
+            <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Conditions</h4>
+            <ul className="space-y-3">
+              <li><Link href="/conditions/adhd-in-adults" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Adult ADHD</Link></li>
+              <li><Link href="/conditions/autism-in-adults" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Adult Autism</Link></li>
+              <li><Link href="/conditions/concussion-tbi" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Concussion & TBI</Link></li>
+              <li><Link href="/conditions/dementia-memory" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Dementia & Memory</Link></li>
+              <li><Link href="/conditions/learning-disability" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Learning Disability</Link></li>
+              <li><Link href="/conditions/treatment-resistant-depression" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Treatment-Resistant Depression</Link></li>
             </ul>
             <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
             <ul className="space-y-3">
@@ -60,11 +69,21 @@ export default function Footer() {
               <li><Link href="/resources#insurance" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Insurance & Billing</Link></li>
               <li><Link href="/resources#faq" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">FAQs</Link></li>
               <li><Link href="/resources#patient-rights" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Patient Rights</Link></li>
+              <li><Link href="/newsletter" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Newsletter</Link></li>
+              <li><Link href="/blog" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Blog</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Legal & Compliance</h4>
+            <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">For Your Role</h4>
+            <ul className="space-y-3">
+              <li><Link href="/for/parents" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Parents & Caregivers</Link></li>
+              <li><Link href="/for/attorneys" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Attorneys</Link></li>
+              <li><Link href="/for/schools" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Schools & Educators</Link></li>
+              <li><Link href="/for/employers" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Employers & HR</Link></li>
+              <li><Link href="/for/referrers" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Primary-Care Referrers</Link></li>
+            </ul>
+            <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Legal & Compliance</h4>
             <ul className="space-y-3">
               <li><Link href="/privacy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Privacy Policy</Link></li>
               <li><Link href="/hipaa" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">HIPAA Notice of Privacy Practices</Link></li>

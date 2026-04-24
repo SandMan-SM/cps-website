@@ -171,7 +171,6 @@ export function PhysicianSchema() {
     jobTitle: "Founder and Director",
     description:
       "Licensed psychologist and founder of Comprehensive Psychological Services. Specializing in neuropsychology, behavioral health, and clinical psychology since 1979.",
-    image: "https://wecanhelpout.com/wp-content/uploads/2023/11/dr.stevenszykula.jpg",
     telephone: "+18014831600",
     email: "cps@wecanhelpout.com",
     url: "https://wecanhelpout.com",
@@ -283,6 +282,158 @@ export function FAQSchema({ service }: { service: ServiceData }) {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
+  );
+}
+
+const LOCATIONS = [
+  {
+    slug: "salt-lake-city",
+    name: "Salt Lake City",
+    streetAddress: "1208 East 3300 South",
+    addressLocality: "Salt Lake City",
+    postalCode: "84106",
+    latitude: 40.7099,
+    longitude: -111.8542,
+    areaServed: "Salt Lake County",
+  },
+  {
+    slug: "layton",
+    name: "Layton",
+    streetAddress: "1916 North 700 West, Suite 190",
+    addressLocality: "Layton",
+    postalCode: "84041",
+    latitude: 41.0603,
+    longitude: -111.9689,
+    areaServed: "Davis & Weber Counties",
+  },
+  {
+    slug: "west-jordan",
+    name: "West Jordan",
+    streetAddress: "9069 South 1300 West, Suite D",
+    addressLocality: "West Jordan",
+    postalCode: "84088",
+    latitude: 40.6013,
+    longitude: -111.9389,
+    areaServed: "South Valley",
+  },
+] as const;
+
+export function LocalBusinessSchema({ locationSlug }: { locationSlug?: string } = {}) {
+  const loc = locationSlug
+    ? LOCATIONS.find((l) => l.slug === locationSlug)
+    : undefined;
+  const targets = loc ? [loc] : LOCATIONS;
+
+  const schemas = targets.map((l) => ({
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": `https://psychandcustodyevaluations.com/#${l.slug}`,
+    name: `Comprehensive Psychological Services — ${l.name}`,
+    url: `https://psychandcustodyevaluations.com`,
+    telephone: "+18014831600",
+    email: "cps@wecanhelpout.com",
+    priceRange: "$$",
+    image: "https://psychandcustodyevaluations.com/opengraph-image",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: l.streetAddress,
+      addressLocality: l.addressLocality,
+      addressRegion: "UT",
+      postalCode: l.postalCode,
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: l.latitude,
+      longitude: l.longitude,
+    },
+    areaServed: { "@type": "AdministrativeArea", name: l.areaServed },
+    medicalSpecialty: ["Neuropsychology", "Clinical Psychology"],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      bestRating: "5",
+      reviewCount: "3",
+    },
+  }));
+
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+    </>
+  );
+}
+
+export function SpeakableSchema({
+  url,
+  cssSelectors = [".display-heading", ".section-heading", "h1", "h2"],
+}: {
+  url: string;
+  cssSelectors?: string[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ReviewSchema({
+  reviews,
+}: {
+  reviews: { author: string; text: string; rating: number }[];
+}) {
+  const schemas = reviews.map((r) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "MedicalBusiness",
+      name: "Comprehensive Psychological Services",
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: r.rating,
+      bestRating: 5,
+    },
+    author: { "@type": "Person", name: r.author },
+    reviewBody: r.text,
+  }));
+
+  return (
+    <>
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+    </>
   );
 }
 
