@@ -80,23 +80,6 @@ const team: Clinician[] = [
     locations: ["Salt Lake City — Millcreek"],
   },
   {
-    name: "JoAnna Sendejo",
-    credentials: "PsyD",
-    role: "Licensed Clinical Psychologist",
-    initials: "JS",
-    bio: "JoAnna is a licensed clinical psychologist who obtained her PsyD in Clinical Psychology from Pacific University with a focus in child and Latine psychology. She completed an APA-accredited internship at The Children's Center of Utah and a postdoctoral fellowship at a non-profit organization in Colorado. JoAnna's primary areas of specialty include infant and early childhood mental health, neurodevelopmental evaluations, perinatal populations, caregiver-child attachment, and intergenerational trauma. She provides services in both English and Spanish.",
-    specialties: [
-      "Infant & Early Childhood Mental Health",
-      "Neurodevelopmental Evaluations",
-      "Perinatal Populations",
-      "Caregiver-Child Attachment",
-      "Trauma & Stressor-Related Disorders",
-      "Bilingual (English/Spanish)",
-    ],
-    ageRanges: "Infants, Children, Adolescents, Adults",
-    locations: ["Salt Lake City"],
-  },
-  {
     name: "Dr. Ashley Storer",
     credentials: "APRN, DNP/FNP-BC",
     role: "Nurse Practitioner",
