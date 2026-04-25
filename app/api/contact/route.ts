@@ -116,5 +116,38 @@ export async function POST(req: NextRequest) {
     console.log("[contact form] no SMTP configured, message captured:", text);
   }
 
+  // ── Tee to OmniLeads dashboard ─────────────────────────────────────
+  // Fire-and-forget POST to the OmniLeads CPS lead intake. This is what
+  // surfaces the lead on omnileadsagi.com/dashboard/cps and triggers the
+  // Telegram + email alerts to the owner. Failure here must NOT block
+  // the response — the local SMTP send is the system of record for
+  // CPS's own inbox; OmniLeads is the analytics + dashboard layer.
+  const omniEndpoint =
+    process.env.NEXT_PUBLIC_OMNILEADS_API ||
+    process.env.OMNILEADS_API ||
+    "https://omnileadsagi.com";
+
+  // Don't await — we don't want the user-facing response held up by an
+  // out-of-region cross-origin POST. Errors are swallowed so an
+  // OmniLeads outage never bubbles into "the form is broken" UX.
+  fetch(`${omniEndpoint}/api/cps/leads`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: `${firstName} ${lastName}`.trim(),
+      email,
+      phone,
+      message: message
+        ? `Service interest: ${service}\n\n${message}`
+        : `Service interest: ${service}`,
+      source: "contact_form",
+      page_url: req.headers.get("referer") || "https://psychandcustodyevaluations.com/#contact",
+      user_agent: req.headers.get("user-agent") || undefined,
+    }),
+    keepalive: true,
+  }).catch((err) => {
+    console.error("[contact form] omnileads tee failed (non-blocking):", err);
+  });
+
   return NextResponse.json({ ok: true });
 }

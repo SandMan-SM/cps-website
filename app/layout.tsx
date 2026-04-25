@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist } from "next/font/google";
 import { OrganizationSchema, PhysicianSchema, LocalBusinessSchema } from "@/components/JsonLd";
+import CpsTracker from "@/components/CpsTracker";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -65,6 +67,9 @@ export default function RootLayout({
         <OrganizationSchema />
         <PhysicianSchema />
         <LocalBusinessSchema />
+        <Suspense fallback={null}>
+          <CpsTracker />
+        </Suspense>
         {children}
       </body>
     </html>
