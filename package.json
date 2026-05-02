@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "preview": "git push origin HEAD:dev --force && echo 'Preview deploying → check Vercel dashboard for cps-website dev branch URL'"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "dependencies": {
     "@types/nodemailer": "^8.0.0",
