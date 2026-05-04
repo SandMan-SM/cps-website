@@ -220,6 +220,19 @@ export function PhysicianSchema() {
   );
 }
 
+// Treatment / therapy service slugs — these get MedicalTherapy schema.
+// Everything else (evaluations, testing, assessments) gets MedicalProcedure
+// with procedureType: "Diagnostic".
+const THERAPY_SLUGS = new Set<string>([
+  "ketamine-depression-treatment-near-me",
+  "spravato-esketamine-therapy",
+  "intensive-outpatient-program-iop",
+  "counseling-and-psychotherapy",
+  "medication-management",
+  "neurofeedback-therapy",
+  "telehealth-therapy",
+]);
+
 export function ServiceSchema({ service, location }: Props) {
   if (!service) return null;
 
@@ -228,19 +241,30 @@ export function ServiceSchema({ service, location }: Props) {
     ? `${baseUrl}/${service.slug}/${location.slug}`
     : `${baseUrl}/${service.slug}`;
 
+  const isTherapy = THERAPY_SLUGS.has(service.slug);
+
+  const mainEntity = isTherapy
+    ? {
+        "@type": "MedicalTherapy",
+        name: service.title,
+        description: service.overview[0],
+        howPerformed: service.whatToExpect.join(". "),
+      }
+    : {
+        "@type": "MedicalProcedure",
+        name: service.title,
+        procedureType: "Diagnostic",
+        description: service.overview[0],
+        howPerformed: service.whatToExpect.join(". "),
+      };
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: location ? `${service.title} in ${location.name}` : service.title,
     url,
     description: service.metaDescription,
-    mainEntity: {
-      "@type": "MedicalProcedure",
-      name: service.title,
-      procedureType: "Diagnostic",
-      description: service.overview[0],
-      howPerformed: service.whatToExpect.join(". "),
-    },
+    mainEntity,
     provider: {
       "@type": "MedicalBusiness",
       name: "Comprehensive Psychological Services",
