@@ -437,6 +437,52 @@ export function ReviewSchema({
   );
 }
 
+export function MedicalConditionSchema({
+  name,
+  description,
+  url,
+  signs,
+  treatments,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  signs?: string[];
+  treatments?: string[];
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    name,
+    description,
+    url,
+    ...(signs && signs.length
+      ? {
+          signOrSymptom: signs.map((s) => ({
+            "@type": "MedicalSignOrSymptom",
+            name: s,
+          })),
+        }
+      : {}),
+    ...(treatments && treatments.length
+      ? {
+          possibleTreatment: treatments.map((t) => ({
+            "@type": "MedicalTherapy",
+            name: t,
+          })),
+        }
+      : {}),
+    associatedAnatomy: { "@type": "AnatomicalSystem", name: "Nervous system" },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export function BreadcrumbSchema({ items }: { items: { name: string; url: string }[] }) {
   const schema = {
     "@context": "https://schema.org",
