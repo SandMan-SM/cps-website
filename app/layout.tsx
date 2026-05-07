@@ -71,6 +71,10 @@ export default function RootLayout({
           <CpsTracker />
         </Suspense>
         {children}
+        {/* Cross-portfolio sponsor embed — Fred + Live Better Podcast +
+            CPS feature load wherever a <div id="omni-sponsor"
+            data-slug="cps" data-brand="CPS"> mount point exists. */}
+        <script src="https://omnileadsagi.com/embed/sponsor.js" defer />
       </body>
     </html>
   );
