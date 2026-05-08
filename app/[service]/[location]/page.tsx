@@ -40,11 +40,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://psychandcustodyevaluations.com/${svc.slug}/${loc.slug}`,
       siteName: "Comprehensive Psychological Services",
       type: "website",
+      images: [{ url: `https://psychandcustodyevaluations.com/opengraph-image`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} | CPS`,
       description,
+      images: [`https://psychandcustodyevaluations.com/twitter-image`],
     },
   };
 }
