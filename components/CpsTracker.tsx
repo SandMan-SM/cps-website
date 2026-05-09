@@ -72,9 +72,24 @@ function sessionId(): string {
   }
 }
 
+// Stage N.2 — federation referral capture.
+function readReferral(): Record<string, string | undefined> {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = localStorage.getItem("cps_referral_v1");
+    if (!raw) return {};
+    const r = JSON.parse(raw);
+    return {
+      referring_federation_slug: r.referring_federation_slug || undefined,
+      referring_creative_id: r.referring_creative_id || undefined,
+    };
+  } catch { return {}; }
+}
+
 function send(payload: Payload, opts: { beacon?: boolean } = {}) {
   const body = {
     ...payload,
+    ...readReferral(),
     visitor_id: visitorId(),
     session_id: sessionId(),
     user_agent: typeof navigator !== "undefined" ? navigator.userAgent : "",
@@ -148,6 +163,21 @@ export default function CpsTracker() {
   const searchParams = useSearchParams();
   const lastPath = useRef<string>("");
   const scrollHits = useRef<Set<number>>(new Set());
+
+  // Stage N.2 — capture ?ref=<slug>&utm_campaign=<creative> on first arrival.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const ref = searchParams?.get("ref");
+    if (!ref) return;
+    try {
+      if (localStorage.getItem("cps_referral_v1")) return;
+      localStorage.setItem("cps_referral_v1", JSON.stringify({
+        referring_federation_slug: ref,
+        referring_creative_id: searchParams?.get("utm_campaign") || null,
+        first_referral_ts: Date.now(),
+      }));
+    } catch {}
+  }, [searchParams]);
 
   // Page view ───────────────────────────────────────────────────────────
   useEffect(() => {

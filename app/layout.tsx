@@ -76,6 +76,9 @@ export default function RootLayout({
             page; the embed script populates it client-side. */}
         <div id="omni-sponsor" data-slug="cps" data-brand="Comprehensive Psychological Services" />
         <script src="https://omnileadsagi.com/embed/sponsor.js" defer />
+        {/* Stage N — universal federation cross-promo banner. */}
+        <div id="omni-fedad-footer" data-slot="footer" data-slug="cps" />
+        <script src="https://omnileadsagi.com/embed/federation-ad.js" defer />
       </body>
     </html>
   );
