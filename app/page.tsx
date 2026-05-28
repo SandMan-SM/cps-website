@@ -668,7 +668,7 @@ export default function HomePage() {
                     {formError && (
                       <p className="text-sm text-[var(--cps-warning)] bg-[var(--cps-white)]/10 rounded-xl px-4 py-4">{formError}</p>
                     )}
-                    <button type="submit" disabled={formLoading} className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
+                    <button type="submit" disabled={formLoading} aria-label="Request appointment" className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
                       <MessageCircle className="w-5 h-5" aria-hidden="true" />
                       {formLoading ? "Sending…" : "Request Appointment"}
                     </button>

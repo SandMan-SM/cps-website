@@ -91,6 +91,7 @@ export default function SubscribeForm() {
       <button
         type="submit"
         disabled={status === "loading"}
+        aria-label={status === "loading" ? "Subscribing to newsletter" : "Subscribe to newsletter"}
         className="mt-4 w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-[var(--cps-white)] font-bold rounded-xl transition-colors"
       >
         <Mail className="w-5 h-5" aria-hidden="true" />
