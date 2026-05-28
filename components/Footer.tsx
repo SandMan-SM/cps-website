@@ -93,8 +93,8 @@ export default function Footer() {
           <div>
             <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-4">
-              <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label="Call CPS at {PHONE}"><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
-              <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label="Email CPS at {EMAIL}"><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
+              <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label={`Call CPS at ${PHONE}`}><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
+              <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label={`Email CPS at ${EMAIL}`}><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
               <li className="flex items-start gap-2 text-sm" aria-label="Our office addresses">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
                 <div>

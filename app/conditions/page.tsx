@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     siteName: "Comprehensive Psychological Services",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Conditions We Treat — CPS Utah",
+    description:
+      "Adult ADHD, adult autism, concussion/TBI, memory & dementia, treatment-resistant depression.",
+  },
 };
 
 const ICONS: Record<ConditionSlug, React.ReactNode> = {

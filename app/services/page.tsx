@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     siteName: "Comprehensive Psychological Services",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "All Services — CPS Utah",
+    description:
+      "Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
+  },
 };
 
 const EVAL_SLUGS = new Set([
