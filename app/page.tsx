@@ -159,14 +159,14 @@ export default function HomePage() {
             </Link>
 
             <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-              <a href="#services" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Services</a>
+              <a href="#services" aria-label="Services section" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Services</a>
               <Link href="/conditions" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Conditions</Link>
-              <a href="#locations" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Locations</a>
-              <a href="#about" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">About</a>
+              <a href="#locations" aria-label="Locations section" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Locations</a>
+              <a href="#about" aria-label="About section" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">About</a>
               <Link href="/team" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Team</Link>
               <Link href="/blog" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Blog</Link>
               <Link href="/resources" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Resources</Link>
-              <a href="#contact" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Contact</a>
+              <a href="#contact" aria-label="Contact section" className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">Contact</a>
             </div>
 
             <div className="flex items-center gap-4">

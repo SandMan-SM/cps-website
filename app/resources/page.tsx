@@ -115,12 +115,14 @@ export default function ResourcesPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#prep"
+                aria-label="Jump to preparation checklist"
                 className="inline-flex items-center gap-2 px-6 py-4 bg-[var(--cps-white)] text-[var(--cps-dark)] font-semibold rounded-xl hover:bg-[var(--cps-light)] transition-colors"
               >
                 <ClipboardList className="w-5 h-5" aria-hidden="true" /> Prep Checklist
               </a>
               <a
                 href="#insurance"
+                aria-label="Jump to insurance information"
                 className="inline-flex items-center gap-2 px-6 py-4 bg-transparent border-2 border-white text-[var(--cps-white)] font-semibold rounded-xl hover:bg-[var(--cps-white)]/10 transition-colors"
               >
                 <CreditCard className="w-5 h-5" aria-hidden="true" /> Insurance

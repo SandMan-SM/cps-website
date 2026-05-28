@@ -172,6 +172,7 @@ export default function BookConsultationPage() {
             </a>
             <a
               href="#book-form"
+              aria-label="Scroll to appointment request form"
               data-track="hero-scroll-form"
               data-track-area="book-hero"
               className="inline-flex items-center gap-2 rounded-xl border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/60"
