@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SubscribeForm from "./subscribe-form";
+import SponsorRotation from "@/components/federation-sponsors/SponsorRotation";
 import { Mail, Brain, Users, GraduationCap, Scale, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -139,6 +140,15 @@ export default function NewsletterPage() {
               Every issue is written and reviewed by licensed CPS clinicians. No ghostwriters,
               no outsourced content mills.
             </p>
+          </div>
+        </section>
+
+        {/* Federation sponsor rotation — Fred Circle + Live Better OTD
+            (CPS itself is filtered out by host=cps so no self-promo).
+            Synced from Omni AI Website canonical lib + component. */}
+        <section className="py-12 md:py-20">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
+            <SponsorRotation host="cps" />
           </div>
         </section>
       </main>

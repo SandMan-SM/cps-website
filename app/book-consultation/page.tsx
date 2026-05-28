@@ -126,7 +126,7 @@ export default function BookConsultationPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="min-h-screen bg-white text-[var(--cps-gray-700)]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -134,11 +134,11 @@ export default function BookConsultationPage() {
 
       {/* Hero */}
       <section
-        className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-[#0a284b] via-[#0f3460] to-[#1565C0] text-white"
+        className="relative overflow-hidden border-b border-[var(--cps-gray-200)] bg-gradient-to-br from-[#0a284b] via-[#0f3460] to-[#1565C0] text-white"
         data-track-area="book-hero"
       >
         <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-40 -left-40 h-[640px] w-[640px] rounded-full bg-[#10b2e0]/20 blur-3xl" />
+          <div className="absolute -top-40 -left-40 h-[640px] w-[640px] rounded-full bg-[var(--cps-teal)]/20 blur-3xl" />
         </div>
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <Link
@@ -148,12 +148,12 @@ export default function BookConsultationPage() {
           >
             ← Back to CPS
           </Link>
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#10b2e0]/30 bg-[#10b2e0]/10 px-3 py-1 text-xs font-mono uppercase tracking-widest text-[#a8e3f4]">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--cps-teal)]/30 bg-[var(--cps-teal)]/10 px-3 py-1 text-xs font-mono uppercase tracking-widest text-[var(--cps-teal)]">
             Confidential Consultation
           </div>
           <h1 className="mb-5 text-4xl font-bold leading-tight sm:text-6xl">
             We&apos;re here to help.{" "}
-            <span className="text-[#a8e3f4]">Let&apos;s talk.</span>
+            <span className="text-[var(--cps-teal)]">Let&apos;s talk.</span>
           </h1>
           <p className="mb-8 max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">
             Tell us a little about what&apos;s bringing you in. A
@@ -165,7 +165,7 @@ export default function BookConsultationPage() {
               href={PHONE_HREF}
               data-track="hero-call"
               data-track-area="book-hero"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[#0a284b] shadow-lg transition hover:bg-[#dce8ff]"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[var(--cps-dark)] shadow-lg transition hover:bg-[var(--cps-light)]"
             >
               <Phone className="h-4 w-4" />
               Call {PHONE}
@@ -185,16 +185,16 @@ export default function BookConsultationPage() {
 
       {/* Trust strip */}
       <section
-        className="border-b border-slate-200 bg-slate-50 py-8"
+        className="border-b border-[var(--cps-gray-200)] bg-[var(--cps-gray-50)] py-8"
         data-track-area="book-trust"
       >
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 px-6 sm:grid-cols-3">
           {TRUST_POINTS.map(({ Icon, text }) => (
             <div
               key={text}
-              className="flex items-center gap-3 text-sm text-slate-700"
+              className="flex items-center gap-3 text-sm text-[var(--cps-gray-600)]"
             >
-              <Icon className="h-5 w-5 text-[#1565C0]" />
+              <Icon className="h-5 w-5 text-[var(--cps-blue)]" />
               <span>{text}</span>
             </div>
           ))}
@@ -203,14 +203,14 @@ export default function BookConsultationPage() {
 
       {/* Services */}
       <section
-        className="border-b border-slate-200 py-16 sm:py-20"
+        className="border-b border-[var(--cps-gray-200)] py-16 sm:py-20"
         data-track-area="book-services"
       >
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-3 text-2xl font-bold text-slate-900 sm:text-3xl">
+          <h2 className="mb-3 text-2xl font-bold text-[var(--cps-gray-700)] sm:text-3xl">
             What we evaluate and treat
           </h2>
-          <p className="mb-8 text-slate-600">
+          <p className="mb-8 text-[var(--cps-gray-500)]">
             Pick the service closest to what you&apos;re looking for.
             Not sure? Choose &ldquo;Other&rdquo; below — we&apos;ll
             help triage on the call.
@@ -219,13 +219,13 @@ export default function BookConsultationPage() {
             {SERVICES.map(({ Icon, title, body }) => (
               <div
                 key={title}
-                className="rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-[#1565C0]/40 hover:bg-[#dce8ff]/40"
+                className="rounded-2xl border border-[var(--cps-gray-200)] bg-white p-5 transition hover:border-[var(--cps-blue)]/40 hover:bg-[var(--cps-light)]/40"
               >
-                <Icon className="mb-3 h-6 w-6 text-[#1565C0]" />
-                <h3 className="mb-1.5 font-bold text-slate-900">
+                <Icon className="mb-3 h-6 w-6 text-[var(--cps-blue)]" />
+                <h3 className="mb-1.5 font-bold text-[var(--cps-gray-700)]">
                   {title}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-600">
+                <p className="text-sm leading-relaxed text-[var(--cps-gray-500)]">
                   {body}
                 </p>
               </div>
@@ -237,14 +237,14 @@ export default function BookConsultationPage() {
       {/* Booking form */}
       <section
         id="book-form"
-        className="bg-slate-50 py-16 sm:py-24"
+        className="bg-[var(--cps-gray-50)] py-16 sm:py-24"
         data-track-area="book-form"
       >
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="mb-3 text-2xl font-bold text-slate-900 sm:text-3xl">
+          <h2 className="mb-3 text-2xl font-bold text-[var(--cps-gray-700)] sm:text-3xl">
             Book your consultation
           </h2>
-          <p className="mb-8 text-slate-600">
+          <p className="mb-8 text-[var(--cps-gray-500)]">
             All information stays confidential and HIPAA-protected. A
             scheduling coordinator will respond within one business
             day.
@@ -255,40 +255,40 @@ export default function BookConsultationPage() {
 
       {/* Footer band */}
       <section
-        className="border-t border-slate-200 py-10"
+        className="border-t border-[var(--cps-gray-200)] py-10"
         data-track-area="book-footer"
       >
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 text-sm text-slate-700 sm:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 text-sm text-[var(--cps-gray-600)] sm:grid-cols-3">
           <div className="flex items-start gap-3">
-            <Phone className="mt-0.5 h-4 w-4 text-[#1565C0]" />
+            <Phone className="mt-0.5 h-4 w-4 text-[var(--cps-blue)]" />
             <div>
-              <div className="font-semibold text-slate-900">Call</div>
+              <div className="font-semibold text-[var(--cps-gray-700)]">Call</div>
               <a
                 href={PHONE_HREF}
                 data-track="footer-call"
-                className="hover:text-[#1565C0]"
+                className="hover:text-[var(--cps-blue)]"
               >
                 {PHONE}
               </a>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Mail className="mt-0.5 h-4 w-4 text-[#1565C0]" />
+            <Mail className="mt-0.5 h-4 w-4 text-[var(--cps-blue)]" />
             <div>
-              <div className="font-semibold text-slate-900">Email</div>
+              <div className="font-semibold text-[var(--cps-gray-700)]">Email</div>
               <a
                 href={`mailto:${EMAIL}`}
                 data-track="footer-email"
-                className="hover:text-[#1565C0]"
+                className="hover:text-[var(--cps-blue)]"
               >
                 {EMAIL}
               </a>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <MapPin className="mt-0.5 h-4 w-4 text-[#1565C0]" />
+            <MapPin className="mt-0.5 h-4 w-4 text-[var(--cps-blue)]" />
             <div>
-              <div className="font-semibold text-slate-900">Offices</div>
+              <div className="font-semibold text-[var(--cps-gray-700)]">Offices</div>
               <div>Salt Lake City · Layton · West Jordan</div>
             </div>
           </div>

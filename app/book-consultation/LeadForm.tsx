@@ -78,16 +78,16 @@ export default function LeadForm() {
     return (
       <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
         <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-emerald-600" />
-        <h3 className="mb-2 text-2xl font-bold text-slate-900">
+        <h3 className="mb-2 text-2xl font-bold text-[var(--cps-gray-700)]">
           We&apos;ve got it.
         </h3>
-        <p className="mx-auto max-w-md text-slate-600">
+        <p className="mx-auto max-w-md text-[var(--cps-gray-500)]">
           A scheduling coordinator from CPS will reach out within one
           business day to confirm your consultation. If you&apos;d
           rather call now, we&apos;re at{" "}
           <a
             href="tel:8014831600"
-            className="font-semibold text-[#1565C0] hover:underline"
+            className="font-semibold text-[var(--cps-blue)] hover:underline"
           >
             (801) 483-1600
           </a>
@@ -101,7 +101,7 @@ export default function LeadForm() {
     <form
       onSubmit={submit}
       data-track="book-consultation-form"
-      className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+      className="space-y-4 rounded-2xl border border-[var(--cps-gray-200)] bg-white p-6 shadow-sm sm:p-8"
     >
       {/* honey-pot */}
       <input
@@ -116,7 +116,7 @@ export default function LeadForm() {
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-xs uppercase tracking-wider text-slate-500">
+          <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
             Name *
           </label>
           <input
@@ -124,12 +124,12 @@ export default function LeadForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+            className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
             placeholder="Your full name"
           />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs uppercase tracking-wider text-slate-500">
+          <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
             Phone *
           </label>
           <input
@@ -137,33 +137,33 @@ export default function LeadForm() {
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+            className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
             placeholder="(801) 555-1234"
           />
         </div>
       </div>
 
       <div>
-        <label className="mb-1.5 block text-xs uppercase tracking-wider text-slate-500">
+        <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
           Email
         </label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+          className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
           placeholder="you@example.com"
         />
       </div>
 
       <div>
-        <label className="mb-1.5 block text-xs uppercase tracking-wider text-slate-500">
+        <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
           What can we help with?
         </label>
         <select
           value={service}
           onChange={(e) => setService(e.target.value)}
-          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+          className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
         >
           <option value="">Pick what fits</option>
           {SERVICE_OPTIONS.map((opt) => (
@@ -173,23 +173,24 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="mb-1.5 block text-xs uppercase tracking-wider text-slate-500">
+        <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
           Anything we should know
         </label>
         <textarea
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full resize-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+          className="w-full resize-none rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
           placeholder="Insurance, urgency, court deadlines, prior evaluations…"
         />
       </div>
 
       <button
         type="submit"
+        aria-label="Book my consultation"
         data-track="book-consultation-submit"
         disabled={status === "submitting"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1565C0] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0D47A1] disabled:cursor-wait disabled:opacity-60"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] px-5 py-3 text-sm font-bold text-white transition disabled:cursor-wait disabled:opacity-60"
       >
         {status === "submitting" ? (
           <Loader2 className="h-4 w-4 animate-spin" />
@@ -203,7 +204,7 @@ export default function LeadForm() {
         <p className="text-center text-sm text-red-600">{error}</p>
       )}
 
-      <p className="pt-2 text-center text-[11px] text-slate-500">
+      <p className="pt-2 text-center text-[11px] text-[var(--cps-gray-500)]">
         HIPAA-protected. We never share your information. By
         submitting you agree to be contacted about scheduling.
       </p>
