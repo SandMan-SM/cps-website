@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "About Us | Comprehensive Psychological Services — Utah Since 1986",
@@ -307,6 +308,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Maps */}
+      <section className="py-12 md:py-16 bg-[var(--cps-gray-50)]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--cps-gray-900)] mb-4">
+              Visit Our Locations
+            </h2>
+            <p className="text-[var(--cps-gray-500)] text-lg">
+              Three Wasatch Front offices serving Salt Lake City, Layton, and West Jordan.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { name: "Salt Lake City — Millcreek", query: "1208+East+3300+South+Salt+Lake+City+UT+84106", address: "1208 E 3300 S, Millcreek (Salt Lake City), UT 84106" },
+              { name: "Layton", query: "1916+North+700+West+Suite+190+Layton+UT+84041", address: "1916 N 700 W #190, Layton, UT 84041" },
+              { name: "West Jordan", query: "9069+South+1300+West+Suite+D+West+Jordan+UT+84088", address: "9069 S 1300 W #D, West Jordan, UT 84088" },
+            ].map((loc) => (
+              <div key={loc.name} className="bg-[var(--cps-white)] rounded-2xl overflow-hidden shadow-sm">
+                <div className="h-56 bg-[var(--cps-gray-100)]">
+                  <iframe
+                    title={`Map of CPS ${loc.name} office`}
+                    src={`https://maps.google.com/maps?q=${loc.query}&output=embed&z=15`}
+                    width="100%" height="100%"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="border-0 w-full h-full"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-[var(--cps-gray-900)] text-sm mb-1">{loc.name}</h3>
+                  <p className="text-[var(--cps-gray-500)] text-xs">{loc.address}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-12 md:py-16 bg-[var(--cps-dark)] text-[var(--cps-white)]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
@@ -336,6 +375,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <OrganizationSchema />
+      <LocalBusinessSchema />
       <Footer />
     </>
   );
