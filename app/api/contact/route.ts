@@ -63,6 +63,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  const submittedAt = new Date().toISOString();
   const text = [
     `New appointment request from CPS website`,
     ``,
@@ -73,8 +74,16 @@ export async function POST(req: NextRequest) {
     `Message: ${message || "(none)"}`,
     ``,
     `Source IP: ${ip}`,
-    `Submitted: ${new Date().toISOString()}`,
+    `Submitted: ${submittedAt}`,
   ].join("\n");
+
+  const redactedLog = [
+    `New appointment request from CPS website`,
+    `Service: ${service}`,
+    `Message provided: ${message ? "yes" : "no"}`,
+    `Source IP: ${ip === "unknown" ? "unknown" : "redacted"}`,
+    `Submitted: ${submittedAt}`,
+  ].join(" | ");
 
   const {
     SMTP_HOST,
@@ -102,7 +111,7 @@ export async function POST(req: NextRequest) {
       });
     } catch (err) {
       console.error("[contact form] SMTP send failed:", err);
-      console.log("[contact form] RETRY QUEUE — captured message:", text);
+      console.log("[contact form] RETRY QUEUE — captured redacted summary:", redactedLog);
       return NextResponse.json(
         {
           ok: false,
@@ -113,7 +122,7 @@ export async function POST(req: NextRequest) {
       );
     }
   } else {
-    console.log("[contact form] no SMTP configured, message captured:", text);
+    console.log("[contact form] no SMTP configured, redacted submission summary:", redactedLog);
   }
 
   // ── Tee to OmniLeads dashboard ─────────────────────────────────────
