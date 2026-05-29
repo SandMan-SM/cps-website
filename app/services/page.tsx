@@ -4,7 +4,7 @@ import { ArrowRight, Phone, Brain, ClipboardCheck, Users, Scale, HeartPulse, Gra
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { BreadcrumbSchema } from "@/components/JsonLd";
+import { BreadcrumbSchema, OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -175,6 +175,8 @@ export default function ServicesIndexPage() {
       </main>
       <StickyMobileCTA />
       <Footer />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
     </>
   );
 }

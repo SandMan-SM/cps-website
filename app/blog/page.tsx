@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronRight, Clock, Tag, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { blogPosts, blogCategories } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
@@ -178,6 +179,8 @@ export default function BlogPage() {
         </section>
       </main>
       <Footer />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
     </>
   );
 }
