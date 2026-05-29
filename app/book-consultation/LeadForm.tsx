@@ -5,7 +5,15 @@ import { Loader2, CheckCircle2 } from "lucide-react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-const ENDPOINT = "https://omnileadsagi.com/api/inbound/cps/leads";
+const ENDPOINT = "/api/contact";
+
+function splitName(fullName: string) {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  return {
+    firstName: parts[0] || "",
+    lastName: parts.slice(1).join(" ") || "(not provided)",
+  };
+}
 
 const SERVICE_OPTIONS = [
   "Neuropsychological Evaluation",
@@ -36,27 +44,23 @@ export default function LeadForm() {
     setStatus("submitting");
     setError(null);
     try {
-      const params = new URLSearchParams(window.location.search);
-      const utm: Record<string, string | null> = {
-        utm_source: params.get("utm_source"),
-        utm_medium: params.get("utm_medium"),
-        utm_campaign: params.get("utm_campaign"),
-      };
+      const { firstName, lastName } = splitName(name);
+      const trackingContext = [
+        `Source: book_consultation`,
+        `Page: ${window.location.href}`,
+        document.referrer ? `Referrer: ${document.referrer}` : null,
+      ].filter(Boolean).join("\n");
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name,
+          firstName,
+          lastName,
           email,
           phone,
-          service_interest: service,
-          message,
-          source: "book_consultation",
-          page_url: window.location.href,
-          referrer: document.referrer || null,
-          user_agent: navigator.userAgent,
-          ...utm,
-          honey: hp,
+          service,
+          message: [message, trackingContext].filter(Boolean).join("\n\n"),
+          website: hp,
         }),
       });
       if (!res.ok) {
@@ -116,54 +120,60 @@ export default function LeadForm() {
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
+          <label htmlFor="consultation-name" className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
             Name *
           </label>
           <input
+            id="consultation-name"
             type="text"
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+            className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:outline-none focus:ring-1 focus:ring-[var(--cps-blue)]"
             placeholder="Your full name"
           />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
+          <label htmlFor="consultation-phone" className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
             Phone *
           </label>
           <input
+            id="consultation-phone"
             type="tel"
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+            className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:outline-none focus:ring-1 focus:ring-[var(--cps-blue)]"
             placeholder="(801) 555-1234"
           />
         </div>
       </div>
 
       <div>
-        <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
-          Email
+        <label htmlFor="consultation-email" className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
+          Email *
         </label>
         <input
+          id="consultation-email"
           type="email"
+          required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+          className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:outline-none focus:ring-1 focus:ring-[var(--cps-blue)]"
           placeholder="you@example.com"
         />
       </div>
 
       <div>
-        <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
+        <label htmlFor="consultation-service" className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
           What can we help with?
         </label>
         <select
+          id="consultation-service"
+          required
           value={service}
           onChange={(e) => setService(e.target.value)}
-          className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+          className="w-full rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] focus:border-[var(--cps-blue)] focus:outline-none focus:ring-1 focus:ring-[var(--cps-blue)]"
         >
           <option value="">Pick what fits</option>
           {SERVICE_OPTIONS.map((opt) => (
@@ -173,14 +183,15 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
+        <label htmlFor="consultation-message" className="mb-1.5 block text-xs uppercase tracking-wider text-[var(--cps-gray-500)]">
           Anything we should know
         </label>
         <textarea
+          id="consultation-message"
           rows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full resize-none rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[#1565C0] focus:outline-none focus:ring-1 focus:ring-[#1565C0]"
+          className="w-full resize-none rounded-lg border border-[var(--cps-gray-200)] bg-white px-4 py-3 text-sm text-[var(--cps-gray-700)] placeholder-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:outline-none focus:ring-1 focus:ring-[var(--cps-blue)]"
           placeholder="Insurance, urgency, court deadlines, prior evaluations…"
         />
       </div>
@@ -190,7 +201,7 @@ export default function LeadForm() {
         aria-label="Book my consultation"
         data-track="book-consultation-submit"
         disabled={status === "submitting"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] px-5 py-3 text-sm font-bold text-white transition disabled:cursor-wait disabled:opacity-60"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] px-5 py-3 text-sm font-bold text-[var(--cps-white)] transition disabled:cursor-wait disabled:opacity-60"
       >
         {status === "submitting" ? (
           <Loader2 className="h-4 w-4 animate-spin" />
@@ -201,7 +212,7 @@ export default function LeadForm() {
       </button>
 
       {error && (
-        <p className="text-center text-sm text-red-600">{error}</p>
+        <p className="text-center text-sm text-[var(--cps-warning)]">{error}</p>
       )}
 
       <p className="pt-2 text-center text-[11px] text-[var(--cps-gray-500)]">
