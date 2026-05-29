@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -451,7 +450,7 @@ export default function HomePage() {
               {/* Google */}
               <div className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] text-center">
                 <div className="w-14 h-14 bg-[var(--cps-white)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-                  <span className="text-2xl font-bold text-[#4285F4]">G</span>
+                  <span className="text-2xl font-bold text-[var(--cps-google-blue)]">G</span>
                 </div>
                 <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Google</h3>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-4">5.0 on Google Reviews</p>
@@ -479,13 +478,13 @@ export default function HomePage() {
               {/* BBB */}
               <div className="p-8 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] text-center">
                 <div className="w-14 h-14 bg-[var(--cps-white)] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-                  <span className="text-xs font-bold text-[#007847]">BBB</span>
+                  <span className="text-xs font-bold text-[var(--cps-bbb-green)]">BBB</span>
                 </div>
                 <h3 className="font-bold text-[var(--cps-gray-900)] mb-2">Better Business Bureau</h3>
                 <p className="text-sm text-[var(--cps-gray-500)] mb-4">Accredited Business</p>
                 <div className="flex justify-center gap-1" aria-label="Accredited business">
-                  <Shield className="w-4 h-4 text-[#007847]" aria-hidden="true" />
-                  <span className="text-xs text-[#007847] font-semibold">Accredited</span>
+                  <Shield className="w-4 h-4 text-[var(--cps-bbb-green)]" aria-hidden="true" />
+                  <span className="text-xs text-[var(--cps-bbb-green)] font-semibold">Accredited</span>
                 </div>
               </div>
             </div>
