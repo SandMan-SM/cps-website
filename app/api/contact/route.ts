@@ -136,27 +136,29 @@ export async function POST(req: NextRequest) {
     process.env.OMNILEADS_API ||
     "https://omnileadsagi.com";
 
-  // Don't await — we don't want the user-facing response held up by an
-  // out-of-region cross-origin POST. Errors are swallowed so an
-  // OmniLeads outage never bubbles into "the form is broken" UX.
-  fetch(`${omniEndpoint}/api/cps/leads`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: `${firstName} ${lastName}`.trim(),
-      email,
-      phone,
-      message: message
-        ? `Service interest: ${service}\n\n${message}`
-        : `Service interest: ${service}`,
-      source: "contact_form",
-      page_url: req.headers.get("referer") || "https://psychandcustodyevaluations.com/#contact",
-      user_agent: req.headers.get("user-agent") || undefined,
-    }),
-    keepalive: true,
-  }).catch((err) => {
+  // Await briefly so serverless runtimes do not freeze the event before the
+  // dashboard lead tee is sent. The abort keeps CPS's form UX protected if
+  // OmniLeads is slow or unavailable.
+  try {
+    await fetch(`${omniEndpoint}/api/cps/leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: `${firstName} ${lastName}`.trim(),
+        email,
+        phone,
+        message: message
+          ? `Service interest: ${service}\n\n${message}`
+          : `Service interest: ${service}`,
+        source: "contact_form",
+        page_url: req.headers.get("referer") || "https://psychandcustodyevaluations.com/#contact",
+        user_agent: req.headers.get("user-agent") || undefined,
+      }),
+      signal: AbortSignal.timeout(1500),
+    });
+  } catch (err) {
     console.error("[contact form] omnileads tee failed (non-blocking):", err);
-  });
+  }
 
   return NextResponse.json({ ok: true });
 }
