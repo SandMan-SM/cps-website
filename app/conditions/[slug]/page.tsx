@@ -111,6 +111,7 @@ export default async function ConditionPage({
               </Link>
               <a
                 href="tel:8014831600"
+                aria-label="Call us at (801) 483-1600"
                 className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent border-2 border-white text-[var(--cps-white)] font-bold rounded-xl hover:bg-[var(--cps-white)]/10 transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)]"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
@@ -172,6 +173,7 @@ export default async function ConditionPage({
             </div>
             <a
               href="tel:8014831600"
+              aria-label="Call us at (801) 483-1600"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
             >
               <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
@@ -287,12 +289,14 @@ export default async function ConditionPage({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:8014831600"
+                aria-label="Call us at (801) 483-1600"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cps-dark)]"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
               </a>
               <a
                 href="mailto:cps@wecanhelpout.com"
+                aria-label="Email our intake team"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-[var(--cps-white)] font-bold rounded-xl hover:bg-[var(--cps-white)]/10 transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)]"
               >
                 <Mail className="w-5 h-5" aria-hidden="true" /> Email Intake

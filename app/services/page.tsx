@@ -165,6 +165,7 @@ export default function ServicesIndexPage() {
             </p>
             <a
               href="tel:8014831600"
+              aria-label="Call us at (801) 483-1600"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cps-dark)]"
             >
               <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
