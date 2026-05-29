@@ -193,7 +193,7 @@ export default function HomePage() {
               <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
               <Link href="/newsletter" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Newsletter</Link>
               <div className="pt-2 pb-2">
-                <a href={PHONE_HREF} onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base">
+                <a href={PHONE_HREF} onClick={() => setMobileMenuOpen(false)} aria-label="Call us at (801) 483-1600" className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
                 </a>
               </div>
@@ -227,7 +227,7 @@ export default function HomePage() {
                     <Calendar className="w-5 h-5" aria-hidden="true" />
                     Schedule an Evaluation
                   </a>
-                  <a href={PHONE_HREF} data-track="hero:call" className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
+                  <a href={PHONE_HREF} data-track="hero:call" aria-label="Call us at (801) 483-1600" className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
                     <Phone className="w-5 h-5" aria-hidden="true" />
                     {PHONE}
                   </a>
@@ -545,7 +545,7 @@ export default function HomePage() {
                     <p className="text-sm text-[var(--cps-blue)] font-medium mb-6">Serving {office.serving}</p>
                     <p className="text-[var(--cps-gray-600)] text-sm mb-2">{office.address}</p>
                     <p className="text-[var(--cps-gray-600)] text-sm mb-6">{office.city}</p>
-                    <a href={PHONE_HREF} className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
+                    <a href={PHONE_HREF} aria-label="Call (801) 483-1600" className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
                       <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
                     </a>
                   </div>
@@ -566,14 +566,14 @@ export default function HomePage() {
                   Call us or fill out the form to schedule an appointment. Our team will verify your insurance, answer your questions, and find a time that works.
                 </p>
                 <div className="space-y-4">
-                  <a href={PHONE_HREF} className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl hover:bg-[var(--cps-white)]/15 transition-colors">
+                  <a href={PHONE_HREF} aria-label="Call us at (801) 483-1600" className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl hover:bg-[var(--cps-white)]/15 transition-colors">
                     <Phone className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">{PHONE}</div>
                       <div className="text-sm text-[var(--cps-white)]/60">Mon–Fri, 8am–6pm</div>
                     </div>
                   </a>
-                  <a href={`mailto:${EMAIL}`} className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl hover:bg-[var(--cps-white)]/15 transition-colors">
+                  <a href={`mailto:${EMAIL}`} aria-label="Email us" className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl hover:bg-[var(--cps-white)]/15 transition-colors">
                     <Mail className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">{EMAIL}</div>
