@@ -734,7 +734,7 @@ export default function HomePage() {
                   { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me" },
                   { label: "Custody Evaluation", href: "/custody-evaluator-near-me" },
                 ].map((link) => (
-                  <li key={link.href}><a href={link.href} className="text-sm hover:text-[var(--cps-white)] transition-colors">{link.label}</a></li>
+                  <li key={link.href}><a href={link.href} aria-label={link.label} className="text-sm hover:text-[var(--cps-white)] transition-colors">{link.label}</a></li>
                 ))}
               </ul>
             </div>
@@ -742,13 +742,13 @@ export default function HomePage() {
             <div>
               <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
               <ul className="space-y-2">
-                <li><Link href="/ketamine-depression-treatment-near-me" className="text-sm hover:text-[var(--cps-white)] transition-colors">Ketamine Therapy</Link></li>
-                <li><span className="text-sm">Spravato (Esketamine)</span></li>
-                <li><span className="text-sm">Intensive Outpatient (IOP)</span></li>
-                <li><span className="text-sm">Counseling & Psychotherapy</span></li>
-                <li><span className="text-sm">Medication Management</span></li>
-                <li><span className="text-sm">Neurofeedback</span></li>
-                <li><span className="text-sm">Telehealth</span></li>
+                <li><Link href="/ketamine-depression-treatment-near-me" aria-label="Ketamine Therapy" className="text-sm hover:text-[var(--cps-white)] transition-colors">Ketamine Therapy</Link></li>
+                <li><Link href="/spravato-esketamine-therapy" aria-label="Spravato (Esketamine)" className="text-sm hover:text-[var(--cps-white)] transition-colors">Spravato (Esketamine)</Link></li>
+                <li><Link href="/intensive-outpatient-program-iop" aria-label="Intensive Outpatient (IOP)" className="text-sm hover:text-[var(--cps-white)] transition-colors">Intensive Outpatient (IOP)</Link></li>
+                <li><Link href="/counseling-and-psychotherapy" aria-label="Counseling &amp; Psychotherapy" className="text-sm hover:text-[var(--cps-white)] transition-colors">Counseling &amp; Psychotherapy</Link></li>
+                <li><Link href="/medication-management" aria-label="Medication Management" className="text-sm hover:text-[var(--cps-white)] transition-colors">Medication Management</Link></li>
+                <li><Link href="/neurofeedback-therapy" aria-label="Neurofeedback" className="text-sm hover:text-[var(--cps-white)] transition-colors">Neurofeedback</Link></li>
+                <li><Link href="/telehealth-therapy" aria-label="Telehealth" className="text-sm hover:text-[var(--cps-white)] transition-colors">Telehealth</Link></li>
               </ul>
               <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
               <ul className="space-y-2">
