@@ -208,7 +208,7 @@ export default function BookConsultationPage() {
         data-track-area="book-services"
       >
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-3 text-2xl font-bold text-[var(--cps-gray-700)] sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-[var(--cps-gray-700)] sm:text-3xl">
             What we evaluate and treat
           </h2>
           <p className="mb-8 text-[var(--cps-gray-500)]">
@@ -220,9 +220,10 @@ export default function BookConsultationPage() {
             {SERVICES.map(({ Icon, title, body }) => (
               <div
                 key={title}
-                className="rounded-2xl border border-[var(--cps-gray-200)] bg-white p-5 transition hover:border-[var(--cps-blue)]/40 hover:bg-[var(--cps-light)]/40"
+                className="rounded-2xl border border-[var(--cps-gray-200)] bg-white p-6 transition hover:border-[var(--cps-blue)]/40 hover:bg-[var(--cps-light)]/40"
+                aria-label={title}
               >
-                <Icon className="mb-3 h-6 w-6 text-[var(--cps-blue)]" />
+                <Icon className="mb-4 h-6 w-6 text-[var(--cps-blue)]" />
                 <h3 className="mb-1.5 font-bold text-[var(--cps-gray-700)]">
                   {title}
                 </h3>
@@ -242,7 +243,7 @@ export default function BookConsultationPage() {
         data-track-area="book-form"
       >
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="mb-3 text-2xl font-bold text-[var(--cps-gray-700)] sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-[var(--cps-gray-700)] sm:text-3xl">
             Book your consultation
           </h2>
           <p className="mb-8 text-[var(--cps-gray-500)]">

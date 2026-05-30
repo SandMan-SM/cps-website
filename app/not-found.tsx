@@ -65,7 +65,7 @@ export default function NotFound() {
 
         <section className="py-12 md:py-16 bg-[var(--cps-white)]">
           <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-4 mb-8">
               <Search className="w-5 h-5 text-[var(--cps-blue)]" aria-hidden="true" />
               <h2 className="text-2xl font-bold text-[var(--cps-gray-900)]">Popular pages</h2>
             </div>
