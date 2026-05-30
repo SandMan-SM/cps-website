@@ -241,7 +241,7 @@ const POST_CONTENT: Record<
 
         <h2>Insurance and Costs</h2>
         <p>
-          CPS accepts most major insurance plans, including BlueCross BlueShield, Aetna, UnitedHealthcare, Cigna, Medicare, and many others. Our billing team verifies your benefits before your appointment at no cost to you. Self-pay rates and payment plans are available for uninsured patients. Call us at <a href="tel:8014831600" className="text-[var(--cps-blue)] hover:underline font-semibold">(801) 483-1600</a> to check your coverage.
+          CPS accepts most major insurance plans, including BlueCross BlueShield, Aetna, UnitedHealthcare, Cigna, Medicare, and many others. Our billing team verifies your benefits before your appointment at no cost to you. Self-pay rates and payment plans are available for uninsured patients. Call us at <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="text-[var(--cps-blue)] hover:underline font-semibold">(801) 483-1600</a> to check your coverage.
         </p>
 
         <div className="rounded-xl p-6 my-8" style={{ background: "color-mix(in srgb, var(--cps-warning) 10%, white)", border: "1px solid color-mix(in srgb, var(--cps-warning) 30%, white)" }}>
@@ -852,6 +852,7 @@ export default async function BlogPostPage({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="tel:8014831600"
+                aria-label="Call (801) 483-1600"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-semibold rounded-xl transition-colors"
               >
                 <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600

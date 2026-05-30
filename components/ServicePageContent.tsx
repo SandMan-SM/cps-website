@@ -91,7 +91,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   <Calendar className="w-5 h-5" aria-hidden="true" />
                   {service.ctaText}
                 </Link>
-                <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
+                <a href={PHONE_HREF} aria-label={`Call ${PHONE}`} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
                   <Phone className="w-5 h-5" aria-hidden="true" />
                   {PHONE}
                 </a>
@@ -424,7 +424,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                 <Calendar className="w-5 h-5" aria-hidden="true" />
                 {service.ctaText}
               </Link>
-              <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
+              <a href={PHONE_HREF} aria-label={`Call ${PHONE}`} className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 {PHONE}
               </a>

@@ -129,6 +129,7 @@ export default function ResourcesPage() {
               </a>
               <a
                 href="tel:8014831600"
+                aria-label="Call (801) 483-1600"
                 className="inline-flex items-center gap-2 px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] font-semibold rounded-xl hover:bg-[var(--cps-blue-hover)] transition-colors"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
@@ -346,6 +347,7 @@ export default function ResourcesPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="tel:8014831600"
+                    aria-label="Call (801) 483-1600"
                     className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors"
                   >
                     <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
