@@ -128,7 +128,7 @@ const sections: { h: string; body: React.ReactNode }[] = [
         </p>
         <p>
           To request access or amendments to your records, contact our office at{" "}
-          <a href="tel:8014831600" className="text-[var(--cps-blue)] underline">
+          <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="text-[var(--cps-blue)] underline">
             (801) 483-1600
           </a>{" "}
           or{" "}
@@ -257,7 +257,7 @@ export default function HIPAANoticePage() {
                     cps@wecanhelpout.com
                   </a>{" "}
                   or{" "}
-                  <a href="tel:8014831600" className="text-[var(--cps-blue)] underline">
+                  <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="text-[var(--cps-blue)] underline">
                     (801) 483-1600
                   </a>
                   . You may also file a complaint with:
@@ -271,7 +271,7 @@ export default function HIPAANoticePage() {
                   </p>
                   <p className="text-[var(--cps-gray-600)] mb-2">Washington, DC 20201</p>
                   <p className="mb-1">
-                    <a href="tel:18003681019" className="text-[var(--cps-blue)] underline">
+                    <a href="tel:18003681019" aria-label="Call 1-800-368-1019" className="text-[var(--cps-blue)] underline">
                       1-800-368-1019
                     </a>
                   </p>

@@ -105,7 +105,7 @@ const sections = [
           cps@wecanhelpout.com
         </a>{" "}
         or call{" "}
-        <a href="tel:8014831600" className="text-[var(--cps-blue)] underline">
+        <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="text-[var(--cps-blue)] underline">
           (801) 483-1600
         </a>
         .
@@ -171,6 +171,7 @@ export default function PrivacyPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="tel:8014831600"
+                  aria-label="Call (801) 483-1600"
                   className="inline-flex items-center gap-2 text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] font-semibold transition-colors"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
