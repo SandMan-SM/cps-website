@@ -4,7 +4,7 @@ import { ArrowRight, Phone, Brain, HeartPulse, Sparkles, BookOpen, Activity, Zap
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { BreadcrumbSchema } from "@/components/JsonLd";
+import { BreadcrumbSchema, OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { conditions } from "@/lib/conditions";
 import type { ConditionSlug } from "@/lib/conditions";
 
@@ -113,6 +113,8 @@ export default function ConditionsIndexPage() {
         </section>
       </main>
       <StickyMobileCTA />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
       <Footer />
     </>
   );

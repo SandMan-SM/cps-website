@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Phone, MapPin, Award, ArrowRight, GraduationCap, Users } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { OrganizationSchema } from "@/components/JsonLd";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Our Team | Psychologists, Therapists & Psychiatrists | CPS Utah",
@@ -502,6 +502,7 @@ export default function TeamPage() {
       </section>
 
       <OrganizationSchema />
+      <LocalBusinessSchema />
       <Footer />
     </>
   );
