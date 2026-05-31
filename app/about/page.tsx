@@ -103,6 +103,7 @@ export default function AboutPage() {
     <>
       <Navbar />
 
+      <main id="main">
       {/* Hero */}
       <section className="bg-[var(--cps-dark)] text-[var(--cps-white)] py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
@@ -377,6 +378,7 @@ export default function AboutPage() {
 
       <OrganizationSchema />
       <LocalBusinessSchema />
+      </main>
       <Footer />
     </>
   );
