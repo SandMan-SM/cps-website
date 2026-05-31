@@ -132,7 +132,7 @@ const sections: { h: string; body: React.ReactNode }[] = [
             (801) 483-1600
           </a>{" "}
           or{" "}
-          <a href="mailto:cps@wecanhelpout.com" className="text-[var(--cps-blue)] underline">
+          <a href="mailto:cps@wecanhelpout.com" aria-label="Email us at cps@wecanhelpout.com" className="text-[var(--cps-blue)] underline">
             cps@wecanhelpout.com
           </a>
           .
@@ -253,7 +253,7 @@ export default function HIPAANoticePage() {
                 <h2 className="text-2xl font-bold text-[var(--cps-gray-900)] mb-4">11. Complaints</h2>
                 <p className="text-[var(--cps-gray-700)] leading-relaxed mb-4">
                   If you believe your privacy rights have been violated, you may file a complaint with our Privacy Officer at{" "}
-                  <a href="mailto:cps@wecanhelpout.com" className="text-[var(--cps-blue)] underline">
+                  <a href="mailto:cps@wecanhelpout.com" aria-label="Email our Privacy Officer at cps@wecanhelpout.com" className="text-[var(--cps-blue)] underline">
                     cps@wecanhelpout.com
                   </a>{" "}
                   or{" "}

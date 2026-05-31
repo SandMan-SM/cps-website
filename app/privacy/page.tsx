@@ -101,7 +101,7 @@ const sections = [
     body: (
       <p>
         Utah residents may have additional rights regarding their personal information under the Utah Consumer Privacy Act (UCPA). To exercise any rights or ask questions, contact us at{" "}
-        <a href="mailto:cps@wecanhelpout.com" className="text-[var(--cps-blue)] underline">
+        <a href="mailto:cps@wecanhelpout.com" aria-label="Email us at cps@wecanhelpout.com" className="text-[var(--cps-blue)] underline">
           cps@wecanhelpout.com
         </a>{" "}
         or call{" "}
