@@ -83,7 +83,7 @@ export default function ConditionsIndexPage() {
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-6">
                     {c.shortDescription}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm">
+                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm" aria-label={`Read guide for ${c.name}`}>
                     Read guide
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </span>

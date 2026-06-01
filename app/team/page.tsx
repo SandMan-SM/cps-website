@@ -383,6 +383,7 @@ export default function TeamPage() {
               </Link>
               <Link
                 href="/about"
+                aria-label="Learn about CPS"
                 className="inline-flex items-center gap-2 border border-white/30 hover:border-[var(--cps-teal)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 About CPS

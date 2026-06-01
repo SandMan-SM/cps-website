@@ -132,6 +132,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/team"
+                aria-label="Meet our team"
                 className="inline-flex items-center gap-2 border border-[var(--cps-gray-200)]/30 hover:border-[var(--cps-teal)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 Meet Our Team

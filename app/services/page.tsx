@@ -112,7 +112,7 @@ export default function ServicesIndexPage() {
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-6">
                     {s.heroSubtitle}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm">
+                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm" aria-label={`Learn more about ${s.shortName}`}>
                     Learn more
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </span>
@@ -144,7 +144,7 @@ export default function ServicesIndexPage() {
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-6">
                     {s.heroSubtitle}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm">
+                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm" aria-label={`Learn more about ${s.shortName}`}>
                     Learn more
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </span>
