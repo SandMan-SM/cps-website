@@ -278,6 +278,7 @@ export default function HIPAANoticePage() {
                   <p>
                     <a
                       href="https://www.hhs.gov/hipaa/filing-a-complaint"
+                      aria-label="File a HIPAA complaint at hhs.gov"
                       className="text-[var(--cps-blue)] underline"
                     >
                       www.hhs.gov/hipaa/filing-a-complaint
@@ -300,12 +301,14 @@ export default function HIPAANoticePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="tel:8014831600"
+                  aria-label="Call (801) 483-1600"
                   className="inline-flex items-center gap-2 text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] font-semibold transition-colors"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
                 </a>
                 <a
                   href="mailto:cps@wecanhelpout.com"
+                  aria-label="Email us"
                   className="inline-flex items-center gap-2 text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] font-semibold transition-colors"
                 >
                   <Mail className="w-4 h-4" aria-hidden="true" /> cps@wecanhelpout.com

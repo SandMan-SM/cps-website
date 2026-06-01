@@ -354,6 +354,7 @@ export default function ResourcesPage() {
                   </a>
                   <a
                     href="mailto:cps@wecanhelpout.com"
+                    aria-label="Email us"
                     className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-transparent border-2 border-white text-[var(--cps-white)] font-bold rounded-xl hover:bg-[var(--cps-white)]/10 transition-colors"
                   >
                     <Mail className="w-5 h-5" aria-hidden="true" /> Email Us

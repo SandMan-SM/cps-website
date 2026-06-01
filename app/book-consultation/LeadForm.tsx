@@ -91,6 +91,7 @@ export default function LeadForm() {
           rather call now, we&apos;re at{" "}
           <a
             href="tel:8014831600"
+            aria-label="Call (801) 483-1600"
             className="font-semibold text-[var(--cps-blue)] hover:underline"
           >
             (801) 483-1600

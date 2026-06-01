@@ -112,7 +112,7 @@ const POST_CONTENT: Record<
           These evaluations are used to diagnose conditions like ADHD, traumatic brain injury (TBI), learning disabilities, early dementia, autism spectrum disorder, and the cognitive effects of stroke, cancer treatment, or chronic illness. They're also used to document disabilities for academic accommodations, disability programs, and legal proceedings.
         </p>
         <p>
-          According to the American Academy of Clinical Neuropsychology, neuropsychological evaluations provide information that cannot be obtained through neuroimaging alone — they reveal how brain changes actually affect everyday thinking and behavior.<sup><a href="https://theaacn.org" target="_blank" rel="noopener noreferrer" className="text-[var(--cps-blue)] hover:underline">1</a></sup>
+          According to the American Academy of Clinical Neuropsychology, neuropsychological evaluations provide information that cannot be obtained through neuroimaging alone — they reveal how brain changes actually affect everyday thinking and behavior.<sup><a href="https://theaacn.org" target="_blank" rel="noopener noreferrer" aria-label="Source 1: American Academy of Clinical Neuropsychology (opens in new tab)" className="text-[var(--cps-blue)] hover:underline">1</a></sup>
         </p>
 
         <h2>Before Your Evaluation: How to Prepare</h2>
@@ -206,7 +206,7 @@ const POST_CONTENT: Record<
           <li>Specific recommendations for treatment, school/workplace accommodations, or further evaluation</li>
         </ul>
         <p>
-          This report is your documentation. It can be used for IEP/504 plans, disability applications, medical decision-making, legal proceedings, and treatment planning. The National Institutes of Health notes that neuropsychological reports play a critical role in establishing eligibility for educational and vocational supports.<sup><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4827867/" target="_blank" rel="noopener noreferrer" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
+          This report is your documentation. It can be used for IEP/504 plans, disability applications, medical decision-making, legal proceedings, and treatment planning. The National Institutes of Health notes that neuropsychological reports play a critical role in establishing eligibility for educational and vocational supports.<sup><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4827867/" target="_blank" rel="noopener noreferrer" aria-label="Source 2: National Institutes of Health (opens in new tab)" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
         </p>
 
         <h2>Who Performs Neuropsychological Evaluations at CPS?</h2>
@@ -296,10 +296,10 @@ const POST_CONTENT: Record<
 
         <h2>How Common Is Adult ADHD?</h2>
         <p>
-          The American Psychiatric Association estimates that ADHD affects approximately 4–5% of adults in the United States — that's roughly 13 million people.<sup><a href="https://www.psychiatry.org/patients-families/adhd/what-is-adhd" target="_blank" rel="noopener noreferrer" className="text-[var(--cps-blue)] hover:underline">1</a></sup> Yet the majority were never diagnosed as children, and many don't receive a diagnosis until their 30s, 40s, or even later.
+          The American Psychiatric Association estimates that ADHD affects approximately 4–5% of adults in the United States — that's roughly 13 million people.<sup><a href="https://www.psychiatry.org/patients-families/adhd/what-is-adhd" target="_blank" rel="noopener noreferrer" aria-label="Source 1: American Psychiatric Association" className="text-[var(--cps-blue)] hover:underline">1</a></sup> Yet the majority were never diagnosed as children, and many don't receive a diagnosis until their 30s, 40s, or even later.
         </p>
         <p>
-          The awareness gap is real — and costly. Untreated ADHD is associated with lower educational attainment, occupational instability, relationship difficulties, higher rates of anxiety and depression, and increased risk of substance use disorders, according to research published in the <em>Journal of Attention Disorders</em>.<sup><a href="https://journals.sagepub.com/home/jad" target="_blank" rel="noopener noreferrer" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
+          The awareness gap is real — and costly. Untreated ADHD is associated with lower educational attainment, occupational instability, relationship difficulties, higher rates of anxiety and depression, and increased risk of substance use disorders, according to research published in the <em>Journal of Attention Disorders</em>.<sup><a href="https://journals.sagepub.com/home/jad" target="_blank" rel="noopener noreferrer" aria-label="Source 2: Journal of Attention Disorders" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
         </p>
 
         <h2>Why Adult ADHD Gets Missed</h2>
@@ -457,7 +457,7 @@ const POST_CONTENT: Record<
           <li><strong>Module 4:</strong> Verbally fluent adolescents and adults</li>
         </ul>
         <p>
-          Research consistently supports the ADOS-2's diagnostic accuracy. A landmark study in the <em>Journal of Child Psychology and Psychiatry</em> found that the ADOS-2 demonstrates strong sensitivity and specificity when used by trained clinicians as part of a comprehensive evaluation.<sup><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3166228/" target="_blank" rel="noopener noreferrer" className="text-[var(--cps-blue)] hover:underline">1</a></sup>
+          Research consistently supports the ADOS-2's diagnostic accuracy. A landmark study in the <em>Journal of Child Psychology and Psychiatry</em> found that the ADOS-2 demonstrates strong sensitivity and specificity when used by trained clinicians as part of a comprehensive evaluation.<sup><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3166228/" target="_blank" rel="noopener noreferrer" aria-label="Source 1: Journal of Child Psychology and Psychiatry" className="text-[var(--cps-blue)] hover:underline">1</a></sup>
         </p>
 
         <h2>Screening Tools vs. Diagnostic Tools</h2>
@@ -485,7 +485,7 @@ const POST_CONTENT: Record<
 
         <h3>ADI-R (Autism Diagnostic Interview, Revised)</h3>
         <p>
-          The ADI-R is a structured clinical interview administered with a parent or caregiver. It gathers detailed developmental history across three core domains: social interaction, communication, and restricted/repetitive behaviors. The ADI-R is frequently paired with the ADOS-2 — together, they form the most evidence-supported approach to autism diagnosis. The National Institute of Mental Health describes the ADI-R + ADOS combination as the best practice standard for research and clinical diagnosis.<sup><a href="https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd" target="_blank" rel="noopener noreferrer" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
+          The ADI-R is a structured clinical interview administered with a parent or caregiver. It gathers detailed developmental history across three core domains: social interaction, communication, and restricted/repetitive behaviors. The ADI-R is frequently paired with the ADOS-2 — together, they form the most evidence-supported approach to autism diagnosis. The National Institute of Mental Health describes the ADI-R + ADOS combination as the best practice standard for research and clinical diagnosis.<sup><a href="https://www.nimh.nih.gov/health/topics/autism-spectrum-disorders-asd" target="_blank" rel="noopener noreferrer" aria-label="Source 2: National Institute of Mental Health" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
         </p>
 
         <h2>Why a Multi-Method Approach Matters</h2>
@@ -574,7 +574,7 @@ const POST_CONTENT: Record<
           A custody evaluation (also called a parental fitness evaluation or child custody evaluation) is a formal psychological assessment conducted by a licensed psychologist to assist the court in determining custody and visitation arrangements. Under Utah Code § 30-3-35.5, evaluators must hold licensure as psychologists or clinical social workers and operate under court appointment.
         </p>
         <p>
-          The evaluator's role is not to be an advocate for either parent. Their sole professional obligation is to provide the court with objective, evidence-based findings about what custody arrangement best promotes the child's wellbeing. The American Psychological Association's Guidelines for Child Custody Evaluations in Family Law Proceedings establish the professional standards that govern this work.<sup><a href="https://www.apa.org/practice/guidelines/child-custody" target="_blank" rel="noopener noreferrer" className="text-[var(--cps-blue)] hover:underline">1</a></sup>
+          The evaluator's role is not to be an advocate for either parent. Their sole professional obligation is to provide the court with objective, evidence-based findings about what custody arrangement best promotes the child's wellbeing. The American Psychological Association's Guidelines for Child Custody Evaluations in Family Law Proceedings establish the professional standards that govern this work.<sup><a href="https://www.apa.org/practice/guidelines/child-custody" target="_blank" rel="noopener noreferrer" aria-label="Source 1: American Psychological Association" className="text-[var(--cps-blue)] hover:underline">1</a></sup>
         </p>
 
         <h2>What Do Custody Evaluators Assess?</h2>
@@ -659,7 +659,7 @@ const POST_CONTENT: Record<
           Custody evaluation reports are treated as expert opinion evidence. The evaluator may be called to testify at a custody hearing or trial and may be cross-examined by both attorneys. Courts are not required to follow the evaluator's recommendations — a judge makes the final custody determination based on the totality of evidence.
         </p>
         <p>
-          However, in practice, Utah judges give substantial weight to thorough, well-supported custody evaluation reports, particularly in high-conflict cases. Research published in the <em>Family Court Review</em> found that courts follow custody evaluator recommendations in approximately 70–80% of cases where a formal evaluation is conducted.<sup><a href="https://onlinelibrary.wiley.com/journal/17441617" target="_blank" rel="noopener noreferrer" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
+          However, in practice, Utah judges give substantial weight to thorough, well-supported custody evaluation reports, particularly in high-conflict cases. Research published in the <em>Family Court Review</em> found that courts follow custody evaluator recommendations in approximately 70–80% of cases where a formal evaluation is conducted.<sup><a href="https://onlinelibrary.wiley.com/journal/17441617" target="_blank" rel="noopener noreferrer" aria-label="Source 2: Family Court Review" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
         </p>
 
         <h2>What Parents Should Know Before Their Evaluation</h2>

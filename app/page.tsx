@@ -185,7 +185,7 @@ export default function HomePage() {
           <div id="mobile-menu" className="lg:hidden border-t border-[var(--cps-gray-200)] bg-[var(--cps-white)] overflow-hidden">
             <div className="px-6 pt-4 pb-2 space-y-1">
               {["Services", "Locations", "About", "Contact"].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
+                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} aria-label={item + " section"} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{item}</a>
               ))}
               <Link href="/conditions" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Conditions</Link>
               <Link href="/team" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Team</Link>
@@ -284,7 +284,7 @@ export default function HomePage() {
               {serviceCategories.map((svc) => {
                 const Icon = svc.icon;
                 return (
-                  <a key={svc.title} href={svc.href} className="group flex flex-col bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
+                  <a key={svc.title} href={svc.href} aria-label={svc.title + " service"} className="group flex flex-col bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
                     <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-4 group-hover:text-[var(--cps-blue)] transition-colors">{svc.title}</h3>
                     <p className="text-[var(--cps-gray-500)] leading-relaxed mb-6 flex-1">{svc.description}</p>
                     <div className="flex items-end justify-between mt-6">
@@ -531,6 +531,7 @@ export default function HomePage() {
                         href={`https://maps.google.com/maps?q=${office.mapQuery}&output=embed`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`Open ${office.name} location in Google Maps`}
                         className="text-xs text-[var(--cps-blue)] hover:underline"
                       >
                         Open in Google Maps
@@ -694,6 +695,7 @@ export default function HomePage() {
           </a>
           <a
             href="#contact"
+            aria-label="Book an evaluation"
             className="flex-[2] flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] transition-colors"
           >
             <Calendar className="w-5 h-5" aria-hidden="true" />

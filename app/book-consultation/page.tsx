@@ -165,6 +165,7 @@ export default function BookConsultationPage() {
               href={PHONE_HREF}
               data-track="hero-call"
               data-track-area="book-hero"
+              aria-label="Call (801) 483-1600"
               className="inline-flex items-center gap-2 rounded-xl bg-[var(--cps-white)] px-6 py-4 text-sm font-bold text-[var(--cps-dark)] shadow-lg transition hover:bg-[var(--cps-light)]"
             >
               <Phone className="h-4 w-4" />
@@ -268,6 +269,7 @@ export default function BookConsultationPage() {
               <a
                 href={PHONE_HREF}
                 data-track="footer-call"
+                aria-label="Call (801) 483-1600"
                 className="hover:text-[var(--cps-blue)]"
               >
                 {PHONE}
@@ -279,12 +281,13 @@ export default function BookConsultationPage() {
             <div>
               <div className="font-semibold text-[var(--cps-gray-700)]">Email</div>
               <a
-                href={`mailto:${EMAIL}`}
-                data-track="footer-email"
-                className="hover:text-[var(--cps-blue)]"
-              >
-                {EMAIL}
-              </a>
+                  href={`mailto:${EMAIL}`}
+                  data-track="footer-email"
+                  aria-label="Email us"
+                  className="hover:text-[var(--cps-blue)]"
+                >
+                  {EMAIL}
+                </a>
             </div>
           </div>
           <div className="flex items-start gap-4">
