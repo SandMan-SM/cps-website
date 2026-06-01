@@ -196,7 +196,7 @@ export default function BookConsultationPage() {
               key={text}
               className="flex items-center gap-4 text-sm text-[var(--cps-gray-600)]"
             >
-              <Icon className="h-5 w-5 text-[var(--cps-blue)]" />
+              <Icon className="h-5 w-5 text-[var(--cps-blue)]" aria-hidden="true" />
               <span>{text}</span>
             </div>
           ))}
@@ -224,7 +224,7 @@ export default function BookConsultationPage() {
                 className="rounded-2xl border border-[var(--cps-gray-200)] bg-white p-6 transition hover:border-[var(--cps-blue)]/40 hover:bg-[var(--cps-light)]/40"
                 aria-label={title}
               >
-                <Icon className="mb-4 h-6 w-6 text-[var(--cps-blue)]" />
+                <Icon className="mb-4 h-6 w-6 text-[var(--cps-blue)]" aria-hidden="true" />
                 <h3 className="mb-1.5 font-bold text-[var(--cps-gray-700)]">
                   {title}
                 </h3>

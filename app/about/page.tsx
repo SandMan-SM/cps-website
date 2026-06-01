@@ -241,7 +241,7 @@ export default function AboutPage() {
             {values.map(({ icon: Icon, title, description }) => (
               <div key={title} className="bg-[var(--cps-white)] rounded-2xl p-6 shadow-sm">
                 <div className="w-12 h-12 rounded-xl bg-[var(--cps-blue)]/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[var(--cps-blue)]" />
+                  <Icon className="w-6 h-6 text-[var(--cps-blue)]" aria-hidden="true" />
                 </div>
                 <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-2">{title}</h3>
                 <p className="text-[var(--cps-gray-500)] leading-relaxed text-sm">{description}</p>
