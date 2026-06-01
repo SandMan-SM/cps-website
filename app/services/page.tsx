@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     title: "All Services — CPS Utah",
     description:
       "Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
+    images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
 };
 

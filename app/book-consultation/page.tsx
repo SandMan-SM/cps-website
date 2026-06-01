@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     title: "Book a Consultation | CPS Utah",
     description:
       "Evaluations, therapy, family-law assessments. Salt Lake · Layton · West Jordan. Most insurance accepted.",
+    images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
 };
 

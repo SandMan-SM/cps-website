@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     title: "Psychology & Mental Health Blog | CPS Utah",
     description:
       "Expert articles on neuropsychological evaluations, ADHD, autism assessments, and mental health.",
+    images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com/blog" },
 };

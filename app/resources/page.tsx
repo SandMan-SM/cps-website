@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     title: "Patient Resources & Forms | CPS Utah",
     description:
       "Insurance info, patient forms, evaluation-day checklist, and patient rights for CPS patients.",
+    images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com/resources" },
 };

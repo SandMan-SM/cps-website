@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "Conditions We Treat — CPS Utah",
     description:
       "Adult ADHD, adult autism, concussion/TBI, memory & dementia, treatment-resistant depression.",
+    images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
 };
 

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     title: "CPS Newsletter",
     description:
       "Monthly, evidence-based behavioral-health updates from CPS Utah. No spam. Unsubscribe anytime.",
+    images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com/newsletter" },
 };
