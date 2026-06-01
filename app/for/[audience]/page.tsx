@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { BreadcrumbSchema, SpeakableSchema } from "@/components/JsonLd";
+import { BreadcrumbSchema, SpeakableSchema, OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { audiences, getAudience } from "@/lib/audiences";
 import { ArrowRight, CheckCircle2, Phone, Mail, HelpCircle } from "lucide-react";
 
@@ -78,6 +78,8 @@ export default async function AudiencePage({
         ]}
       />
       <SpeakableSchema url={url} />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
 
       <main id="main">
         <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] py-16 md:py-24">

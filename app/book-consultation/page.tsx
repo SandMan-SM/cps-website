@@ -16,6 +16,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import LeadForm from "./LeadForm";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title:
@@ -299,6 +300,8 @@ export default function BookConsultationPage() {
           </div>
         </div>
       </section>
+      <OrganizationSchema />
+      <LocalBusinessSchema />
     </main>
   );
 }
