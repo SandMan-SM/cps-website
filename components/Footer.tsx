@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
-                <Brain className="w-5 h-5 text-[var(--cps-white)]" />
+                <Brain className="w-5 h-5 text-[var(--cps-white)]" aria-hidden="true" />
               </div>
               <div>
                 <div className="text-sm font-bold text-[var(--cps-white)] leading-tight">Comprehensive Psychological</div>
@@ -38,7 +38,7 @@ export default function Footer() {
                 { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me" },
                 { label: "Custody Evaluation", href: "/custody-evaluator-near-me" },
               ].map((link) => (
-                <li key={link.href}><Link href={link.href} className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">{link.label}</Link></li>
+                <li key={link.href}><Link href={link.href} aria-label={link.label} className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">{link.label}</Link></li>
               ))}
             </ul>
           </div>
@@ -46,52 +46,49 @@ export default function Footer() {
           <div>
             <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
             <ul className="space-y-3">
-              <li><Link href="/ketamine-depression-treatment-near-me" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Ketamine Therapy</Link></li>
-              <li><Link href="/spravato-esketamine-therapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Spravato (Esketamine)</Link></li>
-              <li><Link href="/intensive-outpatient-program-iop" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Intensive Outpatient (IOP)</Link></li>
-              <li><Link href="/counseling-and-psychotherapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Counseling & Psychotherapy</Link></li>
-              <li><Link href="/medication-management" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Medication Management</Link></li>
-              <li><Link href="/neurofeedback-therapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Neurofeedback</Link></li>
-              <li><Link href="/telehealth-therapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Telehealth</Link></li>
+              <li><Link href="/ketamine-depression-treatment-near-me" aria-label="Ketamine Therapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Ketamine Therapy</Link></li>
+              <li><Link href="/spravato-esketamine-therapy" aria-label="Spravato (Esketamine)" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Spravato (Esketamine)</Link></li>
+              <li><Link href="/intensive-outpatient-program-iop" aria-label="Intensive Outpatient (IOP)" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Intensive Outpatient (IOP)</Link></li>
+              <li><Link href="/counseling-and-psychotherapy" aria-label="Counseling &amp; Psychotherapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Counseling &amp; Psychotherapy</Link></li>
+              <li><Link href="/medication-management" aria-label="Medication Management" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Medication Management</Link></li>
+              <li><Link href="/neurofeedback-therapy" aria-label="Neurofeedback" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Neurofeedback</Link></li>
+              <li><Link href="/telehealth-therapy" aria-label="Telehealth" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Telehealth</Link></li>
             </ul>
             <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Conditions</h4>
             <ul className="space-y-3">
-              <li><Link href="/conditions/adhd-in-adults" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Adult ADHD</Link></li>
-              <li><Link href="/conditions/autism-in-adults" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Adult Autism</Link></li>
-              <li><Link href="/conditions/concussion-tbi" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Concussion & TBI</Link></li>
-              <li><Link href="/conditions/dementia-memory" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Dementia & Memory</Link></li>
-              <li><Link href="/conditions/learning-disability" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Learning Disability</Link></li>
-              <li><Link href="/conditions/treatment-resistant-depression" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Treatment-Resistant Depression</Link></li>
+              <li><Link href="/conditions/adhd-in-adults" aria-label="Adult ADHD" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Adult ADHD</Link></li>
+              <li><Link href="/conditions/autism-in-adults" aria-label="Adult Autism" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Adult Autism</Link></li>
+              <li><Link href="/conditions/concussion-tbi" aria-label="Concussion &amp; TBI" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Concussion &amp; TBI</Link></li>
+              <li><Link href="/conditions/dementia-memory" aria-label="Dementia &amp; Memory" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Dementia &amp; Memory</Link></li>
+              <li><Link href="/conditions/learning-disability" aria-label="Learning Disability" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Learning Disability</Link></li>
+              <li><Link href="/conditions/treatment-resistant-depression" aria-label="Treatment-Resistant Depression" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Treatment-Resistant Depression</Link></li>
             </ul>
             <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
             <ul className="space-y-3">
-              <li><Link href="/resources#forms" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Forms & Documents</Link></li>
-              <li><Link href="/resources#insurance" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Insurance & Billing</Link></li>
-              <li><Link href="/resources#faq" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">FAQs</Link></li>
-              <li><Link href="/resources#patient-rights" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Patient Rights</Link></li>
-              <li><Link href="/newsletter" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Newsletter</Link></li>
-              <li><Link href="/blog" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Blog</Link></li>
+              <li><Link href="/resources#forms" aria-label="Forms &amp; Documents" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Forms &amp; Documents</Link></li>
+              <li><Link href="/resources#insurance" aria-label="Insurance &amp; Billing" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Insurance &amp; Billing</Link></li>
+              <li><Link href="/resources#faq" aria-label="FAQs" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">FAQs</Link></li>
+              <li><Link href="/resources#patient-rights" aria-label="Patient Rights" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Patient Rights</Link></li>
+              <li><Link href="/newsletter" aria-label="Newsletter" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Newsletter</Link></li>
+              <li><Link href="/blog" aria-label="Blog" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Blog</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">For Your Role</h4>
             <ul className="space-y-3">
-              <li><Link href="/for/parents" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Parents & Caregivers</Link></li>
-              <li><Link href="/for/attorneys" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Attorneys</Link></li>
-              <li><Link href="/for/schools" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Schools & Educators</Link></li>
-              <li><Link href="/for/employers" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Employers & HR</Link></li>
-              <li><Link href="/for/referrers" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Primary-Care Referrers</Link></li>
+              <li><Link href="/for/parents" aria-label="Parents &amp; Caregivers" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Parents &amp; Caregivers</Link></li>
+              <li><Link href="/for/attorneys" aria-label="For Attorneys" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Attorneys</Link></li>
+              <li><Link href="/for/schools" aria-label="For Schools &amp; Educators" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Schools &amp; Educators</Link></li>
+              <li><Link href="/for/employers" aria-label="For Employers &amp; HR" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Employers &amp; HR</Link></li>
+              <li><Link href="/for/referrers" aria-label="For Primary-Care Referrers" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Primary-Care Referrers</Link></li>
             </ul>
-            <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Legal & Compliance</h4>
+            <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Legal &amp; Compliance</h4>
             <ul className="space-y-3">
-              <li><Link href="/privacy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Privacy Policy</Link></li>
-              <li><Link href="/hipaa" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">HIPAA Notice of Privacy Practices</Link></li>
+              <li><Link href="/privacy" aria-label="Privacy Policy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Privacy Policy</Link></li>
+              <li><Link href="/hipaa" aria-label="HIPAA Notice" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">HIPAA Notice of Privacy Practices</Link></li>
             </ul>
-          </div>
-
-          <div>
-            <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+            <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-4">
               <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label={`Call CPS at ${PHONE}`}><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
               <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label={`Email CPS at ${EMAIL}`}><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
@@ -111,8 +108,8 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
             <p className="text-xs text-[var(--cps-white)]/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
             <div className="flex gap-6 text-xs text-[var(--cps-white)]/40">
-              <Link href="/privacy" className="hover:text-[var(--cps-white)]/60 transition-colors">Privacy Policy</Link>
-              <Link href="/hipaa" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>
+              <Link href="/privacy" aria-label="Privacy Policy" className="hover:text-[var(--cps-white)]/60 transition-colors">Privacy Policy</Link>
+              <Link href="/hipaa" aria-label="HIPAA Notice" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>
             </div>
           </div>
           <p className="text-xs text-[var(--cps-white)]/40 text-center">Salt Lake City • Layton • West Jordan</p>
