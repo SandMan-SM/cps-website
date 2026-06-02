@@ -6,6 +6,7 @@ import { ChevronRight, Clock, Tag, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import KeyTakeawaysBlog from "@/components/KeyTakeawaysBlog";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { getPostBySlug, blogPosts } from "@/lib/blog-posts";
 import { blogHero } from "@/lib/stock-images";
 
@@ -755,6 +756,8 @@ export default async function BlogPostPage({
     <>
       <Navbar />
       <BlogPostingSchema post={post} />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
       <main id="main">
         {/* Hero */}
         <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] py-14 md:py-20">

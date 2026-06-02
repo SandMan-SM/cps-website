@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Phone, Mail, HelpCircle, Target, Microscope, 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { BreadcrumbSchema, SpeakableSchema, MedicalConditionSchema } from "@/components/JsonLd";
+import { BreadcrumbSchema, SpeakableSchema, MedicalConditionSchema, OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { conditions, getCondition } from "@/lib/conditions";
 
 export function generateStaticParams() {
@@ -85,6 +85,8 @@ export default async function ConditionPage({
         signs={data.signs}
         treatments={data.relatedServices?.map((s) => s.title)}
       />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
 
       <main id="main">
         <section className="bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] py-16 md:py-24">
