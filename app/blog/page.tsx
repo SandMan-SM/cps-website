@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     url: "https://psychandcustodyevaluations.com/blog",
     siteName: "Comprehensive Psychological Services",
     type: "website",
+    images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
