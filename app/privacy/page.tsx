@@ -16,12 +16,14 @@ export const metadata: Metadata = {
     url: "https://psychandcustodyevaluations.com/privacy",
     siteName: "Comprehensive Psychological Services",
     type: "website",
+    images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Privacy Policy | Comprehensive Psychological Services",
     description:
       "How CPS collects, uses, and protects your personal and health information.",
+    images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com/privacy" },
 };
