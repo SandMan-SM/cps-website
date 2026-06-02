@@ -508,13 +508,13 @@ export default function HomePage() {
                   <div className="h-56 bg-[var(--cps-gray-100)] relative">
                     <iframe
                       title={`Map of CPS ${office.name} office`}
+                      aria-label={`Google Maps embed for CPS ${office.name} office`}
                       src={office.mapSrc}
                       width="100%"
                       height="100%"
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       className="border-0 w-full h-full"
-                      aria-label={`Google Maps location of CPS ${office.name} office`}
                       onError={(e) => {
                         const iframe = e.target as HTMLIFrameElement;
                         iframe.style.display = 'none';
