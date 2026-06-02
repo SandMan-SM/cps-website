@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { Shield, Phone, Mail, FileCheck, Lock, Eye, UserCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -320,6 +321,8 @@ export default function HIPAANoticePage() {
       </main>
       <StickyMobileCTA />
       <Footer />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
     </>
   );
 }

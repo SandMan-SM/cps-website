@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import {
   Phone,
   FileText,
@@ -368,6 +369,8 @@ export default function ResourcesPage() {
       </main>
       <StickyMobileCTA />
       <Footer />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
     </>
   );
 }
