@@ -58,7 +58,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a key={link.label} href={link.href} onClick={() => setOpen(false)} aria-label={link.label} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{link.label}</a>
             ))}
-            <a href={PHONE_HREF} onClick={() => setOpen(false)} className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base"><Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}</a>
+            <a href={PHONE_HREF} onClick={() => setOpen(false)} aria-label="Call us" className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base"><Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}</a>
           </div>
         </div>
       )}
