@@ -61,7 +61,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="min-h-full flex flex-col">
-        <a href="#main" className="skip-link">
+        <a href="#main" aria-label="Skip to main content" className="skip-link">
           Skip to content
         </a>
         <OrganizationSchema />
