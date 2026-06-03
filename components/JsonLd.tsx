@@ -19,6 +19,9 @@ export function OrganizationSchema() {
       "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
     logo: "https://psychandcustodyevaluations.com/favicon.ico",
     sameAs: [
+      "https://www.facebook.com/comprehensivepsychologicalservices",
+      "https://www.linkedin.com/company/comprehensive-psychological-services",
+      "https://x.com/CPSUtah",
       "https://wecanhelpout.com",
       "https://www.healthline.com/health-directory/comprehensive-psychological-services",
     ],
@@ -203,7 +206,12 @@ export function PhysicianSchema() {
         name: "University of Utah",
       },
     ],
-    sameAs: ["https://wecanhelpout.com"],
+    sameAs: [
+      "https://www.facebook.com/comprehensivepsychologicalservices",
+      "https://www.linkedin.com/company/comprehensive-psychological-services",
+      "https://x.com/CPSUtah",
+      "https://wecanhelpout.com",
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",

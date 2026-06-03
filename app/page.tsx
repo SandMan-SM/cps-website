@@ -174,7 +174,7 @@ export default function HomePage() {
                 <Phone className="w-4 h-4" aria-hidden="true" />
                 {PHONE}
               </a>
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label={mobileMenuOpen ? "Close menu" : "Open menu"} className="lg:hidden p-4 min-w-12 min-h-12 rounded-xl hover:bg-[var(--cps-gray-100)] transition-colors flex items-center justify-center" aria-expanded={mobileMenuOpen} aria-controls="mobile-menu">
                 {mobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
               </button>
             </div>
@@ -781,8 +781,8 @@ export default function HomePage() {
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-[var(--cps-white)]/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
             <div className="flex gap-6 text-xs text-[var(--cps-white)]/40">
-              <Link href="/privacy" className="hover:text-[var(--cps-white)]/60 transition-colors">Privacy Policy</Link>
-              <Link href="/hipaa" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>
+              <Link href="/privacy" aria-label="Privacy Policy" className="hover:text-[var(--cps-white)]/60 transition-colors">Privacy Policy</Link>
+              <Link href="/hipaa" aria-label="HIPAA Notice" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>
             </div>
             <p className="text-xs text-[var(--cps-white)]/40">Salt Lake City • Layton • West Jordan</p>
           </div>
