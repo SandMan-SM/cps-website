@@ -173,6 +173,7 @@ export default function BlogPage() {
             </p>
             <a
               href="tel:8014831600"
+              aria-label="Call (801) 483-1600"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-semibold rounded-xl transition-colors"
             >
               Call (801) 483-1600

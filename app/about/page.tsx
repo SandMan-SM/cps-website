@@ -290,6 +290,7 @@ export default function AboutPage() {
                   <Phone className="w-5 h-5 text-[var(--cps-blue)]" aria-hidden="true" />
                   <Link
                     href={PHONE_HREF}
+                    aria-label="Call (801) 483-1600"
                     className="text-[var(--cps-blue)] font-semibold hover:text-[var(--cps-blue-hover)] transition-colors"
                   >
                     {PHONE}
@@ -362,6 +363,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href={PHONE_HREF}
+              aria-label="Call (801) 483-1600"
               className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
@@ -369,6 +371,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/team"
+              aria-label="Meet our team"
               className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Users className="w-5 h-5" aria-hidden="true" />

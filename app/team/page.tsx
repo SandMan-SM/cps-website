@@ -434,6 +434,7 @@ export default function TeamPage() {
             </p>
             <Link
               href={PHONE_HREF}
+              aria-label="Call (801) 483-1600"
               className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
@@ -496,6 +497,7 @@ export default function TeamPage() {
             </Link>
             <Link
               href="/about"
+              aria-label="Learn about CPS"
               className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               Learn About CPS
