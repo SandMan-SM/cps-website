@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import SubscribeForm from "./subscribe-form";
 import SponsorRotation from "@/components/federation-sponsors/SponsorRotation";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { Mail, Brain, Users, GraduationCap, Scale, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -155,6 +156,8 @@ export default function NewsletterPage() {
       </main>
       <StickyMobileCTA />
       <Footer />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
     </>
   );
 }
