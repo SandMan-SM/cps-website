@@ -126,7 +126,7 @@ export default function SponsorRotation({
       data-host={host}
       className="my-12 rounded-md border border-[var(--line,theme(colors.zinc.800))] bg-[var(--void-2,theme(colors.zinc.950))]/60 p-6 sm:p-8"
     >
-      <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
+      <header className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-[0.6rem] tracking-[0.32em] uppercase text-[var(--gold,theme(colors.amber.400))]">
           <SparklesIcon className="h-3.5 w-3.5" />
           <span>{eyebrow}</span>
@@ -145,7 +145,7 @@ export default function SponsorRotation({
         {intro}
       </p>
 
-      <ul className="grid gap-3 sm:grid-cols-3">
+      <ul className="grid gap-4 sm:grid-cols-3">
         {slotsForHost(host).map((s) => (
           <SponsorCard key={s.slug} slot={s} host={host} />
         ))}
