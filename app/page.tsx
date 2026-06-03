@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
 import {
   Phone, Mail, MapPin, Clock,
   Shield, Award, Star, CheckCircle2, ArrowRight,
@@ -11,8 +10,7 @@ import {
   ClipboardCheck, GraduationCap, Building2,
   Calendar, MessageCircle,
 } from "lucide-react";
-
-/* ─────────────────── DATA ─────────────────── */
+import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
 
 const PHONE = "(801) 483-1600";
 const PHONE_HREF = "tel:8014831600";
