@@ -281,6 +281,8 @@ export default function HIPAANoticePage() {
                   <p>
                     <a
                       href="https://www.hhs.gov/hipaa/filing-a-complaint"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label="File a HIPAA complaint at hhs.gov"
                       className="text-[var(--cps-blue)] underline"
                     >
