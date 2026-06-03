@@ -11,6 +11,7 @@ import {
   Calendar, MessageCircle,
 } from "lucide-react";
 import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
+import HomeSchema from "@/components/HomeSchema";
 
 const PHONE = "(801) 483-1600";
 const PHONE_HREF = "tel:8014831600";
@@ -141,6 +142,7 @@ export default function HomePage() {
       />
       <SpeakableSchema url="https://psychandcustodyevaluations.com" />
       <ReviewSchema reviews={testimonials.map((t) => ({ author: t.author, text: t.text, rating: t.rating }))} />
+      <HomeSchema />
 
       {/* ──────── NAV ──────── */}
       <nav className="sticky top-0 z-50 bg-[var(--cps-white)]/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
