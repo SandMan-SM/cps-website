@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Mail, Clock, CheckCircle2, MessageCircle } from "lucide-react";
+import { CheckCircle2, MessageCircle } from "lucide-react";
 
-const PHONE = "(801) 483-1600";
-const PHONE_HREF = "tel:8014831600";
 const EMAIL = "cps@wecanhelpout.com";
+
+// ph — used in API route
+export const PHONE = "(801) 483-1600";
+export const PHONE_HREF = "tel:8014831600";
 
 export default function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -18,7 +20,7 @@ export default function ContactForm() {
         <div className="bg-[var(--cps-white)]/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10">
           <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" aria-hidden="true" />
           <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-          <p className="text-[var(--cps-white)]/70 leading-relaxed">We've received your request. Our team will contact you within one business day to schedule your appointment.</p>
+          <p className="text-[var(--cps-white)]/70 leading-relaxed">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
         </div>
       ) : (
         <form onSubmit={async (e) => {
@@ -95,7 +97,7 @@ export default function ContactForm() {
             <MessageCircle className="w-5 h-5" aria-hidden="true" />
             {formLoading ? "Sending…" : "Request Appointment"}
           </button>
-          <p className="text-xs text-[var(--cps-white)]/40 text-center">Your information is confidential. We'll respond within 1 business day.</p>
+          <p className="text-xs text-[var(--cps-white)]/40 text-center">Your information is confidential. We&apos;ll respond within 1 business day.</p>
         </form>
       )}
     </>
