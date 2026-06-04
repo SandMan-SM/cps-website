@@ -223,11 +223,11 @@ export default function HomePage() {
                   Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
                 </p>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
-                  <a href="#contact" data-track="hero:schedule" aria-label="Schedule an evaluation" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
+                  <a href="#contact" data-track="hero:schedule" aria-label="Schedule an evaluation — Book now" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
                     <Calendar className="w-5 h-5" aria-hidden="true" />
                     Schedule an Evaluation
                   </a>
-                  <a href={PHONE_HREF} data-track="hero:call" aria-label="Call us at (801) 483-1600" className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
+                  <a href={PHONE_HREF} data-track="hero:call" aria-label="Call (801) 483-1600 to schedule" className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
                     <Phone className="w-5 h-5" aria-hidden="true" />
                     {PHONE}
                   </a>
