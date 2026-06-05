@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 
-const EMAIL = "cps@wecanhelpout.com";
-
 // ph — used in API route
 export const PHONE = "(801) 483-1600";
 export const PHONE_HREF = "tel:8014831600";
