@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import ServicePageContent from "@/components/ServicePageContent";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/JsonLd";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 
 interface Props {
   params: Promise<{ service: string }>;
@@ -64,6 +64,8 @@ export default async function ServicePage({ params }: Props) {
       <ServicePageContent service={svc} relatedServices={related} />
       <StickyMobileCTA />
       <Footer />
+      <OrganizationSchema />
+      <LocalBusinessSchema />
     </>
   );
 }
