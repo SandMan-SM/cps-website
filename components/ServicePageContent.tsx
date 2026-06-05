@@ -321,7 +321,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   <div>
                     <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-1">CPS {location.nearestOffice}</h3>
                     <p className="text-[var(--cps-gray-600)] mb-4">{location.nearestAddress}</p>
-                    <a href={PHONE_HREF} className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold hover:text-[var(--cps-blue-hover)] transition-colors">
+                    <a href={PHONE_HREF} aria-label={`Call ${PHONE}`} className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold hover:text-[var(--cps-blue-hover)] transition-colors">
                       <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
                     </a>
                   </div>
@@ -395,7 +395,7 @@ export default function ServicePageContent({ service, location, relatedServices 
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Related Services</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedServices.map((rel) => (
-                  <a key={rel.slug} href={`/${rel.slug}`} className="group block p-6 bg-[var(--cps-white)] rounded-xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
+                  <a key={rel.slug} href={`/${rel.slug}`} aria-label={rel.title} className="group block p-6 bg-[var(--cps-white)] rounded-xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-md transition-all">
                     <h3 className="font-bold text-[var(--cps-gray-900)] group-hover:text-[var(--cps-blue)] transition-colors mb-2">{rel.title}</h3>
                     <p className="text-sm text-[var(--cps-gray-500)] leading-relaxed mb-4">{rel.heroSubtitle.slice(0, 120)}...</p>
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] group-hover:gap-2 transition-all">
