@@ -313,7 +313,7 @@ export default function HIPAANoticePage() {
                 </a>
                 <a
                   href="mailto:cps@wecanhelpout.com"
-                  aria-label="Email us"
+                  aria-label="Email our Privacy Officer at cps@wecanhelpout.com"
                   className="inline-flex items-center gap-2 text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] font-semibold transition-colors"
                 >
                   <Mail className="w-4 h-4" aria-hidden="true" /> cps@wecanhelpout.com
