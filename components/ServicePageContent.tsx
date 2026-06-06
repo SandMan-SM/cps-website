@@ -158,7 +158,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
                     Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. As the founder of Comprehensive Psychological Services, he has conducted thousands of neuropsychological, ADHD, autism, and custody evaluations. He has provided expert testimony in Utah family courts and is a member of the American Academy of Clinical Neuropsychology (AACN).
                   </p>
-                  <a href="tel:8014831600" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors mt-2">
+                  <a href={PHONE_HREF} aria-label="Call CPS at (801) 483-1600" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors mt-2">
                     <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
                   </a>
                 </div>
@@ -173,7 +173,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   {service.citations.map((cite, i) => (
                     <li key={i}>
                       {cite.url ? (
-                        <a href={cite.url} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--cps-blue)] transition-colors">
+                        <a href={cite.url} target="_blank" rel="noopener noreferrer" aria-label={cite.text} className="hover:text-[var(--cps-blue)] transition-colors">
                           {i + 1}. {cite.text}
                         </a>
                       ) : (
@@ -437,7 +437,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       <section className="py-8 bg-[var(--cps-gray-50)] border-t border-[var(--cps-gray-200)]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <p className="text-xs text-[var(--cps-gray-400)] text-center leading-relaxed">
-            <strong>Disclaimer:</strong> The information on this page is for educational purposes only and does not constitute medical advice, diagnosis, or treatment. The information provided reflects general descriptions of psychological services and is not a substitute for a professional evaluation. If you believe you or someone you know may benefit from these services, please contact CPS at <a href="tel:8014831600" className="underline hover:text-[var(--cps-blue)]">(801) 483-1600</a>. For mental health emergencies, please call 988 (Suicide & Crisis Lifeline) or 911.
+            <strong>Disclaimer:</strong> The information on this page is for educational purposes only and does not constitute medical advice, diagnosis, or treatment. The information provided reflects general descriptions of psychological services and is not a substitute for a professional evaluation. If you believe you or someone you know may benefit from these services, please contact CPS at <a href={PHONE_HREF} aria-label="Call CPS at (801) 483-1600" className="underline hover:text-[var(--cps-blue)]">(801) 483-1600</a>. For mental health emergencies, please call 988 (Suicide & Crisis Lifeline) or 911.
           </p>
         </div>
       </section>
