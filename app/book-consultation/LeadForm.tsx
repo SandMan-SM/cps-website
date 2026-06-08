@@ -80,8 +80,8 @@ export default function LeadForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
-        <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-emerald-600" />
+      <div className="rounded-2xl border border-[var(--cps-success)]/20 bg-[var(--cps-success)]/10 p-8 text-center">
+        <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-[var(--cps-success)]" />
         <h3 className="mb-2 text-2xl font-bold text-[var(--cps-gray-700)]">
           We&apos;ve got it.
         </h3>
