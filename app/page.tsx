@@ -101,9 +101,9 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: "40+", label: "Years Serving Utah" },
-  { value: "20+", label: "Licensed Professionals" },
-  { value: "5★", label: "Best Practice Award" },
+  { value: "40+", label: "Years" },
+  { value: "20+", label: "Therapists" },
+  { value: "5★", label: "Practice" },
 ];
 
 /* ─────────────────── COMPONENT ─────────────────── */
@@ -251,9 +251,11 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--cps-dark)]/80 via-[var(--cps-dark)]/55 to-[var(--cps-dark)]/90" aria-hidden="true" />
 
           <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-20 md:py-32 text-left md:text-center">
-            <div className="flex items-center gap-2 mb-6 md:justify-center">
-              <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Trusted Behavioral Health Practice — Since 1986</span>
-              <Award className="w-5 h-5 text-[var(--cps-teal)] shrink-0" aria-hidden="true" />
+            <div className="mb-6">
+              <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">
+                Utah&apos;s Trusted Behavioral Health Practice — Since 1986
+                <Award className="inline-block align-middle ml-2 w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
+              </span>
             </div>
             <h1 className="display-heading text-[var(--cps-white)] mb-6">
               Find your way forward.
@@ -279,7 +281,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <a href="#services" aria-label="Scroll to see our services" className="inline-flex flex-col items-start md:items-center gap-1 mt-16 text-[var(--cps-white)]/70 hover:text-[var(--cps-white)] transition-colors">
+            <a href="#services" aria-label="Scroll to see our services" className="flex flex-col items-center gap-1 mt-16 text-[var(--cps-white)]/70 hover:text-[var(--cps-white)] transition-colors">
               <span className="text-xs uppercase tracking-wider">Scroll to see our services</span>
               <ChevronDown className="w-6 h-6 animate-bounce" aria-hidden="true" />
             </a>
