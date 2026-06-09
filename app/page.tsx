@@ -237,30 +237,32 @@ export default function HomePage() {
       <main id="main">
         {/* ──────── HERO ──────── */}
         <section className="relative isolate overflow-hidden bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-navy)] text-[var(--cps-white)]">
-          {/* Brand photo background — the "light at the end of the tunnel" image.
-              Decorative; falls back to the warm gradient above if the asset is absent. */}
+          {/* Brand photo background — calm therapy-room interior with the P/O monogram on the wall.
+              Decorative; the warm gradient above shows through / falls back if the asset is absent. */}
           <Image
-            src="/brand/ps-tunnel.jpg"
+            src="/brand/ps-hero.jpg"
             alt=""
             aria-hidden="true"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center opacity-40"
+            className="object-cover object-center opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--cps-dark)]/80 via-[var(--cps-dark)]/55 to-[var(--cps-dark)]/90" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--cps-dark)]/80 via-[var(--cps-dark)]/65 to-[var(--cps-dark)]/90" aria-hidden="true" />
 
           <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-20 md:py-32 text-left md:text-center">
             <div className="mb-6">
-              <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">
-                Utah&apos;s Trusted Behavioral Health Practice — Since 1986
-                <Award className="inline-block align-middle ml-2 w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
+              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--cps-teal)]/20 ring-1 ring-[var(--cps-teal)]/50 pl-2 pr-4 py-2 text-left">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[var(--cps-white)]/50 shrink-0">
+                  <Award className="w-4 h-4 text-[var(--cps-white)]" aria-hidden="true" />
+                </span>
+                <span className="text-sm font-semibold text-[var(--cps-white)] leading-snug">Utah&apos;s trusted behavioral health practice since 1986</span>
               </span>
             </div>
-            <h1 className="display-heading text-[var(--cps-white)] mb-6">
+            <h1 className="display-heading text-[var(--cps-white)] mb-6" style={{ fontFamily: "var(--font-serif)" }}>
               Find your way forward.
             </h1>
-            <p className="body-large text-[var(--cps-white)]/85 mb-10 max-w-2xl md:mx-auto">
+            <p className="body-large text-[var(--cps-white)]/85 mb-10">
               Compassionate, evidence-based behavioral health care for Utah families — neuropsychological, ADHD, autism, and custody evaluations, plus ketamine therapy, IOP, and counseling. Three locations. Real answers. A clear next step.
             </p>
             <div className="flex flex-row items-center gap-4 md:justify-center">
