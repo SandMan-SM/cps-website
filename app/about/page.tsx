@@ -127,6 +127,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href={PHONE_HREF}
+                aria-label="Call (801) 483-1600"
                 className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
