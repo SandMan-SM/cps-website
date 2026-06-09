@@ -841,10 +841,10 @@ export default function HomePage() {
               </ul>
               <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Resources</h4>
               <ul className="space-y-2">
-                <li><Link href="/resources#forms" className="text-sm hover:text-[var(--cps-white)] transition-colors">Forms & Documents</Link></li>
-                <li><Link href="/resources#insurance" className="text-sm hover:text-[var(--cps-white)] transition-colors">Insurance & Billing</Link></li>
-                <li><Link href="/resources#faq" className="text-sm hover:text-[var(--cps-white)] transition-colors">FAQs</Link></li>
-                <li><Link href="/resources#patient-rights" className="text-sm hover:text-[var(--cps-white)] transition-colors">Patient Rights</Link></li>
+                <li><Link href="/resources#forms" aria-label="Forms and Documents" className="text-sm hover:text-[var(--cps-white)] transition-colors">Forms & Documents</Link></li>
+                <li><Link href="/resources#insurance" aria-label="Insurance and Billing" className="text-sm hover:text-[var(--cps-white)] transition-colors">Insurance & Billing</Link></li>
+                <li><Link href="/resources#faq" aria-label="Frequently Asked Questions" className="text-sm hover:text-[var(--cps-white)] transition-colors">FAQs</Link></li>
+                <li><Link href="/resources#patient-rights" aria-label="Patient Rights" className="text-sm hover:text-[var(--cps-white)] transition-colors">Patient Rights</Link></li>
               </ul>
             </div>
 
