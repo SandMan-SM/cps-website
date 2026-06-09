@@ -7,15 +7,15 @@ import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import { blogPosts, blogCategories } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Psychology & Mental Health Blog | Comprehensive Psychological Services",
+  title: "Psychology & Mental Health Blog | Psychological Services",
   description:
     "Expert articles on neuropsychological evaluations, ADHD, autism assessments, custody evaluations, and mental health — from Utah's trusted practice since 1986.",
   openGraph: {
-    title: "Psychology & Mental Health Blog | Comprehensive Psychological Services",
+    title: "Psychology & Mental Health Blog | Psychological Services",
     description:
       "Expert articles on neuropsychological evaluations, ADHD, autism assessments, custody evaluations, and mental health — from Utah's trusted practice since 1986.",
     url: "https://psychandcustodyevaluations.com/blog",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },

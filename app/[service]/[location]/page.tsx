@@ -35,10 +35,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     alternates: { canonical: `https://psychandcustodyevaluations.com/${svc.slug}/${loc.slug}` },
     openGraph: {
-      title: `${title} | Comprehensive Psychological Services`,
+      title: `${title} | Psychological Services`,
       description,
       url: `https://psychandcustodyevaluations.com/${svc.slug}/${loc.slug}`,
-      siteName: "Comprehensive Psychological Services",
+      siteName: "Psychological Services",
       type: "website",
       images: [{ url: `https://psychandcustodyevaluations.com/opengraph-image`, width: 1200, height: 630 }],
     },

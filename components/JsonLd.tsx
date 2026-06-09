@@ -9,8 +9,9 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
-    name: "Comprehensive Psychological Services",
-    alternateName: ["CPS", "Comprehensive Psychological Services Utah"],
+    name: "Psychological Services",
+    legalName: "Comprehensive Psychological Services",
+    alternateName: ["CPS", "Comprehensive Psychological Services", "Comprehensive Psychological Services Utah"],
     url: "https://psychandcustodyevaluations.com",
     telephone: "+18014831600",
     email: "cps@wecanhelpout.com",
@@ -173,7 +174,7 @@ export function PhysicianSchema() {
     name: "Steven Szykula, Ph.D.",
     jobTitle: "Founder and Director",
     description:
-      "Licensed psychologist and founder of Comprehensive Psychological Services. Specializing in neuropsychology, behavioral health, and clinical psychology since 1979.",
+      "Licensed psychologist and founder of Psychological Services. Specializing in neuropsychology, behavioral health, and clinical psychology since 1979.",
     telephone: "+18014831600",
     email: "cps@wecanhelpout.com",
     url: "https://wecanhelpout.com",
@@ -275,7 +276,7 @@ export function ServiceSchema({ service, location }: Props) {
     mainEntity,
     provider: {
       "@type": "MedicalBusiness",
-      name: "Comprehensive Psychological Services",
+      name: "Psychological Services",
       telephone: "+18014831600",
       url: baseUrl,
     },
@@ -360,7 +361,7 @@ export function LocalBusinessSchema({ locationSlug }: { locationSlug?: string } 
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "@id": `https://psychandcustodyevaluations.com/#${l.slug}`,
-    name: `Comprehensive Psychological Services — ${l.name}`,
+    name: `Psychological Services — ${l.name}`,
     url: `https://psychandcustodyevaluations.com`,
     telephone: "+18014831600",
     email: "cps@wecanhelpout.com",
@@ -445,7 +446,7 @@ export function ReviewSchema({
     "@type": "Review",
     itemReviewed: {
       "@type": "MedicalBusiness",
-      name: "Comprehensive Psychological Services",
+      name: "Psychological Services",
     },
     reviewRating: {
       "@type": "Rating",

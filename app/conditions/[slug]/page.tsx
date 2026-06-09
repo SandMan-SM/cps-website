@@ -28,7 +28,7 @@ export async function generateMetadata({
       title: data.title,
       description: data.metaDescription,
       url,
-      siteName: "Comprehensive Psychological Services",
+      siteName: "Psychological Services",
       type: "article",
       images: [{ url: `https://psychandcustodyevaluations.com/opengraph-image`, width: 1200, height: 630 }],
     },

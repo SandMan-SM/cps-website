@@ -8,19 +8,19 @@ import { Shield, Phone, Mail } from "lucide-react";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Comprehensive Psychological Services. Learn how we collect, use, and protect your personal and health information in compliance with HIPAA and Utah law.",
+    "Privacy Policy for Psychological Services. Learn how we collect, use, and protect your personal and health information in compliance with HIPAA and Utah law.",
   openGraph: {
-    title: "Privacy Policy | Comprehensive Psychological Services",
+    title: "Privacy Policy | Psychological Services",
     description:
       "How CPS collects, uses, and protects your personal and health information.",
     url: "https://psychandcustodyevaluations.com/privacy",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | Comprehensive Psychological Services",
+    title: "Privacy Policy | Psychological Services",
     description:
       "How CPS collects, uses, and protects your personal and health information.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
@@ -140,7 +140,7 @@ export default function PrivacyPage() {
             </div>
             <h1 className="display-heading text-[var(--cps-white)] mb-6">Privacy Policy</h1>
             <p className="body-large text-[var(--cps-white)]/80 max-w-[60ch]">
-              How Comprehensive Psychological Services collects, uses, and safeguards your personal and health information.
+              How Psychological Services collects, uses, and safeguards your personal and health information.
             </p>
             <p className="mt-8 text-sm text-[var(--cps-white)]/60">Effective Date: April 14, 2026</p>
           </div>
@@ -149,7 +149,7 @@ export default function PrivacyPage() {
         <section className="py-12 md:py-20 bg-[var(--cps-white)]">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
             <p className="text-[var(--cps-gray-700)] leading-relaxed body-large mb-12">
-              Comprehensive Psychological Services (&ldquo;CPS,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy and the confidentiality of your personal and health information. This Privacy Policy describes how we collect, use, and safeguard information obtained through our website, psychandcustodyevaluations.com.
+              Psychological Services (&ldquo;CPS,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy and the confidentiality of your personal and health information. This Privacy Policy describes how we collect, use, and safeguard information obtained through our website, psychandcustodyevaluations.com.
             </p>
 
             <div className="space-y-12">
@@ -167,7 +167,7 @@ export default function PrivacyPage() {
                 Questions about this Privacy Policy or how we handle your information?
               </p>
               <p className="font-semibold text-[var(--cps-gray-900)] mb-2">
-                Comprehensive Psychological Services
+                Psychological Services
               </p>
               <p className="text-[var(--cps-gray-600)] mb-1">1208 East 3300 South</p>
               <p className="text-[var(--cps-gray-600)] mb-4">Salt Lake City, UT 84106</p>

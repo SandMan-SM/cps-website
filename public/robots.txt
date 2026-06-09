@@ -1,4 +1,4 @@
-# Comprehensive Psychological Services — robots.txt
+# Psychological Services — robots.txt
 # https://psychandcustodyevaluations.com
 
 User-agent: *

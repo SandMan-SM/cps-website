@@ -9,19 +9,19 @@ import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Our Team | Psychologists, Therapists & Psychiatrists | CPS Utah",
   description:
-    "Meet the expert team at Comprehensive Psychological Services — licensed psychologists, clinical social workers, nurse practitioners, and therapists serving Utah since 1986. Led by Dr. Steven Szykula, PhD.",
+    "Meet the expert team at Psychological Services — licensed psychologists, clinical social workers, nurse practitioners, and therapists serving Utah since 1986. Led by Dr. Steven Szykula, PhD.",
   openGraph: {
-    title: "Our Clinical Team | Comprehensive Psychological Services Utah",
+    title: "Our Clinical Team | Psychological Services Utah",
     description:
       "Expert psychologists, therapists, and psychiatrists led by Dr. Steven Szykula, PhD. Serving Salt Lake City, Layton, and West Jordan since 1986.",
     url: "https://psychandcustodyevaluations.com/team",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Clinical Team | Comprehensive Psychological Services Utah",
+    title: "Our Clinical Team | Psychological Services Utah",
     description:
       "Expert psychologists, therapists, and psychiatrists led by Dr. Steven Szykula, PhD. Serving Salt Lake City, Layton, and West Jordan since 1986.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
@@ -53,7 +53,7 @@ const team: Clinician[] = [
     isFounder: true,
     photo: "https://wecanhelpout.com/wp-content/uploads/2018/05/StevenSzykula.jpg",
     initials: "SS",
-    bio: "Dr. Steve founded Comprehensive Psychological Services in 1986 with a mission to bring evidence-based behavioral health care to Utah families. A University of Tennessee-trained psychologist, he has spent nearly 40 years building a practice where the best clinicians in Utah can practice at the highest level — and where clients get real, measurable outcomes. Dr. Szykula remains actively involved in clinical supervision across the practice and consults regularly with all practitioners. He is the author of \"Get Off the Bus\" and \"Good Parent,\" and has dedicated his career to advancing the science and practice of psychological care.",
+    bio: "Dr. Steve founded Psychological Services in 1986 with a mission to bring evidence-based behavioral health care to Utah families. A University of Tennessee-trained psychologist, he has spent nearly 40 years building a practice where the best clinicians in Utah can practice at the highest level — and where clients get real, measurable outcomes. Dr. Szykula remains actively involved in clinical supervision across the practice and consults regularly with all practitioners. He is the author of \"Get Off the Bus\" and \"Good Parent,\" and has dedicated his career to advancing the science and practice of psychological care.",
     specialties: [
       "Psychotherapy",
       "Custody Evaluations",

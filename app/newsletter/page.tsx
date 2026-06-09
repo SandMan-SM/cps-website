@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CPS Newsletter — Evidence-Based Behavioral Health Updates",
     description:
-      "Monthly newsletter from Comprehensive Psychological Services. Practical, HIPAA-safe guidance for caregivers, attorneys, and referrers.",
+      "Monthly newsletter from Psychological Services. Practical, HIPAA-safe guidance for caregivers, attorneys, and referrers.",
     url: "https://psychandcustodyevaluations.com/newsletter",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },

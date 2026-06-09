@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!post) return {};
   const url = `https://psychandcustodyevaluations.com/blog/${post.slug}`;
   return {
-    title: `${post.title} | Comprehensive Psychological Services`,
+    title: `${post.title} | Psychological Services`,
     description: post.description,
     openGraph: {
       title: post.title,
@@ -34,7 +34,7 @@ export async function generateMetadata({
       url,
       type: "article",
       publishedTime: post.date,
-      siteName: "Comprehensive Psychological Services",
+      siteName: "Psychological Services",
       images: [{ url: `https://psychandcustodyevaluations.com/opengraph-image`, width: 1200, height: 630 }],
     },
     twitter: {
@@ -93,7 +93,7 @@ const POST_CONTENT: Record<
           If your doctor or school has recommended a neuropsychological evaluation — or if you've been searching for <em>neuropsychological evaluation near me</em> — it's natural to feel uncertain about what you're walking into. What tests will you take? How long will it take? What happens with the results?
         </p>
         <p>
-          At <strong>Comprehensive Psychological Services</strong>, we perform hundreds of neuropsychological evaluations each year across our Salt Lake City, Layton, and West Jordan locations. This guide walks you through the entire process so there are no surprises on testing day.
+          At <strong>Psychological Services</strong>, we perform hundreds of neuropsychological evaluations each year across our Salt Lake City, Layton, and West Jordan locations. This guide walks you through the entire process so there are no surprises on testing day.
         </p>
 
         <h2>What Is a Neuropsychological Evaluation?</h2>
@@ -212,7 +212,7 @@ const POST_CONTENT: Record<
 
         <h2>Who Performs Neuropsychological Evaluations at CPS?</h2>
         <p>
-          At Comprehensive Psychological Services, neuropsychological evaluations are performed by licensed doctoral-level psychologists with specialized training in neuropsychology. CPS has been serving Utah patients since 1986 across three locations:
+          At Psychological Services, neuropsychological evaluations are performed by licensed doctoral-level psychologists with specialized training in neuropsychology. CPS has been serving Utah patients since 1986 across three locations:
         </p>
         <ul>
           <li>Salt Lake City — 1208 East 3300 South</li>
@@ -355,7 +355,7 @@ const POST_CONTENT: Record<
 
         <h2>The Adult ADHD Evaluation Process at CPS</h2>
         <p>
-          A proper ADHD evaluation is not a 10-minute questionnaire. At Comprehensive Psychological Services, our adult ADHD evaluations are comprehensive and multi-method, typically including:
+          A proper ADHD evaluation is not a 10-minute questionnaire. At Psychological Services, our adult ADHD evaluations are comprehensive and multi-method, typically including:
         </p>
 
         <h3>1. Clinical Interview</h3>
@@ -437,7 +437,7 @@ const POST_CONTENT: Record<
           When you're seeking an autism evaluation for your child in Utah, you'll quickly encounter a range of acronyms: ADOS-2, M-CHAT, CARS-2, ADI-R, SRS-2. Each measures something different. Understanding the distinctions helps you ask better questions and advocate for the most accurate assessment.
         </p>
         <p>
-          At <strong>Comprehensive Psychological Services</strong>, we use a multi-method approach to autism assessment — and the ADOS-2 is central to that process. Here's what every parent should know.
+          At <strong>Psychological Services</strong>, we use a multi-method approach to autism assessment — and the ADOS-2 is central to that process. Here's what every parent should know.
         </p>
 
         <h2>What Is the ADOS-2?</h2>
@@ -506,7 +506,7 @@ const POST_CONTENT: Record<
 
         <h2>What to Expect at a CPS Autism Evaluation</h2>
         <p>
-          At Comprehensive Psychological Services, autism evaluations are conducted by licensed doctoral-level psychologists trained in the ADOS-2 and comprehensive neurodevelopmental assessment. Our evaluations typically include:
+          At Psychological Services, autism evaluations are conducted by licensed doctoral-level psychologists trained in the ADOS-2 and comprehensive neurodevelopmental assessment. Our evaluations typically include:
         </p>
         <ul>
           <li>ADOS-2 administration (the appropriate module for your child's age and language level)</li>
@@ -718,12 +718,12 @@ function BlogPostingSchema({
     dateModified: post.date,
     author: {
       "@type": "Organization",
-      name: "Comprehensive Psychological Services",
+      name: "Psychological Services",
       url: "https://psychandcustodyevaluations.com",
     },
     publisher: {
       "@type": "Organization",
-      name: "Comprehensive Psychological Services",
+      name: "Psychological Services",
       url: "https://psychandcustodyevaluations.com",
     },
     mainEntityOfPage: {
@@ -850,7 +850,7 @@ export default async function BlogPostPage({
               Ready to Schedule an Evaluation?
             </h2>
             <p className="text-[var(--cps-white)]/75 mb-8 max-w-xl mx-auto">
-              Comprehensive Psychological Services has been serving Utah patients since 1986. We have three convenient locations in Salt Lake City, Layton, and West Jordan.
+              Psychological Services has been serving Utah patients since 1986. We have three convenient locations in Salt Lake City, Layton, and West Jordan.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a

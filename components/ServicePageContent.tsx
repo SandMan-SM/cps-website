@@ -156,7 +156,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   <p className="text-xs text-[var(--cps-blue)] font-semibold uppercase tracking-wider mb-1">About the Evaluator</p>
                   <p className="text-sm font-bold text-[var(--cps-gray-900)] mb-1">Steven Szykula, Ph.D. — Licensed Psychologist</p>
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
-                    Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. As the founder of Comprehensive Psychological Services, he has conducted thousands of neuropsychological, ADHD, autism, and custody evaluations. He has provided expert testimony in Utah family courts and is a member of the American Academy of Clinical Neuropsychology (AACN).
+                    Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. As the founder of Psychological Services, he has conducted thousands of neuropsychological, ADHD, autism, and custody evaluations. He has provided expert testimony in Utah family courts and is a member of the American Academy of Clinical Neuropsychology (AACN).
                   </p>
                   <a href={PHONE_HREF} aria-label="Call CPS at (801) 483-1600" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors mt-2">
                     <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600

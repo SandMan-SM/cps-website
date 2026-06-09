@@ -9,15 +9,15 @@ import Footer from "@/components/Footer";
 import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About Us | Comprehensive Psychological Services — Utah Since 1986",
+  title: "About Us | Psychological Services — Utah Since 1986",
   description:
-    "Learn about Comprehensive Psychological Services — Utah's trusted behavioral health practice since 1986. Founded by Dr. Steven Szykula, PhD, we've helped thousands of children and adults through evidence-based psychology, evaluations, and therapy.",
+    "Learn about Psychological Services — Utah's trusted behavioral health practice since 1986. Founded by Dr. Steven Szykula, PhD, we've helped thousands of children and adults through evidence-based psychology, evaluations, and therapy.",
   openGraph: {
-    title: "About Comprehensive Psychological Services | Utah Since 1986",
+    title: "About Psychological Services | Utah Since 1986",
     description:
       "Utah's trusted behavioral health practice since 1986. Expert psychologists, therapists, and psychiatrists across Salt Lake City, Layton, and West Jordan.",
     url: "https://psychandcustodyevaluations.com/about",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },
@@ -92,7 +92,7 @@ const locations = [
 ];
 
 const milestones = [
-  { year: "1986", event: "Dr. Steven Szykula founds Comprehensive Psychological Services in Salt Lake City" },
+  { year: "1986", event: "Dr. Steven Szykula founds Psychological Services in Salt Lake City" },
   { year: "1990s", event: "Expanded to include child and adolescent specialty services; custody evaluation practice established" },
   { year: "2000s", event: "Grew to 20+ independent practitioners; added neurofeedback and specialized IOP programs" },
   { year: "2010s", event: "Opened Layton and West Jordan locations to serve the full Wasatch Front" },
@@ -178,7 +178,7 @@ export default function AboutPage() {
               <div className="space-y-4 text-[var(--cps-gray-600)] leading-relaxed">
                 <p>
                   In 1986, Dr. Steven Szykula, Ph.D. — a University of Tennessee-trained clinical
-                  psychologist — founded Comprehensive Psychological Services with a simple premise:
+                  psychologist — founded Psychological Services with a simple premise:
                   Utah families deserved access to the same quality of evidence-based behavioral
                   health care available at major research institutions.
                 </p>

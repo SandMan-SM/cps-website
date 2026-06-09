@@ -9,7 +9,7 @@ import { conditions } from "@/lib/conditions";
 import type { ConditionSlug } from "@/lib/conditions";
 
 export const metadata: Metadata = {
-  title: "Conditions We Treat — Utah | Comprehensive Psychological Services",
+  title: "Conditions We Treat — Utah | Psychological Services",
   description:
     "CPS Utah evaluates and treats adult ADHD, adult autism, concussion/TBI, dementia and memory concerns, learning disabilities, and treatment-resistant depression. Since 1986.",
   alternates: { canonical: "https://psychandcustodyevaluations.com/conditions" },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Adult ADHD, adult autism, concussion/TBI, memory & dementia, learning disabilities, treatment-resistant depression.",
     url: "https://psychandcustodyevaluations.com/conditions",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },

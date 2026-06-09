@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Comprehensive Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
+  title: "Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
   description:
     "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP. 3 locations — Salt Lake City, Layton, West Jordan. Call (801) 483-1600.",
   openGraph: {
-    title: "Comprehensive Psychological Services | Utah Neuropsych & Behavioral Health",
+    title: "Psychological Services | Utah Neuropsych & Behavioral Health",
     description:
       "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
     url: "https://psychandcustodyevaluations.com",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [
       {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Comprehensive Psychological Services | Utah Neuropsych & Behavioral Health",
+    title: "Psychological Services | Utah Neuropsych & Behavioral Health",
     description:
       "Utah's trusted behavioral health practice since 1986. Call (801) 483-1600.",
   },

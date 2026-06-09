@@ -8,13 +8,13 @@ import { Shield, Phone, Mail, FileCheck, Lock, Eye, UserCheck } from "lucide-rea
 export const metadata: Metadata = {
   title: "HIPAA Notice of Privacy Practices",
   description:
-    "HIPAA Notice of Privacy Practices for Comprehensive Psychological Services. Your rights regarding the use and disclosure of your protected health information.",
+    "HIPAA Notice of Privacy Practices for Psychological Services. Your rights regarding the use and disclosure of your protected health information.",
   openGraph: {
     title: "HIPAA Notice of Privacy Practices | CPS Utah",
     description:
       "Your rights regarding use and disclosure of your protected health information at CPS.",
     url: "https://psychandcustodyevaluations.com/hipaa",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },
@@ -299,7 +299,7 @@ export default function HIPAANoticePage() {
             <div className="mt-16 bg-[var(--cps-gray-50)] rounded-2xl border border-[var(--cps-gray-200)] p-8">
               <h2 className="text-2xl font-bold text-[var(--cps-gray-900)] mb-4">12. Privacy Officer Contact</h2>
               <p className="font-semibold text-[var(--cps-gray-900)] mb-2">
-                Comprehensive Psychological Services — Privacy Officer
+                Psychological Services — Privacy Officer
               </p>
               <p className="text-[var(--cps-gray-600)] mb-1">1208 East 3300 South</p>
               <p className="text-[var(--cps-gray-600)] mb-4">Salt Lake City, UT 84106</p>

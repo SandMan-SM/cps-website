@@ -14,8 +14,8 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://psychandcustodyevaluations.com"),
   title: {
-    default: "Comprehensive Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
-    template: "%s | Comprehensive Psychological Services",
+    default: "Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
+    template: "%s | Psychological Services",
   },
   description:
     "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP. 3 locations — SLC, Layton, West Jordan. Call (801) 483-1600.",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    siteName: "Comprehensive Psychological Services",
-    title: "Comprehensive Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
+    siteName: "Psychological Services",
+    title: "Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
     description:
       "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
     url: "https://psychandcustodyevaluations.com",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Comprehensive Psychological Services",
+    title: "Psychological Services",
     description:
       "Utah's trusted behavioral health practice since 1986. Neuropsych, ADHD, autism, custody evaluations & ketamine therapy.",
   },
@@ -74,7 +74,7 @@ export default function RootLayout({
         {/* Cross-portfolio sponsor embed — Fred (sponsor) + Live Better
             Podcast (partnership) + CPS feature. Mount lives on every
             page; the embed script populates it client-side. */}
-        <div id="omni-sponsor" data-slug="cps" data-brand="Comprehensive Psychological Services" />
+        <div id="omni-sponsor" data-slug="cps" data-brand="Psychological Services" />
         <script src="https://omnileadsagi.com/embed/sponsor.js" defer />
         {/* Stage N — universal federation cross-promo banner. */}
         <div id="omni-fedad-footer" data-slot="footer" data-slug="cps" />

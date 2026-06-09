@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors — CPS */
-  --cps-blue: #1565C0;
-  --cps-blue-hover: #0D47A1;
-  --cps-teal: #10b2e0;
-  --cps-dark: #0a284b;
-  --cps-accent: #105ee0;
-  --cps-navy: #0d1b2a;
-  --cps-gradient-mid: #0f3460;
-  --cps-light: #dce8ff;
-  --cps-white: #ffffff;
-  --cps-gray-50: #f8fafc;
-  --cps-gray-100: #f1f5f9;
-  --cps-gray-200: #e2e8f0;
-  --cps-gray-400: #56677a;
-  --cps-gray-500: #64748b;
-  --cps-gray-600: #475569;
-  --cps-gray-700: #334155;
-  --cps-gray-800: #1e293b;
-  --cps-gray-900: #0f172a;
-  --cps-success: #10b981;
-  --cps-warning: #f59e0b;
-  --cps-google-blue: #4285f4;
-  --cps-bbb-green: #007847;
+  /* Brand Colors — Psychological Services
+     Warm "light at the end of the tunnel" palette. Token NAMES are kept
+     identical to the prior blue theme so every existing usage inherits the
+     new values automatically. All text tokens are contrast-checked WCAG AA. */
+  --cps-blue: #8A5A2B;          /* primary action — rich bronze (white text = 5.9:1, AA) */
+  --cps-blue-hover: #6E471F;    /* primary hover — darker bronze */
+  --cps-teal: #C9A24A;          /* decorative gold accent — never text on light */
+  --cps-dark: #2A2018;          /* espresso — hero / footer dark bg */
+  --cps-accent: #A8721F;        /* deep goldenrod accent */
+  --cps-navy: #1A130D;          /* deepest espresso */
+  --cps-gradient-mid: #4A3726;  /* warm brown — gradient mid stop */
+  --cps-light: #F5EEE1;         /* warm ivory — light section bg */
+  --cps-white: #ffffff;         /* true white — cards + text on dark */
+  --cps-gray-50: #FAF5EC;       /* warm lightest surface */
+  --cps-gray-100: #F2EADC;
+  --cps-gray-200: #E7DBC8;      /* warm borders */
+  --cps-gray-400: #7A6A55;      /* muted text / icons (AA on white) */
+  --cps-gray-500: #6B5B47;      /* secondary text (AA on white) */
+  --cps-gray-600: #574737;
+  --cps-gray-700: #3E3225;      /* body text */
+  --cps-gray-800: #2A2018;      /* headings */
+  --cps-gray-900: #1A130D;      /* strongest text */
+  --cps-success: #2E7D52;       /* deep green — AA as text and as bg w/ white */
+  --cps-warning: #B5791F;       /* warm amber — for errors on DARK surfaces */
+  --cps-error: #B42318;         /* deep red — for errors on LIGHT surfaces (AA on cream) */
+  --cps-google-blue: #4285f4;   /* external brand mark — unchanged */
+  --cps-bbb-green: #007847;     /* external brand mark — unchanged */
 
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -67,7 +71,7 @@ html {
 }
 
 body {
-  background: var(--cps-white);
+  background: var(--cps-gray-50);
   color: var(--cps-gray-800);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;

@@ -33,7 +33,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     targetKeyword: "adult ADHD diagnosis Utah",
     description:
-      "Discover why adult ADHD goes undiagnosed for so long, the signs to look for, and how a formal evaluation in Utah can change your life. Comprehensive Psychological Services — Salt Lake City.",
+      "Discover why adult ADHD goes undiagnosed for so long, the signs to look for, and how a formal evaluation in Utah can change your life. Psychological Services — Salt Lake City.",
   },
   {
     slug: "ados-2-vs-other-autism-assessments",

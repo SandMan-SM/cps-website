@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "All Services — CPS Utah",
     description:
-      "Evaluations and treatment offered at Comprehensive Psychological Services across Salt Lake City, Layton & West Jordan.",
+      "Evaluations and treatment offered at Psychological Services across Salt Lake City, Layton & West Jordan.",
     url: "https://psychandcustodyevaluations.com/services",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },

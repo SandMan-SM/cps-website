@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Comprehensive Psychological Services — Neuropsych, ADHD & Custody Evaluations in Utah";
+export const alt = "Psychological Services — Neuropsych, ADHD & Custody Evaluations in Utah";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,7 +14,7 @@ export default function OGImage() {
           flexDirection: "column",
           width: "100%",
           height: "100%",
-          background: "linear-gradient(135deg, #0a284b 0%, #0f3460 50%, #0a284b 100%)",
+          background: "linear-gradient(135deg, #2A2018 0%, #4A3726 50%, #1A130D 100%)",
           padding: "60px",
           fontFamily: "system-ui, sans-serif",
         }}
@@ -29,13 +29,13 @@ export default function OGImage() {
               width: "56px",
               height: "56px",
               borderRadius: "12px",
-              backgroundColor: "#1f7cec",
+              backgroundColor: "#8A5A2B",
             }}
           >
-            <span style={{ fontSize: "28px", color: "white", fontWeight: 800 }}>C</span>
+            <span style={{ fontSize: "22px", color: "white", fontWeight: 800 }}>PS</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: "20px", color: "white", fontWeight: 700 }}>Comprehensive Psychological Services</span>
+            <span style={{ fontSize: "20px", color: "white", fontWeight: 700 }}>Psychological Services</span>
             <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)" }}>Since 1986 — Salt Lake City • Layton • West Jordan</span>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function OGImage() {
               maxWidth: "900px",
             }}
           >
-            Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
+Find your way forward — expert behavioral health care in Utah
           </div>
           <div
             style={{
@@ -83,18 +83,18 @@ export default function OGImage() {
                 alignItems: "center",
                 padding: "10px 20px",
                 borderRadius: "10px",
-                backgroundColor: "rgba(31,124,236,0.15)",
-                border: "1px solid rgba(31,124,236,0.3)",
+                backgroundColor: "rgba(201,162,74,0.16)",
+                border: "1px solid rgba(201,162,74,0.38)",
               }}
             >
-              <span style={{ fontSize: "14px", color: "#60a5fa", fontWeight: 600 }}>{svc}</span>
+              <span style={{ fontSize: "14px", color: "#E2C079", fontWeight: 600 }}>{svc}</span>
             </div>
           ))}
         </div>
 
         {/* Phone */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "20px" }}>
-          <span style={{ fontSize: "18px", color: "#10b2e0", fontWeight: 700 }}>(801) 483-1600</span>
+          <span style={{ fontSize: "18px", color: "#C9A24A", fontWeight: 700 }}>(801) 483-1600</span>
           <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.4)" }}>• psychandcustodyevaluations.com</span>
         </div>
       </div>

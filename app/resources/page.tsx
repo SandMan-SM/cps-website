@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   description:
     "Prepare for your CPS appointment: what to bring, insurance accepted, evaluation-day checklist, billing info, patient rights, and HIPAA notice.",
   openGraph: {
-    title: "Patient Resources & Forms | Comprehensive Psychological Services",
+    title: "Patient Resources & Forms | Psychological Services",
     description:
       "Prepare for your CPS appointment: what to bring, insurance accepted, evaluation-day checklist, billing info, and patient rights.",
     url: "https://psychandcustodyevaluations.com/resources",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },

@@ -20,7 +20,7 @@ import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title:
-    "Book a Consultation | Comprehensive Psychological Services — Utah",
+    "Book a Consultation | Psychological Services — Utah",
   description:
     "Schedule a confidential consultation with the CPS team. Neuropsychological, ADHD, autism, custody, and cognitive evaluations across Salt Lake, Davis, and Weber counties. Most insurance accepted.",
   alternates: {
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Book a Consultation | Comprehensive Psychological Services",
+      "Book a Consultation | Psychological Services",
     description:
       "Confidential consultations for evaluations, therapy, and family law assessments. Salt Lake City · Layton · West Jordan.",
     url: "https://psychandcustodyevaluations.com/book-consultation",
-    siteName: "Comprehensive Psychological Services",
+    siteName: "Psychological Services",
     type: "website",
     images: [{ url: "https://psychandcustodyevaluations.com/opengraph-image", width: 1200, height: 630 }],
   },
@@ -99,7 +99,7 @@ export default function BookConsultationPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
-    name: "Comprehensive Psychological Services",
+    name: "Psychological Services",
     description:
       "Neuropsychological, ADHD, autism, custody, and cognitive evaluations across Utah. Therapy and ketamine treatment.",
     url: "https://psychandcustodyevaluations.com",
