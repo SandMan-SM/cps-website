@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Phone, Calendar } from "lucide-react";
+import { Phone, HeartPulse } from "lucide-react";
 
 interface StickyMobileCTAProps {
   bookHref?: string;
 }
 
-export default function StickyMobileCTA({ bookHref = "/#contact" }: StickyMobileCTAProps) {
+export default function StickyMobileCTA({ bookHref = "/#get-help" }: StickyMobileCTAProps) {
   return (
     <div
       className="lg:hidden sticky bottom-0 z-40 bg-[var(--cps-white)] border-t border-[var(--cps-gray-200)] shadow-2xl"
@@ -22,11 +22,11 @@ export default function StickyMobileCTA({ bookHref = "/#contact" }: StickyMobile
         </a>
         <Link
           href={bookHref}
-          aria-label="Book an evaluation"
+          aria-label="Get help today"
           className="flex-[2] flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] transition-colors"
         >
-          <Calendar className="w-5 h-5" aria-hidden="true" />
-          Book Evaluation
+          <HeartPulse className="w-5 h-5" aria-hidden="true" />
+          Get Help Today
         </Link>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Brain } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const PHONE = "(801) 483-1600";
 const PHONE_HREF = "tel:8014831600";
@@ -12,12 +13,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
-                <Brain className="w-5 h-5 text-[var(--cps-white)]" aria-hidden="true" />
+              <div className="w-10 h-10 rounded-lg overflow-hidden relative ring-1 ring-[var(--cps-white)]/15">
+                <Image src="/brand/ps-tunnel.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
               </div>
               <div>
-                <div className="text-sm font-bold text-[var(--cps-white)] leading-tight">Comprehensive Psychological</div>
-                <div className="text-xs text-[var(--cps-white)]/40 leading-tight">Services — 40+ Years in Utah</div>
+                <div className="text-sm font-bold text-[var(--cps-white)] leading-tight">Psychological Services</div>
+                <div className="text-xs text-[var(--cps-white)]/40 leading-tight">40+ Years in Utah</div>
               </div>
             </div>
             <p className="text-sm text-[var(--cps-white)]/50 leading-relaxed">
@@ -113,7 +114,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
-            <p className="text-xs text-[var(--cps-white)]/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
+            <p className="text-xs text-[var(--cps-white)]/40">© {new Date().getFullYear()} Psychological Services. All rights reserved.</p>
             <div className="flex gap-6 text-xs text-[var(--cps-white)]/40">
               <Link href="/privacy" aria-label="Privacy Policy" className="hover:text-[var(--cps-white)]/60 transition-colors">Privacy Policy</Link>
               <Link href="/hipaa" aria-label="HIPAA Notice" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>

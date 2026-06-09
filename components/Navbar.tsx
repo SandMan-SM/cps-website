@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Phone, Menu, X, Brain } from "lucide-react";
+import Image from "next/image";
+import { Phone, Menu, X } from "lucide-react";
 
 const PHONE = "(801) 483-1600";
 const PHONE_HREF = "tel:8014831600";
@@ -25,13 +26,13 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-[var(--cps-white)]/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center gap-4" aria-label="CPS Home">
-            <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
-              <Brain className="w-5 h-5 text-[var(--cps-white)]" aria-hidden="true" />
+          <Link href="/" className="flex items-center gap-4" aria-label="Psychological Services — Home">
+            <div className="w-10 h-10 rounded-lg overflow-hidden relative ring-1 ring-[var(--cps-gray-200)]">
+              <Image src="/brand/ps-tunnel.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
             </div>
             <div className="hidden sm:block">
-              <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Comprehensive Psychological</div>
-              <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — 40+ Years in Utah</div>
+              <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Psychological Services</div>
+              <div className="text-xs text-[var(--cps-gray-500)] leading-tight">40+ Years in Utah</div>
             </div>
           </Link>
 

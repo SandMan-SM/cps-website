@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -8,7 +8,7 @@ import {
   Shield, Award, Star, CheckCircle2, ArrowRight,
   Menu, X, Brain, HeartPulse, Scale, Users,
   ClipboardCheck, GraduationCap, Building2,
-  Calendar, MessageCircle,
+  MessageCircle, ChevronDown,
 } from "lucide-react";
 import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
 import HomeSchema from "@/components/HomeSchema";
@@ -115,6 +115,39 @@ export default function HomePage() {
   const [formLoading, setFormLoading] = useState(false);
   const [formError, setFormError] = useState("");
 
+  // Shared lead-capture handler — used by the top #get-help form and the
+  // bottom #contact form. Both POST to /api/contact (which tees the lead to
+  // the OmniLeads dashboard). 8s timeout so the button can never hang.
+  async function handleLeadSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setFormLoading(true);
+    setFormError("");
+    const data = Object.fromEntries(new FormData(e.currentTarget));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+        signal: AbortSignal.timeout(8000),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.ok === false) {
+        throw new Error(json.error || "Server error");
+      }
+      setFormSubmitted(true);
+    } catch (err) {
+      const timedOut = err instanceof DOMException && err.name === "TimeoutError";
+      const msg = timedOut
+        ? "The request timed out."
+        : err instanceof Error
+          ? err.message
+          : "Something went wrong.";
+      setFormError(`${msg} You can also call us directly at (801) 483-1600.`);
+    } finally {
+      setFormLoading(false);
+    }
+  }
+
   const homepageFAQ = [
     { q: "Do I need a referral to schedule an evaluation?", a: "A referral is not always required. Many of our patients self-refer. However, some insurance plans may require a referral for coverage. Call us at (801) 483-1600 and we'll verify your benefits." },
     { q: "What age groups do you serve?", a: "We provide evaluations and treatment for children (as young as 2–4 for certain assessments), adolescents, adults, and geriatric patients. Our ADOS-2 and autism assessments are available across the full lifespan." },
@@ -148,13 +181,13 @@ export default function HomePage() {
       <nav className="sticky top-0 z-50 bg-[var(--cps-white)]/95 backdrop-blur-md border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16 md:h-20">
-            <Link href="/" className="flex items-center gap-4" aria-label="CPS Home">
-              <div className="w-10 h-10 rounded-lg bg-[var(--cps-dark)] flex items-center justify-center">
-                <Brain className="w-5 h-5 text-[var(--cps-white)]" />
+            <Link href="/" className="flex items-center gap-4" aria-label="Psychological Services — Home">
+              <div className="w-10 h-10 rounded-lg overflow-hidden relative ring-1 ring-[var(--cps-gray-200)]">
+                <Image src="/brand/ps-tunnel.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
               </div>
               <div className="hidden sm:block">
-                <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Comprehensive Psychological</div>
-                <div className="text-xs text-[var(--cps-gray-500)] leading-tight">Services — 40+ Years in Utah</div>
+                <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Psychological Services</div>
+                <div className="text-xs text-[var(--cps-gray-500)] leading-tight">40+ Years in Utah</div>
               </div>
             </Link>
 
@@ -204,55 +237,132 @@ export default function HomePage() {
 
       <main id="main">
         {/* ──────── HERO ──────── */}
-        <section className="relative bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-dark)] text-[var(--cps-white)] overflow-hidden">
-          <div className="absolute inset-0 opacity-10" aria-hidden="true">
-            <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[var(--cps-blue)] blur-3xl" />
-            <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[var(--cps-teal)] blur-3xl" />
-          </div>
-          <div className="relative max-w-7xl mx-auto px-8 sm:px-10 lg:px-10 py-16 md:py-24">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <div>
-                <div className="flex items-center justify-start gap-2 mb-6">
-                  <Award className="w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
-                  <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Best — Since 1986</span>
-                </div>
-                <h1 className="display-heading text-[var(--cps-white)] mb-4">
-                  Expert Neuropsychological Evaluations, ADHD Testing & Behavioral Health
-                </h1>
-                <p className="body-large text-[var(--cps-white)]/80 mb-10">
-                  Comprehensive Psychological Services provides evidence-based evaluations, therapy, and treatment across three Utah locations. From ADHD and autism testing to custody evaluations and ketamine therapy — we help you get answers and move forward.
-                </p>
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
-                  <a href="#contact" data-track="hero:schedule" aria-label="Schedule an evaluation — Book now" className="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
-                    <Calendar className="w-5 h-5" aria-hidden="true" />
-                    Schedule an Evaluation
-                  </a>
-                  <a href={PHONE_HREF} data-track="hero:call" aria-label="Call (801) 483-1600 to schedule" className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-6 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white">
-                    <Phone className="w-5 h-5" aria-hidden="true" />
-                    {PHONE}
-                  </a>
-                </div>
-              </div>
-              <div className="hidden lg:block relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-                <Image
-                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80"
-                  alt="Sunrise above mountains rising through clouds — clarity, calm, and new beginnings for your mental health"
-                  fill
-                  sizes="(max-width: 1024px) 0px, 600px"
-                  className="object-cover"
-                  priority
-                />
-              </div>
+        <section className="relative isolate overflow-hidden bg-gradient-to-br from-[var(--cps-dark)] via-[var(--cps-gradient-mid)] to-[var(--cps-navy)] text-[var(--cps-white)]">
+          {/* Brand photo background — the "light at the end of the tunnel" image.
+              Decorative; falls back to the warm gradient above if the asset is absent. */}
+          <Image
+            src="/brand/ps-tunnel.jpg"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--cps-dark)]/80 via-[var(--cps-dark)]/55 to-[var(--cps-dark)]/90" aria-hidden="true" />
+
+          <div className="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-10 py-20 md:py-32 text-center">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <Award className="w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
+              <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Trusted Behavioral Health Practice — Since 1986</span>
+            </div>
+            <h1 className="display-heading text-[var(--cps-white)] mb-6">
+              Find your way forward.
+            </h1>
+            <p className="body-large text-[var(--cps-white)]/85 mb-10 mx-auto max-w-2xl">
+              Compassionate, evidence-based behavioral health care for Utah families — neuropsychological, ADHD, autism, and custody evaluations, plus ketamine therapy, IOP, and counseling. Three locations. Real answers. A clear next step.
+            </p>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
+              <a href="#get-help" data-track="hero:get-help" aria-label="Get help today — start your request" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
+                <HeartPulse className="w-5 h-5" aria-hidden="true" />
+                Get Help Today
+              </a>
+              <a href="#services" data-track="hero:learn-more" aria-label="Learn more about our services" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[var(--cps-white)]/10 hover:bg-[var(--cps-white)]/20 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-[var(--cps-white)]/40">
+                Learn More
+              </a>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 max-w-4xl mt-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-3xl mx-auto mt-16">
               {stats.map((stat) => (
-                <div key={stat.label} className="text-left">
-                  <div className="text-4xl font-extrabold text-[var(--cps-white)] mb-4">{stat.value}</div>
-                  <div className="text-sm text-[var(--cps-white)]/70 mt-4">{stat.label}</div>
+                <div key={stat.label} className="text-center">
+                  <div className="text-3xl md:text-4xl font-extrabold text-[var(--cps-white)] mb-2">{stat.value}</div>
+                  <div className="text-sm text-[var(--cps-white)]/70">{stat.label}</div>
                 </div>
               ))}
             </div>
+
+            <a href="#services" aria-label="Scroll to see our services" className="inline-flex flex-col items-center gap-1 mt-16 text-[var(--cps-white)]/70 hover:text-[var(--cps-white)] transition-colors">
+              <span className="text-xs uppercase tracking-wider">Scroll to see our services</span>
+              <ChevronDown className="w-6 h-6 animate-bounce" aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+
+        {/* ──────── GET HELP TODAY — instant lead capture ──────── */}
+        <section id="get-help" className="py-12 md:py-16 bg-[var(--cps-light)] border-b border-[var(--cps-gray-200)]">
+          <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div className="text-center mb-8">
+              <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Get help today</h2>
+              <p className="text-[var(--cps-gray-700)] body-large">
+                Tell us a little about what you need. A CPS coordinator will reach out within one business day — or call{" "}
+                <a href={PHONE_HREF} className="font-bold text-[var(--cps-blue)] hover:underline">{PHONE}</a> now.
+              </p>
+            </div>
+
+            {formSubmitted ? (
+              <div className="bg-[var(--cps-white)] rounded-2xl p-8 text-center border border-[var(--cps-gray-200)] shadow-sm">
+                <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" aria-hidden="true" />
+                <h3 className="text-2xl font-bold mb-2 text-[var(--cps-gray-900)]">We&apos;ve got it.</h3>
+                <p className="text-[var(--cps-gray-700)] leading-relaxed">A CPS coordinator will reach out within one business day to confirm your appointment. Prefer to talk now? Call{" "}
+                  <a href={PHONE_HREF} className="font-bold text-[var(--cps-blue)] hover:underline">{PHONE}</a>.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleLeadSubmit} className="bg-[var(--cps-white)] rounded-2xl p-6 md:p-8 border border-[var(--cps-gray-200)] shadow-sm space-y-4">
+                {/* Honeypot — hidden from real users */}
+                <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+                  <label htmlFor="gh-website">Website</label>
+                  <input type="text" id="gh-website" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="gh-firstName" className="block text-sm font-medium mb-2 text-[var(--cps-gray-700)]">First Name</label>
+                    <input type="text" id="gh-firstName" name="firstName" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)] border border-[var(--cps-gray-200)] text-[var(--cps-gray-900)] placeholder:text-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:ring-1 focus:ring-[var(--cps-blue)] outline-none transition-colors" placeholder="First name" />
+                  </div>
+                  <div>
+                    <label htmlFor="gh-lastName" className="block text-sm font-medium mb-2 text-[var(--cps-gray-700)]">Last Name</label>
+                    <input type="text" id="gh-lastName" name="lastName" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)] border border-[var(--cps-gray-200)] text-[var(--cps-gray-900)] placeholder:text-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:ring-1 focus:ring-[var(--cps-blue)] outline-none transition-colors" placeholder="Last name" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="gh-email" className="block text-sm font-medium mb-2 text-[var(--cps-gray-700)]">Email</label>
+                    <input type="email" id="gh-email" name="email" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)] border border-[var(--cps-gray-200)] text-[var(--cps-gray-900)] placeholder:text-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:ring-1 focus:ring-[var(--cps-blue)] outline-none transition-colors" placeholder="you@email.com" />
+                  </div>
+                  <div>
+                    <label htmlFor="gh-phone" className="block text-sm font-medium mb-2 text-[var(--cps-gray-700)]">Phone</label>
+                    <input type="tel" id="gh-phone" name="phone" required className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)] border border-[var(--cps-gray-200)] text-[var(--cps-gray-900)] placeholder:text-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:ring-1 focus:ring-[var(--cps-blue)] outline-none transition-colors" placeholder="(801) 555-0123" />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="gh-service" className="block text-sm font-medium mb-2 text-[var(--cps-gray-700)]">What can we help with?</label>
+                  <select id="gh-service" name="service" required defaultValue="" className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)] border border-[var(--cps-gray-200)] text-[var(--cps-gray-900)] focus:border-[var(--cps-blue)] focus:ring-1 focus:ring-[var(--cps-blue)] outline-none transition-colors">
+                    <option value="" disabled>Select a service...</option>
+                    <option value="neuropsych">Neuropsychological Evaluation</option>
+                    <option value="adhd">ADHD Evaluation / Testing</option>
+                    <option value="autism">Autism Assessment / ADOS-2</option>
+                    <option value="custody">Custody Evaluation</option>
+                    <option value="ketamine">Ketamine / Spravato Therapy</option>
+                    <option value="cognitive">Cognitive / IQ Evaluation</option>
+                    <option value="iop">Intensive Outpatient Program</option>
+                    <option value="therapy">Therapy / Counseling</option>
+                    <option value="other">Other / Not sure yet</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="gh-message" className="block text-sm font-medium mb-2 text-[var(--cps-gray-700)]">Message (optional)</label>
+                  <textarea id="gh-message" name="message" rows={3} className="w-full px-4 py-4 rounded-xl bg-[var(--cps-white)] border border-[var(--cps-gray-200)] text-[var(--cps-gray-900)] placeholder:text-[var(--cps-gray-400)] focus:border-[var(--cps-blue)] focus:ring-1 focus:ring-[var(--cps-blue)] outline-none transition-colors resize-none" placeholder="Anything we should know?" />
+                </div>
+                {formError && (
+                  <p className="text-sm text-[var(--cps-error)] bg-[var(--cps-light)] rounded-xl px-4 py-4" role="alert">{formError}</p>
+                )}
+                <button type="submit" disabled={formLoading} aria-label="Get help today" className="w-full py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] disabled:opacity-60 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg flex items-center justify-center gap-2">
+                  <HeartPulse className="w-5 h-5" aria-hidden="true" />
+                  {formLoading ? "Sending…" : "Get Help Today"}
+                </button>
+                <p className="text-xs text-[var(--cps-gray-500)] text-center">Your information is confidential. We&apos;ll respond within 1 business day.</p>
+              </form>
+            )}
           </div>
         </section>
 
@@ -325,7 +435,7 @@ export default function HomePage() {
                 </h2>
                 <div className="space-y-6 text-[var(--cps-gray-600)] body-large leading-relaxed max-w-[70ch]">
                   <p>
-                    Founded by Steven Szykula, Ph.D., Comprehensive Psychological Services has grown into one of Utah&apos;s most respected behavioral health organizations — a full-service practice offering evaluations, therapy, medication management, and specialized treatment programs.
+                    Founded by Steven Szykula, Ph.D., Psychological Services has grown into one of Utah&apos;s most respected behavioral health organizations — a full-service practice offering evaluations, therapy, medication management, and specialized treatment programs.
                   </p>
                   <p>
                     Our team of 20+ licensed professionals includes psychologists, licensed clinical social workers, and clinical mental health counselors. Every clinician uses evidence-based approaches and outcomes feedback to deliver measurable results.
@@ -343,7 +453,7 @@ export default function HomePage() {
                     <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-[var(--cps-blue)]/30">
                       <Image
                         src="https://wecanhelpout.com/wp-content/uploads/2018/05/StevenSzykula.jpg"
-                        alt="Dr. Steven Szykula, Ph.D. — Founder of Comprehensive Psychological Services"
+                        alt="Dr. Steven Szykula, Ph.D. — Founder of Psychological Services"
                         fill
                         sizes="80px"
                         className="object-cover"
@@ -599,30 +709,7 @@ export default function HomePage() {
                     <p className="text-[var(--cps-white)]/70 leading-relaxed">We&apos;ve received your request. Our team will contact you within one business day to schedule your appointment.</p>
                   </div>
                 ) : (
-                  <form onSubmit={async (e) => {
-                    e.preventDefault();
-                    setFormLoading(true);
-                    setFormError("");
-                    const form = e.currentTarget as HTMLFormElement;
-                    const data = Object.fromEntries(new FormData(form));
-                    try {
-                      const res = await fetch("/api/contact", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify(data),
-                      });
-                      const json = await res.json().catch(() => ({}));
-                      if (!res.ok || json.ok === false) {
-                        throw new Error(json.error || "Server error");
-                      }
-                      setFormSubmitted(true);
-                    } catch (err) {
-                      const msg = err instanceof Error ? err.message : "Something went wrong.";
-                      setFormError(`${msg} You can also call us directly at (801) 483-1600.`);
-                    } finally {
-                      setFormLoading(false);
-                    }
-                  }} className="bg-[var(--cps-white)]/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6">
+                  <form onSubmit={handleLeadSubmit} className="bg-[var(--cps-white)]/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6">
                     <h3 className="text-xl font-bold mb-2">Request an Appointment</h3>
                     {/* Honeypot — hidden from real users, bots will fill it */}
                     <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
@@ -686,12 +773,12 @@ export default function HomePage() {
       <div className="lg:hidden sticky bottom-0 z-40 bg-[var(--cps-white)] border-t border-[var(--cps-gray-200)] shadow-2xl" aria-label="Quick actions">
         <div className="flex items-center gap-4 px-4 py-4">
           <a
-            href="#contact"
-            aria-label="Book an evaluation"
+            href="#get-help"
+            aria-label="Get help today"
             className="flex-[2] flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] transition-colors"
           >
-            <Calendar className="w-5 h-5" aria-hidden="true" />
-            Book Evaluation
+            <HeartPulse className="w-5 h-5" aria-hidden="true" />
+            Get Help Today
           </a>
           <a
             href="tel:8014831600"
@@ -710,12 +797,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-[var(--cps-blue)] flex items-center justify-center">
-                  <Brain className="w-5 h-5 text-[var(--cps-white)]" aria-hidden="true" />
+                <div className="w-10 h-10 rounded-lg overflow-hidden relative ring-1 ring-[var(--cps-white)]/15">
+                  <Image src="/brand/ps-tunnel.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-[var(--cps-white)] leading-tight">Comprehensive Psychological</div>
-                  <div className="text-xs text-[var(--cps-white)]/40 leading-tight">Services — 40+ Years in Utah</div>
+                  <div className="text-sm font-bold text-[var(--cps-white)] leading-tight">Psychological Services</div>
+                  <div className="text-xs text-[var(--cps-white)]/40 leading-tight">40+ Years in Utah</div>
                 </div>
               </div>
               <p className="text-sm text-[var(--cps-white)]/50 leading-relaxed">
@@ -779,7 +866,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-[var(--cps-white)]/40">© {new Date().getFullYear()} Comprehensive Psychological Services. All rights reserved.</p>
+            <p className="text-xs text-[var(--cps-white)]/40">© {new Date().getFullYear()} Psychological Services. All rights reserved.</p>
             <div className="flex gap-6 text-xs text-[var(--cps-white)]/40">
               <Link href="/privacy" aria-label="Privacy Policy" className="hover:text-[var(--cps-white)]/60 transition-colors">Privacy Policy</Link>
               <Link href="/hipaa" aria-label="HIPAA Notice" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>
