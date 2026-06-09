@@ -183,7 +183,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link href="/" className="flex items-center gap-4" aria-label="Psychological Services — Home">
               <div className="w-10 h-10 rounded-lg overflow-hidden relative ring-1 ring-[var(--cps-gray-200)]">
-                <Image src="/brand/ps-tunnel.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
+                <Image src="/brand/ps-mark.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
               </div>
               <div className="hidden sm:block">
                 <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Psychological Services</div>
@@ -798,7 +798,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-10 h-10 rounded-lg overflow-hidden relative ring-1 ring-[var(--cps-white)]/15">
-                  <Image src="/brand/ps-tunnel.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
+                  <Image src="/brand/ps-mark.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
                 </div>
                 <div>
                   <div className="text-sm font-bold text-[var(--cps-white)] leading-tight">Psychological Services</div>
