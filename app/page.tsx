@@ -261,7 +261,7 @@ export default function HomePage() {
             <p className="body-large text-[var(--cps-white)]/85 mb-10 max-w-2xl md:mx-auto">
               Compassionate, evidence-based behavioral health care for Utah families — neuropsychological, ADHD, autism, and custody evaluations, plus ketamine therapy, IOP, and counseling. Three locations. Real answers. A clear next step.
             </p>
-            <div className="flex flex-row items-center gap-3 sm:gap-4 md:justify-center">
+            <div className="flex flex-row items-center gap-4 md:justify-center">
               <a href="#get-help" data-track="hero:get-help" aria-label="Get help today — start your request" className="flex-1 sm:flex-none inline-flex items-center justify-center px-6 sm:px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg whitespace-nowrap">
                 Get Help Today
               </a>
