@@ -102,7 +102,6 @@ const testimonials = [
 
 const stats = [
   { value: "40+", label: "Years Serving Utah" },
-  { value: "3", label: "Convenient Locations" },
   { value: "20+", label: "Licensed Professionals" },
   { value: "5★", label: "Best Practice Award" },
 ];
@@ -185,7 +184,7 @@ export default function HomePage() {
               <div className="w-10 h-10 rounded-lg overflow-hidden relative ring-1 ring-[var(--cps-gray-200)]">
                 <Image src="/brand/ps-mark.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
               </div>
-              <div className="hidden sm:block">
+              <div className="block">
                 <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Psychological Services</div>
                 <div className="text-xs text-[var(--cps-gray-500)] leading-tight">40+ Years in Utah</div>
               </div>
@@ -251,37 +250,36 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--cps-dark)]/80 via-[var(--cps-dark)]/55 to-[var(--cps-dark)]/90" aria-hidden="true" />
 
-          <div className="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-10 py-20 md:py-32 text-center">
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Award className="w-5 h-5 text-[var(--cps-teal)]" aria-hidden="true" />
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-20 md:py-32 text-left md:text-center">
+            <div className="flex items-center gap-2 mb-6 md:justify-center">
               <span className="text-sm font-semibold text-[var(--cps-teal)] uppercase tracking-wider">Utah&apos;s Trusted Behavioral Health Practice — Since 1986</span>
+              <Award className="w-5 h-5 text-[var(--cps-teal)] shrink-0" aria-hidden="true" />
             </div>
             <h1 className="display-heading text-[var(--cps-white)] mb-6">
               Find your way forward.
             </h1>
-            <p className="body-large text-[var(--cps-white)]/85 mb-10 mx-auto max-w-2xl">
+            <p className="body-large text-[var(--cps-white)]/85 mb-10 max-w-2xl md:mx-auto">
               Compassionate, evidence-based behavioral health care for Utah families — neuropsychological, ADHD, autism, and custody evaluations, plus ketamine therapy, IOP, and counseling. Three locations. Real answers. A clear next step.
             </p>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
-              <a href="#get-help" data-track="hero:get-help" aria-label="Get help today — start your request" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
-                <HeartPulse className="w-5 h-5" aria-hidden="true" />
+            <div className="flex flex-row items-center gap-3 sm:gap-4 md:justify-center">
+              <a href="#get-help" data-track="hero:get-help" aria-label="Get help today — start your request" className="flex-1 sm:flex-none inline-flex items-center justify-center px-6 sm:px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg whitespace-nowrap">
                 Get Help Today
               </a>
-              <a href="#services" data-track="hero:learn-more" aria-label="Learn more about our services" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[var(--cps-white)]/10 hover:bg-[var(--cps-white)]/20 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-[var(--cps-white)]/40">
+              <a href="#services" data-track="hero:learn-more" aria-label="Learn more about our services" className="flex-1 sm:flex-none inline-flex items-center justify-center px-6 sm:px-8 py-4 bg-[var(--cps-white)]/10 hover:bg-[var(--cps-white)]/20 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-[var(--cps-white)]/40 whitespace-nowrap">
                 Learn More
               </a>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-3xl mx-auto mt-16">
+            <div className="grid grid-cols-3 gap-8 md:gap-12 max-w-xl mx-0 md:mx-auto mt-16">
               {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
+                <div key={stat.label} className="text-left md:text-center">
                   <div className="text-3xl md:text-4xl font-extrabold text-[var(--cps-white)] mb-2">{stat.value}</div>
                   <div className="text-sm text-[var(--cps-white)]/70">{stat.label}</div>
                 </div>
               ))}
             </div>
 
-            <a href="#services" aria-label="Scroll to see our services" className="inline-flex flex-col items-center gap-1 mt-16 text-[var(--cps-white)]/70 hover:text-[var(--cps-white)] transition-colors">
+            <a href="#services" aria-label="Scroll to see our services" className="inline-flex flex-col items-start md:items-center gap-1 mt-16 text-[var(--cps-white)]/70 hover:text-[var(--cps-white)] transition-colors">
               <span className="text-xs uppercase tracking-wider">Scroll to see our services</span>
               <ChevronDown className="w-6 h-6 animate-bounce" aria-hidden="true" />
             </a>

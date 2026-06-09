@@ -30,7 +30,7 @@ export default function Navbar() {
             <div className="w-10 h-10 rounded-lg overflow-hidden relative ring-1 ring-[var(--cps-gray-200)]">
               <Image src="/brand/ps-mark.jpg" alt="Psychological Services logo" fill sizes="40px" className="object-cover object-center" />
             </div>
-            <div className="hidden sm:block">
+            <div className="block">
               <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Psychological Services</div>
               <div className="text-xs text-[var(--cps-gray-500)] leading-tight">40+ Years in Utah</div>
             </div>
