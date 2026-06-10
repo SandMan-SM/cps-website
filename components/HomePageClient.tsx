@@ -62,7 +62,7 @@ const additionalServices = [
   "Counseling & Psychotherapy",
   "Medication Management",
   "Neurofeedback / Brain Training",
-  "Substance Abuse Treatment",
+  "Addiction & Substance Use Treatment — residential & outpatient (Utah Addiction Centers)",
   "Telehealth Services",
   "Employer & Fitness-for-Duty Evaluations",
   "Health & Wellness Programs",
@@ -102,8 +102,8 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: "40+", label: "Years" },
-  { value: "20+", label: "Therapists" },
+  { value: "60+", label: "Years" },
+  { value: "40+", label: "Therapists" },
   { value: "5★", label: "Practice" },
 ];
 
@@ -187,7 +187,7 @@ export default function HomePageClient() {
               </div>
               <div className="block">
                 <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Psychological Services</div>
-                <div className="text-xs text-[var(--cps-gray-500)] leading-tight">40+ Years in Utah</div>
+                <div className="text-xs text-[var(--cps-gray-500)] leading-tight">60+ Years of Combined Care</div>
               </div>
             </Link>
 
@@ -257,7 +257,7 @@ export default function HomePageClient() {
                 <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[var(--cps-white)]/50 shrink-0">
                   <Award className="w-4 h-4 text-[var(--cps-white)]" aria-hidden="true" />
                 </span>
-                <span className="text-sm font-semibold text-[var(--cps-white)] leading-snug">Utah&apos;s trusted behavioral health practice since 1986</span>
+                <span className="text-sm font-semibold text-[var(--cps-white)] leading-snug">Utah&apos;s trusted behavioral health network — 60+ years of combined care</span>
               </span>
             </div>
             <h1 className="display-heading text-[var(--cps-white)] mb-6" style={{ fontFamily: "var(--font-serif)" }}>
@@ -378,9 +378,9 @@ export default function HomePageClient() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-4">
             <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 md:gap-x-12 gap-y-2 text-sm text-[var(--cps-gray-500)]">
               <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> Licensed Psychologists</div>
-              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> 40+ Years Serving Utah</div>
+              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> 60+ Years Combined Experience</div>
               <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> Most Insurance Accepted</div>
-              <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> 3 Utah Locations</div>
+              <div className="flex items-center gap-2"><Building2 className="w-4 h-4 text-[var(--cps-blue)]" aria-hidden="true" /> Locations Across Utah</div>
               <div className="flex items-center gap-2"><Star className="w-4 h-4 text-[var(--cps-blue)] fill-[var(--cps-blue)]" aria-hidden="true" /> Rated 5.0 on Healthline</div>
             </div>
           </div>
@@ -436,48 +436,45 @@ export default function HomePageClient() {
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
-                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">About Psychological Services</p>
+                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Our Care Network</p>
                 <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">
-                  Utah&apos;s Trusted Behavioral Health Practice Since 1986
+                  Two trusted systems. One front door.
                 </h2>
                 <div className="space-y-6 text-[var(--cps-gray-600)] body-large leading-relaxed max-w-[70ch]">
                   <p>
-                    Founded by Steven Szykula, Ph.D., Psychological Services has grown into one of Utah&apos;s most respected behavioral health organizations — a full-service practice offering evaluations, therapy, medication management, and specialized treatment programs.
+                    Psychological Services brings together two of Utah&apos;s most established care systems — We Can Help Out and Utah Addiction Centers — representing 60+ years of combined clinical experience under one front door.
                   </p>
                   <p>
-                    Our team of 20+ licensed professionals includes psychologists, licensed clinical social workers, and clinical mental health counselors. Every clinician uses evidence-based approaches and outcomes feedback to deliver measurable results.
+                    Across the network, 40+ licensed professionals — psychologists, clinical social workers, mental health counselors, and addiction-treatment specialists — use evidence-based approaches and outcomes feedback to deliver measurable results.
                   </p>
                   <p>
-                    From police and fire department pre-employment screenings to pediatric autism assessments, Psychological Services serves individuals, families, employers, courts, and healthcare systems across the Wasatch Front.
+                    One call to our 24-hour hotline, or one form, and we route you to the right team: evaluations, therapy, ketamine treatment, IOP, or residential addiction care — anywhere in Utah.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
-                {/* ── Meet Dr. Szykula (E-E-A-T: Ept01, Ept02, A04) ── */}
+                {/* ── Partner systems (network credibility) ── */}
                 <div className="bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] p-8 mb-8">
-                  <div className="flex items-start gap-6">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-[var(--cps-blue)]/30">
-                      <Image
-                        src="https://wecanhelpout.com/wp-content/uploads/2018/05/StevenSzykula.jpg"
-                        alt="Dr. Steven Szykula, Ph.D. — Founder of Psychological Services"
-                        fill
-                        sizes="80px"
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-xs text-[var(--cps-blue)] font-semibold uppercase tracking-wider mb-1">Founded by</p>
-                      <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-1">Steven Szykula, Ph.D.</h3>
-                      <p className="text-sm text-[var(--cps-gray-500)] mb-4">Licensed Psychologist · Neuropsychologist · Founder, Psychological Services</p>
-                      <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
-                        Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. A doctoral-level psychologist with advanced training in neuropsychology, he founded Psychological Services to provide evidence-based psychological services to individuals, families, courts, and healthcare systems across the Wasatch Front. He has provided testimony in Utah family courts, conducted thousands of evaluations, and mentored dozens of clinicians.
+                  <p className="text-xs text-[var(--cps-blue)] font-semibold uppercase tracking-wider mb-4">The systems behind your care</p>
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-1">We Can Help Out</h3>
+                      <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-2">
+                        Behavioral health evaluations and treatment since 1986 — neuropsychological, ADHD, autism, and custody evaluations, plus ketamine therapy, IOP, and counseling across the Wasatch Front.
                       </p>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {["Ph.D. — Licensed Psychologist", "Neuropsychology Specialist", "Utah Family Court Expert", "Since 1979 in Practice"].map((tag) => (
-                          <span key={tag} className="inline-block text-xs bg-[var(--cps-light)] text-[var(--cps-blue)] px-4 py-2 rounded-full font-medium">{tag}</span>
-                        ))}
-                      </div>
+                      <a href="https://wecanhelpout.com" target="_blank" rel="noopener noreferrer" data-track="network:wecanhelpout" className="text-sm font-semibold text-[var(--cps-blue)] hover:underline">
+                        wecanhelpout.com
+                      </a>
+                    </div>
+                    <div className="border-t border-[var(--cps-gray-200)] pt-6">
+                      <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-1">Utah Addiction Centers</h3>
+                      <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-2">
+                        Residential and outpatient addiction treatment — substance use disorder care, detox support, and recovery programs at their Eagle Mountain campus.
+                      </p>
+                      <a href="https://utahaddictioncenters.com" target="_blank" rel="noopener noreferrer" data-track="network:utahaddictioncenters" className="text-sm font-semibold text-[var(--cps-blue)] hover:underline">
+                        utahaddictioncenters.com
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -508,8 +505,8 @@ export default function HomePageClient() {
                 {[
                   { icon: Shield, title: "Evidence-Based Practice", desc: "Every assessment and treatment follows validated, research-backed protocols. We measure outcomes, not just activity." },
                   { icon: Award, title: "Best Practice Award", desc: "Recognized for clinical excellence by professional organizations. Our team upholds the highest standards of competence." },
-                  { icon: Building2, title: "Three Convenient Locations", desc: "Offices in Salt Lake City, Layton, and West Jordan — plus telehealth — so care is always accessible." },
-                  { icon: Star, title: "Trusted Since 1986", desc: "Over 38 years of serving Utah families, courts, employers, and healthcare systems with integrity and expertise." },
+                  { icon: Building2, title: "Locations Across Utah", desc: "Offices in Salt Lake City, Layton, and West Jordan, residential care in Eagle Mountain — plus telehealth statewide." },
+                  { icon: Star, title: "60+ Years Combined", desc: "Two established systems serving Utah families, courts, employers, and healthcare systems with integrity and expertise." },
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
@@ -834,7 +831,7 @@ export default function HomePageClient() {
                 </div>
               </div>
               <p className="text-sm text-[var(--cps-gray-400)] leading-relaxed">
-                Utah&apos;s trusted behavioral health practice since 1986. Neuropsychology, ADHD, autism, custody evaluations, and more.
+                Utah&apos;s trusted behavioral health network — 60+ years of combined care. Neuropsychology, ADHD, autism, custody evaluations, addiction treatment, and more.
               </p>
             </div>
             <div>

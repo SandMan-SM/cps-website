@@ -7,7 +7,11 @@
    ───────────────────────────────────────────── */
 
 export const BRAND = "Psychological Services";
-export const TAGLINE = "40+ Years in Utah";
+export const TAGLINE = "60+ Years of Combined Care";
+
+/** Combined-network credibility stats (WCHO + Utah Addiction Centers). */
+export const YEARS_COMBINED = "60+";
+export const THERAPISTS = "40+";
 
 /** 24-hour hotline — the ONE number shown anywhere on the site. */
 export const HOTLINE = "(866) 343-0885";

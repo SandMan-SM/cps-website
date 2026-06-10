@@ -32,7 +32,7 @@ export default function Navbar() {
             </div>
             <div className="block">
               <div className="text-sm font-bold text-[var(--cps-dark)] leading-tight">Psychological Services</div>
-              <div className="text-xs text-[var(--cps-gray-500)] leading-tight">40+ Years in Utah</div>
+              <div className="text-xs text-[var(--cps-gray-500)] leading-tight">60+ Years of Combined Care</div>
             </div>
           </Link>
 

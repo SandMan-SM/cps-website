@@ -34,8 +34,13 @@ export function OrganizationSchema() {
     ],
     email: "cps@wecanhelpout.com",
     foundingDate: "1986",
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      minValue: 40,
+      unitText: "licensed professionals across the partner network",
+    },
     description:
-      "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
+      "Utah's trusted behavioral health network — 60+ years of combined care. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
     logo: "https://psychandcustodyevaluations.com/favicon.ico",
     sameAs: [
       "https://www.facebook.com/comprehensivepsychologicalservices",

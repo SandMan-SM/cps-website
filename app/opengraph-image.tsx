@@ -36,7 +36,7 @@ export default function OGImage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ fontSize: "20px", color: "white", fontWeight: 700 }}>Psychological Services</span>
-            <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)" }}>Since 1986 — Salt Lake City • Layton • West Jordan</span>
+            <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)" }}>60+ Years of Combined Care • Utah</span>
           </div>
         </div>
 

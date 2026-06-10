@@ -4,7 +4,7 @@ import HomePageClient from "@/components/HomePageClient";
 export const metadata: Metadata = {
   title: "Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
   description:
-    "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP. 3 locations — SLC, Layton, West Jordan. Call (866) 343-0885.",
+    "Utah's trusted behavioral health network — 60+ years of combined care. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP. Locations across Utah. Call (866) 343-0885.",
   keywords: [
     "neuropsychologist utah",
     "ADHD evaluation salt lake city",
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
     siteName: "Psychological Services",
     title: "Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
     description:
-      "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
+      "Utah's trusted behavioral health network — 60+ years of combined care. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
     url: "https://psychandcustodyevaluations.com",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Psychological Services | Utah Behavioral Health Since 1986",
+    title: "Psychological Services | Utah Behavioral Health Network",
     description:
-      "Utah's trusted behavioral health practice since 1986. Neuropsych, ADHD, autism, custody evaluations & ketamine therapy.",
+      "Utah's trusted behavioral health network — 60+ years of combined care. Neuropsych, ADHD, autism, custody evaluations & ketamine therapy.",
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com" },
 };

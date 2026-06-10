@@ -19,11 +19,11 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-sm font-bold text-[var(--cps-white)] leading-tight">Psychological Services</div>
-                <div className="text-xs text-[var(--cps-white)]/40 leading-tight">40+ Years in Utah</div>
+                <div className="text-xs text-[var(--cps-white)]/40 leading-tight">60+ Years of Combined Care</div>
               </div>
             </div>
             <p className="text-sm text-[var(--cps-white)]/50 leading-relaxed">
-              Evidence-based behavioral health evaluations and treatment serving Utah for over 40 years.
+              Evidence-based behavioral health care in partnership with We Can Help Out and Utah Addiction Centers — 60+ years of combined care across Utah.
             </p>
           </div>
 
@@ -123,7 +123,7 @@ export default function Footer() {
               <Link href="/hipaa" aria-label="HIPAA Notice" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>
             </div>
           </div>
-          <p className="text-xs text-[var(--cps-white)]/40 text-center">Salt Lake City • Layton • West Jordan</p>
+          <p className="text-xs text-[var(--cps-white)]/40 text-center">Salt Lake City • Layton • West Jordan • Eagle Mountain</p>
           <p className="text-xs text-[var(--cps-white)]/30 text-center mt-2">
             This website does not provide medical advice. The information on this site is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or qualified mental health provider with any questions you may have regarding a medical or mental health condition.
           </p>
