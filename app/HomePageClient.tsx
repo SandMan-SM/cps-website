@@ -459,6 +459,12 @@ export default function HomePageClient() {
                         fill
                         sizes="80px"
                         className="object-cover"
+                        onError={(e) => {
+                          const parent = (e.target as HTMLElement).parentElement;
+                          if (parent) {
+                            parent.style.display = 'none';
+                          }
+                        }}
                       />
                     </div>
                     <div className="flex-1">

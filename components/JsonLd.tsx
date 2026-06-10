@@ -24,7 +24,7 @@ export function OrganizationSchema() {
       "https://www.linkedin.com/company/comprehensive-psychological-services",
       "https://x.com/CPSUtah",
       "https://wecanhelpout.com",
-      "https://www.healthline.com/health-directory/comprehensive-psychological-services",
+      "https://www.healthline.com/health/mental-health/neuropsychology-evaluations",
     ],
     address: [
       {
