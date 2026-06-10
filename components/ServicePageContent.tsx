@@ -51,11 +51,11 @@ export default function ServicePageContent({ service, location, relatedServices 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <nav aria-label="Breadcrumb" className="text-sm text-[var(--cps-gray-500)]">
             <ol className="flex items-center gap-2 flex-wrap">
-              <li><Link href="/" className="hover:text-[var(--cps-blue)] transition-colors">Home</Link></li>
+              <li><Link href="/" aria-label="Home" className="hover:text-[var(--cps-blue)] transition-colors">Home</Link></li>
               <li>/</li>
               {location ? (
                 <>
-                  <li><Link href={`/${service.slug}`} className="hover:text-[var(--cps-blue)] transition-colors">{service.title}</Link></li>
+                  <li><Link href={`/${service.slug}`} aria-label={service.title} className="hover:text-[var(--cps-blue)] transition-colors">{service.title}</Link></li>
                   <li>/</li>
                   <li className="text-[var(--cps-gray-700)] font-medium">{locationName}</li>
                 </>
@@ -368,6 +368,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                   <Link
                     key={c.slug}
                     href={`/conditions/${c.slug}`}
+                    aria-label={c.name}
                     className="group block p-6 bg-[var(--cps-light)] rounded-2xl hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
                   >
                     <h3 className="font-bold text-[var(--cps-gray-900)] group-hover:text-[var(--cps-blue)] transition-colors mb-2">
