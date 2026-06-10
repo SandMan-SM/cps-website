@@ -40,3 +40,58 @@ export const PARTNERS: Partner[] = [
     url: "https://utahaddictioncenters.com",
   },
 ];
+
+export interface NetworkLocation {
+  name: string;
+  /** Which partner system operates this location. */
+  system: string;
+  /** What kind of care happens here — shown as the card subtitle. */
+  kind: string;
+  address: string;
+  city: string;
+  serving: string;
+  mapQuery: string;
+}
+
+/**
+ * Every physical location in the network, attributed to its system.
+ * The Eagle Mountain address is from utahaddictioncenters.com/contact.
+ */
+export const LOCATIONS: NetworkLocation[] = [
+  {
+    name: "Salt Lake City",
+    system: "We Can Help Out",
+    kind: "Behavioral Health Clinic",
+    address: "1208 East 3300 South",
+    city: "Salt Lake City, UT 84106",
+    serving: "Salt Lake County",
+    mapQuery: "1208+East+3300+South,+Salt+Lake+City,+UT+84106",
+  },
+  {
+    name: "Layton",
+    system: "We Can Help Out",
+    kind: "Behavioral Health Clinic",
+    address: "1916 North 700 West, Suite 190",
+    city: "Layton, UT 84041",
+    serving: "Davis & Weber Counties",
+    mapQuery: "1916+North+700+West,+Suite+190,+Layton,+UT+84041",
+  },
+  {
+    name: "West Jordan",
+    system: "We Can Help Out",
+    kind: "Behavioral Health Clinic",
+    address: "9069 South 1300 West, Suite D",
+    city: "West Jordan, UT 84088",
+    serving: "South Valley",
+    mapQuery: "9069+South+1300+West,+Suite+D,+West+Jordan,+UT+84088",
+  },
+  {
+    name: "Eagle Mountain",
+    system: "Utah Addiction Centers",
+    kind: "Residential Treatment Campus",
+    address: "2590 Prairie View Drive",
+    city: "Eagle Mountain, UT 84005",
+    serving: "Residential & outpatient addiction care, statewide",
+    mapQuery: "2590+Prairie+View+Drive,+Eagle+Mountain,+UT+84005",
+  },
+];

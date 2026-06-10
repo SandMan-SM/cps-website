@@ -74,6 +74,14 @@ export function OrganizationSchema() {
         postalCode: "84088",
         addressCountry: "US",
       },
+      {
+        "@type": "PostalAddress",
+        streetAddress: "2590 Prairie View Drive",
+        addressLocality: "Eagle Mountain",
+        addressRegion: "UT",
+        postalCode: "84005",
+        addressCountry: "US",
+      },
     ],
     geo: [
       {

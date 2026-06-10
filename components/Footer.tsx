@@ -94,12 +94,19 @@ export default function Footer() {
             <ul className="space-y-4">
               <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label={`Call Psychological Services at ${PHONE}`}><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
               <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label={`Email Psychological Services at ${EMAIL}`}><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
-              <li className="flex items-start gap-2 text-sm" aria-label="Our office addresses">
+              <li className="flex items-start gap-2 text-sm" aria-label="Our network locations">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-                <div>
-                  <div>1208 E 3300 S, SLC, UT 84106</div>
-                  <div>1916 N 700 W #190, Layton, UT 84041</div>
-                  <div>9069 S 1300 W #D, W. Jordan, UT 84088</div>
+                <div className="space-y-2">
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-[var(--cps-white)]/40 font-semibold">We Can Help Out</div>
+                    <div>1208 E 3300 S, SLC, UT 84106</div>
+                    <div>1916 N 700 W #190, Layton, UT 84041</div>
+                    <div>9069 S 1300 W #D, W. Jordan, UT 84088</div>
+                  </div>
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-[var(--cps-white)]/40 font-semibold">Utah Addiction Centers</div>
+                    <div>2590 Prairie View Dr, Eagle Mountain, UT 84005</div>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -123,7 +130,7 @@ export default function Footer() {
               <Link href="/hipaa" aria-label="HIPAA Notice" className="hover:text-[var(--cps-white)]/60 transition-colors">HIPAA Notice</Link>
             </div>
           </div>
-          <p className="text-xs text-[var(--cps-white)]/40 text-center">Salt Lake City • Layton • West Jordan • Eagle Mountain</p>
+          <p className="text-xs text-[var(--cps-white)]/40 text-center">We Can Help Out: Salt Lake City • Layton • West Jordan&ensp;·&ensp;Utah Addiction Centers: Eagle Mountain</p>
           <p className="text-xs text-[var(--cps-white)]/30 text-center mt-2">
             This website does not provide medical advice. The information on this site is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or qualified mental health provider with any questions you may have regarding a medical or mental health condition.
           </p>

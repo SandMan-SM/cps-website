@@ -13,6 +13,7 @@ import {
 import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
 import HomeSchema from "@/components/HomeSchema";
 import PartnerStrip from "@/components/PartnerStrip";
+import { LOCATIONS } from "@/lib/brand";
 
 const PHONE = "(866) 343-0885";
 const PHONE_HREF = "tel:8663430885";
@@ -68,32 +69,8 @@ const additionalServices = [
   "Health & Wellness Programs",
 ];
 
-const offices = [
-  {
-    name: "Salt Lake City",
-    address: "1208 East 3300 South",
-    city: "Salt Lake City, UT 84106",
-    serving: "Salt Lake County",
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9!2d-111.854!3d40.710!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875289f1e3a1bf4d%3A0x1!2s1208+East+3300+South%2C+Salt+Lake+City%2C+UT+84106!5e0!3m2!1sen!2sus!4v1",
-    mapQuery: "1208+East+3300+South,+Salt+Lake+City,+UT+84106",
-  },
-  {
-    name: "Layton",
-    address: "1916 North 700 West, Suite 190",
-    city: "Layton, UT 84041",
-    serving: "Davis & Weber Counties",
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9!2d-111.969!3d41.060!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875289f1e3a1bf4d%3A0x2!2s1916+North+700+West+Suite+190%2C+Layton%2C+UT+84041!5e0!3m2!1sen!2sus!4v1",
-    mapQuery: "1916+North+700+West,+Suite+190,+Layton,+UT+84041",
-  },
-  {
-    name: "West Jordan",
-    address: "9069 South 1300 West, Suite D",
-    city: "West Jordan, UT 84088",
-    serving: "South Valley",
-    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9!2d-111.939!3d40.601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875289f1e3a1bf4d%3A0x3!2s9069+South+1300+West+Suite+D%2C+West+Jordan%2C+UT+84088!5e0!3m2!1sen!2sus!4v1",
-    mapQuery: "9069+South+1300+West,+Suite+D,+West+Jordan,+UT+84088",
-  },
-];
+// Network locations (with system attribution) live in lib/brand.ts — the
+// single source of truth shared with the footer, schema, and llms.txt.
 
 const testimonials = [
   { text: "The neuropsychological evaluation at Psychological Services gave us the answers we had been searching for. The report was thorough and the staff made our son feel comfortable throughout the process.", author: "Parent of a 9-year-old patient", rating: 5 },
@@ -614,16 +591,17 @@ export default function HomePageClient() {
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="text-center mb-16">
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Find Us</p>
-              <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Three Locations Across the Wasatch Front</h2>
+              <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Four Locations. Two Systems. One Network.</h2>
+              <p className="text-[var(--cps-gray-500)] body-large max-w-[70ch] mx-auto">Behavioral health clinics by We Can Help Out across the Wasatch Front, and residential addiction care by Utah Addiction Centers in Eagle Mountain.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {offices.map((office) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+              {LOCATIONS.map((office) => (
                 <div key={office.name} className="bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
                   <div className="h-56 bg-[var(--cps-gray-100)] relative">
                     <iframe
-                      title={`Map of Psychological Services ${office.name} office`}
-                      aria-label={`Google Maps embed for Psychological Services ${office.name} office`}
-                      src={office.mapSrc}
+                      title={`Map of ${office.system} — ${office.name}`}
+                      aria-label={`Google Maps embed for ${office.system} ${office.name} location`}
+                      src={`https://maps.google.com/maps?q=${office.mapQuery}&output=embed`}
                       width="100%"
                       height="100%"
                       loading="lazy"
@@ -653,10 +631,9 @@ export default function HomePageClient() {
                     </div>
                   </div>
                   <div className="p-8">
-                    <div className="w-14 h-14 rounded-xl bg-[var(--cps-light)] flex items-center justify-center mb-6">
-                      <MapPin className="w-7 h-7 text-[var(--cps-blue)]" aria-hidden="true" />
-                    </div>
+                    <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[var(--cps-blue)] bg-[var(--cps-light)] rounded-full px-4 py-2 mb-4">{office.system}</span>
                     <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-2">{office.name}</h3>
+                    <p className="text-sm text-[var(--cps-gray-500)] font-medium mb-2">{office.kind}</p>
                     <p className="text-sm text-[var(--cps-blue)] font-medium mb-6">Serving {office.serving}</p>
                     <p className="text-[var(--cps-gray-600)] text-sm mb-2">{office.address}</p>
                     <p className="text-[var(--cps-gray-600)] text-sm mb-6">{office.city}</p>
