@@ -8,7 +8,7 @@ import {
   Shield, Award, Star, CheckCircle2, ArrowRight,
   Menu, X, Brain, HeartPulse, Scale, Users,
   ClipboardCheck, GraduationCap, Building2,
-  MessageCircle, ChevronDown,
+  ChevronDown,
 } from "lucide-react";
 import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
 import HomeSchema from "@/components/HomeSchema";
