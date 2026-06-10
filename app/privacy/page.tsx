@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Privacy Policy | Psychological Services",
     description:
-      "How CPS collects, uses, and protects your personal and health information.",
+      "How Psychological Services collects, uses, and protects your personal and health information.",
     url: "https://psychandcustodyevaluations.com/privacy",
     siteName: "Psychological Services",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Privacy Policy | Psychological Services",
     description:
-      "How CPS collects, uses, and protects your personal and health information.",
+      "How Psychological Services collects, uses, and protects your personal and health information.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com/privacy" },
@@ -108,8 +108,8 @@ const sections = [
           cps@wecanhelpout.com
         </a>{" "}
         or call{" "}
-        <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="text-[var(--cps-blue)] underline">
-          (801) 483-1600
+        <a href="tel:8663430885" aria-label="Call (866) 343-0885" className="text-[var(--cps-blue)] underline">
+          (866) 343-0885
         </a>
         .
       </p>
@@ -149,7 +149,7 @@ export default function PrivacyPage() {
         <section className="py-12 md:py-20 bg-[var(--cps-white)]">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
             <p className="text-[var(--cps-gray-700)] leading-relaxed body-large mb-12">
-              Psychological Services (&ldquo;CPS,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy and the confidentiality of your personal and health information. This Privacy Policy describes how we collect, use, and safeguard information obtained through our website, psychandcustodyevaluations.com.
+              Psychological Services (&ldquo;Psychological Services,&rdquo; &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy and the confidentiality of your personal and health information. This Privacy Policy describes how we collect, use, and safeguard information obtained through our website, psychandcustodyevaluations.com.
             </p>
 
             <div className="space-y-12">
@@ -173,11 +173,11 @@ export default function PrivacyPage() {
               <p className="text-[var(--cps-gray-600)] mb-4">Salt Lake City, UT 84106</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="tel:8014831600"
-                  aria-label="Call (801) 483-1600"
+                  href="tel:8663430885"
+                  aria-label="Call (866) 343-0885"
                   className="inline-flex items-center gap-2 text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] font-semibold transition-colors"
                 >
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (866) 343-0885
                 </a>
                 <a
                   href="mailto:cps@wecanhelpout.com"

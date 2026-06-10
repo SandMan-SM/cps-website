@@ -13,7 +13,25 @@ export function OrganizationSchema() {
     legalName: "Comprehensive Psychological Services",
     alternateName: ["CPS", "Comprehensive Psychological Services", "Comprehensive Psychological Services Utah"],
     url: "https://psychandcustodyevaluations.com",
-    telephone: "+18014831600",
+    telephone: "+18663430885",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+18663430885",
+      contactType: "customer service",
+      contactOption: "TollFree",
+      areaServed: "US",
+      availableLanguage: "English",
+      hoursAvailable: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59",
+      },
+    },
+    memberOf: [
+      { "@type": "Organization", name: "We Can Help Out", url: "https://wecanhelpout.com" },
+      { "@type": "Organization", name: "Utah Addiction Centers", url: "https://utahaddictioncenters.com" },
+    ],
     email: "cps@wecanhelpout.com",
     foundingDate: "1986",
     description:
@@ -175,7 +193,7 @@ export function PhysicianSchema() {
     jobTitle: "Founder and Director",
     description:
       "Licensed psychologist and founder of Psychological Services. Specializing in neuropsychology, behavioral health, and clinical psychology since 1979.",
-    telephone: "+18014831600",
+    telephone: "+18663430885",
     email: "cps@wecanhelpout.com",
     url: "https://wecanhelpout.com",
     priceRange: "$$",
@@ -277,7 +295,7 @@ export function ServiceSchema({ service, location }: Props) {
     provider: {
       "@type": "MedicalBusiness",
       name: "Psychological Services",
-      telephone: "+18014831600",
+      telephone: "+18663430885",
       url: baseUrl,
     },
     ...(location && {
@@ -363,7 +381,7 @@ export function LocalBusinessSchema({ locationSlug }: { locationSlug?: string } 
     "@id": `https://psychandcustodyevaluations.com/#${l.slug}`,
     name: `Psychological Services — ${l.name}`,
     url: `https://psychandcustodyevaluations.com`,
-    telephone: "+18014831600",
+    telephone: "+18663430885",
     email: "cps@wecanhelpout.com",
     priceRange: "$$",
     image: "https://psychandcustodyevaluations.com/opengraph-image",

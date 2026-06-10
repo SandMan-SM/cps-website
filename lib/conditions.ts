@@ -28,9 +28,9 @@ export const conditions: ConditionData[] = [
     slug: "adhd-in-adults",
     name: "ADHD in Adults",
     h1: "Adult ADHD Evaluation & Treatment in Utah",
-    title: "Adult ADHD Evaluation in Utah | CPS Since 1986",
+    title: "Adult ADHD Evaluation in Utah | Psychological Services Since 1986",
     metaDescription:
-      "Clear diagnosis and treatment for adult ADHD in Utah. CPS combines evidence-based testing, medication management, and therapy — Salt Lake City, Layton & West Jordan.",
+      "Clear diagnosis and treatment for adult ADHD in Utah. Psychological Services combines evidence-based testing, medication management, and therapy — Salt Lake City, Layton & West Jordan.",
     shortDescription:
       "Adult ADHD is often missed for decades. A proper evaluation untangles focus, executive-function, and mood issues so treatment finally works.",
     hook:
@@ -93,9 +93,9 @@ export const conditions: ConditionData[] = [
     slug: "autism-in-adults",
     name: "Autism in Adults",
     h1: "Adult Autism Assessment in Utah",
-    title: "Adult Autism Evaluation Utah | Gold-Standard ADOS-2 | CPS",
+    title: "Adult Autism Evaluation Utah | Gold-Standard ADOS-2 | Psychological Services",
     metaDescription:
-      "Comprehensive adult autism assessment in Utah using ADOS-2 and clinical interview. CPS delivers a clear diagnosis and a practical plan — Salt Lake City, Layton & West Jordan.",
+      "Comprehensive adult autism assessment in Utah using ADOS-2 and clinical interview. Psychological Services delivers a clear diagnosis and a practical plan — Salt Lake City, Layton & West Jordan.",
     shortDescription:
       "Autism in adults is commonly missed — especially in women, people of color, and anyone who learned to mask. A thorough evaluation replaces 'something's different' with a real framework.",
     hook:
@@ -152,9 +152,9 @@ export const conditions: ConditionData[] = [
     slug: "concussion-tbi",
     name: "Concussion & TBI",
     h1: "Concussion & Traumatic Brain Injury Evaluation in Utah",
-    title: "Concussion / TBI Neuropsychological Evaluation | CPS Utah",
+    title: "Concussion / TBI Neuropsychological Evaluation | Psychological Services Utah",
     metaDescription:
-      "Post-concussion and TBI neuropsychological evaluation in Utah. CPS delivers clear cognitive profiles for recovery, return-to-work/sport, and legal documentation.",
+      "Post-concussion and TBI neuropsychological evaluation in Utah. Psychological Services delivers clear cognitive profiles for recovery, return-to-work/sport, and legal documentation.",
     shortDescription:
       "Post-concussion symptoms don't always resolve on their own. A neuropsychological evaluation maps what's still off and what's recovering — so you can plan around the facts.",
     hook:
@@ -192,7 +192,7 @@ export const conditions: ConditionData[] = [
       },
       {
         q: "Is my report accepted for legal or disability claims?",
-        a: "Yes. CPS neuropsychologists regularly produce reports accepted by Utah courts, workers-comp, Social Security, and the VA.",
+        a: "Yes. Psychological Services neuropsychologists regularly produce reports accepted by Utah courts, workers-comp, Social Security, and the VA.",
       },
     ],
     relatedServices: [
@@ -205,9 +205,9 @@ export const conditions: ConditionData[] = [
     slug: "dementia-memory",
     name: "Dementia & Memory Concerns",
     h1: "Dementia & Memory Evaluation in Utah",
-    title: "Memory & Dementia Evaluation Utah | Neuropsychological Testing | CPS",
+    title: "Memory & Dementia Evaluation Utah | Neuropsychological Testing | Psychological Services",
     metaDescription:
-      "Neuropsychological evaluation for memory concerns, MCI, and dementia in Utah. CPS provides a clear cognitive picture for families, physicians, and care planning.",
+      "Neuropsychological evaluation for memory concerns, MCI, and dementia in Utah. Psychological Services provides a clear cognitive picture for families, physicians, and care planning.",
     shortDescription:
       "Memory changes are scary — but 'is this normal aging, MCI, or dementia?' is a question we can actually answer. A neuropsychological evaluation gives the whole family something concrete to plan around.",
     hook:
@@ -257,9 +257,9 @@ export const conditions: ConditionData[] = [
     slug: "learning-disability",
     name: "Learning Disability",
     h1: "Learning Disability Testing in Utah",
-    title: "Learning Disability Testing Utah | Dyslexia & Dyscalculia | CPS",
+    title: "Learning Disability Testing Utah | Dyslexia & Dyscalculia | Psychological Services",
     metaDescription:
-      "Comprehensive learning-disability testing in Utah — dyslexia, dysgraphia, dyscalculia, NVLD. CPS reports are accepted by schools and universities for IEP, 504, and testing accommodations.",
+      "Comprehensive learning-disability testing in Utah — dyslexia, dysgraphia, dyscalculia, NVLD. Psychological Services reports are accepted by schools and universities for IEP, 504, and testing accommodations.",
     shortDescription:
       "A child (or adult) who is bright but struggling disproportionately with reading, writing, or math needs a real evaluation — not another year of 'let's wait and see.'",
     hook:
@@ -294,7 +294,7 @@ export const conditions: ConditionData[] = [
     faq: [
       {
         q: "Will my child's school accept the report?",
-        a: "Yes. CPS psychoeducational evaluations are routinely used by Utah public, private, and charter schools for IEP and 504 decisions. We format reports to match what schools need.",
+        a: "Yes. Psychological Services psychoeducational evaluations are routinely used by Utah public, private, and charter schools for IEP and 504 decisions. We format reports to match what schools need.",
       },
       {
         q: "Can adults get tested for dyslexia?",
@@ -311,13 +311,13 @@ export const conditions: ConditionData[] = [
     slug: "treatment-resistant-depression",
     name: "Treatment-Resistant Depression",
     h1: "Treatment-Resistant Depression in Utah — Ketamine, Spravato & IOP",
-    title: "Treatment-Resistant Depression Utah | Ketamine & Spravato | CPS",
+    title: "Treatment-Resistant Depression Utah | Ketamine & Spravato | Psychological Services",
     metaDescription:
-      "Treatment-resistant depression options in Utah: IV ketamine, Spravato (esketamine), IOP, and medication management. CPS has supported Utah patients through depression since 1986.",
+      "Treatment-resistant depression options in Utah: IV ketamine, Spravato (esketamine), IOP, and medication management. Psychological Services has supported Utah patients through depression since 1986.",
     shortDescription:
       "If two or more antidepressants haven't worked, you are not broken — you may simply need a different category of treatment. Ketamine and Spravato often deliver relief in days, not months.",
     hook:
-      "You've tried multiple SSRIs. Maybe an SNRI, maybe a mood stabilizer. You're tired of the lag, the side effects, and the feeling that nothing actually moves. CPS offers the next tier of evidence-based care — including ketamine and FDA-approved Spravato.",
+      "You've tried multiple SSRIs. Maybe an SNRI, maybe a mood stabilizer. You're tired of the lag, the side effects, and the feeling that nothing actually moves. Psychological Services offers the next tier of evidence-based care — including ketamine and FDA-approved Spravato.",
     whoItsFor: [
       "Adults who have failed at least two antidepressant trials",
       "People whose depression returns every time they taper medication",

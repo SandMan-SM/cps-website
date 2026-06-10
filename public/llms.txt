@@ -1,18 +1,25 @@
-# Psychological Services (CPS)
+# Psychological Services
 
 > Utah's trusted behavioral health practice since 1986. Evidence-based neuropsychological evaluations, ADHD testing, autism assessments, custody evaluations, ketamine therapy, and intensive outpatient programs across three Utah locations.
 
 ## About
 
-Psychological Services (CPS) is a licensed behavioral health organization established in 1986 in Salt Lake City, Utah. Founded by Steven Szykula, Ph.D., CPS employs 20+ licensed professionals including doctoral-level psychologists, licensed clinical social workers, and clinical mental health counselors. CPS holds the Best Practice Award for clinical excellence and serves individuals, families, employers, courts, attorneys, and healthcare systems across the Wasatch Front. CPS is a HIPAA-compliant practice; all evaluations follow evidence-based, validated protocols.
+Psychological Services is a licensed behavioral health organization established in 1986 in Salt Lake City, Utah. Founded by Steven Szykula, Ph.D., Psychological Services employs 20+ licensed professionals including doctoral-level psychologists, licensed clinical social workers, and clinical mental health counselors. Psychological Services holds the Best Practice Award for clinical excellence and serves individuals, families, employers, courts, attorneys, and healthcare systems across the Wasatch Front. Psychological Services is a HIPAA-compliant practice; all evaluations follow evidence-based, validated protocols.
 
 ## Contact
 
-- Phone: (801) 483-1600
+- 24 Hour Hotline: (866) 343-0885 — call any time, day or night
 - Fax: (801) 483-1610
 - Email: cps@wecanhelpout.com
 - Website: https://psychandcustodyevaluations.com
-- Hours: Monday–Friday, 8:00 AM – 6:00 PM Mountain Time
+- Office Hours: Monday–Friday, 8:00 AM – 6:00 PM Mountain Time (hotline is 24/7)
+
+## Partners
+
+Psychological Services connects people to care in partnership with:
+
+- We Can Help Out — https://wecanhelpout.com
+- Utah Addiction Centers — https://utahaddictioncenters.com
 
 ## Locations
 
@@ -67,8 +74,8 @@ Psychological Services (CPS) is a licensed behavioral health organization establ
 ## Blog & Resources
 
 - [Patient Resources](/resources): Forms, insurance, what to bring, patient rights.
-- [HIPAA Notice of Privacy Practices](/hipaa): How CPS protects your health information.
-- [About CPS](/about): Practice history and mission.
+- [HIPAA Notice of Privacy Practices](/hipaa): How Psychological Services protects your health information.
+- [About Psychological Services](/about): Practice history and mission.
 - [Our Team](/team): Licensed psychologists and clinicians.
 - [Blog](/blog): Evidence-based articles on ADHD, autism, custody, neuropsychology, and ketamine therapy.
 - [Newsletter](/newsletter): Evaluation-prep tips and evidence-based updates for caregivers, attorneys, and referrers.
@@ -92,4 +99,4 @@ Utah, Salt Lake City, Salt Lake County, Davis County (Layton, Bountiful, Farming
 
 ## Last Updated
 
-This index is generated dynamically from the CPS content system. For the most current service catalog and location details, visit https://psychandcustodyevaluations.com/sitemap.xml
+This index is generated dynamically from the Psychological Services content system. For the most current service catalog and location details, visit https://psychandcustodyevaluations.com/sitemap.xml

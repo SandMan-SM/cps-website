@@ -73,7 +73,7 @@ export default function LeadForm() {
       setError(
         err instanceof Error
           ? err.message
-          : "Could not submit. Please try calling us at (801) 483-1600.",
+          : "Could not submit. Please try calling us at (866) 343-0885.",
       );
     }
   };
@@ -86,15 +86,15 @@ export default function LeadForm() {
           We&apos;ve got it.
         </h3>
         <p className="mx-auto max-w-md text-[var(--cps-gray-500)]">
-          A scheduling coordinator from CPS will reach out within one
+          A scheduling coordinator from Psychological Services will reach out within one
           business day to confirm your consultation. If you&apos;d
           rather call now, we&apos;re at{" "}
           <a
-            href="tel:8014831600"
-            aria-label="Call (801) 483-1600"
+            href="tel:8663430885"
+            aria-label="Call (866) 343-0885"
             className="font-semibold text-[var(--cps-blue)] hover:underline"
           >
-            (801) 483-1600
+            (866) 343-0885
           </a>
           .
         </p>

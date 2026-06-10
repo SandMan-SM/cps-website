@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   CPS Service & Location Data
+   Psychological Services Service & Location Data
    All service pages are generated from this file.
    ───────────────────────────────────────────── */
 
@@ -74,7 +74,7 @@ export const locations: LocationData[] = [
     county: "Weber County",
     nearestOffice: "Layton",
     nearestAddress: "1916 North 700 West, Suite 190, Layton, UT 84041",
-    description: "Our Layton office is the nearest CPS location for Weber County residents in Ogden, Roy, Riverdale, and surrounding communities.",
+    description: "Our Layton office is the nearest Psychological Services location for Weber County residents in Ogden, Roy, Riverdale, and surrounding communities.",
   },
 ];
 
@@ -110,13 +110,13 @@ export const services: ServiceData[] = [
     h1: "Find a Neuropsychologist Near You",
     shortName: "Neuropsychology",
     metaTitle: "Neuropsychologist Near Me",
-    metaDescription: "Board-level neuropsychological evaluations at CPS. Comprehensive brain-behavior assessments for ADHD, memory, learning disabilities & more. Since 1986. Call (801) 483-1600.",
+    metaDescription: "Board-level neuropsychological evaluations at Psychological Services. Comprehensive brain-behavior assessments for ADHD, memory, learning disabilities & more. Since 1986. Call (866) 343-0885.",
     heroSubtitle: "Comprehensive brain-behavior assessments by doctoral-level psychologists. Understand cognitive strengths, identify conditions, and get a clear path forward.",
     icon: "Brain",
     overview: [
       "A neuropsychologist specializes in understanding the relationship between the brain and behavior. At Psychological Services, our doctoral-level psychologists administer standardized tests that measure memory, attention, language, problem-solving, and executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks). This page is for individuals or families seeking a comprehensive neuropsychological evaluation in Utah.",
       "Neuropsychological evaluations help diagnose conditions like ADHD, traumatic brain injury, dementia, learning disabilities, and neurodevelopmental disorders. Results guide treatment planning, academic accommodations, workplace modifications, and legal proceedings.",
-      "With three Utah locations and over 38 years of clinical experience, CPS provides evidence-based neuropsychological assessments for children, adolescents, and adults. Our Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week) offers additional support for patients who need more than weekly therapy.",
+      "With three Utah locations and over 38 years of clinical experience, Psychological Services provides evidence-based neuropsychological assessments for children, adolescents, and adults. Our Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week) offers additional support for patients who need more than weekly therapy.",
     ],
     whatToExpect: [
       "Initial clinical interview to review your history, symptoms, and goals",
@@ -134,7 +134,7 @@ export const services: ServiceData[] = [
     ],
     faqItems: [
       { q: "How long does a neuropsychological evaluation take?", a: "A typical evaluation involves 3–6 hours of testing spread across one or two sessions, plus a separate feedback appointment to review results." },
-      { q: "Do I need a referral to see a neuropsychologist?", a: "A referral is not always required, but some insurance plans may need one. Call us at (801) 483-1600 and we'll verify your coverage." },
+      { q: "Do I need a referral to see a neuropsychologist?", a: "A referral is not always required, but some insurance plans may need one. Call us at (866) 343-0885 and we'll verify your coverage." },
       { q: "What conditions can a neuropsychological evaluation diagnose?", a: "ADHD, learning disabilities, traumatic brain injury, dementia, autism spectrum disorder, mood disorders, and other cognitive conditions." },
       { q: "Will insurance cover the evaluation?", a: "We accept most major insurance plans. Our team can verify your benefits before scheduling. Self-pay options are also available." },
     ],
@@ -165,11 +165,11 @@ export const services: ServiceData[] = [
     h1: "ADHD Evaluation — Comprehensive Testing for Children & Adults",
     shortName: "ADHD Evaluation",
     metaTitle: "ADHD Evaluation Near Me",
-    metaDescription: "Comprehensive ADHD evaluations for children, teens & adults in Utah. Evidence-based testing, clear diagnosis & treatment plan. 3 locations. Call (801) 483-1600.",
+    metaDescription: "Comprehensive ADHD evaluations for children, teens & adults in Utah. Evidence-based testing, clear diagnosis & treatment plan. 3 locations. Call (866) 343-0885.",
     heroSubtitle: "Get clear answers about attention, focus, and executive functioning with a thorough ADHD evaluation from experienced psychologists.",
     icon: "Focus",
     overview: [
-      "An ADHD evaluation at CPS goes beyond a simple questionnaire. Our psychologists conduct a comprehensive assessment that includes cognitive testing, behavioral rating scales, clinical interviews, and a review of developmental and academic history. This page is for parents seeking an ADHD evaluation for their child, or adults who suspect they may have undiagnosed ADHD.",
+      "An ADHD evaluation at Psychological Services goes beyond a simple questionnaire. Our psychologists conduct a comprehensive assessment that includes cognitive testing, behavioral rating scales, clinical interviews, and a review of developmental and academic history. This page is for parents seeking an ADHD evaluation for their child, or adults who suspect they may have undiagnosed ADHD.",
       "We evaluate for all three ADHD presentations — predominantly inattentive, predominantly hyperactive-impulsive, and combined type — in children, adolescents, and adults. We also screen for common co-occurring conditions like anxiety, depression, and learning disabilities. For patients needing structured treatment, we offer an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "A thorough ADHD evaluation provides the foundation for effective treatment, whether that includes medication, therapy, behavioral strategies, or academic accommodations.",
     ],
@@ -197,7 +197,7 @@ export const services: ServiceData[] = [
     relatedServices: ["adhd-diagnosis-near-me", "adhd-testing", "neuropsychological-testing-for-adhd"],
     comparisonTable: {
       title: "ADHD Evaluation vs. ADHD Screening — What's the Difference?",
-      headers: ["Feature", "ADHD Evaluation (CPS)", "ADHD Screening"],
+      headers: ["Feature", "ADHD Evaluation (Psychological Services)", "ADHD Screening"],
       rows: [
         ["Duration", "2–4 hours", "5–15 minutes"],
         ["What it includes", "Cognitive testing, rating scales, clinical interview, developmental history", "Short questionnaire (e.g., Conners, Vanderbilt)"],
@@ -220,12 +220,12 @@ export const services: ServiceData[] = [
     h1: "Get a Professional ADHD Diagnosis",
     shortName: "ADHD Diagnosis",
     metaTitle: "ADHD Diagnosis Near Me",
-    metaDescription: "Professional ADHD diagnosis by licensed psychologists in Utah. Evidence-based assessment for children, teens & adults. Get clarity and a treatment plan. (801) 483-1600.",
+    metaDescription: "Professional ADHD diagnosis by licensed psychologists in Utah. Evidence-based assessment for children, teens & adults. Get clarity and a treatment plan. (866) 343-0885.",
     heroSubtitle: "A professional ADHD diagnosis gives you clarity, access to treatment, and the accommodations you need to thrive at school, work, and life.",
     icon: "ClipboardCheck",
     overview: [
-      "Getting an accurate ADHD diagnosis is the first step toward effective treatment. At CPS, our licensed psychologists use validated diagnostic criteria from the DSM-5-TR (the standard diagnostic tool used by mental health professionals in the United States to classify mental health conditions) combined with comprehensive testing to ensure an accurate diagnosis. This page is for parents seeking an ADHD evaluation for their child, or adults who suspect they may have undiagnosed ADHD.",
-      "An ADHD diagnosis from CPS is more than a label — it's a roadmap. Our evaluation identifies your specific ADHD presentation, rules out conditions that mimic ADHD, and uncovers co-occurring issues that may need attention. For patients who need structured support beyond weekly therapy, we offer an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
+      "Getting an accurate ADHD diagnosis is the first step toward effective treatment. At Psychological Services, our licensed psychologists use validated diagnostic criteria from the DSM-5-TR (the standard diagnostic tool used by mental health professionals in the United States to classify mental health conditions) combined with comprehensive testing to ensure an accurate diagnosis. This page is for parents seeking an ADHD evaluation for their child, or adults who suspect they may have undiagnosed ADHD.",
+      "An ADHD diagnosis from Psychological Services is more than a label — it's a roadmap. Our evaluation identifies your specific ADHD presentation, rules out conditions that mimic ADHD, and uncovers co-occurring issues that may need attention. For patients who need structured support beyond weekly therapy, we offer an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "Whether you're a parent concerned about your child's performance or an adult who suspects undiagnosed ADHD, our team provides the thorough, evidence-based evaluation you deserve.",
     ],
     whatToExpect: [
@@ -244,7 +244,7 @@ export const services: ServiceData[] = [
     ],
     faqItems: [
       { q: "How long does it take to get an ADHD diagnosis?", a: "The evaluation typically takes 2–4 hours. Results and diagnosis are provided within 1–2 weeks, with an optional expedited turnaround." },
-      { q: "Is an ADHD diagnosis valid for getting medication?", a: "Yes. Our diagnostic reports are accepted by prescribing physicians, psychiatrists, and our own medication management team at CPS." },
+      { q: "Is an ADHD diagnosis valid for getting medication?", a: "Yes. Our diagnostic reports are accepted by prescribing physicians, psychiatrists, and our own medication management team at Psychological Services." },
       { q: "What if it's not ADHD?", a: "Our evaluation screens for anxiety, depression, learning disabilities, and other conditions. If it's not ADHD, we'll identify what is going on and recommend appropriate treatment." },
       { q: "Can I get an ADHD diagnosis as an adult?", a: "Absolutely. Adult ADHD is underdiagnosed. Many of our patients are adults seeking answers for lifelong struggles with focus and organization." },
     ],
@@ -252,7 +252,7 @@ export const services: ServiceData[] = [
     relatedServices: ["adhd-evaluation-near-me", "adhd-testing", "neuropsychological-testing-for-adhd"],
     comparisonTable: {
       title: "Private ADHD Diagnosis vs. School-Based ADHD Assessment",
-      headers: ["Feature", "Private Diagnosis (CPS)", "School-Based Assessment"],
+      headers: ["Feature", "Private Diagnosis (Psychological Services)", "School-Based Assessment"],
       rows: [
         ["Purpose", "Clinical diagnosis for medical and personal use", "Educational planning and academic accommodations"],
         ["Conducted by", "Licensed psychologist", "School psychologist"],
@@ -275,12 +275,12 @@ export const services: ServiceData[] = [
     h1: "Neuropsychological Testing for ADHD",
     shortName: "Neuropsych ADHD Testing",
     metaTitle: "Neuropsychological Testing for ADHD",
-    metaDescription: "In-depth neuropsychological testing for ADHD in Utah. Measures attention, executive function, memory & processing speed. Thorough reports for treatment planning. (801) 483-1600.",
+    metaDescription: "In-depth neuropsychological testing for ADHD in Utah. Measures attention, executive function, memory & processing speed. Thorough reports for treatment planning. (866) 343-0885.",
     heroSubtitle: "Go deeper than a standard ADHD screening. Neuropsychological testing measures the specific cognitive patterns behind attention and executive function challenges.",
     icon: "ScanSearch",
     overview: [
       "Neuropsychological testing for ADHD provides a detailed map of cognitive strengths and weaknesses. Unlike a simple screening, this evaluation measures attention, processing speed, working memory, executive functioning (the mental processes that help you plan, focus, remember instructions, and juggle multiple tasks simultaneously), and impulse control through standardized tests.",
-      "This level of testing is especially valuable for complex cases — when ADHD co-occurs with learning disabilities, anxiety, brain injury, or giftedness. It reveals whether attention difficulties stem from ADHD, another condition, or a combination. For patients requiring structured support alongside testing, CPS offers an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
+      "This level of testing is especially valuable for complex cases — when ADHD co-occurs with learning disabilities, anxiety, brain injury, or giftedness. It reveals whether attention difficulties stem from ADHD, another condition, or a combination. For patients requiring structured support alongside testing, Psychological Services offers an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
       "Our psychologists use validated neuropsychological test batteries selected for each patient's age and presenting concerns. Results inform medication decisions, therapy approaches, and academic or workplace accommodations.",
     ],
     whatToExpect: [
@@ -330,13 +330,13 @@ export const services: ServiceData[] = [
     h1: "Court-Accepted Custody Evaluations",
     shortName: "Custody Evaluation",
     metaTitle: "Custody Evaluator Near Me",
-    metaDescription: "Court-accepted child custody evaluations in Utah. Licensed psychologists experienced in family law, parental fitness & best-interest assessments. (801) 483-1600.",
+    metaDescription: "Court-accepted child custody evaluations in Utah. Licensed psychologists experienced in family law, parental fitness & best-interest assessments. (866) 343-0885.",
     heroSubtitle: "Objective, thorough custody evaluations conducted by licensed psychologists with decades of experience in Utah family courts.",
     icon: "Scale",
     overview: [
-      "Child custody evaluations are among the most sensitive assessments in psychology. At CPS, our licensed psychologists conduct objective, comprehensive evaluations that serve the best interests of the child while meeting the standards required by Utah family courts. This page is for parents going through or anticipating a custody dispute who need a court-qualified evaluation.",
+      "Child custody evaluations are among the most sensitive assessments in psychology. At Psychological Services, our licensed psychologists conduct objective, comprehensive evaluations that serve the best interests of the child while meeting the standards required by Utah family courts. This page is for parents going through or anticipating a custody dispute who need a court-qualified evaluation.",
       "Our custody evaluators have decades of experience working with attorneys, judges, and family court systems. Evaluations include individual interviews with each parent, parent-child observations, psychological testing, collateral interviews, and a detailed written report.",
-      "CPS also provides parental fitness evaluations, parental capacity assessments, and relocation evaluations. Our reports are thorough, evidence-based, and regularly admitted in court proceedings across Utah.",
+      "Psychological Services also provides parental fitness evaluations, parental capacity assessments, and relocation evaluations. Our reports are thorough, evidence-based, and regularly admitted in court proceedings across Utah.",
     ],
     whatToExpect: [
       "Individual clinical interviews with each parent (2–3 hours per parent)",
@@ -385,13 +385,13 @@ export const services: ServiceData[] = [
     h1: "Ketamine Therapy for Treatment-Resistant Depression",
     shortName: "Ketamine Therapy",
     metaTitle: "Ketamine Depression Treatment Near Me",
-    metaDescription: "Ketamine & Spravato (esketamine) therapy for treatment-resistant depression in Utah. FDA-approved protocols. Supervised by licensed clinicians. (801) 483-1600.",
+    metaDescription: "Ketamine & Spravato (esketamine) therapy for treatment-resistant depression in Utah. FDA-approved protocols. Supervised by licensed clinicians. (866) 343-0885.",
     heroSubtitle: "When traditional antidepressants haven't worked, ketamine and Spravato offer a clinically proven path to relief — often within hours, not weeks.",
     icon: "HeartPulse",
     overview: [
-      "Ketamine therapy represents a breakthrough in treating depression that hasn't responded to traditional medications. At CPS, we offer both IV ketamine infusions and Spravato (esketamine) nasal spray under medical supervision.",
+      "Ketamine therapy represents a breakthrough in treating depression that hasn't responded to traditional medications. At Psychological Services, we offer both IV ketamine infusions and Spravato (esketamine) nasal spray under medical supervision.",
       "Unlike traditional antidepressants that take 4–6 weeks to work, ketamine can produce noticeable improvement in mood within hours to days. It works through a different brain pathway (glutamate/NMDA) than conventional medications, offering hope for the estimated 30% of depression patients who don't respond to standard treatment.",
-      "Our ketamine program includes medical screening, supervised administration sessions, and integration with ongoing therapy and medication management at CPS.",
+      "Our ketamine program includes medical screening, supervised administration sessions, and integration with ongoing therapy and medication management at Psychological Services.",
     ],
     whatToExpect: [
       "Medical screening and psychiatric assessment for eligibility",
@@ -404,7 +404,7 @@ export const services: ServiceData[] = [
       "Rapid relief — many patients notice improvement within 24–48 hours",
       "FDA-approved Spravato (esketamine) program — may be covered by insurance",
       "Medically supervised by experienced clinicians",
-      "Integrated with CPS therapy and medication management",
+      "Integrated with Psychological Services therapy and medication management",
       "Decades of experience treating mood disorders",
     ],
     faqItems: [
@@ -422,11 +422,11 @@ export const services: ServiceData[] = [
     h1: "Professional ADHD Testing for All Ages",
     shortName: "ADHD Testing",
     metaTitle: "ADHD Testing",
-    metaDescription: "Professional ADHD testing for children, teens & adults in Utah. Comprehensive evaluation with cognitive tests, rating scales & clinical interview. (801) 483-1600.",
+    metaDescription: "Professional ADHD testing for children, teens & adults in Utah. Comprehensive evaluation with cognitive tests, rating scales & clinical interview. (866) 343-0885.",
     heroSubtitle: "Accurate ADHD testing requires more than a questionnaire. Our psychologists provide the thorough, multi-method evaluation you need for a clear diagnosis.",
     icon: "ListChecks",
     overview: [
-      "ADHD testing at CPS uses a multi-method approach to provide accurate, reliable results. We combine cognitive and attention tests, behavioral rating scales, clinical interviews, and developmental history review to build a complete diagnostic picture.",
+      "ADHD testing at Psychological Services uses a multi-method approach to provide accurate, reliable results. We combine cognitive and attention tests, behavioral rating scales, clinical interviews, and developmental history review to build a complete diagnostic picture.",
       "We test for ADHD in children as young as 4, school-age children, teenagers, college students, and adults. Each evaluation is tailored to the patient's age and specific concerns.",
       "Our ADHD testing goes beyond a simple yes-or-no. We identify the specific ADHD presentation, measure the severity of symptoms, screen for co-occurring conditions, and provide actionable treatment recommendations.",
     ],
@@ -459,13 +459,13 @@ export const services: ServiceData[] = [
     h1: "ADOS-2 Autism Diagnostic Testing",
     shortName: "ADOS-2 Testing",
     metaTitle: "ADOS-2 Testing Near Me",
-    metaDescription: "ADOS-2 autism diagnostic testing in Utah. Gold-standard assessment for children, teens & adults. Administered by trained psychologists. (801) 483-1600.",
+    metaDescription: "ADOS-2 autism diagnostic testing in Utah. Gold-standard assessment for children, teens & adults. Administered by trained psychologists. (866) 343-0885.",
     heroSubtitle: "The ADOS-2 is the gold standard in autism diagnostic assessment. Our trained psychologists administer this validated tool for accurate autism spectrum evaluations.",
     icon: "Puzzle",
     overview: [
-      "The Autism Diagnostic Observation Schedule, Second Edition (ADOS-2 — the gold-standard instrument for autism assessment) is the most widely used and validated instrument for assessing autism spectrum disorder. At CPS, our psychologists are trained in ADOS-2 administration and scoring. This page is for parents of young children or adults who suspect they (or their child) may be on the autism spectrum.",
-      "The ADOS-2 uses structured and semi-structured activities to observe communication, social interaction, play, and restricted/repetitive behaviors. Different modules are available for toddlers through adults, including a module specifically for verbally fluent adolescents and adults. For patients needing additional support beyond the assessment process, CPS offers an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
-      "An ADOS-2 evaluation at CPS is part of a comprehensive autism assessment that includes developmental history, cognitive testing, adaptive behavior measures, and clinical observation.",
+      "The Autism Diagnostic Observation Schedule, Second Edition (ADOS-2 — the gold-standard instrument for autism assessment) is the most widely used and validated instrument for assessing autism spectrum disorder. At Psychological Services, our psychologists are trained in ADOS-2 administration and scoring. This page is for parents of young children or adults who suspect they (or their child) may be on the autism spectrum.",
+      "The ADOS-2 uses structured and semi-structured activities to observe communication, social interaction, play, and restricted/repetitive behaviors. Different modules are available for toddlers through adults, including a module specifically for verbally fluent adolescents and adults. For patients needing additional support beyond the assessment process, Psychological Services offers an Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week).",
+      "An ADOS-2 evaluation at Psychological Services is part of a comprehensive autism assessment that includes developmental history, cognitive testing, adaptive behavior measures, and clinical observation.",
     ],
     whatToExpect: [
       "ADOS-2 administration — structured observation activities (40–60 minutes)",
@@ -484,7 +484,7 @@ export const services: ServiceData[] = [
     faqItems: [
       { q: "What is the ADOS-2?", a: "The Autism Diagnostic Observation Schedule, Second Edition is a standardized assessment tool used worldwide to evaluate autism spectrum disorder. It observes social communication, interaction, and restricted behaviors." },
       { q: "Who should get ADOS-2 testing?", a: "Anyone — from toddlers to adults — who is being evaluated for autism spectrum disorder. It's particularly valuable when diagnosis is uncertain or when documentation is needed." },
-      { q: "Is the ADOS-2 the only test used?", a: "No. At CPS, the ADOS-2 is part of a comprehensive autism evaluation that includes cognitive testing, adaptive behavior measures, developmental history, and clinical observation." },
+      { q: "Is the ADOS-2 the only test used?", a: "No. At Psychological Services, the ADOS-2 is part of a comprehensive autism evaluation that includes cognitive testing, adaptive behavior measures, developmental history, and clinical observation." },
       { q: "How long does an ADOS-2 assessment take?", a: "The ADOS-2 itself takes 40–60 minutes. The full evaluation, including other assessments, typically takes 3–5 hours across one or two appointments." },
     ],
     ctaText: "Schedule ADOS-2 Testing",
@@ -514,13 +514,13 @@ export const services: ServiceData[] = [
     h1: "Comprehensive Autism Assessment for All Ages",
     shortName: "Autism Assessment",
     metaTitle: "Autism Assessment",
-    metaDescription: "Comprehensive autism spectrum assessments for children, teens & adults in Utah. ADOS-2, cognitive testing & developmental evaluation. Private & insurance. (801) 483-1600.",
+    metaDescription: "Comprehensive autism spectrum assessments for children, teens & adults in Utah. ADOS-2, cognitive testing & developmental evaluation. Private & insurance. (866) 343-0885.",
     heroSubtitle: "Whether you're seeking answers for your child or yourself, our comprehensive autism assessment provides clarity, diagnosis, and a roadmap for support.",
     icon: "Users",
     overview: [
-      "Autism spectrum disorder (ASD) presents differently in every individual. A comprehensive autism assessment at CPS evaluates social communication, restricted and repetitive behaviors, sensory processing, and adaptive functioning using multiple validated tools. This page is for parents of young children or adults who suspect they (or their child) may be on the autism spectrum.",
+      "Autism spectrum disorder (ASD) presents differently in every individual. A comprehensive autism assessment at Psychological Services evaluates social communication, restricted and repetitive behaviors, sensory processing, and adaptive functioning using multiple validated tools. This page is for parents of young children or adults who suspect they (or their child) may be on the autism spectrum.",
       "We assess children, adolescents, and adults — including individuals seeking a late diagnosis. Our evaluations are especially thorough for complex presentations, including autism in females, gifted individuals, and those with co-occurring ADHD or anxiety.",
-      "Every autism assessment at CPS includes the gold-standard ADOS-2 observation, cognitive testing, adaptive behavior measures, developmental history, and a comprehensive report with recommendations for therapy, school support, and community resources.",
+      "Every autism assessment at Psychological Services includes the gold-standard ADOS-2 observation, cognitive testing, adaptive behavior measures, developmental history, and a comprehensive report with recommendations for therapy, school support, and community resources.",
     ],
     whatToExpect: [
       "ADOS-2 observation (gold-standard autism assessment tool)",
@@ -551,11 +551,11 @@ export const services: ServiceData[] = [
     h1: "Cognitive Evaluation — Measure Your Mental Strengths",
     shortName: "Cognitive Evaluation",
     metaTitle: "Cognitive Evaluation Near Me",
-    metaDescription: "Comprehensive cognitive evaluations in Utah. IQ testing, memory assessment, executive function testing for children & adults. Academic & legal purposes. (801) 483-1600.",
+    metaDescription: "Comprehensive cognitive evaluations in Utah. IQ testing, memory assessment, executive function testing for children & adults. Academic & legal purposes. (866) 343-0885.",
     heroSubtitle: "Understand your cognitive strengths and challenges with a thorough evaluation measuring IQ, memory, processing speed, and executive functioning.",
     icon: "Lightbulb",
     overview: [
-      "A cognitive evaluation provides an objective measure of intellectual functioning, including verbal reasoning, visual-spatial abilities, working memory, and processing speed. At CPS, our psychologists use gold-standard instruments like the WAIS-V (adults) and WISC-V (children).",
+      "A cognitive evaluation provides an objective measure of intellectual functioning, including verbal reasoning, visual-spatial abilities, working memory, and processing speed. At Psychological Services, our psychologists use gold-standard instruments like the WAIS-V (adults) and WISC-V (children).",
       "Cognitive evaluations serve many purposes — identifying intellectual disabilities, establishing giftedness, evaluating learning disabilities, supporting school placement decisions, and providing documentation for legal or disability proceedings.",
       "Our psychologists interpret test results in the context of your full history, presenting concerns, and other assessment data. You receive a comprehensive report with clear explanations and actionable recommendations.",
     ],
@@ -571,7 +571,7 @@ export const services: ServiceData[] = [
       "Testing for children, teens, and adults",
       "Identifies giftedness, intellectual disabilities, and learning disabilities",
       "Reports accepted for IEPs, 504 plans, disability applications, and court proceedings",
-      "Results integrated with other CPS evaluations for a complete picture",
+      "Results integrated with other Psychological Services evaluations for a complete picture",
     ],
     faqItems: [
       { q: "What is a cognitive evaluation?", a: "A cognitive evaluation (sometimes called IQ testing or intellectual assessment) measures how you think, learn, and process information. It produces standardized scores for verbal reasoning, visual-spatial skills, memory, and processing speed." },
@@ -588,13 +588,13 @@ export const services: ServiceData[] = [
     h1: "Neuropsychologist — Expert Brain-Behavior Assessment",
     shortName: "Neuropsychologist",
     metaTitle: "Neuropsychologist",
-    metaDescription: "Licensed neuropsychologists in Utah offering comprehensive brain-behavior evaluations. ADHD, TBI, dementia, learning disabilities & more. Since 1986. (801) 483-1600.",
+    metaDescription: "Licensed neuropsychologists in Utah offering comprehensive brain-behavior evaluations. ADHD, TBI, dementia, learning disabilities & more. Since 1986. (866) 343-0885.",
     heroSubtitle: "Our neuropsychologists provide expert brain-behavior assessments that reveal how cognitive function impacts your daily life, learning, and treatment.",
     icon: "GraduationCap",
     overview: [
-      "A neuropsychologist is a licensed psychologist with specialized training in how brain function relates to behavior, cognition, and emotion. At CPS, our neuropsychologists conduct evaluations that map cognitive strengths and weaknesses to guide diagnosis and treatment.",
-      "Neuropsychologists at CPS evaluate conditions including ADHD, traumatic brain injury, stroke, dementia, epilepsy, learning disabilities, and neurodevelopmental disorders. Our assessments serve medical providers, schools, attorneys, and individuals seeking answers.",
-      "With roots going back to 1986, CPS has built a reputation for thorough, evidence-based neuropsychological evaluations. Our team includes doctoral-level psychologists with advanced training in neuropsychological assessment.",
+      "A neuropsychologist is a licensed psychologist with specialized training in how brain function relates to behavior, cognition, and emotion. At Psychological Services, our neuropsychologists conduct evaluations that map cognitive strengths and weaknesses to guide diagnosis and treatment.",
+      "Neuropsychologists at Psychological Services evaluate conditions including ADHD, traumatic brain injury, stroke, dementia, epilepsy, learning disabilities, and neurodevelopmental disorders. Our assessments serve medical providers, schools, attorneys, and individuals seeking answers.",
+      "With roots going back to 1986, Psychological Services has built a reputation for thorough, evidence-based neuropsychological evaluations. Our team includes doctoral-level psychologists with advanced training in neuropsychological assessment.",
     ],
     whatToExpect: [
       "Consultation to identify the referral question and goals for evaluation",
@@ -613,7 +613,7 @@ export const services: ServiceData[] = [
     faqItems: [
       { q: "What does a neuropsychologist do?", a: "A neuropsychologist assesses how brain function affects thinking, behavior, and emotion using standardized tests. They diagnose conditions like ADHD, TBI, dementia, and learning disabilities." },
       { q: "When should I see a neuropsychologist?", a: "If you're experiencing unexplained cognitive changes, memory problems, difficulty concentrating, or if a doctor or school has recommended neuropsychological testing." },
-      { q: "How is a neuropsychologist different from a psychiatrist?", a: "A neuropsychologist focuses on assessment and diagnosis through testing. A psychiatrist focuses on medication management. Both may be involved in your care at CPS." },
+      { q: "How is a neuropsychologist different from a psychiatrist?", a: "A neuropsychologist focuses on assessment and diagnosis through testing. A psychiatrist focuses on medication management. Both may be involved in your care at Psychological Services." },
       { q: "Do your neuropsychologists work with children?", a: "Yes. Our team evaluates children, adolescents, and adults. Pediatric neuropsychological evaluations are tailored to the child's age and developmental level." },
     ],
     ctaText: "Consult a Neuropsychologist",
@@ -625,13 +625,13 @@ export const services: ServiceData[] = [
     h1: "Spravato (Esketamine) for Treatment-Resistant Depression",
     shortName: "Spravato",
     metaTitle: "Spravato (Esketamine) Therapy Near Me",
-    metaDescription: "FDA-approved Spravato (esketamine) nasal spray for treatment-resistant depression in Utah. REMS-certified clinic. Insurance-friendly. Call (801) 483-1600.",
+    metaDescription: "FDA-approved Spravato (esketamine) nasal spray for treatment-resistant depression in Utah. REMS-certified clinic. Insurance-friendly. Call (866) 343-0885.",
     heroSubtitle: "FDA-approved esketamine nasal spray administered in a REMS-certified clinic for patients who haven't responded to at least two oral antidepressants.",
     icon: "Sparkles",
     overview: [
-      "Spravato (esketamine) is an FDA-approved nasal spray for adults with treatment-resistant depression (TRD) and for depressive symptoms in adults with major depressive disorder with acute suicidal ideation. At CPS, Spravato is administered in-office under medical supervision through a REMS-certified program (Risk Evaluation and Mitigation Strategy — a required FDA safety program). This page is for patients who have tried multiple antidepressants without sufficient relief.",
+      "Spravato (esketamine) is an FDA-approved nasal spray for adults with treatment-resistant depression (TRD) and for depressive symptoms in adults with major depressive disorder with acute suicidal ideation. At Psychological Services, Spravato is administered in-office under medical supervision through a REMS-certified program (Risk Evaluation and Mitigation Strategy — a required FDA safety program). This page is for patients who have tried multiple antidepressants without sufficient relief.",
       "Unlike IV ketamine, Spravato is specifically FDA-approved for depression and is often covered by commercial insurance and Medicare. It works rapidly through the brain's glutamate system, targeting depression through a pathway that conventional SSRIs and SNRIs don't reach.",
-      "Our Spravato program integrates with CPS counseling, medication management, and when clinically appropriate our Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week) for comprehensive care.",
+      "Our Spravato program integrates with Psychological Services counseling, medication management, and when clinically appropriate our Intensive Outpatient Program (IOP — a structured treatment program involving several hours of therapy per week) for comprehensive care.",
     ],
     whatToExpect: [
       "Psychiatric evaluation to confirm treatment-resistant depression diagnosis and Spravato eligibility",
@@ -644,7 +644,7 @@ export const services: ServiceData[] = [
       "FDA-approved and REMS-certified — the only approved esketamine protocol",
       "Often covered by commercial insurance and Medicare",
       "Rapid antidepressant effect — many patients report relief within days",
-      "Integrated with CPS therapy and medication management",
+      "Integrated with Psychological Services therapy and medication management",
       "Supervised by licensed clinicians in a medical clinic setting",
     ],
     faqItems: [
@@ -666,19 +666,19 @@ export const services: ServiceData[] = [
     h1: "Intensive Outpatient Program (IOP) for Adults & Adolescents",
     shortName: "IOP",
     metaTitle: "Intensive Outpatient Program (IOP) Near Me",
-    metaDescription: "Intensive Outpatient Program (IOP) in Utah for depression, anxiety, trauma & co-occurring conditions. Group & individual therapy, 9+ hours/week. (801) 483-1600.",
+    metaDescription: "Intensive Outpatient Program (IOP) in Utah for depression, anxiety, trauma & co-occurring conditions. Group & individual therapy, 9+ hours/week. (866) 343-0885.",
     heroSubtitle: "Structured, evidence-based treatment for patients who need more than weekly therapy but don't require hospitalization — 9 or more clinical hours per week.",
     icon: "LayoutGrid",
     overview: [
-      "An Intensive Outpatient Program (IOP) is a structured, group-based treatment program delivering 9 or more clinical hours per week across three to five days. At CPS, our IOP is designed for adults and older adolescents struggling with depression, anxiety, trauma, mood disorders, and co-occurring conditions. This page is for patients whose symptoms are not responding to weekly therapy alone, and for families or providers looking for a step-down from inpatient care.",
-      "IOP at CPS combines group therapy, individual sessions, skills training (DBT and CBT-based), psychoeducation, and coordinated medication management. We use measurement-based care — patients complete validated rating scales at intake and throughout treatment — so progress is tracked objectively.",
+      "An Intensive Outpatient Program (IOP) is a structured, group-based treatment program delivering 9 or more clinical hours per week across three to five days. At Psychological Services, our IOP is designed for adults and older adolescents struggling with depression, anxiety, trauma, mood disorders, and co-occurring conditions. This page is for patients whose symptoms are not responding to weekly therapy alone, and for families or providers looking for a step-down from inpatient care.",
+      "IOP at Psychological Services combines group therapy, individual sessions, skills training (DBT and CBT-based), psychoeducation, and coordinated medication management. We use measurement-based care — patients complete validated rating scales at intake and throughout treatment — so progress is tracked objectively.",
       "Many patients use IOP as a bridge: stepping down from inpatient hospitalization, or stepping up from weekly therapy that isn't enough. Others use IOP alongside Spravato, ketamine, or medication adjustments to stabilize more quickly.",
     ],
     whatToExpect: [
       "Clinical intake and level-of-care assessment to confirm IOP is the right fit",
       "9+ hours per week of group and individual therapy (typically 3 days × 3 hours)",
       "Evidence-based modalities: DBT skills, CBT, trauma-focused approaches, mindfulness",
-      "Integrated medication management with CPS prescribers",
+      "Integrated medication management with Psychological Services prescribers",
       "Regular progress reviews using validated rating scales (PHQ-9, GAD-7, PCL-5)",
     ],
     benefits: [
@@ -692,7 +692,7 @@ export const services: ServiceData[] = [
       { q: "How long does IOP last?", a: "Most patients complete the program in 6–12 weeks, depending on progress. The program is time-limited by design — the goal is to stabilize and transition back to weekly therapy." },
       { q: "Is IOP covered by insurance?", a: "Yes — IOP is a recognized level of care and is covered by most commercial insurance, Medicare, and Medicaid when medically necessary. Our team verifies benefits before enrollment." },
       { q: "How is IOP different from PHP or inpatient treatment?", a: "Partial Hospitalization (PHP) runs 20+ hours per week; inpatient requires a 24-hour hospital stay. IOP is 9+ hours per week, allowing you to live at home and keep working or attending school." },
-      { q: "Do I need a referral to join IOP?", a: "No referral is required, but we do a clinical intake to confirm IOP is the appropriate level of care for you. Call (801) 483-1600 to schedule the intake." },
+      { q: "Do I need a referral to join IOP?", a: "No referral is required, but we do a clinical intake to confirm IOP is the appropriate level of care for you. Call (866) 343-0885 to schedule the intake." },
     ],
     ctaText: "Ask About Our IOP",
     relatedServices: ["counseling-and-psychotherapy", "medication-management", "ketamine-depression-treatment-near-me"],
@@ -717,20 +717,20 @@ export const services: ServiceData[] = [
     h1: "Counseling & Psychotherapy — Evidence-Based Care for Adults, Teens & Families",
     shortName: "Counseling",
     metaTitle: "Counseling & Psychotherapy Near Me",
-    metaDescription: "Evidence-based counseling and psychotherapy in Utah — CBT, DBT, EMDR, trauma-focused care. Adults, teens, couples. In-person & telehealth. (801) 483-1600.",
+    metaDescription: "Evidence-based counseling and psychotherapy in Utah — CBT, DBT, EMDR, trauma-focused care. Adults, teens, couples. In-person & telehealth. (866) 343-0885.",
     heroSubtitle: "Licensed therapists delivering evidence-based counseling — CBT, DBT, EMDR, trauma-focused therapy — for anxiety, depression, trauma, and life transitions.",
     icon: "MessageCircle",
     overview: [
-      "Counseling and psychotherapy at CPS is delivered by licensed psychologists, clinical social workers, and counselors trained in evidence-based modalities. We treat anxiety, depression, trauma, grief, relationship issues, life transitions, and co-occurring conditions. This page is for individuals, couples, and families looking for therapy with a licensed, experienced clinician.",
+      "Counseling and psychotherapy at Psychological Services is delivered by licensed psychologists, clinical social workers, and counselors trained in evidence-based modalities. We treat anxiety, depression, trauma, grief, relationship issues, life transitions, and co-occurring conditions. This page is for individuals, couples, and families looking for therapy with a licensed, experienced clinician.",
       "Our therapists match approach to problem: Cognitive Behavioral Therapy (CBT) for anxiety and depression, Dialectical Behavior Therapy (DBT) skills for emotion regulation, EMDR (Eye Movement Desensitization and Reprocessing — an evidence-based trauma therapy) for PTSD and trauma, and integrative approaches for complex presentations.",
-      "Counseling at CPS is coordinated with our testing, medication management, Spravato, ketamine, and IOP services — so if your needs shift, your care team already knows you.",
+      "Counseling at Psychological Services is coordinated with our testing, medication management, Spravato, ketamine, and IOP services — so if your needs shift, your care team already knows you.",
     ],
     whatToExpect: [
       "Initial intake to understand your history, goals, and preferences",
       "Collaborative treatment planning with your therapist",
       "Weekly or biweekly sessions (50 minutes) in-person or via telehealth",
       "Progress reviews using validated outcome measures when appropriate",
-      "Coordinated care with CPS prescribers, testers, and IOP team when indicated",
+      "Coordinated care with Psychological Services prescribers, testers, and IOP team when indicated",
     ],
     benefits: [
       "Licensed, experienced clinicians trained in evidence-based modalities",
@@ -758,12 +758,12 @@ export const services: ServiceData[] = [
     h1: "Psychiatric Medication Management",
     shortName: "Medication Management",
     metaTitle: "Psychiatric Medication Management Near Me",
-    metaDescription: "Psychiatric medication management in Utah — ADHD, depression, anxiety, bipolar, PTSD. Prescribers coordinating with therapy & testing. (801) 483-1600.",
+    metaDescription: "Psychiatric medication management in Utah — ADHD, depression, anxiety, bipolar, PTSD. Prescribers coordinating with therapy & testing. (866) 343-0885.",
     heroSubtitle: "Thoughtful prescribing by licensed psychiatric providers — ADHD medications, antidepressants, mood stabilizers, and anxiety treatments with careful follow-up.",
     icon: "Pill",
     overview: [
-      "Medication management at CPS is provided by licensed psychiatric prescribers (psychiatrists, psychiatric nurse practitioners, and physician assistants with psychiatric specialization). We prescribe and manage medications for ADHD, depression, anxiety, bipolar disorder, PTSD, OCD, and related conditions. This page is for patients considering medication, returning to medication, or looking to transfer psychiatric care.",
-      "Prescribing at CPS is collaborative and measurement-based: we use validated rating scales, monitor response and side effects, and adjust carefully. When appropriate, we coordinate with your therapist, primary care physician, and specialists — no siloed care.",
+      "Medication management at Psychological Services is provided by licensed psychiatric prescribers (psychiatrists, psychiatric nurse practitioners, and physician assistants with psychiatric specialization). We prescribe and manage medications for ADHD, depression, anxiety, bipolar disorder, PTSD, OCD, and related conditions. This page is for patients considering medication, returning to medication, or looking to transfer psychiatric care.",
+      "Prescribing at Psychological Services is collaborative and measurement-based: we use validated rating scales, monitor response and side effects, and adjust carefully. When appropriate, we coordinate with your therapist, primary care physician, and specialists — no siloed care.",
       "For patients whose depression hasn't responded to oral antidepressants, we offer Spravato (esketamine) and IV ketamine therapy. For those needing more structure, our Intensive Outpatient Program (IOP) works alongside medication to stabilize more quickly.",
     ],
     whatToExpect: [
@@ -776,15 +776,15 @@ export const services: ServiceData[] = [
     benefits: [
       "Licensed psychiatric prescribers — not primary care generalists",
       "Evidence-based prescribing with measurement-based follow-up",
-      "Coordinated with CPS therapy, testing, IOP, and Spravato programs",
+      "Coordinated with Psychological Services therapy, testing, IOP, and Spravato programs",
       "Most major insurance plans accepted",
       "Telehealth follow-up visits available for established patients",
     ],
     faqItems: [
-      { q: "Who prescribes at CPS?", a: "Our prescribers are licensed psychiatrists, psychiatric nurse practitioners (PMHNPs), and physician assistants with psychiatric specialization. All operate under clear clinical protocols and supervision." },
+      { q: "Who prescribes at Psychological Services?", a: "Our prescribers are licensed psychiatrists, psychiatric nurse practitioners (PMHNPs), and physician assistants with psychiatric specialization. All operate under clear clinical protocols and supervision." },
       { q: "Can you manage ADHD medications, including stimulants?", a: "Yes. We prescribe both stimulant and non-stimulant ADHD medications following standard-of-care guidelines, including appropriate monitoring and PDMP (Prescription Drug Monitoring Program) checks." },
-      { q: "Do I need a therapist to see your prescribers?", a: "Not required, but often recommended. For many conditions, medication plus therapy outperforms either alone. We can coordinate with your existing therapist or connect you with one at CPS." },
-      { q: "Can I transfer my psychiatric care to CPS?", a: "Yes. We welcome transfer patients. Bring your current medication list, recent labs if available, and prior psychiatric records. Your first visit establishes you as a new patient." },
+      { q: "Do I need a therapist to see your prescribers?", a: "Not required, but often recommended. For many conditions, medication plus therapy outperforms either alone. We can coordinate with your existing therapist or connect you with one at Psychological Services." },
+      { q: "Can I transfer my psychiatric care to Psychological Services?", a: "Yes. We welcome transfer patients. Bring your current medication list, recent labs if available, and prior psychiatric records. Your first visit establishes you as a new patient." },
     ],
     ctaText: "Schedule Medication Management",
     relatedServices: ["counseling-and-psychotherapy", "spravato-esketamine-therapy", "intensive-outpatient-program-iop"],
@@ -799,12 +799,12 @@ export const services: ServiceData[] = [
     h1: "Neurofeedback Therapy — EEG-Guided Brain Training",
     shortName: "Neurofeedback",
     metaTitle: "Neurofeedback Therapy Near Me",
-    metaDescription: "Neurofeedback therapy in Utah — EEG biofeedback for ADHD, anxiety, sleep, and focus. Non-invasive, medication-free brain training. (801) 483-1600.",
+    metaDescription: "Neurofeedback therapy in Utah — EEG biofeedback for ADHD, anxiety, sleep, and focus. Non-invasive, medication-free brain training. (866) 343-0885.",
     heroSubtitle: "EEG-guided brain training that helps you self-regulate attention, sleep, and arousal — a non-invasive, medication-free adjunct for ADHD, anxiety, and sleep issues.",
     icon: "Activity",
     overview: [
       "Neurofeedback (also called EEG biofeedback) is a non-invasive technique that teaches the brain to self-regulate using real-time feedback from brainwave activity. Sensors placed on the scalp measure electrical activity, and the patient receives audio or visual feedback that rewards targeted brainwave patterns. This page is for patients and parents exploring non-medication approaches to ADHD, anxiety, and sleep issues — or looking for an adjunct alongside therapy and medication.",
-      "At CPS, neurofeedback is used as an adjunct treatment for ADHD, anxiety, sleep regulation, focus, and post-concussion symptoms. We follow published protocols and review progress with objective measures.",
+      "At Psychological Services, neurofeedback is used as an adjunct treatment for ADHD, anxiety, sleep regulation, focus, and post-concussion symptoms. We follow published protocols and review progress with objective measures.",
       "Neurofeedback works best as part of an integrated care plan. Our team coordinates it with therapy, medication management, and comprehensive testing when appropriate.",
     ],
     whatToExpect: [
@@ -818,7 +818,7 @@ export const services: ServiceData[] = [
       "Non-invasive, medication-free — no injections, no drugs, no side effects",
       "Adjunct for ADHD, anxiety, sleep, focus, and post-concussion symptoms",
       "Based on published protocols with decades of research",
-      "Integrated with CPS testing, therapy, and medication management",
+      "Integrated with Psychological Services testing, therapy, and medication management",
       "Sessions available in our Salt Lake City office",
     ],
     faqItems: [
@@ -840,11 +840,11 @@ export const services: ServiceData[] = [
     h1: "Telehealth Therapy & Psychiatry — Secure Video Visits Across Utah",
     shortName: "Telehealth",
     metaTitle: "Telehealth Therapy & Psychiatry Near Me",
-    metaDescription: "Secure HIPAA-compliant telehealth therapy and psychiatric visits across Utah. ADHD, depression, anxiety. Same-month appointments. (801) 483-1600.",
+    metaDescription: "Secure HIPAA-compliant telehealth therapy and psychiatric visits across Utah. ADHD, depression, anxiety. Same-month appointments. (866) 343-0885.",
     heroSubtitle: "Secure, HIPAA-compliant video therapy and psychiatry visits — the same licensed clinicians you'd see in our offices, now available anywhere in Utah.",
     icon: "Video",
     overview: [
-      "Telehealth at CPS delivers therapy, psychiatric medication management, and follow-up visits via secure HIPAA-compliant video. Our licensed clinicians serve patients across Utah, including rural and underserved areas where access to specialty behavioral health is limited. This page is for patients in Utah who need care but can't easily travel to our Salt Lake City, Layton, or West Jordan offices.",
+      "Telehealth at Psychological Services delivers therapy, psychiatric medication management, and follow-up visits via secure HIPAA-compliant video. Our licensed clinicians serve patients across Utah, including rural and underserved areas where access to specialty behavioral health is limited. This page is for patients in Utah who need care but can't easily travel to our Salt Lake City, Layton, or West Jordan offices.",
       "Telehealth is clinically appropriate for most outpatient behavioral health needs: therapy for anxiety, depression, trauma, and life transitions; ADHD medication follow-up; and established-patient check-ins. Certain services — initial psychiatric evaluations for stimulants, neuropsychological testing, ketamine, Spravato, and IOP — require at least one in-person visit.",
       "Telehealth visits are covered by most major insurance plans at parity with in-person visits (per Utah and federal telehealth parity rules for behavioral health).",
     ],
@@ -857,7 +857,7 @@ export const services: ServiceData[] = [
     ],
     benefits: [
       "HIPAA-compliant secure video — no third-party app sharing data",
-      "Access to CPS clinicians from anywhere in Utah",
+      "Access to Psychological Services clinicians from anywhere in Utah",
       "Same-month availability, including evening slots with some providers",
       "Covered by most major insurance plans at parity with in-person visits",
       "Seamless transition to in-person if testing, IOP, or injectable treatments are needed",

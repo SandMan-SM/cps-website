@@ -29,8 +29,8 @@ const SERVICE_CONDITIONS: Record<string, ConditionSlug[]> = {
   "counseling-and-psychotherapy": ["treatment-resistant-depression", "adhd-in-adults"],
 };
 
-const PHONE = "(801) 483-1600";
-const PHONE_HREF = "tel:8014831600";
+const PHONE = "(866) 343-0885";
+const PHONE_HREF = "tel:8663430885";
 
 interface Props {
   service: ServiceData;
@@ -158,8 +158,8 @@ export default function ServicePageContent({ service, location, relatedServices 
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
                     Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. As the founder of Psychological Services, he has conducted thousands of neuropsychological, ADHD, autism, and custody evaluations. He has provided expert testimony in Utah family courts and is a member of the American Academy of Clinical Neuropsychology (AACN).
                   </p>
-                  <a href={PHONE_HREF} aria-label="Call CPS at (801) 483-1600" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors mt-2">
-                    <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
+                  <a href={PHONE_HREF} aria-label="Call Psychological Services at (866) 343-0885" className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors mt-2">
+                    <Phone className="w-4 h-4" aria-hidden="true" /> (866) 343-0885
                   </a>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function ServicePageContent({ service, location, relatedServices 
           <a
             href={PHONE_HREF}
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
-            aria-label={`Call CPS at ${PHONE} to schedule ${service.shortName}`}
+            aria-label={`Call Psychological Services at ${PHONE} to schedule ${service.shortName}`}
           >
             <Phone className="w-5 h-5" aria-hidden="true" /> {PHONE}
           </a>
@@ -292,7 +292,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       <section className="py-12 md:py-16 bg-[var(--cps-white)]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <div>
-            <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Why Choose CPS</h2>
+            <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Why Choose Psychological Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {service.benefits.map((benefit, i) => (
                 <div key={i} className="flex items-start gap-4 p-4">
@@ -319,7 +319,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                     <MapPin className="w-6 h-6 text-[var(--cps-blue)]" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-1">CPS {location.nearestOffice}</h3>
+                    <h3 className="text-lg font-bold text-[var(--cps-gray-900)] mb-1">Psychological Services {location.nearestOffice}</h3>
                     <p className="text-[var(--cps-gray-600)] mb-4">{location.nearestAddress}</p>
                     <a href={PHONE_HREF} aria-label={`Call ${PHONE}`} className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold hover:text-[var(--cps-blue-hover)] transition-colors">
                       <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
@@ -438,7 +438,7 @@ export default function ServicePageContent({ service, location, relatedServices 
       <section className="py-8 bg-[var(--cps-gray-50)] border-t border-[var(--cps-gray-200)]">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
           <p className="text-xs text-[var(--cps-gray-400)] text-center leading-relaxed">
-            <strong>Disclaimer:</strong> The information on this page is for educational purposes only and does not constitute medical advice, diagnosis, or treatment. The information provided reflects general descriptions of psychological services and is not a substitute for a professional evaluation. If you believe you or someone you know may benefit from these services, please contact CPS at <a href={PHONE_HREF} aria-label="Call CPS at (801) 483-1600" className="underline hover:text-[var(--cps-blue)]">(801) 483-1600</a>. For mental health emergencies, please call 988 (Suicide & Crisis Lifeline) or 911.
+            <strong>Disclaimer:</strong> The information on this page is for educational purposes only and does not constitute medical advice, diagnosis, or treatment. The information provided reflects general descriptions of psychological services and is not a substitute for a professional evaluation. If you believe you or someone you know may benefit from these services, please contact Psychological Services at <a href={PHONE_HREF} aria-label="Call Psychological Services at (866) 343-0885" className="underline hover:text-[var(--cps-blue)]">(866) 343-0885</a>. For mental health emergencies, please call 988 (Suicide & Crisis Lifeline) or 911.
           </p>
         </div>
       </section>

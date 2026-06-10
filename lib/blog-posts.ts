@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     targetKeyword: "custody evaluation Utah",
     description:
-      "Understand how Utah courts use custody evaluations in family law cases — what evaluators look for, the process timeline, and how CPS psychologists produce court-accepted reports.",
+      "Understand how Utah courts use custody evaluations in family law cases — what evaluators look for, the process timeline, and how Psychological Services psychologists produce court-accepted reports.",
   },
 ];
 

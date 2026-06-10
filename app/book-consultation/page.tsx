@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title:
     "Book a Consultation | Psychological Services — Utah",
   description:
-    "Schedule a confidential consultation with the CPS team. Neuropsychological, ADHD, autism, custody, and cognitive evaluations across Salt Lake, Davis, and Weber counties. Most insurance accepted.",
+    "Schedule a confidential consultation with the Psychological Services team. Neuropsychological, ADHD, autism, custody, and cognitive evaluations across Salt Lake, Davis, and Weber counties. Most insurance accepted.",
   alternates: {
     canonical:
       "https://psychandcustodyevaluations.com/book-consultation",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book a Consultation | CPS Utah",
+    title: "Book a Consultation | Psychological Services Utah",
     description:
       "Evaluations, therapy, family-law assessments. Salt Lake · Layton · West Jordan. Most insurance accepted.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
@@ -91,8 +91,8 @@ const TRUST_POINTS = [
   { Icon: CheckCircle2, text: "Most consultations within 1 business day" },
 ];
 
-const PHONE = "(801) 483-1600";
-const PHONE_HREF = "tel:8014831600";
+const PHONE = "(866) 343-0885";
+const PHONE_HREF = "tel:8663430885";
 const EMAIL = "cps@wecanhelpout.com";
 
 export default function BookConsultationPage() {
@@ -103,7 +103,7 @@ export default function BookConsultationPage() {
     description:
       "Neuropsychological, ADHD, autism, custody, and cognitive evaluations across Utah. Therapy and ketamine treatment.",
     url: "https://psychandcustodyevaluations.com",
-    telephone: "+18014831600",
+    telephone: "+18663430885",
     email: EMAIL,
     address: [
       {
@@ -149,7 +149,7 @@ export default function BookConsultationPage() {
             data-track="back-home"
             className="mb-6 inline-flex items-center gap-2 text-sm text-[var(--cps-white)]/70 hover:text-[var(--cps-white)]"
           >
-            ← Back to CPS
+            ← Back to Psychological Services
           </Link>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--cps-teal)]/30 bg-[var(--cps-teal)]/10 px-4 py-2 text-xs font-mono uppercase tracking-widest text-[var(--cps-teal)]">
             Confidential Consultation
@@ -168,7 +168,7 @@ export default function BookConsultationPage() {
               href={PHONE_HREF}
               data-track="hero-call"
               data-track-area="book-hero"
-              aria-label="Call (801) 483-1600"
+              aria-label="Call (866) 343-0885"
               className="inline-flex items-center gap-2 rounded-xl bg-[var(--cps-white)] px-6 py-4 text-sm font-bold text-[var(--cps-dark)] shadow-lg transition hover:bg-[var(--cps-light)]"
             >
               <Phone className="h-4 w-4" />
@@ -272,7 +272,7 @@ export default function BookConsultationPage() {
               <a
                 href={PHONE_HREF}
                 data-track="footer-call"
-                aria-label="Call (801) 483-1600"
+                aria-label="Call (866) 343-0885"
                 className="hover:text-[var(--cps-blue)]"
               >
                 {PHONE}

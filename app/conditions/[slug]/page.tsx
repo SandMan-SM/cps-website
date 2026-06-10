@@ -112,11 +112,11 @@ export default async function ConditionPage({
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
               <a
-                href="tel:8014831600"
-                aria-label="Call us at (801) 483-1600"
+                href="tel:8663430885"
+                aria-label="Call us at (866) 343-0885"
                 className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent border-2 border-white text-[var(--cps-white)] font-bold rounded-xl hover:bg-[var(--cps-white)]/10 transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)]"
               >
-                <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+                <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
               </a>
             </div>
           </div>
@@ -174,11 +174,11 @@ export default async function ConditionPage({
               </p>
             </div>
             <a
-              href="tel:8014831600"
-              aria-label="Call us at (801) 483-1600"
+              href="tel:8663430885"
+              aria-label="Call us at (866) 343-0885"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
             >
-              <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+              <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
             </a>
           </div>
         </section>
@@ -190,7 +190,7 @@ export default async function ConditionPage({
               <div className="w-12 h-12 rounded-xl bg-[var(--cps-blue)]/10 flex items-center justify-center">
                 <Microscope className="w-6 h-6 text-[var(--cps-blue)]" aria-hidden="true" />
               </div>
-              <h2 className="section-heading text-[var(--cps-gray-900)]">How CPS Evaluates {data.name}</h2>
+              <h2 className="section-heading text-[var(--cps-gray-900)]">How Psychological Services Evaluates {data.name}</h2>
             </div>
             <ol className="space-y-6">
               {data.howWeEvaluate.map((item, idx) => (
@@ -208,7 +208,7 @@ export default async function ConditionPage({
         {/* Treatment options */}
         <section className="py-12 md:py-20 bg-[var(--cps-gray-50)]">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
-            <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Treatment Options at CPS</h2>
+            <h2 className="section-heading text-[var(--cps-gray-900)] mb-8">Treatment Options at Psychological Services</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {data.treatmentOptions.map((opt) => (
                 <div
@@ -285,16 +285,16 @@ export default async function ConditionPage({
               Ready to get a clear answer about {data.name}?
             </h2>
             <p className="text-[var(--cps-white)]/80 body-large mb-8 max-w-[60ch] mx-auto">
-              CPS has served Utah since 1986. Call us and our intake team will verify your insurance,
+              Psychological Services has served Utah since 1986. Call us and our intake team will verify your insurance,
               match you with the right specialist, and schedule your first appointment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:8014831600"
-                aria-label="Call us at (801) 483-1600"
+                href="tel:8663430885"
+                aria-label="Call us at (866) 343-0885"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cps-dark)]"
               >
-                <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+                <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
               </a>
               <a
                 href="mailto:cps@wecanhelpout.com"

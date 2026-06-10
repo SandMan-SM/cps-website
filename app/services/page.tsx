@@ -8,12 +8,12 @@ import { BreadcrumbSchema, OrganizationSchema, LocalBusinessSchema } from "@/com
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "All Services — Evaluations & Treatment | CPS Utah",
+  title: "All Services — Evaluations & Treatment | Psychological Services Utah",
   description:
-    "Every service CPS offers — neuropsychological, ADHD, autism, custody, and cognitive evaluations plus ketamine, Spravato, IOP, counseling, medication management, neurofeedback and telehealth. Utah since 1986.",
+    "Every service Psychological Services offers — neuropsychological, ADHD, autism, custody, and cognitive evaluations plus ketamine, Spravato, IOP, counseling, medication management, neurofeedback and telehealth. Utah since 1986.",
   alternates: { canonical: "https://psychandcustodyevaluations.com/services" },
   openGraph: {
-    title: "All Services — CPS Utah",
+    title: "All Services — Psychological Services Utah",
     description:
       "Evaluations and treatment offered at Psychological Services across Salt Lake City, Layton & West Jordan.",
     url: "https://psychandcustodyevaluations.com/services",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "All Services — CPS Utah",
+    title: "All Services — Psychological Services Utah",
     description:
       "Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
@@ -83,7 +83,7 @@ export default function ServicesIndexPage() {
               Full Service Catalog
             </p>
             <h1 className="display-heading text-[var(--cps-white)] mb-6 max-w-4xl">
-              All CPS Services — Evaluations & Treatment
+              All Psychological Services Services — Evaluations & Treatment
             </h1>
             <p className="body-large text-[var(--cps-white)]/80 max-w-[65ch]">
               Every evaluation and treatment we offer, organized so you can quickly find what fits.
@@ -166,11 +166,11 @@ export default function ServicesIndexPage() {
               or clinician — often on the first call.
             </p>
             <a
-              href="tel:8014831600"
-              aria-label="Call us at (801) 483-1600"
+              href="tel:8663430885"
+              aria-label="Call us at (866) 343-0885"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cps-dark)]"
             >
-              <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+              <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
             </a>
           </div>
         </section>

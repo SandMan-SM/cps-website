@@ -11,10 +11,10 @@ import type { ConditionSlug } from "@/lib/conditions";
 export const metadata: Metadata = {
   title: "Conditions We Treat — Utah | Psychological Services",
   description:
-    "CPS Utah evaluates and treats adult ADHD, adult autism, concussion/TBI, dementia and memory concerns, learning disabilities, and treatment-resistant depression. Since 1986.",
+    "Psychological Services Utah evaluates and treats adult ADHD, adult autism, concussion/TBI, dementia and memory concerns, learning disabilities, and treatment-resistant depression. Since 1986.",
   alternates: { canonical: "https://psychandcustodyevaluations.com/conditions" },
   openGraph: {
-    title: "Conditions We Treat — CPS Utah",
+    title: "Conditions We Treat — Psychological Services Utah",
     description:
       "Adult ADHD, adult autism, concussion/TBI, memory & dementia, learning disabilities, treatment-resistant depression.",
     url: "https://psychandcustodyevaluations.com/conditions",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Conditions We Treat — CPS Utah",
+    title: "Conditions We Treat — Psychological Services Utah",
     description:
       "Adult ADHD, adult autism, concussion/TBI, memory & dementia, treatment-resistant depression.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
@@ -62,7 +62,7 @@ export default function ConditionsIndexPage() {
             <p className="body-large text-[var(--cps-white)]/80 max-w-[65ch]">
               Evidence-based assessment and treatment for the conditions Utah families, adults, and
               referrers ask us about most. Each guide explains who the evaluation is for, what to
-              expect, and how CPS can help.
+              expect, and how Psychological Services can help.
             </p>
           </div>
         </section>
@@ -101,15 +101,15 @@ export default function ConditionsIndexPage() {
               Not sure what fits your situation?
             </h2>
             <p className="text-[var(--cps-white)]/80 body-large mb-8 max-w-[60ch] mx-auto">
-              Call CPS. Our intake team listens to what&apos;s going on and routes you to the right
+              Call Psychological Services. Our intake team listens to what&apos;s going on and routes you to the right
               evaluator or clinician — often on the first call.
             </p>
             <a
-              href="tel:8014831600"
-              aria-label="Call (801) 483-1600"
+              href="tel:8663430885"
+              aria-label="Call (866) 343-0885"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cps-dark)]"
             >
-              <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+              <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
             </a>
           </div>
         </section>

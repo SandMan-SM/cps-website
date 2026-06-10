@@ -139,7 +139,7 @@ function findTrackTarget(node: EventTarget | null): HTMLElement | null {
 
 function labelFor(el: HTMLElement, href: string | null): string {
   // tel: links should always be labeled clearly so the dashboard can
-  // distinguish "Call (801) 483-1600" from generic phone strings.
+  // distinguish "Call (866) 343-0885" from generic phone strings.
   if (href?.startsWith("tel:")) return `tel:${href.replace("tel:", "")}`;
 
   const ds = el.dataset?.track;

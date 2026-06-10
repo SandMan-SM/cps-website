@@ -4,7 +4,7 @@ import HomePageClient from "@/components/HomePageClient";
 export const metadata: Metadata = {
   title: "Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
   description:
-    "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP. 3 locations — SLC, Layton, West Jordan. Call (801) 483-1600.",
+    "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP. 3 locations — SLC, Layton, West Jordan. Call (866) 343-0885.",
   keywords: [
     "neuropsychologist utah",
     "ADHD evaluation salt lake city",

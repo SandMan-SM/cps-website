@@ -4,7 +4,7 @@
 // just with their own `host` slug appended for ref-attribution.
 //
 // Order matters — rank 1 carries the "Featured" badge + amber border
-// in the visual treatment. Operator's call: CPS in slot 1 (the work
+// in the visual treatment. Operator's call: Psychological Services in slot 1 (the work
 // the rest of the federation is repair-rooted in), Fred Circle in 2
 // (the room the Society's information moves through), Live Better
 // OTD in 3 (the show + community surface).
@@ -21,7 +21,7 @@ export type SponsorBadge = "Featured" | "Sponsor" | "Partner";
 
 export type SponsorSlot = {
   // Stable host-slug of THIS sponsor — used to exclude this slot from
-  // its own site's rotation (CPS doesn't promote CPS in its own
+  // its own site's rotation (Psychological Services doesn't promote Psychological Services in its own
   // newsletter). Must match the federation case-study slug.
   slug: string;
   rank: 1 | 2 | 3;
@@ -37,10 +37,10 @@ export const FEDERATION_SPONSORS: SponsorSlot[] = [
   {
     slug: "cps",
     rank: 1,
-    brand: "CPS · The Repair",
+    brand: "Psychological Services · The Repair",
     tagline: "Forensic psychology · custody work.",
     blurb:
-      "Where families go when one tear, somewhere upstream, has fractured the system. CPS is the operator who walks people through the repair.",
+      "Where families go when one tear, somewhere upstream, has fractured the system. Psychological Services is the operator who walks people through the repair.",
     hrefBase: "https://psychandcustodyevaluations.com",
     badge: "Featured",
   },

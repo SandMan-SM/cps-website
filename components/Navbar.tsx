@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
 
-const PHONE = "(801) 483-1600";
-const PHONE_HREF = "tel:8014831600";
+const PHONE = "(866) 343-0885";
+const PHONE_HREF = "tel:8663430885";
 
 const navLinks = [
   { label: "Services", href: "/services" },

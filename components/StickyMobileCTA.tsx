@@ -13,9 +13,9 @@ export default function StickyMobileCTA({ bookHref = "/#get-help" }: StickyMobil
     >
       <div className="flex items-center gap-4 px-4 py-4">
         <a
-          href="tel:8014831600"
+          href="tel:8663430885"
           className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm transition-colors border-2 border-[var(--cps-blue)] text-[var(--cps-blue)]"
-          aria-label="Call us at (801) 483-1600"
+          aria-label="Call us at (866) 343-0885"
         >
           <Phone className="w-5 h-5" aria-hidden="true" />
           Call Now

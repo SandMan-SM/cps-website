@@ -94,8 +94,8 @@ Find your way forward — expert behavioral health care in Utah
 
         {/* Phone */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "20px" }}>
-          <span style={{ fontSize: "18px", color: "#C9A24A", fontWeight: 700 }}>(801) 483-1600</span>
-          <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.4)" }}>• psychandcustodyevaluations.com</span>
+          <span style={{ fontSize: "18px", color: "#C9A24A", fontWeight: 700 }}>24 HR HOTLINE: (866) 343-0885</span>
+          <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.4)" }}>• In partnership with We Can Help Out &amp; Utah Addiction Centers</span>
         </div>
       </div>
     ),

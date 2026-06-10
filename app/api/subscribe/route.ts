@@ -82,7 +82,7 @@ export async function POST(req: NextRequest) {
       });
 
       await transporter.sendMail({
-        from: `"CPS Newsletter" <${SMTP_USER}>`,
+        from: `"Psychological Services Newsletter" <${SMTP_USER}>`,
         to: NEWSLETTER_TO_EMAIL,
         subject: `New newsletter subscriber — ${audience}`,
         text,

@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   description:
     "HIPAA Notice of Privacy Practices for Psychological Services. Your rights regarding the use and disclosure of your protected health information.",
   openGraph: {
-    title: "HIPAA Notice of Privacy Practices | CPS Utah",
+    title: "HIPAA Notice of Privacy Practices | Psychological Services Utah",
     description:
-      "Your rights regarding use and disclosure of your protected health information at CPS.",
+      "Your rights regarding use and disclosure of your protected health information at Psychological Services.",
     url: "https://psychandcustodyevaluations.com/hipaa",
     siteName: "Psychological Services",
     type: "website",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HIPAA Notice of Privacy Practices | CPS Utah",
+    title: "HIPAA Notice of Privacy Practices | Psychological Services Utah",
     description:
-      "Your rights regarding use and disclosure of your protected health information at CPS.",
+      "Your rights regarding use and disclosure of your protected health information at Psychological Services.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com/hipaa" },
@@ -131,8 +131,8 @@ const sections: { h: string; body: React.ReactNode }[] = [
         </p>
         <p>
           To request access or amendments to your records, contact our office at{" "}
-          <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="text-[var(--cps-blue)] underline">
-            (801) 483-1600
+          <a href="tel:8663430885" aria-label="Call (866) 343-0885" className="text-[var(--cps-blue)] underline">
+            (866) 343-0885
           </a>{" "}
           or{" "}
           <a href="mailto:cps@wecanhelpout.com" aria-label="Email us at cps@wecanhelpout.com" className="text-[var(--cps-blue)] underline">
@@ -260,8 +260,8 @@ export default function HIPAANoticePage() {
                     cps@wecanhelpout.com
                   </a>{" "}
                   or{" "}
-                  <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="text-[var(--cps-blue)] underline">
-                    (801) 483-1600
+                  <a href="tel:8663430885" aria-label="Call (866) 343-0885" className="text-[var(--cps-blue)] underline">
+                    (866) 343-0885
                   </a>
                   . You may also file a complaint with:
                 </p>
@@ -305,11 +305,11 @@ export default function HIPAANoticePage() {
               <p className="text-[var(--cps-gray-600)] mb-4">Salt Lake City, UT 84106</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="tel:8014831600"
-                  aria-label="Call (801) 483-1600"
+                  href="tel:8663430885"
+                  aria-label="Call (866) 343-0885"
                   className="inline-flex items-center gap-2 text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] font-semibold transition-colors"
                 >
-                  <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
+                  <Phone className="w-4 h-4" aria-hidden="true" /> (866) 343-0885
                 </a>
                 <a
                   href="mailto:cps@wecanhelpout.com"

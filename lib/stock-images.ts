@@ -1,5 +1,5 @@
 /**
- * Curated Unsplash stock image registry for CPS service, blog, and marketing
+ * Curated Unsplash stock image registry for Psychological Services service, blog, and marketing
  * pages. Every image has been visually inspected for thematic fit.
  *
  * All URLs point to images.unsplash.com (already allow-listed in next.config.ts).

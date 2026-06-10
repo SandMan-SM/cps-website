@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About CPS | Utah's Trusted Behavioral Health Practice Since 1986",
+    title: "About Psychological Services | Utah's Trusted Behavioral Health Practice Since 1986",
     description:
       "Expert psychologists and therapists across Salt Lake City, Layton, and West Jordan. Evidence-based care since 1986.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://psychandcustodyevaluations.com/about" },
 };
 
-const PHONE = "(801) 483-1600";
-const PHONE_HREF = "tel:8014831600";
+const PHONE = "(866) 343-0885";
+const PHONE_HREF = "tel:8663430885";
 
 const values = [
   {
@@ -51,7 +51,7 @@ const values = [
     icon: Users,
     title: "Independent Expert Practitioners",
     description:
-      "Each professional at CPS is a highly trained, independent practitioner — not a production-line provider. You get a specialist, not a generalist.",
+      "Each professional at Psychological Services is a highly trained, independent practitioner — not a production-line provider. You get a specialist, not a generalist.",
   },
   {
     icon: Heart,
@@ -119,7 +119,7 @@ export default function AboutPage() {
               <span className="text-[var(--cps-teal)]">Psychological Services</span>
             </h1>
             <p className="text-xl text-[var(--cps-gray-400)] leading-relaxed mb-8">
-              For nearly 40 years, CPS has been Utah&apos;s home for expert psychological evaluations,
+              For nearly 40 years, Psychological Services has been Utah&apos;s home for expert psychological evaluations,
               evidence-based therapy, and integrated behavioral health. We&apos;re not a franchise or
               a health system — we&apos;re a community of exceptional independent practitioners united
               by a commitment to real outcomes.
@@ -127,7 +127,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href={PHONE_HREF}
-                aria-label="Call (801) 483-1600"
+                aria-label="Call (866) 343-0885"
                 className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
@@ -190,7 +190,7 @@ export default function AboutPage() {
                   client outcomes — not just symptom management, but real life improvement.
                 </p>
                 <p>
-                  Today, CPS spans three Wasatch Front locations and serves children, adolescents,
+                  Today, Psychological Services spans three Wasatch Front locations and serves children, adolescents,
                   and adults across the full spectrum of behavioral health needs — from
                   neuropsychological evaluations and custody assessments to intensive outpatient
                   programs, Ketamine therapy, and telehealth.
@@ -228,15 +228,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The CPS Approach */}
+      {/* The Psychological Services Approach */}
       <section className="py-12 md:py-16 bg-[var(--cps-light)]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--cps-gray-900)] mb-4">
-              The CPS Approach
+              The Psychological Services Approach
             </h2>
             <p className="text-[var(--cps-gray-500)] text-lg">
-              What makes CPS different isn&apos;t one thing — it&apos;s the way all these
+              What makes Psychological Services different isn&apos;t one thing — it&apos;s the way all these
               principles work together.
             </p>
           </div>
@@ -292,7 +292,7 @@ export default function AboutPage() {
                   <Phone className="w-5 h-5 text-[var(--cps-blue)]" aria-hidden="true" />
                   <Link
                     href={PHONE_HREF}
-                    aria-label="Call (801) 483-1600 to schedule an evaluation"
+                    aria-label="Call (866) 343-0885 to schedule an evaluation"
                     className="text-[var(--cps-blue)] font-semibold hover:text-[var(--cps-blue-hover)] transition-colors"
                   >
                     {PHONE}
@@ -334,7 +334,7 @@ export default function AboutPage() {
               <div key={loc.name} className="bg-[var(--cps-white)] rounded-2xl overflow-hidden shadow-sm">
                 <div className="h-56 bg-[var(--cps-gray-100)]">
                   <iframe
-                    title={`Map of CPS ${loc.name} office`}
+                    title={`Map of Psychological Services ${loc.name} office`}
                     src={`https://maps.google.com/maps?q=${loc.query}&output=embed&z=15`}
                     width="100%" height="100%"
                     loading="lazy"
@@ -365,7 +365,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href={PHONE_HREF}
-              aria-label="Call (801) 483-1600"
+              aria-label="Call (866) 343-0885"
               className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />

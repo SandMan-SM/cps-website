@@ -109,11 +109,11 @@ export default async function AudiencePage({
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
               <a
-                href="tel:8014831600"
-                aria-label="Call us at (801) 483-1600"
+                href="tel:8663430885"
+                aria-label="Call us at (866) 343-0885"
                 className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent border-2 border-white text-[var(--cps-white)] font-bold rounded-xl hover:bg-[var(--cps-white)]/10 transition-colors text-lg"
               >
-                <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+                <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
               </a>
             </div>
           </div>
@@ -226,11 +226,11 @@ export default async function AudiencePage({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:8014831600"
-                aria-label="Call us at (801) 483-1600"
+                href="tel:8663430885"
+                aria-label="Call us at (866) 343-0885"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg"
               >
-                <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+                <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
               </a>
               <a
                 href="mailto:cps@wecanhelpout.com"

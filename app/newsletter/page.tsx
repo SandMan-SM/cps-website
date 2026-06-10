@@ -10,9 +10,9 @@ import { Mail, Brain, Users, GraduationCap, Scale, CheckCircle2 } from "lucide-r
 export const metadata: Metadata = {
   title: "Newsletter — Evidence-Based Updates for Caregivers & Referrers",
   description:
-    "Monthly newsletter from CPS Utah: evaluation-prep guides, what new research means for your family, and updates for attorneys, schools, and primary-care referrers.",
+    "Monthly newsletter from Psychological Services Utah: evaluation-prep guides, what new research means for your family, and updates for attorneys, schools, and primary-care referrers.",
   openGraph: {
-    title: "CPS Newsletter — Evidence-Based Behavioral Health Updates",
+    title: "Psychological Services Newsletter — Evidence-Based Behavioral Health Updates",
     description:
       "Monthly newsletter from Psychological Services. Practical, HIPAA-safe guidance for caregivers, attorneys, and referrers.",
     url: "https://psychandcustodyevaluations.com/newsletter",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CPS Newsletter",
+    title: "Psychological Services Newsletter",
     description:
-      "Monthly, evidence-based behavioral-health updates from CPS Utah. No spam. Unsubscribe anytime.",
+      "Monthly, evidence-based behavioral-health updates from Psychological Services Utah. No spam. Unsubscribe anytime.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com/newsletter" },
@@ -72,7 +72,7 @@ export default function NewsletterPage() {
               Evidence-based behavioral-health updates, once a month.
             </h1>
             <p className="body-large text-[var(--cps-white)]/80 mb-10 max-w-[60ch] mx-auto">
-              Practical guidance from CPS Utah for parents navigating a new diagnosis, attorneys
+              Practical guidance from Psychological Services Utah for parents navigating a new diagnosis, attorneys
               interpreting a forensic report, and clinicians referring for evaluation. HIPAA-safe.
               Never marketing fluff.
             </p>
@@ -140,14 +140,14 @@ export default function NewsletterPage() {
               Trusted by Utah families, courts, and clinicians since 1986.
             </h2>
             <p className="text-[var(--cps-gray-500)] body-large max-w-[60ch] mx-auto mb-8">
-              Every issue is written and reviewed by licensed CPS clinicians. No ghostwriters,
+              Every issue is written and reviewed by licensed Psychological Services clinicians. No ghostwriters,
               no outsourced content mills.
             </p>
           </div>
         </section>
 
         {/* Federation sponsor rotation — Fred Circle + Live Better OTD
-            (CPS itself is filtered out by host=cps so no self-promo).
+            (Psychological Services itself is filtered out by host=cps so no self-promo).
             Synced from Omni AI Website canonical lib + component. */}
         <section className="py-12 md:py-20">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">

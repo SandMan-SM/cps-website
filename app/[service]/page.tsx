@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${svc.metaTitle} | CPS`,
+      title: `${svc.metaTitle} | Psychological Services`,
       description: svc.metaDescription,
       images: [`https://psychandcustodyevaluations.com/twitter-image`],
     },

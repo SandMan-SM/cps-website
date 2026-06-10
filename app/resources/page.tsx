@@ -19,11 +19,11 @@ import {
 export const metadata: Metadata = {
   title: "Patient Resources & Forms",
   description:
-    "Prepare for your CPS appointment: what to bring, insurance accepted, evaluation-day checklist, billing info, patient rights, and HIPAA notice.",
+    "Prepare for your Psychological Services appointment: what to bring, insurance accepted, evaluation-day checklist, billing info, patient rights, and HIPAA notice.",
   openGraph: {
     title: "Patient Resources & Forms | Psychological Services",
     description:
-      "Prepare for your CPS appointment: what to bring, insurance accepted, evaluation-day checklist, billing info, and patient rights.",
+      "Prepare for your Psychological Services appointment: what to bring, insurance accepted, evaluation-day checklist, billing info, and patient rights.",
     url: "https://psychandcustodyevaluations.com/resources",
     siteName: "Psychological Services",
     type: "website",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Patient Resources & Forms | CPS Utah",
+    title: "Patient Resources & Forms | Psychological Services Utah",
     description:
-      "Insurance info, patient forms, evaluation-day checklist, and patient rights for CPS patients.",
+      "Insurance info, patient forms, evaluation-day checklist, and patient rights for Psychological Services patients.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com/resources" },
@@ -131,11 +131,11 @@ export default function ResourcesPage() {
                 <CreditCard className="w-5 h-5" aria-hidden="true" /> Insurance
               </a>
               <a
-                href="tel:8014831600"
-                aria-label="Call (801) 483-1600"
+                href="tel:8663430885"
+                aria-label="Call (866) 343-0885"
                 className="inline-flex items-center gap-2 px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] font-semibold rounded-xl hover:bg-[var(--cps-blue-hover)] transition-colors"
               >
-                <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+                <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
               </a>
             </div>
           </div>
@@ -349,11 +349,11 @@ export default function ResourcesPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="tel:8014831600"
-                    aria-label="Call (801) 483-1600"
+                    href="tel:8663430885"
+                    aria-label="Call (866) 343-0885"
                     className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors"
                   >
-                    <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+                    <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
                   </a>
                   <a
                     href="mailto:cps@wecanhelpout.com"

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!svc || !loc) return {};
 
   const title = `${svc.title} in ${loc.name}`;
-  const description = `${svc.metaDescription.replace(/(801) 483-1600/, "")} Serving ${loc.name}${loc.county ? ` (${loc.county})` : ""}. Nearest office: ${loc.nearestOffice}. Call (801) 483-1600.`;
+  const description = `${svc.metaDescription.replace(/(866) 343-0885/, "")} Serving ${loc.name}${loc.county ? ` (${loc.county})` : ""}. Nearest office: ${loc.nearestOffice}. Call (866) 343-0885.`;
 
   return {
     title,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | CPS`,
+      title: `${title} | Psychological Services`,
       description,
       images: [`https://psychandcustodyevaluations.com/twitter-image`],
     },

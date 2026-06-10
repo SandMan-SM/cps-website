@@ -21,8 +21,8 @@ export const audiences: AudienceData[] = [
     h1: "Psychological Evaluations for Children, Teens & Families",
     title: "For Parents & Caregivers — Evaluations in Utah",
     metaDescription:
-      "CPS Utah helps parents get clear answers for their child: ADHD testing, autism assessments, learning-disability evaluations, and family-court support — since 1986.",
-    hook: "You've been told something is off, passed between providers, or handed a vague label. CPS delivers a clear, evidence-based evaluation with a plain-language report you can actually use — with schools, with pediatricians, and with your family.",
+      "Psychological Services Utah helps parents get clear answers for their child: ADHD testing, autism assessments, learning-disability evaluations, and family-court support — since 1986.",
+    hook: "You've been told something is off, passed between providers, or handed a vague label. Psychological Services delivers a clear, evidence-based evaluation with a plain-language report you can actually use — with schools, with pediatricians, and with your family.",
     bullets: [
       "ADHD and autism assessments for ages 2 through adult",
       "Learning-disability and IQ testing that schools accept for IEP/504",
@@ -55,11 +55,11 @@ export const audiences: AudienceData[] = [
     faq: [
       {
         q: "Will my child's school accept the report?",
-        a: "Yes. CPS reports are routinely used by Utah public and private schools for IEP, 504, and gifted-program decisions.",
+        a: "Yes. Psychological Services reports are routinely used by Utah public and private schools for IEP, 504, and gifted-program decisions.",
       },
       {
         q: "How soon can we be seen?",
-        a: "Most families schedule an initial consult within 2–3 weeks. Call (801) 483-1600 for current availability.",
+        a: "Most families schedule an initial consult within 2–3 weeks. Call (866) 343-0885 for current availability.",
       },
       {
         q: "Is insurance usually covered?",
@@ -76,8 +76,8 @@ export const audiences: AudienceData[] = [
     h1: "Court-Accepted Custody & Forensic Psychological Evaluations",
     title: "For Attorneys — Custody & Forensic Evaluations Utah",
     metaDescription:
-      "CPS provides court-accepted custody, parental-fitness, and forensic psychological evaluations for Utah family and criminal courts. Dr. Szykula has testified in Utah family court for decades.",
-    hook: "You need an evaluator whose report will hold up on cross and whose testimony carries weight with Utah judges. CPS has delivered court-accepted evaluations since 1986, with founder Steven Szykula, Ph.D. actively testifying in Utah family court.",
+      "Psychological Services provides court-accepted custody, parental-fitness, and forensic psychological evaluations for Utah family and criminal courts. Dr. Szykula has testified in Utah family court for decades.",
+    hook: "You need an evaluator whose report will hold up on cross and whose testimony carries weight with Utah judges. Psychological Services has delivered court-accepted evaluations since 1986, with founder Steven Szykula, Ph.D. actively testifying in Utah family court.",
     bullets: [
       "Child-custody evaluations per Utah Code § 30-3-34 and related rules",
       "Parental-fitness and substance-abuse evaluations",
@@ -116,7 +116,7 @@ export const audiences: AudienceData[] = [
         a: "Yes. We can bill through the attorney's office or directly to the party, per your preference.",
       },
     ],
-    ctaHeadline: "Retain CPS for your next evaluation.",
+    ctaHeadline: "Retain Psychological Services for your next evaluation.",
     ctaBody:
       "Call our intake line to discuss your case, confirm conflicts, and schedule an evaluator.",
   },
@@ -126,8 +126,8 @@ export const audiences: AudienceData[] = [
     h1: "Evaluations for IEP, 504, and Gifted Placement Decisions",
     title: "For Schools & Educators — Psychological Evaluations Utah",
     metaDescription:
-      "CPS partners with Utah schools and districts to deliver ADHD, autism, learning-disability, and cognitive evaluations that support IEP, 504, and gifted-placement decisions.",
-    hook: "School psych teams are stretched thin and wait-times for outside evaluations can derail a student's year. CPS turns around evidence-based reports that Utah schools can actually act on.",
+      "Psychological Services partners with Utah schools and districts to deliver ADHD, autism, learning-disability, and cognitive evaluations that support IEP, 504, and gifted-placement decisions.",
+    hook: "School psych teams are stretched thin and wait-times for outside evaluations can derail a student's year. Psychological Services turns around evidence-based reports that Utah schools can actually act on.",
     bullets: [
       "Learning-disability evaluations with specific recommendations",
       "ADHD and executive-function testing for Tier-3 students",
@@ -166,7 +166,7 @@ export const audiences: AudienceData[] = [
         a: "Yes. Our clinicians can provide professional-development sessions on behavioral-health topics.",
       },
     ],
-    ctaHeadline: "Partner with CPS for faster, cleaner evaluations.",
+    ctaHeadline: "Partner with Psychological Services for faster, cleaner evaluations.",
     ctaBody:
       "Contact us to discuss district needs, bulk-evaluation logistics, and turnaround.",
   },
@@ -176,8 +176,8 @@ export const audiences: AudienceData[] = [
     h1: "Fitness-for-Duty & Pre-Employment Psychological Evaluations",
     title: "For Employers — Fitness-for-Duty Evaluations Utah",
     metaDescription:
-      "CPS performs ADA-compliant fitness-for-duty, pre-employment psychological, and public-safety evaluations for Utah employers — police, fire, transit, healthcare, and more.",
-    hook: "When an employee's performance or safety is in question, you need an evaluator who understands ADA compliance and the specific pressures of public-safety and regulated roles. CPS has conducted these evaluations for Utah employers for four decades.",
+      "Psychological Services performs ADA-compliant fitness-for-duty, pre-employment psychological, and public-safety evaluations for Utah employers — police, fire, transit, healthcare, and more.",
+    hook: "When an employee's performance or safety is in question, you need an evaluator who understands ADA compliance and the specific pressures of public-safety and regulated roles. Psychological Services has conducted these evaluations for Utah employers for four decades.",
     bullets: [
       "Fitness-for-duty evaluations with clear risk determinations",
       "Pre-employment psychological screening for police, fire, and public safety",
@@ -213,7 +213,7 @@ export const audiences: AudienceData[] = [
     ],
     ctaHeadline: "Refer an employee or start a contract.",
     ctaBody:
-      "Call CPS to scope the evaluation, confirm timing, and set up billing with your HR team.",
+      "Call Psychological Services to scope the evaluation, confirm timing, and set up billing with your HR team.",
   },
   {
     slug: "referrers",
@@ -221,8 +221,8 @@ export const audiences: AudienceData[] = [
     h1: "Referral Pathway for Primary-Care & Behavioral Clinicians",
     title: "For Referring Clinicians — Behavioral Health Evaluations Utah",
     metaDescription:
-      "Refer patients to CPS for neuropsych, ADHD, autism, custody, and treatment-resistant depression evaluations. Fast benefits verification and clean reports for Utah PCPs, psychiatrists, and therapists.",
-    hook: "You're seeing a patient who needs a level of diagnostic clarity your practice can't deliver in a 20-minute slot. CPS is the referral endpoint — evidence-based, HIPAA-safe, and responsive to your schedule.",
+      "Refer patients to Psychological Services for neuropsych, ADHD, autism, custody, and treatment-resistant depression evaluations. Fast benefits verification and clean reports for Utah PCPs, psychiatrists, and therapists.",
+    hook: "You're seeing a patient who needs a level of diagnostic clarity your practice can't deliver in a 20-minute slot. Psychological Services is the referral endpoint — evidence-based, HIPAA-safe, and responsive to your schedule.",
     bullets: [
       "Fax, phone, or secure portal referrals accepted",
       "Benefits verification begun within 1 business day",
@@ -250,7 +250,7 @@ export const audiences: AudienceData[] = [
     faq: [
       {
         q: "How do I send a referral?",
-        a: "Fax clinical notes to (801) 483-1610 or call (801) 483-1600 to speak with intake. We can also set up a secure portal if your group refers regularly.",
+        a: "Fax clinical notes to (801) 483-1610 or call (866) 343-0885 to speak with intake. We can also set up a secure portal if your group refers regularly.",
       },
       {
         q: "Will I receive a copy of the report?",
@@ -261,7 +261,7 @@ export const audiences: AudienceData[] = [
         a: "Most patients are scheduled within 2–3 weeks of referral receipt.",
       },
     ],
-    ctaHeadline: "Set up a referral lane with CPS.",
+    ctaHeadline: "Set up a referral lane with Psychological Services.",
     ctaBody:
       "Call our intake line or send a secure fax to start. We'll confirm receipt and share back-channel with your team.",
   },

@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Geist, Playfair_Display } from "next/font/google";
 import { OrganizationSchema, PhysicianSchema, LocalBusinessSchema } from "@/components/JsonLd";
 import CpsTracker from "@/components/CpsTracker";
+import HotlineBanner from "@/components/HotlineBanner";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Psychological Services",
   },
   description:
-    "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP. 3 locations — SLC, Layton, West Jordan. Call (801) 483-1600.",
+    "Utah's trusted behavioral health practice since 1986. Neuropsychological testing, ADHD evaluations, autism assessments, custody evaluations, ketamine therapy & IOP. 3 locations — SLC, Layton, West Jordan. Call (866) 343-0885.",
   keywords: [
     "neuropsychologist utah",
     "ADHD evaluation salt lake city",
@@ -76,9 +77,10 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <CpsTracker />
         </Suspense>
+        <HotlineBanner />
         {children}
         {/* Cross-portfolio sponsor embed — Fred (sponsor) + Live Better
-            Podcast (partnership) + CPS feature. Mount lives on every
+            Podcast (partnership) + Psychological Services feature. Mount lives on every
             page; the embed script populates it client-side. */}
         <div id="omni-sponsor" data-slug="cps" data-brand="Psychological Services" />
         <script src="https://omnileadsagi.com/embed/sponsor.js" defer />

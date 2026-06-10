@@ -63,12 +63,12 @@ const POST_CONTENT: Record<
       "You will complete standardized tests assessing memory, attention, processing speed, language, and executive function.",
       "Results take 2–4 weeks and are delivered in a detailed written report with treatment recommendations.",
       "Good sleep and a meal before testing significantly improve your performance.",
-      "CPS accepts most major insurance plans — including Medicare — and offers self-pay options.",
+      "Psychological Services accepts most major insurance plans — including Medicare — and offers self-pay options.",
     ],
     faq: [
       {
         q: "Do I need a referral for a neuropsychological evaluation?",
-        a: "A referral is not always required for scheduling. However, some insurance plans require one for coverage. Call our office at (801) 483-1600 and we'll verify your benefits before your first appointment.",
+        a: "A referral is not always required for scheduling. However, some insurance plans require one for coverage. Call our office at (866) 343-0885 and we'll verify your benefits before your first appointment.",
       },
       {
         q: "How is a neuropsychological evaluation different from a regular psychological evaluation?",
@@ -184,7 +184,7 @@ const POST_CONTENT: Record<
 
         <h3>Report Turnaround Time</h3>
         <p>
-          At CPS, most reports are completed within 2–4 weeks of your final testing session. Complex cases may take slightly longer. We'll keep you informed.
+          At Psychological Services, most reports are completed within 2–4 weeks of your final testing session. Complex cases may take slightly longer. We'll keep you informed.
         </p>
 
         <h3>Feedback Appointment</h3>
@@ -210,9 +210,9 @@ const POST_CONTENT: Record<
           This report is your documentation. It can be used for IEP/504 plans, disability applications, medical decision-making, legal proceedings, and treatment planning. The National Institutes of Health notes that neuropsychological reports play a critical role in establishing eligibility for educational and vocational supports.<sup><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4827867/" target="_blank" rel="noopener noreferrer" aria-label="Source 2: National Institutes of Health (opens in new tab)" className="text-[var(--cps-blue)] hover:underline">2</a></sup>
         </p>
 
-        <h2>Who Performs Neuropsychological Evaluations at CPS?</h2>
+        <h2>Who Performs Neuropsychological Evaluations at Psychological Services?</h2>
         <p>
-          At Psychological Services, neuropsychological evaluations are performed by licensed doctoral-level psychologists with specialized training in neuropsychology. CPS has been serving Utah patients since 1986 across three locations:
+          At Psychological Services, neuropsychological evaluations are performed by licensed doctoral-level psychologists with specialized training in neuropsychology. Psychological Services has been serving Utah patients since 1986 across three locations:
         </p>
         <ul>
           <li>Salt Lake City — 1208 East 3300 South</li>
@@ -242,7 +242,7 @@ const POST_CONTENT: Record<
 
         <h2>Insurance and Costs</h2>
         <p>
-          CPS accepts most major insurance plans, including BlueCross BlueShield, Aetna, UnitedHealthcare, Cigna, Medicare, and many others. Our billing team verifies your benefits before your appointment at no cost to you. Self-pay rates and payment plans are available for uninsured patients. Call us at <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="text-[var(--cps-blue)] hover:underline font-semibold">(801) 483-1600</a> to check your coverage.
+          Psychological Services accepts most major insurance plans, including BlueCross BlueShield, Aetna, UnitedHealthcare, Cigna, Medicare, and many others. Our billing team verifies your benefits before your appointment at no cost to you. Self-pay rates and payment plans are available for uninsured patients. Call us at <a href="tel:8663430885" aria-label="Call (866) 343-0885" className="text-[var(--cps-blue)] hover:underline font-semibold">(866) 343-0885</a> to check your coverage.
         </p>
 
         <div className="rounded-xl p-6 my-8" style={{ background: "color-mix(in srgb, var(--cps-warning) 10%, white)", border: "1px solid color-mix(in srgb, var(--cps-warning) 30%, white)" }}>
@@ -267,7 +267,7 @@ const POST_CONTENT: Record<
     faq: [
       {
         q: "Can I get an ADHD diagnosis as an adult in Utah?",
-        a: "Yes. CPS evaluates adults for ADHD at our Salt Lake City, Layton, and West Jordan locations. Adult ADHD diagnosis requires a comprehensive evaluation — call (801) 483-1600 to schedule.",
+        a: "Yes. Psychological Services evaluates adults for ADHD at our Salt Lake City, Layton, and West Jordan locations. Adult ADHD diagnosis requires a comprehensive evaluation — call (866) 343-0885 to schedule.",
       },
       {
         q: "What is the difference between ADHD and anxiety or depression?",
@@ -283,7 +283,7 @@ const POST_CONTENT: Record<
       },
       {
         q: "What treatments are available for adult ADHD?",
-        a: "Evidence-based treatments for adult ADHD include stimulant medications (Adderall, Ritalin, Vyvanse), non-stimulant medications (Strattera, Wellbutrin), cognitive-behavioral therapy (CBT), ADHD coaching, and workplace accommodations. CPS offers evaluation, medication management, and therapy.",
+        a: "Evidence-based treatments for adult ADHD include stimulant medications (Adderall, Ritalin, Vyvanse), non-stimulant medications (Strattera, Wellbutrin), cognitive-behavioral therapy (CBT), ADHD coaching, and workplace accommodations. Psychological Services offers evaluation, medication management, and therapy.",
       },
     ],
     body: (
@@ -353,7 +353,7 @@ const POST_CONTENT: Record<
           A late diagnosis is not a personal failure. It reflects a diagnostic gap that affected an entire generation. The good news: effective treatment works at any age, and understanding the neuroscience behind your challenges can be profoundly relieving.
         </p>
 
-        <h2>The Adult ADHD Evaluation Process at CPS</h2>
+        <h2>The Adult ADHD Evaluation Process at Psychological Services</h2>
         <p>
           A proper ADHD evaluation is not a 10-minute questionnaire. At Psychological Services, our adult ADHD evaluations are comprehensive and multi-method, typically including:
         </p>
@@ -383,7 +383,7 @@ const POST_CONTENT: Record<
           A diagnosis is a starting point, not a finish line. Common next steps include:
         </p>
         <ul>
-          <li><strong>Medication evaluation</strong> — Stimulant medications (Adderall, Vyvanse, Ritalin) and non-stimulants (Strattera, Wellbutrin) are effective for most adults with ADHD. CPS offers medication management.</li>
+          <li><strong>Medication evaluation</strong> — Stimulant medications (Adderall, Vyvanse, Ritalin) and non-stimulants (Strattera, Wellbutrin) are effective for most adults with ADHD. Psychological Services offers medication management.</li>
           <li><strong>Psychotherapy</strong> — Cognitive-behavioral therapy (CBT) adapted for ADHD addresses procrastination, emotional regulation, and time management skills.</li>
           <li><strong>Workplace accommodations</strong> — Your evaluation report can support ADA accommodation requests for extended deadlines, reduced distraction workspaces, or flexible scheduling.</li>
           <li><strong>Academic accommodations</strong> — If you're in higher education, your report supports extended testing time, quiet testing rooms, and other supports.</li>
@@ -407,7 +407,7 @@ const POST_CONTENT: Record<
       "Screening tools like the M-CHAT identify risk; diagnostic tools like the ADOS-2 and ADI-R confirm diagnosis.",
       "A multi-method evaluation combines direct observation, parent/caregiver interviews, rating scales, and cognitive testing.",
       "Comprehensive assessment leads to more accurate diagnosis, better IEP supports, and more targeted treatment.",
-      "CPS uses the ADOS-2 for children, teens, and adults across three Utah locations.",
+      "Psychological Services uses the ADOS-2 for children, teens, and adults across three Utah locations.",
     ],
     faq: [
       {
@@ -416,7 +416,7 @@ const POST_CONTENT: Record<
       },
       {
         q: "Can adults be assessed with the ADOS-2?",
-        a: "Yes. Module 4 of the ADOS-2 is specifically designed for verbally fluent adolescents and adults. Many adults seek autism assessment for the first time in adulthood, and CPS evaluates adults of all ages.",
+        a: "Yes. Module 4 of the ADOS-2 is specifically designed for verbally fluent adolescents and adults. Many adults seek autism assessment for the first time in adulthood, and Psychological Services evaluates adults of all ages.",
       },
       {
         q: "My child passed the M-CHAT but I still have concerns. Should I pursue a full evaluation?",
@@ -427,8 +427,8 @@ const POST_CONTENT: Record<
         a: "No. The ADOS-2 provides a score that indicates whether autism spectrum features are present, but the final diagnosis integrates all evaluation data — history, cognitive testing, observations, and clinical judgment. The ADOS-2 is one piece of the diagnostic picture.",
       },
       {
-        q: "Will the CPS report be accepted by our school district for IEP eligibility?",
-        a: "Yes. CPS evaluation reports are accepted by Utah school districts for special education eligibility determinations under IDEA. Our reports meet the documentation standards required for IEP and 504 planning.",
+        q: "Will the Psychological Services report be accepted by our school district for IEP eligibility?",
+        a: "Yes. Psychological Services evaluation reports are accepted by Utah school districts for special education eligibility determinations under IDEA. Our reports meet the documentation standards required for IEP and 504 planning.",
       },
     ],
     body: (
@@ -504,7 +504,7 @@ const POST_CONTENT: Record<
           Children who present differently in clinic versus home — which is common in autism — may be missed by evaluators who rely solely on a single observation session. The multi-method approach captures the full picture.
         </p>
 
-        <h2>What to Expect at a CPS Autism Evaluation</h2>
+        <h2>What to Expect at a Psychological Services Autism Evaluation</h2>
         <p>
           At Psychological Services, autism evaluations are conducted by licensed doctoral-level psychologists trained in the ADOS-2 and comprehensive neurodevelopmental assessment. Our evaluations typically include:
         </p>
@@ -537,7 +537,7 @@ const POST_CONTENT: Record<
       "Evaluators assess parenting ability, the parent-child relationship, each parent's mental health, and the child's needs.",
       "The process typically takes 2–4 months and includes interviews, psychological testing, home visits, and collateral contacts.",
       "Parents should cooperate fully and avoid coaching children or undermining the other parent.",
-      "CPS has produced court-accepted custody evaluation reports in Utah since 1986.",
+      "Psychological Services has produced court-accepted custody evaluation reports in Utah since 1986.",
     ],
     faq: [
       {
@@ -546,11 +546,11 @@ const POST_CONTENT: Record<
       },
       {
         q: "How long does a custody evaluation take?",
-        a: "Most custody evaluations at CPS take 2–4 months from intake to report completion. Delays can occur when parties are unresponsive, records take time to gather, or additional testing is needed.",
+        a: "Most custody evaluations at Psychological Services take 2–4 months from intake to report completion. Delays can occur when parties are unresponsive, records take time to gather, or additional testing is needed.",
       },
       {
         q: "Can I choose my own evaluator, or does the court assign one?",
-        a: "In Utah, the court typically approves or appoints the evaluator. Parties may agree on an evaluator and request court approval. CPS is available for court-appointed and stipulated evaluations.",
+        a: "In Utah, the court typically approves or appoints the evaluator. Parties may agree on an evaluator and request court approval. Psychological Services is available for court-appointed and stipulated evaluations.",
       },
       {
         q: "Will the evaluator speak to my child?",
@@ -617,7 +617,7 @@ const POST_CONTENT: Record<
 
         <h3>Step 1: Court Appointment and Intake</h3>
         <p>
-          The court issues an order appointing the evaluator and outlining the scope of the evaluation. CPS coordinates intake with both parties, obtains necessary consents and releases, and collects an initial fee retainer.
+          The court issues an order appointing the evaluator and outlining the scope of the evaluation. Psychological Services coordinates intake with both parties, obtains necessary consents and releases, and collects an initial fee retainer.
         </p>
 
         <h3>Step 2: Individual Parent Interviews</h3>
@@ -632,7 +632,7 @@ const POST_CONTENT: Record<
 
         <h3>Step 4: Child Interviews and Observations</h3>
         <p>
-          The evaluator interviews the child (age and developmentally appropriate) and observes parent-child interactions with each parent. For young children, play-based observation methods are used. Observation sessions typically occur at the CPS office.
+          The evaluator interviews the child (age and developmentally appropriate) and observes parent-child interactions with each parent. For young children, play-based observation methods are used. Observation sessions typically occur at the Psychological Services office.
         </p>
 
         <h3>Step 5: Home Visits (if ordered)</h3>
@@ -647,7 +647,7 @@ const POST_CONTENT: Record<
 
         <h3>Step 7: Records Review</h3>
         <p>
-          Medical records, school records, police or court records, CPS records, and prior psychological evaluations are reviewed as part of a comprehensive evaluation.
+          Medical records, school records, police or court records, Psychological Services records, and prior psychological evaluations are reviewed as part of a comprehensive evaluation.
         </p>
 
         <h3>Step 8: Written Report</h3>
@@ -854,11 +854,11 @@ export default async function BlogPostPage({
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="tel:8014831600"
-                aria-label="Call (801) 483-1600"
+                href="tel:8663430885"
+                aria-label="Call (866) 343-0885"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-semibold rounded-xl transition-colors"
               >
-                <Phone className="w-4 h-4" aria-hidden="true" /> (801) 483-1600
+                <Phone className="w-4 h-4" aria-hidden="true" /> (866) 343-0885
               </a>
               <Link
                 href="/#contact"

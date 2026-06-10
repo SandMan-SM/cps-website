@@ -1,7 +1,7 @@
 "use client";
 
 // SponsorRotation — canonical 3-card cross-portfolio block that
-// ships on every federation site's newsletter. CPS featured, Fred
+// ships on every federation site's newsletter. Psychological Services featured, Fred
 // Circle in slot 2, Live Better OTD in slot 3. Visual treatment is
 // theme-tokenized via CSS variables (--gold, --line, --background,
 // --foreground, --silver, --silver-soft, --silver-deep, --void-2)

@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Our Team | Psychologists, Therapists & Psychiatrists | CPS Utah",
+  title: "Our Team | Psychologists, Therapists & Psychiatrists | Psychological Services Utah",
   description:
     "Meet the expert team at Psychological Services — licensed psychologists, clinical social workers, nurse practitioners, and therapists serving Utah since 1986. Led by Dr. Steven Szykula, PhD.",
   openGraph: {
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://psychandcustodyevaluations.com/team" },
 };
 
-const PHONE = "(801) 483-1600";
-const PHONE_HREF = "tel:8014831600";
+const PHONE = "(866) 343-0885";
+const PHONE_HREF = "tel:8663430885";
 
 interface Clinician {
   name: string;
@@ -125,7 +125,7 @@ const team: Clinician[] = [
     role: "Licensed Clinical Social Worker",
     photo: "https://wecanhelpout.com/wp-content/uploads/2025/11/Protzman_Linda_Headshot-e1764187334933.jpg",
     initials: "LP",
-    bio: "Linda exhibits high energy, a warm personality, and a great sense of humor. After more than 20 years of practice, she continues to receive referrals from former clients who recommend her to their own families and friends — a testament to the lasting impact of her work. Linda provides evidence-based therapy services to individuals of all ages for most mental health conditions and life challenges. She is widely regarded as one of the most skilled therapists on the CPS team.",
+    bio: "Linda exhibits high energy, a warm personality, and a great sense of humor. After more than 20 years of practice, she continues to receive referrals from former clients who recommend her to their own families and friends — a testament to the lasting impact of her work. Linda provides evidence-based therapy services to individuals of all ages for most mental health conditions and life challenges. She is widely regarded as one of the most skilled therapists on the Psychological Services team.",
     specialties: [
       "Depression & Anxiety",
       "PTSD & Trauma",
@@ -369,7 +369,7 @@ export default function TeamPage() {
               <span className="text-[var(--cps-teal)]">Clinical Team</span>
             </h1>
             <p className="text-xl text-[var(--cps-gray-400)] leading-relaxed mb-8">
-              Every clinician at CPS is a highly trained, independent expert — not an
+              Every clinician at Psychological Services is a highly trained, independent expert — not an
               interchangeable provider. From our founder Dr. Szykula to our newest practitioners,
               the standard is the same: evidence-based care, measurable outcomes, and genuine
               commitment to your wellbeing.
@@ -377,7 +377,7 @@ export default function TeamPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href={PHONE_HREF}
-                aria-label="Call (801) 483-1600 to schedule"
+                aria-label="Call (866) 343-0885 to schedule"
                 className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
@@ -385,10 +385,10 @@ export default function TeamPage() {
               </Link>
               <Link
                 href="/about"
-                aria-label="About CPS — Learn about our practice"
+                aria-label="About Psychological Services — Learn about our practice"
                 className="inline-flex items-center gap-2 border border-white/30 hover:border-[var(--cps-teal)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
               >
-                About CPS
+                About Psychological Services
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
             </div>
@@ -429,13 +429,13 @@ export default function TeamPage() {
               Additional Specialists Available
             </h3>
             <p className="text-[var(--cps-gray-500)] max-w-xl mx-auto mb-6">
-              CPS has 20+ independent practitioners across our three locations, including
+              Psychological Services has 20+ independent practitioners across our three locations, including
               additional therapists, counselors, and support staff. Call us to discuss your specific
               needs and we&apos;ll match you with the right specialist.
             </p>
             <Link
               href={PHONE_HREF}
-              aria-label="Call (801) 483-1600"
+              aria-label="Call (866) 343-0885"
               className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
@@ -490,7 +490,7 @@ export default function TeamPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href={PHONE_HREF}
-              aria-label="Call (801) 483-1600"
+              aria-label="Call (866) 343-0885"
               className="inline-flex items-center gap-2 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
@@ -498,10 +498,10 @@ export default function TeamPage() {
             </Link>
             <Link
               href="/about"
-              aria-label="Learn about CPS"
+              aria-label="Learn about Psychological Services"
               className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-[var(--cps-white)] px-8 py-4 text-lg font-bold rounded-xl transition-colors"
             >
-              Learn About CPS
+              Learn About Psychological Services
             </Link>
           </div>
         </div>

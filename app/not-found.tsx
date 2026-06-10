@@ -7,12 +7,12 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Page Not Found",
   description:
-    "The page you're looking for can't be found. Browse CPS services or call (801) 483-1600 for help scheduling a Utah evaluation or appointment.",
+    "The page you're looking for can't be found. Browse Psychological Services services or call (866) 343-0885 for help scheduling a Utah evaluation or appointment.",
   robots: { index: false, follow: true },
 };
 
-const PHONE = "(801) 483-1600";
-const PHONE_HREF = "tel:8014831600";
+const PHONE = "(866) 343-0885";
+const PHONE_HREF = "tel:8663430885";
 
 const popularLinks = [
   { href: "/services", label: "All Services" },
@@ -54,7 +54,7 @@ export default function NotFound() {
               <a
                 href={PHONE_HREF}
                 data-track="404:call"
-                aria-label="Call (801) 483-1600"
+                aria-label="Call (866) 343-0885"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent hover:bg-[var(--cps-white)]/10 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />

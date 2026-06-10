@@ -12,9 +12,10 @@ import {
 } from "lucide-react";
 import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
 import HomeSchema from "@/components/HomeSchema";
+import PartnerStrip from "@/components/PartnerStrip";
 
-const PHONE = "(801) 483-1600";
-const PHONE_HREF = "tel:8014831600";
+const PHONE = "(866) 343-0885";
+const PHONE_HREF = "tel:8663430885";
 const EMAIL = "cps@wecanhelpout.com";
 
 const serviceCategories = [
@@ -95,8 +96,8 @@ const offices = [
 ];
 
 const testimonials = [
-  { text: "The neuropsychological evaluation at CPS gave us the answers we had been searching for. The report was thorough and the staff made our son feel comfortable throughout the process.", author: "Parent of a 9-year-old patient", rating: 5 },
-  { text: "After years of struggling, I finally got an accurate ADHD diagnosis as an adult. The team at CPS was professional, compassionate, and incredibly thorough.", author: "Adult ADHD patient", rating: 5 },
+  { text: "The neuropsychological evaluation at Psychological Services gave us the answers we had been searching for. The report was thorough and the staff made our son feel comfortable throughout the process.", author: "Parent of a 9-year-old patient", rating: 5 },
+  { text: "After years of struggling, I finally got an accurate ADHD diagnosis as an adult. The team at Psychological Services was professional, compassionate, and incredibly thorough.", author: "Adult ADHD patient", rating: 5 },
   { text: "The ketamine therapy program changed my life. After trying multiple antidepressants with no relief, I felt a difference after just two sessions.", author: "Ketamine therapy patient", rating: 5 },
 ];
 
@@ -141,14 +142,14 @@ export default function HomePageClient() {
         : err instanceof Error
           ? err.message
           : "Something went wrong.";
-      setFormError(`${msg} You can also call us directly at (801) 483-1600.`);
+      setFormError(`${msg} You can also call us directly at (866) 343-0885.`);
     } finally {
       setFormLoading(false);
     }
   }
 
   const homepageFAQ = [
-    { q: "Do I need a referral to schedule an evaluation?", a: "A referral is not always required. Many of our patients self-refer. However, some insurance plans may require a referral for coverage. Call us at (801) 483-1600 and we'll verify your benefits." },
+    { q: "Do I need a referral to schedule an evaluation?", a: "A referral is not always required. Many of our patients self-refer. However, some insurance plans may require a referral for coverage. Call us at (866) 343-0885 and we'll verify your benefits." },
     { q: "What age groups do you serve?", a: "We provide evaluations and treatment for children (as young as 2–4 for certain assessments), adolescents, adults, and geriatric patients. Our ADOS-2 and autism assessments are available across the full lifespan." },
     { q: "How long does a typical evaluation take?", a: "Most evaluations range from 2–6 hours depending on the type. ADHD testing takes 2–4 hours. A full neuropsychological evaluation may take 3–6 hours. We offer flexible scheduling including telehealth options for initial consultations." },
     { q: "Do you accept insurance?", a: "Yes. We accept most major insurance plans. Our team verifies your benefits before your first appointment. Self-pay options are also available for those without coverage." },
@@ -225,7 +226,7 @@ export default function HomePageClient() {
               <Link href="/resources" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Resources</Link>
               <Link href="/newsletter" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">Newsletter</Link>
               <div className="pt-2 pb-2">
-                <a href={PHONE_HREF} onClick={() => setMobileMenuOpen(false)} aria-label="Call us at (801) 483-1600" className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base">
+                <a href={PHONE_HREF} onClick={() => setMobileMenuOpen(false)} aria-label="Call us at (866) 343-0885" className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base">
                   <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
                 </a>
               </div>
@@ -263,14 +264,15 @@ export default function HomePageClient() {
               Find your way forward.
             </h1>
             <p className="body-large text-[var(--cps-white)]/85 mb-10">
-              Compassionate, evidence-based behavioral health care for Utah families — neuropsychological, ADHD, autism, and custody evaluations, plus ketamine therapy, IOP, and counseling. Three locations. Real answers. A clear next step.
+              Help is one call away — any hour, any day. Call our 24-hour hotline or fill out the form and we&apos;ll connect you with the right care through our partner network: evaluations, ketamine therapy, IOP, counseling, and more across Utah.
             </p>
             <div className="flex flex-row items-center gap-4 md:justify-center">
-              <a href="#get-help" data-track="hero:get-help" aria-label="Get help today — start your request" className="flex-1 sm:flex-none inline-flex items-center justify-center px-6 sm:px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg whitespace-nowrap">
-                Get Help Today
+              <a href={PHONE_HREF} data-track="hero:call-hotline" aria-label={`Call our 24 hour hotline at ${PHONE}`} className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg whitespace-nowrap">
+                <Phone className="w-5 h-5 shrink-0" aria-hidden="true" />
+                Call 24/7
               </a>
-              <a href="#services" data-track="hero:learn-more" aria-label="Learn more about our services" className="flex-1 sm:flex-none inline-flex items-center justify-center px-6 sm:px-8 py-4 bg-[var(--cps-white)]/10 hover:bg-[var(--cps-white)]/20 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-[var(--cps-white)]/40 whitespace-nowrap">
-                Learn More
+              <a href="#get-help" data-track="hero:get-help" aria-label="Get help today — fill out the form" className="flex-1 sm:flex-none inline-flex items-center justify-center px-6 sm:px-8 py-4 bg-[var(--cps-white)]/10 hover:bg-[var(--cps-white)]/20 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-[var(--cps-white)]/40 whitespace-nowrap">
+                Get Help Today
               </a>
             </div>
 
@@ -296,7 +298,7 @@ export default function HomePageClient() {
             <div className="text-center mb-8">
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Get help today</h2>
               <p className="text-[var(--cps-gray-700)] body-large">
-                Tell us a little about what you need. A CPS coordinator will reach out within one business day — or call{" "}
+                Tell us a little about what you need. A Psychological Services coordinator will reach out within one business day — or call{" "}
                 <a href={PHONE_HREF} className="font-bold text-[var(--cps-blue)] hover:underline">{PHONE}</a> now.
               </p>
             </div>
@@ -305,7 +307,7 @@ export default function HomePageClient() {
               <div className="bg-[var(--cps-white)] rounded-2xl p-8 text-center border border-[var(--cps-gray-200)] shadow-sm">
                 <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" aria-hidden="true" />
                 <h3 className="text-2xl font-bold mb-2 text-[var(--cps-gray-900)]">We&apos;ve got it.</h3>
-                <p className="text-[var(--cps-gray-700)] leading-relaxed">A CPS coordinator will reach out within one business day to confirm your appointment. Prefer to talk now? Call{" "}
+                <p className="text-[var(--cps-gray-700)] leading-relaxed">A Psychological Services coordinator will reach out within one business day to confirm your appointment. Prefer to talk now? Call{" "}
                   <a href={PHONE_HREF} className="font-bold text-[var(--cps-blue)] hover:underline">{PHONE}</a>.
                 </p>
               </div>
@@ -367,6 +369,9 @@ export default function HomePageClient() {
             )}
           </div>
         </section>
+
+        {/* ──────── PARTNERS ──────── */}
+        <PartnerStrip />
 
         {/* ──────── TRUST BAR ──────── */}
         <section className="bg-[var(--cps-gray-50)] border-b border-[var(--cps-gray-200)]">
@@ -431,7 +436,7 @@ export default function HomePageClient() {
           <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
-                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">About CPS</p>
+                <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">About Psychological Services</p>
                 <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">
                   Utah&apos;s Trusted Behavioral Health Practice Since 1986
                 </h2>
@@ -443,7 +448,7 @@ export default function HomePageClient() {
                     Our team of 20+ licensed professionals includes psychologists, licensed clinical social workers, and clinical mental health counselors. Every clinician uses evidence-based approaches and outcomes feedback to deliver measurable results.
                   </p>
                   <p>
-                    From police and fire department pre-employment screenings to pediatric autism assessments, CPS serves individuals, families, employers, courts, and healthcare systems across the Wasatch Front.
+                    From police and fire department pre-employment screenings to pediatric autism assessments, Psychological Services serves individuals, families, employers, courts, and healthcare systems across the Wasatch Front.
                   </p>
                 </div>
               </div>
@@ -464,9 +469,9 @@ export default function HomePageClient() {
                     <div className="flex-1">
                       <p className="text-xs text-[var(--cps-blue)] font-semibold uppercase tracking-wider mb-1">Founded by</p>
                       <h3 className="text-xl font-bold text-[var(--cps-gray-900)] mb-1">Steven Szykula, Ph.D.</h3>
-                      <p className="text-sm text-[var(--cps-gray-500)] mb-4">Licensed Psychologist · Neuropsychologist · Founder, CPS</p>
+                      <p className="text-sm text-[var(--cps-gray-500)] mb-4">Licensed Psychologist · Neuropsychologist · Founder, Psychological Services</p>
                       <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed">
-                        Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. A doctoral-level psychologist with advanced training in neuropsychology, he founded CPS to provide evidence-based psychological services to individuals, families, courts, and healthcare systems across the Wasatch Front. He has provided testimony in Utah family courts, conducted thousands of evaluations, and mentored dozens of clinicians.
+                        Dr. Szykula has been evaluating and treating behavioral health conditions in Utah since 1979. A doctoral-level psychologist with advanced training in neuropsychology, he founded Psychological Services to provide evidence-based psychological services to individuals, families, courts, and healthcare systems across the Wasatch Front. He has provided testimony in Utah family courts, conducted thousands of evaluations, and mentored dozens of clinicians.
                       </p>
                       <div className="flex flex-wrap gap-2 mt-4">
                         {["Ph.D. — Licensed Psychologist", "Neuropsychology Specialist", "Utah Family Court Expert", "Since 1979 in Practice"].map((tag) => (
@@ -554,7 +559,7 @@ export default function HomePageClient() {
               <p className="text-[var(--cps-blue)] font-semibold text-sm uppercase tracking-wider mb-6">Reviews</p>
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Share Your Experience</h2>
               <p className="text-[var(--cps-gray-500)] max-w-[60ch] mx-auto body-large">
-                We&apos;re committed to continuous improvement. If you&apos;ve had a positive experience at CPS, we&apos;d love to hear from you. Your feedback helps us serve you and our community better.
+                We&apos;re committed to continuous improvement. If you&apos;ve had a positive experience at Psychological Services, we&apos;d love to hear from you. Your feedback helps us serve you and our community better.
               </p>
             </div>
 
@@ -602,7 +607,7 @@ export default function HomePageClient() {
             </div>
 
             <p className="text-center text-sm text-[var(--cps-gray-400)]">
-              Your review helps others find the care they need. Thank you for trusting CPS.
+              Your review helps others find the care they need. Thank you for trusting Psychological Services.
             </p>
           </div>
         </section>
@@ -619,8 +624,8 @@ export default function HomePageClient() {
                 <div key={office.name} className="bg-[var(--cps-white)] rounded-2xl border border-[var(--cps-gray-200)] hover:border-[var(--cps-blue)]/30 hover:shadow-xl transition-all duration-300 overflow-hidden">
                   <div className="h-56 bg-[var(--cps-gray-100)] relative">
                     <iframe
-                      title={`Map of CPS ${office.name} office`}
-                      aria-label={`Google Maps embed for CPS ${office.name} office`}
+                      title={`Map of Psychological Services ${office.name} office`}
+                      aria-label={`Google Maps embed for Psychological Services ${office.name} office`}
                       src={office.mapSrc}
                       width="100%"
                       height="100%"
@@ -658,7 +663,7 @@ export default function HomePageClient() {
                     <p className="text-sm text-[var(--cps-blue)] font-medium mb-6">Serving {office.serving}</p>
                     <p className="text-[var(--cps-gray-600)] text-sm mb-2">{office.address}</p>
                     <p className="text-[var(--cps-gray-600)] text-sm mb-6">{office.city}</p>
-                    <a href={PHONE_HREF} aria-label="Call (801) 483-1600" className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
+                    <a href={PHONE_HREF} aria-label="Call (866) 343-0885" className="flex items-center gap-2 text-sm font-semibold text-[var(--cps-blue)] hover:text-[var(--cps-blue-hover)] transition-colors">
                       <Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}
                     </a>
                   </div>
@@ -679,7 +684,7 @@ export default function HomePageClient() {
                   Call us or fill out the form to schedule an appointment. Our team will verify your insurance, answer your questions, and find a time that works.
                 </p>
                 <div className="space-y-4">
-                  <a href={PHONE_HREF} aria-label="Call us at (801) 483-1600" className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl hover:bg-[var(--cps-white)]/15 transition-colors">
+                  <a href={PHONE_HREF} aria-label="Call us at (866) 343-0885" className="flex items-center gap-6 p-6 bg-[var(--cps-white)]/10 rounded-xl hover:bg-[var(--cps-white)]/15 transition-colors">
                     <Phone className="w-6 h-6 text-[var(--cps-teal)]" aria-hidden="true" />
                     <div>
                       <div className="font-bold">{PHONE}</div>
@@ -806,8 +811,8 @@ export default function HomePageClient() {
               <a href="#get-help" aria-label="Request an appointment today" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
                 Request Appointment
               </a>
-              <a href="tel:8014831600" aria-label="Call (801) 483-1600" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-white)]/10 hover:bg-[var(--cps-white)]/15 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white/30">
-                <Phone className="w-5 h-5" aria-hidden="true" /> (801) 483-1600
+              <a href="tel:8663430885" aria-label="Call (866) 343-0885" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--cps-white)]/10 hover:bg-[var(--cps-white)]/15 text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg border-2 border-white/30">
+                <Phone className="w-5 h-5" aria-hidden="true" /> (866) 343-0885
               </a>
             </div>
           </div>

@@ -99,11 +99,11 @@ export default function SubscribeForm() {
       </button>
       {error && (
         <p className="mt-4 text-sm text-[var(--cps-warning)] bg-[var(--cps-white)]/10 rounded-xl px-4 py-4">
-          {error} You can always reach us directly at (801) 483-1600.
+          {error} You can always reach us directly at (866) 343-0885.
         </p>
       )}
       <p className="mt-4 text-xs text-[var(--cps-white)]/50">
-        By subscribing you agree to receive monthly email from CPS. Unsubscribe at any time.
+        By subscribing you agree to receive monthly email from Psychological Services. Unsubscribe at any time.
       </p>
     </form>
   );

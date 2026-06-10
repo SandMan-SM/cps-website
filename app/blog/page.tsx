@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Psychology & Mental Health Blog | CPS Utah",
+    title: "Psychology & Mental Health Blog | Psychological Services Utah",
     description:
       "Expert articles on neuropsychological evaluations, ADHD, autism assessments, and mental health.",
     images: ["https://psychandcustodyevaluations.com/twitter-image"],
@@ -172,11 +172,11 @@ export default function BlogPage() {
               Our licensed psychologists serve patients across Salt Lake City, Layton, and West Jordan. Call us today to get started.
             </p>
             <a
-              href="tel:8014831600"
-              aria-label="Call (801) 483-1600"
+              href="tel:8663430885"
+              aria-label="Call (866) 343-0885"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-semibold rounded-xl transition-colors"
             >
-              Call (801) 483-1600
+              Call (866) 343-0885
             </a>
           </div>
         </section>

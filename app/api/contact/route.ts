@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
 
   if (!rateLimit(ip)) {
     return NextResponse.json(
-      { ok: false, error: "Too many requests. Please try again in a minute or call (801) 483-1600." },
+      { ok: false, error: "Too many requests. Please try again in a minute or call (866) 343-0885." },
       { status: 429 },
     );
   }
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
 
   const submittedAt = new Date().toISOString();
   const text = [
-    `New appointment request from CPS website`,
+    `New appointment request from Psychological Services website`,
     ``,
     `Name: ${firstName} ${lastName}`,
     `Email: ${email}`,
@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
   ].join("\n");
 
   const redactedLog = [
-    `New appointment request from CPS website`,
+    `New appointment request from Psychological Services website`,
     `Service: ${service}`,
     `Message provided: ${message ? "yes" : "no"}`,
     `Source IP: ${ip === "unknown" ? "unknown" : "redacted"}`,
@@ -103,7 +103,7 @@ export async function POST(req: NextRequest) {
       });
 
       await transporter.sendMail({
-        from: `"CPS Website" <${SMTP_USER}>`,
+        from: `"Psychological Services Website" <${SMTP_USER}>`,
         to: CONTACT_TO_EMAIL,
         replyTo: email,
         subject: `New Appointment Request — ${firstName} ${lastName}`,
@@ -116,7 +116,7 @@ export async function POST(req: NextRequest) {
         {
           ok: false,
           error:
-            "We couldn't send your request automatically, but we've logged it for our team. Please call (801) 483-1600 to confirm your appointment.",
+            "We couldn't send your request automatically, but we've logged it for our team. Please call (866) 343-0885 to confirm your appointment.",
         },
         { status: 502 },
       );
@@ -126,18 +126,18 @@ export async function POST(req: NextRequest) {
   }
 
   // ── Tee to OmniLeads dashboard ─────────────────────────────────────
-  // Fire-and-forget POST to the OmniLeads CPS lead intake. This is what
+  // Fire-and-forget POST to the OmniLeads Psychological Services lead intake. This is what
   // surfaces the lead on omnileadsagi.com/dashboard/cps and triggers the
   // Telegram + email alerts to the owner. Failure here must NOT block
   // the response — the local SMTP send is the system of record for
-  // CPS's own inbox; OmniLeads is the analytics + dashboard layer.
+  // Psychological Services's own inbox; OmniLeads is the analytics + dashboard layer.
   const omniEndpoint =
     process.env.NEXT_PUBLIC_OMNILEADS_API ||
     process.env.OMNILEADS_API ||
     "https://omnileadsagi.com";
 
   // Await briefly so serverless runtimes do not freeze the event before the
-  // dashboard lead tee is sent. The abort keeps CPS's form UX protected if
+  // dashboard lead tee is sent. The abort keeps Psychological Services's form UX protected if
   // OmniLeads is slow or unavailable.
   try {
     await fetch(`${omniEndpoint}/api/cps/leads`, {

@@ -4,8 +4,8 @@ import { useState } from "react";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 
 // ph — used in API route
-export const PHONE = "(801) 483-1600";
-export const PHONE_HREF = "tel:8014831600";
+export const PHONE = "(866) 343-0885";
+export const PHONE_HREF = "tel:8663430885";
 
 export default function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -40,7 +40,7 @@ export default function ContactForm() {
             setFormSubmitted(true);
           } catch (err) {
             const msg = err instanceof Error ? err.message : "Something went wrong.";
-            setFormError(`${msg} You can also call us directly at (801) 483-1600.`);
+            setFormError(`${msg} You can also call us directly at (866) 343-0885.`);
           } finally {
             setFormLoading(false);
           }
