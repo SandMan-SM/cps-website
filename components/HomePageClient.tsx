@@ -436,7 +436,7 @@ export default function HomePageClient() {
                       <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-2">
                         Behavioral health evaluations and treatment since 1986 — neuropsychological, ADHD, autism, and custody evaluations, plus ketamine therapy, IOP, and counseling across the Wasatch Front.
                       </p>
-                      <a href="https://wecanhelpout.com" target="_blank" rel="noopener noreferrer" data-track="network:wecanhelpout" className="text-sm font-semibold text-[var(--cps-blue)] hover:underline">
+                      <a href="https://wecanhelpout.com" target="_blank" rel="noopener noreferrer" data-track="network:wecanhelpout" aria-label="We Can Help Out (opens in new tab)" className="text-sm font-semibold text-[var(--cps-blue)] hover:underline">
                         wecanhelpout.com
                       </a>
                     </div>
@@ -445,7 +445,7 @@ export default function HomePageClient() {
                       <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-2">
                         Residential and outpatient addiction treatment — substance use disorder care, detox support, and recovery programs at their Eagle Mountain campus.
                       </p>
-                      <a href="https://utahaddictioncenters.com" target="_blank" rel="noopener noreferrer" data-track="network:utahaddictioncenters" className="text-sm font-semibold text-[var(--cps-blue)] hover:underline">
+                      <a href="https://utahaddictioncenters.com" target="_blank" rel="noopener noreferrer" data-track="network:utahaddictioncenters" aria-label="Utah Addiction Centers (opens in new tab)" className="text-sm font-semibold text-[var(--cps-blue)] hover:underline">
                         utahaddictioncenters.com
                       </a>
                     </div>
