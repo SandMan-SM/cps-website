@@ -4,7 +4,7 @@ const PHRASE = "Utah’s most trusted behavioral health network — 60+ years of
 
 function MarqueeItem() {
   return (
-    <span className="inline-flex items-center gap-3 px-8 whitespace-nowrap">
+    <span className="inline-flex items-center gap-2 px-8 whitespace-nowrap">
       <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-[var(--cps-teal)]/60 shrink-0">
         <Award className="w-4 h-4 text-[var(--cps-teal)]" aria-hidden="true" />
       </span>
