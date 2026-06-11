@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
+import TrustMarquee from "@/components/TrustMarquee";
 
 const PHONE = "(866) 343-0885";
 const PHONE_HREF = "tel:8663430885";
@@ -63,6 +64,9 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Scrolling trust strip — pinned to the bottom of the sticky header */}
+      <TrustMarquee />
     </nav>
   );
 }

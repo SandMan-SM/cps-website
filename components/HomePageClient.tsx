@@ -13,6 +13,7 @@ import {
 import { SpeakableSchema, ReviewSchema } from "@/components/JsonLd";
 import HomeSchema from "@/components/HomeSchema";
 import PartnerStrip from "@/components/PartnerStrip";
+import TrustMarquee from "@/components/TrustMarquee";
 import { LOCATIONS } from "@/lib/brand";
 
 const PHONE = "(866) 343-0885";
@@ -210,6 +211,9 @@ export default function HomePageClient() {
             </div>
           </div>
         )}
+
+        {/* Scrolling trust strip — pinned to the bottom of the sticky header */}
+        <TrustMarquee />
       </nav>
 
       <main id="main">
@@ -229,14 +233,6 @@ export default function HomePageClient() {
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--cps-dark)]/80 via-[var(--cps-dark)]/65 to-[var(--cps-dark)]/90" aria-hidden="true" />
 
           <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-20 md:py-32 text-left md:text-center">
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--cps-teal)]/20 ring-1 ring-[var(--cps-teal)]/50 pl-2 pr-4 py-2 text-left">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[var(--cps-white)]/50 shrink-0">
-                  <Award className="w-4 h-4 text-[var(--cps-white)]" aria-hidden="true" />
-                </span>
-                <span className="text-sm font-semibold text-[var(--cps-white)] leading-snug">Utah&apos;s trusted behavioral health network — 60+ years of combined care</span>
-              </span>
-            </div>
             <h1 className="display-heading text-[var(--cps-white)] mb-6" style={{ fontFamily: "var(--font-serif)" }}>
               Find your way forward.
             </h1>

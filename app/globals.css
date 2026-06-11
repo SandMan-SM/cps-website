@@ -103,6 +103,21 @@ body {
   top: 0;
 }
 
+/* Trust marquee — continuous scroll, pure CSS (no animation libraries).
+   Track holds two identical copies; translating -50% loops seamlessly. */
+@keyframes ps-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ps-marquee-track {
+  animation: ps-marquee 32s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ps-marquee-track {
+    animation: none;
+  }
+}
+
 /* Gradient text */
 .text-gradient {
   background: linear-gradient(135deg, var(--cps-blue), var(--cps-teal));
