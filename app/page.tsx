@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomePageClient from "@/components/HomePageClient";
+import { OrganizationSchema, LocalBusinessSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Psychological Services | Neuropsych, ADHD & Custody Evaluations in Utah",
@@ -35,5 +36,11 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <HomePageClient />;
+  return (
+    <>
+      <OrganizationSchema />
+      <LocalBusinessSchema />
+      <HomePageClient />
+    </>
+  );
 }
