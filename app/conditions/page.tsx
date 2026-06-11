@@ -74,6 +74,7 @@ export default function ConditionsIndexPage() {
                 <Link
                   key={c.slug}
                   href={`/conditions/${c.slug}`}
+                  aria-label={`Read guide for ${c.name}`}
                   className="group block bg-[var(--cps-light)] rounded-2xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[var(--cps-blue)]/10 flex items-center justify-center mb-4">
@@ -85,7 +86,7 @@ export default function ConditionsIndexPage() {
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-6">
                     {c.shortDescription}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm" aria-label={`Read guide for ${c.name}`}>
+                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm">
                     Read guide
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </span>

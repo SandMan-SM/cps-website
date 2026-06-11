@@ -103,6 +103,7 @@ export default function ServicesIndexPage() {
                 <Link
                   key={s.slug}
                   href={`/${s.slug}`}
+                  aria-label={`Learn more about ${s.shortName}`}
                   className="group block bg-[var(--cps-light)] rounded-2xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[var(--cps-blue)]/10 flex items-center justify-center mb-4">
@@ -114,7 +115,7 @@ export default function ServicesIndexPage() {
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-6">
                     {s.heroSubtitle}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm" aria-label={`Learn more about ${s.shortName}`}>
+                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm">
                     Learn more
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </span>
@@ -135,6 +136,7 @@ export default function ServicesIndexPage() {
                 <Link
                   key={s.slug}
                   href={`/${s.slug}`}
+                  aria-label={`Learn more about ${s.shortName}`}
                   className="group block bg-[var(--cps-white)] rounded-2xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-blue)] focus-visible:ring-offset-2"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[var(--cps-blue)]/10 flex items-center justify-center mb-4">
@@ -146,7 +148,7 @@ export default function ServicesIndexPage() {
                   <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-6">
                     {s.heroSubtitle}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm" aria-label={`Learn more about ${s.shortName}`}>
+                  <span className="inline-flex items-center gap-2 text-[var(--cps-blue)] font-semibold text-sm">
                     Learn more
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </span>
