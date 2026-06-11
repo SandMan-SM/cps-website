@@ -106,11 +106,16 @@ body {
 /* Trust marquee — continuous scroll, pure CSS (no animation libraries).
    Track holds two identical copies; translating -50% loops seamlessly. */
 @keyframes ps-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 .ps-marquee-track {
   animation: ps-marquee 32s linear infinite;
+  /* Composite on the GPU so the loop never repaints the sticky header —
+     without these, mobile Safari re-rasterizes the whole top stack every
+     frame and the header visibly flickers. */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 @media (prefers-reduced-motion: reduce) {
   .ps-marquee-track {
