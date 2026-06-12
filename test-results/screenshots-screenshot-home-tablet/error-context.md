@@ -1,0 +1,645 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: screenshots.spec.ts >> screenshot home
+- Location: tests/screenshots.spec.ts:14:7
+
+# Error details
+
+```
+Error: Channel closed
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2]:
+    - /url: "#main"
+    - text: Skip to content
+  - link "Call our 24 hour hotline at (866) 343-0885" [ref=e3]:
+    - /url: tel:8663430885
+    - generic [ref=e5]:
+      - img [ref=e6]
+      - text: "24 Hour Hotline: (866) 343-0885"
+  - navigation "Main navigation" [ref=e8]:
+    - generic [ref=e10]:
+      - link "Psychological Services — Home" [ref=e11]:
+        - /url: /
+        - img "Psychological Services logo" [ref=e13]
+        - generic [ref=e14]:
+          - generic [ref=e15]: Psychological Services
+          - generic [ref=e16]: 60+ Years of Combined Care
+      - generic [ref=e17]:
+        - link "Call us at (866) 343-0885" [ref=e18]:
+          - /url: tel:8663430885
+          - img [ref=e19]
+          - text: (866) 343-0885
+        - button "Open menu" [ref=e21]:
+          - img [ref=e22]
+    - marquee "Utah’s most trusted behavioral health network — 60+ years of combined care" [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - img [ref=e28]
+            - generic [ref=e31]: Utah’s most trusted behavioral health network — 60+ years of combined care
+          - generic [ref=e32]:
+            - img [ref=e34]
+            - generic [ref=e37]: Utah’s most trusted behavioral health network — 60+ years of combined care
+          - generic [ref=e38]:
+            - img [ref=e40]
+            - generic [ref=e43]: Utah’s most trusted behavioral health network — 60+ years of combined care
+          - generic [ref=e44]:
+            - img [ref=e46]
+            - generic [ref=e49]: Utah’s most trusted behavioral health network — 60+ years of combined care
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - img [ref=e53]
+            - generic [ref=e56]: Utah’s most trusted behavioral health network — 60+ years of combined care
+          - generic [ref=e57]:
+            - img [ref=e59]
+            - generic [ref=e62]: Utah’s most trusted behavioral health network — 60+ years of combined care
+          - generic [ref=e63]:
+            - img [ref=e65]
+            - generic [ref=e68]: Utah’s most trusted behavioral health network — 60+ years of combined care
+          - generic [ref=e69]:
+            - img [ref=e71]
+            - generic [ref=e74]: Utah’s most trusted behavioral health network — 60+ years of combined care
+  - main [ref=e75]:
+    - generic [ref=e76]:
+      - img [ref=e77]
+      - generic [ref=e79]:
+        - heading "Find your way forward." [level=1] [ref=e80]
+        - paragraph [ref=e81]: "Help is one call away — any hour, any day. Call our 24-hour hotline or fill out the form and we'll connect you with the right care through our partner network: evaluations, ketamine therapy, IOP, counseling, and more across Utah."
+        - generic [ref=e82]:
+          - link "Call our 24 hour hotline at (866) 343-0885" [ref=e83]:
+            - /url: tel:8663430885
+            - img [ref=e84]
+            - text: Call 24/7
+          - link "Get help today — fill out the form" [ref=e86]:
+            - /url: "#get-help"
+            - text: Get Help Today
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e89]: 60+
+            - generic [ref=e90]: Years
+          - generic [ref=e91]:
+            - generic [ref=e92]: 40+
+            - generic [ref=e93]: Therapists
+          - generic [ref=e94]:
+            - generic [ref=e95]: 5★
+            - generic [ref=e96]: Practice
+        - link "Scroll to see our services" [ref=e97]:
+          - /url: "#services"
+          - generic [ref=e98]: Scroll to see our services
+          - img [ref=e99]
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - heading "Get help today" [level=2] [ref=e104]
+        - paragraph [ref=e105]:
+          - text: Tell us a little about what you need. A Psychological Services coordinator will reach out within one business day — or call
+          - link "(866) 343-0885" [ref=e106]:
+            - /url: tel:8663430885
+          - text: now.
+      - generic [ref=e107]:
+        - text: Website
+        - textbox [ref=e108]
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic [ref=e111]: First Name
+            - textbox "First Name" [ref=e112]:
+              - /placeholder: First name
+          - generic [ref=e113]:
+            - generic [ref=e114]: Last Name
+            - textbox "Last Name" [ref=e115]:
+              - /placeholder: Last name
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - generic [ref=e118]: Email
+            - textbox "Email" [ref=e119]:
+              - /placeholder: you@email.com
+          - generic [ref=e120]:
+            - generic [ref=e121]: Phone
+            - textbox "Phone" [ref=e122]:
+              - /placeholder: (801) 555-0123
+        - generic [ref=e123]:
+          - generic [ref=e124]: What can we help with?
+          - combobox "What can we help with?" [ref=e125]:
+            - option "Select a service..." [disabled] [selected]
+            - option "Neuropsychological Evaluation"
+            - option "ADHD Evaluation / Testing"
+            - option "Autism Assessment / ADOS-2"
+            - option "Custody Evaluation"
+            - option "Ketamine / Spravato Therapy"
+            - option "Cognitive / IQ Evaluation"
+            - option "Intensive Outpatient Program"
+            - option "Therapy / Counseling"
+            - option "Other / Not sure yet"
+        - generic [ref=e126]:
+          - generic [ref=e127]: Message (optional)
+          - textbox "Message (optional)" [ref=e128]:
+            - /placeholder: Anything we should know?
+        - button "Get help today" [ref=e129]:
+          - img [ref=e130]
+          - text: Get Help Today
+        - paragraph [ref=e133]: Your information is confidential. We'll respond within 1 business day.
+    - generic [ref=e136]:
+      - generic [ref=e137]: In partnership with
+      - link "We Can Help Out" [ref=e138]:
+        - /url: https://wecanhelpout.com
+      - link "Utah Addiction Centers" [ref=e139]:
+        - /url: https://utahaddictioncenters.com
+    - generic [ref=e142]:
+      - generic [ref=e143]:
+        - img [ref=e144]
+        - text: Licensed Psychologists
+      - generic [ref=e146]:
+        - img [ref=e147]
+        - text: 60+ Years Combined Experience
+      - generic [ref=e150]:
+        - img [ref=e151]
+        - text: Most Insurance Accepted
+      - generic [ref=e154]:
+        - img [ref=e155]
+        - text: Locations Across Utah
+      - generic [ref=e159]:
+        - img [ref=e160]
+        - text: Rated 5.0 on Healthline
+    - generic [ref=e163]:
+      - generic [ref=e164]:
+        - paragraph [ref=e165]: Our Specialties
+        - heading "Evaluation & Treatment Services" [level=2] [ref=e166]
+        - paragraph [ref=e167]: Evidence-based assessments and treatments delivered by licensed professionals with decades of experience.
+      - generic [ref=e168]:
+        - link "Neuropsychological Evaluations service" [ref=e169]:
+          - /url: /neuropsychologist-near-me
+          - heading "Neuropsychological Evaluations" [level=3] [ref=e170]
+          - paragraph [ref=e171]: Comprehensive brain-behavior assessments for ADHD, TBI, memory, learning disabilities, and cognitive concerns.
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - text: Learn More
+              - img [ref=e174]
+            - img [ref=e177]
+        - link "ADHD Evaluation & Diagnosis service" [ref=e185]:
+          - /url: /adhd-evaluation-near-me
+          - heading "ADHD Evaluation & Diagnosis" [level=3] [ref=e186]
+          - paragraph [ref=e187]: Thorough multi-method ADHD testing for children, teens, and adults. Clear diagnosis and treatment planning.
+          - generic [ref=e188]:
+            - generic [ref=e189]:
+              - text: Learn More
+              - img [ref=e190]
+            - img [ref=e193]
+        - link "Autism Assessment & ADOS-2 service" [ref=e197]:
+          - /url: /autism-assessment
+          - heading "Autism Assessment & ADOS-2" [level=3] [ref=e198]
+          - paragraph [ref=e199]: Gold-standard autism evaluations including ADOS-2 testing for all ages — children through adults.
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - text: Learn More
+              - img [ref=e202]
+            - img [ref=e205]
+        - link "Custody & Parental Evaluations service" [ref=e210]:
+          - /url: /custody-evaluator-near-me
+          - heading "Custody & Parental Evaluations" [level=3] [ref=e211]
+          - paragraph [ref=e212]: Court-accepted child custody evaluations, parental fitness assessments, and expert testimony for family law.
+          - generic [ref=e213]:
+            - generic [ref=e214]:
+              - text: Learn More
+              - img [ref=e215]
+            - img [ref=e218]
+        - link "Ketamine & Spravato Therapy service" [ref=e222]:
+          - /url: /ketamine-depression-treatment-near-me
+          - heading "Ketamine & Spravato Therapy" [level=3] [ref=e223]
+          - paragraph [ref=e224]: FDA-approved ketamine and esketamine treatment for depression that hasn't responded to traditional medication.
+          - generic [ref=e225]:
+            - generic [ref=e226]:
+              - text: Learn More
+              - img [ref=e227]
+            - img [ref=e230]
+        - link "Cognitive & IQ Testing service" [ref=e233]:
+          - /url: /cognitive-evaluation-near-me
+          - heading "Cognitive & IQ Testing" [level=3] [ref=e234]
+          - paragraph [ref=e235]: Standardized cognitive evaluations for giftedness, learning disabilities, disability applications, and academic planning.
+          - generic [ref=e236]:
+            - generic [ref=e237]:
+              - text: Learn More
+              - img [ref=e238]
+            - img [ref=e241]
+      - generic [ref=e244]:
+        - heading "Additional Services" [level=3] [ref=e245]
+        - generic [ref=e246]:
+          - generic [ref=e247]:
+            - img [ref=e248]
+            - text: Intensive Outpatient Programs (IOP)
+          - generic [ref=e251]:
+            - img [ref=e252]
+            - text: Counseling & Psychotherapy
+          - generic [ref=e255]:
+            - img [ref=e256]
+            - text: Medication Management
+          - generic [ref=e259]:
+            - img [ref=e260]
+            - text: Neurofeedback / Brain Training
+          - generic [ref=e263]:
+            - img [ref=e264]
+            - text: Addiction & Substance Use Treatment — residential & outpatient (Utah Addiction Centers)
+          - generic [ref=e267]:
+            - img [ref=e268]
+            - text: Telehealth Services
+          - generic [ref=e271]:
+            - img [ref=e272]
+            - text: Employer & Fitness-for-Duty Evaluations
+          - generic [ref=e275]:
+            - img [ref=e276]
+            - text: Health & Wellness Programs
+    - generic [ref=e281]:
+      - generic [ref=e282]:
+        - paragraph [ref=e283]: Our Care Network
+        - heading "Two trusted systems. One front door." [level=2] [ref=e284]
+        - generic [ref=e285]:
+          - paragraph [ref=e286]: Psychological Services brings together two of Utah's most established care systems — We Can Help Out and Utah Addiction Centers — representing 60+ years of combined clinical experience under one front door.
+          - paragraph [ref=e287]: Across the network, 40+ licensed professionals — psychologists, clinical social workers, mental health counselors, and addiction-treatment specialists — use evidence-based approaches and outcomes feedback to deliver measurable results.
+          - paragraph [ref=e288]: "One call to our 24-hour hotline, or one form, and we route you to the right team: evaluations, therapy, ketamine treatment, IOP, or residential addiction care — anywhere in Utah."
+      - generic [ref=e289]:
+        - generic [ref=e290]:
+          - paragraph [ref=e291]: The systems behind your care
+          - generic [ref=e292]:
+            - generic [ref=e293]:
+              - heading "We Can Help Out" [level=3] [ref=e294]
+              - paragraph [ref=e295]: Behavioral health evaluations and treatment since 1986 — neuropsychological, ADHD, autism, and custody evaluations, plus ketamine therapy, IOP, and counseling across the Wasatch Front.
+              - link "We Can Help Out (opens in new tab)" [ref=e296]:
+                - /url: https://wecanhelpout.com
+                - text: wecanhelpout.com
+            - generic [ref=e297]:
+              - heading "Utah Addiction Centers" [level=3] [ref=e298]
+              - paragraph [ref=e299]: Residential and outpatient addiction treatment — substance use disorder care, detox support, and recovery programs at their Eagle Mountain campus.
+              - link "Utah Addiction Centers (opens in new tab)" [ref=e300]:
+                - /url: https://utahaddictioncenters.com
+                - text: utahaddictioncenters.com
+        - generic [ref=e301]:
+          - paragraph [ref=e302]: Professional Memberships & Affiliations
+          - generic [ref=e303]:
+            - generic "American Psychological Association" [ref=e304]:
+              - img [ref=e305]
+              - text: APA
+            - generic "Utah Psychological Association" [ref=e307]:
+              - img [ref=e308]
+              - text: UPA
+            - generic "American Academy of Clinical Neuropsychology" [ref=e310]:
+              - img [ref=e311]
+              - text: AACN
+            - generic "Society for Personality and Social Psychology" [ref=e313]:
+              - img [ref=e314]
+              - text: SPSP
+        - generic [ref=e316]:
+          - img [ref=e318]
+          - generic [ref=e320]:
+            - heading "Evidence-Based Practice" [level=3] [ref=e321]
+            - paragraph [ref=e322]: Every assessment and treatment follows validated, research-backed protocols. We measure outcomes, not just activity.
+        - generic [ref=e323]:
+          - img [ref=e325]
+          - generic [ref=e328]:
+            - heading "Best Practice Award" [level=3] [ref=e329]
+            - paragraph [ref=e330]: Recognized for clinical excellence by professional organizations. Our team upholds the highest standards of competence.
+        - generic [ref=e331]:
+          - img [ref=e333]
+          - generic [ref=e337]:
+            - heading "Locations Across Utah" [level=3] [ref=e338]
+            - paragraph [ref=e339]: Offices in Salt Lake City, Layton, and West Jordan, residential care in Eagle Mountain — plus telehealth statewide.
+        - generic [ref=e340]:
+          - img [ref=e342]
+          - generic [ref=e344]:
+            - heading "60+ Years Combined" [level=3] [ref=e345]
+            - paragraph [ref=e346]: Two established systems serving Utah families, courts, employers, and healthcare systems with integrity and expertise.
+    - generic [ref=e348]:
+      - generic [ref=e349]:
+        - paragraph [ref=e350]: Patient Experiences
+        - heading "What Our Patients Say" [level=2] [ref=e351]
+      - generic [ref=e352]:
+        - generic [ref=e353]:
+          - img "5 out of 5 stars" [ref=e354]:
+            - img [ref=e355]
+            - img [ref=e357]
+            - img [ref=e359]
+            - img [ref=e361]
+            - img [ref=e363]
+          - paragraph [ref=e365]: “The neuropsychological evaluation at Psychological Services gave us the answers we had been searching for. The report was thorough and the staff made our son feel comfortable throughout the process.”
+          - paragraph [ref=e366]: — Parent of a 9-year-old patient
+        - generic [ref=e367]:
+          - img "5 out of 5 stars" [ref=e368]:
+            - img [ref=e369]
+            - img [ref=e371]
+            - img [ref=e373]
+            - img [ref=e375]
+            - img [ref=e377]
+          - paragraph [ref=e379]: “After years of struggling, I finally got an accurate ADHD diagnosis as an adult. The team at Psychological Services was professional, compassionate, and incredibly thorough.”
+          - paragraph [ref=e380]: — Adult ADHD patient
+        - generic [ref=e381]:
+          - img "5 out of 5 stars" [ref=e382]:
+            - img [ref=e383]
+            - img [ref=e385]
+            - img [ref=e387]
+            - img [ref=e389]
+            - img [ref=e391]
+          - paragraph [ref=e393]: “The ketamine therapy program changed my life. After trying multiple antidepressants with no relief, I felt a difference after just two sessions.”
+          - paragraph [ref=e394]: — Ketamine therapy patient
+    - generic [ref=e396]:
+      - generic [ref=e397]:
+        - paragraph [ref=e398]: Reviews
+        - heading "Share Your Experience" [level=2] [ref=e399]
+        - paragraph [ref=e400]: We're committed to continuous improvement. If you've had a positive experience at Psychological Services, we'd love to hear from you. Your feedback helps us serve you and our community better.
+      - generic [ref=e401]:
+        - generic [ref=e402]:
+          - generic [ref=e404]: G
+          - heading "Google" [level=3] [ref=e405]
+          - paragraph [ref=e406]: 5.0 on Google Reviews
+          - generic "5 stars" [ref=e407]:
+            - img [ref=e408]
+            - img [ref=e410]
+            - img [ref=e412]
+            - img [ref=e414]
+            - img [ref=e416]
+        - generic [ref=e418]:
+          - generic [ref=e420]: HL
+          - heading "Healthline" [level=3] [ref=e421]
+          - paragraph [ref=e422]: Rated 5.0 on Healthline
+          - generic "5 stars" [ref=e423]:
+            - img [ref=e424]
+            - img [ref=e426]
+            - img [ref=e428]
+            - img [ref=e430]
+            - img [ref=e432]
+        - generic [ref=e434]:
+          - generic [ref=e436]: BBB
+          - heading "Better Business Bureau" [level=3] [ref=e437]
+          - paragraph [ref=e438]: Accredited Business
+          - generic "Accredited business" [ref=e439]:
+            - img [ref=e440]
+            - generic [ref=e442]: Accredited
+      - paragraph [ref=e443]: Your review helps others find the care they need. Thank you for trusting Psychological Services.
+    - generic [ref=e445]:
+      - generic [ref=e446]:
+        - paragraph [ref=e447]: Find Us
+        - heading "Four Locations. Two Systems. One Network." [level=2] [ref=e448]
+        - paragraph [ref=e449]: Behavioral health clinics by We Can Help Out across the Wasatch Front, and residential addiction care by Utah Addiction Centers in Eagle Mountain.
+      - generic [ref=e450]:
+        - generic [ref=e451]:
+          - iframe [ref=e453]
+          - generic [ref=e454]:
+            - generic [ref=e455]: We Can Help Out
+            - heading "Salt Lake City" [level=3] [ref=e456]
+            - paragraph [ref=e457]: Behavioral Health Clinic
+            - paragraph [ref=e458]: Serving Salt Lake County
+            - paragraph [ref=e459]: 1208 East 3300 South
+            - paragraph [ref=e460]: Salt Lake City, UT 84106
+            - link "Call (866) 343-0885" [ref=e461]:
+              - /url: tel:8663430885
+              - img [ref=e462]
+              - text: (866) 343-0885
+        - generic [ref=e464]:
+          - iframe [ref=e466]
+          - generic [ref=e467]:
+            - generic [ref=e468]: We Can Help Out
+            - heading "Layton" [level=3] [ref=e469]
+            - paragraph [ref=e470]: Behavioral Health Clinic
+            - paragraph [ref=e471]: Serving Davis & Weber Counties
+            - paragraph [ref=e472]: 1916 North 700 West, Suite 190
+            - paragraph [ref=e473]: Layton, UT 84041
+            - link "Call (866) 343-0885" [ref=e474]:
+              - /url: tel:8663430885
+              - img [ref=e475]
+              - text: (866) 343-0885
+        - generic [ref=e477]:
+          - iframe [ref=e479]
+          - generic [ref=e480]:
+            - generic [ref=e481]: We Can Help Out
+            - heading "West Jordan" [level=3] [ref=e482]
+            - paragraph [ref=e483]: Behavioral Health Clinic
+            - paragraph [ref=e484]: Serving South Valley
+            - paragraph [ref=e485]: 9069 South 1300 West, Suite D
+            - paragraph [ref=e486]: West Jordan, UT 84088
+            - link "Call (866) 343-0885" [ref=e487]:
+              - /url: tel:8663430885
+              - img [ref=e488]
+              - text: (866) 343-0885
+        - generic [ref=e490]:
+          - iframe [ref=e492]
+          - generic [ref=e493]:
+            - generic [ref=e494]: Utah Addiction Centers
+            - heading "Eagle Mountain" [level=3] [ref=e495]
+            - paragraph [ref=e496]: Residential Treatment Campus
+            - paragraph [ref=e497]: Serving Residential & outpatient addiction care, statewide
+            - paragraph [ref=e498]: 2590 Prairie View Drive
+            - paragraph [ref=e499]: Eagle Mountain, UT 84005
+            - link "Call (866) 343-0885" [ref=e500]:
+              - /url: tel:8663430885
+              - img [ref=e501]
+              - text: (866) 343-0885
+    - generic [ref=e505]:
+      - generic [ref=e506]:
+        - paragraph [ref=e507]: Get Started
+        - heading "Schedule Your Evaluation Today" [level=2] [ref=e508]
+        - paragraph [ref=e509]: Call us or fill out the form to schedule an appointment. Our team will verify your insurance, answer your questions, and find a time that works.
+        - generic [ref=e510]:
+          - link "Call us at (866) 343-0885" [ref=e511]:
+            - /url: tel:8663430885
+            - img [ref=e512]
+            - generic [ref=e514]:
+              - generic [ref=e515]: (866) 343-0885
+              - generic [ref=e516]: Mon–Fri, 8am–6pm
+          - link "Email us" [ref=e517]:
+            - /url: mailto:cps@wecanhelpout.com
+            - img [ref=e518]
+            - generic [ref=e521]:
+              - generic [ref=e522]: cps@wecanhelpout.com
+              - generic [ref=e523]: We respond within 24 hours
+          - generic [ref=e524]:
+            - img [ref=e525]
+            - generic [ref=e528]:
+              - generic [ref=e529]: Office Hours
+              - generic [ref=e530]: Monday–Friday, 8:00 AM – 6:00 PM
+      - generic [ref=e532]:
+        - heading "Request an Appointment" [level=3] [ref=e533]
+        - text: Website
+        - textbox [ref=e534]
+        - generic [ref=e535]:
+          - generic [ref=e536]:
+            - generic [ref=e537]: First Name
+            - textbox "First Name" [ref=e538]:
+              - /placeholder: First name
+          - generic [ref=e539]:
+            - generic [ref=e540]: Last Name
+            - textbox "Last Name" [ref=e541]:
+              - /placeholder: Last name
+        - generic [ref=e542]:
+          - generic [ref=e543]:
+            - generic [ref=e544]: Email
+            - textbox "Email" [ref=e545]:
+              - /placeholder: you@email.com
+          - generic [ref=e546]:
+            - generic [ref=e547]: Phone
+            - textbox "Phone" [ref=e548]:
+              - /placeholder: (801) 555-0123
+        - generic [ref=e549]:
+          - generic [ref=e550]: What can we help with?
+          - combobox "What can we help with?" [ref=e551]:
+            - option "Select a service..." [disabled] [selected]
+            - option "Neuropsychological Evaluation"
+            - option "ADHD Evaluation / Testing"
+            - option "Autism Assessment / ADOS-2"
+            - option "Custody Evaluation"
+            - option "Ketamine / Spravato Therapy"
+            - option "Cognitive / IQ Evaluation"
+            - option "Intensive Outpatient Program"
+            - option "Therapy / Counseling"
+            - option "Other / Not sure yet"
+        - generic [ref=e552]:
+          - generic [ref=e553]: Message (optional)
+          - textbox "Message (optional)" [ref=e554]:
+            - /placeholder: Anything we should know?
+        - button "Request appointment" [ref=e555]:
+          - img [ref=e556]
+          - text: Request Appointment
+        - paragraph [ref=e559]: Your information is confidential. We'll respond within 1 business day.
+    - generic [ref=e561]:
+      - generic [ref=e562]:
+        - paragraph [ref=e563]: FAQ
+        - heading "Common Questions" [level=2] [ref=e564]
+      - generic [ref=e565]:
+        - group [ref=e566]:
+          - generic "Do I need a referral to schedule an evaluation?" [ref=e567] [cursor=pointer]:
+            - generic [ref=e568]: Do I need a referral to schedule an evaluation?
+            - img [ref=e569]
+        - group [ref=e571]:
+          - generic "What age groups do you serve?" [ref=e572] [cursor=pointer]:
+            - generic [ref=e573]: What age groups do you serve?
+            - img [ref=e574]
+        - group [ref=e576]:
+          - generic "How long does a typical evaluation take?" [ref=e577] [cursor=pointer]:
+            - generic [ref=e578]: How long does a typical evaluation take?
+            - img [ref=e579]
+        - group [ref=e581]:
+          - generic "Do you accept insurance?" [ref=e582] [cursor=pointer]:
+            - generic [ref=e583]: Do you accept insurance?
+            - img [ref=e584]
+        - group [ref=e586]:
+          - generic "What is the difference between an ADHD evaluation and a neuropsychological evaluation?" [ref=e587] [cursor=pointer]:
+            - generic [ref=e588]: What is the difference between an ADHD evaluation and a neuropsychological evaluation?
+            - img [ref=e589]
+        - group [ref=e591]:
+          - generic "Can adults be evaluated for ADHD or autism?" [ref=e592] [cursor=pointer]:
+            - generic [ref=e593]: Can adults be evaluated for ADHD or autism?
+            - img [ref=e594]
+    - generic [ref=e597]:
+      - heading "Take the first step." [level=2] [ref=e598]
+      - paragraph [ref=e599]: Our coordinators are standing by to answer your questions, verify your insurance, and get you scheduled. No waitlist, no pressure — just real help.
+      - generic [ref=e600]:
+        - link "Request an appointment today" [ref=e601]:
+          - /url: "#get-help"
+          - text: Request Appointment
+        - link "Call (866) 343-0885" [ref=e602]:
+          - /url: tel:8663430885
+          - img [ref=e603]
+          - text: (866) 343-0885
+  - contentinfo [ref=e605]:
+    - generic [ref=e606]:
+      - generic [ref=e607]:
+        - generic [ref=e608]:
+          - generic [ref=e609]:
+            - img "Psychological Services logo" [ref=e611]
+            - generic [ref=e612]:
+              - generic [ref=e613]: Psychological Services
+              - generic [ref=e614]: Comprehensive Professional Services
+          - paragraph [ref=e615]: Utah's trusted behavioral health network — 60+ years of combined care. Neuropsychology, ADHD, autism, custody evaluations, addiction treatment, and more.
+        - generic [ref=e616]:
+          - heading "Services" [level=3] [ref=e617]
+          - list [ref=e618]:
+            - listitem [ref=e619]:
+              - link "Neuropsychological Evaluation" [ref=e620]:
+                - /url: /neuropsychologist-near-me
+            - listitem [ref=e621]:
+              - link "ADHD Evaluation" [ref=e622]:
+                - /url: /adhd-evaluation-near-me
+            - listitem [ref=e623]:
+              - link "Autism Assessment" [ref=e624]:
+                - /url: /autism-assessment
+            - listitem [ref=e625]:
+              - link "Custody Evaluations" [ref=e626]:
+                - /url: /custody-evaluator-near-me
+            - listitem [ref=e627]:
+              - link "Ketamine Therapy" [ref=e628]:
+                - /url: /ketamine-depression-treatment-near-me
+            - listitem [ref=e629]:
+              - link "Cognitive / IQ Testing" [ref=e630]:
+                - /url: /cognitive-evaluation-near-me
+        - generic [ref=e631]:
+          - heading "Resources" [level=3] [ref=e632]
+          - list [ref=e633]:
+            - listitem [ref=e634]:
+              - link "Blog" [ref=e635]:
+                - /url: /blog
+            - listitem [ref=e636]:
+              - link "FAQ" [ref=e637]:
+                - /url: /resources#faq
+            - listitem [ref=e638]:
+              - link "Forms" [ref=e639]:
+                - /url: /resources#forms
+            - listitem [ref=e640]:
+              - link "Insurance" [ref=e641]:
+                - /url: /resources#insurance
+            - listitem [ref=e642]:
+              - link "Patient Rights" [ref=e643]:
+                - /url: /resources#patient-rights
+            - listitem [ref=e644]:
+              - link "Conditions" [ref=e645]:
+                - /url: /conditions
+        - generic [ref=e646]:
+          - heading "Contact" [level=3] [ref=e647]
+          - list [ref=e648]:
+            - listitem [ref=e649]:
+              - img [ref=e650]
+              - link "(866) 343-0885" [ref=e652]:
+                - /url: tel:8663430885
+            - listitem [ref=e653]:
+              - img [ref=e654]
+              - link "cps@wecanhelpout.com" [ref=e657]:
+                - /url: mailto:cps@wecanhelpout.com
+            - listitem [ref=e658]:
+              - img [ref=e659]
+              - text: 1208 East 3300 South
+              - text: Salt Lake City, UT 84106
+            - listitem [ref=e662]:
+              - img [ref=e663]
+              - text: 1916 North 700 West, Ste 190
+              - text: Layton, UT 84041
+            - listitem [ref=e666]:
+              - img [ref=e667]
+              - text: 9069 South 1300 West, Ste D
+              - text: West Jordan, UT 84088
+      - generic [ref=e670]:
+        - paragraph [ref=e671]: © 2026 Psychological Services. All rights reserved.
+        - generic [ref=e672]:
+          - link "Privacy Policy" [ref=e673]:
+            - /url: /privacy
+          - link "HIPAA" [ref=e674]:
+            - /url: /hipaa
+          - link "Resources" [ref=e675]:
+            - /url: /resources
+  - generic [ref=e677]:
+    - link "Sponsor Fred — Live with the Host · Tap in to Fred's circle. Compound the days. Open →" [ref=e678] [cursor=pointer]:
+      - /url: https://circlern.com/host/eef969fc-01ae-4af5-95af-ad0f104488cc?utm_source=omni-sponsor&utm_medium=embed&utm_campaign=fred-circle&ref=cps
+      - generic [ref=e680]:
+        - generic [ref=e681]: Sponsor
+        - generic [ref=e682]: Fred — Live with the Host
+        - generic [ref=e683]: ·
+        - generic [ref=e684]: Tap in to Fred's circle. Compound the days.
+      - generic [ref=e685]: Open →
+    - link "Omni Partner Network" [ref=e686]:
+      - /url: https://omnileadsagi.com/network?ref=cps
+  - alert [ref=e687]
+```
