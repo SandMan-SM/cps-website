@@ -12,7 +12,8 @@ const pages = [
 
 for (const page of pages) {
   test(`screenshot ${page.name}`, async ({ page: pw, viewport }) => {
-    await pw.goto(page.url, { waitUntil: "domcontentloaded", timeout: 45000 });
+    await pw.goto(page.url, { waitUntil: "load", timeout: 45000 });
+    await pw.waitForLoadState('networkidle');
     const width = viewport?.width ?? 1440;
     const outDir = path.join(process.cwd(), "screenshots");
     await pw.screenshot({
