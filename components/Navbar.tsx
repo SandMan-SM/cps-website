@@ -39,7 +39,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a key={link.label} href={link.href} aria-label={link.label} className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">{link.label}</a>
+              <a key={link.label} href={link.href} className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">{link.label}</a>
             ))}
           </div>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
         <div className="lg:hidden border-t border-[var(--cps-gray-200)] bg-[var(--cps-white)] overflow-hidden">
           <div className="px-6 py-4 space-y-2">
             {navLinks.map((link) => (
-              <a key={link.label} href={link.href} onClick={() => setOpen(false)} aria-label={link.label} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{link.label}</a>
+              <a key={link.label} href={link.href} onClick={() => setOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{link.label}</a>
             ))}
             <a href={PHONE_HREF} onClick={() => setOpen(false)} aria-label="Call us" className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base"><Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}</a>
           </div>

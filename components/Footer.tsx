@@ -40,7 +40,7 @@ export default function Footer() {
                 { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me" },
                 { label: "Custody Evaluation", href: "/custody-evaluator-near-me" },
               ].map((link) => (
-                <li key={link.href}><Link href={link.href} aria-label={link.label} className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">{link.label}</Link></li>
+                <li key={link.href}><Link href={link.href} className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">{link.label}</Link></li>
               ))}
             </ul>
           </div>
