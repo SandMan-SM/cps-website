@@ -272,7 +272,7 @@ export default function HomePageClient() {
               <h2 className="section-heading text-[var(--cps-gray-900)] mb-4">Get help today</h2>
               <p className="text-[var(--cps-gray-700)] body-large">
                 Tell us a little about what you need. A Psychological Services coordinator will reach out within one business day — or call{" "}
-                <a href={PHONE_HREF} className="font-bold text-[var(--cps-blue)] hover:underline">{PHONE}</a> now.
+                <a href={PHONE_HREF} aria-label="Call (866) 343-0885" className="font-bold text-[var(--cps-blue)] hover:underline">{PHONE}</a> now.
               </p>
             </div>
 
@@ -281,7 +281,7 @@ export default function HomePageClient() {
                 <CheckCircle2 className="w-16 h-16 text-[var(--cps-success)] mx-auto mb-4" aria-hidden="true" />
                 <h3 className="text-2xl font-bold mb-2 text-[var(--cps-gray-900)]">We&apos;ve got it.</h3>
                 <p className="text-[var(--cps-gray-700)] leading-relaxed">A Psychological Services coordinator will reach out within one business day to confirm your appointment. Prefer to talk now? Call{" "}
-                  <a href={PHONE_HREF} className="font-bold text-[var(--cps-blue)] hover:underline">{PHONE}</a>.
+                  <a href={PHONE_HREF} aria-label="Call (866) 343-0885" className="font-bold text-[var(--cps-blue)] hover:underline">{PHONE}</a>.
                 </p>
               </div>
             ) : (
@@ -832,8 +832,8 @@ export default function HomePageClient() {
             <div>
               <h3 className="font-bold mb-6">Contact</h3>
               <ul className="space-y-3 text-sm text-[var(--cps-gray-400)]">
-                <li className="flex items-center gap-2"><Phone className="w-4 h-4" aria-hidden="true" /> <a href={PHONE_HREF} className="hover:text-[var(--cps-white)] transition-colors">{PHONE}</a></li>
-                <li className="flex items-center gap-2"><Mail className="w-4 h-4" aria-hidden="true" /> <a href={`mailto:${EMAIL}`} className="hover:text-[var(--cps-white)] transition-colors">{EMAIL}</a></li>
+                <li className="flex items-center gap-2"><Phone className="w-4 h-4" aria-hidden="true" /> <a href={PHONE_HREF} aria-label="Call (866) 343-0885" className="hover:text-[var(--cps-white)] transition-colors">{PHONE}</a></li>
+                <li className="flex items-center gap-2"><Mail className="w-4 h-4" aria-hidden="true" /> <a href={`mailto:${EMAIL}`} aria-label="Email us at cps@wecanhelpout.com" className="hover:text-[var(--cps-white)] transition-colors">{EMAIL}</a></li>
                 <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />1208 East 3300 South<br />Salt Lake City, UT 84106</li>
                 <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />1916 North 700 West, Ste 190<br />Layton, UT 84041</li>
                 <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />9069 South 1300 West, Ste D<br />West Jordan, UT 84088</li>
