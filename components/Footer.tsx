@@ -31,16 +31,16 @@ export default function Footer() {
             <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Evaluations</h4>
             <ul className="space-y-3">
               {[
-                { label: "Neuropsychological Evaluations", href: "/neuropsychologist-near-me" },
-                { label: "ADHD Evaluation", href: "/adhd-evaluation-near-me" },
-                { label: "ADHD Diagnosis", href: "/adhd-diagnosis-near-me" },
-                { label: "ADHD Testing", href: "/adhd-testing" },
-                { label: "Autism Assessment", href: "/autism-assessment" },
-                { label: "ADOS-2 Testing", href: "/ados-2-testing-near-me" },
-                { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me" },
-                { label: "Custody Evaluation", href: "/custody-evaluator-near-me" },
+                { label: "Neuropsychological Evaluations", href: "/neuropsychologist-near-me", aria: "Neuropsychological Evaluations" },
+                { label: "ADHD Evaluation", href: "/adhd-evaluation-near-me", aria: "ADHD Evaluation" },
+                { label: "ADHD Diagnosis", href: "/adhd-diagnosis-near-me", aria: "ADHD Diagnosis" },
+                { label: "ADHD Testing", href: "/adhd-testing", aria: "ADHD Testing" },
+                { label: "Autism Assessment", href: "/autism-assessment", aria: "Autism Assessment" },
+                { label: "ADOS-2 Testing", href: "/ados-2-testing-near-me", aria: "ADOS-2 Testing" },
+                { label: "Cognitive Evaluation", href: "/cognitive-evaluation-near-me", aria: "Cognitive Evaluation" },
+                { label: "Custody Evaluation", href: "/custody-evaluator-near-me", aria: "Custody Evaluation" },
               ].map((link) => (
-                <li key={link.href}><Link href={link.href} className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">{link.label}</Link></li>
+                <li key={link.href}><Link href={link.href} aria-label={link.aria} className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">{link.label}</Link></li>
               ))}
             </ul>
           </div>
