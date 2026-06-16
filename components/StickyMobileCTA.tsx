@@ -5,7 +5,7 @@ interface StickyMobileCTAProps {
   bookHref?: string;
 }
 
-export default function StickyMobileCTA({ bookHref = "/#get-help" }: StickyMobileCTAProps) {
+export default function StickyMobileCTA({ bookHref = "/#contact" }: StickyMobileCTAProps) {
   return (
     <div
       className="lg:hidden sticky bottom-0 z-40 bg-[var(--cps-white)] border-t border-[var(--cps-gray-200)] shadow-2xl"
