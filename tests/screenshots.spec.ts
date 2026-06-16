@@ -12,8 +12,9 @@ const pages = [
 
 for (const page of pages) {
   test(`screenshot ${page.name}`, async ({ page: pw, viewport }) => {
+    // Use 'load' instead of 'networkidle' — Google Maps iframes keep
+    // persistent connections open so networkidle never settles.
     await pw.goto(page.url, { waitUntil: "load", timeout: 45000 });
-    await pw.waitForLoadState('networkidle');
     const width = viewport?.width ?? 1440;
     const outDir = path.join(process.cwd(), "screenshots");
     await pw.screenshot({
