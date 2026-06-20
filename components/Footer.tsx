@@ -94,9 +94,9 @@ export default function Footer() {
             <ul className="space-y-4">
               <li><a href={PHONE_HREF} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label={`Call Psychological Services at ${PHONE}`}><Phone className="w-4 h-4 shrink-0" aria-hidden="true" /> {PHONE}</a></li>
               <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-[var(--cps-white)] transition-colors" aria-label={`Email Psychological Services at ${EMAIL}`}><Mail className="w-4 h-4 shrink-0" aria-hidden="true" /> {EMAIL}</a></li>
-              <li className="flex items-start gap-2 text-sm" aria-label="Our network locations">
+              <li className="flex items-start gap-2 text-sm">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5" aria-hidden="true" />
-                <div className="space-y-2">
+                <div className="space-y-2" aria-label="Our network locations">
                   <div>
                     <div className="text-xs uppercase tracking-wider text-[var(--cps-white)]/40 font-semibold">We Can Help Out</div>
                     <div>1208 E 3300 S, SLC, UT 84106</div>
