@@ -12,9 +12,12 @@ const pages = [
 
 for (const page of pages) {
   test(`screenshot ${page.name}`, async ({ page: pw, viewport }) => {
-    // Use 'load' instead of 'networkidle' — Google Maps iframes keep
-    // persistent connections open so networkidle never settles.
+    // Use 'load' and wait for images to paint before fullPage capture.
+    // Google Maps iframes prevent networkidle, so we use a fixed delay
+    // for images to load after DOM is ready.
     await pw.goto(page.url, { waitUntil: "load", timeout: 45000 });
+    // Give hero images (next/image priority) time to decode before capture
+    await pw.waitForTimeout(2500);
     const width = viewport?.width ?? 1440;
     const outDir = path.join(process.cwd(), "screenshots");
     await pw.screenshot({
