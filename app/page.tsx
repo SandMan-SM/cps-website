@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     title: "Psychological Services | Utah Behavioral Health Network",
     description:
       "Utah's trusted behavioral health network — 60+ years of combined care. Neuropsych, ADHD, autism, custody evaluations & ketamine therapy.",
+    images: ["https://psychandcustodyevaluations.com/twitter-image"],
   },
   alternates: { canonical: "https://psychandcustodyevaluations.com" },
 };
