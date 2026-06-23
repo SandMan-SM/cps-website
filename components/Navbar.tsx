@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
 import TrustMarquee from "@/components/TrustMarquee";
@@ -22,6 +23,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="sticky top-0 z-50 bg-[var(--cps-white)] border-b border-[var(--cps-gray-200)]" role="navigation" aria-label="Main navigation">
@@ -39,7 +41,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a key={link.label} href={link.href} className="text-sm font-medium text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)] transition-colors">{link.label}</a>
+              <a key={link.label} href={link.href} aria-current={pathname === link.href ? "page" : undefined} className={`text-sm font-medium transition-colors ${pathname === link.href ? "text-[var(--cps-blue)]" : "text-[var(--cps-gray-600)] hover:text-[var(--cps-blue)]"}`}>{link.label}</a>
             ))}
           </div>
 
