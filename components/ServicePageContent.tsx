@@ -87,7 +87,7 @@ export default function ServicePageContent({ service, location, relatedServices 
               <h1 className="display-heading text-[var(--cps-white)] mb-6">{h1}</h1>
               <p className="body-large text-[var(--cps-white)]/80 mb-8 max-w-2xl">{service.heroSubtitle}</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
+                <Link href="/book-consultation" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
                   <Calendar className="w-5 h-5" aria-hidden="true" />
                   {service.ctaText}
                 </Link>
@@ -421,7 +421,7 @@ export default function ServicePageContent({ service, location, relatedServices 
                 : `Schedule your ${service.shortName.toLowerCase()} at one of our three Utah locations. Call us today or book online.`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/#contact" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
+              <Link href="/book-consultation" className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg">
                 <Calendar className="w-5 h-5" aria-hidden="true" />
                 {service.ctaText}
               </Link>

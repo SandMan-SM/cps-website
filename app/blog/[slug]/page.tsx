@@ -861,7 +861,7 @@ export default async function BlogPostPage({
                 <Phone className="w-4 h-4" aria-hidden="true" /> (866) 343-0885
               </a>
               <Link
-                href="/#contact"
+                href="/book-consultation"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 hover:border-white text-[var(--cps-white)] font-semibold rounded-xl transition-colors"
               >
                 Schedule Online

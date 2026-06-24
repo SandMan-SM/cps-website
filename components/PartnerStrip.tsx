@@ -25,6 +25,7 @@ export default function PartnerStrip({ variant = "light" }: PartnerStripProps) {
               target="_blank"
               rel="noopener noreferrer"
               data-track={`partner:${p.domain}`}
+              aria-label={p.name}
               className={`font-bold text-sm tracking-wide transition-colors ${
                 isDark
                   ? "text-[var(--cps-white)]/80 hover:text-[var(--cps-teal)]"

@@ -105,7 +105,7 @@ export default async function ConditionPage({
             <p className="body-large text-[var(--cps-white)]/80 mb-10 max-w-[65ch]">{data.hook}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/#contact"
+                href="/book-consultation"
                 className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] font-bold rounded-xl transition-colors text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cps-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cps-dark)]"
               >
                 Schedule an Evaluation
