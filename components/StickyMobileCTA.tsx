@@ -22,7 +22,7 @@ export default function StickyMobileCTA({ bookHref = "/#contact" }: StickyMobile
         </a>
         <Link
           href={bookHref}
-
+          aria-label="Get Help Today"
           className="flex-[2] flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm bg-[var(--cps-blue)] hover:bg-[var(--cps-blue-hover)] text-[var(--cps-white)] transition-colors"
         >
           <HeartPulse className="w-5 h-5" aria-hidden="true" />
