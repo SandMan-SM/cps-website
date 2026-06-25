@@ -51,7 +51,7 @@ const team: Clinician[] = [
     credentials: "Ph.D.",
     role: "Founder & Clinical Director",
     isFounder: true,
-    photo: "https://wecanhelpout.com/wp-content/uploads/2018/05/StevenSzykula.jpg",
+    photo: "",
     initials: "SS",
     bio: "Dr. Steve founded Psychological Services in 1986 with a mission to bring evidence-based behavioral health care to Utah families. A University of Tennessee-trained psychologist, he has spent nearly 40 years building a practice where the best clinicians in Utah can practice at the highest level — and where clients get real, measurable outcomes. Dr. Szykula remains actively involved in clinical supervision across the practice and consults regularly with all practitioners. He is the author of \"Get Off the Bus\" and \"Good Parent,\" and has dedicated his career to advancing the science and practice of psychological care.",
     specialties: [
@@ -68,7 +68,7 @@ const team: Clinician[] = [
     name: "Morgan Molly Baker",
     credentials: "PhD",
     role: "Psychologist",
-    photo: "https://wecanhelpout.com/wp-content/uploads/2025/11/Baker_Morgan_Headshot.jpg",
+    photo: "",
     initials: "MB",
     bio: "Dr. Molly Baker is a psychologist specializing in anxiety, trauma, and neuropsychological evaluations. She helps individuals who feel overwhelmed, stuck, or disconnected find clarity, confidence, and relief. She provides comprehensive psychological evaluations with personalized treatment plans and has supported clients through challenges with addiction, cognitive functioning, OCD, grief, and much more. Her approach blends warmth, evidence-based strategies, and practical tools.",
     specialties: [
@@ -86,7 +86,7 @@ const team: Clinician[] = [
     name: "Dr. Ashley Storer",
     credentials: "APRN, DNP/FNP-BC",
     role: "Nurse Practitioner",
-    photo: "https://wecanhelpout.com/wp-content/uploads/2025/11/1673997965662.jpg",
+    photo: "",
     initials: "AS",
     bio: "Dr. Storer is a compassionate and motivated provider specializing in medication management and therapy for a wide range of mental health conditions. She holds a Doctorate in Nurse Practitioner practice from Rocky Mountain University of Health Professionals and has worked in healthcare for over 15 years. With 18+ years as a master practitioner, she integrates evidence-based therapy, holistic healing, and integrative medicine to help patients navigate emotional struggles and live their most rewarding lives.",
     specialties: [
@@ -106,7 +106,7 @@ const team: Clinician[] = [
     name: "James \"Jim\" Williams",
     credentials: "PMHNP",
     role: "Psychiatric Nurse Practitioner",
-    photo: "https://wecanhelpout.com/wp-content/uploads/2026/02/jim-pic-e1770661920807.jpg",
+    photo: "",
     initials: "JW",
     bio: "James Williams is a Psychiatric Nurse Practitioner with over eight years of experience in mental health care, including three years as a PMHNP. He has worked across a wide range of settings — from inpatient and outpatient care to forensic psychiatry — giving him a broad understanding of the challenges patients face. James takes a holistic, functional psychiatry approach, combining medication management and psychotherapy to support each patient's unique goals. Warm, approachable, and collaborative, he is committed to treating the whole person.",
     specialties: [
@@ -123,7 +123,7 @@ const team: Clinician[] = [
     name: "Linda Protzman",
     credentials: "LCSW",
     role: "Licensed Clinical Social Worker",
-    photo: "https://wecanhelpout.com/wp-content/uploads/2025/11/Protzman_Linda_Headshot-e1764187334933.jpg",
+    photo: "",
     initials: "LP",
     bio: "Linda exhibits high energy, a warm personality, and a great sense of humor. After more than 20 years of practice, she continues to receive referrals from former clients who recommend her to their own families and friends — a testament to the lasting impact of her work. Linda provides evidence-based therapy services to individuals of all ages for most mental health conditions and life challenges. She is widely regarded as one of the most skilled therapists on the Psychological Services team.",
     specialties: [
@@ -142,7 +142,7 @@ const team: Clinician[] = [
     name: "Justin Green",
     credentials: "CSW",
     role: "Clinical Social Worker",
-    photo: "https://wecanhelpout.com/wp-content/uploads/2026/01/Green_Justin_pic.png",
+    photo: "",
     initials: "JG",
     bio: "Justin holds a Master's degree in Clinical Social Work and specializes in an evidence-based approach to helping clients resolve a wide range of life problems. He goes beyond the call of duty to research solution-focused, mindful, and cognitive behavioral methods. Justin regularly consults with Dr. Szykula and the full clinical team to ensure he's bringing the most complete therapeutic strategies to each client. Clients are drawn to his calm demeanor and personable approach.",
     specialties: [
@@ -162,7 +162,7 @@ const team: Clinician[] = [
     name: "Hennacee Kimmel",
     credentials: "ACMHC",
     role: "Clinical Mental Health Counselor",
-    photo: "https://wecanhelpout.com/wp-content/uploads/2025/12/Hennacee.jpg",
+    photo: "",
     initials: "HK",
     bio: "Hennacee is a clinical mental health counselor whose main goal is to join clients in their journey through healing and wellness. Her method of practice is an eclectic merger of strengths-based and client-centered models designed to empower clients and build on their inherent resilience. She holds a Master's in Clinical Mental Health Counseling from Capella University and a Bachelor's in Psychology from the University of Arizona. She is affirming of LGBTQ+ identities, kink-informed, and specializes in working with BIPOC clients.",
     specialties: [
@@ -181,7 +181,7 @@ const team: Clinician[] = [
     name: "Taylor Woslager",
     credentials: "CSW",
     role: "Clinical Social Worker",
-    photo: "https://wecanhelpout.com/wp-content/uploads/2025/08/Taylor-pic-e1754517983720.jpg",
+    photo: "",
     initials: "TW",
     bio: "Taylor recognized the importance of therapy and mental health care during high school, when friends and family struggled in silence. That experience shaped a career dedicated to creating comfortable, judgment-free spaces where people feel safe to open the door to healing. She has worked with court-involved teens, students in the Ogden School District, and adults through telehealth nonprofits. Her passion is helping individuals, families, and communities reach their goals and achieve their full potential.",
     specialties: [
