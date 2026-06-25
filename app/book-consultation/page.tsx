@@ -259,6 +259,42 @@ export default function BookConsultationPage() {
         </div>
       </section>
 
+      {/* Office locations */}
+      <section className="border-t border-[var(--cps-gray-200)] bg-[var(--cps-gray-50)] py-12 md:py-20">
+        <div className="mx-auto max-w-7xl px-8 sm:px-10 lg:px-10">
+          <h2 className="mb-2 text-2xl font-bold text-[var(--cps-gray-700)] sm:text-3xl">
+            Find us
+          </h2>
+          <p className="mb-8 text-[var(--cps-gray-500)]">
+            Three Wasatch Front offices serving Salt Lake City, Layton, and West Jordan.
+          </p>
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              { name: "Salt Lake City — Millcreek", query: "1208+East+3300+South+Salt+Lake+City+UT+84106", address: "1208 E 3300 S, Millcreek (Salt Lake City), UT 84106" },
+              { name: "Layton", query: "1916+North+700+West+Suite+190+Layton+UT+84041", address: "1916 N 700 W #190, Layton, UT 84041" },
+              { name: "West Jordan", query: "9069+South+1300+West+Suite+D+West+Jordan+UT+84088", address: "9069 S 1300 W #D, West Jordan, UT 84088" },
+            ].map((loc) => (
+              <div key={loc.name} className="overflow-hidden rounded-2xl border border-[var(--cps-gray-200)] bg-white">
+                <div className="h-56 bg-[var(--cps-gray-100)]">
+                  <iframe
+                    title={`Map of CPS ${loc.name} office`}
+                    src={`https://maps.google.com/maps?q=${loc.query}&output=embed&z=15`}
+                    width="100%" height="100%"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="border-0 w-full h-full"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="mb-1 font-bold text-[var(--cps-gray-900)] text-sm">{loc.name}</h3>
+                  <p className="text-xs text-[var(--cps-gray-500)]">{loc.address}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer band */}
       <section
         className="border-t border-[var(--cps-gray-200)] py-10"
