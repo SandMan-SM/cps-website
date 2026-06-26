@@ -30,7 +30,7 @@ export function OrganizationSchema() {
     },
     memberOf: [
       { "@type": "Organization", name: "We Can Help Out", url: "https://wecanhelpout.com" },
-      { "@type": "Organization", name: "Utah Addiction Centers", url: "https://utahaddictioncenters.com" },
+      { "@type": "Organization", name: "Utah Addiction Centers", url: "https://www.utahaddictioncenters.com" },
     ],
     email: "cps@wecanhelpout.com",
     foundingDate: "1986",

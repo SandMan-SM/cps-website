@@ -445,7 +445,7 @@ export default function HomePageClient() {
                       <p className="text-sm text-[var(--cps-gray-600)] leading-relaxed mb-2">
                         Residential and outpatient addiction treatment — substance use disorder care, detox support, and recovery programs at their Eagle Mountain campus.
                       </p>
-                      <a href="https://utahaddictioncenters.com" target="_blank" rel="noopener noreferrer" data-track="network:utahaddictioncenters" aria-label="Utah Addiction Centers (opens in new tab)" className="text-sm font-semibold text-[var(--cps-blue)] hover:underline">
+                      <a href="https://www.utahaddictioncenters.com" target="_blank" rel="noopener noreferrer" data-track="network:utahaddictioncenters" aria-label="Utah Addiction Centers (opens in new tab)" className="text-sm font-semibold text-[var(--cps-blue)] hover:underline">
                         utahaddictioncenters.com
                       </a>
                     </div>
