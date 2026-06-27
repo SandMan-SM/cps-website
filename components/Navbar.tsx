@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="lg:hidden border-t border-[var(--cps-gray-200)] bg-[var(--cps-white)] overflow-hidden">
           <div className="px-6 py-4 space-y-2">
             {navLinks.map((link) => (
-              <a key={link.label} href={link.href} onClick={() => setOpen(false)} className="block px-4 py-4 rounded-xl text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)] font-medium transition-colors">{link.label}</a>
+              <a key={link.label} href={link.href} onClick={() => setOpen(false)} aria-current={pathname === link.href ? "page" : undefined} className={`block px-4 py-4 rounded-xl font-medium transition-colors ${pathname === link.href ? "bg-[var(--cps-light)] text-[var(--cps-blue)]" : "text-[var(--cps-gray-700)] hover:bg-[var(--cps-gray-50)]"}`}>{link.label}</a>
             ))}
             <a href={PHONE_HREF} onClick={() => setOpen(false)} aria-label="Call us" className="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[var(--cps-blue)] text-[var(--cps-white)] rounded-xl font-semibold text-base"><Phone className="w-4 h-4" aria-hidden="true" /> {PHONE}</a>
           </div>
