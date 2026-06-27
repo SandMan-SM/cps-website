@@ -49,12 +49,12 @@ export default function Footer() {
             <h4 className="text-[var(--cps-white)] font-semibold mb-4 text-sm uppercase tracking-wider">Treatment</h4>
             <ul className="space-y-3">
               <li><Link href="/ketamine-depression-treatment-near-me" aria-label="Ketamine Therapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Ketamine Therapy</Link></li>
-              <li><Link href="/services" aria-label="Spravato (Esketamine)" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Spravato (Esketamine)</Link></li>
-              <li><Link href="/services" aria-label="Intensive Outpatient (IOP)" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Intensive Outpatient (IOP)</Link></li>
-              <li><Link href="/services" aria-label="Counseling &amp; Psychotherapy" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Counseling &amp; Psychotherapy</Link></li>
-              <li><Link href="/services" aria-label="Medication Management" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Medication Management</Link></li>
-              <li><Link href="/services" aria-label="Neurofeedback" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Neurofeedback</Link></li>
-              <li><Link href="/services" aria-label="Telehealth" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Telehealth</Link></li>
+              <li><Link href="/services" aria-label="View Spravato (Esketamine) service" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Spravato (Esketamine)</Link></li>
+              <li><Link href="/services" aria-label="View Intensive Outpatient (IOP) service" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Intensive Outpatient (IOP)</Link></li>
+              <li><Link href="/services" aria-label="View Counseling &amp; Psychotherapy service" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Counseling &amp; Psychotherapy</Link></li>
+              <li><Link href="/services" aria-label="View Medication Management service" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Medication Management</Link></li>
+              <li><Link href="/services" aria-label="View Neurofeedback service" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Neurofeedback</Link></li>
+              <li><Link href="/services" aria-label="View Telehealth service" className="block text-sm hover:text-[var(--cps-white)] transition-colors py-2">Telehealth</Link></li>
             </ul>
             <h4 className="text-[var(--cps-white)] font-semibold mt-6 mb-4 text-sm uppercase tracking-wider">Conditions</h4>
             <ul className="space-y-3">
