@@ -122,7 +122,7 @@ export default function Footer() {
 
         <PartnerStrip variant="dark" />
 
-        <div className="border-t border-white/10 pt-8">
+        <div className="border-t border-[rgba(255,255,255,0.1)] pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
             <p className="text-xs text-[var(--cps-white)]/40">© {new Date().getFullYear()} Psychological Services. All rights reserved.</p>
             <div className="flex gap-6 text-xs text-[var(--cps-white)]/40">
