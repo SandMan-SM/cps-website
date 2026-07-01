@@ -129,7 +129,7 @@ export default function BookConsultationPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[var(--cps-white)] text-[var(--cps-gray-700)]">
+    <main id="main" className="min-h-screen bg-[var(--cps-white)] text-[var(--cps-gray-700)]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
