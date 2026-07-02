@@ -83,7 +83,7 @@ export default function ServicesIndexPage() {
               Full Service Catalog
             </p>
             <h1 className="display-heading text-[var(--cps-white)] mb-6 max-w-4xl">
-              All Psychological Services Services — Evaluations & Treatment
+              All Services — Evaluations & Treatment
             </h1>
             <p className="body-large text-[var(--cps-white)]/80 max-w-[65ch]">
               Every evaluation and treatment we offer, organized so you can quickly find what fits.
