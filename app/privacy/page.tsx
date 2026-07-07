@@ -5,7 +5,21 @@ import { brand } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Privacy practices for ${brand.name}.`,
+  alternates: { canonical: `${brand.domain}/privacy` },
   robots: { index: false, follow: true },
+  openGraph: {
+    type: "website",
+    url: `${brand.domain}/privacy`,
+    siteName: brand.name,
+    title: "Privacy Policy",
+    description: `Privacy practices for ${brand.name}.`,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy",
+    description: `Privacy practices for ${brand.name}.`,
+  },
 };
 
 export default function PrivacyPage() {

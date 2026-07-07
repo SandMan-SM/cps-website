@@ -5,7 +5,21 @@ import { brand } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: `Terms of use for the ${brand.name} website.`,
+  alternates: { canonical: `${brand.domain}/terms` },
   robots: { index: false, follow: true },
+  openGraph: {
+    type: "website",
+    url: `${brand.domain}/terms`,
+    siteName: brand.name,
+    title: "Terms of Use",
+    description: `Terms of use for the ${brand.name} website.`,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Use",
+    description: `Terms of use for the ${brand.name} website.`,
+  },
 };
 
 export default function TermsPage() {
