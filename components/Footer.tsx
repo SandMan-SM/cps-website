@@ -80,8 +80,8 @@ export default function Footer() {
             © {new Date().getFullYear()} {brand.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="/privacy" className="hover:text-white">Privacy Policy</a>
-            <a href="/terms" className="hover:text-white">Terms of Use</a>
+            <a href="/privacy" aria-label="Privacy Policy" className="hover:text-white">Privacy Policy</a>
+            <a href="/terms" aria-label="Terms of Use" className="hover:text-white">Terms of Use</a>
           </div>
         </div>
       </div>
