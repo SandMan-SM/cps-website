@@ -68,7 +68,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-wide text-white">Explore</h3>
             <ul className="mt-3 space-y-2 text-sm text-teal-200">
               <li><a href="/#services" className="hover:text-white">Services</a></li>
-              <li><a href="/service-area" className="hover:text-white">Service Area</a></li>
+              <li><a href="/service-area" aria-label="Service Areas we serve in Utah" className="hover:text-white">Service Area</a></li>
               <li><a href="/#locations" className="hover:text-white">Locations</a></li>
               <li><a href="/#request" className="hover:text-white">Request an appointment</a></li>
             </ul>
