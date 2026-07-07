@@ -1,6 +1,26 @@
 import type { Metadata } from "next";
 import { brand } from "@/lib/data";
 import Header from "@/components/Header";
+
+function JsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },
+        ],
+      },
+    ],
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
 import Hero from "@/components/Hero";
 import TrustBand from "@/components/TrustBand";
 import Services from "@/components/Services";
@@ -37,6 +57,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Header />
       <main className="pb-20 md:pb-0">
         <Hero />
