@@ -266,7 +266,7 @@ export default async function CityPage({ params }: Params) {
               ].map(({ icon: Icon, title, body }) => (
                 <div
                   key={title}
-                  className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-5 shadow-card"
+                  className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
                 >
                   <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
                     <Icon className="h-5 w-5" aria-hidden />
@@ -300,7 +300,7 @@ export default async function CityPage({ params }: Params) {
               {localFaqs.map((f) => (
                 <details
                   key={f.q}
-                  className="group rounded-2xl border border-teal-100 bg-white p-5 shadow-card"
+                  className="group rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
                 >
                   <summary className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
                     {f.q}

@@ -232,7 +232,7 @@ export default async function ServicePage({ params }: Params) {
               {service.faqs.map((f) => (
                 <details
                   key={f.q}
-                  className="group rounded-2xl border border-teal-100 bg-white p-5 shadow-card"
+                  className="group rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
                 >
                   <summary className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
                     {f.q}

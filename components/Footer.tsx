@@ -79,7 +79,7 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {brand.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-6">
             <a href="/privacy" className="hover:text-white">Privacy Policy</a>
             <a href="/terms" className="hover:text-white">Terms of Use</a>
           </div>
