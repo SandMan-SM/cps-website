@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     description: `Serving ${cities.length}+ Utah cities across Salt Lake, Davis, Weber, and Utah counties, plus telehealth statewide.`,
     locale: "en_US",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Service Area — Utah Cities We Serve | CPS",
+    description: `Serving ${cities.length}+ Utah cities across Salt Lake, Davis, Weber, and Utah counties, plus telehealth statewide.`,
+  },
 };
 
 export default function ServiceAreaPage() {
