@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 font-bold text-white">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 font-bold text-white" aria-hidden>
                 C
               </span>
               <span className="text-base font-bold text-white">{brand.shortName}</span>
