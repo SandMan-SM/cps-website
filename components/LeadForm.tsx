@@ -152,6 +152,7 @@ export default function LeadForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
+        aria-label={status === "submitting" ? "Sending your appointment request" : "Request my appointment"}
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:opacity-70"
       >
         {status === "submitting" ? (
