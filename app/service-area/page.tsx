@@ -83,7 +83,7 @@ export default function ServiceAreaPage() {
               {cities.length}+ communities across the Wasatch Front since {brand.since}.
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="mt-6 grid sm:grid-cols-3" style={{ gap: "2rem" }}>
               {locations.map((loc) => (
                 <div
                   key={loc.id}
@@ -114,7 +114,7 @@ export default function ServiceAreaPage() {
                 <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
                   {group.county} County
                 </h2>
-                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "2rem" }}>
                   {group.cities.map((c) => (
                     <Link
                       key={c.slug}

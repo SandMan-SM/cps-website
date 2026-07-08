@@ -175,7 +175,7 @@ export default async function CityPage({ params }: Params) {
               CPS offers counseling, medication management, neurofeedback, and more.
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid sm:grid-cols-2" style={{ gap: "2rem" }}>
               <div className="flex items-start gap-3 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
                 <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
                   <Car className="h-5 w-5" aria-hidden />
