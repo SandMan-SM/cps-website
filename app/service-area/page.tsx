@@ -37,6 +37,33 @@ export default function ServiceAreaPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": ["MedicalBusiness", "Psychologist"],
+        "@id": `${brand.domain}/#organization`,
+        name: brand.name,
+        url: brand.domain,
+        telephone: `+1-${brand.phone}`,
+        email: brand.email,
+        foundingDate: String(brand.since),
+        founder: {
+          "@type": "Person",
+          name: brand.founder.name,
+          jobTitle: brand.founder.title,
+        },
+        areaServed: { "@type": "State", name: "Utah" },
+        availableAtOrFrom: locations.map((loc) => ({
+          "@type": "MedicalClinic",
+          name: `${brand.name} — ${loc.name}`,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: loc.street,
+            addressLocality: loc.cityLine.split(", ")[0],
+            addressRegion: "UT",
+            postalCode: loc.cityLine.split(", ")[1]?.split(" ").pop() || "",
+            addressCountry: "US",
+          },
+        })),
+      },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },

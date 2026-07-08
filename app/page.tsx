@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { brand } from "@/lib/data";
+import { brand, locations } from "@/lib/data";
 import Header from "@/components/Header";
 
 function JsonLd() {
@@ -7,9 +7,73 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": ["MedicalBusiness", "Psychologist"],
+        "@id": `${brand.domain}/#organization`,
+        name: brand.name,
+        url: brand.domain,
+        telephone: `+1-${brand.phone}`,
+        email: brand.email,
+        foundingDate: String(brand.since),
+        founder: {
+          "@type": "Person",
+          name: brand.founder.name,
+          jobTitle: brand.founder.title,
+        },
+        areaServed: { "@type": "State", name: "Utah" },
+        availableAtOrFrom: locations.map((loc) => ({
+          "@type": "MedicalClinic",
+          name: `${brand.name} — ${loc.name}`,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: loc.street,
+            addressLocality: loc.cityLine.split(", ")[0],
+            addressRegion: "UT",
+            postalCode: loc.cityLine.split(", ")[1]?.split(" ").pop() || "",
+            addressCountry: "US",
+          },
+        })),
+      },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What kinds of therapy do you offer?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "We offer individual, couples, family, and child/adolescent therapy using evidence-based approaches. During your first visit, your provider will recommend the approach best suited to your goals.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you accept insurance for counseling?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Most major insurance accepted — call to verify your coverage. Our team is happy to help you understand your benefits before your first appointment.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can I do therapy from home?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We offer secure telehealth counseling anywhere in Utah, so you can meet with your provider from the comfort of home when that works best for you.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What ages do you serve?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "We serve children, adolescents, adults, and seniors — the full range of ages across our counseling, medication management, and neurofeedback services.",
+            },
+          },
         ],
       },
     ],
