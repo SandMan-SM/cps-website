@@ -34,6 +34,7 @@ export default function Locations() {
               <div className="mt-5 flex flex-col gap-2">
                 <a
                   href={brand.phoneHref}
+                  aria-label={`Call ${brand.name} at ${brand.phone}`}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-800"
                 >
                   <Phone className="h-4 w-4" aria-hidden /> Call {brand.phone}
@@ -42,6 +43,7 @@ export default function Locations() {
                   href={loc.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Get directions to ${brand.name} ${loc.name} office`}
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-teal-200 px-4 py-2.5 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
                 >
                   <Navigation className="h-4 w-4" aria-hidden /> Get directions

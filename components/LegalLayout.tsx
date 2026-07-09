@@ -30,11 +30,11 @@ export default function LegalLayout({
         <div className="mt-12 rounded-2xl border border-teal-100 bg-white p-6 shadow-card">
           <p className="text-sm text-teal-800/90">
             Questions about this policy? Contact {brand.name} at{" "}
-            <a href={`mailto:${brand.email}`} className="font-semibold text-teal-700">
+            <a href={`mailto:${brand.email}`} aria-label={`Email ${brand.name}`} className="font-semibold text-teal-700">
               {brand.email}
             </a>{" "}
             or call{" "}
-            <a href={brand.phoneHref} className="inline-flex items-center gap-1 font-semibold text-teal-700">
+            <a href={brand.phoneHref} aria-label={`Call ${brand.name} at ${brand.phone}`} className="inline-flex items-center gap-1 font-semibold text-teal-700">
               <Phone className="h-3.5 w-3.5" aria-hidden /> {brand.phone}
             </a>
             .

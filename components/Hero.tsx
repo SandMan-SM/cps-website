@@ -30,6 +30,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
             <a
               href={brand.phoneHref}
+              aria-label={`Call ${brand.name} at ${brand.phone}`}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800"
             >
               <Phone className="h-5 w-5" aria-hidden />
