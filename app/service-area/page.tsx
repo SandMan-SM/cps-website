@@ -114,7 +114,7 @@ export default function ServiceAreaPage() {
               {locations.map((loc) => (
                 <div
                   key={loc.id}
-                  className="flex items-start gap-3 rounded-2xl border border-teal-100 bg-white p-4 shadow-card"
+                  className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card"
                 >
                   <MapPin className="mt-0.5 h-5 w-5 flex-none text-teal-700" aria-hidden />
                   <p className="text-sm text-teal-900">
@@ -146,7 +146,7 @@ export default function ServiceAreaPage() {
                     <Link
                       key={c.slug}
                       href={`/utah/${c.slug}`}
-                      className="group flex items-start gap-3 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
+                      className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
                     >
                       <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
                         <MapPin className="h-5 w-5" aria-hidden />

@@ -1,13 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Phone, CheckCircle2, Loader2, CalendarCheck } from "lucide-react";
 import { brand, locationOptions } from "@/lib/data";
+import { captureAttribution, readAttribution } from "@/lib/attribution";
 
 type Status = "idle" | "submitting" | "success";
 
 export default function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
+
+  // First-touch attribution: persist utm_source/medium/campaign + referrer +
+  // landing path on mount so it survives navigation before the form submits.
+  useEffect(() => {
+    captureAttribution();
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -21,6 +28,7 @@ export default function LeadForm() {
       phone: String(fd.get("phone") || ""),
       location: String(fd.get("location") || ""),
       message: String(fd.get("message") || ""),
+      ...readAttribution(),
     };
 
     setStatus("submitting");

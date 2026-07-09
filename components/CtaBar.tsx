@@ -12,7 +12,7 @@ export default function CtaBar({
   requestHref?: string;
 }) {
   return (
-    <div className={`flex flex-col gap-3 sm:flex-row ${className}`}>
+    <div className={`flex flex-col gap-4 sm:flex-row ${className}`}>
       <a
         href={brand.phoneHref}
         aria-label="Call CPS"

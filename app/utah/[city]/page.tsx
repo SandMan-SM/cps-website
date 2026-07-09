@@ -176,7 +176,7 @@ export default async function CityPage({ params }: Params) {
             </p>
 
             <div className="mt-6 grid sm:grid-cols-2" style={{ gap: "2rem" }}>
-              <div className="flex items-start gap-3 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
+              <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
                 <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
                   <Car className="h-5 w-5" aria-hidden />
                 </span>
@@ -186,7 +186,7 @@ export default async function CityPage({ params }: Params) {
                   from {city.name} — {office.full}.
                 </p>
               </div>
-              <div className="flex items-start gap-3 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
+              <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
                 <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
                   <Video className="h-5 w-5" aria-hidden />
                 </span>
@@ -319,7 +319,7 @@ export default async function CityPage({ params }: Params) {
               <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
                 CPS also serves nearby cities
               </h2>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap gap-4">
                 {neighbors.map((n) => (
                   <Link
                     key={n.slug}
@@ -352,7 +352,7 @@ export default async function CityPage({ params }: Params) {
               Call now to speak with a real person, or request an appointment and we&apos;ll
               reach out to match you with the right provider.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href={brand.phoneHref}
                 aria-label="Call CPS"

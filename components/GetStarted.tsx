@@ -30,7 +30,7 @@ export default function GetStarted() {
         </ol>
 
         <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-4 rounded-2xl border border-sand-200 bg-sand-50 p-6 text-center sm:flex-row sm:justify-between sm:text-left">
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-4">
             <ShieldCheck className="mt-0.5 h-6 w-6 flex-none text-sand-700" aria-hidden />
             <p className="text-sm font-medium text-teal-900">{insuranceLine}</p>
           </div>

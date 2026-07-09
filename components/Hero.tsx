@@ -11,7 +11,7 @@ export default function Hero() {
 
   return (
     <section className="bg-hero">
-      <div className="mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-20">
+      <div className="mx-auto max-w-7xl px-8 sm:px-10 lg:px-10 py-16 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-1.5 text-xs font-semibold text-teal-700 shadow-sm">
             <Award className="h-4 w-4" aria-hidden /> {brand.award} · {brand.providerCount} licensed providers
@@ -21,30 +21,30 @@ export default function Hero() {
             Compassionate mental health care for every Utah family — since {brand.since}.
           </h1>
 
-          <p className="text-balance mx-auto mt-5 max-w-2xl text-lg text-teal-800/90">
+          <p className="text-balance mx-auto mt-6 max-w-2xl text-lg text-teal-800/90">
             Counseling, medication management, neurofeedback, evaluations, and more — with a
             team of {brand.providerCount} licensed providers across Salt Lake City, Layton, and
             West Jordan. In person or via telehealth.
           </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
             <a
               href={brand.phoneHref}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-7 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800"
             >
               <Phone className="h-5 w-5" aria-hidden />
               Call {brand.phone}
             </a>
             <a
               href="#request"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-teal-700 bg-white px-7 py-4 text-base font-bold text-teal-800 transition hover:bg-teal-50 sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-teal-700 bg-white px-8 py-4 text-base font-bold text-teal-800 transition hover:bg-teal-50"
             >
               <CalendarCheck className="h-5 w-5" aria-hidden />
               Request an appointment
             </a>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-medium text-teal-800">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-teal-800">
             {trust.map(({ icon: Icon, label }) => (
               <span key={label} className="inline-flex items-center gap-1.5">
                 <Icon className="h-4 w-4 text-teal-600" aria-hidden />

@@ -177,7 +177,7 @@ export default async function ServicePage({ params }: Params) {
               </h2>
               <ul className="mt-6 space-y-3">
                 {service.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-3">
+                  <li key={b} className="flex items-start gap-4">
                     <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-teal-700/10 text-teal-700">
                       <Check className="h-4 w-4" aria-hidden />
                     </span>
@@ -193,7 +193,7 @@ export default async function ServicePage({ params }: Params) {
               </h2>
               <ul className="mt-6 space-y-3">
                 {service.whoFor.map((w) => (
-                  <li key={w} className="flex items-start gap-3">
+                  <li key={w} className="flex items-start gap-4">
                     <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-teal-700/10 text-teal-700">
                       <Users className="h-4 w-4" aria-hidden />
                     </span>
@@ -254,7 +254,7 @@ export default async function ServicePage({ params }: Params) {
               Serving the Wasatch Front from Salt Lake City, Layton, and West Jordan — plus
               telehealth statewide.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-4">
               {topCities.map((c) => (
                 <Link
                   key={c.slug}
@@ -286,7 +286,7 @@ export default async function ServicePage({ params }: Params) {
               Call now to speak with a real person, or request an appointment and we&apos;ll
               match you with the right provider.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a
                 href={brand.phoneHref}
                 aria-label={`Call ${brand.name} at ${brand.phone}`}

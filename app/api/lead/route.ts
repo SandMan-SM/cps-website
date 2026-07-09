@@ -13,6 +13,19 @@ type LeadBody = {
   phone?: string;
   location?: string;
   message?: string;
+  // Marketing attribution (first-touch), captured client-side.
+  utm_source?: string | null;
+  utm_medium?: string | null;
+  utm_campaign?: string | null;
+  utm_term?: string | null;
+  utm_content?: string | null;
+  referrer?: string | null;
+  landing_path?: string | null;
+};
+
+const clean = (v: unknown): string | null => {
+  const s = typeof v === "string" ? v.trim() : "";
+  return s ? s.slice(0, 500) : null;
 };
 
 export async function POST(request: Request) {
@@ -28,6 +41,15 @@ export async function POST(request: Request) {
   const name = (body.name || "").trim();
   const location = (body.location || "").trim();
   const message = (body.message || "").trim();
+
+  // Attribution — forwarded to the CRM inside the event `properties` JSON.
+  const utm_source = clean(body.utm_source);
+  const utm_medium = clean(body.utm_medium);
+  const utm_campaign = clean(body.utm_campaign);
+  const utm_term = clean(body.utm_term);
+  const utm_content = clean(body.utm_content);
+  const referrer = clean(body.referrer);
+  const landing_path = clean(body.landing_path);
 
   // Validate email + phone. Invalid input is still acknowledged (never block the UX),
   // but we skip the forward when it clearly isn't a real lead.
@@ -55,6 +77,13 @@ export async function POST(request: Request) {
             message,
             source: "cpsutah",
             brand: "Comprehensive Psychological Services",
+            utm_source,
+            utm_medium,
+            utm_campaign,
+            utm_term,
+            utm_content,
+            referrer,
+            landing_path,
           },
         }),
       });

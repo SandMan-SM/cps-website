@@ -24,7 +24,7 @@ export default function RequestSection() {
 
             <ul className="mt-8 space-y-4">
               {points.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-center gap-3">
+                <li key={text} className="flex items-center gap-4">
                   <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
