@@ -11,7 +11,7 @@ export default function Hero() {
 
   return (
     <section className="bg-hero">
-      <div className="mx-auto max-w-7xl px-8 sm:px-10 lg:px-10 py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-8 sm:px-10 lg:px-10 py-16 md:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-1.5 text-xs font-semibold text-teal-700 shadow-sm">
             <Award className="h-4 w-4" aria-hidden /> {brand.award} · {brand.providerCount} licensed providers
