@@ -19,7 +19,8 @@ for (const page of pages) {
           : { width: 1440, height: 900 }
       );
       await p.goto(page.path);
-      await p.waitForLoadState("networkidle");
+      await p.waitForLoadState("domcontentloaded");
+      await p.waitForTimeout(2000);
       // Check no console errors
       const errors: string[] = [];
       p.on("console", (msg) => {
