@@ -67,10 +67,10 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wide text-white">Explore</h3>
             <ul className="mt-3 space-y-2 text-sm text-teal-200">
-              <li><a href="/#services" className="hover:text-white">Services</a></li>
+              <li><a href="/#services" aria-label="Jump to Services section" className="hover:text-white">Services</a></li>
               <li><a href="/service-area" aria-label="Service Areas we serve in Utah" className="hover:text-white">Service Area</a></li>
-              <li><a href="/#locations" className="hover:text-white">Locations</a></li>
-              <li><a href="/#request" className="hover:text-white">Request an appointment</a></li>
+              <li><a href="/#locations" aria-label="Jump to Locations section" className="hover:text-white">Locations</a></li>
+              <li><a href="/#request" aria-label="Jump to appointment request section" className="hover:text-white">Request an appointment</a></li>
             </ul>
           </div>
         </div>

@@ -64,6 +64,7 @@ export default function LeadForm() {
         </p>
         <a
           href={brand.phoneHref}
+          aria-label={`Call ${brand.phone}`}
           className="mt-5 inline-flex items-center gap-2 rounded-full bg-teal-700 px-6 py-3 text-base font-bold text-white transition hover:bg-teal-800"
         >
           <Phone className="h-5 w-5" aria-hidden /> Call {brand.phone}
@@ -176,7 +177,7 @@ export default function LeadForm() {
 
       <p className="mt-4 text-center text-sm text-teal-800/70">
         Prefer to talk now?{" "}
-        <a href={brand.phoneHref} className="font-semibold text-teal-700 hover:text-teal-800">
+        <a href={brand.phoneHref} aria-label={`Call ${brand.phone}`} className="font-semibold text-teal-700 hover:text-teal-800">
           Call {brand.phone}
         </a>
       </p>
