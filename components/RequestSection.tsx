@@ -26,7 +26,7 @@ export default function RequestSection() {
               {points.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-center gap-4">
                   <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
-                    <Icon className="h-5 w-5" aria-hidden />
+                    <Icon className="h-5 w-5" aria-hidden={true} />
                   </span>
                   <span className="text-teal-900">{text}</span>
                 </li>
@@ -37,7 +37,7 @@ export default function RequestSection() {
               href={brand.phoneHref}
               className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-teal-700 px-6 py-3 text-base font-bold text-teal-800 transition hover:bg-teal-50"
             >
-              <Phone className="h-5 w-5" aria-hidden /> Call {brand.phone}
+              <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
             </a>
           </div>
 

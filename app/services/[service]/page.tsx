@@ -139,9 +139,9 @@ export default async function ServicePage({ params }: Params) {
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
               <Link href="/" className="hover:text-teal-800">Home</Link>
-              <span aria-hidden>/</span>
+              <span aria-hidden={true}></span>
               <a href="/#services" className="hover:text-teal-800">Services</a>
-              <span aria-hidden>/</span>
+              <span aria-hidden={true}></span>
               <span className="font-semibold text-teal-900">{service.name}</span>
             </nav>
 
@@ -158,9 +158,9 @@ export default async function ServicePage({ params }: Params) {
             </div>
 
             <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-4 py-2 text-sm font-semibold text-teal-800">
-              <MapPin className="h-4 w-4" aria-hidden /> Available at all 3 Utah locations
-              <span aria-hidden>·</span>
-              <Video className="h-4 w-4" aria-hidden /> Telehealth across Utah
+              <MapPin className="h-4 w-4" aria-hidden={true} /> Available at all 3 Utah locations
+              <span aria-hidden={true}>·</span>
+              <Video className="h-4 w-4" aria-hidden={true} /> Telehealth across Utah
             </p>
 
             <CtaBar className="mt-8" />
@@ -179,7 +179,7 @@ export default async function ServicePage({ params }: Params) {
                 {service.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-4">
                     <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-teal-700/10 text-teal-700">
-                      <Check className="h-4 w-4" aria-hidden />
+                      <Check className="h-4 w-4" aria-hidden={true} />
                     </span>
                     <span className="text-teal-900">{b}</span>
                   </li>
@@ -195,7 +195,7 @@ export default async function ServicePage({ params }: Params) {
                 {service.whoFor.map((w) => (
                   <li key={w} className="flex items-start gap-4">
                     <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-teal-700/10 text-teal-700">
-                      <Users className="h-4 w-4" aria-hidden />
+                      <Users className="h-4 w-4" aria-hidden={true} />
                     </span>
                     <span className="text-teal-900">{w}</span>
                   </li>
@@ -209,7 +209,7 @@ export default async function ServicePage({ params }: Params) {
                 <ul className="mt-3 space-y-2 text-sm text-teal-800/80">
                   {locations.map((loc) => (
                     <li key={loc.id} className="flex items-start gap-2">
-                      <MapPin className="mt-0.5 h-4 w-4 flex-none text-teal-600" aria-hidden />
+                      <MapPin className="mt-0.5 h-4 w-4 flex-none text-teal-600" aria-hidden={true} />
                       <span>
                         <span className="font-semibold text-teal-900">{loc.name}</span> —{" "}
                         {loc.full}
@@ -261,7 +261,7 @@ export default async function ServicePage({ params }: Params) {
                   href={`/utah/${c.slug}`}
                   className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-card transition hover:bg-teal-50"
                 >
-                  <MapPin className="h-4 w-4" aria-hidden /> {c.name}
+                  <MapPin className="h-4 w-4" aria-hidden={true} /> {c.name}
                 </Link>
               ))}
             </div>
@@ -292,7 +292,7 @@ export default async function ServicePage({ params }: Params) {
                 aria-label={`Call ${brand.name} at ${brand.phone}`}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
               >
-                <Phone className="h-5 w-5" aria-hidden /> Call {brand.phone}
+                <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
               </a>
               <Link
                 href="/#request"

@@ -31,5 +31,5 @@ export default function ServiceIcon({
   className?: string;
 }) {
   const Icon = getServiceIcon(name);
-  return <Icon className={className} aria-hidden />;
+  return <Icon className={className} aria-hidden={true} />;
 }

@@ -158,14 +158,14 @@ export default async function CityPage({ params }: Params) {
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
               <Link href="/" className="hover:text-teal-800">Home</Link>
-              <span aria-hidden>/</span>
+              <span aria-hidden={true}></span>
               <Link href="/service-area" className="hover:text-teal-800">Service Area</Link>
-              <span aria-hidden>/</span>
+              <span aria-hidden={true}></span>
               <span className="font-semibold text-teal-900">{city.name}</span>
             </nav>
 
             <p className="inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-3 py-1 text-sm font-semibold text-teal-800">
-              <MapPin className="h-4 w-4" aria-hidden /> {city.county} County, Utah
+              <MapPin className="h-4 w-4" aria-hidden={true} /> {city.county} County, Utah
             </p>
             <h1 className="mt-4 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
               Mental Health Care in {city.name}, Utah
@@ -178,7 +178,7 @@ export default async function CityPage({ params }: Params) {
             <div className="mt-6 grid sm:grid-cols-2" style={{ gap: "2rem" }}>
               <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
                 <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
-                  <Car className="h-5 w-5" aria-hidden />
+                  <Car className="h-5 w-5" aria-hidden={true} />
                 </span>
                 <p className="text-sm text-teal-900">
                   Our <span className="font-semibold">{office.name}</span> office is about{" "}
@@ -188,7 +188,7 @@ export default async function CityPage({ params }: Params) {
               </div>
               <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
                 <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
-                  <Video className="h-5 w-5" aria-hidden />
+                  <Video className="h-5 w-5" aria-hidden={true} />
                 </span>
                 <p className="text-sm text-teal-900">
                   Prefer to stay home? <span className="font-semibold">Telehealth is available</span>{" "}
@@ -269,7 +269,7 @@ export default async function CityPage({ params }: Params) {
                   className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
                 >
                   <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
-                    <Icon className="h-5 w-5" aria-hidden />
+                    <Icon className="h-5 w-5" aria-hidden={true} />
                   </span>
                   <div>
                     <h3 className="font-bold text-teal-950">{title}</h3>
@@ -326,7 +326,7 @@ export default async function CityPage({ params }: Params) {
                     href={`/utah/${n.slug}`}
                     className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-card transition hover:bg-teal-50"
                   >
-                    <MapPin className="h-4 w-4" aria-hidden /> {n.name}
+                    <MapPin className="h-4 w-4" aria-hidden={true} /> {n.name}
                   </Link>
                 ))}
               </div>
@@ -358,7 +358,7 @@ export default async function CityPage({ params }: Params) {
                 aria-label="Call CPS"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
               >
-                <Phone className="h-5 w-5" aria-hidden /> Call {brand.phone}
+                <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
               </a>
               <Link
                 href="/#request"

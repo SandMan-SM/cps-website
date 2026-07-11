@@ -10,14 +10,14 @@ export default function MobileCallBar() {
           aria-label="Call CPS now"
           className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-3 text-sm font-bold text-white"
         >
-          <Phone className="h-4 w-4" aria-hidden /> Call now
+          <Phone className="h-4 w-4" aria-hidden={true} /> Call now
         </a>
         <a
           href="#request"
           aria-label="Request an appointment"
           className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-teal-700 px-4 py-3 text-sm font-bold text-teal-800"
         >
-          <CalendarCheck className="h-4 w-4" aria-hidden /> Request appt
+          <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request appt
         </a>
       </div>
     </div>

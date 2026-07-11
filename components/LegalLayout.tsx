@@ -16,7 +16,7 @@ export default function LegalLayout({
           href="/"
           className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700 hover:text-teal-800"
         >
-          <ArrowLeft className="h-4 w-4" aria-hidden /> Back to home
+          <ArrowLeft className="h-4 w-4" aria-hidden={true} /> Back to home
         </Link>
 
         <h1 className="mt-6 text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
@@ -35,7 +35,7 @@ export default function LegalLayout({
             </a>{" "}
             or call{" "}
             <a href={brand.phoneHref} aria-label={`Call ${brand.name} at ${brand.phone}`} className="inline-flex items-center gap-1 font-semibold text-teal-700">
-              <Phone className="h-3.5 w-3.5" aria-hidden /> {brand.phone}
+              <Phone className="h-3.5 w-3.5" aria-hidden={true} /> {brand.phone}
             </a>
             .
           </p>

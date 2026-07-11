@@ -22,7 +22,7 @@ export default function Locations() {
               className="flex flex-col rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
-                <MapPin className="h-5 w-5" aria-hidden />
+                <MapPin className="h-5 w-5" aria-hidden={true} />
               </span>
               <h3 className="mt-4 text-lg font-bold text-teal-950">{loc.name}</h3>
               <address className="mt-2 flex-1 text-sm not-italic leading-relaxed text-teal-800/80">
@@ -37,7 +37,7 @@ export default function Locations() {
                   aria-label={`Call ${brand.name} at ${brand.phone}`}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-800"
                 >
-                  <Phone className="h-4 w-4" aria-hidden /> Call {brand.phone}
+                  <Phone className="h-4 w-4" aria-hidden={true} /> Call {brand.phone}
                 </a>
                 <a
                   href={loc.mapsUrl}
@@ -46,7 +46,7 @@ export default function Locations() {
                   aria-label={`Get directions to ${brand.name} ${loc.name} office`}
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-teal-200 px-4 py-2.5 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
                 >
-                  <Navigation className="h-4 w-4" aria-hidden /> Get directions
+                  <Navigation className="h-4 w-4" aria-hidden={true} /> Get directions
                 </a>
               </div>
             </div>

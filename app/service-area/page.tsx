@@ -98,7 +98,7 @@ export default function ServiceAreaPage() {
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
               <Link href="/" className="hover:text-teal-800">Home</Link>
-              <span aria-hidden>/</span>
+              <span aria-hidden={true}></span>
               <span className="font-semibold text-teal-900">Service Area</span>
             </nav>
             <h1 className="max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
@@ -116,7 +116,7 @@ export default function ServiceAreaPage() {
                   key={loc.id}
                   className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card"
                 >
-                  <MapPin className="mt-0.5 h-5 w-5 flex-none text-teal-700" aria-hidden />
+                  <MapPin className="mt-0.5 h-5 w-5 flex-none text-teal-700" aria-hidden={true} />
                   <p className="text-sm text-teal-900">
                     <span className="font-semibold">{loc.name}</span>
                     <br />
@@ -127,7 +127,7 @@ export default function ServiceAreaPage() {
             </div>
 
             <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-4 py-2 text-sm font-semibold text-teal-800">
-              <Video className="h-4 w-4" aria-hidden /> Telehealth available anywhere in Utah
+              <Video className="h-4 w-4" aria-hidden={true} /> Telehealth available anywhere in Utah
             </p>
 
             <CtaBar className="mt-8" />
@@ -149,7 +149,7 @@ export default function ServiceAreaPage() {
                       className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
                     >
                       <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
-                        <MapPin className="h-5 w-5" aria-hidden />
+                        <MapPin className="h-5 w-5" aria-hidden={true} />
                       </span>
                       <span>
                         <span className="block font-bold text-teal-950">{c.name}</span>
@@ -179,7 +179,7 @@ export default function ServiceAreaPage() {
                 href={brand.phoneHref}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
               >
-                <Phone className="h-5 w-5" aria-hidden /> Call {brand.phone}
+                <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
               </a>
             </div>
           </div>

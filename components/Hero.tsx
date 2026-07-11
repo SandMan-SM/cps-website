@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-8 sm:px-10 lg:px-10 py-16 md:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-1.5 text-xs font-semibold text-teal-700 shadow-sm">
-            <Award className="h-4 w-4" aria-hidden /> {brand.award} · {brand.providerCount} licensed providers
+            <Award className="h-4 w-4" aria-hidden={true} /> {brand.award} · {brand.providerCount} licensed providers
           </span>
 
           <h1 className="text-balance mt-6 text-4xl font-extrabold leading-tight tracking-tight text-teal-950 sm:text-5xl">
@@ -33,14 +33,14 @@ export default function Hero() {
               aria-label={`Call ${brand.name} at ${brand.phone}`}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800"
             >
-              <Phone className="h-5 w-5" aria-hidden />
+              <Phone className="h-5 w-5" aria-hidden={true} />
               Call {brand.phone}
             </a>
             <a
               href="#request"
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-teal-700 bg-white px-8 py-4 text-base font-bold text-teal-800 transition hover:bg-teal-50"
             >
-              <CalendarCheck className="h-5 w-5" aria-hidden />
+              <CalendarCheck className="h-5 w-5" aria-hidden={true} />
               Request an appointment
             </a>
           </div>
@@ -48,7 +48,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-teal-800">
             {trust.map(({ icon: Icon, label }) => (
               <span key={label} className="inline-flex items-center gap-1.5">
-                <Icon className="h-4 w-4 text-teal-600" aria-hidden />
+                <Icon className="h-4 w-4 text-teal-600" aria-hidden={true} />
                 {label}
               </span>
             ))}

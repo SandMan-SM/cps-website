@@ -20,7 +20,7 @@ export default function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2" aria-label={`${brand.name} home`}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-700 font-bold text-white" aria-hidden>
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-700 font-bold text-white" aria-hidden={true}>
             C
           </span>
           <span className="flex flex-col leading-none">
@@ -48,7 +48,7 @@ export default function Header() {
           aria-label="Call CPS"
           className="hidden md:inline-flex items-center gap-2 rounded-full bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
         >
-          <Phone className="h-4 w-4" aria-hidden />
+          <Phone className="h-4 w-4" aria-hidden={true} />
           <span className="hidden sm:inline">Call {brand.phone}</span>
           <span className="sm:hidden">Call</span>
         </a>
@@ -63,9 +63,9 @@ export default function Header() {
           className="inline-flex items-center justify-center rounded-lg p-2 text-teal-700 transition hover:bg-teal-50 md:hidden"
         >
           {mobileOpen ? (
-            <X className="h-6 w-6" aria-hidden />
+            <X className="h-6 w-6" aria-hidden={true} />
           ) : (
-            <Menu className="h-6 w-6" aria-hidden />
+            <Menu className="h-6 w-6" aria-hidden={true} />
           )}
         </button>
       </div>
@@ -97,7 +97,7 @@ export default function Header() {
                 aria-label="Call CPS"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
               >
-                <Phone className="h-4 w-4" aria-hidden />
+                <Phone className="h-4 w-4" aria-hidden={true} />
                 Call {brand.phone}
               </a>
             </div>

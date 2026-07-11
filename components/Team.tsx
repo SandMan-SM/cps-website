@@ -9,7 +9,7 @@ export default function Team() {
           <div className="grid md:grid-cols-5">
             <div className="bg-band flex flex-col items-center justify-center gap-4 p-8 text-center md:col-span-2">
               <span className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 text-white">
-                <UserRound className="h-10 w-10" aria-hidden />
+                <UserRound className="h-10 w-10" aria-hidden={true} />
               </span>
               <div>
                 <div className="text-lg font-bold text-white">{brand.founder.name}</div>
@@ -18,7 +18,7 @@ export default function Team() {
             </div>
 
             <div className="p-8 sm:p-10 md:col-span-3">
-              <Quote className="h-8 w-8 text-teal-200" aria-hidden />
+              <Quote className="h-8 w-8 text-teal-200" aria-hidden={true} />
               <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
                 Led by experience. Backed by a team.
               </h2>

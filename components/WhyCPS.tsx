@@ -38,7 +38,7 @@ export default function WhyCPS() {
             return (
               <div key={point.title} className="flex gap-4">
                 <span className="mt-0.5 flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-sand-100 text-sand-700">
-                  <Icon className="h-5 w-5" aria-hidden />
+                  <Icon className="h-5 w-5" aria-hidden={true} />
                 </span>
                 <div>
                   <h3 className="text-base font-bold text-teal-950">{point.title}</h3>

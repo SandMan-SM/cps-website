@@ -56,7 +56,7 @@ export default function LeadForm() {
     return (
       <div className="rounded-2xl border border-teal-200 bg-white p-8 text-center shadow-card">
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-100 text-teal-700">
-          <CheckCircle2 className="h-8 w-8" aria-hidden />
+          <CheckCircle2 className="h-8 w-8" aria-hidden={true} />
         </span>
         <h3 className="mt-5 text-xl font-bold text-teal-950">We got it.</h3>
         <p className="mt-2 text-teal-800/90">
@@ -67,7 +67,7 @@ export default function LeadForm() {
           aria-label={`Call ${brand.phone}`}
           className="mt-5 inline-flex items-center gap-2 rounded-full bg-teal-700 px-6 py-3 text-base font-bold text-white transition hover:bg-teal-800"
         >
-          <Phone className="h-5 w-5" aria-hidden /> Call {brand.phone}
+          <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
         </a>
       </div>
     );
@@ -166,11 +166,11 @@ export default function LeadForm() {
       >
         {status === "submitting" ? (
           <>
-            <Loader2 className="h-5 w-5 animate-spin" aria-hidden /> Sending…
+            <Loader2 className="h-5 w-5 animate-spin" aria-hidden={true} /> Sending…
           </>
         ) : (
           <>
-            <CalendarCheck className="h-5 w-5" aria-hidden /> Request my appointment
+            <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request my appointment
           </>
         )}
       </button>

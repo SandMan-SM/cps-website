@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 font-bold text-white" aria-hidden>
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 font-bold text-white" aria-hidden={true}>
                 C
               </span>
               <span className="text-base font-bold text-white">{brand.shortName}</span>
@@ -17,7 +17,7 @@ export default function Footer() {
               {brand.name} — {brand.tagline}. Serving Utah since {brand.since}.
             </p>
             <p className="mt-3 inline-flex items-center gap-2 text-sm text-teal-200">
-              <Video className="h-4 w-4" aria-hidden /> Telehealth available across Utah.
+              <Video className="h-4 w-4" aria-hidden={true} /> Telehealth available across Utah.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
                   aria-label="Call CPS"
                   className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
                 >
-                  <Phone className="h-4 w-4" aria-hidden /> {brand.phone}
+                  <Phone className="h-4 w-4" aria-hidden={true} /> {brand.phone}
                 </a>
               </li>
               <li>
@@ -52,14 +52,14 @@ export default function Footer() {
                   aria-label="Email CPS"
                   className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
                 >
-                  <Mail className="h-4 w-4" aria-hidden /> {brand.email}
+                  <Mail className="h-4 w-4" aria-hidden={true} /> {brand.email}
                 </a>
               </li>
               <li className="inline-flex items-center gap-2 text-teal-200">
-                <Printer className="h-4 w-4" aria-hidden /> Fax {brand.fax}
+                <Printer className="h-4 w-4" aria-hidden={true} /> Fax {brand.fax}
               </li>
               <li className="inline-flex items-center gap-2 text-teal-200">
-                <Clock className="h-4 w-4" aria-hidden /> {brand.hours}
+                <Clock className="h-4 w-4" aria-hidden={true} /> {brand.hours}
               </li>
             </ul>
           </div>
