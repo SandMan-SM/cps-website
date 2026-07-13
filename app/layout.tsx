@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { brand, locations } from "@/lib/data";
+
+export const viewport: Viewport = {
+  themeColor: "#237878",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(brand.domain),
