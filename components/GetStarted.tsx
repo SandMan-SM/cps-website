@@ -36,6 +36,7 @@ export default function GetStarted() {
           </div>
           <a
             href={brand.phoneHref}
+            aria-label={`Call ${brand.name} at ${brand.phone}`}
             className="inline-flex flex-none items-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-teal-800"
           >
             <Phone className="h-4 w-4" aria-hidden={true} /> Call {brand.phone}

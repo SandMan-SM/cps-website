@@ -52,6 +52,7 @@ export default function Services() {
                 </p>
                 <a
                   href={brand.phoneHref}
+                  aria-label={`Call ${brand.name} at ${brand.phone} to learn about ${service.title}`}
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 transition hover:text-teal-800"
                 >
                   <Phone className="h-4 w-4" aria-hidden={true} /> Call to start
