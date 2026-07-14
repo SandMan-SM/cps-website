@@ -7,7 +7,7 @@ export default function MobileCallBar() {
       <div className="mx-auto flex max-w-md items-center gap-4">
         <a
           href={brand.phoneHref}
-          aria-label="Call CPS now"
+          aria-label={`Call CPS at ${brand.phone}`}
           className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-3 text-sm font-bold text-white"
         >
           <Phone className="h-4 w-4" aria-hidden={true} /> Call now

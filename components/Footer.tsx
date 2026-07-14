@@ -40,7 +40,7 @@ export default function Footer() {
               <li>
                 <a
                   href={brand.phoneHref}
-                  aria-label="Call CPS"
+                  aria-label={`Call CPS at ${brand.phone}`}
                   className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
                 >
                   <Phone className="h-4 w-4" aria-hidden={true} /> {brand.phone}
@@ -49,7 +49,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${brand.email}`}
-                  aria-label="Email CPS"
+                  aria-label={`Email CPS at ${brand.email}`}
                   className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
                 >
                   <Mail className="h-4 w-4" aria-hidden={true} /> {brand.email}
