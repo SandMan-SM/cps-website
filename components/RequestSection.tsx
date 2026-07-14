@@ -35,6 +35,7 @@ export default function RequestSection() {
 
             <a
               href={brand.phoneHref}
+              aria-label={`Call ${brand.name} at ${brand.phone}`}
               className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-teal-700 px-6 py-3 text-base font-bold text-teal-800 transition hover:bg-teal-50"
             >
               <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}

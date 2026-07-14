@@ -38,6 +38,7 @@ export default function Hero() {
             </a>
             <a
               href="#request"
+              aria-label="Request an appointment"
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-teal-700 bg-white px-8 py-4 text-base font-bold text-teal-800 transition hover:bg-teal-50"
             >
               <CalendarCheck className="h-5 w-5" aria-hidden={true} />
