@@ -80,6 +80,35 @@ export default function ServiceAreaPage() {
           item: `${brand.domain}/utah/${c.slug}`,
         })),
       },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Which Utah cities does CPS serve?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `CPS serves ${cities.length}+ cities across Utah, including Salt Lake City, Murray, Sandy, West Jordan, Layton, Draper, South Jordan, Lehi, Ogden, and many more — plus secure telehealth statewide.`,
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does CPS offer telehealth?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. CPS offers secure video counseling (telehealth) to clients anywhere in Utah, in addition to in-person services at our Salt Lake City, Layton, and West Jordan offices.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does CPS accept insurance?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Most major insurance plans are accepted. Call our office to verify your specific coverage before your first appointment.",
+            },
+          },
+        ],
+      },
     ],
   };
 
