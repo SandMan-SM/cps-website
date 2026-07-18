@@ -138,7 +138,7 @@ export default async function ServicePage({ params }: Params) {
               aria-label="Breadcrumb"
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
-              <Link href="/" className="hover:text-teal-800">Home</Link>
+              <Link href="/" aria-label="Home" className="hover:text-teal-800">Home</Link>
               <span aria-hidden={true}></span>
               <a href="/#services" aria-label="Jump to services section" className="hover:text-teal-800">Services</a>
               <span aria-hidden={true}></span>

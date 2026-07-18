@@ -157,9 +157,9 @@ export default async function CityPage({ params }: Params) {
               aria-label="Breadcrumb"
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
-              <Link href="/" className="hover:text-teal-800">Home</Link>
+              <Link href="/" aria-label="Home" className="hover:text-teal-800">Home</Link>
               <span aria-hidden={true}></span>
-              <Link href="/service-area" className="hover:text-teal-800">Service Area</Link>
+              <Link href="/service-area" aria-label="Service Area" className="hover:text-teal-800">Service Area</Link>
               <span aria-hidden={true}></span>
               <span className="font-semibold text-teal-900">{city.name}</span>
             </nav>

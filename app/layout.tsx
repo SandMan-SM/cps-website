@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "./GoogleAnalytics";
 import "./globals.css";
 import { brand, locations } from "@/lib/data";
 
@@ -7,6 +8,14 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  // Search Console / Bing verification — values live in Vercel env (names only
+  // in repo). Unset renders no tag; harmless before the token is pasted.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: {
+      "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ?? "",
+    },
+  },
   metadataBase: new URL(brand.domain),
   title: {
     default:
@@ -145,6 +154,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         <JsonLd />
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
