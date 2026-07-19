@@ -22,9 +22,31 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Privacy Policy",
+  description: `Privacy practices for ${brand.name}.`,
+  url: `${brand.domain}/privacy`,
+  isPartOf: { "@type": "WebSite", name: brand.name, url: brand.domain },
+  about: { "@type": "Organization", name: brand.name, url: brand.domain },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },
+      { "@type": "ListItem", position: 2, name: "Privacy Policy", item: `${brand.domain}/privacy` },
+    ],
+  },
+};
+
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Privacy Policy">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LegalLayout title="Privacy Policy">
       <p>
         {brand.name} (&ldquo;{brand.shortName},&rdquo; &ldquo;we,&rdquo; or &ldquo;us&rdquo;)
         respects your privacy. This policy explains how we handle information collected through
@@ -56,6 +78,7 @@ export default function PrivacyPage() {
       <p>
         For privacy questions, email {brand.email} or call {brand.phone}.
       </p>
-    </LegalLayout>
+      </LegalLayout>
+    </>
   );
 }

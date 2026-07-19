@@ -22,9 +22,31 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Terms of Use",
+  description: `Terms of use for the ${brand.name} website.`,
+  url: `${brand.domain}/terms`,
+  isPartOf: { "@type": "WebSite", name: brand.name, url: brand.domain },
+  about: { "@type": "Organization", name: brand.name, url: brand.domain },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },
+      { "@type": "ListItem", position: 2, name: "Terms of Use", item: `${brand.domain}/terms` },
+    ],
+  },
+};
+
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Use">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LegalLayout title="Terms of Use">
       <p>
         By using this website, you agree to these terms. If you do not agree, please do not use
         the site.
@@ -53,6 +75,7 @@ export default function TermsPage() {
       <p>
         Questions about these terms? Email {brand.email} or call {brand.phone}.
       </p>
-    </LegalLayout>
+      </LegalLayout>
+    </>
   );
 }
