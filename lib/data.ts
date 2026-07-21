@@ -8,14 +8,7 @@ export const brand = {
   since: 1986,
   award: "Best Practice Award 2024",
   providerCount: "30+",
-  founder: {
-    name: "Steven Szykula, Ph.D.",
-    title: "Licensed Clinical Psychologist, Founder",
-  },
-  phone: "801-483-1600",
-  phoneHref: "tel:+18014831600",
   email: "wecanhelpout@gmail.com",
-  fax: "801-483-1610",
   domain: "https://cpsutah.org",
   hours: "Mon–Fri",
 };
@@ -64,6 +57,7 @@ export const locations: Location[] = [
 
 export type Service = {
   icon: string; // lucide-react icon name
+  image: string;
   title: string;
   description: string;
 };
@@ -71,42 +65,49 @@ export type Service = {
 export const services: Service[] = [
   {
     icon: "MessageCircleHeart",
+    image: "/services/counseling-psychotherapy.jpg",
     title: "Counseling & Psychotherapy",
     description:
       "Compassionate therapy for all ages, covering the full range of behavioral health concerns — anxiety, depression, trauma, relationships, and more.",
   },
   {
     icon: "Pill",
+    image: "/services/medication-therapy.jpg",
     title: "Medication Therapy",
     description:
       "MDs, physician assistants, and nurse practitioners who manage medication for mood, attention, and other conditions — carefully and collaboratively.",
   },
   {
     icon: "BrainCircuit",
+    image: "/services/neurofeedback.jpg",
     title: "Neurofeedback",
     description:
       "Drug-free EEG brain-training backed by 20 years of experience, helping improve focus, regulation, and resilience.",
   },
   {
     icon: "ClipboardCheck",
+    image: "/services/evaluation-services.jpg",
     title: "Evaluation Services",
     description:
       "Comprehensive psychological evaluations that give you clarity and build an effective, personalized treatment plan.",
   },
   {
     icon: "HeartPulse",
+    image: "/services/health-wellness.jpg",
     title: "Health & Wellness",
     description:
       "Holistic, whole-person care that treats mind and body together so you can feel your best in every area of life.",
   },
   {
     icon: "ShieldCheck",
+    image: "/services/substance-abuse-treatment.jpg",
     title: "Substance Abuse Treatment",
     description:
       "Court-admissible evaluations, counseling, and Prime For Life classes — practical support for lasting recovery.",
   },
   {
     icon: "Briefcase",
+    image: "/services/employer-services.jpg",
     title: "Employer Services",
     description:
       "DOT-certified substance-abuse evaluations, fitness-for-duty assessments, critical-incident debriefing, EAP, and workshops.",
@@ -148,8 +149,8 @@ export const whyPoints: { icon: string; title: string; body: string }[] = [
 
 export const steps: { title: string; body: string }[] = [
   {
-    title: "Call or request an appointment",
-    body: "Reach out by phone or send the short form. It only takes a minute.",
+    title: "Send an appointment request",
+    body: "Complete the short scheduling form. It only takes a minute.",
   },
   {
     title: "We match you with the right provider",
@@ -162,7 +163,7 @@ export const steps: { title: string; body: string }[] = [
 ];
 
 export const insuranceLine =
-  "Most major insurance accepted — call to verify your coverage.";
+  "Most major insurance accepted — coverage can be verified during scheduling.";
 
 export const locationOptions = [
   "Salt Lake City",

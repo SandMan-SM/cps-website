@@ -11,14 +11,8 @@ function JsonLd() {
         "@id": `${brand.domain}/#organization`,
         name: brand.name,
         url: brand.domain,
-        telephone: `+1-${brand.phone}`,
         email: brand.email,
         foundingDate: String(brand.since),
-        founder: {
-          "@type": "Person",
-          name: brand.founder.name,
-          jobTitle: brand.founder.title,
-        },
         areaServed: { "@type": "State", name: "Utah" },
         availableAtOrFrom: locations.map((loc) => ({
           "@type": "MedicalClinic",
@@ -55,7 +49,7 @@ function JsonLd() {
             name: "Do you accept insurance for counseling?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Most major insurance accepted — call to verify your coverage. Our team is happy to help you understand your benefits before your first appointment.",
+              text: "Most major insurance is accepted. Our team can help you understand your benefits while scheduling your first appointment.",
             },
           },
           {
@@ -87,10 +81,11 @@ function JsonLd() {
 }
 import Hero from "@/components/Hero";
 import TrustBand from "@/components/TrustBand";
+import SubscribeSection from "@/components/SubscribeSection";
 import Services from "@/components/Services";
 import WhyCPS from "@/components/WhyCPS";
+import SuccessStories from "@/components/SuccessStories";
 import Locations from "@/components/Locations";
-import Team from "@/components/Team";
 import GetStarted from "@/components/GetStarted";
 import RequestSection from "@/components/RequestSection";
 import Footer from "@/components/Footer";
@@ -126,10 +121,11 @@ export default function Home() {
       <main className="pb-20 md:pb-0">
         <Hero />
         <TrustBand />
+        <SubscribeSection />
         <Services />
         <WhyCPS />
+        <SuccessStories />
         <Locations />
-        <Team />
         <GetStarted />
         <RequestSection />
       </main>

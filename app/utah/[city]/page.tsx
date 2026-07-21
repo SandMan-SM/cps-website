@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MapPin, Video, Phone, Car, HeartHandshake, Check } from "lucide-react";
+import { CalendarCheck, MapPin, Video, Mail, Car, HeartHandshake, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!city) return {};
   const url = `${brand.domain}/utah/${city.slug}`;
   const title = `Therapy, Counseling & Psychiatry in ${city.name}, Utah | CPS`;
-  const description = `Compassionate mental health care for ${city.name}, Utah. Counseling, medication management, neurofeedback, evaluations, and substance abuse treatment — in person and via telehealth. Serving ${city.name} since ${brand.since}. Call ${brand.phone}.`;
+  const description = `Compassionate mental health care for ${city.name}, Utah. Counseling, medication management, neurofeedback, evaluations, and substance abuse treatment — in person and via telehealth. Serving ${city.name} since ${brand.since}.`;
   return {
     title,
     description,
@@ -81,7 +81,6 @@ export default async function CityPage({ params }: Params) {
         "@id": `${url}#clinic`,
         name: `${brand.name} — ${office.name}`,
         url,
-        telephone: `+1-${brand.phone}`,
         parentOrganization: { "@id": `${brand.domain}/#organization` },
         address: {
           "@type": "PostalAddress",
@@ -284,7 +283,7 @@ export default async function CityPage({ params }: Params) {
                 selfUrl={`/utah/${city.slug}`}
                 className="text-lg leading-relaxed text-teal-800/90"
               >
-                {`Whether you're looking for counseling, medication management, neurofeedback, or a substance abuse evaluation, CPS makes care simple for ${city.name} families. Telehealth keeps every service within reach, and our team will match you with the right provider on your first call.`}
+                {`Whether you're looking for counseling, medication management, neurofeedback, or a substance abuse evaluation, CPS makes care simple for ${city.name} families. Telehealth keeps every service within reach, and our team will match you with the right provider after your request.`}
               </KeywordText>
             </div>
           </div>
@@ -349,23 +348,24 @@ export default async function CityPage({ params }: Params) {
               Ready to get started in {city.name}?
             </h2>
             <p className="mt-4 text-lg text-teal-100">
-              Call now to speak with a real person, or request an appointment and we&apos;ll
-              reach out to match you with the right provider.
+              Request an appointment and we&apos;ll reach out to match you with the right
+              provider, or subscribe for practical CPS resources.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <a
-                href={brand.phoneHref}
-                aria-label={`Call ${brand.name} at ${brand.phone}`}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
-              >
-                <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
-              </a>
               <Link
                 href="/#request"
+                data-book-appointment="true"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
+              >
+                <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
+              </Link>
+              <a
+                href="/#subscribe"
+                aria-label="Subscribe to CPS updates"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-6 py-4 text-base font-bold text-white transition hover:bg-white/10"
               >
-                Request an appointment
-              </Link>
+                <Mail className="h-5 w-5" aria-hidden={true} /> Subscribe
+              </a>
             </div>
           </div>
         </section>

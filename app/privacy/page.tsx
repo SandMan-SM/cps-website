@@ -76,7 +76,7 @@ export default function PrivacyPage() {
 
       <h2>Contact</h2>
       <p>
-        For privacy questions, email {brand.email} or call {brand.phone}.
+        For privacy questions, email {brand.email}.
       </p>
       </LegalLayout>
     </>

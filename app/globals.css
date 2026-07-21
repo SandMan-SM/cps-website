@@ -13,22 +13,54 @@ html {
 }
 
 body {
-  color: #0c2626;
-  background: #ffffff;
+  color: #171112;
+  background: #fffdfb;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Soft, reassuring backdrop used on hero / CTA bands */
+/* Warm clinical backdrop derived from the CPS burgundy, black, and white mark. */
 .bg-hero {
   background:
-    radial-gradient(1100px 520px at 80% -10%, rgba(75, 176, 176, 0.18), transparent 60%),
-    radial-gradient(900px 480px at -10% 20%, rgba(193, 166, 119, 0.16), transparent 55%),
-    linear-gradient(180deg, #f7fbfb 0%, #ffffff 70%);
+    radial-gradient(1100px 520px at 82% -10%, rgba(164, 71, 73, 0.16), transparent 60%),
+    radial-gradient(900px 480px at -10% 20%, rgba(48, 45, 42, 0.08), transparent 55%),
+    linear-gradient(180deg, #fff9f8 0%, #fffdfb 72%);
+}
+
+.hero-photo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 253, 251, 0.98) 0%,
+      rgba(255, 250, 248, 0.96) 42%,
+      rgba(255, 250, 248, 0.72) 56%,
+      rgba(255, 250, 248, 0.12) 76%
+    ),
+    url("/cps-hero.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .hero-photo {
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(255, 253, 251, 0.98) 0%,
+        rgba(255, 250, 248, 0.92) 44%,
+        rgba(255, 250, 248, 0.34) 72%,
+        rgba(255, 250, 248, 0.12) 100%
+      ),
+      url("/cps-hero.jpg");
+    background-position: 70% center;
+  }
 }
 
 .bg-band {
-  background: linear-gradient(180deg, #0c2626 0%, #1c4e4e 100%);
+  background: linear-gradient(145deg, #171112 0%, #321719 52%, #551b1e 100%);
 }
 
 .text-balance {
@@ -43,7 +75,7 @@ body {
 
 /* Accessibility: visible focus states for keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--cps-teal, #10b2e0);
+  outline: 2px solid var(--cps-burgundy, #8f2b2e);
   outline-offset: 2px;
   border-radius: 2px;
 }

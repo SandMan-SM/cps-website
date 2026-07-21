@@ -23,11 +23,8 @@ export function GET() {
 > ${brand.tagline}. Compassionate mental health and behavioral health care serving Utah's Wasatch Front since ${brand.since}.
 
 Website: ${brand.domain}
-Phone: ${brand.phone}
-Fax: ${brand.fax}
 Email: ${brand.email}
 Hours: ${brand.hours}
-Founder: ${brand.founder.name}, ${brand.founder.title}
 
 ## About
 ${brand.name} is a Utah behavioral health practice with ${brand.providerCount} licensed providers — psychologists, counselors, social workers, and medication providers. Care is available in person at three offices and via secure telehealth anywhere in Utah. ${insuranceLine}
@@ -43,7 +40,7 @@ Overview: ${brand.domain}/service-area
 ${cityLines}
 
 ## Contact
-Call ${brand.phone} or request an appointment at ${brand.domain}/#request. In-person and telehealth appointments available.
+Subscribe for CPS updates at ${brand.domain}/#subscribe or request an appointment at ${brand.domain}/#request. In-person and telehealth appointments available.
 `;
 
   return new Response(body, {

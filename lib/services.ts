@@ -24,7 +24,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Counseling & Psychotherapy in Utah | CPS — Salt Lake City, Layton & West Jordan",
     metaDescription:
-      "Compassionate counseling and psychotherapy for children, teens, adults, and families across Utah. In-person in Salt Lake City, Layton & West Jordan, plus telehealth. Call 801-483-1600.",
+      "Compassionate counseling and psychotherapy for children, teens, adults, and families across Utah. In-person in Salt Lake City, Layton & West Jordan, plus telehealth. Request an appointment online.",
     h1: "Counseling & Psychotherapy in Utah",
     intro:
       "Our licensed therapists provide compassionate counseling and psychotherapy for every stage of life — children, teens, adults, couples, and families. We treat the full range of behavioral health concerns, from anxiety and depression to trauma, grief, and relationship challenges. You'll be matched with a provider who fits your needs, goals, and preferred location.",
@@ -49,7 +49,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: "Do you accept insurance for counseling?",
-        a: "Most major insurance accepted — call to verify your coverage. Our team is happy to help you understand your benefits before your first appointment.",
+        a: "Most major insurance is accepted. Our team can help you understand your benefits while scheduling your first appointment.",
       },
       {
         q: "Can I do therapy from home?",
@@ -64,7 +64,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Medication Management & Psychiatry in Utah | CPS — Salt Lake City, Layton & West Jordan",
     metaDescription:
-      "Careful, collaborative medication management from MDs, physician assistants, and nurse practitioners across Utah. Salt Lake City, Layton & West Jordan plus telehealth. Call 801-483-1600.",
+      "Careful, collaborative medication management from MDs, physician assistants, and nurse practitioners across Utah. Salt Lake City, Layton & West Jordan plus telehealth. Request an appointment online.",
     h1: "Medication Management in Utah",
     intro:
       "Our medical providers — MDs, physician assistants, and nurse practitioners — manage medication for mood, attention, anxiety, and other conditions with care and collaboration. We take the time to understand your history, coordinate with your therapist, and adjust thoughtfully so you feel your best. Medication is never one-size-fits-all here.",
@@ -92,7 +92,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: "Is medication management available by telehealth?",
-        a: "Yes. Many medication visits can be handled securely by telehealth anywhere in Utah. Call to confirm what's appropriate for your situation.",
+        a: "Yes. Many medication visits can be handled securely by telehealth anywhere in Utah. Send an appointment request to confirm what is appropriate for your situation.",
       },
     ],
   },
@@ -103,7 +103,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Neurofeedback Therapy in Utah | CPS — Drug-Free EEG Brain Training",
     metaDescription:
-      "Drug-free EEG neurofeedback backed by 20 years of experience, helping improve focus, regulation, and resilience. Available in Salt Lake City, Layton & West Jordan. Call 801-483-1600.",
+      "Drug-free EEG neurofeedback backed by 20 years of experience, helping improve focus, regulation, and resilience. Available in Salt Lake City, Layton & West Jordan. Request an appointment online.",
     h1: "Neurofeedback in Utah",
     intro:
       "Neurofeedback is drug-free EEG brain-training that helps improve focus, emotional regulation, and resilience. Backed by 20 years of experience at CPS, it uses real-time feedback to help the brain learn healthier patterns over time. It's a gentle, non-invasive option many families explore alongside therapy.",
@@ -131,7 +131,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: "How many neurofeedback sessions will I need?",
-        a: "The number of sessions varies by individual and goals. Your provider will discuss a personalized plan after an initial assessment. Call 801-483-1600 to learn more.",
+        a: "The number of sessions varies by individual and goals. Your provider will discuss a personalized plan after an initial assessment. Send an appointment request to learn more.",
       },
     ],
   },
@@ -142,7 +142,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Psychological Evaluation Services in Utah | CPS — SLC, Layton & West Jordan",
     metaDescription:
-      "Comprehensive psychological evaluations that bring clarity and guide an effective treatment plan. Available across Utah in Salt Lake City, Layton & West Jordan. Call 801-483-1600.",
+      "Comprehensive psychological evaluations that bring clarity and guide an effective treatment plan. Available across Utah in Salt Lake City, Layton & West Jordan. Request an appointment online.",
     h1: "Psychological Evaluation Services in Utah",
     intro:
       "Our comprehensive psychological evaluations give you clarity and a clear path forward. Whether you're seeking answers about a diagnosis, cognitive functioning, or the right treatment approach, our clinicians provide thorough, personalized assessments. The result is a practical plan built around your unique needs.",
@@ -166,11 +166,11 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: "How long does an evaluation take?",
-        a: "Length varies with the type of evaluation. Our team will explain the process and timeline when you schedule. Call 801-483-1600 to discuss your needs.",
+        a: "Length varies with the type of evaluation. Our team will explain the process and timeline after you send an appointment request.",
       },
       {
         q: "Will insurance cover an evaluation?",
-        a: "Most major insurance accepted — call to verify your coverage. We'll help you understand your benefits before scheduling.",
+        a: "Most major insurance is accepted. We can help you understand your benefits during scheduling.",
       },
     ],
   },
@@ -181,7 +181,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Health & Wellness Care in Utah | CPS — Whole-Person Behavioral Health",
     metaDescription:
-      "Holistic, whole-person care that treats mind and body together. Health and wellness support across Utah in Salt Lake City, Layton & West Jordan, plus telehealth. Call 801-483-1600.",
+      "Holistic, whole-person care that treats mind and body together. Health and wellness support across Utah in Salt Lake City, Layton & West Jordan, plus telehealth. Request an appointment online.",
     h1: "Health & Wellness in Utah",
     intro:
       "Our health and wellness approach treats the whole person — mind and body together — so you can feel your best in every area of life. We combine therapy, medication, and wellness strategies into care that's coordinated and personal. Real, lasting well-being comes from treating the whole you.",
@@ -220,7 +220,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Substance Abuse Treatment & Evaluations in Utah | CPS — Court-Admissible, DOT, Prime For Life",
     metaDescription:
-      "Court-admissible substance abuse evaluations, DOT testing, Prime For Life classes, and counseling across Utah. Salt Lake City, Layton & West Jordan. Call 801-483-1600.",
+      "Court-admissible substance abuse evaluations, DOT testing, Prime For Life classes, and counseling across Utah. Salt Lake City, Layton & West Jordan. Request an appointment online.",
     h1: "Substance Abuse Treatment in Utah",
     intro:
       "CPS provides practical, respectful substance abuse care — from court-admissible evaluations to counseling and Prime For Life classes. We also offer DOT-certified evaluations for employers and safety-sensitive roles. Whatever brought you here, our team supports you with a clear, judgment-free path toward lasting recovery.",
@@ -248,7 +248,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: "Do I need a referral for a substance abuse evaluation?",
-        a: "Not necessarily. Many people self-refer, while others are referred by a court or employer. Call 801-483-1600 and our team will guide you through the process.",
+        a: "Not necessarily. Many people self-refer, while others are referred by a court or employer. Send an appointment request and our team will guide you through the process.",
       },
     ],
   },
@@ -259,7 +259,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Employer Services in Utah | CPS — DOT Evaluations, Fitness-for-Duty, EAP & CISD",
     metaDescription:
-      "DOT-certified substance-abuse evaluations, fitness-for-duty assessments, critical-incident debriefing, EAP, and workshops for Utah employers. Call 801-483-1600.",
+      "DOT-certified substance-abuse evaluations, fitness-for-duty assessments, critical-incident debriefing, EAP, and workshops for Utah employers. Request a consultation online.",
     h1: "Employer Services in Utah",
     intro:
       "CPS partners with Utah employers to support a healthy, safe, and productive workforce. Our services include DOT-certified substance-abuse evaluations, fitness-for-duty assessments, critical-incident stress debriefing, Employee Assistance Program (EAP) support, and workshops. We help your team stay well and your organization stay compliant.",
@@ -287,7 +287,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: "How do we set up services for our organization?",
-        a: "Call 801-483-1600 and our team will help you scope the right mix of evaluations, EAP, and workshops for your workforce.",
+        a: "Send a request and our team will help you scope the right mix of evaluations, EAP, and workshops for your workforce.",
       },
     ],
   },

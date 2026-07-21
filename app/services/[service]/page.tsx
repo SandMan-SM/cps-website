@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Check, MapPin, Video, Users, Phone } from "lucide-react";
+import { CalendarCheck, Check, MapPin, Video, Users, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
@@ -81,7 +81,6 @@ export default async function ServicePage({ params }: Params) {
           "@type": ["MedicalBusiness", "Psychologist"],
           "@id": `${brand.domain}/#organization`,
           name: brand.name,
-          telephone: `+1-${brand.phone}`,
           url: brand.domain,
         },
         areaServed: { "@type": "State", name: "Utah" },
@@ -283,23 +282,24 @@ export default async function ServicePage({ params }: Params) {
               Start {service.name.toLowerCase()} today
             </h2>
             <p className="mt-4 text-lg text-teal-100">
-              Call now to speak with a real person, or request an appointment and we&apos;ll
-              match you with the right provider.
+              Request an appointment and we&apos;ll match you with the right provider, or
+              subscribe for practical CPS resources.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <a
-                href={brand.phoneHref}
-                aria-label={`Call ${brand.name} at ${brand.phone}`}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
-              >
-                <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
-              </a>
               <Link
                 href="/#request"
+                data-book-appointment="true"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
+              >
+                <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
+              </Link>
+              <a
+                href="/#subscribe"
+                aria-label="Subscribe to CPS updates"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-6 py-4 text-base font-bold text-white transition hover:bg-white/10"
               >
-                Request an appointment
-              </Link>
+                <Mail className="h-5 w-5" aria-hidden={true} /> Subscribe
+              </a>
             </div>
           </div>
         </section>

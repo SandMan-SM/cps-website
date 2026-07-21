@@ -2,9 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "./GoogleAnalytics";
 import "./globals.css";
 import { brand, locations } from "@/lib/data";
+import AppointmentModal from "@/components/AppointmentModal";
 
 export const viewport: Viewport = {
-  themeColor: "#237878",
+  themeColor: "#7c2024",
 };
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Comprehensive Psychological Services",
   },
   description:
-    "Compassionate mental health care for every Utah family since 1986. Counseling, medication management, neurofeedback, evaluations, and substance abuse treatment in Salt Lake City, Layton, and West Jordan. Telehealth available. Call 801-483-1600.",
+    "Compassionate mental health care for every Utah family since 1986. Counseling, medication management, neurofeedback, evaluations, and substance abuse treatment in Salt Lake City, Layton, and West Jordan. Telehealth available.",
   keywords: [
     "therapist Salt Lake City",
     "psychiatrist utah",
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
     title:
       "Comprehensive Psychological Services | Utah Behavioral Health Since 1986",
     description:
-      "Compassionate mental health care for every Utah family since 1986. Telehealth available. Call 801-483-1600.",
+      "Compassionate mental health care for every Utah family since 1986. Telehealth available.",
   },
   category: "health",
 };
@@ -87,15 +88,8 @@ function JsonLd() {
         alternateName: "CPS Utah",
         slogan: brand.tagline,
         url: brand.domain,
-        telephone: `+1-${brand.phone}`,
-        faxNumber: `+1-${brand.fax}`,
         email: brand.email,
         foundingDate: String(brand.since),
-        founder: {
-          "@type": "Person",
-          name: "Steven Szykula, Ph.D.",
-          jobTitle: "Licensed Clinical Psychologist",
-        },
         areaServed: {
           "@type": "State",
           name: "Utah",
@@ -121,7 +115,6 @@ function JsonLd() {
           name: `${brand.name} — ${loc.name}`,
           parentOrganization: { "@id": orgId },
           url: brand.domain,
-          telephone: `+1-${brand.phone}`,
           address: {
             "@type": "PostalAddress",
             streetAddress: loc.street,
@@ -156,6 +149,7 @@ export default function RootLayout({
         <JsonLd />
         <GoogleAnalytics />
         {children}
+        <AppointmentModal />
       </body>
     </html>
   );

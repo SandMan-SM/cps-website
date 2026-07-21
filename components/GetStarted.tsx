@@ -1,5 +1,5 @@
-import { Phone, ShieldCheck } from "lucide-react";
-import { steps, insuranceLine, brand } from "@/lib/data";
+import { CalendarCheck, ShieldCheck } from "lucide-react";
+import { steps, insuranceLine } from "@/lib/data";
 
 export default function GetStarted() {
   return (
@@ -35,11 +35,12 @@ export default function GetStarted() {
             <p className="text-sm font-medium text-teal-900">{insuranceLine}</p>
           </div>
           <a
-            href={brand.phoneHref}
-            aria-label={`Call ${brand.name} at ${brand.phone}`}
+            href="/#request"
+            data-book-appointment="true"
+            aria-label="Request an appointment"
             className="inline-flex flex-none items-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-teal-800"
           >
-            <Phone className="h-4 w-4" aria-hidden={true} /> Call {brand.phone}
+            <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request an appointment
           </a>
         </div>
       </div>

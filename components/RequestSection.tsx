@@ -1,10 +1,9 @@
-import { Phone, Clock, Video } from "lucide-react";
+import { CalendarCheck, Clock, Video } from "lucide-react";
 import LeadForm from "./LeadForm";
-import { brand } from "@/lib/data";
 
 export default function RequestSection() {
   const points = [
-    { icon: Phone, text: `Speak with a real person at ${brand.phone}` },
+    { icon: CalendarCheck, text: "A request tailored to the care you need" },
     { icon: Clock, text: "Most requests answered the same business day" },
     { icon: Video, text: "In-person or telehealth — your choice" },
   ];
@@ -32,14 +31,6 @@ export default function RequestSection() {
                 </li>
               ))}
             </ul>
-
-            <a
-              href={brand.phoneHref}
-              aria-label={`Call ${brand.name} at ${brand.phone}`}
-              className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-teal-700 px-6 py-3 text-base font-bold text-teal-800 transition hover:bg-teal-50"
-            >
-              <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
-            </a>
           </div>
 
           <LeadForm />

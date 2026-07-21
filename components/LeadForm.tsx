@@ -1,17 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Phone, CheckCircle2, Loader2, CalendarCheck } from "lucide-react";
-import { brand, locationOptions } from "@/lib/data";
+import { useEffect, useRef, useState } from "react";
+import { CheckCircle2, Loader2, CalendarCheck, AlertCircle } from "lucide-react";
+import { locationOptions } from "@/lib/data";
 import { captureAttribution, readAttribution } from "@/lib/attribution";
 
 type Status = "idle" | "submitting" | "success";
 
+const serviceOptions = [
+  "Counseling & psychotherapy",
+  "Medication therapy",
+  "Neurofeedback",
+  "Psychological evaluation",
+  "Health & wellness",
+  "Substance abuse treatment",
+  "Employer services",
+  "I’m not sure yet",
+];
+
 export default function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
+  const submissionIdRef = useRef<string | null>(null);
+  const consentRecordedAtRef = useRef<string | null>(null);
 
-  // First-touch attribution: persist utm_source/medium/campaign + referrer +
-  // landing path on mount so it survives navigation before the form submits.
   useEffect(() => {
     captureAttribution();
   }, []);
@@ -22,53 +34,87 @@ export default function LeadForm() {
 
     const formEl = e.currentTarget;
     const fd = new FormData(formEl);
+    const submissionId = submissionIdRef.current || crypto.randomUUID();
+    submissionIdRef.current = submissionId;
+    const consentRecordedAt =
+      consentRecordedAtRef.current || new Date().toISOString();
+    consentRecordedAtRef.current = consentRecordedAt;
     const payload = {
+      submissionId,
+      consentRecordedAt,
       name: String(fd.get("name") || ""),
       email: String(fd.get("email") || ""),
       phone: String(fd.get("phone") || ""),
+      service: String(fd.get("service") || ""),
       location: String(fd.get("location") || ""),
+      contactPreference: String(fd.get("contactPreference") || ""),
+      availability: String(fd.get("availability") || ""),
       message: String(fd.get("message") || ""),
+      website: String(fd.get("website") || ""),
+      consent: true,
+      formVariant: "detailed",
       ...readAttribution(),
     };
 
+    setError("");
     setStatus("submitting");
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
+    const timeout = setTimeout(() => controller.abort(), 58_000);
 
     try {
-      await fetch("/api/lead", {
+      const response = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
         signal: controller.signal,
       });
-    } catch {
-      // Never block the user — always show the reassuring success state.
-    } finally {
-      clearTimeout(timeout);
+      const result = (await response.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || "We couldn’t send your request. Please try again.");
+      }
+
       setStatus("success");
       formEl.reset();
+      submissionIdRef.current = null;
+      consentRecordedAtRef.current = null;
+    } catch (err) {
+      setStatus("idle");
+      setError(
+        err instanceof Error && err.name !== "AbortError"
+          ? err.message
+          : "The request timed out. Please try again.",
+      );
+    } finally {
+      clearTimeout(timeout);
     }
   }
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-teal-200 bg-white p-8 text-center shadow-card">
+      <div className="rounded-2xl border border-teal-200 bg-white p-8 text-center shadow-card" role="status">
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-100 text-teal-700">
           <CheckCircle2 className="h-8 w-8" aria-hidden={true} />
         </span>
-        <h3 className="mt-5 text-xl font-bold text-teal-950">We got it.</h3>
+        <h3 className="mt-5 text-xl font-bold text-teal-950">Your request has been received.</h3>
         <p className="mt-2 text-teal-800/90">
-          We&apos;ll call you shortly to get you scheduled. Prefer to talk now?
+          A CPS team member will follow up using the contact method you selected.
         </p>
-        <a
-          href={brand.phoneHref}
-          aria-label={`Call ${brand.name} at ${brand.phone}`}
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-teal-700 px-6 py-3 text-base font-bold text-white transition hover:bg-teal-800"
+        <button
+          type="button"
+          onClick={() => {
+            submissionIdRef.current = crypto.randomUUID();
+            consentRecordedAtRef.current = new Date().toISOString();
+            setStatus("idle");
+          }}
+          className="mt-6 text-sm font-bold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-800"
         >
-          <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
-        </a>
+          Send another request
+        </button>
       </div>
     );
   }
@@ -80,107 +126,99 @@ export default function LeadForm() {
     <form
       onSubmit={handleSubmit}
       className="rounded-2xl border border-teal-100 bg-white p-6 shadow-card sm:p-8"
-      noValidate
     >
+      <div className="mb-6">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-600">CPS appointment request</p>
+        <h3 className="mt-2 text-2xl font-extrabold text-teal-950">Tell us what works for you</h3>
+        <p className="mt-2 text-sm leading-relaxed text-teal-800/70">
+          Share only what is needed for scheduling—please do not include private medical details.
+        </p>
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label htmlFor="name" className="text-sm font-semibold text-teal-900">
-            Full name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            autoComplete="name"
-            required
-            placeholder="Your name"
-            className={inputBase}
-          />
+          <label htmlFor="name" className="text-sm font-semibold text-teal-900">Full name</label>
+          <input id="name" name="name" type="text" autoComplete="name" required placeholder="Your name" className={inputBase} />
         </div>
 
         <div>
-          <label htmlFor="email" className="text-sm font-semibold text-teal-900">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            placeholder="you@example.com"
-            className={inputBase}
-          />
+          <label htmlFor="email" className="text-sm font-semibold text-teal-900">Email</label>
+          <input id="email" name="email" type="email" autoComplete="email" required placeholder="you@example.com" className={inputBase} />
         </div>
 
         <div>
-          <label htmlFor="phone" className="text-sm font-semibold text-teal-900">
-            Phone
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            required
-            placeholder="(801) 555-0100"
-            className={inputBase}
-          />
+          <label htmlFor="phone" className="text-sm font-semibold text-teal-900">Phone</label>
+          <input id="phone" name="phone" type="tel" autoComplete="tel" required placeholder="Your preferred number" className={inputBase} />
         </div>
 
-        <div className="sm:col-span-2">
-          <label htmlFor="location" className="text-sm font-semibold text-teal-900">
-            Preferred location
-          </label>
-          <select id="location" name="location" defaultValue="" required className={inputBase}>
-            <option value="" disabled>
-              Select a location
-            </option>
-            {locationOptions.map((opt) => (
-              <option key={opt} value={opt}>
-                {opt}
-              </option>
-            ))}
+        <div>
+          <label htmlFor="service" className="text-sm font-semibold text-teal-900">What can we help with?</label>
+          <select id="service" name="service" defaultValue="" required className={inputBase}>
+            <option value="" disabled>Select a service</option>
+            {serviceOptions.map((option) => <option key={option} value={option}>{option}</option>)}
           </select>
+        </div>
+
+        <div>
+          <label htmlFor="location" className="text-sm font-semibold text-teal-900">Preferred location</label>
+          <select id="location" name="location" defaultValue="" required className={inputBase}>
+            <option value="" disabled>Select a location</option>
+            {locationOptions.map((option) => <option key={option} value={option}>{option}</option>)}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="contactPreference" className="text-sm font-semibold text-teal-900">Preferred follow-up</label>
+          <select id="contactPreference" name="contactPreference" defaultValue="Email" required className={inputBase}>
+            <option>Email</option>
+            <option>Phone call</option>
+            <option>Text message</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="availability" className="text-sm font-semibold text-teal-900">
+            Best time to reach you <span className="font-normal text-teal-800/60">(optional)</span>
+          </label>
+          <input id="availability" name="availability" type="text" placeholder="Morning, afternoon, or evening" className={inputBase} />
         </div>
 
         <div className="sm:col-span-2">
           <label htmlFor="message" className="text-sm font-semibold text-teal-900">
-            How can we help? <span className="font-normal text-teal-800/60">(optional)</span>
+            Scheduling notes <span className="font-normal text-teal-800/60">(optional)</span>
           </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            placeholder="A few words about what you're looking for."
-            className={inputBase}
-          />
+          <textarea id="message" name="message" rows={3} placeholder="Anything helpful for scheduling—no medical details, please." className={inputBase} />
+        </div>
+
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
         </div>
       </div>
+
+      {error && (
+        <div className="mt-5 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
+          <AlertCircle className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />
+          <span>{error}</span>
+        </div>
+      )}
+
+      <p className="mt-5 text-xs leading-relaxed text-teal-800/70">
+        By submitting, you agree that Comprehensive Psychological Services may contact you by phone, text, or email about your request. There is no obligation to schedule or receive services. Message and data rates may apply.
+      </p>
 
       <button
         type="submit"
         disabled={status === "submitting"}
-        aria-label={status === "submitting" ? "Sending your appointment request" : "Request my appointment"}
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:opacity-70"
+        aria-label={status === "submitting" ? "Sending your appointment request" : "Send appointment request"}
+        className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "submitting" ? (
-          <>
-            <Loader2 className="h-5 w-5 animate-spin" aria-hidden={true} /> Sending…
-          </>
+          <><Loader2 className="h-5 w-5 animate-spin" aria-hidden={true} /> Sending…</>
         ) : (
-          <>
-            <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request my appointment
-          </>
+          <><CalendarCheck className="h-5 w-5" aria-hidden={true} /> Send appointment request</>
         )}
       </button>
-
-      <p className="mt-4 text-center text-sm text-teal-800/70">
-        Prefer to talk now?{" "}
-        <a href={brand.phoneHref} aria-label={`Call ${brand.name} at ${brand.phone}`} className="font-semibold text-teal-700 hover:text-teal-800">
-          Call {brand.phone}
-        </a>
-      </p>
     </form>
   );
 }

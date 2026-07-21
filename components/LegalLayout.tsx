@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Phone } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { brand } from "@/lib/data";
 
 export default function LegalLayout({
@@ -32,10 +32,6 @@ export default function LegalLayout({
             Questions about this policy? Contact {brand.name} at{" "}
             <a href={`mailto:${brand.email}`} aria-label={`Email ${brand.name}`} className="font-semibold text-teal-700">
               {brand.email}
-            </a>{" "}
-            or call{" "}
-            <a href={brand.phoneHref} aria-label={`Call ${brand.name} at ${brand.phone}`} className="inline-flex items-center gap-1 font-semibold text-teal-700">
-              <Phone className="h-3.5 w-3.5" aria-hidden={true} /> {brand.phone}
             </a>
             .
           </p>

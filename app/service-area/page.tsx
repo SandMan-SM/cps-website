@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Video, Phone } from "lucide-react";
+import { MapPin, Video, CalendarCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
@@ -12,7 +12,7 @@ const url = `${brand.domain}/service-area`;
 
 export const metadata: Metadata = {
   title: "Service Area — Utah Cities We Serve | CPS",
-  description: `Comprehensive Psychological Services serves ${cities.length}+ cities across the Wasatch Front from offices in Salt Lake City, Layton, and West Jordan, plus telehealth statewide. Call ${brand.phone}.`,
+  description: `Comprehensive Psychological Services serves ${cities.length}+ cities across the Wasatch Front from offices in Salt Lake City, Layton, and West Jordan, plus telehealth statewide.`,
   alternates: { canonical: url },
   robots: { index: true, follow: true },
   openGraph: {
@@ -41,14 +41,8 @@ export default function ServiceAreaPage() {
         "@id": `${brand.domain}/#organization`,
         name: brand.name,
         url: brand.domain,
-        telephone: `+1-${brand.phone}`,
         email: brand.email,
         foundingDate: String(brand.since),
-        founder: {
-          "@type": "Person",
-          name: brand.founder.name,
-          jobTitle: brand.founder.title,
-        },
         areaServed: { "@type": "State", name: "Utah" },
         availableAtOrFrom: locations.map((loc) => ({
           "@type": "MedicalClinic",
@@ -104,7 +98,7 @@ export default function ServiceAreaPage() {
             name: "Does CPS accept insurance?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Most major insurance plans are accepted. Call our office to verify your specific coverage before your first appointment.",
+              text: "Most major insurance plans are accepted. Our team can help verify your specific coverage during scheduling.",
             },
           },
         ],
@@ -200,16 +194,17 @@ export default function ServiceAreaPage() {
               Don&apos;t see your city?
             </h2>
             <p className="mt-4 text-lg text-teal-100">
-              We serve the entire Wasatch Front and offer telehealth statewide. Call to find
-              the closest office and get scheduled.
+              We serve the entire Wasatch Front and offer telehealth statewide. Send a request
+              and we&apos;ll help you find the closest office.
             </p>
             <div className="mt-8 flex justify-center">
               <a
-                href={brand.phoneHref}
-                aria-label={`Call ${brand.name} at ${brand.phone}`}
+                href="/#request"
+                data-book-appointment="true"
+                aria-label="Request an appointment"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
               >
-                <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
+                <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
               </a>
             </div>
           </div>

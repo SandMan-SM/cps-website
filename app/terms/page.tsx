@@ -73,7 +73,7 @@ export default function TermsPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms? Email {brand.email} or call {brand.phone}.
+        Questions about these terms? Email {brand.email}.
       </p>
       </LegalLayout>
     </>

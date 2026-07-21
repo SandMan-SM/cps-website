@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { Phone, Menu, X } from "lucide-react";
+import { CalendarCheck, Menu, X } from "lucide-react";
 import { brand } from "@/lib/data";
 
 export default function Header() {
@@ -17,16 +18,17 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-teal-100 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" aria-label={`${brand.name} home`}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-700 font-bold text-white" aria-hidden={true}>
-            C
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="text-sm font-bold text-teal-900">{brand.shortName}</span>
-            <span className="text-[11px] text-teal-600">{brand.tagline}</span>
-          </span>
+        <Link href="/" className="flex shrink-0 items-center" aria-label={`${brand.name} home`}>
+          <Image
+            src="/cps-logo-clean.png"
+            alt="Comprehensive Psychological Services — WeCanHelpOut.com"
+            width={570}
+            height={146}
+            priority
+            className="h-auto w-[190px] sm:w-[230px]"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -44,13 +46,13 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <a
-          href={brand.phoneHref}
-          aria-label="Call CPS"
+          href="/#request"
+          data-book-appointment="true"
+          aria-label="Book an appointment"
           className="hidden md:inline-flex items-center gap-2 rounded-full bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
         >
-          <Phone className="h-4 w-4" aria-hidden={true} />
-          <span className="hidden sm:inline">Call {brand.phone}</span>
-          <span className="sm:hidden">Call</span>
+          <CalendarCheck className="h-4 w-4" aria-hidden={true} />
+          <span>Book appointment</span>
         </a>
 
         {/* Mobile hamburger */}
@@ -93,12 +95,14 @@ export default function Header() {
             </ul>
             <div className="mt-4 border-t border-teal-100 pt-4">
               <a
-                href={brand.phoneHref}
-                aria-label="Call CPS"
+                href="/#request"
+                data-book-appointment="true"
+                aria-label="Book an appointment"
+                onClick={() => setMobileOpen(false)}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
               >
-                <Phone className="h-4 w-4" aria-hidden={true} />
-                Call {brand.phone}
+                <CalendarCheck className="h-4 w-4" aria-hidden={true} />
+                Book appointment
               </a>
             </div>
           </div>

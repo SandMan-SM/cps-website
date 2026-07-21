@@ -1,18 +1,26 @@
-import { Phone, Mail, Printer, Clock, Video } from "lucide-react";
+import Image from "next/image";
+import { CalendarCheck, Mail, Clock, Video } from "lucide-react";
 import { brand, locations } from "@/lib/data";
 
 export default function Footer() {
   return (
     <footer className="bg-band text-teal-100">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 pb-28 pt-14 sm:px-6 md:pb-14">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 font-bold text-white" aria-hidden={true}>
-                C
-              </span>
-              <span className="text-base font-bold text-white">{brand.shortName}</span>
-            </div>
+            <a
+              href="/"
+              aria-label={`${brand.name} home`}
+              className="inline-flex rounded-lg bg-white px-3 py-2 shadow-sm"
+            >
+              <Image
+                src="/cps-logo-clean.png"
+                alt="Comprehensive Psychological Services — WeCanHelpOut.com"
+                width={570}
+                height={146}
+                className="h-auto w-[220px]"
+              />
+            </a>
             <p className="mt-3 text-sm text-teal-200">
               {brand.name} — {brand.tagline}. Serving Utah since {brand.since}.
             </p>
@@ -35,28 +43,26 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wide text-white">Contact</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wide text-white">Connect</h3>
             <ul className="mt-3 space-y-3 text-sm">
               <li>
                 <a
-                  href={brand.phoneHref}
-                  aria-label={`Call CPS at ${brand.phone}`}
+                  href="/#subscribe"
+                  aria-label="Subscribe to CPS updates"
                   className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
                 >
-                  <Phone className="h-4 w-4" aria-hidden={true} /> {brand.phone}
+                  <Mail className="h-4 w-4" aria-hidden={true} /> Subscribe for updates
                 </a>
               </li>
               <li>
                 <a
-                  href={`mailto:${brand.email}`}
-                  aria-label={`Email CPS at ${brand.email}`}
+                  href="/#request"
+                  data-book-appointment="true"
+                  aria-label="Request an appointment"
                   className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
                 >
-                  <Mail className="h-4 w-4" aria-hidden={true} /> {brand.email}
+                  <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request an appointment
                 </a>
-              </li>
-              <li className="inline-flex items-center gap-2 text-teal-200">
-                <Printer className="h-4 w-4" aria-hidden={true} /> Fax {brand.fax}
               </li>
               <li className="inline-flex items-center gap-2 text-teal-200">
                 <Clock className="h-4 w-4" aria-hidden={true} /> {brand.hours}
@@ -70,7 +76,7 @@ export default function Footer() {
               <li><a href="/#services" aria-label="Jump to Services section" className="hover:text-white">Services</a></li>
               <li><a href="/service-area" aria-label="View service areas in Utah" className="hover:text-white">Service Area</a></li>
               <li><a href="/#locations" aria-label="Jump to Locations section" className="hover:text-white">Locations</a></li>
-              <li><a href="/#request" aria-label="Jump to appointment request form" className="hover:text-white">Request an appointment</a></li>
+              <li><a href="/#request" data-book-appointment="true" aria-label="Request an appointment" className="hover:text-white">Request an appointment</a></li>
             </ul>
           </div>
         </div>

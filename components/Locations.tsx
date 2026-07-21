@@ -1,4 +1,4 @@
-import { Phone, Navigation, MapPin } from "lucide-react";
+import { CalendarCheck, Navigation, MapPin } from "lucide-react";
 import { locations, brand } from "@/lib/data";
 
 export default function Locations() {
@@ -33,11 +33,13 @@ export default function Locations() {
 
               <div className="mt-5 flex flex-col gap-2">
                 <a
-                  href={brand.phoneHref}
-                  aria-label={`Call ${brand.name} at ${brand.phone}`}
+                  href="/#request"
+                  data-book-appointment="true"
+                  data-appointment-location={loc.name}
+                  aria-label={`Request an appointment near ${loc.name}`}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-800"
                 >
-                  <Phone className="h-4 w-4" aria-hidden={true} /> Call {brand.phone}
+                  <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request an appointment
                 </a>
                 <a
                   href={loc.mapsUrl}
