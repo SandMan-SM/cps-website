@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { Mail, CalendarCheck, Phone } from "lucide-react";
-import { brand } from "@/lib/data";
+import { Mail, CalendarCheck } from "lucide-react";
 
-// Reusable dual CTA used across city & service pages.
-// Primary: Request an appointment. Secondary: Subscribe.
+// Reusable CTA group used across city and service pages.
 export default function CtaBar({
   className = "",
   requestHref = "/#request",
@@ -13,13 +11,6 @@ export default function CtaBar({
 }) {
   return (
     <div className={`flex flex-col gap-4 sm:flex-row ${className}`}>
-      <a
-        href={brand.phoneHref}
-        aria-label={`Call ${brand.name} at ${brand.phone}`}
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800"
-      >
-        <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
-      </a>
       <Link
         href={requestHref}
         data-book-appointment="true"
