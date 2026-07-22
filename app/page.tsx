@@ -7,25 +7,15 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["MedicalBusiness", "Psychologist"],
-        "@id": `${brand.domain}/#organization`,
-        name: brand.name,
+        "@type": "WebPage",
+        "@id": `${brand.domain}/#webpage`,
         url: brand.domain,
-        email: brand.email,
-        foundingDate: String(brand.since),
-        areaServed: { "@type": "State", name: "Utah" },
-        availableAtOrFrom: locations.map((loc) => ({
-          "@type": "MedicalClinic",
-          name: `${brand.name} — ${loc.name}`,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: loc.street,
-            addressLocality: loc.cityLine.split(", ")[0],
-            addressRegion: "UT",
-            postalCode: loc.cityLine.split(", ")[1]?.split(" ").pop() || "",
-            addressCountry: "US",
-          },
-        })),
+        name: "Utah Mental Health Care | CPS",
+        description:
+          "Counseling, medication management, neurofeedback, evaluations, and behavioral health services from three Utah offices and by telehealth.",
+        isPartOf: { "@id": `${brand.domain}/#website` },
+        about: { "@id": `${brand.domain}/#organization` },
+        inLanguage: "en-US",
       },
       {
         "@type": "BreadcrumbList",
@@ -34,41 +24,14 @@ function JsonLd() {
         ],
       },
       {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "What kinds of therapy do you offer?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "We offer individual, couples, family, and child/adolescent therapy using evidence-based approaches. During your first visit, your provider will recommend the approach best suited to your goals.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Do you accept insurance for counseling?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Most major insurance is accepted. Our team can help you understand your benefits while scheduling your first appointment.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Can I do therapy from home?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. We offer secure telehealth counseling anywhere in Utah, so you can meet with your provider from the comfort of home when that works best for you.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "What ages do you serve?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "We serve children, adolescents, adults, and seniors — the full range of ages across our counseling, medication management, and neurofeedback services.",
-            },
-          },
-        ],
+        "@type": "ItemList",
+        name: "Comprehensive Psychological Services Utah offices",
+        itemListElement: locations.map((loc, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: `${loc.name} office`,
+          item: `${brand.domain}/utah/${loc.citySlug}`,
+        })),
       },
     ],
   };
@@ -92,24 +55,33 @@ import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
 
 export const metadata: Metadata = {
-  title: brand.name + " | Salt Lake City & Utah Mental Health Services",
+  title: { absolute: "Utah Mental Health Care | CPS" },
   description:
-    "Expert mental health care in Utah — counseling, medication management & neurofeedback. Serving Salt Lake City, Murray, Sandy, West Jordan & Layton. Most insurance accepted.",
+    "Utah mental health care since 1986: counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
   alternates: { canonical: brand.domain },
   openGraph: {
     type: "website",
     url: brand.domain,
     siteName: brand.name,
-    title: brand.name + " | Salt Lake City & Utah Mental Health Services",
+    title: "Utah Mental Health Care | CPS",
     description:
-      "Expert mental health care in Utah — counseling, medication management & neurofeedback. Serving Salt Lake City, Murray, Sandy, West Jordan & Layton. Most insurance accepted.",
+      "Utah mental health care since 1986: counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
     locale: "en_US",
+    images: [
+      {
+        url: "/cps-hero.jpg",
+        width: 1824,
+        height: 862,
+        alt: "A calm behavioral health appointment at Comprehensive Psychological Services in Utah",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: brand.name + " | Salt Lake City & Utah Mental Health Services",
+    title: "Utah Mental Health Care | CPS",
     description:
-      "Expert mental health care in Utah — counseling, medication management & neurofeedback. Serving Salt Lake City, Murray, Sandy, West Jordan & Layton. Most insurance accepted.",
+      "Utah mental health care since 1986: counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
+    images: ["/cps-hero.jpg"],
   },
 };
 

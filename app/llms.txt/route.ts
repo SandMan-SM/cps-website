@@ -2,7 +2,8 @@ import { brand, locations, insuranceLine } from "@/lib/data";
 import { cities } from "@/lib/geo";
 import { servicePages } from "@/lib/services";
 
-// Plain-text summary of CPS for AI answer engines (GEO).
+// Plain-text summary for systems that choose to read it. Google Search does not
+// require or give special treatment to llms.txt.
 export const dynamic = "force-static";
 
 export function GET() {
@@ -11,12 +12,10 @@ export function GET() {
     .join("\n");
 
   const offices = locations
-    .map((l) => `- ${l.name}: ${l.full}`)
+    .map((l) => `- ${l.name}: ${l.full} ${brand.domain}/utah/${l.citySlug}`)
     .join("\n");
 
-  const cityLines = cities
-    .map((c) => `- ${c.name}, Utah (${c.county} County): ${brand.domain}/utah/${c.slug}`)
-    .join("\n");
+  const cityLines = cities.map((c) => c.name).join(", ");
 
   const body = `# ${brand.name} (CPS)
 
@@ -37,7 +36,7 @@ ${services}
 
 ## Service Area (Wasatch Front cities)
 Overview: ${brand.domain}/service-area
-${cityLines}
+Communities served: ${cityLines}
 
 ## Contact
 Subscribe for CPS updates at ${brand.domain}/#subscribe or request an appointment at ${brand.domain}/#request. In-person and telehealth appointments available.

@@ -6,7 +6,7 @@ import {
   CalendarCheck,
 } from "lucide-react";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const stories = [
   {
@@ -77,7 +77,16 @@ const stories = [
 export default function SuccessStories() {
   const viewportRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<Array<HTMLLIElement | null>>([]);
+  const scrollFrameRef = useRef<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    return () => {
+      if (scrollFrameRef.current !== null) {
+        cancelAnimationFrame(scrollFrameRef.current);
+      }
+    };
+  }, []);
 
   function goToStory(index: number) {
     const nextIndex = (index + stories.length) % stories.length;
@@ -94,20 +103,25 @@ export default function SuccessStories() {
   }
 
   function updateActiveStory() {
-    const viewport = viewportRef.current;
-    if (!viewport) return;
+    if (scrollFrameRef.current !== null) return;
 
-    let nearestIndex = 0;
-    let nearestDistance = Number.POSITIVE_INFINITY;
-    slideRefs.current.forEach((slide, index) => {
-      if (!slide) return;
-      const distance = Math.abs(slide.offsetLeft - viewport.scrollLeft);
-      if (distance < nearestDistance) {
-        nearestDistance = distance;
-        nearestIndex = index;
-      }
+    scrollFrameRef.current = requestAnimationFrame(() => {
+      scrollFrameRef.current = null;
+      const viewport = viewportRef.current;
+      if (!viewport) return;
+
+      let nearestIndex = 0;
+      let nearestDistance = Number.POSITIVE_INFINITY;
+      slideRefs.current.forEach((slide, index) => {
+        if (!slide) return;
+        const distance = Math.abs(slide.offsetLeft - viewport.scrollLeft);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearestIndex = index;
+        }
+      });
+      setActiveIndex((current) => (current === nearestIndex ? current : nearestIndex));
     });
-    setActiveIndex((current) => (current === nearestIndex ? current : nearestIndex));
   }
 
   return (
@@ -151,7 +165,7 @@ export default function SuccessStories() {
               }
             }}
             onScroll={updateActiveStory}
-            className="overflow-x-auto rounded-3xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="scroll-smooth overflow-x-auto overscroll-x-contain rounded-3xl [scrollbar-width:none] motion-reduce:scroll-auto [&::-webkit-scrollbar]:hidden"
           >
             <ol className="relative flex snap-x snap-mandatory gap-4" role="list">
               {stories.map((story, index) => {
@@ -207,7 +221,14 @@ export default function SuccessStories() {
           </div>
 
           <div className="mt-6 flex items-center justify-between gap-4">
-            <div className="flex items-center" aria-label="Choose a success story">
+            <div className="relative flex items-center" role="group" aria-label="Choose a success story">
+              <span
+                className="pointer-events-none absolute left-0 top-1/2 z-10 h-2.5 w-6 rounded-full bg-teal-700 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+                style={{
+                  transform: `translate3d(${activeIndex * 1.5}rem, -50%, 0)`,
+                }}
+                aria-hidden={true}
+              />
               {stories.map((story, index) => (
                 <button
                   key={story.title}
@@ -215,11 +236,13 @@ export default function SuccessStories() {
                   onClick={() => goToStory(index)}
                   aria-label={`Show story ${index + 1}: ${story.title}`}
                   aria-current={activeIndex === index ? "true" : undefined}
-                  className="group flex h-11 w-6 items-center justify-center"
+                  className="group relative flex h-11 w-6 items-center justify-center focus-visible:z-20 focus-visible:rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2"
                 >
                   <span
-                    className={`block h-2.5 rounded-full transition-all ${
-                      activeIndex === index ? "w-6 bg-teal-700" : "w-2.5 bg-teal-200 group-hover:bg-teal-300"
+                    className={`block h-2.5 w-2.5 rounded-full transition-[background-color,opacity,transform] duration-300 motion-reduce:transition-none ${
+                      activeIndex === index
+                        ? "scale-75 bg-teal-200 opacity-0"
+                        : "scale-100 bg-teal-200 opacity-100 group-hover:bg-teal-300"
                     }`}
                     aria-hidden={true}
                   />

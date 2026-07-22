@@ -19,26 +19,11 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(brand.domain),
   title: {
-    default:
-      "Comprehensive Psychological Services | Utah Therapy, Counseling & Psychiatry Since 1986",
-    template: "%s | Comprehensive Psychological Services",
+    default: "Utah Mental Health Care | CPS",
+    template: "%s | CPS Utah",
   },
   description:
-    "Compassionate mental health care for every Utah family since 1986. Counseling, medication management, neurofeedback, evaluations, and substance abuse treatment in Salt Lake City, Layton, and West Jordan. Telehealth available.",
-  keywords: [
-    "therapist Salt Lake City",
-    "psychiatrist utah",
-    "neurofeedback utah",
-    "substance abuse evaluation utah",
-    "medication management utah",
-    "counseling Layton",
-    "counseling West Jordan",
-    "psychologist Utah",
-    "telehealth therapy Utah",
-    "behavioral health Utah",
-    "mental health Salt Lake City",
-    "DOT substance abuse evaluation Utah",
-  ],
+    "Utah mental health care since 1986, with counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
   authors: [{ name: brand.name }],
   creator: brand.name,
   publisher: brand.name,
@@ -63,8 +48,16 @@ export const metadata: Metadata = {
     title:
       "Comprehensive Psychological Services | Utah Behavioral Health Since 1986",
     description:
-      "Compassionate mental health care for every Utah family since 1986. Counseling, medication, neurofeedback, evaluations, and more across Salt Lake City, Layton & West Jordan. Telehealth available.",
+      "Utah mental health care since 1986, with counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
     locale: "en_US",
+    images: [
+      {
+        url: "/cps-hero.jpg",
+        width: 1824,
+        height: 862,
+        alt: "A calm behavioral health appointment at Comprehensive Psychological Services in Utah",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -72,6 +65,7 @@ export const metadata: Metadata = {
       "Comprehensive Psychological Services | Utah Behavioral Health Since 1986",
     description:
       "Compassionate mental health care for every Utah family since 1986. Telehealth available.",
+    images: ["/cps-hero.jpg"],
   },
   category: "health",
 };
@@ -82,51 +76,39 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["MedicalBusiness", "Psychologist"],
+        "@type": ["Organization", "MedicalOrganization"],
         "@id": orgId,
         name: brand.name,
         alternateName: "CPS Utah",
         slogan: brand.tagline,
         url: brand.domain,
+        logo: {
+          "@type": "ImageObject",
+          url: `${brand.domain}/cps-logo-clean.png`,
+          width: 570,
+          height: 146,
+        },
+        description:
+          "Utah behavioral health practice offering counseling, medication management, neurofeedback, evaluations, wellness, substance use treatment, and employer services.",
         email: brand.email,
         foundingDate: String(brand.since),
         areaServed: {
           "@type": "State",
           name: "Utah",
         },
-        medicalSpecialty: "Psychiatric",
-        availableService: [
-          "Counseling & Psychotherapy",
-          "Medication Therapy",
-          "Neurofeedback",
-          "Evaluation Services",
-          "Health & Wellness",
-          "Substance Abuse Treatment",
-          "Employer Services",
-        ].map((s) => ({ "@type": "MedicalTherapy", name: s })),
-        location: locations.map((loc) => ({ "@id": `${brand.domain}/#${loc.id}` })),
+        location: locations.map((loc) => ({
+          "@id": `${brand.domain}/utah/${loc.citySlug}#clinic`,
+        })),
       },
-      ...locations.map((loc) => {
-        const [city, stateZip] = loc.cityLine.split(", ");
-        const [region, postal] = (stateZip || "").split(" ");
-        return {
-          "@type": ["MedicalClinic", "LocalBusiness"],
-          "@id": `${brand.domain}/#${loc.id}`,
-          name: `${brand.name} — ${loc.name}`,
-          parentOrganization: { "@id": orgId },
-          url: brand.domain,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: loc.street,
-            addressLocality: city,
-            addressRegion: region || "UT",
-            postalCode: postal || "",
-            addressCountry: "US",
-          },
-          areaServed: { "@type": "State", name: "Utah" },
-          openingHours: "Mo-Fr",
-        };
-      }),
+      {
+        "@type": "WebSite",
+        "@id": `${brand.domain}/#website`,
+        url: brand.domain,
+        name: brand.name,
+        alternateName: ["CPS Utah", "We Can Help Out"],
+        publisher: { "@id": orgId },
+        inLanguage: "en-US",
+      },
     ],
   };
 

@@ -5,28 +5,47 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
 import CtaBar from "@/components/CtaBar";
-import { brand, locations } from "@/lib/data";
+import { brand, getLocationByCitySlug, locations } from "@/lib/data";
 import { citiesByCounty, cities } from "@/lib/geo";
 
 const url = `${brand.domain}/service-area`;
 
 export const metadata: Metadata = {
-  title: "Service Area — Utah Cities We Serve | CPS",
-  description: `Comprehensive Psychological Services serves ${cities.length}+ cities across the Wasatch Front from offices in Salt Lake City, Layton, and West Jordan, plus telehealth statewide.`,
+  title: { absolute: "Utah Service Area & Office Locations | CPS" },
+  description: `Find CPS offices in Salt Lake City, Layton, and West Jordan, serving ${cities.length}+ Wasatch Front communities with Utah-wide telehealth options.`,
   alternates: { canonical: url },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     url,
     siteName: brand.name,
-    title: "Service Area — Utah Cities We Serve | CPS",
+    title: "Utah Service Area & Office Locations | CPS",
     description: `Serving ${cities.length}+ Utah cities across Salt Lake, Davis, Weber, and Utah counties, plus telehealth statewide.`,
     locale: "en_US",
+    images: [
+      {
+        url: "/cps-hero.jpg",
+        width: 1824,
+        height: 862,
+        alt: "Comprehensive Psychological Services serves Utah from three offices and by telehealth",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Service Area — Utah Cities We Serve | CPS",
+    title: "Utah Service Area & Office Locations | CPS",
     description: `Serving ${cities.length}+ Utah cities across Salt Lake, Davis, Weber, and Utah counties, plus telehealth statewide.`,
+    images: ["/cps-hero.jpg"],
   },
 };
 
@@ -37,25 +56,14 @@ export default function ServiceAreaPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["MedicalBusiness", "Psychologist"],
-        "@id": `${brand.domain}/#organization`,
-        name: brand.name,
-        url: brand.domain,
-        email: brand.email,
-        foundingDate: String(brand.since),
-        areaServed: { "@type": "State", name: "Utah" },
-        availableAtOrFrom: locations.map((loc) => ({
-          "@type": "MedicalClinic",
-          name: `${brand.name} — ${loc.name}`,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: loc.street,
-            addressLocality: loc.cityLine.split(", ")[0],
-            addressRegion: "UT",
-            postalCode: loc.cityLine.split(", ")[1]?.split(" ").pop() || "",
-            addressCountry: "US",
-          },
-        })),
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: "Utah Service Area & Office Locations",
+        description: `CPS serves ${cities.length}+ Utah communities from offices in Salt Lake City, Layton, and West Jordan, with telehealth available statewide.`,
+        isPartOf: { "@id": `${brand.domain}/#website` },
+        about: { "@id": `${brand.domain}/#organization` },
+        inLanguage: "en-US",
       },
       {
         "@type": "BreadcrumbList",
@@ -66,42 +74,13 @@ export default function ServiceAreaPage() {
       },
       {
         "@type": "ItemList",
-        name: "CPS Utah Service Area",
-        itemListElement: cities.map((c, i) => ({
+        name: "CPS Utah office locations",
+        itemListElement: locations.map((loc, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          name: `${c.name}, Utah`,
-          item: `${brand.domain}/utah/${c.slug}`,
+          name: `${loc.name} office`,
+          item: `${brand.domain}/utah/${loc.citySlug}`,
         })),
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "Which Utah cities does CPS serve?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: `CPS serves ${cities.length}+ cities across Utah, including Salt Lake City, Murray, Sandy, West Jordan, Layton, Draper, South Jordan, Lehi, Ogden, and many more — plus secure telehealth statewide.`,
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Does CPS offer telehealth?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. CPS offers secure video counseling (telehealth) to clients anywhere in Utah, in addition to in-person services at our Salt Lake City, Layton, and West Jordan offices.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Does CPS accept insurance?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Most major insurance plans are accepted. Our team can help verify your specific coverage during scheduling.",
-            },
-          },
-        ],
       },
     ],
   };
@@ -135,17 +114,18 @@ export default function ServiceAreaPage() {
 
             <div className="mt-6 grid sm:grid-cols-3" style={{ gap: "2rem" }}>
               {locations.map((loc) => (
-                <div
+                <Link
                   key={loc.id}
-                  className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card"
+                  href={`/utah/${loc.citySlug}`}
+                  className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
                 >
                   <MapPin className="mt-0.5 h-5 w-5 flex-none text-teal-700" aria-hidden={true} />
                   <p className="text-sm text-teal-900">
-                    <span className="font-semibold">{loc.name}</span>
+                    <span className="font-semibold group-hover:text-teal-700">{loc.name} office</span>
                     <br />
                     {loc.full}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -165,23 +145,42 @@ export default function ServiceAreaPage() {
                   {group.county} County
                 </h2>
                 <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "2rem" }}>
-                  {group.cities.map((c) => (
-                    <Link
-                      key={c.slug}
-                      href={`/utah/${c.slug}`}
-                      className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
-                    >
-                      <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
-                        <MapPin className="h-5 w-5" aria-hidden={true} />
-                      </span>
-                      <span>
-                        <span className="block font-bold text-teal-950">{c.name}</span>
-                        <span className="block text-xs text-teal-800/70">
-                          ~{c.distanceMiles} mi from {c.nearestOffice === "west-jordan" ? "West Jordan" : c.nearestOffice === "layton" ? "Layton" : "Salt Lake City"}
+                  {group.cities.map((c) => {
+                    const officeLocation = getLocationByCitySlug(c.slug);
+                    const nearestOffice = locations.find((loc) => loc.id === c.nearestOffice);
+                    const content = (
+                      <>
+                        <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
+                          <MapPin className="h-5 w-5" aria-hidden={true} />
                         </span>
-                      </span>
-                    </Link>
-                  ))}
+                        <span>
+                          <span className="block font-bold text-teal-950">{c.name}</span>
+                          <span className="block text-xs text-teal-800/70">
+                            {officeLocation
+                              ? "CPS office location"
+                              : `Nearest in-person office: ${nearestOffice?.name ?? "CPS"}`}
+                          </span>
+                        </span>
+                      </>
+                    );
+
+                    return officeLocation ? (
+                      <Link
+                        key={c.slug}
+                        href={`/utah/${c.slug}`}
+                        className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      <div
+                        key={c.slug}
+                        className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card"
+                      >
+                        {content}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}

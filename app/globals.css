@@ -63,6 +63,23 @@ body {
   background: linear-gradient(145deg, #171112 0%, #321719 52%, #551b1e 100%);
 }
 
+/* Preview the custom CPS button artwork on selected CTAs before wider rollout. */
+.cps-button-art {
+  background-color: #8f1f24;
+  background-image:
+    linear-gradient(rgba(93, 10, 18, 0.12), rgba(86, 8, 16, 0.28)),
+    url("/cps-red-button-texture-v2.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.cps-button-art:hover {
+  background-color: #74191e;
+  background-image:
+    linear-gradient(rgba(68, 6, 12, 0.24), rgba(60, 5, 11, 0.4)),
+    url("/cps-red-button-texture-v2.webp");
+}
+
 .text-balance {
   text-wrap: balance;
 }

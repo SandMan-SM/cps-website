@@ -21,10 +21,9 @@ export const servicePages: ServicePage[] = [
     slug: "counseling-psychotherapy",
     name: "Counseling & Psychotherapy",
     icon: "MessageCircleHeart",
-    metaTitle:
-      "Counseling & Psychotherapy in Utah | CPS — Salt Lake City, Layton & West Jordan",
+    metaTitle: "Counseling & Psychotherapy in Utah | CPS",
     metaDescription:
-      "Compassionate counseling and psychotherapy for children, teens, adults, and families across Utah. In-person in Salt Lake City, Layton & West Jordan, plus telehealth. Request an appointment online.",
+      "Counseling and psychotherapy for children, teens, adults, couples, and families in Utah. Ask about three office locations and secure telehealth.",
     h1: "Counseling & Psychotherapy in Utah",
     intro:
       "Our licensed therapists provide compassionate counseling and psychotherapy for every stage of life — children, teens, adults, couples, and families. We treat the full range of behavioral health concerns, from anxiety and depression to trauma, grief, and relationship challenges. You'll be matched with a provider who fits your needs, goals, and preferred location.",
@@ -61,10 +60,9 @@ export const servicePages: ServicePage[] = [
     slug: "medication-management",
     name: "Medication Management",
     icon: "Pill",
-    metaTitle:
-      "Medication Management & Psychiatry in Utah | CPS — Salt Lake City, Layton & West Jordan",
+    metaTitle: "Medication Management in Utah | CPS",
     metaDescription:
-      "Careful, collaborative medication management from MDs, physician assistants, and nurse practitioners across Utah. Salt Lake City, Layton & West Jordan plus telehealth. Request an appointment online.",
+      "Collaborative medication management from CPS medical providers in Utah. Ask about appointments at three office locations or by secure telehealth.",
     h1: "Medication Management in Utah",
     intro:
       "Our medical providers — MDs, physician assistants, and nurse practitioners — manage medication for mood, attention, anxiety, and other conditions with care and collaboration. We take the time to understand your history, coordinate with your therapist, and adjust thoughtfully so you feel your best. Medication is never one-size-fits-all here.",
@@ -100,10 +98,9 @@ export const servicePages: ServicePage[] = [
     slug: "neurofeedback",
     name: "Neurofeedback",
     icon: "BrainCircuit",
-    metaTitle:
-      "Neurofeedback Therapy in Utah | CPS — Drug-Free EEG Brain Training",
+    metaTitle: "Neurofeedback Therapy in Utah | CPS",
     metaDescription:
-      "Drug-free EEG neurofeedback backed by 20 years of experience, helping improve focus, regulation, and resilience. Available in Salt Lake City, Layton & West Jordan. Request an appointment online.",
+      "Drug-free EEG neurofeedback backed by 20 years of CPS experience to support focus, regulation, and resilience. Ask about Utah availability.",
     h1: "Neurofeedback in Utah",
     intro:
       "Neurofeedback is drug-free EEG brain-training that helps improve focus, emotional regulation, and resilience. Backed by 20 years of experience at CPS, it uses real-time feedback to help the brain learn healthier patterns over time. It's a gentle, non-invasive option many families explore alongside therapy.",
@@ -139,10 +136,9 @@ export const servicePages: ServicePage[] = [
     slug: "evaluation-services",
     name: "Evaluation Services",
     icon: "ClipboardCheck",
-    metaTitle:
-      "Psychological Evaluation Services in Utah | CPS — SLC, Layton & West Jordan",
+    metaTitle: "Psychological Evaluations in Utah | CPS",
     metaDescription:
-      "Comprehensive psychological evaluations that bring clarity and guide an effective treatment plan. Available across Utah in Salt Lake City, Layton & West Jordan. Request an appointment online.",
+      "Comprehensive psychological evaluations in Utah to clarify concerns and guide next steps. Ask about appointments at CPS offices or by telehealth.",
     h1: "Psychological Evaluation Services in Utah",
     intro:
       "Our comprehensive psychological evaluations give you clarity and a clear path forward. Whether you're seeking answers about a diagnosis, cognitive functioning, or the right treatment approach, our clinicians provide thorough, personalized assessments. The result is a practical plan built around your unique needs.",
@@ -178,10 +174,9 @@ export const servicePages: ServicePage[] = [
     slug: "health-wellness",
     name: "Health & Wellness",
     icon: "HeartPulse",
-    metaTitle:
-      "Health & Wellness Care in Utah | CPS — Whole-Person Behavioral Health",
+    metaTitle: "Health & Wellness Care in Utah | CPS",
     metaDescription:
-      "Holistic, whole-person care that treats mind and body together. Health and wellness support across Utah in Salt Lake City, Layton & West Jordan, plus telehealth. Request an appointment online.",
+      "Whole-person mental health and wellness support in Utah, coordinating mind and body care. Ask about CPS office and telehealth options.",
     h1: "Health & Wellness in Utah",
     intro:
       "Our health and wellness approach treats the whole person — mind and body together — so you can feel your best in every area of life. We combine therapy, medication, and wellness strategies into care that's coordinated and personal. Real, lasting well-being comes from treating the whole you.",
@@ -217,10 +212,9 @@ export const servicePages: ServicePage[] = [
     slug: "substance-abuse-treatment",
     name: "Substance Abuse Treatment",
     icon: "ShieldCheck",
-    metaTitle:
-      "Substance Abuse Treatment & Evaluations in Utah | CPS — Court-Admissible, DOT, Prime For Life",
+    metaTitle: "Substance Abuse Treatment in Utah | CPS",
     metaDescription:
-      "Court-admissible substance abuse evaluations, DOT testing, Prime For Life classes, and counseling across Utah. Salt Lake City, Layton & West Jordan. Request an appointment online.",
+      "Substance abuse evaluations, counseling, and Prime For Life support in Utah, including DOT and court-related needs. Request scheduling guidance.",
     h1: "Substance Abuse Treatment in Utah",
     intro:
       "CPS provides practical, respectful substance abuse care — from court-admissible evaluations to counseling and Prime For Life classes. We also offer DOT-certified evaluations for employers and safety-sensitive roles. Whatever brought you here, our team supports you with a clear, judgment-free path toward lasting recovery.",
@@ -256,10 +250,9 @@ export const servicePages: ServicePage[] = [
     slug: "employer-services",
     name: "Employer Services",
     icon: "Briefcase",
-    metaTitle:
-      "Employer Services in Utah | CPS — DOT Evaluations, Fitness-for-Duty, EAP & CISD",
+    metaTitle: "Employer Behavioral Health Services | CPS Utah",
     metaDescription:
-      "DOT-certified substance-abuse evaluations, fitness-for-duty assessments, critical-incident debriefing, EAP, and workshops for Utah employers. Request a consultation online.",
+      "Behavioral health support for Utah employers, including DOT evaluations, fitness-for-duty assessments, debriefing, EAP, and workshops.",
     h1: "Employer Services in Utah",
     intro:
       "CPS partners with Utah employers to support a healthy, safe, and productive workforce. Our services include DOT-certified substance-abuse evaluations, fitness-for-duty assessments, critical-incident stress debriefing, Employee Assistance Program (EAP) support, and workshops. We help your team stay well and your organization stay compliant.",

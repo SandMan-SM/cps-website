@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CalendarCheck, MapPin, Video, Mail, Car, HeartHandshake, Check } from "lucide-react";
+import { Building2, CalendarCheck, Check, HeartHandshake, Mail, MapPin, Navigation, Video } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
 import CtaBar from "@/components/CtaBar";
+import OfficeMap from "@/components/OfficeMap";
 import KeywordText from "@/components/KeywordText";
 import ServiceIcon from "@/components/ServiceIcon";
-import { brand, insuranceLine } from "@/lib/data";
+import { brand, getLocationByCitySlug, insuranceLine } from "@/lib/data";
 import { getCity, CITY_SLUGS, neighborCities } from "@/lib/geo";
 import { servicePages } from "@/lib/services";
-import { getOffice, officeGeo, parseCityLine } from "@/lib/office";
+import { getOffice, parseCityLine } from "@/lib/office";
 
 export function generateStaticParams() {
   return CITY_SLUGS.map((city) => ({ city }));
@@ -24,13 +25,25 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const city = getCity(slug);
   if (!city) return {};
   const url = `${brand.domain}/utah/${city.slug}`;
-  const title = `Therapy, Counseling & Psychiatry in ${city.name}, Utah | CPS`;
-  const description = `Compassionate mental health care for ${city.name}, Utah. Counseling, medication management, neurofeedback, evaluations, and substance abuse treatment — in person and via telehealth. Serving ${city.name} since ${brand.since}.`;
+  const officeLocation = getLocationByCitySlug(city.slug);
+  const isIndexableOffice = Boolean(officeLocation);
+  const title = officeLocation?.seoTitle ?? `Mental Health Services for ${city.name}, Utah | CPS`;
+  const description = officeLocation?.seoDescription ?? `CPS serves ${city.name}, Utah with counseling, medication management, neurofeedback, evaluations, and secure telehealth. Find the nearest Utah office.`;
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: url },
-    robots: { index: true, follow: true },
+    robots: {
+      index: isIndexableOffice,
+      follow: true,
+      googleBot: {
+        index: isIndexableOffice,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     openGraph: {
       type: "website",
       url,
@@ -38,8 +51,18 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title,
       description,
       locale: "en_US",
+      images: [
+        {
+          url: "/cps-hero.jpg",
+          width: 1824,
+          height: 862,
+          alt: officeLocation
+            ? `Comprehensive Psychological Services ${officeLocation.name} office`
+            : "Comprehensive Psychological Services behavioral health care in Utah",
+        },
+      ],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: ["/cps-hero.jpg"] },
   };
 }
 
@@ -49,15 +72,17 @@ export default async function CityPage({ params }: Params) {
   if (!city) notFound();
 
   const office = getOffice(city.nearestOffice);
-  const officeCoords = officeGeo[city.nearestOffice];
+  const officeLocation = getLocationByCitySlug(city.slug);
   const addr = parseCityLine(office.cityLine);
   const neighbors = neighborCities(city.slug, 6);
   const url = `${brand.domain}/utah/${city.slug}`;
 
   const localFaqs = [
     {
-      q: `How far is CPS from ${city.name}?`,
-      a: `Our ${office.name} office is about ${city.distanceMiles} mi (~${city.driveTimeMin} min) from ${city.name}, at ${office.full}. Telehealth is also available across Utah.`,
+      q: `Which CPS office serves ${city.name}?`,
+      a: officeLocation
+        ? `Our ${office.name} office is at ${office.full}. Telehealth is also available across Utah.`
+        : `The nearest in-person option is our ${office.name} office at ${office.full}. Telehealth is also available across Utah.`,
     },
     {
       q: `Do you offer telehealth for ${city.name} residents?`,
@@ -65,7 +90,7 @@ export default async function CityPage({ params }: Params) {
     },
     {
       q: `What services are available to ${city.name} patients?`,
-      a: `${city.name} patients have access to all CPS services: counseling and psychotherapy, medication management, neurofeedback, evaluations, health and wellness, substance abuse treatment, and employer services.`,
+      a: `CPS offers counseling and psychotherapy, medication management, neurofeedback, evaluations, health and wellness, substance abuse treatment, and employer services. Our scheduling team will confirm provider and office availability for your needs.`,
     },
     {
       q: `Do you accept insurance for ${city.name} patients?`,
@@ -73,73 +98,79 @@ export default async function CityPage({ params }: Params) {
     },
   ];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["MedicalClinic", "LocalBusiness"],
-        "@id": `${url}#clinic`,
-        name: `${brand.name} — ${office.name}`,
-        url,
-        parentOrganization: { "@id": `${brand.domain}/#organization` },
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: office.street,
-          addressLocality: addr.locality,
-          addressRegion: addr.region,
-          postalCode: addr.postal,
-          addressCountry: "US",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: officeCoords.lat,
-          longitude: officeCoords.lng,
-        },
-        areaServed: {
-          "@type": "City",
-          name: `${city.name}, Utah`,
-        },
-        openingHours: "Mo-Fr",
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: officeLocation?.seoTitle ?? `Mental Health Services for ${city.name}, Utah`,
+      description: officeLocation?.seoDescription ?? city.blurb,
+      isPartOf: { "@id": `${brand.domain}/#website` },
+      about: officeLocation
+        ? { "@id": `${url}#clinic` }
+        : { "@id": `${brand.domain}/#organization` },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "City",
+      "@id": `${url}#city`,
+      name: `${city.name}, Utah`,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: `${city.county} County, Utah`,
       },
-      {
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Service Area",
+          item: `${brand.domain}/service-area`,
+        },
+        { "@type": "ListItem", position: 3, name: city.name, item: url },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: localFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ];
+
+  if (officeLocation) {
+    graph.unshift({
+      "@type": ["MedicalClinic", "LocalBusiness"],
+      "@id": `${url}#clinic`,
+      name: `${brand.name} — ${officeLocation.name}`,
+      url,
+      description: officeLocation.description,
+      email: brand.email,
+      parentOrganization: { "@id": `${brand.domain}/#organization` },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: officeLocation.street,
+        addressLocality: addr.locality,
+        addressRegion: addr.region,
+        postalCode: addr.postal,
+        addressCountry: "US",
+      },
+      hasMap: officeLocation.mapsUrl,
+      areaServed: officeLocation.nearbyAreas.map((name) => ({
         "@type": "City",
-        "@id": `${url}#city`,
-        name: `${city.name}, Utah`,
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: city.lat,
-          longitude: city.lng,
-        },
-        containedInPlace: {
-          "@type": "AdministrativeArea",
-          name: `${city.county} County, Utah`,
-        },
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${url}#breadcrumb`,
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Service Area",
-            item: `${brand.domain}/service-area`,
-          },
-          { "@type": "ListItem", position: 3, name: city.name, item: url },
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${url}#faq`,
-        mainEntity: localFaqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
-    ],
-  };
+        name: `${name}, Utah`,
+      })),
+    });
+  }
+
+  const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 
   return (
     <>
@@ -167,22 +198,31 @@ export default async function CityPage({ params }: Params) {
               <MapPin className="h-4 w-4" aria-hidden={true} /> {city.county} County, Utah
             </p>
             <h1 className="mt-4 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
-              Mental Health Care in {city.name}, Utah
+              {officeLocation
+                ? `${officeLocation.name} Mental Health Clinic`
+                : `Mental Health Care for ${city.name}, Utah`}
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-teal-800/90">
-              {city.blurb} Serving {city.name} and the Wasatch Front since {brand.since},
-              CPS offers counseling, medication management, neurofeedback, and more.
+              {officeLocation?.description ?? city.blurb} Since {brand.since}, CPS has offered
+              counseling, medication management, neurofeedback, evaluations, and more across Utah.
             </p>
 
             <div className="mt-6 grid sm:grid-cols-2" style={{ gap: "2rem" }}>
               <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
                 <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
-                  <Car className="h-5 w-5" aria-hidden={true} />
+                  <Building2 className="h-5 w-5" aria-hidden={true} />
                 </span>
                 <p className="text-sm text-teal-900">
-                  Our <span className="font-semibold">{office.name}</span> office is about{" "}
-                  <span className="font-semibold">{city.distanceMiles} mi (~{city.driveTimeMin} min)</span>{" "}
-                  from {city.name} — {office.full}.
+                  {officeLocation ? (
+                    <>
+                      Our <span className="font-semibold">{office.name} office</span> is at {office.full}.
+                    </>
+                  ) : (
+                    <>
+                      The nearest in-person option for {city.name} is our {" "}
+                      <span className="font-semibold">{office.name}</span> office at {office.full}.
+                    </>
+                  )}
                 </p>
               </div>
               <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
@@ -201,6 +241,60 @@ export default async function CityPage({ params }: Params) {
           </div>
         </section>
 
+        {officeLocation && (
+          <section aria-labelledby="office-details-title" className="border-y border-teal-100 bg-white py-16 sm:py-20">
+            <div className="mx-auto grid max-w-6xl items-stretch gap-8 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr]">
+              <OfficeMap
+                location={officeLocation}
+                className="min-h-[300px] rounded-3xl border border-teal-100 shadow-card"
+              />
+              <div className="flex flex-col justify-center rounded-3xl border border-teal-100 bg-teal-50/40 p-7 shadow-card sm:p-9">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-600">CPS Utah office</p>
+                <h2 id="office-details-title" className="mt-3 text-3xl font-extrabold tracking-tight text-teal-950">
+                  Visit our {officeLocation.name} office
+                </h2>
+                <p className="mt-4 leading-relaxed text-teal-800/85">{officeLocation.description}</p>
+                <address className="mt-5 not-italic text-teal-950">
+                  <span className="font-bold">{officeLocation.street}</span>
+                  <br />
+                  {officeLocation.cityLine}
+                </address>
+                <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-2">
+                  <div>
+                    <dt className="font-bold text-teal-950">Office days</dt>
+                    <dd className="mt-1 text-teal-800/80">{brand.hours}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-bold text-teal-950">Nearby communities</dt>
+                    <dd className="mt-1 text-teal-800/80">{officeLocation.nearbyAreas.join(", ")}</dd>
+                  </div>
+                </dl>
+                <p className="mt-5 text-sm leading-relaxed text-teal-800/75">
+                  Need arrival or accessibility guidance? Add a note to your appointment request and our scheduling team can help before your visit.
+                </p>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="/#request"
+                    data-book-appointment="true"
+                    data-appointment-location={officeLocation.name}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-teal-800"
+                  >
+                    <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request an appointment
+                  </a>
+                  <a
+                    href={officeLocation.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-teal-200 bg-white px-5 py-3 text-sm font-bold text-teal-800 transition hover:bg-teal-50"
+                  >
+                    <Navigation className="h-4 w-4" aria-hidden={true} /> Get directions
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Services */}
         <section className="bg-teal-50/40 py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -208,8 +302,8 @@ export default async function CityPage({ params }: Params) {
               Services for {city.name} patients
             </h2>
             <p className="mt-3 max-w-2xl text-lg text-teal-800/90">
-              A full range of behavioral health care, available in person at our{" "}
-              {office.name} office and by telehealth throughout Utah.
+              Explore CPS behavioral health services. Our scheduling team will confirm the right
+              provider, in-person office availability, and telehealth options for your needs.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {servicePages.map((service) => (
@@ -244,8 +338,8 @@ export default async function CityPage({ params }: Params) {
               {[
                 {
                   icon: MapPin,
-                  title: `Close to ${city.name}`,
-                  body: `Our ${office.name} office is roughly ${city.distanceMiles} mi (~${city.driveTimeMin} min) away — plus telehealth across Utah.`,
+                  title: officeLocation ? `Local ${officeLocation.name} office` : `Serving ${city.name}`,
+                  body: `${office.name} office: ${office.full}. Telehealth is also available across Utah.`,
                 },
                 {
                   icon: HeartHandshake,
@@ -316,17 +410,16 @@ export default async function CityPage({ params }: Params) {
           <section className="py-16 sm:py-20">
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
               <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
-                CPS also serves nearby cities
+                Nearby communities CPS serves
               </h2>
               <div className="mt-6 flex flex-wrap gap-4">
                 {neighbors.map((n) => (
-                  <Link
+                  <span
                     key={n.slug}
-                    href={`/utah/${n.slug}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-card transition hover:bg-teal-50"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-card"
                   >
                     <MapPin className="h-4 w-4" aria-hidden={true} /> {n.name}
-                  </Link>
+                  </span>
                 ))}
               </div>
               <p className="mt-6">

@@ -17,25 +17,12 @@ export const keywordLinks: KeywordLink[] = [
   { keyword: "employer services", url: "/services/employer-services" },
   { keyword: "neurofeedback", url: "/services/neurofeedback" },
   { keyword: "counseling", url: "/services/counseling-psychotherapy" },
-  { keyword: "telehealth", url: "/services/counseling-psychotherapy" },
 
-  // Cities (a representative subset — first-occurrence linking keeps pages clean)
+  // Genuine CPS office pages. Broader service-area cities are described on the
+  // service-area hub instead of generating search-focused doorway links.
   { keyword: "Salt Lake City", url: "/utah/salt-lake-city" },
   { keyword: "West Jordan", url: "/utah/west-jordan" },
-  { keyword: "South Jordan", url: "/utah/south-jordan" },
-  { keyword: "West Valley City", url: "/utah/west-valley-city" },
-  { keyword: "Cottonwood Heights", url: "/utah/cottonwood-heights" },
   { keyword: "Layton", url: "/utah/layton" },
-  { keyword: "Sandy", url: "/utah/sandy" },
-  { keyword: "Murray", url: "/utah/murray" },
-  { keyword: "Draper", url: "/utah/draper" },
-  { keyword: "Holladay", url: "/utah/holladay" },
-  { keyword: "Ogden", url: "/utah/ogden" },
-  { keyword: "Bountiful", url: "/utah/bountiful" },
-  { keyword: "Kaysville", url: "/utah/kaysville" },
-  { keyword: "Lehi", url: "/utah/lehi" },
-  { keyword: "Provo", url: "/utah/provo" },
-  { keyword: "Orem", url: "/utah/orem" },
 ];
 
 export type LinkSegment = { text: string; url?: string };

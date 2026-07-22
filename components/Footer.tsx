@@ -34,7 +34,12 @@ export default function Footer() {
             <ul className="mt-3 space-y-3 text-sm text-teal-200">
               {locations.map((loc) => (
                 <li key={loc.id}>
-                  <span className="font-semibold text-teal-100">{loc.name}</span>
+                  <a
+                    href={`/utah/${loc.citySlug}`}
+                    className="font-semibold text-teal-100 transition hover:text-white"
+                  >
+                    {loc.name} office
+                  </a>
                   <br />
                   {loc.street}, {loc.cityLine}
                 </li>
@@ -75,7 +80,17 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-teal-200">
               <li><a href="/#services" aria-label="Jump to Services section" className="hover:text-white">Services</a></li>
               <li><a href="/service-area" aria-label="View service areas in Utah" className="hover:text-white">Service Area</a></li>
-              <li><a href="/#locations" aria-label="Jump to Locations section" className="hover:text-white">Locations</a></li>
+              {locations.map((loc) => (
+                <li key={loc.id}>
+                  <a
+                    href={`/utah/${loc.citySlug}`}
+                    aria-label={`View the ${loc.name} office page`}
+                    className="hover:text-white"
+                  >
+                    {loc.name} office
+                  </a>
+                </li>
+              ))}
               <li><a href="/#request" data-book-appointment="true" aria-label="Request an appointment" className="hover:text-white">Request an appointment</a></li>
             </ul>
           </div>

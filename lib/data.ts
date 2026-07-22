@@ -15,16 +15,22 @@ export const brand = {
 
 export type Location = {
   id: string;
+  citySlug: string;
   name: string;
   street: string;
   cityLine: string;
   full: string;
   mapsUrl: string;
+  description: string;
+  nearbyAreas: string[];
+  seoTitle: string;
+  seoDescription: string;
 };
 
 export const locations: Location[] = [
   {
     id: "slc",
+    citySlug: "salt-lake-city",
     name: "Salt Lake City",
     street: "1208 East 3300 South",
     cityLine: "Salt Lake City, UT 84106",
@@ -32,9 +38,16 @@ export const locations: Location[] = [
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=" +
       encodeURIComponent("1208 East 3300 South, Salt Lake City, UT 84106"),
+    description:
+      "Our 3300 South office supports individuals and families from Salt Lake City, Millcreek, Murray, Holladay, and nearby east-side communities.",
+    nearbyAreas: ["Salt Lake City", "Millcreek", "Murray", "Holladay", "South Salt Lake"],
+    seoTitle: "Salt Lake City Mental Health Clinic | CPS Utah",
+    seoDescription:
+      "Visit CPS in Salt Lake City for counseling, medication management, neurofeedback, evaluations, and more. Request in-person or Utah telehealth care.",
   },
   {
     id: "layton",
+    citySlug: "layton",
     name: "Layton (Market Center)",
     street: "1916 North 700 West, Suite 190",
     cityLine: "Layton, UT 84041",
@@ -42,9 +55,16 @@ export const locations: Location[] = [
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=" +
       encodeURIComponent("1916 North 700 West, Suite 190, Layton, UT 84041"),
+    description:
+      "Our Market Center office serves Layton and surrounding Davis County communities, including Kaysville, Farmington, Clearfield, and Syracuse.",
+    nearbyAreas: ["Layton", "Kaysville", "Farmington", "Clearfield", "Syracuse"],
+    seoTitle: "Layton Mental Health Clinic | CPS Utah",
+    seoDescription:
+      "Visit CPS in Layton for counseling, medication management, neurofeedback, evaluations, and more. Request in-person or Utah telehealth care.",
   },
   {
     id: "west-jordan",
+    citySlug: "west-jordan",
     name: "West Jordan",
     street: "9069 South 1300 West, Ste D",
     cityLine: "West Jordan, UT 84088",
@@ -52,8 +72,20 @@ export const locations: Location[] = [
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=" +
       encodeURIComponent("9069 South 1300 West, Ste D, West Jordan, UT 84088"),
+    description:
+      "Our South 1300 West office serves West Jordan, South Jordan, Taylorsville, Riverton, Herriman, and nearby southwest-valley communities.",
+    nearbyAreas: ["West Jordan", "South Jordan", "Taylorsville", "Riverton", "Herriman"],
+    seoTitle: "West Jordan Mental Health Clinic | CPS Utah",
+    seoDescription:
+      "Visit CPS in West Jordan for counseling, medication management, neurofeedback, evaluations, and more. Request in-person or Utah telehealth care.",
   },
 ];
+
+export const officeCitySlugs = locations.map((location) => location.citySlug);
+
+export function getLocationByCitySlug(citySlug: string): Location | undefined {
+  return locations.find((location) => location.citySlug === citySlug);
+}
 
 export type Service = {
   icon: string; // lucide-react icon name

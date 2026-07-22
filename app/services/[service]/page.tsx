@@ -10,7 +10,6 @@ import KeywordText from "@/components/KeywordText";
 import ServiceIcon from "@/components/ServiceIcon";
 import { brand, locations, insuranceLine } from "@/lib/data";
 import { getService, SERVICE_SLUGS } from "@/lib/services";
-import { cities } from "@/lib/geo";
 
 export function generateStaticParams() {
   return SERVICE_SLUGS.map((service) => ({ service }));
@@ -24,10 +23,20 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!service) return {};
   const url = `${brand.domain}/services/${service.slug}`;
   return {
-    title: service.metaTitle,
+    title: { absolute: service.metaTitle },
     description: service.metaDescription,
     alternates: { canonical: url },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     openGraph: {
       type: "website",
       url,
@@ -35,28 +44,23 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: service.metaTitle,
       description: service.metaDescription,
       locale: "en_US",
+      images: [
+        {
+          url: "/cps-hero.jpg",
+          width: 1824,
+          height: 862,
+          alt: `${service.name} at Comprehensive Psychological Services in Utah`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: service.metaTitle,
       description: service.metaDescription,
+      images: ["/cps-hero.jpg"],
     },
   };
 }
-
-// Top cities to interlink from each service page.
-const topCitySlugs = [
-  "salt-lake-city",
-  "west-jordan",
-  "layton",
-  "sandy",
-  "murray",
-  "south-jordan",
-  "draper",
-  "ogden",
-  "bountiful",
-  "lehi",
-];
 
 export default async function ServicePage({ params }: Params) {
   const { service: slug } = await params;
@@ -64,37 +68,18 @@ export default async function ServicePage({ params }: Params) {
   if (!service) notFound();
 
   const url = `${brand.domain}/services/${service.slug}`;
-  const topCities = topCitySlugs
-    .map((s) => cities.find((c) => c.slug === s))
-    .filter((c): c is NonNullable<typeof c> => Boolean(c));
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "MedicalProcedure",
+        "@type": "Service",
         "@id": `${url}#service`,
         name: service.name,
+        serviceType: service.name,
         description: service.metaDescription,
         url,
-        provider: {
-          "@type": ["MedicalBusiness", "Psychologist"],
-          "@id": `${brand.domain}/#organization`,
-          name: brand.name,
-          url: brand.domain,
-        },
+        provider: { "@id": `${brand.domain}/#organization` },
         areaServed: { "@type": "State", name: "Utah" },
-        availableAtOrFrom: locations.map((loc) => ({
-          "@type": "MedicalClinic",
-          name: `${brand.name} — ${loc.name}`,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: loc.street,
-            addressLocality: loc.cityLine.split(", ")[0],
-            addressRegion: "UT",
-            addressCountry: "US",
-          },
-        })),
       },
       {
         "@type": "BreadcrumbList",
@@ -151,13 +136,13 @@ export default async function ServicePage({ params }: Params) {
               {service.h1}
             </h1>
             <div className="mt-4 max-w-2xl">
-              <KeywordText selfUrl={url} className="text-lg text-teal-800/90">
+              <KeywordText selfUrl={`/services/${service.slug}`} className="text-lg text-teal-800/90">
                 {service.intro}
               </KeywordText>
             </div>
 
             <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-4 py-2 text-sm font-semibold text-teal-800">
-              <MapPin className="h-4 w-4" aria-hidden={true} /> Available at all 3 Utah locations
+              <MapPin className="h-4 w-4" aria-hidden={true} /> Three Utah offices + telehealth options
               <span aria-hidden={true}>·</span>
               <Video className="h-4 w-4" aria-hidden={true} /> Telehealth across Utah
             </p>
@@ -203,14 +188,16 @@ export default async function ServicePage({ params }: Params) {
 
               <div className="mt-8 rounded-2xl border border-teal-100 bg-white p-6 shadow-card">
                 <p className="text-sm font-semibold text-teal-900">
-                  Available at all 3 Utah locations + telehealth
+                  Ask our scheduling team about office and telehealth availability
                 </p>
                 <ul className="mt-3 space-y-2 text-sm text-teal-800/80">
                   {locations.map((loc) => (
                     <li key={loc.id} className="flex items-start gap-2">
                       <MapPin className="mt-0.5 h-4 w-4 flex-none text-teal-600" aria-hidden={true} />
                       <span>
-                        <span className="font-semibold text-teal-900">{loc.name}</span> —{" "}
+                        <Link href={`/utah/${loc.citySlug}`} className="font-semibold text-teal-900 hover:text-teal-700">
+                          {loc.name} office
+                        </Link>{" "}—{" "}
                         {loc.full}
                       </span>
                     </li>
@@ -254,13 +241,13 @@ export default async function ServicePage({ params }: Params) {
               telehealth statewide.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              {topCities.map((c) => (
+              {locations.map((loc) => (
                 <Link
-                  key={c.slug}
-                  href={`/utah/${c.slug}`}
+                  key={loc.id}
+                  href={`/utah/${loc.citySlug}`}
                   className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-card transition hover:bg-teal-50"
                 >
-                  <MapPin className="h-4 w-4" aria-hidden={true} /> {c.name}
+                  <MapPin className="h-4 w-4" aria-hidden={true} /> {loc.name} office
                 </Link>
               ))}
             </div>

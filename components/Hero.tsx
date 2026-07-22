@@ -34,7 +34,7 @@ export default function Hero() {
               href="#request"
               data-book-appointment="true"
               aria-label="Request an appointment"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800"
+              className="cps-button-art inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800"
             >
               <CalendarCheck className="h-5 w-5" aria-hidden={true} />
               Request an appointment
