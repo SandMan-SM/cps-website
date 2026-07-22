@@ -176,7 +176,7 @@ export default function AppointmentModal() {
       }}
       className="m-auto w-[calc(100%-2rem)] max-w-lg overflow-visible rounded-3xl border border-teal-100 bg-white p-0 text-teal-950 shadow-2xl backdrop:bg-teal-950/55 backdrop:backdrop-blur-sm"
     >
-      <div className="relative max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-3xl p-5 md:p-8">
+      <div className="relative max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-3xl p-6 md:p-8">
         <button
           type="button"
           onClick={closeDialog}
@@ -200,7 +200,7 @@ export default function AppointmentModal() {
             <button
               type="button"
               onClick={closeDialog}
-              className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-teal-700 px-6 py-3.5 font-bold text-white transition hover:bg-teal-800"
+              className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-teal-700 px-6 py-4 font-bold text-white transition hover:bg-teal-800"
             >
               Close
             </button>
@@ -281,7 +281,7 @@ export default function AppointmentModal() {
                 </div>
               </div>
 
-              <div className="mt-4 rounded-2xl bg-teal-50 p-3 text-xs leading-relaxed text-teal-900/80 md:mt-5 md:p-4 md:text-sm">
+              <div className="mt-4 rounded-2xl bg-teal-50 p-4 text-xs leading-relaxed text-teal-900/80 md:mt-5 md:p-4 md:text-sm">
                 <div className="flex items-start gap-2.5">
                   <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-teal-700" aria-hidden={true} />
                   <p>
@@ -316,7 +316,7 @@ export default function AppointmentModal() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70 md:mt-5 md:py-4"
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70 md:mt-5 md:py-4"
               >
                 {status === "submitting" ? (
                   <>

@@ -48,7 +48,7 @@ export default function SubscribeForm() {
 
   if (status === "success") {
     return (
-      <div className="flex min-h-14 items-center gap-3 rounded-2xl border border-teal-300 bg-white px-5 py-4 text-teal-900" role="status">
+      <div className="flex min-h-14 items-center gap-4 rounded-2xl border border-teal-300 bg-white px-5 py-4 text-teal-900" role="status">
         <CheckCircle2 className="h-6 w-6 flex-none text-teal-700" aria-hidden={true} />
         <div>
           <p className="font-bold">

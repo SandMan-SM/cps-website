@@ -248,7 +248,7 @@ export default async function CityPage({ params }: Params) {
                 location={officeLocation}
                 className="min-h-[300px] rounded-3xl border border-teal-100 shadow-card"
               />
-              <div className="flex flex-col justify-center rounded-3xl border border-teal-100 bg-teal-50/40 p-7 shadow-card sm:p-9">
+              <div className="flex flex-col justify-center rounded-3xl border border-teal-100 bg-teal-50/40 p-8 shadow-card sm:p-9">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-600">CPS Utah office</p>
                 <h2 id="office-details-title" className="mt-3 text-3xl font-extrabold tracking-tight text-teal-950">
                   Visit our {officeLocation.name} office
@@ -272,7 +272,7 @@ export default async function CityPage({ params }: Params) {
                 <p className="mt-5 text-sm leading-relaxed text-teal-800/75">
                   Need arrival or accessibility guidance? Add a note to your appointment request and our scheduling team can help before your visit.
                 </p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-6 flex flex-col gap-4 sm:flex-row">
                   <a
                     href="/#request"
                     data-book-appointment="true"
