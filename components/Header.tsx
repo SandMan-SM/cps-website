@@ -17,7 +17,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-teal-100 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-teal-100 bg-white">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${brand.name} home`}>
