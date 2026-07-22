@@ -200,6 +200,7 @@ export default function AppointmentModal() {
             <button
               type="button"
               onClick={closeDialog}
+              aria-label="Close dialog"
               className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-teal-700 px-6 py-4 font-bold text-white transition hover:bg-teal-800"
             >
               Close

@@ -111,6 +111,7 @@ export default function LeadForm() {
             consentRecordedAtRef.current = new Date().toISOString();
             setStatus("idle");
           }}
+          aria-label="Start a new appointment request"
           className="mt-6 text-sm font-bold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-800"
         >
           Send another request
