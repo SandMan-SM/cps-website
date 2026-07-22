@@ -88,3 +88,13 @@ export function readAttribution(): Attribution {
     return { ...EMPTY };
   }
 }
+
+/** Return only the current same-site path; the API canonicalizes its origin. */
+export function readCurrentPagePath(): string {
+  if (typeof window === "undefined") return "/";
+  try {
+    return window.location.pathname + window.location.search + window.location.hash;
+  } catch {
+    return "/";
+  }
+}

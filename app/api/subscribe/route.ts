@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createHash } from "node:crypto";
+import { readJsonRequest } from "@/lib/server/read-json-request";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -10,6 +11,7 @@ const PRODUCTION_SUBSCRIBE_ENDPOINT =
 const LOCAL_SUBSCRIBE_ENDPOINT =
   "http://127.0.0.1:3002/api/federation-newsletter/subscribe";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_REQUEST_BYTES = 4 * 1024;
 const COMPLETION_STATES = new Set([
   "new_welcome_accepted",
   "already_subscribed",
@@ -116,15 +118,23 @@ function upstreamHeaders(request: Request): Headers | null {
 }
 
 export async function POST(request: Request) {
-  let body: { firstName?: unknown; email?: unknown; website?: unknown };
-  try {
-    body = (await request.json()) as typeof body;
-  } catch {
+  type SubscribeBody = { firstName?: unknown; email?: unknown; website?: unknown };
+  const parsedBody = await readJsonRequest<SubscribeBody>(request, MAX_REQUEST_BYTES);
+  if (!parsedBody.ok) {
     return NextResponse.json(
-      { ok: false, error: "Please check your email and try again." },
-      { status: 400 },
+      {
+        ok: false,
+        error:
+          parsedBody.reason === "payload_too_large"
+            ? "This subscription request is too large. Please try again."
+            : parsedBody.reason === "unsupported_media_type"
+              ? "Please submit this form as JSON."
+              : "Please check your email and try again.",
+      },
+      { status: parsedBody.status },
     );
   }
+  const body = parsedBody.value;
 
   const website = clean(body.website, 200);
   const email = clean(body.email, 254).toLowerCase();
@@ -187,13 +197,23 @@ export async function POST(request: Request) {
     const result = (await upstream.json().catch(() => ({}))) as {
       ok?: boolean;
       completion?: string;
+      subscription_active?: boolean;
+      welcome_accepted?: boolean;
+      owner_notification_accepted?: boolean;
     };
     const isNoWriteProbe = website && result.ok && result.completion === "no_write";
+    const requiresAcceptedNotifications =
+      result.completion === "new_welcome_accepted" ||
+      result.completion === "reactivated_welcome_accepted";
     const isComplete =
       !website &&
       result.ok === true &&
+      result.subscription_active === true &&
       typeof result.completion === "string" &&
-      COMPLETION_STATES.has(result.completion);
+      COMPLETION_STATES.has(result.completion) &&
+      (!requiresAcceptedNotifications ||
+        (result.welcome_accepted === true &&
+          result.owner_notification_accepted === true));
 
     if (!upstream.ok || (!isNoWriteProbe && !isComplete)) {
       return NextResponse.json(

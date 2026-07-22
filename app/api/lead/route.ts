@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { readJsonRequest } from "@/lib/server/read-json-request";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -12,6 +13,8 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const UUID_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const CONSENT_VERSION = "cps-appointment-contact-v1";
+const MAX_REQUEST_BYTES = 16 * 1024;
+const CPS_PUBLIC_ORIGIN = "https://cpsutah.org";
 const CONSENT_TEXT =
   "By submitting, you agree that Comprehensive Psychological Services may contact you by phone, text, or email about your request. There is no obligation to schedule or receive services. Message and data rates may apply.";
 
@@ -36,6 +39,7 @@ type LeadBody = {
   utm_content?: unknown;
   referrer?: unknown;
   landing_path?: unknown;
+  pagePath?: unknown;
 };
 
 type AppointmentCompletion = {
@@ -50,6 +54,44 @@ type AppointmentCompletion = {
 
 const clean = (value: unknown, max = 500) =>
   typeof value === "string" ? value.trim().slice(0, max) : "";
+
+function safeCpsPageUrl(body: LeadBody, request: Request): string {
+  const safePath = (value: unknown): string | null => {
+    const path = clean(value, 1_000);
+    if (!path.startsWith("/") || path.startsWith("//")) return null;
+    try {
+      const parsed = new URL(path, CPS_PUBLIC_ORIGIN);
+      if (parsed.origin !== CPS_PUBLIC_ORIGIN) return null;
+      return parsed.toString();
+    } catch {
+      return null;
+    }
+  };
+
+  const submittedPath = safePath(body.pagePath);
+  if (submittedPath) return submittedPath;
+
+  const referer = request.headers.get("referer");
+  if (referer) {
+    try {
+      const parsed = new URL(referer);
+      const isPublicCpsHost =
+        parsed.protocol === "https:" &&
+        (parsed.hostname === "cpsutah.org" || parsed.hostname === "www.cpsutah.org");
+      const isLocalBridgeHost =
+        useLocalBridge() &&
+        (parsed.hostname === "127.0.0.1" || parsed.hostname === "localhost");
+      if (isPublicCpsHost || isLocalBridgeHost) {
+        const safeRefererPath = safePath(`${parsed.pathname}${parsed.search}`);
+        if (safeRefererPath) return safeRefererPath;
+      }
+    } catch {
+      // Fall through to first-touch attribution or the canonical homepage.
+    }
+  }
+
+  return safePath(body.landing_path) || `${CPS_PUBLIC_ORIGIN}/`;
+}
 
 function useLocalBridge(): boolean {
   return (
@@ -80,15 +122,22 @@ function upstreamHeaders(request: Request): Headers | null {
 }
 
 export async function POST(request: Request) {
-  let body: LeadBody;
-  try {
-    body = (await request.json()) as LeadBody;
-  } catch {
+  const parsedBody = await readJsonRequest<LeadBody>(request, MAX_REQUEST_BYTES);
+  if (!parsedBody.ok) {
     return NextResponse.json(
-      { ok: false, error: "Please check the form and try again." },
-      { status: 400 },
+      {
+        ok: false,
+        error:
+          parsedBody.reason === "payload_too_large"
+            ? "This form submission is too large. Please shorten it and try again."
+            : parsedBody.reason === "unsupported_media_type"
+              ? "Please submit this form as JSON."
+              : "Please check the form and try again.",
+      },
+      { status: parsedBody.status },
     );
   }
+  const body = parsedBody.value;
 
   const website = clean(body.website, 200);
   const providedSubmissionId = clean(body.submissionId, 64);
@@ -197,7 +246,7 @@ export async function POST(request: Request) {
           message: schedulingNotes,
           service_interest: service,
           source: "cpsutah_appointment_form",
-          page_url: "https://cpsutah.org/#request",
+          page_url: safeCpsPageUrl(body, request),
           website,
           consent: website ? undefined : true,
           consent_version: CONSENT_VERSION,
@@ -227,16 +276,21 @@ export async function POST(request: Request) {
       result.customer_acknowledgement_accepted === true;
 
     if (!upstream.ok || (!isNoWriteProbe && !isComplete)) {
+      const isSubmissionConflict =
+        upstream.status === 409 && result.error === "submission_id_conflict";
       const userMessage =
         upstream.status === 409 && result.error === "appointment_email_suppressed"
           ? "Your request was saved, but we couldn’t email a confirmation to this address. Please contact CPS directly if you need help."
-          : upstream.status === 409
-            ? "This request could not be retried safely. Please close the form and start a new request."
+          : isSubmissionConflict
+            ? "This request changed after it was first submitted. Start a new request to send the updated details safely."
+            : upstream.status === 409
+              ? "This request could not be retried safely. Please start a new request."
             : "We couldn’t confirm your appointment request. Please try again.";
       return NextResponse.json(
         {
           ok: false,
           error: userMessage,
+          code: isSubmissionConflict ? "submission_id_conflict" : undefined,
         },
         { status: upstream.status === 409 ? 409 : 503 },
       );

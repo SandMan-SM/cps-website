@@ -3,7 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle2, Loader2, CalendarCheck, AlertCircle } from "lucide-react";
 import { locationOptions } from "@/lib/data";
-import { captureAttribution, readAttribution } from "@/lib/attribution";
+import {
+  captureAttribution,
+  readAttribution,
+  readCurrentPagePath,
+} from "@/lib/attribution";
 
 type Status = "idle" | "submitting" | "success";
 
@@ -21,6 +25,7 @@ const serviceOptions = [
 export default function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [submissionConflict, setSubmissionConflict] = useState(false);
   const submissionIdRef = useRef<string | null>(null);
   const consentRecordedAtRef = useRef<string | null>(null);
 
@@ -53,6 +58,7 @@ export default function LeadForm() {
       website: String(fd.get("website") || ""),
       consent: true,
       formVariant: "detailed",
+      pagePath: readCurrentPagePath(),
       ...readAttribution(),
     };
 
@@ -72,16 +78,21 @@ export default function LeadForm() {
       const result = (await response.json().catch(() => ({}))) as {
         ok?: boolean;
         error?: string;
+        code?: string;
       };
 
       if (!response.ok || !result.ok) {
-        throw new Error(result.error || "We couldn’t send your request. Please try again.");
+        setStatus("idle");
+        setSubmissionConflict(result.code === "submission_id_conflict");
+        setError(result.error || "We couldn’t send your request. Please try again.");
+        return;
       }
 
       setStatus("success");
       formEl.reset();
       submissionIdRef.current = null;
       consentRecordedAtRef.current = null;
+      setSubmissionConflict(false);
     } catch (err) {
       setStatus("idle");
       setError(
@@ -107,8 +118,9 @@ export default function LeadForm() {
         <button
           type="button"
           onClick={() => {
-            submissionIdRef.current = crypto.randomUUID();
-            consentRecordedAtRef.current = new Date().toISOString();
+            submissionIdRef.current = null;
+            consentRecordedAtRef.current = null;
+            setSubmissionConflict(false);
             setStatus("idle");
           }}
           aria-label="Start a new appointment request"
@@ -200,7 +212,23 @@ export default function LeadForm() {
       {error && (
         <div className="mt-5 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
           <AlertCircle className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />
-          <span>{error}</span>
+          <div className="min-w-0">
+            <p>{error}</p>
+            {submissionConflict && (
+              <button
+                type="button"
+                onClick={() => {
+                  submissionIdRef.current = null;
+                  consentRecordedAtRef.current = null;
+                  setError("");
+                  setSubmissionConflict(false);
+                }}
+                className="mt-2 font-bold underline decoration-red-300 underline-offset-4 hover:text-red-950"
+              >
+                Start a new request
+              </button>
+            )}
+          </div>
         </div>
       )}
 
@@ -210,7 +238,7 @@ export default function LeadForm() {
 
       <button
         type="submit"
-        disabled={status === "submitting"}
+        disabled={status === "submitting" || submissionConflict}
         aria-label={status === "submitting" ? "Sending your appointment request" : "Send appointment request"}
         className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70"
       >

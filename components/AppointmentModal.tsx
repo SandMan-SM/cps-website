@@ -10,7 +10,11 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { captureAttribution, readAttribution } from "@/lib/attribution";
+import {
+  captureAttribution,
+  readAttribution,
+  readCurrentPagePath,
+} from "@/lib/attribution";
 
 type Status = "idle" | "submitting" | "success";
 
@@ -33,6 +37,7 @@ export default function AppointmentModal() {
   const consentRecordedAtRef = useRef<string | null>(null);
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [submissionConflict, setSubmissionConflict] = useState(false);
   const [appointmentContext, setAppointmentContext] = useState<AppointmentContext>(emptyContext);
 
   useEffect(() => {
@@ -60,9 +65,10 @@ export default function AppointmentModal() {
       event.preventDefault();
       previousFocusRef.current = trigger;
       submissionIdRef.current = crypto.randomUUID();
-      consentRecordedAtRef.current = new Date().toISOString();
+      consentRecordedAtRef.current = null;
       setStatus("idle");
       setError("");
+      setSubmissionConflict(false);
       setAppointmentContext({
         location: trigger.dataset.appointmentLocation?.trim() || "",
         service: trigger.dataset.appointmentService?.trim() || "",
@@ -90,6 +96,14 @@ export default function AppointmentModal() {
     dialogRef.current?.close();
   }
 
+  function startNewRequest() {
+    submissionIdRef.current = null;
+    consentRecordedAtRef.current = null;
+    setError("");
+    setSubmissionConflict(false);
+    window.requestAnimationFrame(() => nameRef.current?.focus());
+  }
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (status === "submitting") return;
@@ -112,6 +126,7 @@ export default function AppointmentModal() {
       website: String(fields.get("website") || ""),
       formVariant: "quick",
       consent: true,
+      pagePath: readCurrentPagePath(),
       ...readAttribution(),
     };
 
@@ -131,15 +146,20 @@ export default function AppointmentModal() {
       const result = (await response.json().catch(() => ({}))) as {
         ok?: boolean;
         error?: string;
+        code?: string;
       };
 
       if (!response.ok || !result.ok) {
-        throw new Error(result.error || "We couldn’t send your request. Please try again.");
+        setStatus("idle");
+        setSubmissionConflict(result.code === "submission_id_conflict");
+        setError(result.error || "We couldn’t send your request. Please try again.");
+        return;
       }
 
       form.reset();
       submissionIdRef.current = null;
       consentRecordedAtRef.current = null;
+      setSubmissionConflict(false);
       setStatus("success");
     } catch (submitError) {
       setStatus("idle");
@@ -310,13 +330,24 @@ export default function AppointmentModal() {
                   role="alert"
                 >
                   <AlertCircle className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />
-                  <span>{error}</span>
+                  <div className="min-w-0">
+                    <p>{error}</p>
+                    {submissionConflict && (
+                      <button
+                        type="button"
+                        onClick={startNewRequest}
+                        className="mt-2 font-bold underline decoration-red-300 underline-offset-4 hover:text-red-950"
+                      >
+                        Start a new request
+                      </button>
+                    )}
+                  </div>
                 </div>
               )}
 
               <button
                 type="submit"
-                disabled={status === "submitting"}
+                disabled={status === "submitting" || submissionConflict}
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70 md:mt-5 md:py-4"
               >
                 {status === "submitting" ? (

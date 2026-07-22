@@ -20,6 +20,9 @@ export default function SubscribeForm() {
     setError("");
     setCompletion("");
 
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 58_000);
+
     try {
       const response = await fetch("/api/subscribe", {
         method: "POST",
@@ -28,6 +31,7 @@ export default function SubscribeForm() {
           email: String(formData.get("subscribeEmail") || ""),
           website: String(formData.get("subscribeWebsite") || ""),
         }),
+        signal: controller.signal,
       });
       const result = (await response.json().catch(() => ({}))) as {
         ok?: boolean;
@@ -42,7 +46,13 @@ export default function SubscribeForm() {
       setStatus("success");
     } catch (err) {
       setStatus("idle");
-      setError(err instanceof Error ? err.message : "We couldn’t add you right now. Please try again.");
+      setError(
+        err instanceof Error && err.name !== "AbortError"
+          ? err.message
+          : "The subscription request timed out. Please try again.",
+      );
+    } finally {
+      window.clearTimeout(timeout);
     }
   }
 
