@@ -254,6 +254,7 @@ export default async function ServicePage({ params }: Params) {
             <p className="mt-6">
               <Link
                 href="/service-area"
+                aria-label="View all Utah cities we serve"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:text-teal-800"
               >
                 View all Utah cities we serve →
@@ -276,6 +277,7 @@ export default async function ServicePage({ params }: Params) {
               <Link
                 href="/#request"
                 data-book-appointment="true"
+                aria-label="Request an appointment"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
               >
                 <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
