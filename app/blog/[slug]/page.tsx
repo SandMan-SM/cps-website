@@ -32,6 +32,11 @@ export async function generateMetadata({
       publishedTime: post.date,
       images: ["/cps-hero.jpg"],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+    },
   };
 }
 
@@ -148,7 +153,7 @@ export default async function BlogPostPage({
                 </h2>
                 <div className="mt-5 space-y-4">
                   {post.faq.map((f) => (
-                    <div key={f.q} className="rounded-xl border border-teal-100 bg-white p-5">
+                    <div key={f.q} className="rounded-xl border border-teal-100 bg-white p-4">
                       <h3 className="font-bold text-teal-950">{f.q}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-teal-800/90">{f.a}</p>
                     </div>
@@ -157,7 +162,7 @@ export default async function BlogPostPage({
               </div>
 
               <div className="mt-12 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-4">
                   <ShieldAlert className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />
                   <p>
                     <strong>Medical disclaimer:</strong> this article is educational only and is
@@ -200,7 +205,7 @@ export default async function BlogPostPage({
                 </p>
                 <Link
                   href="/booknow"
-                  className="cps-button-art mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-bold text-white shadow-lg transition"
+                  className="cps-button-art mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold text-white shadow-lg transition"
                 >
                   <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
                 </Link>
