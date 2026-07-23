@@ -16,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: brand.domain,
     },
     {
+      url: `${brand.domain}/booknow`,
+    },
+    {
       url: `${brand.domain}/service-area`,
     },
     ...serviceRoutes,
