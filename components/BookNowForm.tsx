@@ -239,6 +239,7 @@ export default function BookNowForm() {
       <button
         type="submit"
         disabled={status === "submitting" || submissionConflict}
+        aria-label={status === "submitting" ? "Sending your appointment request" : "Request an appointment"}
         className="cps-button-art mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 text-base font-bold text-white shadow-lg shadow-red-950/15 transition disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "submitting" ? (
