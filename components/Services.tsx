@@ -48,7 +48,7 @@ export default function Services() {
                   <div className="relative aspect-[16/9] overflow-hidden bg-teal-100">
                     <Image
                       src={service.image}
-                      alt=""
+                      alt={`${service.title} service`}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition duration-500 group-hover:scale-[1.025]"
