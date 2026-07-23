@@ -80,6 +80,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-teal-200">
               <li><a href="/#services" aria-label="Jump to Services section" className="hover:text-white">Services</a></li>
               <li><a href="/service-area" aria-label="View service areas in Utah" className="hover:text-white">Service Area</a></li>
+              <li><a href="/blog" aria-label="Read the CPS blog" className="hover:text-white">Blog</a></li>
               {locations.map((loc) => (
                 <li key={loc.id}>
                   <a

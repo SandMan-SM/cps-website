@@ -6,6 +6,7 @@ export type KeywordLink = { keyword: string; url: string };
 
 export const keywordLinks: KeywordLink[] = [
   // Services (multi-word phrases first)
+  { keyword: "ketamine-assisted psychotherapy", url: "/services/ketamine-therapy" },
   { keyword: "substance abuse evaluation", url: "/services/substance-abuse-treatment" },
   { keyword: "substance abuse treatment", url: "/services/substance-abuse-treatment" },
   { keyword: "medication management", url: "/services/medication-management" },
@@ -15,6 +16,10 @@ export const keywordLinks: KeywordLink[] = [
   { keyword: "psychological evaluation", url: "/services/evaluation-services" },
   { keyword: "health & wellness", url: "/services/health-wellness" },
   { keyword: "employer services", url: "/services/employer-services" },
+  { keyword: "ketamine therapy", url: "/services/ketamine-therapy" },
+  { keyword: "ketamine treatment", url: "/services/ketamine-therapy" },
+  { keyword: "Spravato", url: "/services/ketamine-therapy" },
+  { keyword: "esketamine", url: "/services/ketamine-therapy" },
   { keyword: "neurofeedback", url: "/services/neurofeedback" },
   { keyword: "counseling", url: "/services/counseling-psychotherapy" },
 

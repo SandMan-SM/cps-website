@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   Briefcase,
   CalendarCheck,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
@@ -20,6 +21,7 @@ const icons: Record<string, LucideIcon> = {
   HeartPulse,
   ShieldCheck,
   Briefcase,
+  Sparkles,
 };
 
 export default function Services() {

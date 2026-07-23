@@ -13,6 +13,7 @@ export default function Header() {
     { href: "/#services", label: "Services" },
     { href: "/service-area", label: "Service Area" },
     { href: "/#locations", label: "Locations" },
+    { href: "/blog", label: "Blog" },
     { href: "/#request", label: "Get Started" },
   ];
 

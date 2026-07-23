@@ -284,6 +284,57 @@ export const servicePages: ServicePage[] = [
       },
     ],
   },
+  {
+    slug: "ketamine-therapy",
+    name: "Ketamine & Spravato Therapy",
+    icon: "Sparkles",
+    metaTitle: "Ketamine & Spravato Therapy in Utah | CPS",
+    metaDescription:
+      "IV ketamine and FDA-approved Spravato (esketamine) for treatment-resistant depression in Utah. Supervised in-office care, integrated with therapy. Ask about eligibility.",
+    h1: "Ketamine & Spravato Therapy in Utah",
+    intro:
+      "When traditional antidepressants haven't brought relief, ketamine therapy offers a different path. CPS offers both IV ketamine infusions and Spravato (esketamine) nasal spray under medical supervision. Ketamine works through a different brain pathway (glutamate/NMDA) than conventional medications — offering hope for the estimated 30% of people with depression who don't respond to standard treatment. Every ketamine plan at CPS begins with a psychiatric evaluation and stays integrated with your ongoing therapy and medication management.",
+    bullets: [
+      "Spravato (esketamine): FDA-approved for treatment-resistant depression, administered in-office through a REMS-certified program",
+      "IV ketamine infusions: used off-label under careful medical supervision, with monitoring throughout each session",
+      "Typical protocol: 6 initial sessions over 2–3 weeks, then maintenance as needed",
+      "Many patients notice improvement within 24–48 hours — compared to weeks for traditional antidepressants",
+      "Integrated with CPS counseling and medication management for lasting results",
+      "Benefits verified before you start — Spravato is often covered by insurance",
+    ],
+    whoFor: [
+      "Adults with depression that hasn't responded to two or more antidepressants",
+      "People seeking a medically supervised, evidence-based alternative",
+      "Patients who want ketamine coordinated with their existing therapist or prescriber",
+      "Anyone exploring Spravato coverage through their insurance",
+    ],
+    faqs: [
+      {
+        q: "What is the difference between Spravato and IV ketamine?",
+        a: "Spravato (esketamine) is an FDA-approved nasal spray administered in-office through a REMS-certified program and is often covered by insurance. IV ketamine is administered through an infusion, is used off-label, and is typically self-pay. Both target treatment-resistant depression through similar mechanisms — your evaluating clinician will recommend the right fit.",
+      },
+      {
+        q: "Does insurance cover ketamine treatment?",
+        a: "Spravato (esketamine) is often covered by insurance as an FDA-approved treatment, and our team verifies benefits and handles prior authorization before you start. IV ketamine is typically self-pay.",
+      },
+      {
+        q: "Am I a candidate for ketamine therapy?",
+        a: "Ketamine therapy is generally considered for adults with treatment-resistant depression — typically defined as having tried at least two different oral antidepressants without adequate response. A psychiatric evaluation at CPS confirms eligibility and builds your individualized plan.",
+      },
+      {
+        q: "Is ketamine therapy safe?",
+        a: "When administered by trained clinicians in a medical setting, ketamine therapy has a strong safety profile. Your vital signs and mental state are monitored throughout each session, and Spravato sessions include the 2-hour post-dose monitoring required by its FDA safety program.",
+      },
+      {
+        q: "Can I drive after a session?",
+        a: "No. Due to temporary sedation and dissociative effects, you'll need to arrange a driver or rideshare on the day of each dosing session. You can drive again the next day after a full night's sleep.",
+      },
+      {
+        q: "How many sessions will I need?",
+        a: "Most patients start with 6 sessions over 2–3 weeks. Maintenance sessions may be needed monthly or as symptoms recur. Your treatment plan is individualized and reviewed with your provider.",
+      },
+    ],
+  },
 ];
 
 export const SERVICE_SLUGS: string[] = servicePages.map((s) => s.slug);

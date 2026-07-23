@@ -144,6 +144,13 @@ export const services: Service[] = [
     description:
       "DOT-certified substance-abuse evaluations, fitness-for-duty assessments, critical-incident debriefing, EAP, and workshops.",
   },
+  {
+    icon: "Sparkles",
+    image: "/services/ketamine-therapy.jpg",
+    title: "Ketamine & Spravato Therapy",
+    description:
+      "IV ketamine and FDA-approved Spravato (esketamine) for treatment-resistant depression — supervised in-office and integrated with your therapy.",
+  },
 ];
 
 export const whyPoints: { icon: string; title: string; body: string }[] = [
