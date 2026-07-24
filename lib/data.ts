@@ -8,7 +8,14 @@ export const brand = {
   since: 1986,
   award: "Best Practice Award 2024",
   providerCount: "30+",
+  founder: {
+    name: "Steven Szykula, Ph.D.",
+    title: "Licensed Clinical Psychologist, Founder",
+  },
+  phone: "801-483-1600",
+  phoneHref: "tel:+18014831600",
   email: "wecanhelpout@gmail.com",
+  fax: "801-483-1610",
   domain: "https://cpsutah.org",
   hours: "Mon–Fri",
 };
