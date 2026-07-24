@@ -100,6 +100,7 @@ export default function BlogIndexPage() {
                     <Link
                       key={post.slug}
                       href={`/blog/${post.slug}`}
+                      aria-label={`Read: ${post.title}`}
                       className="group flex flex-col rounded-2xl border border-teal-100 bg-white p-6 shadow-sm transition hover:border-teal-300 hover:shadow-md"
                     >
                       <p className="text-xs font-bold uppercase tracking-[0.14em] text-teal-600">
@@ -124,6 +125,7 @@ export default function BlogIndexPage() {
                       <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
+                        aria-label={`Read: ${post.title}`}
                         className="group flex items-start justify-between gap-4 rounded-xl border border-teal-100 bg-white px-5 py-4 transition hover:border-teal-300"
                       >
                         <div>

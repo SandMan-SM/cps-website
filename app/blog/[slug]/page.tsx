@@ -92,7 +92,7 @@ export default async function BlogPostPage({
           <section className="bg-hero">
             <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
               <nav aria-label="Breadcrumb" className="text-sm text-teal-700">
-                <Link href="/blog" className="inline-flex items-center gap-1 font-semibold hover:text-teal-900">
+                <Link href="/blog" aria-label="Back to all blog articles" className="inline-flex items-center gap-1 font-semibold hover:text-teal-900">
                   <ArrowLeft className="h-4 w-4" aria-hidden={true} /> All questions
                 </Link>
               </nav>
@@ -205,6 +205,7 @@ export default async function BlogPostPage({
                 </p>
                 <Link
                   href="/booknow"
+                  aria-label="Request an appointment"
                   className="cps-button-art mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold text-white shadow-lg transition"
                 >
                   <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment

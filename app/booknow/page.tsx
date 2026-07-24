@@ -117,8 +117,8 @@ export default function BookNowPage() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-center text-xs sm:flex-row sm:px-6 sm:text-left">
           <p>© {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white">Terms of Use</Link>
+            <Link href="/privacy" aria-label="Privacy Policy" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/terms" aria-label="Terms of Use" className="hover:text-white">Terms of Use</Link>
           </div>
         </div>
       </footer>
