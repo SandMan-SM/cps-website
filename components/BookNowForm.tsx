@@ -107,7 +107,7 @@ export default function BookNowForm() {
   }
 
   const inputClass =
-    "mt-2 w-full rounded-xl border border-teal-200 bg-white px-4 py-3.5 text-base text-teal-950 placeholder:text-teal-800/40 outline-none transition focus:border-teal-600 focus:ring-4 focus:ring-teal-600/10";
+    "mt-2 w-full rounded-xl border border-teal-200 bg-white px-4 py-4 text-base text-teal-950 placeholder:text-teal-800/40 outline-none transition focus:border-teal-600 focus:ring-4 focus:ring-teal-600/10";
 
   if (status === "success") {
     return (
@@ -195,7 +195,7 @@ export default function BookNowForm() {
       </div>
 
       <div className="mt-6 rounded-2xl bg-teal-50 p-4 text-xs leading-relaxed text-teal-900/80">
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-4">
           <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-teal-700" aria-hidden={true} />
           <p>
             By submitting, you agree that Comprehensive Psychological Services may contact you

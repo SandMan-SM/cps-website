@@ -80,7 +80,7 @@ export default function BookNowPage() {
                     body: "No medical details needed here",
                   },
                 ].map(({ icon: Icon, title, body }) => (
-                  <div key={title} className="flex items-start gap-3">
+                  <div key={title} className="flex items-start gap-4">
                     <span className="mt-0.5 flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-teal-100 text-teal-700">
                       <Icon className="h-4 w-4" aria-hidden={true} />
                     </span>

@@ -161,7 +161,7 @@ export default async function BlogPostPage({
                 </div>
               </div>
 
-              <div className="mt-12 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+              <div className="mt-12 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-relaxed text-amber-900">
                 <div className="flex items-start gap-4">
                   <ShieldAlert className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />
                   <p>

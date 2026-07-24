@@ -206,7 +206,7 @@ export default function SuccessStories() {
                           {story.highlights.map((highlight) => (
                             <li
                               key={highlight}
-                              className="rounded-full border border-teal-200 bg-white px-3 py-1.5 text-xs font-semibold text-teal-800"
+                              className="rounded-full border border-teal-200 bg-white px-3 py-2 text-xs font-semibold text-teal-800"
                             >
                               {highlight}
                             </li>

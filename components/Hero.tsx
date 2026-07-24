@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="hero-photo">
       <div className="mx-auto min-h-[540px] max-w-7xl px-5 py-10 sm:px-8 md:flex md:min-h-[620px] md:items-center md:px-10 md:py-20 lg:px-12">
         <div className="max-w-[760px] text-center md:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-1.5 text-xs font-semibold text-teal-700 shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-2 text-xs font-semibold text-teal-700 shadow-sm">
             <Award className="h-4 w-4" aria-hidden={true} /> {brand.award}
           </span>
 
