@@ -19,6 +19,13 @@ export const metadata: Metadata = {
       "Straight answers to the questions people ask before starting care at CPS.",
     images: ["/cps-hero.jpg"],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog & Patient Questions | CPS Utah",
+    description:
+      "Straight answers to the questions people ask before starting care at CPS.",
+    images: ["/cps-hero.jpg"],
+  },
 };
 
 function JsonLd() {
