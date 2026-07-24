@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CalendarCheck, Check, MapPin, Video, Users, Mail } from "lucide-react";
+import { Check, MapPin, Video, Users, Phone } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
@@ -10,6 +10,7 @@ import KeywordText from "@/components/KeywordText";
 import ServiceIcon from "@/components/ServiceIcon";
 import { brand, locations, insuranceLine } from "@/lib/data";
 import { getService, SERVICE_SLUGS } from "@/lib/services";
+import { cities } from "@/lib/geo";
 
 export function generateStaticParams() {
   return SERVICE_SLUGS.map((service) => ({ service }));
@@ -23,20 +24,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!service) return {};
   const url = `${brand.domain}/services/${service.slug}`;
   return {
-    title: { absolute: service.metaTitle },
+    title: service.metaTitle,
     description: service.metaDescription,
     alternates: { canonical: url },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-        "max-video-preview": -1,
-      },
-    },
+    robots: { index: true, follow: true },
     openGraph: {
       type: "website",
       url,
@@ -44,23 +35,28 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: service.metaTitle,
       description: service.metaDescription,
       locale: "en_US",
-      images: [
-        {
-          url: "/cps-hero.jpg",
-          width: 1824,
-          height: 862,
-          alt: `${service.name} at Comprehensive Psychological Services in Utah`,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: service.metaTitle,
       description: service.metaDescription,
-      images: ["/cps-hero.jpg"],
     },
   };
 }
+
+// Top cities to interlink from each service page.
+const topCitySlugs = [
+  "salt-lake-city",
+  "west-jordan",
+  "layton",
+  "sandy",
+  "murray",
+  "south-jordan",
+  "draper",
+  "ogden",
+  "bountiful",
+  "lehi",
+];
 
 export default async function ServicePage({ params }: Params) {
   const { service: slug } = await params;
@@ -68,18 +64,38 @@ export default async function ServicePage({ params }: Params) {
   if (!service) notFound();
 
   const url = `${brand.domain}/services/${service.slug}`;
+  const topCities = topCitySlugs
+    .map((s) => cities.find((c) => c.slug === s))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c));
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Service",
+        "@type": "MedicalProcedure",
         "@id": `${url}#service`,
         name: service.name,
-        serviceType: service.name,
         description: service.metaDescription,
         url,
-        provider: { "@id": `${brand.domain}/#organization` },
+        provider: {
+          "@type": ["MedicalBusiness", "Psychologist"],
+          "@id": `${brand.domain}/#organization`,
+          name: brand.name,
+          telephone: `+1-${brand.phone}`,
+          url: brand.domain,
+        },
         areaServed: { "@type": "State", name: "Utah" },
+        availableAtOrFrom: locations.map((loc) => ({
+          "@type": "MedicalClinic",
+          name: `${brand.name} — ${loc.name}`,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: loc.street,
+            addressLocality: loc.cityLine.split(", ")[0],
+            addressRegion: "UT",
+            addressCountry: "US",
+          },
+        })),
       },
       {
         "@type": "BreadcrumbList",
@@ -136,13 +152,13 @@ export default async function ServicePage({ params }: Params) {
               {service.h1}
             </h1>
             <div className="mt-4 max-w-2xl">
-              <KeywordText selfUrl={`/services/${service.slug}`} className="text-lg text-teal-800/90">
+              <KeywordText selfUrl={url} className="text-lg text-teal-800/90">
                 {service.intro}
               </KeywordText>
             </div>
 
             <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-4 py-2 text-sm font-semibold text-teal-800">
-              <MapPin className="h-4 w-4" aria-hidden={true} /> Three Utah offices + telehealth options
+              <MapPin className="h-4 w-4" aria-hidden={true} /> Available at all 3 Utah locations
               <span aria-hidden={true}>·</span>
               <Video className="h-4 w-4" aria-hidden={true} /> Telehealth across Utah
             </p>
@@ -188,16 +204,14 @@ export default async function ServicePage({ params }: Params) {
 
               <div className="mt-8 rounded-2xl border border-teal-100 bg-white p-6 shadow-card">
                 <p className="text-sm font-semibold text-teal-900">
-                  Ask our scheduling team about office and telehealth availability
+                  Available at all 3 Utah locations + telehealth
                 </p>
                 <ul className="mt-3 space-y-2 text-sm text-teal-800/80">
                   {locations.map((loc) => (
                     <li key={loc.id} className="flex items-start gap-2">
                       <MapPin className="mt-0.5 h-4 w-4 flex-none text-teal-600" aria-hidden={true} />
                       <span>
-                        <Link href={`/utah/${loc.citySlug}`} className="font-semibold text-teal-900 hover:text-teal-700">
-                          {loc.name} office
-                        </Link>{" "}—{" "}
+                        <span className="font-semibold text-teal-900">{loc.name}</span> —{" "}
                         {loc.full}
                       </span>
                     </li>
@@ -241,13 +255,13 @@ export default async function ServicePage({ params }: Params) {
               telehealth statewide.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              {locations.map((loc) => (
+              {topCities.map((c) => (
                 <Link
-                  key={loc.id}
-                  href={`/utah/${loc.citySlug}`}
+                  key={c.slug}
+                  href={`/utah/${c.slug}`}
                   className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-card transition hover:bg-teal-50"
                 >
-                  <MapPin className="h-4 w-4" aria-hidden={true} /> {loc.name} office
+                  <MapPin className="h-4 w-4" aria-hidden={true} /> {c.name}
                 </Link>
               ))}
             </div>
@@ -270,25 +284,24 @@ export default async function ServicePage({ params }: Params) {
               Start {service.name.toLowerCase()} today
             </h2>
             <p className="mt-4 text-lg text-teal-100">
-              Request an appointment and we&apos;ll match you with the right provider, or
-              subscribe for practical CPS resources.
+              Call now to speak with a real person, or request an appointment and we&apos;ll
+              match you with the right provider.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link
-                href="/#request"
-                data-book-appointment="true"
-                aria-label="Request an appointment"
+              <a
+                href={brand.phoneHref}
+                aria-label={`Call ${brand.name} at ${brand.phone}`}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
               >
-                <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
-              </Link>
-              <a
-                href="/#subscribe"
-                aria-label="Subscribe to CPS updates"
+                <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
+              </a>
+              <Link
+                href="/#request"
+                aria-label="Request an appointment"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-6 py-4 text-base font-bold text-white transition hover:bg-white/10"
               >
-                <Mail className="h-5 w-5" aria-hidden={true} /> Subscribe
-              </a>
+                Request an appointment
+              </Link>
             </div>
           </div>
         </section>
