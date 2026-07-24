@@ -124,6 +124,7 @@ export default function BookNowForm() {
         <button
           type="button"
           onClick={startNewRequest}
+          aria-label="Send another appointment request"
           className="mt-8 rounded-full border border-teal-200 px-6 py-3 font-bold text-teal-800 transition hover:bg-teal-50"
         >
           Send another request
@@ -227,6 +228,7 @@ export default function BookNowForm() {
               <button
                 type="button"
                 onClick={startNewRequest}
+                aria-label="Start a new appointment request"
                 className="mt-2 font-bold underline decoration-red-300 underline-offset-4"
               >
                 Start a new request
