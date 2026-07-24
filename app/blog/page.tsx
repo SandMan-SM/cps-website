@@ -21,6 +21,39 @@ export const metadata: Metadata = {
   },
 };
 
+function JsonLd() {
+  const blogUrl = `${brand.domain}/blog`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${blogUrl}#webpage`,
+        url: blogUrl,
+        name: "Blog & Patient Questions | CPS Utah",
+        description:
+          "Straight answers to the questions people ask before starting care at CPS — ketamine and Spravato therapy, counseling, evaluations, and more.",
+        isPartOf: { "@id": `${brand.domain}/#website` },
+        about: { "@id": `${brand.domain}/#organization` },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },
+          { "@type": "ListItem", position: 2, name: "Blog", item: blogUrl },
+        ],
+      },
+    ],
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default function BlogIndexPage() {
   const posts = [...POSTS].sort((a, b) => (a.date < b.date ? 1 : -1));
   const featured = posts.slice(0, 3);
@@ -28,6 +61,7 @@ export default function BlogIndexPage() {
 
   return (
     <>
+      <JsonLd />
       <Header />
       <main>
         <section className="bg-hero">
