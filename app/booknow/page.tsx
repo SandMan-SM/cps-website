@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: `${brand.domain}/booknow`,
+    siteName: "Comprehensive Psychological Services",
+    title: "Request an Appointment | CPS Utah",
+    description:
+      "Take the first step toward care with Comprehensive Psychological Services.",
+    images: ["/cps-hero.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Request an Appointment | CPS Utah",
     description:
       "Take the first step toward care with Comprehensive Psychological Services.",
