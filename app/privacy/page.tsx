@@ -14,11 +14,20 @@ export const metadata: Metadata = {
     title: "Privacy Policy",
     description: `Privacy practices for ${brand.name}.`,
     locale: "en_US",
+    images: [
+      {
+        url: "/cps-hero.jpg",
+        width: 1824,
+        height: 862,
+        alt: "Comprehensive Psychological Services — Utah mental health care since 1986",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy",
     description: `Privacy practices for ${brand.name}.`,
+    images: ["/cps-hero.jpg"],
   },
 };
 
