@@ -26,6 +26,7 @@ export default function BookNowPopup() {
       <button
         type="button"
         onClick={openDialog}
+        aria-label="Book appointment"
         className="cps-button-art mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 text-base font-bold text-white shadow-lg shadow-red-950/15 transition sm:w-auto sm:min-w-64"
       >
         <CalendarCheck className="h-5 w-5" aria-hidden={true} />
