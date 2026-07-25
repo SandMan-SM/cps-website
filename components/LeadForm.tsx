@@ -223,6 +223,7 @@ export default function LeadForm() {
                   setError("");
                   setSubmissionConflict(false);
                 }}
+                aria-label="Start a new appointment request"
                 className="mt-2 font-bold underline decoration-red-300 underline-offset-4 hover:text-red-950"
               >
                 Start a new request

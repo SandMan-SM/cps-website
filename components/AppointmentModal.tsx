@@ -336,6 +336,7 @@ export default function AppointmentModal() {
                       <button
                         type="button"
                         onClick={startNewRequest}
+                        aria-label="Start a new appointment request"
                         className="mt-2 font-bold underline decoration-red-300 underline-offset-4 hover:text-red-950"
                       >
                         Start a new request
@@ -348,6 +349,7 @@ export default function AppointmentModal() {
               <button
                 type="submit"
                 disabled={status === "submitting" || submissionConflict}
+                aria-label={status === "submitting" ? "Sending your appointment request" : "Submit appointment request"}
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70 md:mt-5 md:py-4"
               >
                 {status === "submitting" ? (
