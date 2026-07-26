@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RequestSection from "@/components/RequestSection";
 import { brand } from "@/lib/data";
 import { POSTS } from "@/lib/posts";
 
@@ -146,6 +147,7 @@ export default function BlogIndexPage() {
           </div>
         </section>
       </main>
+      <RequestSection />
       <Footer />
     </>
   );
