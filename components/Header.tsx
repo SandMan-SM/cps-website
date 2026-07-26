@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { CalendarCheck, Menu, X } from "lucide-react";
+import { CalendarCheck, Menu, Phone, X } from "lucide-react";
 import { brand } from "@/lib/data";
 
 export default function Header() {
@@ -46,15 +46,25 @@ export default function Header() {
         </nav>
 
         {/* Desktop CTA */}
-        <a
-          href="/#request"
-          data-book-appointment="true"
-          aria-label="Book an appointment"
-          className="hidden md:inline-flex items-center gap-2 rounded-full bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
-        >
-          <CalendarCheck className="h-4 w-4" aria-hidden={true} />
-          <span>Book appointment</span>
-        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <a
+            href={brand.phoneHref}
+            aria-label={`Call ${brand.name} at ${brand.phone}`}
+            className="inline-flex items-center gap-2 text-sm font-medium text-teal-700 transition hover:text-teal-800"
+          >
+            <Phone className="h-4 w-4" aria-hidden={true} />
+            <span>{brand.phone}</span>
+          </a>
+          <a
+            href="/#request"
+            data-book-appointment="true"
+            aria-label="Book an appointment"
+            className="inline-flex items-center gap-2 rounded-full bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
+          >
+            <CalendarCheck className="h-4 w-4" aria-hidden={true} />
+            <span>Book appointment</span>
+          </a>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -94,7 +104,16 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 border-t border-teal-100 pt-4">
+            <div className="mt-4 flex flex-col gap-3 border-t border-teal-100 pt-4">
+              <a
+                href={brand.phoneHref}
+                aria-label={`Call ${brand.name} at ${brand.phone}`}
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-50 px-4 py-3 text-sm font-semibold text-teal-800 ring-1 ring-teal-200 transition hover:bg-teal-100"
+              >
+                <Phone className="h-4 w-4" aria-hidden={true} />
+                Call {brand.phone}
+              </a>
               <a
                 href="/#request"
                 data-book-appointment="true"
