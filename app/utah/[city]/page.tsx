@@ -38,8 +38,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title,
       description,
       locale: "en_US",
+      images: [{ url: "/cps-hero.jpg", width: 1824, height: 862, alt: `Mental health care in ${city.name}, Utah at CPS` }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: ["/cps-hero.jpg"] },
   };
 }
 

@@ -35,11 +35,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title: service.metaTitle,
       description: service.metaDescription,
       locale: "en_US",
+      images: [{ url: "/cps-hero.jpg", width: 1824, height: 862, alt: `${service.name} at Comprehensive Psychological Services Utah` }],
     },
     twitter: {
       card: "summary_large_image",
       title: service.metaTitle,
       description: service.metaDescription,
+      images: ["/cps-hero.jpg"],
     },
   };
 }
