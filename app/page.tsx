@@ -18,6 +18,40 @@ function JsonLd() {
         inLanguage: "en-US",
       },
       {
+        "@id": `${brand.domain}/#organization`,
+        "@type": ["MedicalBusiness", "Psychologist", "LocalBusiness"],
+        name: brand.name,
+        description: "Counseling, medication management, neurofeedback, evaluations, and behavioral health services from three Utah offices and via telehealth.",
+        url: brand.domain,
+        telephone: brand.phone,
+        email: brand.email,
+        faxNumber: brand.fax,
+        foundingDate: String(brand.since),
+        address: locations.map(loc => ({
+          "@type": "PostalAddress",
+          streetAddress: loc.street,
+          addressLocality: loc.cityLine.split(",")[0].trim(),
+          addressRegion: "UT",
+          postalCode: loc.cityLine.split(" ").pop(),
+          addressCountry: "US"
+        })),
+        areaServed: {
+          "@type": "State",
+          name: "Utah"
+        },
+        knowsAbout: ["Mental Health", "Counseling", "Medication Management", "Neurofeedback", "Psychological Evaluations"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Mental Health Services",
+          itemListElement: [
+            { "@type": "Offer", name: "Counseling & Psychotherapy" },
+            { "@type": "Offer", name: "Medication Management" },
+            { "@type": "Offer", name: "Neurofeedback" },
+            { "@type": "Offer", name: "Psychological Evaluations" }
+          ]
+        }
+      },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: brand.domain },
