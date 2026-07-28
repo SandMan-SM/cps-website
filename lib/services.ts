@@ -299,7 +299,7 @@ export const servicePages: ServicePage[] = [
       "IV ketamine infusions: used off-label under careful medical supervision, with monitoring throughout each session",
       "Typical protocol: 6 initial sessions over 2–3 weeks, then maintenance as needed",
       "Many patients notice improvement within 24–48 hours — compared to weeks for traditional antidepressants",
-      "Integrated with CPS counseling and medication management for lasting results",
+      "Integrated with CPS counseling and medication management between sessions",
       "Benefits verified before you start — Spravato is often covered by insurance",
     ],
     whoFor: [
@@ -323,7 +323,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: "Is ketamine therapy safe?",
-        a: "When administered by trained clinicians in a medical setting, ketamine therapy has a strong safety profile. Your vital signs and mental state are monitored throughout each session, and Spravato sessions include the 2-hour post-dose monitoring required by its FDA safety program.",
+        a: "Ketamine and Spravato are administered by trained clinicians in a medical setting. Your vital signs and mental state are monitored throughout each session, and Spravato sessions include the 2-hour post-dose monitoring required by its FDA REMS program. Spravato carries a boxed warning for sedation, dissociation, abuse and misuse, and suicidal thoughts and behaviors; your prescriber reviews the FDA Medication Guide with you before your first dose and discusses whether treatment is appropriate for you. If you are in crisis, call or text 988 at any time.",
       },
       {
         q: "Can I drive after a session?",

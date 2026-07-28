@@ -36,6 +36,7 @@ export default function Footer() {
                 <li key={loc.id}>
                   <a
                     href={`/utah/${loc.citySlug}`}
+                    aria-label={`View the ${loc.name} office page`}
                     className="font-semibold text-teal-100 transition hover:text-white"
                   >
                     {loc.name} office

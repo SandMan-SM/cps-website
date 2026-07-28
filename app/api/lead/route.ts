@@ -207,8 +207,17 @@ export async function POST(request: Request) {
         name,
         email,
         phone,
+        // `message` is intentionally left INTACT. This route has exactly one
+        // outbound call, so this string is the ONLY carrier of scheduling detail
+        // to the practice's notification — stubbing it would silently gut lead
+        // triage for a live psychology practice.
         message: schedulingNotes,
-        service_interest: service,
+        // `service_interest` deliberately REMOVED: it wrote the visitor's selected
+        // clinical service into a structured, queryable column on the shared
+        // cross-tenant marketing CRM. Nothing consumes it (the hub's InboundLead
+        // type has no such field; neither the email nor Telegram template reads
+        // it), so dropping it removes the clinical signal from the marketing
+        // store at zero cost to the practice.
         source: "cpsutah_appointment_form",
         page_url: safeCpsPageUrl(body, request),
         submission_id: submissionId,

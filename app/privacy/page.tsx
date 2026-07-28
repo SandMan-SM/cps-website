@@ -65,9 +65,12 @@ export default function PrivacyPage() {
 
       <h2>Information we collect</h2>
       <p>
-        When you submit an appointment request, we collect the name, email address, phone
-        number, preferred location, and any message you provide, so we can respond to your
-        request.
+        When you submit an appointment request, we collect information including your name,
+        email address, phone number, the service you select, preferred location, contact
+        preference, availability, and any message you provide, so we can respond to your
+        request. We also receive basic technical information such as your IP address,
+        browser type, the page you submitted from, and any referral or campaign parameters
+        in the link you arrived through.
       </p>
 
       <h2>How we use your information</h2>
