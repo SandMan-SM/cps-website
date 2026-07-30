@@ -11,7 +11,7 @@ export default defineConfig({
     command: "npm run dev -- --port 3005",
     url: "http://localhost:3005",
     reuseExistingServer: true,
-    timeout: 60000,
+    timeout: 120000,
   },
   projects: [
     { name: "mobile", use: { viewport: { width: 375, height: 812 } } },
