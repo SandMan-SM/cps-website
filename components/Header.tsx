@@ -46,7 +46,7 @@ export default function Header() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
           <a
             href={brand.phoneHref}
             aria-label={`Call ${brand.name} at ${brand.phone}`}
@@ -104,7 +104,7 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 flex flex-col gap-3 border-t border-teal-100 pt-4">
+            <div className="mt-4 flex flex-col gap-4 border-t border-teal-100 pt-4">
               <a
                 href={brand.phoneHref}
                 aria-label={`Call ${brand.name} at ${brand.phone}`}
