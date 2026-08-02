@@ -325,6 +325,7 @@ export default async function CityPage({ params }: Params) {
                   <Link
                     key={n.slug}
                     href={`/utah/${n.slug}`}
+                    aria-label={`Mental health services in ${n.name}, Utah`}
                     className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-card transition hover:bg-teal-50"
                   >
                     <MapPin className="h-4 w-4" aria-hidden={true} /> {n.name}

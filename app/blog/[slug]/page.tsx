@@ -183,6 +183,7 @@ export default async function BlogPostPage({
                       <Link
                         key={svc.slug}
                         href={`/services/${svc.slug}`}
+                        aria-label={`Learn about ${svc.name} services at CPS`}
                         className="group rounded-xl border border-teal-100 bg-white px-5 py-4 transition hover:border-teal-300"
                       >
                         <h3 className="font-bold text-teal-950 group-hover:text-teal-700">{svc.name}</h3>
