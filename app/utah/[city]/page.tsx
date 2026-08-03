@@ -78,6 +78,16 @@ export default async function CityPage({ params }: Params) {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@id": `${brand.domain}/#organization`,
+        "@type": ["MedicalBusiness", "Psychologist", "LocalBusiness"],
+        name: brand.name,
+        description: "Counseling, medication management, neurofeedback, evaluations, and behavioral health services from three Utah offices and via telehealth.",
+        url: brand.domain,
+        telephone: brand.phone,
+        email: brand.email,
+        areaServed: { "@type": "State", name: "Utah" },
+      },
+      {
         "@type": ["MedicalClinic", "LocalBusiness"],
         "@id": `${url}#clinic`,
         name: `${brand.name} — ${office.name}`,
