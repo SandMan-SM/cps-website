@@ -205,11 +205,11 @@ export default function BookNowForm() {
         </div>
         <p className="mt-2 pl-7">
           Review our{" "}
-          <Link href="/privacy" className="font-semibold underline underline-offset-2">
+          <Link href="/privacy" aria-label="Privacy Policy" className="font-semibold underline underline-offset-2">
             Privacy Policy
           </Link>{" "}
           and{" "}
-          <Link href="/terms" className="font-semibold underline underline-offset-2">
+          <Link href="/terms" aria-label="Terms of Use" className="font-semibold underline underline-offset-2">
             Terms
           </Link>
           .

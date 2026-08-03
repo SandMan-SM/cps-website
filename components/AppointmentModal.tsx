@@ -313,11 +313,11 @@ export default function AppointmentModal() {
                 </div>
                 <p className="mt-1.5 pl-7 text-xs md:mt-2">
                   Review our{" "}
-                  <Link href="/privacy" onClick={closeDialog} className="font-semibold underline underline-offset-2">
+                  <Link href="/privacy" onClick={closeDialog} aria-label="Privacy Policy" className="font-semibold underline underline-offset-2">
                     Privacy Policy
                   </Link>{" "}
                   and{" "}
-                  <Link href="/terms" onClick={closeDialog} className="font-semibold underline underline-offset-2">
+                  <Link href="/terms" onClick={closeDialog} aria-label="Terms of Use" className="font-semibold underline underline-offset-2">
                     Terms
                   </Link>
                   .
