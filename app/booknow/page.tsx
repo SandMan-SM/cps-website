@@ -33,9 +33,39 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": brand.name,
+  "description": "Comprehensive Psychological Services — counseling, medication management, neurofeedback, and psychiatric care in Utah.",
+  "url": brand.domain,
+  "telephone": brand.phone,
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "4505 S 900 E",
+      "addressLocality": "Salt Lake City",
+      "addressRegion": "UT",
+      "postalCode": "84124",
+      "addressCountry": "US",
+    },
+  ],
+  "areaServed": { "@type": "State", "name": "Utah" },
+  "medicalSpecialty": [
+    "Psychiatry",
+    "Psychology",
+    "Counseling",
+    "Neurofeedback",
+  ],
+};
+
 export default function BookNowPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className="border-b border-teal-100 bg-white">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link href="/" aria-label={`${brand.name} home`}>
