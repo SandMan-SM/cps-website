@@ -12,12 +12,6 @@ const LOCAL_SUBSCRIBE_ENDPOINT =
   "http://127.0.0.1:3002/api/federation-newsletter/subscribe";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_REQUEST_BYTES = 4 * 1024;
-const COMPLETION_STATES = new Set([
-  "new_welcome_accepted",
-  "already_subscribed",
-  "reactivated_welcome_accepted",
-]);
-
 type RateWindow = { count: number; resetAt: number };
 
 declare global {
@@ -145,22 +139,23 @@ export async function POST(request: Request) {
       { status: 422 },
     );
   }
-
-  if (!website) {
-    const emailLimit = consumeRateWindow(
-      `email:${hashRateKey(email)}`,
-      5,
-      15 * 60 * 1000,
-    );
-    if (!emailLimit.ok) return rateLimited(emailLimit.retryAfterSeconds);
-
-    const ipLimit = consumeRateWindow(
-      `ip:${hashRateKey(requestIp(request))}`,
-      20,
-      10 * 60 * 1000,
-    );
-    if (!ipLimit.ok) return rateLimited(ipLimit.retryAfterSeconds);
+  if (website) {
+    return NextResponse.json({ ok: true, completion: "no_write" });
   }
+
+  const emailLimit = consumeRateWindow(
+    `email:${hashRateKey(email)}`,
+    5,
+    15 * 60 * 1000,
+  );
+  if (!emailLimit.ok) return rateLimited(emailLimit.retryAfterSeconds);
+
+  const ipLimit = consumeRateWindow(
+    `ip:${hashRateKey(requestIp(request))}`,
+    20,
+    10 * 60 * 1000,
+  );
+  if (!ipLimit.ok) return rateLimited(ipLimit.retryAfterSeconds);
 
   const headers = upstreamHeaders(request);
   if (!headers) {
@@ -190,32 +185,21 @@ export async function POST(request: Request) {
           first_name: firstName || undefined,
           website,
           source: "cpsutah.org",
-          send_welcome: true,
         }),
       },
     );
     const result = (await upstream.json().catch(() => ({}))) as {
       ok?: boolean;
-      completion?: string;
-      subscription_active?: boolean;
+      owner_notification_id?: string;
       welcome_accepted?: boolean;
-      owner_notification_accepted?: boolean;
     };
-    const isNoWriteProbe = website && result.ok && result.completion === "no_write";
-    const requiresAcceptedNotifications =
-      result.completion === "new_welcome_accepted" ||
-      result.completion === "reactivated_welcome_accepted";
     const isComplete =
-      !website &&
       result.ok === true &&
-      result.subscription_active === true &&
-      typeof result.completion === "string" &&
-      COMPLETION_STATES.has(result.completion) &&
-      (!requiresAcceptedNotifications ||
-        (result.welcome_accepted === true &&
-          result.owner_notification_accepted === true));
+      typeof result.owner_notification_id === "string" &&
+      result.owner_notification_id.trim().length > 0 &&
+      result.welcome_accepted === false;
 
-    if (!upstream.ok || (!isNoWriteProbe && !isComplete)) {
+    if (!upstream.ok || !isComplete) {
       return NextResponse.json(
         {
           ok: false,
@@ -229,7 +213,7 @@ export async function POST(request: Request) {
     }
     return NextResponse.json({
       ok: true,
-      completion: isNoWriteProbe ? "no_write" : result.completion,
+      completion: "subscribed",
     });
   } catch {
     return NextResponse.json(

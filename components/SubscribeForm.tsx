@@ -8,7 +8,6 @@ type Status = "idle" | "submitting" | "success";
 export default function SubscribeForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
-  const [completion, setCompletion] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -18,7 +17,6 @@ export default function SubscribeForm() {
     const formData = new FormData(form);
     setStatus("submitting");
     setError("");
-    setCompletion("");
 
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 58_000);
@@ -42,7 +40,6 @@ export default function SubscribeForm() {
         throw new Error(result.error || "We couldn’t add you right now. Please try again.");
       }
       form.reset();
-      setCompletion(result.completion || "");
       setStatus("success");
     } catch (err) {
       setStatus("idle");
@@ -61,15 +58,9 @@ export default function SubscribeForm() {
       <div className="flex min-h-14 items-center gap-4 rounded-2xl border border-teal-300 bg-white px-5 py-4 text-teal-900" role="status">
         <CheckCircle2 className="h-6 w-6 flex-none text-teal-700" aria-hidden={true} />
         <div>
-          <p className="font-bold">
-            {completion === "already_subscribed"
-              ? "You’re already subscribed."
-              : "You’re subscribed. Check your inbox."}
-          </p>
+          <p className="font-bold">You’re subscribed.</p>
           <p className="text-sm text-teal-800/70">
-            {completion === "already_subscribed"
-              ? "You’ll continue receiving CPS updates."
-              : "Your welcome message is on its way."}
+            You’ll receive helpful CPS resources and updates as they’re published.
           </p>
         </div>
       </div>
