@@ -117,6 +117,7 @@ export default function ServiceAreaPage() {
                 <Link
                   key={loc.id}
                   href={`/utah/${loc.citySlug}`}
+                  aria-label={`${loc.name} office — ${loc.full}`}
                   className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
                 >
                   <MapPin className="mt-0.5 h-5 w-5 flex-none text-teal-700" aria-hidden={true} />
@@ -168,6 +169,7 @@ export default function ServiceAreaPage() {
                       <Link
                         key={c.slug}
                         href={`/utah/${c.slug}`}
+                        aria-label={`View ${c.name} — CPS office location`}
                         className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
                       >
                         {content}
