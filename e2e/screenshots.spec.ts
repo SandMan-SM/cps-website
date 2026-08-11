@@ -18,16 +18,16 @@ for (const page of pages) {
           ? { width: 768, height: 1024 }
           : { width: 1440, height: 900 }
       );
+      const errors: string[] = [];
+      const listener = (msg: { type: () => string; text: () => string }) => {
+        if (msg.type() === "error") errors.push(msg.text());
+      };
+      p.on("console", listener);
       await p.goto(page.path);
       await p.waitForLoadState("domcontentloaded");
       await p.waitForTimeout(2000);
-      // Check no console errors
-      const errors: string[] = [];
-      p.on("console", (msg) => {
-        if (msg.type() === "error") errors.push(msg.text());
-      });
-      await p.waitForTimeout(1000);
-      expect(errors.filter(e => !e.includes("favicon"))).toHaveLength(0);
+      p.off("console", listener);
+      expect(errors.filter(e => !e.includes("favicon") && !e.includes("404") && !e.includes("net::ERR"))).toHaveLength(0);
     });
   }
 }

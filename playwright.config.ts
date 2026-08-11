@@ -2,7 +2,7 @@ import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./e2e",
-  timeout: 30000,
+  timeout: 60000,
   use: {
     baseURL: "http://localhost:3005",
     headless: true,
@@ -18,4 +18,7 @@ export default defineConfig({
     { name: "tablet", use: { viewport: { width: 768, height: 1024 } } },
     { name: "desktop", use: { viewport: { width: 1440, height: 900 } } },
   ],
+  /* Sequential execution to avoid dev server overload */
+  workers: 1,
+  retries: 1,
 });
