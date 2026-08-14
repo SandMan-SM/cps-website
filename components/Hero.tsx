@@ -29,7 +29,7 @@ export default function Hero() {
             West Jordan. In person or via telehealth.
           </p>
 
-          <div className="mt-7 flex flex-col items-center gap-4 md:mt-8 md:flex-row md:items-center">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4" style={{ marginTop: "2rem" }}>
             <a
               href="#request"
               data-book-appointment="true"
