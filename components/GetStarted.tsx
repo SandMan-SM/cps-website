@@ -3,7 +3,7 @@ import { steps, insuranceLine } from "@/lib/data";
 
 export default function GetStarted() {
   return (
-    <section id="request" className="scroll-mt-20 bg-teal-50/40 py-16 sm:py-24">
+    <section id="getting-started" className="scroll-mt-20 bg-teal-50/40 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
