@@ -207,7 +207,7 @@ export default async function BlogPostPage({
                 <Link
                   href="/booknow"
                   aria-label="Request an appointment"
-                  className="cps-button-art mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-bold text-white shadow-lg transition"
+                  className="cps-button-art mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-bold text-white shadow-lg transition"
                 >
                   <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
                 </Link>
