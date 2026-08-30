@@ -4,7 +4,7 @@
 
 ## Brand & Identity
 - **Brand:** Comprehensive Psychological Services (CPS) Utah
-- **Domain:** `https://www.cpsutah.com`
+- **Domain:** `https://cpsutah.org`
 - **Primary CTA button:** `.cps-button-art` class (burgundy with CPS red texture)
 - **Color system:** Tailwind `teal-*` (warm clinical burgundy/rose range) + `sand-*` neutrals
   - Primary CTA: `bg-band` / `.cps-button-art` = `#8f1f24` burgundy
