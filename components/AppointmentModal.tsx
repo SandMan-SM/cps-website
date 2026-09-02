@@ -186,6 +186,7 @@ export default function AppointmentModal() {
 
   return (
     <dialog
+      id="request"
       ref={dialogRef}
       aria-modal="true"
       aria-labelledby="appointment-dialog-title"
