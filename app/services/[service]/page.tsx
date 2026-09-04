@@ -246,7 +246,7 @@ export default async function ServicePage({ params }: Params) {
                   key={f.q}
                   className="group rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
                 >
-                  <summary aria-label={f.q} className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
+                  <summary className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
                     {f.q}
                   </summary>
                   <p className="mt-3 text-teal-800/90">{f.a}</p>
