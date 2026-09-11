@@ -4,7 +4,7 @@ export default function CityLoading() {
       <div className="bg-hero min-h-screen">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           {/* Breadcrumb skeleton */}
-          <div className="mb-4 flex gap-3">
+          <div className="mb-4 flex" style={{ gap: "0.75rem" }}>
             <div className="h-4 w-12 animate-pulse rounded bg-teal-100" />
             <div className="h-4 w-20 animate-pulse rounded bg-teal-100" />
             <div className="h-4 w-24 animate-pulse rounded bg-teal-200" />
@@ -21,7 +21,7 @@ export default function CityLoading() {
           <div className="mt-4 h-6 w-full animate-pulse rounded bg-teal-100 sm:w-2/3" />
 
           {/* Info cards */}
-          <div className="mt-6 grid gap-6 sm:grid-cols-2" style={{ gap: "2rem" }}>
+          <div className="mt-6 grid sm:grid-cols-2" style={{ gap: "2rem" }}>
             <div className="h-24 animate-pulse rounded-2xl border border-teal-100 bg-white" />
             <div className="h-24 animate-pulse rounded-2xl border border-teal-100 bg-white" />
           </div>
@@ -32,7 +32,7 @@ export default function CityLoading() {
       <section className="bg-teal-50/40 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="h-8 w-64 animate-pulse rounded bg-teal-100" />
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "1rem" }}>
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className="h-32 animate-pulse rounded-xl border border-teal-100 bg-white p-4" />
             ))}
