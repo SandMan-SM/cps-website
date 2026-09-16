@@ -30,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${brand.domain}/blog`,
     },
+    {
+      url: `${brand.domain}/privacy`,
+    },
+    {
+      url: `${brand.domain}/terms`,
+    },
     ...serviceRoutes,
     ...postRoutes,
     ...cityRoutes,
