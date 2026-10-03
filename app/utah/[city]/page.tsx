@@ -228,10 +228,11 @@ export default async function CityPage({ params }: Params) {
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
+                  aria-label={`Learn about ${service.name}`}
                   className="group flex flex-col rounded-2xl border border-teal-100 bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
                 >
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-700/10 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
-                    <ServiceIcon name={service.icon} />
+                    <ServiceIcon name={service.icon} aria-hidden={true} />
                   </span>
                   <h3 className="mt-5 text-lg font-bold text-teal-950">{service.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-teal-800/80">
