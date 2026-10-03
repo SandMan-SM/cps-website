@@ -82,6 +82,34 @@ export default function ServiceAreaPage() {
           item: `${brand.domain}/utah/${loc.citySlug}`,
         })),
       },
+      {
+        "@id": `${brand.domain}/#organization`,
+        "@type": ["MedicalBusiness", "Psychologist", "LocalBusiness"],
+        name: brand.name,
+        url: brand.domain,
+        logo: `${brand.domain}/cps-logo-clean.png`,
+        telephone: brand.phone,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "6322 S 3000 E Suite 110",
+          addressLocality: "Salt Lake City",
+          addressRegion: "UT",
+          postalCode: "84121",
+          addressCountry: "US",
+        },
+        areaServed: {
+          "@type": "State",
+          name: "Utah",
+        },
+        medicalSpecialty: "Psychiatry & Psychology",
+      },
+      {
+        "@id": `${brand.domain}/#website`,
+        "@type": "WebSite",
+        name: brand.name,
+        url: brand.domain,
+        publisher: { "@id": `${brand.domain}/#organization` },
+      },
     ],
   };
 

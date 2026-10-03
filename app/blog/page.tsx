@@ -52,6 +52,21 @@ function JsonLd() {
           { "@type": "ListItem", position: 2, name: "Blog", item: blogUrl },
         ],
       },
+      {
+        "@id": `${brand.domain}/#organization`,
+        "@type": ["MedicalBusiness", "Psychologist", "LocalBusiness"],
+        name: brand.name,
+        url: brand.domain,
+        logo: `${brand.domain}/cps-logo-clean.png`,
+        telephone: brand.phone,
+      },
+      {
+        "@id": `${brand.domain}/#website`,
+        "@type": "WebSite",
+        name: brand.name,
+        url: brand.domain,
+        publisher: { "@id": `${brand.domain}/#organization` },
+      },
     ],
   };
   return (
