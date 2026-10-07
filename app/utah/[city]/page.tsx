@@ -175,7 +175,7 @@ export default async function CityPage({ params }: Params) {
               <span className="font-semibold text-teal-900">{city.name}</span>
             </nav>
 
-            <p className="inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-3 py-1 text-sm font-semibold text-teal-800">
+            <p className="inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-4 py-1 text-sm font-semibold text-teal-800">
               <MapPin className="h-4 w-4" aria-hidden={true} /> {city.county} County, Utah
             </p>
             <h1 className="mt-4 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
@@ -219,7 +219,7 @@ export default async function CityPage({ params }: Params) {
             <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
               Services for {city.name} patients
             </h2>
-            <p className="mt-3 max-w-2xl text-lg text-teal-800/90">
+            <p className="mt-4 max-w-2xl text-lg text-teal-800/90">
               A full range of behavioral health care, available in person at our{" "}
               {office.name} office and by telehealth throughout Utah.
             </p>
@@ -234,7 +234,7 @@ export default async function CityPage({ params }: Params) {
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-700/10 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
                     <ServiceIcon name={service.icon} aria-hidden={true} />
                   </span>
-                  <h3 className="mt-5 text-lg font-bold text-teal-950">{service.name}</h3>
+                  <h3 className="mt-6 text-lg font-bold text-teal-950">{service.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-teal-800/80">
                     {service.intro.split(". ")[0]}.
                   </p>
@@ -317,7 +317,7 @@ export default async function CityPage({ params }: Params) {
                   <summary className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
                     {f.q}
                   </summary>
-                  <p className="mt-3 text-teal-800/90">{f.a}</p>
+                  <p className="mt-4 text-teal-800/90">{f.a}</p>
                 </details>
               ))}
             </div>

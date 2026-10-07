@@ -206,7 +206,7 @@ export default function ServiceAreaPage() {
                 <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
                   {group.county} County
                 </h2>
-                <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "2rem" }}>
+                <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "2rem" }}>
                   {group.cities.map((c) => {
                     const officeLocation = getLocationByCitySlug(c.slug);
                     const nearestOffice = locations.find((loc) => loc.id === c.nearestOffice);

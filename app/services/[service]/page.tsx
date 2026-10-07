@@ -160,7 +160,7 @@ export default async function ServicePage({ params }: Params) {
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-700/10 text-teal-700">
               <ServiceIcon name={service.icon} className="h-7 w-7" />
             </span>
-            <h1 className="mt-5 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
+            <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
               {service.h1}
             </h1>
             <div className="mt-4 max-w-2xl">
@@ -218,7 +218,7 @@ export default async function ServicePage({ params }: Params) {
                 <p className="text-sm font-semibold text-teal-900">
                   Available at all 3 Utah locations + telehealth
                 </p>
-                <ul className="mt-3 space-y-2 text-sm text-teal-800/80">
+                <ul className="mt-4 space-y-2 text-sm text-teal-800/80">
                   {locations.map((loc) => (
                     <li key={loc.id} className="flex items-start gap-2">
                       <MapPin className="mt-0.5 h-4 w-4 flex-none text-teal-600" aria-hidden={true} />
@@ -249,7 +249,7 @@ export default async function ServicePage({ params }: Params) {
                   <summary className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
                     {f.q}
                   </summary>
-                  <p className="mt-3 text-teal-800/90">{f.a}</p>
+                  <p className="mt-4 text-teal-800/90">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -262,7 +262,7 @@ export default async function ServicePage({ params }: Params) {
             <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
               {service.name} near you
             </h2>
-            <p className="mt-3 max-w-2xl text-teal-800/90">
+            <p className="mt-4 max-w-2xl text-teal-800/90">
               Serving the Wasatch Front from Salt Lake City, Layton, and West Jordan — plus
               telehealth statewide.
             </p>
