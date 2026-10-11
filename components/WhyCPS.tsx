@@ -24,11 +24,11 @@ export default function WhyCPS() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
-            Why families across Utah choose CPS
+            Local perspective. Clear direction.
           </h2>
           <p className="mt-4 text-lg text-teal-800/90">
-            Nearly four decades of experience, a deep bench of licensed providers, and care
-            that meets you where you are.
+            Practical guidance, thoughtful matching, and a statewide perspective—without
+            pressure or confusing handoffs.
           </p>
         </div>
 

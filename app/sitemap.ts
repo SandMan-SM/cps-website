@@ -1,15 +1,16 @@
 import type { MetadataRoute } from "next";
-import { brand, officeCitySlugs } from "@/lib/data";
-import { SERVICE_SLUGS } from "@/lib/services";
+import { brand } from "@/lib/data";
+import { CITY_SLUGS } from "@/lib/geo";
+import { SOLUTION_SLUGS } from "@/lib/services";
 import { POSTS } from "@/lib/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const cityRoutes: MetadataRoute.Sitemap = officeCitySlugs.map((slug) => ({
+  const cityRoutes: MetadataRoute.Sitemap = CITY_SLUGS.map((slug) => ({
     url: `${brand.domain}/utah/${slug}`,
   }));
 
-  const serviceRoutes: MetadataRoute.Sitemap = SERVICE_SLUGS.map((slug) => ({
-    url: `${brand.domain}/services/${slug}`,
+  const serviceRoutes: MetadataRoute.Sitemap = SOLUTION_SLUGS.map((slug) => ({
+    url: `${brand.domain}/solutions/${slug}`,
   }));
 
   const postRoutes: MetadataRoute.Sitemap = POSTS.map((post) => ({

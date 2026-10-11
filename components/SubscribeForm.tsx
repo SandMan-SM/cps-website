@@ -60,7 +60,7 @@ export default function SubscribeForm() {
         <div>
           <p className="font-bold">You’re subscribed.</p>
           <p className="text-sm text-teal-800/70">
-            You’ll receive helpful CPS resources and updates as they’re published.
+            You’ll receive helpful resources and updates as they’re published.
           </p>
         </div>
       </div>
@@ -96,7 +96,7 @@ export default function SubscribeForm() {
         <label htmlFor="subscribeWebsite">Website</label>
         <input id="subscribeWebsite" name="subscribeWebsite" type="text" tabIndex={-1} autoComplete="off" />
       </div>
-      <p id="subscribe-help" className="mt-3 text-xs text-teal-800/60">Helpful resources and CPS updates. Unsubscribe anytime.</p>
+      <p id="subscribe-help" className="mt-3 text-xs text-teal-800/60">Helpful resources and community updates. Unsubscribe anytime.</p>
       {error && (
         <div id="subscribe-email-error" className="mt-3 flex items-start gap-2 text-sm text-red-800" role="alert">
           <AlertCircle className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />

@@ -176,17 +176,16 @@ export default function AppointmentModal() {
   const inputClass =
     "mt-1.5 w-full rounded-xl border border-teal-200 bg-white px-4 py-2.5 text-base text-teal-950 placeholder:text-teal-800/40 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30 md:py-3";
   const requestTitle = appointmentContext.location
-    ? `Request an appointment near ${appointmentContext.location}`
+    ? `Request a solution near ${appointmentContext.location}`
     : appointmentContext.service
-      ? `Request ${appointmentContext.service}`
-      : "Request an appointment";
+      ? `Explore ${appointmentContext.service}`
+      : "Request a solution";
   const requestDescription = appointmentContext.location
-    ? `Share your contact details and our team will follow up about the ${appointmentContext.location} office. No private medical details are needed.`
-    : "Share your contact details and our team will reach out. No private medical details are needed.";
+    ? `Share your contact details and our team will follow up about options in ${appointmentContext.location}. Please keep sensitive details private.`
+    : "Share your contact details and our team will reach out. Please keep sensitive details private.";
 
   return (
     <dialog
-      id="request"
       ref={dialogRef}
       aria-modal="true"
       aria-labelledby="appointment-dialog-title"
@@ -201,7 +200,7 @@ export default function AppointmentModal() {
         <button
           type="button"
           onClick={closeDialog}
-          aria-label="Close appointment form"
+          aria-label="Close solution form"
           className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full text-teal-800 transition hover:bg-teal-50 hover:text-teal-950"
         >
           <X className="h-5 w-5" aria-hidden={true} />
@@ -216,7 +215,7 @@ export default function AppointmentModal() {
               Your request has been received.
             </h2>
             <p id="appointment-dialog-description" className="mt-3 leading-relaxed text-teal-800/80">
-              A CPS team member will follow up using the phone number or email you provided.
+              Our team will follow up using the phone number or email you provided.
             </p>
             <button
               type="button"
@@ -307,9 +306,9 @@ export default function AppointmentModal() {
                 <div className="flex items-start gap-2.5">
                   <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-teal-700" aria-hidden={true} />
                   <p>
-                    By submitting, you agree that Comprehensive Psychological Services may contact you
-                    by phone, text, or email about your request. There is no obligation to schedule or
-                    receive services. Message and data rates may apply.
+                    By submitting, you agree that Clinical and Professional Solutions may contact you
+                    by phone, text, or email about your request. There is no obligation to use any
+                    referred service. Message and data rates may apply.
                   </p>
                 </div>
                 <p className="mt-1.5 pl-7 text-xs md:mt-2">
@@ -337,7 +336,7 @@ export default function AppointmentModal() {
                       <button
                         type="button"
                         onClick={startNewRequest}
-                        aria-label="Start a new appointment request"
+                        aria-label="Start a new solution request"
                         className="mt-2 font-bold underline decoration-red-300 underline-offset-4 hover:text-red-950"
                       >
                         Start a new request
@@ -350,7 +349,7 @@ export default function AppointmentModal() {
               <button
                 type="submit"
                 disabled={status === "submitting" || submissionConflict}
-                aria-label={status === "submitting" ? "Sending your appointment request" : "Submit appointment request"}
+                aria-label={status === "submitting" ? "Sending your solution request" : "Submit solution request"}
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70 md:mt-5 md:py-4"
               >
                 {status === "submitting" ? (
@@ -359,7 +358,7 @@ export default function AppointmentModal() {
                   </>
                 ) : (
                   <>
-                    <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Submit appointment request
+                    <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Submit solution request
                   </>
                 )}
               </button>

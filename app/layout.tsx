@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "./GoogleAnalytics";
 import "./globals.css";
-import { brand, locations } from "@/lib/data";
+import { brand } from "@/lib/data";
+import { solutionPages } from "@/lib/services";
 import AppointmentModal from "@/components/AppointmentModal";
 
 export const viewport: Viewport = {
-  themeColor: "#7c2024",
+  themeColor: "#a1252b",
 };
 
 export const metadata: Metadata = {
@@ -19,11 +20,11 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(brand.domain),
   title: {
-    default: "Utah Mental Health Care | CPS",
-    template: "%s | CPS Utah",
+    default: "Utah Solutions | Clinical and Professional Solutions",
+    template: "%s | Clinical and Professional Solutions",
   },
   description:
-    "Utah mental health care since 1986, with counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
+    "Practical guidance for Utah health, home, business, legal, financial, family, education, career, and community solutions.",
   authors: [{ name: brand.name }],
   creator: brand.name,
   publisher: brand.name,
@@ -46,28 +47,28 @@ export const metadata: Metadata = {
     url: brand.domain,
     siteName: brand.name,
     title:
-      "Comprehensive Psychological Services | Utah Behavioral Health Since 1986",
+      "Clinical and Professional Solutions | Clear Direction Across Utah",
     description:
-      "Utah mental health care since 1986, with counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
+      "Practical guidance for Utah health, home, business, legal, financial, family, education, career, and community solutions.",
     locale: "en_US",
     images: [
       {
-        url: "/cps-hero.jpg",
-        width: 1824,
-        height: 862,
-        alt: "A calm behavioral health appointment at Comprehensive Psychological Services in Utah",
+        url: "/brand/utah-solutions-hero.png",
+        width: 1942,
+        height: 809,
+        alt: "Illustration of Utah community life, local businesses, and practical solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Comprehensive Psychological Services | Utah Behavioral Health Since 1986",
+      "Clinical and Professional Solutions | Clear Direction Across Utah",
     description:
-      "Compassionate mental health care for every Utah family since 1986. Telehealth available.",
-    images: ["/cps-hero.jpg"],
+      "Clear direction for Utah-based solutions across everyday life.",
+    images: ["/brand/utah-solutions-hero.png"],
   },
-  category: "health",
+  category: "business",
 };
 
 function JsonLd() {
@@ -76,36 +77,32 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "MedicalOrganization"],
+        "@type": "Organization",
         "@id": orgId,
         name: brand.name,
-        alternateName: "CPS Utah",
+        alternateName: brand.shortName,
         slogan: brand.tagline,
         url: brand.domain,
         logo: {
           "@type": "ImageObject",
-          url: `${brand.domain}/cps-logo-clean.png`,
-          width: 570,
-          height: 146,
+          url: `${brand.domain}/brand/open-path-mark.png`,
+          width: 1254,
+          height: 1254,
         },
         description:
-          "Utah behavioral health practice offering counseling, medication management, neurofeedback, evaluations, wellness, substance use treatment, and employer services.",
-        email: brand.email,
-        foundingDate: String(brand.since),
+          "Utah-based solutions navigation for health, home, business, family, and everyday life.",
         areaServed: {
           "@type": "State",
           name: "Utah",
         },
-        location: locations.map((loc) => ({
-          "@id": `${brand.domain}/utah/${loc.citySlug}#clinic`,
-        })),
+        knowsAbout: solutionPages.filter((solution) => solution.featured).map((solution) => solution.name),
       },
       {
         "@type": "WebSite",
         "@id": `${brand.domain}/#website`,
         url: brand.domain,
         name: brand.name,
-        alternateName: ["CPS Utah", "We Can Help Out"],
+        alternateName: [brand.shortName],
         publisher: { "@id": orgId },
         inLanguage: "en-US",
       },

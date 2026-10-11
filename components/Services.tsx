@@ -6,12 +6,21 @@ import {
   HeartPulse,
   ShieldCheck,
   Briefcase,
-  CalendarCheck,
+  ArrowRight,
   Sparkles,
+  House,
+  Scale,
+  Landmark,
+  Users,
+  GraduationCap,
+  Search,
+  HeartHandshake,
+  Laptop,
+  MapPin,
   type LucideIcon,
 } from "lucide-react";
-import Image from "next/image";
-import { services } from "@/lib/data";
+import Link from "next/link";
+import { solutionPages } from "@/lib/services";
 
 const icons: Record<string, LucideIcon> = {
   MessageCircleHeart,
@@ -22,62 +31,72 @@ const icons: Record<string, LucideIcon> = {
   ShieldCheck,
   Briefcase,
   Sparkles,
+  House,
+  Scale,
+  Landmark,
+  Users,
+  GraduationCap,
+  Search,
+  HeartHandshake,
+  Laptop,
+  MapPin,
 };
+
+const featuredSolutions = solutionPages.filter((solution) => solution.featured);
 
 export default function Services() {
   return (
-    <section id="services" className="scroll-mt-20 bg-teal-50/40 py-16 sm:py-24">
+    <section id="solutions" className="scroll-mt-20 bg-teal-50/40 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-3xl text-left">
           <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
-            Care for the whole person, at every stage of life
+            Find the right solution for your next step
           </h2>
           <p className="mt-4 text-lg text-teal-800/90">
-            One trusted team, a full range of behavioral health services — so you always have
-            the right support close by.
+            Clinical and Professional Solutions, in partnership with Utah Main Street, helps
+            people across Utah explore everyday resources, compare practical options, and
+            prepare informed questions before choosing an independent organization.
           </p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = icons[service.icon] ?? MessageCircleHeart;
+          {featuredSolutions.map((solution) => {
+            const Icon = icons[solution.icon] ?? MapPin;
             return (
               <div
-                key={service.title}
+                key={solution.slug}
                 className="group flex overflow-hidden rounded-2xl border border-teal-100 bg-white shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
               >
                 <div className="flex min-h-0 w-full flex-col">
-                  <div className="relative aspect-[16/9] overflow-hidden bg-teal-100">
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} service`}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition duration-500 group-hover:scale-[1.025]"
-                    />
-                    <span className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-xl border border-white/70 bg-white/95 text-teal-700 shadow-md backdrop-blur-sm transition group-hover:bg-teal-700 group-hover:text-white">
-                      <Icon className="h-6 w-6" aria-hidden={true} />
+                  <div className="flex h-28 items-center justify-center bg-gradient-to-br from-teal-700 to-teal-900 text-white">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/30 bg-white/10 shadow-sm transition duration-300 group-hover:scale-105 group-hover:bg-white/15">
+                      <Icon className="h-8 w-8" aria-hidden={true} />
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-lg font-bold text-teal-950">{service.title}</h3>
+                    <h3 className="text-lg font-bold text-teal-950">{solution.name}</h3>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-teal-800/80">
-                      {service.description}
+                      {solution.cardDescription}
                     </p>
-                    <a
-                      href="/#request"
-                      data-book-appointment="true"
-                      aria-label={`Request an appointment for ${service.title}`}
+                    <Link
+                      href={`/solutions/${solution.slug}`}
+                      aria-label={`Explore ${solution.name} solutions in Utah`}
                       className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 transition hover:text-teal-800"
                     >
-                      <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request an appointment
-                    </a>
+                      Explore solutions <ArrowRight className="h-4 w-4" aria-hidden={true} />
+                    </Link>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
+
+        <p className="mt-8 max-w-4xl text-sm leading-relaxed text-teal-800/70">
+          Guidance is informational. Independent organizations control their qualifications,
+          scope, eligibility, availability, pricing, and terms; verify current details directly
+          before making a decision.
+        </p>
       </div>
     </section>
   );

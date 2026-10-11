@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { brand } from "@/lib/data";
 
 export default function LegalLayout({
   title,
@@ -29,11 +28,8 @@ export default function LegalLayout({
 
         <div className="mt-12 rounded-2xl border border-teal-100 bg-white p-6 shadow-card">
           <p className="text-sm text-teal-800/90">
-            Questions about this policy? Contact {brand.name} at{" "}
-            <a href={`mailto:${brand.email}`} aria-label={`Email ${brand.name}`} className="font-semibold text-teal-700">
-              {brand.email}
-            </a>
-            .
+            Questions about this policy? Use the secure request form on our home page and our
+            team will follow up. Please do not include private medical details.
           </p>
         </div>
       </div>

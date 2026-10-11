@@ -11,66 +11,66 @@ import { useEffect, useRef, useState } from "react";
 const stories = [
   {
     eyebrow: "Clarity",
-    title: "A clearer place to begin",
+    title: "A home project with fewer unknowns",
     body:
-      "When questions feel tangled, a thoughtful evaluation can organize concerns and help a family understand which next steps may fit their needs.",
-    highlights: ["Thoughtful evaluation", "Personalized direction", "Care for every age"],
-    image: "/success-stories/clear-plan.jpg",
-    imageAlt: "A parent and clinician reviewing a care plan together in a calm office",
+      "A homeowner can start by defining the scope, comparing written estimates, and preparing questions about credentials, timelines, materials, and contract terms.",
+    highlights: ["Clear project scope", "Comparable estimates", "Questions prepared"],
+    image: "/success-stories/home-project.png",
+    imageAlt: "Two people reviewing plans for a home project at a kitchen table",
   },
   {
     eyebrow: "Clarity",
-    title: "Support that fits real life",
+    title: "A stronger brief before choosing a vendor",
     body:
-      "For someone balancing work, school, or family, secure telehealth can make it easier to stay connected to care from a private, familiar space.",
-    highlights: ["Secure telehealth", "Flexible ways to meet", "Utah-wide access"],
-    image: "/success-stories/telehealth-routine.jpg",
-    imageAlt: "An adult joining a private telehealth appointment from a warm home office",
+      "A Utah business can organize its goal, budget, deliverables, and decision criteria before comparing proposals from independent professional-service vendors.",
+    highlights: ["Defined business need", "Proposal checklist", "Clear responsibilities"],
+    image: "/success-stories/business-next-step.png",
+    imageAlt: "Small-business owners organizing a project brief together",
   },
   {
     eyebrow: "Clarity",
-    title: "One team, one coordinated direction",
+    title: "A learning path that matches the goal",
     body:
-      "When counseling and medication support are both part of the plan, coordinated providers can help make the experience feel clearer and more manageable.",
-    highlights: ["30+ licensed providers", "Therapy + medication", "Whole-person approach"],
-    image: "/success-stories/coordinated-care.jpg",
-    imageAlt: "An adult meeting with two coordinated behavioral health providers",
+      "A learner can compare prerequisites, schedule, format, total cost, accreditation, and credential value before deciding which Utah education or training option to explore.",
+    highlights: ["Learning goal", "Program comparison", "Requirements checked"],
+    image: "/success-stories/learning-path.png",
+    imageAlt: "An adult learner comparing education and training information at a desk",
   },
   {
     eyebrow: "Clarity",
-    title: "Confidence in the next step",
+    title: "Family resources, easier to organize",
     body:
-      "A supportive conversation can help someone understand their options, ask questions, and leave with a next step that feels realistic for their life.",
-    highlights: ["Questions welcomed", "Practical next steps", "Individualized care"],
-    image: "/success-stories/confident-next-step.jpg",
-    imageAlt: "A young adult and clinician concluding a constructive appointment",
+      "A family balancing childcare, transportation, housing, or food needs can group priorities and track eligibility questions, documents, contacts, and follow-up dates.",
+    highlights: ["Needs prioritized", "Programs compared", "Follow-up organized"],
+    image: "/success-stories/family-direction.png",
+    imageAlt: "A family organizing community-resource information around a table",
   },
   {
     eyebrow: "Clarity",
-    title: "Tools for steadier moments",
+    title: "Caregiver questions in a practical order",
     body:
-      "Counseling can create space to practice grounding skills, recognize patterns, and build routines that support steadier moments outside the office.",
-    highlights: ["Practical coping tools", "Mind-body awareness", "Skills for daily life"],
-    image: "/success-stories/grounding-support.jpg",
-    imageAlt: "An adult practicing a grounding exercise with a clinician",
+      "A caregiver can sort immediate needs from longer-term planning, then compare transportation, respite, home-support, accessibility, and local aging resources.",
+    highlights: ["Priorities sorted", "Support categories", "Family questions"],
+    image: "/success-stories/caregiver-guidance.png",
+    imageAlt: "An older adult and caregiver reviewing a practical planning list together",
   },
   {
     eyebrow: "Clarity",
-    title: "More room to hear one another",
+    title: "Wellness options with clearer context",
     body:
-      "A guided family conversation can help caregivers and teens slow things down, hear different perspectives, and identify a constructive way forward.",
-    highlights: ["Family support", "Respectful conversation", "Shared next steps"],
-    image: "/success-stories/family-support.jpg",
-    imageAlt: "Caregivers and a teenager having a guided conversation with a clinician",
+      "Someone exploring a wellness goal can compare service types, provider scope, evidence, accessibility, cost, and how each option may fit alongside existing support.",
+    highlights: ["Goal clarified", "Scope understood", "Practical fit"],
+    image: "/success-stories/wellness-direction.png",
+    imageAlt: "A Utah resident organizing wellness options and questions in a bright home",
   },
   {
     eyebrow: "Clarity",
-    title: "Mind and body in the same conversation",
+    title: "A practical starting point for local resources",
     body:
-      "Whole-person care can help someone consider how routines, stress, sleep, and emotional well-being may connect when choosing what to work on next.",
-    highlights: ["Whole-person view", "Practical routines", "Mind-body care"],
-    image: "/success-stories/whole-person-wellness.jpg",
-    imageAlt: "An adult discussing whole-person wellness with a clinician beside a bright window",
+      "A resident new to a Utah community can identify likely city, county, nonprofit, library, and neighborhood starting points, then confirm current eligibility and availability directly.",
+    highlights: ["Local starting points", "Eligibility questions", "Contacts tracked"],
+    image: "/success-stories/community-resources.png",
+    imageAlt: "A community volunteer helping a resident review local Utah resources",
   },
 ];
 
@@ -133,17 +133,17 @@ export default function SuccessStories() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-600">
-            Success stories
+            Possible paths
           </p>
           <h2
             id="success-stories-title"
             className="mt-3 text-balance text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl"
           >
-            Success can start with one clear next step.
+            A clearer next step for everyday life.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-teal-800/80 sm:text-lg">
-            Everyone arrives with a different story. Here are a few representative ways the right
-            support can make moving forward feel more possible.
+            These illustrative examples show how a little structure can help people compare
+            independent Utah resources and prepare more useful questions.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ export default function SuccessStories() {
             ref={viewportRef}
             role="region"
             aria-roledescription="carousel"
-            aria-label="Representative CPS care journeys"
+            aria-label="Illustrative solution-navigation paths"
             tabIndex={0}
             onKeyDown={(event) => {
               if (event.key === "ArrowLeft") {
@@ -202,7 +202,7 @@ export default function SuccessStories() {
                         <p className="mt-4 text-base leading-relaxed text-teal-800/85 sm:text-lg">
                           {story.body}
                         </p>
-                        <ul className="mt-6 flex flex-wrap gap-2" aria-label="Care highlights">
+                        <ul className="mt-6 flex flex-wrap gap-2" aria-label="Navigation highlights">
                           {story.highlights.map((highlight) => (
                             <li
                               key={highlight}
@@ -221,7 +221,7 @@ export default function SuccessStories() {
           </div>
 
           <div className="mt-6 flex items-center justify-between gap-4">
-            <div className="relative flex items-center" role="group" aria-label="Choose a success story">
+            <div className="relative flex items-center" role="group" aria-label="Choose a possible path">
               <span
                 className="pointer-events-none absolute left-0 top-1/2 z-10 h-2.5 w-6 rounded-full bg-teal-700 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
                 style={{
@@ -254,7 +254,7 @@ export default function SuccessStories() {
               <button
                 type="button"
                 onClick={() => goToStory(activeIndex - 1)}
-                aria-label="Previous success story"
+                aria-label="Previous possible path"
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-teal-200 bg-white text-teal-800 transition hover:border-teal-300 hover:bg-teal-50"
               >
                 <ArrowLeft className="h-5 w-5" aria-hidden={true} />
@@ -262,7 +262,7 @@ export default function SuccessStories() {
               <button
                 type="button"
                 onClick={() => goToStory(activeIndex + 1)}
-                aria-label="Next success story"
+                aria-label="Next possible path"
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-teal-700 text-white shadow-sm transition hover:bg-teal-800"
               >
                 <ArrowRight className="h-5 w-5" aria-hidden={true} />
@@ -272,22 +272,22 @@ export default function SuccessStories() {
 
           <div className="mt-7 flex flex-col items-center justify-between gap-4 rounded-2xl bg-teal-50 px-5 py-4 text-center sm:flex-row sm:text-left">
             <div>
-              <p className="font-bold text-teal-950">Ready to talk through your next step?</p>
-              <p className="mt-1 text-sm text-teal-800/75">No pressure and no obligation to schedule.</p>
+              <p className="font-bold text-teal-950">Ready to organize your next step?</p>
+              <p className="mt-1 text-sm text-teal-800/75">Share what you are looking for and where you are in Utah.</p>
             </div>
             <a
               href="/#request"
               data-book-appointment="true"
-              aria-label="Request an appointment from success stories"
+              aria-label="Request a solution from success stories"
               className="inline-flex w-full flex-none items-center justify-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-teal-800 sm:w-auto"
             >
-              <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request an appointment
+              <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request a solution
             </a>
           </div>
 
           <p className="mt-4 text-center text-xs leading-relaxed text-teal-800/60">
-            These images and care journeys are representative and are not individual patient
-            testimonials. Experiences and outcomes vary.
+            These images and scenarios are illustrative examples, not customer testimonials or
+            claims about provider vetting, availability, results, or outcomes.
           </p>
 
           <p className="sr-only" aria-live="polite">

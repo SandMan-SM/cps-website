@@ -6,25 +6,24 @@ export type KeywordLink = { keyword: string; url: string };
 
 export const keywordLinks: KeywordLink[] = [
   // Services (multi-word phrases first)
-  { keyword: "ketamine-assisted psychotherapy", url: "/services/ketamine-therapy" },
-  { keyword: "substance abuse evaluation", url: "/services/substance-abuse-treatment" },
-  { keyword: "substance abuse treatment", url: "/services/substance-abuse-treatment" },
-  { keyword: "medication management", url: "/services/medication-management" },
-  { keyword: "counseling & psychotherapy", url: "/services/counseling-psychotherapy" },
-  { keyword: "psychotherapy", url: "/services/counseling-psychotherapy" },
-  { keyword: "evaluation services", url: "/services/evaluation-services" },
-  { keyword: "psychological evaluation", url: "/services/evaluation-services" },
-  { keyword: "health & wellness", url: "/services/health-wellness" },
-  { keyword: "employer services", url: "/services/employer-services" },
-  { keyword: "ketamine therapy", url: "/services/ketamine-therapy" },
-  { keyword: "ketamine treatment", url: "/services/ketamine-therapy" },
-  { keyword: "Spravato", url: "/services/ketamine-therapy" },
-  { keyword: "esketamine", url: "/services/ketamine-therapy" },
-  { keyword: "neurofeedback", url: "/services/neurofeedback" },
-  { keyword: "counseling", url: "/services/counseling-psychotherapy" },
+  { keyword: "ketamine-assisted psychotherapy", url: "/solutions/ketamine-therapy" },
+  { keyword: "substance abuse evaluation", url: "/solutions/substance-abuse-treatment" },
+  { keyword: "substance abuse treatment", url: "/solutions/substance-abuse-treatment" },
+  { keyword: "medication management", url: "/solutions/medication-management" },
+  { keyword: "counseling & psychotherapy", url: "/solutions/counseling-psychotherapy" },
+  { keyword: "psychotherapy", url: "/solutions/counseling-psychotherapy" },
+  { keyword: "evaluation services", url: "/solutions/evaluation-services" },
+  { keyword: "psychological evaluation", url: "/solutions/evaluation-services" },
+  { keyword: "health & wellness", url: "/solutions/health-wellness" },
+  { keyword: "employer services", url: "/solutions/employer-services" },
+  { keyword: "ketamine therapy", url: "/solutions/ketamine-therapy" },
+  { keyword: "ketamine treatment", url: "/solutions/ketamine-therapy" },
+  { keyword: "Spravato", url: "/solutions/ketamine-therapy" },
+  { keyword: "esketamine", url: "/solutions/ketamine-therapy" },
+  { keyword: "neurofeedback", url: "/solutions/neurofeedback" },
+  { keyword: "counseling", url: "/solutions/counseling-psychotherapy" },
 
-  // Genuine CPS office pages. Broader service-area cities are described on the
-  // service-area hub instead of generating search-focused doorway links.
+  // Community guidance pages; these describe service areas, not office locations.
   { keyword: "Salt Lake City", url: "/utah/salt-lake-city" },
   { keyword: "West Jordan", url: "/utah/west-jordan" },
   { keyword: "Layton", url: "/utah/layton" },

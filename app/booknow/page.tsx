@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   CheckCircle2,
@@ -8,55 +7,39 @@ import {
   Video,
 } from "lucide-react";
 import BookNowPopup from "@/components/BookNowPopup";
+import BrandLogo from "@/components/BrandLogo";
 import { brand } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Request an Appointment",
+  title: "Request a Solution",
   description:
-    "Request an appointment with Comprehensive Psychological Services in Utah. Share your name, phone number, and email, and the CPS team will follow up.",
+    "Share your contact details with Clinical and Professional Solutions and our team will follow up with clear next-step guidance.",
   alternates: { canonical: `${brand.domain}/booknow` },
   openGraph: {
     type: "website",
     url: `${brand.domain}/booknow`,
-    siteName: "Comprehensive Psychological Services",
-    title: "Request an Appointment | CPS Utah",
+    siteName: brand.name,
+    title: "Request a Solution | Clinical and Professional Solutions",
     description:
-      "Take the first step toward care with Comprehensive Psychological Services.",
-    images: ["/cps-hero.jpg"],
+      "Take a clear first step toward practical solutions in Utah.",
+    images: ["/brand/utah-solutions-hero.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Request an Appointment | CPS Utah",
+    title: "Request a Solution | Clinical and Professional Solutions",
     description:
-      "Take the first step toward care with Comprehensive Psychological Services.",
-    images: ["/cps-hero.jpg"],
+      "Take a clear first step toward practical solutions in Utah.",
+    images: ["/brand/utah-solutions-hero.png"],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
+  "@type": "Organization",
   "name": brand.name,
-  "description": "Comprehensive Psychological Services — counseling, medication management, neurofeedback, and psychiatric care in Utah.",
+  "description": "Practical navigation for solutions across health, home, business, family, and everyday life in Utah.",
   "url": brand.domain,
-  "telephone": brand.phone,
-  "address": [
-    {
-      "@type": "PostalAddress",
-      "streetAddress": "4505 S 900 E",
-      "addressLocality": "Salt Lake City",
-      "addressRegion": "UT",
-      "postalCode": "84124",
-      "addressCountry": "US",
-    },
-  ],
   "areaServed": { "@type": "State", "name": "Utah" },
-  "medicalSpecialty": [
-    "Psychiatry",
-    "Psychology",
-    "Counseling",
-    "Neurofeedback",
-  ],
 };
 
 export default function BookNowPage() {
@@ -69,17 +52,10 @@ export default function BookNowPage() {
       <header className="border-b border-teal-100 bg-white">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link href="/" aria-label={`${brand.name} home`}>
-            <Image
-              src="/cps-logo-clean.png"
-              alt="Comprehensive Psychological Services"
-              width={570}
-              height={146}
-              priority
-              className="h-auto w-[190px] sm:w-[230px]"
-            />
+            <BrandLogo compact />
           </Link>
           <p className="hidden text-sm font-semibold text-teal-800 sm:block">
-            Serving Utah since {brand.since}
+            Partnered with {brand.partnerName}
           </p>
         </div>
       </header>
@@ -91,31 +67,31 @@ export default function BookNowPage() {
                 Take the first step. We&apos;ll help with the next one.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-teal-800/90 sm:text-xl">
-                Share your contact information and a CPS team member will reach out to help
-                you find the right provider, location, or telehealth option.
+                Share your contact information and our team will reach out to help you understand
+                the available services and choose a practical next step.
               </p>
 
               <div className="mt-8 grid max-w-xl gap-4 sm:grid-cols-2">
                 {[
                   {
                     icon: CheckCircle2,
-                    title: "30+ licensed providers",
-                    body: "Care matched to your needs",
+                    title: "12 solution areas",
+                    body: "Options matched to your needs",
                   },
                   {
                     icon: Video,
-                    title: "Telehealth across Utah",
-                    body: "Meet securely from home",
+                    title: "Statewide perspective",
+                    body: "Options across Utah",
                   },
                   {
                     icon: Clock3,
-                    title: "Serving Utah since 1986",
-                    body: "Nearly four decades of care",
+                    title: `Partnered with ${brand.partnerName}`,
+                    body: "Community-minded direction",
                   },
                   {
                     icon: LockKeyhole,
                     title: "Simple and private",
-                    body: "No medical details needed here",
+                    body: "A brief request is all we need",
                   },
                 ].map(({ icon: Icon, title, body }) => (
                   <div key={title} className="flex items-start gap-4">
@@ -142,11 +118,11 @@ export default function BookNowPage() {
         <section className="border-y border-teal-100 bg-white">
           <div className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-600">
-              Three Utah offices · Statewide telehealth
+              Clear guidance · Utah-wide perspective
             </p>
             <p className="mx-auto mt-3 max-w-2xl leading-relaxed text-teal-800/80">
-              Salt Lake City, Layton, and West Jordan, with secure telehealth options
-              available throughout Utah.
+              We help you explore practical service options based on your needs, preferences,
+              and community.
             </p>
           </div>
         </section>

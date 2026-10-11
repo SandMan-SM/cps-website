@@ -1,18 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Video, CalendarCheck } from "lucide-react";
+import { ArrowRight, Compass, Handshake, MapPin } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
-import CtaBar from "@/components/CtaBar";
-import { brand, getLocationByCitySlug, locations } from "@/lib/data";
-import { citiesByCounty, cities } from "@/lib/geo";
+import ServiceIcon from "@/components/ServiceIcon";
+import { brand } from "@/lib/data";
+import { cities, citiesByCounty, UTAH_COUNTIES } from "@/lib/geo";
+import { solutionPages } from "@/lib/services";
 
 const url = `${brand.domain}/service-area`;
+const pageTitle = "Utah Solutions & Service Navigation | CPS Utah";
+const pageDescription =
+  `Request solutions-navigation guidance from any of Utah's ${UTAH_COUNTIES.length} counties and explore detailed guides for ${cities.length}+ selected communities. ` +
+  `${brand.name}, in partnership with ${brand.partnerName}, helps people identify practical next steps without representing business or professional locations.`;
+const serviceRegions = [
+  {
+    name: "Salt Lake County",
+    description:
+      "Explore solution categories and community context for Salt Lake City and surrounding valley communities.",
+  },
+  {
+    name: "Davis & Weber Counties",
+    description:
+      "Explore solution categories and community context for Layton, Ogden, and nearby northern Utah communities.",
+  },
+  {
+    name: "Utah County & South Valley",
+    description:
+      "Explore solution categories and community context for Lehi, Provo, the south valley, and nearby communities.",
+  },
+];
 
 export const metadata: Metadata = {
-  title: { absolute: "Utah Service Area & Office Locations | CPS" },
-  description: `Find CPS offices in Salt Lake City, Layton, and West Jordan, serving ${cities.length}+ Wasatch Front communities with Utah-wide telehealth options.`,
+  title: { absolute: pageTitle },
+  description: pageDescription,
   alternates: { canonical: url },
   robots: {
     index: true,
@@ -29,40 +51,40 @@ export const metadata: Metadata = {
     type: "website",
     url,
     siteName: brand.name,
-    title: "Utah Service Area & Office Locations | CPS",
-    description: `Serving ${cities.length}+ Utah cities across Salt Lake, Davis, Weber, and Utah counties, plus telehealth statewide.`,
+    title: pageTitle,
+    description: pageDescription,
     locale: "en_US",
     images: [
       {
-        url: "/cps-hero.jpg",
-        width: 1824,
-        height: 862,
-        alt: "Comprehensive Psychological Services serves Utah from three offices and by telehealth",
+        url: "/brand/utah-solutions-hero.png",
+        width: 1942,
+        height: 809,
+        alt: "A calm conversation about choosing an appropriate next step",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Utah Service Area & Office Locations | CPS",
-    description: `Serving ${cities.length}+ Utah cities across Salt Lake, Davis, Weber, and Utah counties, plus telehealth statewide.`,
-    images: ["/cps-hero.jpg"],
+    title: pageTitle,
+    description: pageDescription,
+    images: ["/brand/utah-solutions-hero.png"],
   },
 };
 
 export default function ServiceAreaPage() {
   const groups = citiesByCounty();
-
+  const featuredSolutions = solutionPages.filter((solution) => solution.featured);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
+        "@type": "CollectionPage",
         "@id": `${url}#webpage`,
         url,
-        name: "Utah Service Area & Office Locations",
-        description: `CPS serves ${cities.length}+ Utah communities from offices in Salt Lake City, Layton, and West Jordan, with telehealth available statewide.`,
+        name: "Utah solutions and service navigation",
+        description: pageDescription,
         isPartOf: { "@id": `${brand.domain}/#website` },
-        about: { "@id": `${brand.domain}/#organization` },
+        publisher: { "@id": `${brand.domain}/#organization` },
         inLanguage: "en-US",
       },
       {
@@ -74,41 +96,13 @@ export default function ServiceAreaPage() {
       },
       {
         "@type": "ItemList",
-        name: "CPS Utah office locations",
-        itemListElement: locations.map((loc, i) => ({
+        name: "Utah communities with solutions-navigation guides",
+        itemListElement: cities.map((city, index) => ({
           "@type": "ListItem",
-          position: i + 1,
-          name: `${loc.name} office`,
-          item: `${brand.domain}/utah/${loc.citySlug}`,
+          position: index + 1,
+          name: `${city.name}, Utah`,
+          item: `${brand.domain}/utah/${city.slug}`,
         })),
-      },
-      {
-        "@id": `${brand.domain}/#organization`,
-        "@type": ["MedicalBusiness", "Psychologist", "LocalBusiness"],
-        name: brand.name,
-        url: brand.domain,
-        logo: `${brand.domain}/cps-logo-clean.png`,
-        telephone: brand.phone,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "6322 S 3000 E Suite 110",
-          addressLocality: "Salt Lake City",
-          addressRegion: "UT",
-          postalCode: "84121",
-          addressCountry: "US",
-        },
-        areaServed: {
-          "@type": "State",
-          name: "Utah",
-        },
-        medicalSpecialty: "Psychiatry & Psychology",
-      },
-      {
-        "@id": `${brand.domain}/#website`,
-        "@type": "WebSite",
-        name: brand.name,
-        url: brand.domain,
-        publisher: { "@id": `${brand.domain}/#organization` },
       },
     ],
   };
@@ -127,115 +121,205 @@ export default function ServiceAreaPage() {
               aria-label="Breadcrumb"
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
-              <Link href="/" aria-label="Home" className="hover:text-teal-800">Home</Link>
-              <span aria-hidden={true}></span>
-              <span className="font-semibold text-teal-900">Service Area</span>
+              <Link href="/" aria-label="Home" className="hover:text-teal-800">
+                Home
+              </Link>
+              <span aria-hidden={true}>/</span>
+              <span className="font-semibold text-teal-900">Utah Communities</span>
             </nav>
-            <h1 className="max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
-              Utah cities CPS serves
+
+            <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-3 py-1 text-sm font-semibold text-teal-800">
+              <Handshake className="h-4 w-4" aria-hidden={true} /> In partnership with {brand.partnerName}
+            </p>
+            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
+              Statewide solutions navigation for every Utah county
             </h1>
-            <p className="mt-4 max-w-2xl text-lg text-teal-800/90">
-              From our three offices in Salt Lake City, Layton, and West Jordan — and
-              telehealth statewide — Comprehensive Psychological Services supports{" "}
-              {cities.length}+ communities across the Wasatch Front since {brand.since}.
+            <p className="mt-4 max-w-3xl text-lg leading-relaxed text-teal-800/90">
+              {brand.name} helps people explore health, home, business, legal, financial,
+              family, education, career, senior, technology, and community resources throughout
+              Utah. County requests are available statewide, while the selected city guides below
+              add geographic context without claiming that a particular business, professional,
+              or organization is based there.
             </p>
 
-            <div className="mt-6 grid sm:grid-cols-3" style={{ gap: "2rem" }}>
-              {locations.map((loc) => (
-                <Link
-                  key={loc.id}
-                  href={`/utah/${loc.citySlug}`}
-                  aria-label={`${loc.name} office — ${loc.full}`}
-                  className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
+            <p className="mt-8 text-sm font-bold uppercase tracking-[0.16em] text-teal-700">
+              Featured detailed-guide regions
+            </p>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              {serviceRegions.map((region) => (
+                <article
+                  key={region.name}
+                  className="rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
                 >
-                  <MapPin className="mt-0.5 h-5 w-5 flex-none text-teal-700" aria-hidden={true} />
-                  <p className="text-sm text-teal-900">
-                    <span className="font-semibold group-hover:text-teal-700">{loc.name} office</span>
-                    <br />
-                    {loc.full}
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-100 text-teal-700">
+                    <Compass className="h-5 w-5" aria-hidden={true} />
+                  </span>
+                  <h2 className="mt-4 text-lg font-bold text-teal-950">{region.name}</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-teal-800/80">
+                    {region.description}
                   </p>
-                </Link>
+                </article>
               ))}
             </div>
 
-            <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-4 py-2 text-sm font-semibold text-teal-800">
-              <Video className="h-4 w-4" aria-hidden={true} /> Telehealth available anywhere in Utah
-            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/#solutions"
+                aria-label="Explore Utah solution categories"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800"
+              >
+                Explore solutions <ArrowRight className="h-5 w-5" aria-hidden={true} />
+              </Link>
+              <a
+                href="/#request"
+                data-book-appointment="true"
+                aria-label="Request solutions-navigation guidance"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-teal-700 px-6 py-4 text-base font-bold text-teal-800 transition hover:bg-teal-50"
+              >
+                Request guidance
+              </a>
+            </div>
+          </div>
+        </section>
 
-            <CtaBar className="mt-8" />
+        <section className="bg-teal-50/40 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
+                Featured Utah solution categories
+              </h2>
+              <p className="mt-3 text-lg leading-relaxed text-teal-800/90">
+                Start with the area that best matches what you are trying to solve, then review
+                practical questions, qualifications, costs, and next steps.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredSolutions.map((solution) => (
+                <Link
+                  key={solution.slug}
+                  href={`/solutions/${solution.slug}`}
+                  aria-label={`Explore ${solution.name} solutions`}
+                  className="group flex flex-col rounded-2xl border border-teal-100 bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-cardHover"
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-100 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
+                    <ServiceIcon name={solution.icon} aria-hidden={true} />
+                  </span>
+                  <h3 className="mt-4 text-lg font-bold text-teal-950">{solution.name}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-teal-800/80">
+                    {solution.cardDescription}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700">
+                    Explore this category <ArrowRight className="h-4 w-4" aria-hidden={true} />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            {groups.map((group) => (
-              <div key={group.county} className="mb-12 last:mb-0">
-                <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
-                  {group.county} County
-                </h2>
-                <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "2rem" }}>
-                  {group.cities.map((c) => {
-                    const officeLocation = getLocationByCitySlug(c.slug);
-                    const nearestOffice = locations.find((loc) => loc.id === c.nearestOffice);
-                    const content = (
-                      <>
-                        <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
+                Request guidance from any Utah county
+              </h2>
+              <p className="mt-3 text-lg leading-relaxed text-teal-800/90">
+                Choose your county to share the part of Utah most relevant to your request. County
+                names provide geographic context only and do not represent an office, business
+                location, guaranteed provider, or current service availability.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {UTAH_COUNTIES.map((county) => (
+                <a
+                  key={county}
+                  href="/#request"
+                  data-book-appointment="true"
+                  data-appointment-location={county}
+                  aria-label={`Request guidance in ${county}`}
+                  className="group flex items-center justify-between gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-cardHover"
+                >
+                  <span className="inline-flex items-center gap-4 font-semibold text-teal-950">
+                    <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-100 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
+                      <MapPin className="h-5 w-5" aria-hidden={true} />
+                    </span>
+                    {county}
+                  </span>
+                  <ArrowRight className="h-4 w-4 flex-none text-teal-600" aria-hidden={true} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-teal-50/40 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
+                Explore detailed guides for selected Utah communities
+              </h2>
+              <p className="mt-3 text-lg leading-relaxed text-teal-800/90">
+                These selected city guides add local geographic context and questions to consider
+                when exploring businesses, professional services, programs, and community
+                resources. They are not a complete list of Utah coverage or a list of office
+                locations. Availability, eligibility, pricing, and service area are confirmed
+                directly with the organization you choose.
+              </p>
+            </div>
+
+            <div className="mt-12 space-y-12">
+              {groups.map((group) => (
+                <section key={group.county} aria-labelledby={`${group.county.toLowerCase().replace(" ", "-")}-county`}>
+                  <h3
+                    id={`${group.county.toLowerCase().replace(" ", "-")}-county`}
+                    className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl"
+                  >
+                    {group.county} County
+                  </h3>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {group.cities.map((city) => (
+                      <Link
+                        key={city.slug}
+                        href={`/utah/${city.slug}`}
+                        aria-label={`Explore solutions-navigation guidance for ${city.name}, Utah`}
+                        className="group flex items-center gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-cardHover"
+                      >
+                        <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-100 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
                           <MapPin className="h-5 w-5" aria-hidden={true} />
                         </span>
                         <span>
-                          <span className="block font-bold text-teal-950">{c.name}</span>
+                          <span className="block font-bold text-teal-950">{city.name}</span>
                           <span className="block text-xs text-teal-800/70">
-                            {officeLocation
-                              ? "CPS office location"
-                              : `Nearest in-person office: ${nearestOffice?.name ?? "CPS"}`}
+                            Solutions-navigation guide
                           </span>
                         </span>
-                      </>
-                    );
-
-                    return officeLocation ? (
-                      <Link
-                        key={c.slug}
-                        href={`/utah/${c.slug}`}
-                        aria-label={`View ${c.name} — CPS office location`}
-                        className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
-                      >
-                        {content}
                       </Link>
-                    ) : (
-                      <div
-                        key={c.slug}
-                        className="group flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card"
-                      >
-                        {content}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="bg-band py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              Don&apos;t see your city?
+              Need help choosing where to start?
             </h2>
             <p className="mt-4 text-lg text-teal-100">
-              We serve the entire Wasatch Front and offer telehealth statewide. Send a request
-              and we&apos;ll help you find the closest office.
+              Tell us what you are trying to solve. We&apos;ll help you organize the next step
+              and point you toward relevant solution categories across Utah.
             </p>
-            <div className="mt-8 flex justify-center">
-              <a
-                href="/#request"
-                data-book-appointment="true"
-                aria-label="Request an appointment"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
-              >
-                <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
-              </a>
-            </div>
+            <a
+              href="/#request"
+              data-book-appointment="true"
+              aria-label="Request solutions-navigation guidance"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
+            >
+              Request guidance <ArrowRight className="h-5 w-5" aria-hidden={true} />
+            </a>
           </div>
         </section>
       </main>

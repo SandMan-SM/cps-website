@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { brand, locations } from "@/lib/data";
+import { brand } from "@/lib/data";
+import { solutionPages } from "@/lib/services";
+import { UTAH_COUNTIES } from "@/lib/geo";
 import Header from "@/components/Header";
 
 function JsonLd() {
@@ -10,45 +12,35 @@ function JsonLd() {
         "@type": "WebPage",
         "@id": `${brand.domain}/#webpage`,
         url: brand.domain,
-        name: "Utah Mental Health Care | CPS",
+        name: "Utah Solutions | Clinical and Professional Solutions",
         description:
-          "Counseling, medication management, neurofeedback, evaluations, and behavioral health services from three Utah offices and by telehealth.",
+          "Practical guidance for Utah-based health, home, business, family, career, and community solutions.",
         isPartOf: { "@id": `${brand.domain}/#website` },
         about: { "@id": `${brand.domain}/#organization` },
         inLanguage: "en-US",
       },
       {
         "@id": `${brand.domain}/#organization`,
-        "@type": ["MedicalBusiness", "Psychologist", "LocalBusiness"],
+        "@type": "Organization",
         name: brand.name,
-        description: "Counseling, medication management, neurofeedback, evaluations, and behavioral health services from three Utah offices and via telehealth.",
+        description: "Utah-based solutions navigation across health, home, business, family, and everyday life.",
         url: brand.domain,
-        telephone: brand.phone,
-        email: brand.email,
-        faxNumber: brand.fax,
-        foundingDate: String(brand.since),
-        address: locations.map(loc => ({
-          "@type": "PostalAddress",
-          streetAddress: loc.street,
-          addressLocality: loc.cityLine.split(",")[0].trim(),
-          addressRegion: "UT",
-          postalCode: loc.cityLine.split(" ").pop(),
-          addressCountry: "US"
-        })),
         areaServed: {
           "@type": "State",
           name: "Utah"
         },
-        knowsAbout: ["Mental Health", "Counseling", "Medication Management", "Neurofeedback", "Psychological Evaluations"],
+        knowsAbout: solutionPages.filter((solution) => solution.featured).map((solution) => solution.name),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "Mental Health Services",
-          itemListElement: [
-            { "@type": "Offer", name: "Counseling & Psychotherapy" },
-            { "@type": "Offer", name: "Medication Management" },
-            { "@type": "Offer", name: "Neurofeedback" },
-            { "@type": "Offer", name: "Psychological Evaluations" }
-          ]
+          name: "Utah Solution Guidance",
+          itemListElement: solutionPages.filter((solution) => solution.featured).map((solution) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: `${solution.name} guidance`,
+              url: `${brand.domain}/solutions/${solution.slug}`,
+            },
+          })),
         }
       },
       {
@@ -59,12 +51,12 @@ function JsonLd() {
       },
       {
         "@type": "ItemList",
-        name: "Comprehensive Psychological Services Utah offices",
-        itemListElement: locations.map((loc, index) => ({
+        name: "Clinical and Professional Solutions Utah service areas",
+        itemListElement: UTAH_COUNTIES.map((county, index) => ({
           "@type": "ListItem",
           position: index + 1,
-          name: `${loc.name} office`,
-          item: `${brand.domain}/utah/${loc.citySlug}`,
+          name: county,
+          item: `${brand.domain}/service-area#counties`,
         })),
       },
     ],
@@ -89,33 +81,33 @@ import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
 
 export const metadata: Metadata = {
-  title: { absolute: "Utah Mental Health Care | CPS" },
+  title: { absolute: "Utah Solutions | Clinical and Professional Solutions" },
   description:
-    "Utah mental health care since 1986: counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
+    "Find direction for Utah health, home, business, legal, financial, family, education, career, and community needs. Partnered with Utah Main Street.",
   alternates: { canonical: brand.domain },
   openGraph: {
     type: "website",
     url: brand.domain,
     siteName: brand.name,
-    title: "Utah Mental Health Care | CPS",
+    title: "Utah Solutions | Clinical and Professional Solutions",
     description:
-      "Utah mental health care since 1986: counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
+      "Find direction for Utah health, home, business, legal, financial, family, education, career, and community needs. Partnered with Utah Main Street.",
     locale: "en_US",
     images: [
       {
-        url: "/cps-hero.jpg",
-        width: 1824,
-        height: 862,
-        alt: "A calm behavioral health appointment at Comprehensive Psychological Services in Utah",
+        url: "/brand/utah-solutions-hero.png",
+        width: 1942,
+        height: 809,
+        alt: "Illustration of Utah community life, local businesses, and practical solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Utah Mental Health Care | CPS",
+    title: "Utah Solutions | Clinical and Professional Solutions",
     description:
-      "Utah mental health care since 1986: counseling, medication management, neurofeedback, evaluations, and more from three offices and via telehealth.",
-    images: ["/cps-hero.jpg"],
+      "Find direction for Utah health, home, business, legal, financial, family, education, career, and community needs. Partnered with Utah Main Street.",
+    images: ["/brand/utah-solutions-hero.png"],
   },
 };
 

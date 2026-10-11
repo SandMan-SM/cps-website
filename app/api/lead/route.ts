@@ -1,29 +1,26 @@
 import { NextResponse } from "next/server";
 import { readJsonRequest } from "@/lib/server/read-json-request";
+import { probeLocalCpsReceiver } from "@/lib/server/probe-local-receiver";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const maxDuration = 30;
+export const maxDuration = 60;
 
 /**
- * Appointment-request proxy — forwards to the hub's canonical per-tenant
- * leads pipeline (write-before-notify + idempotent dedup on the hub side):
- *   analytics.leads -> inbound_cps_leads -> owner email + Telegram notify.
- *
- * The previous target (/api/inbound/cps/appointments + Vercel OIDC) was never
- * merged on the hub and 404'd in production, silently failing every submit.
- * The leads route needs no project-identity auth, so this also works in
- * local dev without a bridge.
+ * Rebranded appointment intake. The receiver confirms persistence, contact
+ * linking, and both required notifications before the browser reports success.
+ * The fixed loopback bridge is available only during local development.
  */
-const LEAD_ENDPOINT = "https://omnileadsagi.com/api/inbound/cps/leads";
+const LEAD_ENDPOINT = "https://omnileadsagi.com/api/inbound/cps/appointments";
+const LOCAL_LEAD_ENDPOINT = "http://127.0.0.1:3002/api/inbound/cps/appointments";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const UUID_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-const CONSENT_VERSION = "cps-appointment-contact-v1";
+const CONSENT_VERSION = "cps-contact-consent-v2";
 const MAX_REQUEST_BYTES = 16 * 1024;
 const CPS_PUBLIC_ORIGIN = "https://cpsutah.org";
 const CONSENT_TEXT =
-  "By submitting, you agree that Comprehensive Psychological Services may contact you by phone, text, or email about your request. There is no obligation to schedule or receive services. Message and data rates may apply.";
+  "By submitting, you agree that Clinical and Professional Solutions may contact you by phone, text, or email about your request. There is no obligation to use any referred service. Message and data rates may apply.";
 
 type LeadBody = {
   submissionId?: unknown;
@@ -51,6 +48,31 @@ type LeadBody = {
 
 const clean = (value: unknown, max = 500) =>
   typeof value === "string" ? value.trim().slice(0, max) : "";
+
+function useLocalBridge(request: Request): boolean {
+  const hostname = new URL(request.url).hostname;
+  return process.env.NODE_ENV === "development" &&
+    process.env.CPS_OMNI_LOCAL_BRIDGE === "1" &&
+    (hostname === "127.0.0.1" || hostname === "localhost");
+}
+
+function upstreamHeaders(request: Request): Headers | null {
+  const headers = new Headers({ "Content-Type": "application/json" });
+  if (useLocalBridge(request)) {
+    const secret = process.env.CPS_LOCAL_SOURCE_SECRET?.trim();
+    if (!secret) return null;
+    headers.set("x-cps-local-source", secret);
+  } else {
+    const token = request.headers.get("x-vercel-oidc-token") || process.env.VERCEL_OIDC_TOKEN;
+    if (!token) return null;
+    headers.set("Authorization", `Bearer ${token}`);
+  }
+  for (const header of ["x-forwarded-for", "x-real-ip", "user-agent"]) {
+    const value = request.headers.get(header);
+    if (value) headers.set(header, value);
+  }
+  return headers;
+}
 
 // Canonicalize the submitted page path against the public origin so the hub
 // only ever receives same-site URLs.
@@ -113,7 +135,10 @@ export async function POST(request: Request) {
   // nothing is forwarded to the hub.
   const website = clean(body.website, 200);
   if (website) {
-    return NextResponse.json({ ok: true });
+    if (useLocalBridge(request) && !await probeLocalCpsReceiver("appointments", upstreamHeaders(request))) {
+      return NextResponse.json({ ok: false, error: "Local receiver connectivity check failed." }, { status: 503 });
+    }
+    return NextResponse.json({ ok: true, completion: "no_write" });
   }
 
   const providedSubmissionId = clean(body.submissionId, 64);
@@ -129,7 +154,7 @@ export async function POST(request: Request) {
   const consent = body.consent === true;
   const service =
     clean(body.service, 200) ||
-    (isQuickForm ? "General appointment request" : "");
+    (isQuickForm ? "General solution request" : "");
   const location =
     clean(body.location, 100) || (isQuickForm ? "No preference" : "");
   const contactPreference =
@@ -189,16 +214,18 @@ export async function POST(request: Request) {
     .filter(Boolean)
     .join("\n");
 
-  const headers = new Headers({ "Content-Type": "application/json" });
-  for (const headerName of ["x-forwarded-for", "x-real-ip", "user-agent"]) {
-    const value = request.headers.get(headerName);
-    if (value) headers.set(headerName, value);
+  const headers = upstreamHeaders(request);
+  if (!headers) {
+    return NextResponse.json(
+      { ok: false, error: "Our request form is temporarily unavailable. Please try again shortly." },
+      { status: 503 },
+    );
   }
 
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 20_000);
+  const timeout = setTimeout(() => controller.abort(), 55_000);
   try {
-    const upstream = await fetch(LEAD_ENDPOINT, {
+    const upstream = await fetch(useLocalBridge(request) ? LOCAL_LEAD_ENDPOINT : LEAD_ENDPOINT, {
       method: "POST",
       headers,
       signal: controller.signal,
@@ -207,17 +234,9 @@ export async function POST(request: Request) {
         name,
         email,
         phone,
-        // `message` is intentionally left INTACT. This route has exactly one
-        // outbound call, so this string is the ONLY carrier of scheduling detail
-        // to the practice's notification — stubbing it would silently gut lead
-        // triage for a live psychology practice.
+        // Keep optional context in the private scheduling summary rather than
+        // publishing a clinical service selection in a marketing CRM column.
         message: schedulingNotes,
-        // `service_interest` deliberately REMOVED: it wrote the visitor's selected
-        // clinical service into a structured, queryable column on the shared
-        // cross-tenant marketing CRM. Nothing consumes it (the hub's InboundLead
-        // type has no such field; neither the email nor Telegram template reads
-        // it), so dropping it removes the clinical signal from the marketing
-        // store at zero cost to the practice.
         source: "cpsutah_appointment_form",
         page_url: safeCpsPageUrl(body, request),
         submission_id: submissionId,
@@ -239,18 +258,32 @@ export async function POST(request: Request) {
     const result = (await upstream.json().catch(() => ({}))) as {
       ok?: boolean;
       error?: string;
+      completion?: string;
+      crm_linked?: boolean;
+      owner_notification_accepted?: boolean;
+      customer_acknowledgement_accepted?: boolean;
+      customer_acknowledgement_suppressed?: boolean;
     };
 
-    if (!upstream.ok || result.ok !== true) {
+    const isComplete = result.ok === true &&
+      result.completion === "appointment_complete" &&
+      result.crm_linked === true &&
+      result.owner_notification_accepted === true &&
+      result.customer_acknowledgement_accepted === true &&
+      result.customer_acknowledgement_suppressed === false;
+    if (!upstream.ok || !isComplete) {
       console.error(
         `[cps-appointment] hub rejected lead (${upstream.status}): ${result.error ?? "unknown"}`,
       );
       return NextResponse.json(
         {
           ok: false,
-          error: "We couldn’t send your request. Please try again.",
+          error: result.error === "submission_id_conflict"
+            ? "This request was changed after an earlier attempt. Please start a new request."
+            : "We couldn’t confirm your request. Please try again.",
+          code: result.error === "submission_id_conflict" ? "submission_id_conflict" : undefined,
         },
-        { status: 503 },
+        { status: upstream.status === 409 ? 409 : 503 },
       );
     }
     return NextResponse.json({ ok: true, submissionId });
@@ -259,7 +292,7 @@ export async function POST(request: Request) {
       {
         ok: false,
         error:
-          "Our appointment form is temporarily unavailable. Please try again shortly.",
+          "Our request form is temporarily unavailable. Please try again shortly.",
       },
       { status: 503 },
     );

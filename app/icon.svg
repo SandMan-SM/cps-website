@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <rect width="32" height="32" rx="6" fill="#7c2024"/>
-  <text x="16" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">CPS</text>
+  <rect width="32" height="32" rx="7" fill="#fdf7f7"/>
+  <path d="M5 5.5 13.3 11v8.1L5 26.5z" fill="#a1252b"/>
+  <path d="m27 5.5-8.3 5.5v8.1l8.3 7.4z" fill="#c35a54"/>
+  <path d="M11.2 27c1.8-5.2 3.9-7.7 6.5-8.8 2.2 1 4 3.7 4.9 8.8z" fill="#251a1b"/>
+  <circle cx="16" cy="15.5" r="2.2" fill="#ffffff"/>
 </svg>

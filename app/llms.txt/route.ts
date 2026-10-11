@@ -1,4 +1,4 @@
-import { brand, locations, insuranceLine } from "@/lib/data";
+import { brand } from "@/lib/data";
 import { cities } from "@/lib/geo";
 import { servicePages } from "@/lib/services";
 
@@ -8,38 +8,30 @@ export const dynamic = "force-static";
 
 export function GET() {
   const services = servicePages
-    .map((s) => `- ${s.name}: ${s.metaDescription} ${brand.domain}/services/${s.slug}`)
-    .join("\n");
-
-  const offices = locations
-    .map((l) => `- ${l.name}: ${l.full} ${brand.domain}/utah/${l.citySlug}`)
+    .map((s) => `- ${s.name}: ${s.metaDescription} ${brand.domain}/solutions/${s.slug}`)
     .join("\n");
 
   const cityLines = cities.map((c) => c.name).join(", ");
 
-  const body = `# ${brand.name} (CPS)
+  const body = `# ${brand.name}
 
-> ${brand.tagline}. Compassionate mental health and behavioral health care serving Utah's Wasatch Front since ${brand.since}.
+> ${brand.tagline}.
 
 Website: ${brand.domain}
-Email: ${brand.email}
-Hours: ${brand.hours}
 
 ## About
-${brand.name} is a Utah behavioral health practice with ${brand.providerCount} licensed providers — psychologists, counselors, social workers, and medication providers. Care is available in person at three offices and via secure telehealth anywhere in Utah. ${insuranceLine}
+${brand.name} helps people explore Utah-based solutions for health, home, business, family, education, careers, and everyday life. We are partnered with ${brand.partnerName} to point people in the right direction and help them find the best possible services for their needs.
 
-## Offices
-${offices}
-
-## Services
+## Solution guidance
 ${services}
 
-## Service Area (Wasatch Front cities)
+## Utah communities
 Overview: ${brand.domain}/service-area
 Communities served: ${cityLines}
+These are communities where people can request guidance, not office locations.
 
 ## Contact
-Subscribe for CPS updates at ${brand.domain}/#subscribe or request an appointment at ${brand.domain}/#request. In-person and telehealth appointments available.
+Subscribe for resources at ${brand.domain}/#subscribe or request guidance at ${brand.domain}/#request. Service suitability, availability, credentials, costs, and coverage are confirmed by the provider or business you choose.
 `;
 
   return new Response(body, {

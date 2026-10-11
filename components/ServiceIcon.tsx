@@ -6,6 +6,16 @@ import {
   HeartPulse,
   ShieldCheck,
   Briefcase,
+  House,
+  Scale,
+  Landmark,
+  Users,
+  GraduationCap,
+  Search,
+  HeartHandshake,
+  Laptop,
+  MapPin,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -17,6 +27,16 @@ const icons: Record<string, LucideIcon> = {
   HeartPulse,
   ShieldCheck,
   Briefcase,
+  House,
+  Scale,
+  Landmark,
+  Users,
+  GraduationCap,
+  Search,
+  HeartHandshake,
+  Laptop,
+  MapPin,
+  Sparkles,
 };
 
 export function getServiceIcon(name: string): LucideIcon {

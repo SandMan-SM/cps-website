@@ -1,4 +1,4 @@
-// Blog posts — question-driven articles for the people CPS serves.
+// Educational resources for Clinical and Professional Solutions visitors.
 // Fully data-driven: every post is a row here; app/blog/* are pure templates.
 // House rules (YMYL): educational only, no outcome promises, no dollar
 // amounts, no invented statistics; facts must match lib/services.ts. Every

@@ -21,7 +21,7 @@ export async function generateMetadata({
   const post = getPost(slug);
   if (!post) return {};
   return {
-    title: { absolute: `${post.title} | CPS Utah` },
+    title: { absolute: `${post.title} | Clinical and Professional Solutions` },
     description: post.description,
     alternates: { canonical: `${brand.domain}/blog/${post.slug}` },
     openGraph: {
@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       publishedTime: post.date,
-      images: ["/cps-hero.jpg"],
+      images: ["/brand/utah-solutions-hero.png"],
     },
     twitter: {
       card: "summary_large_image",
@@ -176,14 +176,14 @@ export default async function BlogPostPage({
               {related.length > 0 && (
                 <div className="mt-12">
                   <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-teal-700">
-                    Related CPS services
+                    Related service options
                   </h2>
                   <div className="mt-4 grid gap-4 sm:grid-cols-2">
                     {related.map((svc) => (
                       <Link
                         key={svc.slug}
-                        href={`/services/${svc.slug}`}
-                        aria-label={`Learn about ${svc.name} services at CPS`}
+                        href={`/solutions/${svc.slug}`}
+                        aria-label={`Explore ${svc.name} guidance`}
                         className="group rounded-xl border border-teal-100 bg-white px-5 py-4 transition hover:border-teal-300"
                       >
                         <h3 className="font-bold text-teal-950 group-hover:text-teal-700">{svc.name}</h3>
@@ -201,15 +201,15 @@ export default async function BlogPostPage({
                   Ready to talk to a real person?
                 </h2>
                 <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-teal-100/90">
-                  Send an appointment request and a CPS team member will follow up to match you
-                  with the right provider, location, or telehealth option.
+                  Send a request and our team will help you explore appropriate services
+                  and practical next steps.
                 </p>
                 <Link
                   href="/booknow"
-                  aria-label="Request an appointment"
+                  aria-label="Request a solution"
                   className="cps-button-art mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-bold text-white shadow-lg transition"
                 >
-                  <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
+                  <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request a solution
                 </Link>
               </div>
             </div>

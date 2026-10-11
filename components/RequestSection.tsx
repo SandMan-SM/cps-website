@@ -3,9 +3,9 @@ import LeadForm from "./LeadForm";
 
 export default function RequestSection() {
   const points = [
-    { icon: CalendarCheck, text: "A request tailored to the care you need" },
-    { icon: Clock, text: "Most requests answered the same business day" },
-    { icon: Video, text: "In-person or telehealth — your choice" },
+    { icon: CalendarCheck, text: "Guidance tailored to what you are looking for" },
+    { icon: Clock, text: "Follow-up using your preferred contact method" },
+    { icon: Video, text: "Utah-based options across 12 solution areas" },
   ];
 
   return (
@@ -14,11 +14,12 @@ export default function RequestSection() {
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div>
             <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
-              Request an appointment
+              Request a solution
             </h2>
             <p className="mt-4 text-lg text-teal-800/90">
-              Tell us a little about what you need and we&apos;ll reach out to match you with
-              the right provider. No pressure, no obligation.
+              Tell us a little about what you are trying to solve. We&apos;ll follow up to help
+              clarify your options and point you toward a practical next step. No pressure,
+              no obligation.
             </p>
 
             <ul className="mt-8 space-y-4">

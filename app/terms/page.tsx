@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/cps-hero.jpg",
-        width: 1824,
-        height: 862,
-        alt: "Comprehensive Psychological Services — Utah mental health care since 1986",
+        url: "/brand/utah-solutions-hero.png",
+        width: 1942,
+        height: 809,
+        alt: "Clinical and Professional Solutions guidance for everyday Utah needs",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Terms of Use",
     description: `Terms of use for the ${brand.name} website.`,
-    images: ["/cps-hero.jpg"],
+    images: ["/brand/utah-solutions-hero.png"],
   },
 };
 
@@ -61,11 +61,12 @@ export default function TermsPage() {
         the site.
       </p>
 
-      <h2>Not medical advice</h2>
+      <h2>General guidance</h2>
       <p>
         The content on this website is for general informational purposes only and is not a
-        substitute for professional evaluation, diagnosis, or treatment. Always seek the advice
-        of a qualified provider with any questions about a medical or mental health condition.
+        substitute for individualized medical, legal, financial, or other professional advice.
+        Independent professionals and organizations are responsible for the services they
+        deliver. Confirm credentials, scope, fees, and terms directly before engaging them.
       </p>
 
       <h2>In an emergency</h2>
@@ -74,15 +75,17 @@ export default function TermsPage() {
         Crisis Lifeline) immediately. Do not use this website for urgent needs.
       </p>
 
-      <h2>Appointment requests</h2>
+      <h2>Solution requests</h2>
       <p>
         Submitting the request form does not create a provider-patient relationship or
-        guarantee an appointment. A member of our team will follow up to confirm availability.
+        guarantee an appointment, referral acceptance, or service availability. A member of our
+        team will follow up to discuss possible next steps.
       </p>
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms? Email {brand.email}.
+        Questions about these terms? Use the secure request form on the home page and select
+        email as your preferred contact method.
       </p>
       </LegalLayout>
     </>

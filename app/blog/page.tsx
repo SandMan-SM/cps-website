@@ -8,24 +8,24 @@ import { brand } from "@/lib/data";
 import { POSTS } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Blog & Patient Questions",
+  title: "Resources & Common Questions",
   description:
-    "Straight answers to the questions people ask before starting care at CPS — ketamine and Spravato therapy, counseling, evaluations, and more.",
+    "Helpful resources for exploring mental health and professional service options in Utah.",
   alternates: { canonical: `${brand.domain}/blog` },
   openGraph: {
     type: "website",
     url: `${brand.domain}/blog`,
-    title: "Blog & Patient Questions | CPS Utah",
+    title: "Resources & Common Questions | Clinical and Professional Solutions",
     description:
-      "Straight answers to the questions people ask before starting care at CPS.",
-    images: ["/cps-hero.jpg"],
+      "Helpful resources for exploring mental health and professional service options in Utah.",
+    images: ["/brand/utah-solutions-hero.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog & Patient Questions | CPS Utah",
+    title: "Resources & Common Questions | Clinical and Professional Solutions",
     description:
-      "Straight answers to the questions people ask before starting care at CPS.",
-    images: ["/cps-hero.jpg"],
+      "Helpful resources for exploring mental health and professional service options in Utah.",
+    images: ["/brand/utah-solutions-hero.png"],
   },
 };
 
@@ -38,9 +38,9 @@ function JsonLd() {
         "@type": "WebPage",
         "@id": `${blogUrl}#webpage`,
         url: blogUrl,
-        name: "Blog & Patient Questions | CPS Utah",
+        name: "Resources & Common Questions | Clinical and Professional Solutions",
         description:
-          "Straight answers to the questions people ask before starting care at CPS — ketamine and Spravato therapy, counseling, evaluations, and more.",
+          "Helpful resources for exploring mental health and professional service options in Utah.",
         isPartOf: { "@id": `${brand.domain}/#website` },
         about: { "@id": `${brand.domain}/#organization` },
         inLanguage: "en-US",
@@ -54,11 +54,10 @@ function JsonLd() {
       },
       {
         "@id": `${brand.domain}/#organization`,
-        "@type": ["MedicalBusiness", "Psychologist", "LocalBusiness"],
+        "@type": "Organization",
         name: brand.name,
         url: brand.domain,
-        logo: `${brand.domain}/cps-logo-clean.png`,
-        telephone: brand.phone,
+        logo: `${brand.domain}/brand/open-path-mark.png`,
       },
       {
         "@id": `${brand.domain}/#website`,
@@ -93,11 +92,11 @@ export default function BlogIndexPage() {
               Answers before appointments
             </p>
             <h1 className="mt-3 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-teal-950 sm:text-5xl">
-              The questions people actually ask us.
+              Clarity starts with good information.
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-teal-800/90">
-              Every article answers one real question — clearly, honestly, and without
-              medical jargon — so you can make informed decisions about your care.
+              Practical resources to help you understand your options, prepare useful questions,
+              and take a more confident next step.
             </p>
           </div>
         </section>

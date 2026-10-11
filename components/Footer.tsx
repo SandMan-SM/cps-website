@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { CalendarCheck, Mail, Clock, Video } from "lucide-react";
-import { brand, locations } from "@/lib/data";
+import { CalendarCheck, Mail, Compass } from "lucide-react";
+import { brand, serviceRegions } from "@/lib/data";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Footer() {
   return (
@@ -11,38 +11,34 @@ export default function Footer() {
             <a
               href="/"
               aria-label={`${brand.name} home`}
-              className="inline-flex rounded-lg bg-white px-3 py-2 shadow-sm"
+              className="inline-flex"
             >
-              <Image
-                src="/cps-logo-clean.png"
-                alt="Comprehensive Psychological Services — WeCanHelpOut.com"
-                width={570}
-                height={146}
-                className="h-auto w-[220px]"
-              />
+              <BrandLogo light />
             </a>
             <p className="mt-3 text-sm text-teal-200">
-              {brand.name} — {brand.tagline}. Serving Utah since {brand.since}.
+              {brand.name} — {brand.tagline}.
             </p>
             <p className="mt-3 inline-flex items-center gap-2 text-sm text-teal-200">
-              <Video className="h-4 w-4" aria-hidden={true} /> Telehealth available across Utah.
+              <Compass className="h-4 w-4" aria-hidden={true} /> Utah-wide solutions and guidance.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-teal-200">
+              Partnered with {brand.partnerName} to point people in the right direction and
+              help them find the best possible services for their needs.
             </p>
           </div>
 
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wide text-white">Locations</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wide text-white">Service areas</h3>
             <ul className="mt-3 space-y-3 text-sm text-teal-200">
-              {locations.map((loc) => (
+              {serviceRegions.map((loc) => (
                 <li key={loc.id}>
                   <a
-                    href={`/utah/${loc.citySlug}`}
-                    aria-label={`View the ${loc.name} office page`}
+                    href="/service-area"
+                    aria-label={`View guidance for ${loc.name}`}
                     className="font-semibold text-teal-100 transition hover:text-white"
                   >
-                    {loc.name} office
+                    {loc.name}
                   </a>
-                  <br />
-                  {loc.street}, {loc.cityLine}
                 </li>
               ))}
             </ul>
@@ -54,7 +50,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/#subscribe"
-                  aria-label="Subscribe to CPS updates"
+                  aria-label={`Subscribe to ${brand.name} updates`}
                   className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
                 >
                   <Mail className="h-4 w-4" aria-hidden={true} /> Subscribe for updates
@@ -64,14 +60,11 @@ export default function Footer() {
                 <a
                   href="/#request"
                   data-book-appointment="true"
-                  aria-label="Request an appointment"
+                  aria-label="Request a solution"
                   className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
                 >
-                  <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request an appointment
+                  <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request a solution
                 </a>
-              </li>
-              <li className="inline-flex items-center gap-2 text-teal-200">
-                <Clock className="h-4 w-4" aria-hidden={true} /> {brand.hours}
               </li>
             </ul>
           </div>
@@ -79,21 +72,21 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wide text-white">Explore</h3>
             <ul className="mt-3 space-y-2 text-sm text-teal-200">
-              <li><a href="/#services" aria-label="Jump to Services section" className="hover:text-white">Services</a></li>
-              <li><a href="/service-area" aria-label="View service areas in Utah" className="hover:text-white">Service Area</a></li>
-              <li><a href="/blog" aria-label="Read the CPS blog" className="hover:text-white">Blog</a></li>
-              {locations.map((loc) => (
+              <li><a href="/#solutions" aria-label="Explore solution areas" className="hover:text-white">Solutions</a></li>
+              <li><a href="/service-area" aria-label="Explore guidance across Utah" className="hover:text-white">Across Utah</a></li>
+              <li><a href="/blog" aria-label={`Read the ${brand.name} blog`} className="hover:text-white">Blog</a></li>
+              {serviceRegions.map((loc) => (
                 <li key={loc.id}>
                   <a
-                    href={`/utah/${loc.citySlug}`}
-                    aria-label={`View the ${loc.name} office page`}
+                    href="/service-area"
+                    aria-label={`View guidance for ${loc.name}`}
                     className="hover:text-white"
                   >
-                    {loc.name} office
+                    {loc.name}
                   </a>
                 </li>
               ))}
-              <li><a href="/#request" data-book-appointment="true" aria-label="Request an appointment" className="hover:text-white">Request an appointment</a></li>
+              <li><a href="/#request" data-book-appointment="true" aria-label="Request a solution" className="hover:text-white">Request a solution</a></li>
             </ul>
           </div>
         </div>

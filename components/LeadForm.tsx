@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle2, Loader2, CalendarCheck, AlertCircle } from "lucide-react";
-import { locationOptions } from "@/lib/data";
+import { UTAH_COUNTIES } from "@/lib/geo";
+import { solutionPages } from "@/lib/services";
 import {
   captureAttribution,
   readAttribution,
@@ -12,15 +13,10 @@ import {
 type Status = "idle" | "submitting" | "success";
 
 const serviceOptions = [
-  "Counseling & psychotherapy",
-  "Medication therapy",
-  "Neurofeedback",
-  "Psychological evaluation",
-  "Health & wellness",
-  "Substance abuse treatment",
-  "Employer services",
+  ...solutionPages.filter((solution) => solution.featured).map((solution) => solution.name),
   "I’m not sure yet",
 ];
+const locationOptions = [...UTAH_COUNTIES, "Not sure / statewide guidance"];
 
 export default function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -113,7 +109,7 @@ export default function LeadForm() {
         </span>
         <h3 className="mt-5 text-xl font-bold text-teal-950">Your request has been received.</h3>
         <p className="mt-2 text-teal-800/90">
-          A CPS team member will follow up using the contact method you selected.
+          Our team will follow up using the contact method you selected.
         </p>
         <button
           type="button"
@@ -123,7 +119,7 @@ export default function LeadForm() {
             setSubmissionConflict(false);
             setStatus("idle");
           }}
-          aria-label="Start a new appointment request"
+          aria-label="Start a new solution request"
           className="mt-6 text-sm font-bold text-teal-700 underline decoration-teal-300 underline-offset-4 hover:text-teal-800"
         >
           Send another request
@@ -141,10 +137,11 @@ export default function LeadForm() {
       className="rounded-2xl border border-teal-100 bg-white p-6 shadow-card sm:p-8"
     >
       <div className="mb-6">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-600">CPS appointment request</p>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-700">Your next step</p>
         <h3 className="mt-2 text-2xl font-extrabold text-teal-950">Tell us what works for you</h3>
         <p className="mt-2 text-sm leading-relaxed text-teal-800/70">
-          Share only what is needed for scheduling—please do not include private medical details.
+          Share a little about what you are looking for. Please keep private medical,
+          financial, and legal details out of this form.
         </p>
       </div>
 
@@ -167,15 +164,15 @@ export default function LeadForm() {
         <div>
           <label htmlFor="service" className="text-sm font-semibold text-teal-900">What can we help with?</label>
           <select id="service" name="service" defaultValue="" required className={inputBase}>
-            <option value="" disabled>Select a service</option>
+            <option value="" disabled>Select a solution area</option>
             {serviceOptions.map((option) => <option key={option} value={option}>{option}</option>)}
           </select>
         </div>
 
         <div>
-          <label htmlFor="location" className="text-sm font-semibold text-teal-900">Preferred location</label>
+          <label htmlFor="location" className="text-sm font-semibold text-teal-900">Your area in Utah</label>
           <select id="location" name="location" defaultValue="" required className={inputBase}>
-            <option value="" disabled>Select a location</option>
+            <option value="" disabled>Select an area</option>
             {locationOptions.map((option) => <option key={option} value={option}>{option}</option>)}
           </select>
         </div>
@@ -198,9 +195,9 @@ export default function LeadForm() {
 
         <div className="sm:col-span-2">
           <label htmlFor="message" className="text-sm font-semibold text-teal-900">
-            Scheduling notes <span className="font-normal text-teal-800/60">(optional)</span>
+            What are you looking for? <span className="font-normal text-teal-800/60">(optional)</span>
           </label>
-          <textarea id="message" name="message" rows={3} placeholder="Anything helpful for scheduling—no medical details, please." className={inputBase} />
+          <textarea id="message" name="message" rows={3} placeholder="A brief overview—please keep sensitive details private." className={inputBase} />
         </div>
 
         <div className="hidden" aria-hidden="true">
@@ -223,7 +220,7 @@ export default function LeadForm() {
                   setError("");
                   setSubmissionConflict(false);
                 }}
-                aria-label="Start a new appointment request"
+                aria-label="Start a new solution request"
                 className="mt-2 font-bold underline decoration-red-300 underline-offset-4 hover:text-red-950"
               >
                 Start a new request
@@ -234,19 +231,19 @@ export default function LeadForm() {
       )}
 
       <p className="mt-5 text-xs leading-relaxed text-teal-800/70">
-        By submitting, you agree that Comprehensive Psychological Services may contact you by phone, text, or email about your request. There is no obligation to schedule or receive services. Message and data rates may apply.
+        By submitting, you agree that Clinical and Professional Solutions may contact you by phone, text, or email about your request. There is no obligation to use any referred service. Message and data rates may apply.
       </p>
 
       <button
         type="submit"
         disabled={status === "submitting" || submissionConflict}
-        aria-label={status === "submitting" ? "Sending your appointment request" : "Send appointment request"}
+        aria-label={status === "submitting" ? "Sending your solution request" : "Send solution request"}
         className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "submitting" ? (
           <><Loader2 className="h-5 w-5 animate-spin" aria-hidden={true} /> Sending…</>
         ) : (
-          <><CalendarCheck className="h-5 w-5" aria-hidden={true} /> Send appointment request</>
+          <><CalendarCheck className="h-5 w-5" aria-hidden={true} /> Send solution request</>
         )}
       </button>
     </form>

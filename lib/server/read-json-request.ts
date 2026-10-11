@@ -65,7 +65,11 @@ export async function readJsonRequest<T>(
     }
 
     const text = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
-    return { ok: true, value: JSON.parse(text) as T };
+    const value: unknown = JSON.parse(text);
+    if (value === null || typeof value !== "object" || Array.isArray(value)) {
+      return { ok: false, reason: "invalid_json", status: 400 };
+    }
+    return { ok: true, value: value as T };
   } catch {
     return { ok: false, reason: "invalid_json", status: 400 };
   }

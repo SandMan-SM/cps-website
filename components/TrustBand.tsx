@@ -1,10 +1,8 @@
-import { brand } from "@/lib/data";
-
 export default function TrustBand() {
   const stats = [
-    { value: `${new Date().getFullYear() - brand.since}+`, label: "Years serving Utah" },
-    { value: brand.providerCount, label: "Licensed providers" },
-    { value: "2024", label: "Best Practice Award" },
+    { value: "Utah", label: "Statewide guidance" },
+    { value: "Private", label: "Confidential intake" },
+    { value: "Clear", label: "Best-fit next steps" },
   ];
 
   return (

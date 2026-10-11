@@ -1,5 +1,5 @@
 import { CalendarCheck, ShieldCheck } from "lucide-react";
-import { steps, insuranceLine } from "@/lib/data";
+import { steps, comparisonLine } from "@/lib/data";
 
 export default function GetStarted() {
   return (
@@ -10,7 +10,7 @@ export default function GetStarted() {
             Getting started is simple
           </h2>
           <p className="mt-4 text-lg text-teal-800/90">
-            Three easy steps to compassionate care — most people are seen quickly.
+            Three simple steps to understand your options and choose a practical direction.
           </p>
         </div>
 
@@ -32,15 +32,15 @@ export default function GetStarted() {
         <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-4 rounded-2xl border border-sand-200 bg-sand-50 p-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <div className="flex items-start gap-4">
             <ShieldCheck className="mt-0.5 h-6 w-6 flex-none text-sand-700" aria-hidden={true} />
-            <p className="text-sm font-medium text-teal-900">{insuranceLine}</p>
+            <p className="text-sm font-medium text-teal-900">{comparisonLine}</p>
           </div>
           <a
             href="/#request"
             data-book-appointment="true"
-            aria-label="Request an appointment"
+            aria-label="Request a solution"
             className="inline-flex flex-none items-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-teal-800"
           >
-            <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request an appointment
+            <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request a solution
           </a>
         </div>
       </div>

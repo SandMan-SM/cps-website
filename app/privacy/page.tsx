@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/cps-hero.jpg",
-        width: 1824,
-        height: 862,
-        alt: "Comprehensive Psychological Services — Utah mental health care since 1986",
+        url: "/brand/utah-solutions-hero.png",
+        width: 1942,
+        height: 809,
+        alt: "Clinical and Professional Solutions guidance for everyday Utah needs",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Privacy Policy",
     description: `Privacy practices for ${brand.name}.`,
-    images: ["/cps-hero.jpg"],
+    images: ["/brand/utah-solutions-hero.png"],
   },
 };
 
@@ -59,14 +59,15 @@ export default function PrivacyPage() {
       <p>
         {brand.name} (&ldquo;{brand.shortName},&rdquo; &ldquo;we,&rdquo; or &ldquo;us&rdquo;)
         respects your privacy. This policy explains how we handle information collected through
-        this website. It does not replace the notices you receive as a patient regarding
-        protected health information.
+        this website. Clinical and Professional Solutions provides navigation and referral
+        guidance. Independent professionals and organizations provide their own privacy notices
+        when you choose to work with them.
       </p>
 
       <h2>Information we collect</h2>
       <p>
-        When you submit an appointment request, we collect information including your name,
-        email address, phone number, the service you select, preferred location, contact
+        When you submit a solution request, we collect information including your name,
+        email address, phone number, solution area, Utah county, contact
         preference, availability, and any message you provide, so we can respond to your
         request. We also receive basic technical information such as your IP address,
         browser type, the page you submitted from, and any referral or campaign parameters
@@ -75,20 +76,22 @@ export default function PrivacyPage() {
 
       <h2>How we use your information</h2>
       <p>
-        We use the information you submit solely to contact you about care, schedule
-        appointments, and respond to your inquiries. We do not sell your personal information.
+        We use the information you submit to respond to your request, discuss possible service
+        options, coordinate an appropriate follow-up, and maintain the security of the form. We
+        do not sell your personal information.
       </p>
 
-      <h2>Protected health information</h2>
+      <h2>Sensitive information</h2>
       <p>
-        Please do not include sensitive medical details in the website form. Detailed clinical
-        information is gathered securely once care begins, consistent with applicable privacy
-        laws.
+        Please do not include sensitive medical, financial, legal, or identification details in
+        this form. Detailed information should be shared through the appropriate secure process
+        of the professional or organization you choose.
       </p>
 
       <h2>Contact</h2>
       <p>
-        For privacy questions, email {brand.email}.
+        For privacy questions, use the secure request form on the home page and select email as
+        your preferred contact method. Please do not include private medical details.
       </p>
       </LegalLayout>
     </>

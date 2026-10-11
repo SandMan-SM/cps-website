@@ -1,18 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
-import { CalendarCheck, Menu, Phone, X } from "lucide-react";
+import { CalendarCheck, Menu, X } from "lucide-react";
 import { brand } from "@/lib/data";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const nav = [
-    { href: "/#services", label: "Services" },
-    { href: "/service-area", label: "Service Area" },
-    { href: "/#locations", label: "Locations" },
+    { href: "/#solutions", label: "Solutions" },
+    { href: "/service-area", label: "Across Utah" },
+    { href: "/#locations", label: "Communities" },
     { href: "/blog", label: "Blog" },
     { href: "/#request", label: "Get Started" },
   ];
@@ -22,18 +22,11 @@ export default function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${brand.name} home`}>
-          <Image
-            src="/cps-logo-clean.png"
-            alt="Comprehensive Psychological Services — WeCanHelpOut.com"
-            width={570}
-            height={146}
-            priority
-            className="h-auto w-[190px] sm:w-[230px]"
-          />
+          <BrandLogo compact />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -46,23 +39,15 @@ export default function Header() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center gap-4 md:flex">
-          <a
-            href={brand.phoneHref}
-            aria-label={`Call ${brand.name} at ${brand.phone}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-teal-700 transition hover:text-teal-800"
-          >
-            <Phone className="h-4 w-4" aria-hidden={true} />
-            <span>{brand.phone}</span>
-          </a>
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href="/#request"
             data-book-appointment="true"
-            aria-label="Book an appointment"
+            aria-label="Find a solution"
             className="inline-flex items-center gap-2 rounded-full bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
           >
             <CalendarCheck className="h-4 w-4" aria-hidden={true} />
-            <span>Book appointment</span>
+            <span>Find a solution</span>
           </a>
         </div>
 
@@ -73,7 +58,7 @@ export default function Header() {
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
           onClick={() => setMobileOpen((v) => !v)}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-teal-700 transition hover:bg-teal-50 md:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-teal-700 transition hover:bg-teal-50 lg:hidden"
         >
           {mobileOpen ? (
             <X className="h-6 w-6" aria-hidden={true} />
@@ -88,7 +73,7 @@ export default function Header() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="border-t border-teal-100 bg-white md:hidden"
+          className="border-t border-teal-100 bg-white lg:hidden"
         >
           <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
             <ul className="space-y-1" role="list">
@@ -106,23 +91,14 @@ export default function Header() {
             </ul>
             <div className="mt-4 flex flex-col gap-4 border-t border-teal-100 pt-4">
               <a
-                href={brand.phoneHref}
-                aria-label={`Call ${brand.name} at ${brand.phone}`}
-                onClick={() => setMobileOpen(false)}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-50 px-4 py-3 text-sm font-semibold text-teal-800 ring-1 ring-teal-200 transition hover:bg-teal-100"
-              >
-                <Phone className="h-4 w-4" aria-hidden={true} />
-                Call {brand.phone}
-              </a>
-              <a
                 href="/#request"
                 data-book-appointment="true"
-                aria-label="Book an appointment"
+                aria-label="Find a solution"
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
               >
                 <CalendarCheck className="h-4 w-4" aria-hidden={true} />
-                Book appointment
+                Find a solution
               </a>
             </div>
           </div>

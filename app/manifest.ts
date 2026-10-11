@@ -6,11 +6,11 @@ export default function manifest(): MetadataRoute.Manifest {
     name: brand.name,
     short_name: brand.shortName,
     description:
-      "Compassionate Utah behavioral health care since 1986 — counseling, medication, neurofeedback, and more.",
+      "Practical direction for health, home, business, family, and everyday solutions across Utah.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
-    theme_color: "#7c2024",
+    theme_color: "#a1252b",
     icons: [
       {
         src: "/icon.svg",

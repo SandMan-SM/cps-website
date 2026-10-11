@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
 import { createHash } from "node:crypto";
 import { readJsonRequest } from "@/lib/server/read-json-request";
+import { probeLocalCpsReceiver } from "@/lib/server/probe-local-receiver";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
 const PRODUCTION_SUBSCRIBE_ENDPOINT =
-  "https://omnileadsagi.com/api/federation-newsletter/subscribe";
+  "https://omnileadsagi.com/api/inbound/cps/newsletter";
 const LOCAL_SUBSCRIBE_ENDPOINT =
-  "http://127.0.0.1:3002/api/federation-newsletter/subscribe";
+  "http://127.0.0.1:3002/api/inbound/cps/newsletter";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_REQUEST_BYTES = 4 * 1024;
 type RateWindow = { count: number; resetAt: number };
@@ -83,10 +84,12 @@ function rateLimited(retryAfterSeconds: number) {
   );
 }
 
-function useLocalBridge(): boolean {
+function useLocalBridge(request: Request): boolean {
+  const hostname = new URL(request.url).hostname;
   return (
     process.env.NODE_ENV === "development" &&
-    process.env.CPS_OMNI_LOCAL_BRIDGE === "1"
+    process.env.CPS_OMNI_LOCAL_BRIDGE === "1" &&
+    (hostname === "127.0.0.1" || hostname === "localhost")
   );
 }
 
@@ -97,7 +100,7 @@ function upstreamHeaders(request: Request): Headers | null {
     // own per-visitor limit without storing or trusting raw forwarded IPs.
     "x-cps-client-ip-hash": hashRateKey(requestIp(request)),
   });
-  if (useLocalBridge()) {
+  if (useLocalBridge(request)) {
     const localSecret = process.env.CPS_LOCAL_SOURCE_SECRET?.trim();
     if (!localSecret) return null;
     headers.set("x-cps-local-source", localSecret);
@@ -140,6 +143,9 @@ export async function POST(request: Request) {
     );
   }
   if (website) {
+    if (useLocalBridge(request) && !await probeLocalCpsReceiver("newsletter", upstreamHeaders(request))) {
+      return NextResponse.json({ ok: false, error: "Local receiver connectivity check failed." }, { status: 503 });
+    }
     return NextResponse.json({ ok: true, completion: "no_write" });
   }
 
@@ -173,7 +179,7 @@ export async function POST(request: Request) {
   const timeout = setTimeout(() => controller.abort(), 55_000);
   try {
     const upstream = await fetch(
-      useLocalBridge() ? LOCAL_SUBSCRIBE_ENDPOINT : PRODUCTION_SUBSCRIBE_ENDPOINT,
+      useLocalBridge(request) ? LOCAL_SUBSCRIBE_ENDPOINT : PRODUCTION_SUBSCRIBE_ENDPOINT,
       {
         method: "POST",
         headers,
@@ -190,14 +196,15 @@ export async function POST(request: Request) {
     );
     const result = (await upstream.json().catch(() => ({}))) as {
       ok?: boolean;
-      owner_notification_id?: string;
+      subscription_active?: boolean;
+      owner_notification_accepted?: boolean;
       welcome_accepted?: boolean;
     };
     const isComplete =
       result.ok === true &&
-      typeof result.owner_notification_id === "string" &&
-      result.owner_notification_id.trim().length > 0 &&
-      result.welcome_accepted === false;
+      result.subscription_active === true &&
+      result.owner_notification_accepted === true &&
+      result.welcome_accepted === true;
 
     if (!upstream.ok || !isComplete) {
       return NextResponse.json(
@@ -205,7 +212,7 @@ export async function POST(request: Request) {
           ok: false,
           error:
             upstream.status === 409
-              ? "This address cannot be subscribed right now. Please contact CPS if you need help."
+              ? "This address cannot be subscribed right now. Please use our request form if you need help."
               : "We couldn’t confirm your subscription. Please try again.",
         },
         { status: upstream.status === 409 ? 409 : 503 },

@@ -119,12 +119,12 @@ export default function BookNowForm() {
           Your request has been received.
         </h2>
         <p className="mt-4 max-w-sm leading-relaxed text-teal-800/80">
-          A CPS team member will follow up using the phone number or email you provided.
+          Our team will follow up using the phone number or email you provided.
         </p>
         <button
           type="button"
           onClick={startNewRequest}
-          aria-label="Send another appointment request"
+          aria-label="Send another solution request"
           className="mt-8 rounded-full border border-teal-200 px-6 py-3 font-bold text-teal-800 transition hover:bg-teal-50"
         >
           Send another request
@@ -198,9 +198,9 @@ export default function BookNowForm() {
         <div className="flex items-start gap-4">
           <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-teal-700" aria-hidden={true} />
           <p>
-            By submitting, you agree that Comprehensive Psychological Services may contact you
-            by phone, text, or email about your request. There is no obligation to schedule or
-            receive services. Message and data rates may apply.
+            By submitting, you agree that Clinical and Professional Solutions may contact you
+            by phone, text, or email about your request. There is no obligation to use any
+            referred service. Message and data rates may apply.
           </p>
         </div>
         <p className="mt-2 pl-7">
@@ -228,7 +228,7 @@ export default function BookNowForm() {
               <button
                 type="button"
                 onClick={startNewRequest}
-                aria-label="Start a new appointment request"
+                aria-label="Start a new solution request"
                 className="mt-2 font-bold underline decoration-red-300 underline-offset-4"
               >
                 Start a new request
@@ -241,8 +241,8 @@ export default function BookNowForm() {
       <button
         type="submit"
         disabled={status === "submitting" || submissionConflict}
-        aria-label={status === "submitting" ? "Sending your appointment request" : "Request an appointment"}
-        className="cps-button-art mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 text-base font-bold text-white shadow-lg shadow-red-950/15 transition disabled:cursor-not-allowed disabled:opacity-70"
+        aria-label={status === "submitting" ? "Sending your solution request" : "Request a solution"}
+        className="cps-button-art mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-950/15 transition disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "submitting" ? (
           <>
@@ -250,7 +250,7 @@ export default function BookNowForm() {
           </>
         ) : (
           <>
-            <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request an appointment
+            <CalendarCheck className="h-5 w-5" aria-hidden={true} /> Request a solution
           </>
         )}
       </button>
