@@ -49,7 +49,7 @@ export default function OfficeMap({ location, className = "", priority = false }
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`View the CPS ${location.name} office on Google Maps`}
-          className="flex h-full min-h-44 w-full items-center justify-center bg-[linear-gradient(135deg,#fff8f7_0%,#f5e7e7_100%)] p-6 text-center transition hover:bg-teal-100"
+          className="flex h-full min-h-44 w-full items-center justify-center bg-orange-50 p-6 text-center transition hover:bg-teal-100"
         >
           <span>
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white text-teal-700 shadow-sm">
