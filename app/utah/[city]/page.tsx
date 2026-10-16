@@ -1,26 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Compass,
-  Handshake,
-  ListChecks,
-  MapPin,
-} from "lucide-react";
+import { MapPin, Video, Phone, Car, HeartHandshake, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
+import CtaBar from "@/components/CtaBar";
+import KeywordText from "@/components/KeywordText";
 import ServiceIcon from "@/components/ServiceIcon";
-import { brand } from "@/lib/data";
-import {
-  cityServiceSummary,
-  getCity,
-  CITY_SLUGS,
-  neighborCities,
-} from "@/lib/geo";
-import { solutionPages } from "@/lib/services";
+import { brand, insuranceLine } from "@/lib/data";
+import { getCity, CITY_SLUGS, neighborCities } from "@/lib/geo";
+import { servicePages } from "@/lib/services";
+import { getOffice, officeGeo, parseCityLine } from "@/lib/office";
 
 export function generateStaticParams() {
   return CITY_SLUGS.map((city) => ({ city }));
@@ -32,13 +23,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { city: slug } = await params;
   const city = getCity(slug);
   if (!city) return {};
-
   const url = `${brand.domain}/utah/${city.slug}`;
-  const title = `Utah Solutions Navigation in ${city.name} | CPS Utah`;
-  const description =
-    `${brand.name}, in partnership with ${brand.partnerName}, helps ${city.name} residents ` +
-    "explore health, home, business, legal, financial, family, education, career, technology, senior, and local-resource solutions.";
-
+  const title = `Therapy, Counseling & Psychiatry in ${city.name}, Utah | CPS`;
+  const description = `Compassionate mental health care for ${city.name}, Utah. Counseling, medication management, neurofeedback, evaluations, and substance abuse treatment — in person and via telehealth. Serving ${city.name} since ${brand.since}. Call ${brand.phone}.`;
   return {
     title,
     description,
@@ -51,21 +38,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       title,
       description,
       locale: "en_US",
-      images: [
-        {
-          url: "/brand/utah-solutions-hero.png",
-          width: 1942,
-          height: 809,
-          alt: `A calm conversation about choosing services in ${city.name}, Utah`,
-        },
-      ],
+      images: [{ url: "/cps-hero.jpg", width: 1824, height: 862, alt: `Mental health care in ${city.name}, Utah at CPS` }],
     },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: ["/brand/utah-solutions-hero.png"],
-    },
+    twitter: { card: "summary_large_image", title, description, images: ["/cps-hero.jpg"] },
   };
 }
 
@@ -74,26 +49,28 @@ export default async function CityPage({ params }: Params) {
   const city = getCity(slug);
   if (!city) notFound();
 
+  const office = getOffice(city.nearestOffice);
+  const officeCoords = officeGeo[city.nearestOffice];
+  const addr = parseCityLine(office.cityLine);
   const neighbors = neighborCities(city.slug, 6);
   const url = `${brand.domain}/utah/${city.slug}`;
-  const summary = cityServiceSummary(city);
-  const featuredSolutions = solutionPages.filter((solution) => solution.featured);
+
   const localFaqs = [
     {
-      q: `How can ${brand.shortName} help people in ${city.name}?`,
-      a: `${brand.name} offers statewide solutions navigation. We help you organize what you are trying to solve, understand relevant categories, and prepare questions for an appropriate business, professional, program, or community resource.`,
+      q: `How far is CPS from ${city.name}?`,
+      a: `Our ${office.name} office is about ${city.distanceMiles} mi (~${city.driveTimeMin} min) from ${city.name}, at ${office.full}. Telehealth is also available across Utah.`,
     },
     {
-      q: `Is this a local business directory for ${city.name}?`,
-      a: `No. This is a statewide navigation resource with geographic context for ${city.name} and ${city.county} County. It does not claim that any particular business, professional, or organization is based in the city.`,
+      q: `Do you offer telehealth for ${city.name} residents?`,
+      a: `Yes. If an in-person visit isn't convenient, you can meet with a CPS provider securely by telehealth from anywhere in ${city.name} or the rest of Utah.`,
     },
     {
-      q: `What types of solutions can ${city.name} residents explore?`,
-      a: "People can explore health and wellness, mental health, home and property, business and professional, legal, financial and insurance, family and community, education, careers, senior and caregiver, technology, and local-resource categories. Availability, eligibility, pricing, and service area are confirmed directly with the organization selected.",
+      q: `What services are available to ${city.name} patients?`,
+      a: `${city.name} patients have access to all CPS services: counseling and psychotherapy, medication management, neurofeedback, evaluations, health and wellness, substance abuse treatment, and employer services.`,
     },
     {
-      q: "What should I confirm before choosing a business or professional?",
-      a: "Ask about qualifications or licensure where relevant, experience, scope, service area, current availability, pricing, insurance or payment terms, and what to expect before agreeing to service.",
+      q: `Do you accept insurance for ${city.name} patients?`,
+      a: insuranceLine,
     },
   ];
 
@@ -101,15 +78,40 @@ export default async function CityPage({ params }: Params) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
+        "@id": `${brand.domain}/#organization`,
+        "@type": ["MedicalBusiness", "Psychologist", "LocalBusiness"],
+        name: brand.name,
+        description: "Counseling, medication management, neurofeedback, evaluations, and behavioral health services from three Utah offices and via telehealth.",
+        url: brand.domain,
+        telephone: brand.phone,
+        email: brand.email,
+        areaServed: { "@type": "State", name: "Utah" },
+      },
+      {
+        "@type": ["MedicalClinic", "LocalBusiness"],
+        "@id": `${url}#clinic`,
+        name: `${brand.name} — ${office.name}`,
         url,
-        name: `Utah solutions navigation in ${city.name}`,
-        description: summary,
-        isPartOf: { "@id": `${brand.domain}/#website` },
-        publisher: { "@id": `${brand.domain}/#organization` },
-        about: { "@id": `${url}#city` },
-        inLanguage: "en-US",
+        telephone: `+1-${brand.phone}`,
+        parentOrganization: { "@id": `${brand.domain}/#organization` },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: office.street,
+          addressLocality: addr.locality,
+          addressRegion: addr.region,
+          postalCode: addr.postal,
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: officeCoords.lat,
+          longitude: officeCoords.lng,
+        },
+        areaServed: {
+          "@type": "City",
+          name: `${city.name}, Utah`,
+        },
+        openingHours: "Mo-Fr",
       },
       {
         "@type": "City",
@@ -142,10 +144,10 @@ export default async function CityPage({ params }: Params) {
       {
         "@type": "FAQPage",
         "@id": `${url}#faq`,
-        mainEntity: localFaqs.map((faq) => ({
+        mainEntity: localFaqs.map((f) => ({
           "@type": "Question",
-          name: faq.q,
-          acceptedAnswer: { "@type": "Answer", text: faq.a },
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
       },
     ],
@@ -159,118 +161,85 @@ export default async function CityPage({ params }: Params) {
       />
       <Header />
       <main className="pb-24 md:pb-0">
+        {/* Hero */}
         <section className="bg-hero">
           <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
             <nav
               aria-label="Breadcrumb"
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
-              <Link href="/" aria-label="Home" className="hover:text-teal-800">
-                Home
-              </Link>
-              <span aria-hidden={true}>/</span>
-              <Link
-                href="/service-area"
-                aria-label="Service Area"
-                className="hover:text-teal-800"
-              >
-                Service Area
-              </Link>
-              <span aria-hidden={true}>/</span>
+              <Link href="/" aria-label="Home" className="hover:text-teal-800">Home</Link>
+              <span aria-hidden={true}></span>
+              <Link href="/service-area" aria-label="Service Area" className="hover:text-teal-800">Service Area</Link>
+              <span aria-hidden={true}></span>
               <span className="font-semibold text-teal-900">{city.name}</span>
             </nav>
 
-            <div className="flex flex-wrap gap-4">
-              <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-3 py-1 text-sm font-semibold text-teal-800">
-                <MapPin className="h-4 w-4" aria-hidden={true} /> {city.county} County, Utah
-              </p>
-              <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-3 py-1 text-sm font-semibold text-teal-800">
-                <Handshake className="h-4 w-4" aria-hidden={true} /> Partnered with {brand.partnerName}
-              </p>
-            </div>
-
-            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
-              Utah solutions navigation for {city.name}
+            <p className="inline-flex items-center gap-2 rounded-full bg-teal-700/10 px-4 py-1 text-sm font-semibold text-teal-800">
+              <MapPin className="h-4 w-4" aria-hidden={true} /> {city.county} County, Utah
+            </p>
+            <h1 className="mt-4 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
+              Mental Health Care in {city.name}, Utah
             </h1>
-            <p className="mt-4 max-w-3xl text-lg leading-relaxed text-teal-800/90">
-              {summary}
+            <p className="mt-4 max-w-2xl text-lg text-teal-800/90">
+              {city.blurb} Serving {city.name} and the Wasatch Front since {brand.since},
+              CPS offers counseling, medication management, neurofeedback, and more.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <article className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-6 shadow-card">
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-teal-100 text-teal-700">
-                  <Compass className="h-5 w-5" aria-hidden={true} />
+            <div className="mt-6 grid sm:grid-cols-2" style={{ gap: "2rem" }}>
+              <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
+                <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
+                  <Car className="h-5 w-5" aria-hidden={true} />
                 </span>
-                <div>
-                  <h2 className="font-bold text-teal-950">A clearer starting point</h2>
-                  <p className="mt-1 text-sm leading-relaxed text-teal-800/80">
-                    Describe the kind of support you are exploring and the practical factors
-                    that matter to you.
-                  </p>
-                </div>
-              </article>
-              <article className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-6 shadow-card">
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-teal-100 text-teal-700">
-                  <ListChecks className="h-5 w-5" aria-hidden={true} />
+                <p className="text-sm text-teal-900">
+                  Our <span className="font-semibold">{office.name}</span> office is about{" "}
+                  <span className="font-semibold">{city.distanceMiles} mi (~{city.driveTimeMin} min)</span>{" "}
+                  from {city.name} — {office.full}.
+                </p>
+              </div>
+              <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
+                <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
+                  <Video className="h-5 w-5" aria-hidden={true} />
                 </span>
-                <div>
-                  <h2 className="font-bold text-teal-950">Questions for your next conversation</h2>
-                  <p className="mt-1 text-sm leading-relaxed text-teal-800/80">
-                    We help you prepare to verify credentials, availability, cost, format, and fit
-                    directly with a business, professional, program, or organization.
-                  </p>
-                </div>
-              </article>
+                <p className="text-sm text-teal-900">
+                  Prefer to stay home? <span className="font-semibold">Telehealth is available</span>{" "}
+                  across Utah, so {city.name} residents can meet a provider securely from anywhere.
+                </p>
+              </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/#solutions"
-                aria-label="Explore Utah solution categories"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800"
-              >
-                Explore solutions <ArrowRight className="h-5 w-5" aria-hidden={true} />
-              </Link>
-              <a
-                href="/#request"
-                data-book-appointment="true"
-                aria-label={`Request solutions-navigation guidance for ${city.name}`}
-                className="inline-flex items-center justify-center rounded-full border-2 border-teal-700 px-6 py-4 text-base font-bold text-teal-800 transition hover:bg-teal-50"
-              >
-                Request guidance
-              </a>
-            </div>
+            <CtaBar className="mt-8" />
+            <p className="mt-4 text-sm text-teal-800/70">{insuranceLine}</p>
           </div>
         </section>
 
+        {/* Services */}
         <section className="bg-teal-50/40 py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
-              Featured solution categories
+              Services for {city.name} patients
             </h2>
-            <p className="mt-3 max-w-3xl text-lg leading-relaxed text-teal-800/90">
-              These pages cover common needs across health, home, work, money, family,
-              technology, and community life. They do not promise that a specific business or
-              professional is located in {city.name}; confirm availability, service area,
-              qualifications, pricing, and terms directly.
+            <p className="mt-4 max-w-2xl text-lg text-teal-800/90">
+              A full range of behavioral health care, available in person at our{" "}
+              {office.name} office and by telehealth throughout Utah.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {featuredSolutions.map((solution) => (
+              {servicePages.map((service) => (
                 <Link
-                  key={solution.slug}
-                  href={`/solutions/${solution.slug}`}
-                  aria-label={`Explore ${solution.name} solutions`}
-                  className="group flex flex-col rounded-2xl border border-teal-100 bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-cardHover"
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  aria-label={`Learn about ${service.name}`}
+                  className="group flex flex-col rounded-2xl border border-teal-100 bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
                 >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-100 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
-                    <ServiceIcon name={solution.icon} aria-hidden={true} />
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-700/10 text-teal-700 transition group-hover:bg-teal-700 group-hover:text-white">
+                    <ServiceIcon name={service.icon} aria-hidden={true} />
                   </span>
-                  <h3 className="mt-4 text-lg font-bold text-teal-950">{solution.name}</h3>
+                  <h3 className="mt-6 text-lg font-bold text-teal-950">{service.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-teal-800/80">
-                    {solution.cardDescription}
+                    {service.intro.split(". ")[0]}.
                   </p>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700">
-                    Explore this category <ArrowRight className="h-4 w-4" aria-hidden={true} />
+                    Learn more →
                   </span>
                 </Link>
               ))}
@@ -278,128 +247,140 @@ export default async function CityPage({ params }: Params) {
           </div>
         </section>
 
+        {/* Why this city chooses CPS */}
         <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
-              How solutions navigation can help in {city.name}
+              Why {city.name} chooses CPS
             </h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
                 {
-                  title: "Clarify the kind of help you are seeking",
-                  body: "Start with the outcome you want, without needing to know the exact professional title, business type, or program first.",
+                  icon: MapPin,
+                  title: `Close to ${city.name}`,
+                  body: `Our ${office.name} office is roughly ${city.distanceMiles} mi (~${city.driveTimeMin} min) away — plus telehealth across Utah.`,
                 },
                 {
-                  title: "Consider practical fit",
-                  body: `Think through service area, remote options, schedule, budget, urgency, and accessibility from ${city.name}.`,
+                  icon: HeartHandshake,
+                  title: `Trusted since ${brand.since}`,
+                  body: `Nearly four decades of community-rooted behavioral health care across the Wasatch Front.`,
                 },
                 {
-                  title: "Verify important details",
-                  body: "Use focused questions to confirm qualifications, scope, availability, pricing, insurance or payment terms, and service expectations.",
+                  icon: Video,
+                  title: "Telehealth or in person",
+                  body: `Meet with a provider at the office or securely from home in ${city.name} — your choice.`,
                 },
                 {
-                  title: `Connected through ${brand.partnerName}`,
-                  body: "Our partnership is focused on helping Utah residents move from uncertainty toward an informed next step.",
+                  icon: Check,
+                  title: "Whole-person care",
+                  body: `${brand.providerCount} licensed providers offering therapy, medication, and wellness under one roof.`,
                 },
-              ].map((item) => (
-                <article
-                  key={item.title}
+              ].map(({ icon: Icon, title, body }) => (
+                <div
+                  key={title}
                   className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
                 >
-                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-teal-100 text-teal-700">
-                    <CheckCircle2 className="h-5 w-5" aria-hidden={true} />
+                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-teal-700/10 text-teal-700">
+                    <Icon className="h-5 w-5" aria-hidden={true} />
                   </span>
                   <div>
-                    <h3 className="font-bold text-teal-950">{item.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-teal-800/80">{item.body}</p>
+                    <h3 className="font-bold text-teal-950">{title}</h3>
+                    <p className="mt-1 text-sm text-teal-800/80">{body}</p>
                   </div>
-                </article>
+                </div>
               ))}
+            </div>
+
+            <div className="mt-8 max-w-3xl">
+              <KeywordText
+                selfUrl={`/utah/${city.slug}`}
+                className="text-lg leading-relaxed text-teal-800/90"
+              >
+                {`Whether you're looking for counseling, medication management, neurofeedback, or a substance abuse evaluation, CPS makes care simple for ${city.name} families. Telehealth keeps every service within reach, and our team will match you with the right provider on your first call.`}
+              </KeywordText>
             </div>
           </div>
         </section>
 
+        {/* Local FAQ */}
         <section className="bg-teal-50/40 py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
-              {city.name} solutions-navigation FAQs
+              {city.name} FAQs
             </h2>
             <div className="mt-8 space-y-4">
-              {localFaqs.map((faq) => (
+              {localFaqs.map((f) => (
                 <details
-                  key={faq.q}
+                  key={f.q}
                   className="group rounded-2xl border border-teal-100 bg-white p-6 shadow-card"
                 >
                   <summary className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
-                    {faq.q}
+                    {f.q}
                   </summary>
-                  <p className="mt-3 leading-relaxed text-teal-800/90">{faq.a}</p>
+                  <p className="mt-4 text-teal-800/90">{f.a}</p>
                 </details>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Neighboring cities */}
         {neighbors.length > 0 && (
           <section className="py-16 sm:py-20">
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
               <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
-                Explore nearby community guides
+                CPS also serves nearby cities
               </h2>
-              <p className="mt-3 max-w-2xl text-teal-800/80">
-                These links provide geographic context only; they do not represent business,
-                professional, or organization locations.
-              </p>
               <div className="mt-6 flex flex-wrap gap-4">
-                {neighbors.map((neighbor) => (
+                {neighbors.map((n) => (
                   <Link
-                    key={neighbor.slug}
-                    href={`/utah/${neighbor.slug}`}
-                    aria-label={`Solutions-navigation guidance for ${neighbor.name}, Utah`}
+                    key={n.slug}
+                    href={`/utah/${n.slug}`}
+                    aria-label={`Mental health services in ${n.name}, Utah`}
                     className="inline-flex items-center gap-1.5 rounded-full border border-teal-200 bg-white px-4 py-2 text-sm font-semibold text-teal-800 shadow-card transition hover:bg-teal-50"
                   >
-                    <MapPin className="h-4 w-4" aria-hidden={true} /> {neighbor.name}
+                    <MapPin className="h-4 w-4" aria-hidden={true} /> {n.name}
                   </Link>
                 ))}
               </div>
               <p className="mt-6">
                 <Link
                   href="/service-area"
-                  aria-label="View all Utah community guides"
+                  aria-label="View all Utah cities we serve"
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:text-teal-800"
                 >
-                  View all Utah community guides <ArrowRight className="h-4 w-4" aria-hidden={true} />
+                  View all Utah cities we serve →
                 </Link>
               </p>
             </div>
           </section>
         )}
 
+        {/* Final CTA */}
         <section className="bg-band py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              Ready for a clearer next step?
+              Ready to get started in {city.name}?
             </h2>
             <p className="mt-4 text-lg text-teal-100">
-              Share what you are trying to solve. We&apos;ll help you organize your options and
-              prepare to connect with an appropriate business, professional, program, or resource.
+              Call now to speak with a real person, or request an appointment and we&apos;ll
+              reach out to match you with the right provider.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/#solutions"
-                aria-label="Explore Utah solution categories"
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <a
+                href={brand.phoneHref}
+                aria-label={`Call ${brand.name} at ${brand.phone}`}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-base font-bold text-teal-900 transition hover:bg-teal-50"
               >
-                Explore solutions <ArrowRight className="h-5 w-5" aria-hidden={true} />
-              </Link>
-              <a
-                href="/#request"
-                data-book-appointment="true"
-                aria-label={`Request solutions-navigation guidance for ${city.name}`}
-                className="inline-flex items-center justify-center rounded-full border-2 border-white/80 px-6 py-4 text-base font-bold text-white transition hover:bg-white/10"
-              >
-                Request guidance
+                <Phone className="h-5 w-5" aria-hidden={true} /> Call {brand.phone}
               </a>
+              <Link
+                href="/#request"
+                aria-label="Request an appointment"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-6 py-4 text-base font-bold text-white transition hover:bg-white/10"
+              >
+                Request an appointment
+              </Link>
             </div>
           </div>
         </section>

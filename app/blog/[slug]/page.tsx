@@ -104,7 +104,7 @@ export default async function BlogPostPage({
                   day: "numeric",
                 })}
               </p>
-              <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-teal-950 sm:text-4xl lg:text-5xl">
+              <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-teal-950 sm:text-4xl lg:text-5xl">
                 {post.title}
               </h1>
             </div>
@@ -151,7 +151,7 @@ export default async function BlogPostPage({
                 <h2 className="text-2xl font-extrabold tracking-tight text-teal-950">
                   Common follow-up questions
                 </h2>
-                <div className="mt-5 space-y-4">
+                <div className="mt-6 space-y-4">
                   {post.faq.map((f) => (
                     <div key={f.q} className="rounded-xl border border-teal-100 bg-white p-4">
                       <h3 className="font-bold text-teal-950">{f.q}</h3>
@@ -182,9 +182,6 @@ export default async function BlogPostPage({
                     {related.map((svc) => (
                       <Link
                         key={svc.slug}
-                        href={`/solutions/${svc.slug}`}
-                        aria-label={`Explore ${svc.name} guidance`}
-                        className="group rounded-xl border border-teal-100 bg-white px-5 py-4 transition hover:border-teal-300"
                       >
                         <h3 className="font-bold text-teal-950 group-hover:text-teal-700">{svc.name}</h3>
                         <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-teal-700">
@@ -200,9 +197,6 @@ export default async function BlogPostPage({
                 <h2 className="text-2xl font-extrabold text-white">
                   Ready to talk to a real person?
                 </h2>
-                <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-teal-100/90">
-                  Send a request and our team will help you explore appropriate services
-                  and practical next steps.
                 </p>
                 <Link
                   href="/booknow"

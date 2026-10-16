@@ -91,12 +91,6 @@ export default function BlogIndexPage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-600">
               Answers before appointments
             </p>
-            <h1 className="mt-3 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-teal-950 sm:text-5xl">
-              Clarity starts with good information.
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-teal-800/90">
-              Practical resources to help you understand your options, prepare useful questions,
-              and take a more confident next step.
             </p>
           </div>
         </section>
@@ -121,10 +115,10 @@ export default function BlogIndexPage() {
                       <p className="text-xs font-bold uppercase tracking-[0.14em] text-teal-600">
                         {post.category} · {post.readTime}
                       </p>
-                      <h2 className="mt-3 text-xl font-extrabold leading-snug text-teal-950 group-hover:text-teal-700">
+                      <h2 className="mt-4 text-xl font-extrabold leading-snug text-teal-950 group-hover:text-teal-700">
                         {post.title}
                       </h2>
-                      <p className="mt-3 text-sm leading-relaxed text-teal-800/80">
+                      <p className="mt-4 text-sm leading-relaxed text-teal-800/80">
                         {post.description}
                       </p>
                       <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-bold text-teal-700">
@@ -141,7 +135,7 @@ export default function BlogIndexPage() {
                         key={post.slug}
                         href={`/blog/${post.slug}`}
                         aria-label={`Read: ${post.title}`}
-                        className="group flex items-start justify-between gap-4 rounded-xl border border-teal-100 bg-white px-5 py-4 transition hover:border-teal-300"
+                        className="group flex items-start justify-between gap-4 rounded-xl border border-teal-100 bg-white px-4 py-4 transition hover:border-teal-300"
                       >
                         <div>
                           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-teal-600">

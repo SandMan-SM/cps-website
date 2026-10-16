@@ -120,9 +120,6 @@ export default function BookNowPage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-600">
               Clear guidance · Utah-wide perspective
             </p>
-            <p className="mx-auto mt-3 max-w-2xl leading-relaxed text-teal-800/80">
-              We help you explore practical service options based on your needs, preferences,
-              and community.
             </p>
           </div>
         </section>
