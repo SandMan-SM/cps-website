@@ -87,6 +87,33 @@ export default function AppointmentModal() {
     return () => document.removeEventListener("click", handleAppointmentClick, { capture: true });
   }, []);
 
+  // Open modal when #request hash is set via URL or navigation
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog || typeof dialog.showModal !== "function") return;
+
+    function openFromHash() {
+      const d = dialogRef.current;
+      if (!d || typeof d.showModal !== "function") return;
+      if (window.location.hash === "#request" && !d.open) {
+        previousOverflowRef.current = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        setStatus("idle");
+        setError("");
+        setSubmissionConflict(false);
+        setAppointmentContext(emptyContext);
+        d.showModal();
+        window.requestAnimationFrame(() => nameRef.current?.focus());
+      }
+    }
+
+    // Check on mount in case page loaded with #request in URL
+    openFromHash();
+
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, []);
+
   function handleClose() {
     document.body.style.overflow = previousOverflowRef.current;
     window.requestAnimationFrame(() => previousFocusRef.current?.focus());
