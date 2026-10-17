@@ -5,6 +5,11 @@ export const brand = {
   tagline: "Clear direction for everyday needs",
   partnerName: "Utah Main Street",
   domain: "https://cpsutah.org",
+  phone: "",
+  phoneHref: "",
+  email: "",
+  since: 2024,
+  providerCount: "",
 };
 
 export const serviceRegions = [
@@ -81,3 +86,10 @@ export const steps: { title: string; body: string }[] = [
 
 export const comparisonLine =
   "Confirm qualifications, availability, scope, and pricing with the organization you choose.";
+
+// Stubs for removed office-location references (rebrand removed office data)
+export const insuranceLine = comparisonLine;
+export type OfficeLocation = { id: string; name: string; city: string; street: string; cityLine: string; citySlug: string; full: string; mapsUrl: string };
+export type Location = OfficeLocation;
+export const locations: OfficeLocation[] = [];
+export function getLocationByCitySlug(_slug: string): OfficeLocation | undefined { return undefined; }

@@ -8,6 +8,11 @@ export type City = {
   county: "Salt Lake" | "Davis" | "Weber" | "Utah";
   lat: number;
   lng: number;
+  nearestOffice?: string; // legacy stub
+  distanceMiles?: string; // legacy stub
+  driveTimeMin?: string; // legacy stub
+  full?: string; // legacy stub
+  blurb?: string; // legacy stub
 };
 
 export const UTAH_COUNTIES = [

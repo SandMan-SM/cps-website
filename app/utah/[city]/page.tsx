@@ -50,15 +50,15 @@ export default async function CityPage({ params }: Params) {
   if (!city) notFound();
 
   const office = getOffice(city.nearestOffice);
-  const officeCoords = officeGeo[city.nearestOffice];
-  const addr = parseCityLine(office.cityLine);
+  const officeCoords = officeGeo[city.nearestOffice ?? ""];
+  const addr = office ? parseCityLine(office.cityLine) : "";
   const neighbors = neighborCities(city.slug, 6);
   const url = `${brand.domain}/utah/${city.slug}`;
 
   const localFaqs = [
     {
       q: `How far is CPS from ${city.name}?`,
-      a: `Our ${office.name} office is about ${city.distanceMiles} mi (~${city.driveTimeMin} min) from ${city.name}, at ${office.full}. Telehealth is also available across Utah.`,
+      a: `Our ${office?.name ?? "CPS"} office is about ${city.distanceMiles ?? ""} mi (~${city.driveTimeMin ?? ""} min) from ${city.name}, at ${office?.full ?? ""}. Telehealth is also available across Utah.`,
     },
     {
       q: `Do you offer telehealth for ${city.name} residents?`,
@@ -90,22 +90,22 @@ export default async function CityPage({ params }: Params) {
       {
         "@type": ["MedicalClinic", "LocalBusiness"],
         "@id": `${url}#clinic`,
-        name: `${brand.name} — ${office.name}`,
+        name: `${brand.name} — ${office?.name ?? brand.name}`,
         url,
         telephone: `+1-${brand.phone}`,
         parentOrganization: { "@id": `${brand.domain}/#organization` },
         address: {
           "@type": "PostalAddress",
-          streetAddress: office.street,
-          addressLocality: addr.locality,
-          addressRegion: addr.region,
-          postalCode: addr.postal,
+          streetAddress: office?.street ?? "",
+          addressLocality: addr && typeof addr !== "string" ? addr.locality : "",
+          addressRegion: addr && typeof addr !== "string" ? addr.region : "UT",
+          postalCode: addr && typeof addr !== "string" ? addr.postal : "",
           addressCountry: "US",
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: officeCoords.lat,
-          longitude: officeCoords.lng,
+          latitude: officeCoords?.lat ?? 0,
+          longitude: officeCoords?.lng ?? 0,
         },
         areaServed: {
           "@type": "City",
@@ -192,9 +192,9 @@ export default async function CityPage({ params }: Params) {
                   <Car className="h-5 w-5" aria-hidden={true} />
                 </span>
                 <p className="text-sm text-teal-900">
-                  Our <span className="font-semibold">{office.name}</span> office is about{" "}
-                  <span className="font-semibold">{city.distanceMiles} mi (~{city.driveTimeMin} min)</span>{" "}
-                  from {city.name} — {office.full}.
+                  Our <span className="font-semibold">{office?.name ?? "CPS"}</span> office is about{" "}
+                  <span className="font-semibold">{city.distanceMiles ?? ""} mi (~{city.driveTimeMin ?? ""} min)</span>{" "}
+                  from {city.name} — {office?.full ?? ""}.
                 </p>
               </div>
               <div className="flex items-start gap-4 rounded-2xl border border-teal-100 bg-white p-4 shadow-card">
@@ -221,7 +221,7 @@ export default async function CityPage({ params }: Params) {
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-teal-800/90">
               A full range of behavioral health care, available in person at our{" "}
-              {office.name} office and by telehealth throughout Utah.
+              {office?.name ?? "CPS"} office and by telehealth throughout Utah.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {servicePages.map((service) => (
@@ -258,7 +258,7 @@ export default async function CityPage({ params }: Params) {
                 {
                   icon: MapPin,
                   title: `Close to ${city.name}`,
-                  body: `Our ${office.name} office is roughly ${city.distanceMiles} mi (~${city.driveTimeMin} min) away — plus telehealth across Utah.`,
+                  body: `Our ${office?.name ?? "CPS"} office is roughly ${city.distanceMiles ?? ""} mi (~${city.driveTimeMin ?? ""} min) away — plus telehealth across Utah.`,
                 },
                 {
                   icon: HeartHandshake,

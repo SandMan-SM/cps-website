@@ -182,6 +182,7 @@ export default async function BlogPostPage({
                     {related.map((svc) => (
                       <Link
                         key={svc.slug}
+                        href={`/solutions/${svc.slug}`}
                       >
                         <h3 className="font-bold text-teal-950 group-hover:text-teal-700">{svc.name}</h3>
                         <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-teal-700">
@@ -197,7 +198,6 @@ export default async function BlogPostPage({
                 <h2 className="text-2xl font-extrabold text-white">
                   Ready to talk to a real person?
                 </h2>
-                </p>
                 <Link
                   href="/booknow"
                   aria-label="Request a solution"

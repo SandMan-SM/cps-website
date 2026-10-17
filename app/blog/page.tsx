@@ -91,7 +91,6 @@ export default function BlogIndexPage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-600">
               Answers before appointments
             </p>
-            </p>
           </div>
         </section>
 

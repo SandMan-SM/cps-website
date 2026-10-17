@@ -120,7 +120,6 @@ export default function BookNowPage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-600">
               Clear guidance · Utah-wide perspective
             </p>
-            </p>
           </div>
         </section>
       </main>
