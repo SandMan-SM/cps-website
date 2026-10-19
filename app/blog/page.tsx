@@ -91,6 +91,13 @@ export default function BlogIndexPage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-600">
               Answers before appointments
             </p>
+            <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-teal-950 sm:text-5xl">
+              The questions people actually ask us.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-teal-800/90">
+              Every article answers one real question — clearly, honestly, and without
+              medical jargon — so you can make informed decisions about your care.
+            </p>
           </div>
         </section>
 

@@ -1,5 +1,13 @@
 import { ExternalLink, MapPin } from "lucide-react";
-import type { Location } from "@/lib/data";
+
+type Location = {
+  id: string;
+  name: string;
+  full: string;
+  street: string;
+  cityLine: string;
+  mapsUrl: string;
+};
 
 type Props = {
   location: Location;

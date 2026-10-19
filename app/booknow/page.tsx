@@ -120,6 +120,10 @@ export default function BookNowPage() {
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-600">
               Clear guidance · Utah-wide perspective
             </p>
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-teal-800/80">
+              Salt Lake City, Layton, and West Jordan, with secure telehealth options
+              available throughout Utah.
+            </p>
           </div>
         </section>
       </main>

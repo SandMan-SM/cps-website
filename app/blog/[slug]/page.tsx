@@ -182,7 +182,9 @@ export default async function BlogPostPage({
                     {related.map((svc) => (
                       <Link
                         key={svc.slug}
-                        href={`/solutions/${svc.slug}`}
+                        href={`/services/${svc.slug}`}
+                        aria-label={`Learn about ${svc.name} services at CPS`}
+                        className="group rounded-xl border border-teal-100 bg-white px-4 py-4 transition hover:border-teal-300"
                       >
                         <h3 className="font-bold text-teal-950 group-hover:text-teal-700">{svc.name}</h3>
                         <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-teal-700">
@@ -198,6 +200,10 @@ export default async function BlogPostPage({
                 <h2 className="text-2xl font-extrabold text-white">
                   Ready to talk to a real person?
                 </h2>
+                <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-teal-100/90">
+                  Send an appointment request and a CPS team member will follow up to match you
+                  with the right provider, location, or telehealth option.
+                </p>
                 <Link
                   href="/booknow"
                   aria-label="Request a solution"
