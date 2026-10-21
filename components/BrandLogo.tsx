@@ -18,7 +18,7 @@ export default function BrandLogo({
       >
         <Image
           src="/brand/open-path-mark.png"
-          alt=""
+          alt="Clinical and Professional Solutions logo"
           width={1254}
           height={1254}
           priority
