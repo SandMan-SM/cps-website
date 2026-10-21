@@ -127,7 +127,7 @@ export default function BlogIndexPage() {
                       <p className="mt-4 text-sm leading-relaxed text-teal-800/80">
                         {post.description}
                       </p>
-                      <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-bold text-teal-700">
+                      <span className="mt-auto inline-flex items-center gap-1 pt-6 text-sm font-bold text-teal-700">
                         Read the answer <ArrowRight className="h-4 w-4" aria-hidden={true} />
                       </span>
                     </Link>

@@ -31,7 +31,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-teal-800 transition hover:text-teal-600"
+              className="inline-block py-2 text-sm font-medium text-teal-800 transition hover:text-teal-600"
             >
               {item.label}
             </a>
@@ -82,7 +82,7 @@ export default function Header() {
                   <a
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block rounded-lg px-3 py-2.5 text-base font-medium text-teal-800 transition hover:bg-teal-50 hover:text-teal-900"
+                    className="block rounded-lg px-4 py-2.5 text-base font-medium text-teal-800 transition hover:bg-teal-50 hover:text-teal-900"
                   >
                     {item.label}
                   </a>
@@ -95,7 +95,7 @@ export default function Header() {
                 data-book-appointment="true"
                 aria-label="Find a solution"
                 onClick={() => setMobileOpen(false)}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-4 py-4 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800"
               >
                 <CalendarCheck className="h-4 w-4" aria-hidden={true} />
                 Find a solution

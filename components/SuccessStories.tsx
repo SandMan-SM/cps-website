@@ -137,7 +137,7 @@ export default function SuccessStories() {
           </p>
           <h2
             id="success-stories-title"
-            className="mt-3 text-balance text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl"
+            className="mt-4 text-balance text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl"
           >
             A clearer next step for everyday life.
           </h2>
@@ -206,7 +206,7 @@ export default function SuccessStories() {
                           {story.highlights.map((highlight) => (
                             <li
                               key={highlight}
-                              className="rounded-full border border-teal-200 bg-white px-3 py-2 text-xs font-semibold text-teal-800"
+                              className="rounded-full border border-teal-200 bg-white px-4 py-2 text-xs font-semibold text-teal-800"
                             >
                               {highlight}
                             </li>
@@ -270,7 +270,7 @@ export default function SuccessStories() {
             </div>
           </div>
 
-          <div className="mt-7 flex flex-col items-center justify-between gap-4 rounded-2xl bg-teal-50 px-5 py-4 text-center sm:flex-row sm:text-left">
+          <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl bg-teal-50 px-6 py-4 text-center sm:flex-row sm:text-left">
             <div>
               <p className="font-bold text-teal-950">Ready to organize your next step?</p>
               <p className="mt-1 text-sm text-teal-800/75">Share what you are looking for and where you are in Utah.</p>
@@ -279,7 +279,7 @@ export default function SuccessStories() {
               href="/#request"
               data-book-appointment="true"
               aria-label="Request a solution from success stories"
-              className="inline-flex w-full flex-none items-center justify-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-teal-800 sm:w-auto"
+              className="inline-flex w-full flex-none items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-sm font-bold text-white transition hover:bg-teal-800 sm:w-auto"
             >
               <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request a solution
             </a>

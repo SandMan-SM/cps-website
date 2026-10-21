@@ -201,7 +201,7 @@ export default function AppointmentModal() {
   }
 
   const inputClass =
-    "mt-1.5 w-full rounded-xl border border-teal-200 bg-white px-4 py-2.5 text-base text-teal-950 placeholder:text-teal-800/40 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30 md:py-3";
+    "mt-1.5 w-full rounded-xl border border-teal-200 bg-white px-4 py-2.5 text-base text-teal-950 placeholder:text-teal-800/40 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30 md:py-4";
   const requestTitle = appointmentContext.location
     ? `Request a solution near ${appointmentContext.location}`
     : appointmentContext.service
@@ -238,17 +238,17 @@ export default function AppointmentModal() {
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-100 text-teal-700">
               <CheckCircle2 className="h-8 w-8" aria-hidden={true} />
             </span>
-            <h2 id="appointment-dialog-title" className="mt-5 text-2xl font-extrabold">
+            <h2 id="appointment-dialog-title" className="mt-6 text-2xl font-extrabold">
               Your request has been received.
             </h2>
-            <p id="appointment-dialog-description" className="mt-3 leading-relaxed text-teal-800/80">
+            <p id="appointment-dialog-description" className="mt-4 leading-relaxed text-teal-800/80">
               Our team will follow up using the phone number or email you provided.
             </p>
             <button
               type="button"
               onClick={closeDialog}
               aria-label="Close dialog"
-              className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-teal-700 px-6 py-4 font-bold text-white transition hover:bg-teal-800"
+              className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-teal-700 px-6 py-4 font-bold text-white transition hover:bg-teal-800"
             >
               Close
             </button>
@@ -258,7 +258,7 @@ export default function AppointmentModal() {
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-700 md:h-12 md:w-12 md:rounded-2xl">
               <CalendarCheck className="h-5 w-5 md:h-6 md:w-6" aria-hidden={true} />
             </span>
-            <h2 id="appointment-dialog-title" className="mt-4 pr-10 text-2xl font-extrabold md:mt-5 md:text-3xl">
+            <h2 id="appointment-dialog-title" className="mt-4 pr-10 text-2xl font-extrabold md:mt-6 md:text-3xl">
               {requestTitle}
             </h2>
             <p
@@ -268,7 +268,7 @@ export default function AppointmentModal() {
               {requestDescription}
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-5 md:mt-6">
+            <form onSubmit={handleSubmit} className="mt-6 md:mt-6">
               <div className="space-y-3 md:space-y-4">
                 <div>
                   <label htmlFor="appointment-name" className="text-sm font-semibold text-teal-900">
@@ -329,7 +329,7 @@ export default function AppointmentModal() {
                 </div>
               </div>
 
-              <div className="mt-4 rounded-2xl bg-teal-50 p-4 text-xs leading-relaxed text-teal-900/80 md:mt-5 md:p-4 md:text-sm">
+              <div className="mt-4 rounded-2xl bg-teal-50 p-4 text-xs leading-relaxed text-teal-900/80 md:mt-6 md:p-4 md:text-sm">
                 <div className="flex items-start gap-2.5">
                   <ShieldCheck className="mt-0.5 h-4 w-4 flex-none text-teal-700" aria-hidden={true} />
                   <p>
@@ -338,7 +338,7 @@ export default function AppointmentModal() {
                     referred service. Message and data rates may apply.
                   </p>
                 </div>
-                <p className="mt-1.5 pl-7 text-xs md:mt-2">
+                <p className="mt-1.5 pl-8 text-xs md:mt-2">
                   Review our{" "}
                   <Link href="/privacy" onClick={closeDialog} aria-label="Privacy Policy" className="font-semibold underline underline-offset-2">
                     Privacy Policy
@@ -353,7 +353,7 @@ export default function AppointmentModal() {
 
               {error && (
                 <div
-                  className="mt-4 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+                  className="mt-4 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-4 text-sm text-red-800"
                   role="alert"
                 >
                   <AlertCircle className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />
@@ -377,7 +377,7 @@ export default function AppointmentModal() {
                 type="submit"
                 disabled={status === "submitting" || submissionConflict}
                 aria-label={status === "submitting" ? "Sending your solution request" : "Submit solution request"}
-                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70 md:mt-5 md:py-4"
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70 md:mt-6 md:py-4"
               >
                 {status === "submitting" ? (
                   <>

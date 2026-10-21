@@ -165,14 +165,14 @@ export default async function CityPage({ params }: Params) {
               aria-label="Breadcrumb"
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
-              <Link href="/" aria-label="Home" className="hover:text-teal-800">
+              <Link href="/" aria-label="Home" className="inline-block py-1 hover:text-teal-800">
                 Home
               </Link>
               <span aria-hidden={true}>/</span>
               <Link
                 href="/service-area"
                 aria-label="Service Area"
-                className="hover:text-teal-800"
+                className="inline-block py-1 hover:text-teal-800"
               >
                 Service Area
               </Link>
@@ -181,10 +181,10 @@ export default async function CityPage({ params }: Params) {
             </nav>
 
             <div className="flex flex-wrap gap-4">
-              <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-3 py-1 text-sm font-semibold text-teal-800">
+              <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-4 py-1 text-sm font-semibold text-teal-800">
                 <MapPin className="h-4 w-4" aria-hidden={true} /> {city.county} County, Utah
               </p>
-              <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-3 py-1 text-sm font-semibold text-teal-800">
+              <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-4 py-1 text-sm font-semibold text-teal-800">
                 <Handshake className="h-4 w-4" aria-hidden={true} /> Partnered with {brand.partnerName}
               </p>
             </div>
@@ -248,7 +248,7 @@ export default async function CityPage({ params }: Params) {
             <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
               Featured solution categories
             </h2>
-            <p className="mt-3 max-w-3xl text-lg leading-relaxed text-teal-800/90">
+            <p className="mt-4 max-w-3xl text-lg leading-relaxed text-teal-800/90">
               These pages cover common needs across health, home, work, money, family,
               technology, and community life. They do not promise that a specific business or
               professional is located in {city.name}; confirm availability, service area,
@@ -333,7 +333,7 @@ export default async function CityPage({ params }: Params) {
                   <summary className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
                     {faq.q}
                   </summary>
-                  <p className="mt-3 leading-relaxed text-teal-800/90">{faq.a}</p>
+                  <p className="mt-4 leading-relaxed text-teal-800/90">{faq.a}</p>
                 </details>
               ))}
             </div>
@@ -346,7 +346,7 @@ export default async function CityPage({ params }: Params) {
               <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
                 Explore nearby community guides
               </h2>
-              <p className="mt-3 max-w-2xl text-teal-800/80">
+              <p className="mt-4 max-w-2xl text-teal-800/80">
                 These links provide geographic context only; they do not represent business,
                 professional, or organization locations.
               </p>
@@ -366,7 +366,7 @@ export default async function CityPage({ params }: Params) {
                 <Link
                   href="/service-area"
                   aria-label="View all Utah community guides"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:text-teal-800"
+                  className="inline-flex items-center gap-1.5 py-1 text-sm font-semibold text-teal-700 hover:text-teal-800"
                 >
                   View all Utah community guides <ArrowRight className="h-4 w-4" aria-hidden={true} />
                 </Link>

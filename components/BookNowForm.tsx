@@ -125,7 +125,7 @@ export default function BookNowForm() {
           type="button"
           onClick={startNewRequest}
           aria-label="Send another solution request"
-          className="mt-8 rounded-full border border-teal-200 px-6 py-3 font-bold text-teal-800 transition hover:bg-teal-50"
+          className="mt-8 rounded-full border border-teal-200 px-6 py-4 font-bold text-teal-800 transition hover:bg-teal-50"
         >
           Send another request
         </button>
@@ -203,7 +203,7 @@ export default function BookNowForm() {
             referred service. Message and data rates may apply.
           </p>
         </div>
-        <p className="mt-2 pl-7">
+        <p className="mt-2 pl-8">
           Review our{" "}
           <Link href="/privacy" aria-label="Privacy Policy" className="font-semibold underline underline-offset-2">
             Privacy Policy
@@ -218,7 +218,7 @@ export default function BookNowForm() {
 
       {error && (
         <div
-          className="mt-5 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+          className="mt-6 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-4 text-sm text-red-800"
           role="alert"
         >
           <AlertCircle className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />

@@ -13,7 +13,7 @@ export default function LegalLayout({
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-teal-700 hover:text-teal-800"
+          className="inline-flex items-center gap-2 py-2 text-sm font-semibold text-teal-700 hover:text-teal-800"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden={true} /> Back to home
         </Link>

@@ -63,7 +63,7 @@ export default function OfficeMap({ location, className = "", priority = false }
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white text-teal-700 shadow-sm">
               <MapPin className="h-6 w-6" aria-hidden={true} />
             </span>
-            <span className="mt-3 block font-bold text-teal-950">View {location.name} on Google Maps</span>
+            <span className="mt-4 block font-bold text-teal-950">View {location.name} on Google Maps</span>
             <span className="mt-1 inline-flex items-center gap-1 text-sm text-teal-800/75">
               {location.street} <ExternalLink className="h-3.5 w-3.5" aria-hidden={true} />
             </span>

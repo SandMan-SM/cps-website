@@ -15,10 +15,10 @@ export default function Footer() {
             >
               <BrandLogo light />
             </a>
-            <p className="mt-3 text-sm text-teal-200">
+            <p className="mt-4 text-sm text-teal-200">
               {brand.name} — {brand.tagline}.
             </p>
-            <p className="mt-3 inline-flex items-center gap-2 text-sm text-teal-200">
+            <p className="mt-4 inline-flex items-center gap-2 text-sm text-teal-200">
               <Compass className="h-4 w-4" aria-hidden={true} /> Utah-wide solutions and guidance.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-teal-200">
@@ -29,13 +29,13 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wide text-white">Service areas</h3>
-            <ul className="mt-3 space-y-3 text-sm text-teal-200">
+            <ul className="mt-4 space-y-3 text-sm text-teal-200">
               {serviceRegions.map((loc) => (
                 <li key={loc.id}>
                   <a
                     href="/service-area"
                     aria-label={`View guidance for ${loc.name}`}
-                    className="font-semibold text-teal-100 transition hover:text-white"
+                    className="inline-block py-1 font-semibold text-teal-100 transition hover:text-white"
                   >
                     {loc.name}
                   </a>
@@ -46,12 +46,12 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wide text-white">Connect</h3>
-            <ul className="mt-3 space-y-3 text-sm">
+            <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a
                   href="/#subscribe"
                   aria-label={`Subscribe to ${brand.name} updates`}
-                  className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
+                  className="inline-flex items-center gap-2 py-1 text-teal-100 hover:text-white"
                 >
                   <Mail className="h-4 w-4" aria-hidden={true} /> Subscribe for updates
                 </a>
@@ -61,7 +61,7 @@ export default function Footer() {
                   href="/#request"
                   data-book-appointment="true"
                   aria-label="Request a solution"
-                  className="inline-flex items-center gap-2 text-teal-100 hover:text-white"
+                  className="inline-flex items-center gap-2 py-1 text-teal-100 hover:text-white"
                 >
                   <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request a solution
                 </a>
@@ -71,22 +71,22 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wide text-white">Explore</h3>
-            <ul className="mt-3 space-y-2 text-sm text-teal-200">
-              <li><a href="/#solutions" aria-label="Explore solution areas" className="hover:text-white">Solutions</a></li>
-              <li><a href="/service-area" aria-label="Explore guidance across Utah" className="hover:text-white">Across Utah</a></li>
-              <li><a href="/blog" aria-label={`Read the ${brand.name} blog`} className="hover:text-white">Blog</a></li>
+            <ul className="mt-4 space-y-2 text-sm text-teal-200">
+              <li><a href="/#solutions" aria-label="Explore solution areas" className="inline-block py-1 hover:text-white">Solutions</a></li>
+              <li><a href="/service-area" aria-label="Explore guidance across Utah" className="inline-block py-1 hover:text-white">Across Utah</a></li>
+              <li><a href="/blog" aria-label={`Read the ${brand.name} blog`} className="inline-block py-1 hover:text-white">Blog</a></li>
               {serviceRegions.map((loc) => (
                 <li key={loc.id}>
                   <a
                     href="/service-area"
                     aria-label={`View guidance for ${loc.name}`}
-                    className="hover:text-white"
+                    className="inline-block py-1 hover:text-white"
                   >
                     {loc.name}
                   </a>
                 </li>
               ))}
-              <li><a href="/#request" data-book-appointment="true" aria-label="Request a solution" className="hover:text-white">Request a solution</a></li>
+              <li><a href="/#request" data-book-appointment="true" aria-label="Request a solution" className="inline-block py-1 hover:text-white">Request a solution</a></li>
             </ul>
           </div>
         </div>
@@ -96,8 +96,8 @@ export default function Footer() {
             © {new Date().getFullYear()} {brand.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="/privacy" aria-label="Privacy Policy" className="hover:text-white">Privacy Policy</a>
-            <a href="/terms" aria-label="Terms of Use" className="hover:text-white">Terms of Use</a>
+            <a href="/privacy" aria-label="Privacy Policy" className="inline-block py-2 hover:text-white">Privacy Policy</a>
+            <a href="/terms" aria-label="Terms of Use" className="inline-block py-2 hover:text-white">Terms of Use</a>
           </div>
         </div>
       </div>

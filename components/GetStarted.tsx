@@ -38,7 +38,7 @@ export default function GetStarted() {
             href="/#request"
             data-book-appointment="true"
             aria-label="Request a solution"
-            className="inline-flex flex-none items-center gap-2 rounded-full bg-teal-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-teal-800"
+            className="inline-flex flex-none items-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-sm font-bold text-white transition hover:bg-teal-800"
           >
             <CalendarCheck className="h-4 w-4" aria-hidden={true} /> Request a solution
           </a>

@@ -6,7 +6,7 @@ export default function ServiceLoading() {
         <div className="mx-auto max-w-3xl px-4 pt-16 sm:px-6 sm:pt-20">
           <div className="h-5 w-24 animate-pulse rounded bg-teal-100" />
           <div className="mt-6 h-10 w-full animate-pulse rounded bg-teal-100 sm:h-12 lg:h-14" />
-          <div className="mt-3 h-6 w-2/3 animate-pulse rounded bg-teal-100" />
+          <div className="mt-4 h-6 w-2/3 animate-pulse rounded bg-teal-100" />
           <div className="mt-4 h-5 w-1/2 animate-pulse rounded bg-teal-100" />
           <div className="mt-6 h-12 w-44 animate-pulse rounded-full bg-teal-200" />
         </div>

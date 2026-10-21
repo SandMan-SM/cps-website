@@ -10,7 +10,7 @@ export default function BlogPostLoading() {
           <div className="mt-6 h-4 w-48 animate-pulse rounded bg-teal-100" />
 
           {/* Title skeleton */}
-          <div className="mt-3 h-10 w-full animate-pulse rounded bg-teal-100 sm:h-12 lg:h-14" />
+          <div className="mt-4 h-10 w-full animate-pulse rounded bg-teal-100 sm:h-12 lg:h-14" />
           <div className="mt-2 h-10 w-3/4 animate-pulse rounded bg-teal-100" />
         </div>
       </div>
@@ -44,7 +44,7 @@ export default function BlogPostLoading() {
           {/* CTA skeleton */}
           <div className="mt-12 rounded-2xl bg-teal-900 p-8">
             <div className="mx-auto h-8 w-64 animate-pulse rounded bg-teal-800" />
-            <div className="mx-auto mt-3 h-5 w-96 animate-pulse rounded bg-teal-800" />
+            <div className="mx-auto mt-4 h-5 w-96 animate-pulse rounded bg-teal-800" />
             <div className="mx-auto mt-6 h-12 w-56 animate-pulse rounded-full bg-teal-700" />
           </div>
         </div>

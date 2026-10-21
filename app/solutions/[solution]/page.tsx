@@ -136,9 +136,9 @@ export default async function SolutionPage({ params }: Params) {
               aria-label="Breadcrumb"
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
-              <Link href="/" aria-label="Home" className="hover:text-teal-800">Home</Link>
+              <Link href="/" aria-label="Home" className="inline-block py-1 hover:text-teal-800">Home</Link>
               <span aria-hidden={true}></span>
-              <a href="/#solutions" aria-label="Explore solutions" className="hover:text-teal-800">Solutions</a>
+              <a href="/#solutions" aria-label="Explore solutions" className="inline-block py-1 hover:text-teal-800">Solutions</a>
               <span aria-hidden={true}></span>
               <span className="font-semibold text-teal-900">{service.name}</span>
             </nav>
@@ -146,7 +146,7 @@ export default async function SolutionPage({ params }: Params) {
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-700/10 text-teal-700">
               <ServiceIcon name={service.icon} className="h-7 w-7" />
             </span>
-            <h1 className="mt-5 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
+            <h1 className="mt-6 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
               {service.h1}
             </h1>
             <div className="mt-4 max-w-2xl">
@@ -227,7 +227,7 @@ export default async function SolutionPage({ params }: Params) {
                   <summary className="cursor-pointer list-none font-bold text-teal-950 [&::-webkit-details-marker]:hidden">
                     {f.q}
                   </summary>
-                  <p className="mt-3 text-teal-800/90">{f.a}</p>
+                  <p className="mt-4 text-teal-800/90">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -240,7 +240,7 @@ export default async function SolutionPage({ params }: Params) {
             <h2 className="text-2xl font-extrabold tracking-tight text-teal-950 sm:text-3xl">
               {service.name} for Utah communities
             </h2>
-            <p className="mt-3 max-w-2xl text-teal-800/90">
+            <p className="mt-4 max-w-2xl text-teal-800/90">
               Explore guidance for your community across the Wasatch Front. Service availability
               depends on the organization and the type of support you need.
             </p>
@@ -260,7 +260,7 @@ export default async function SolutionPage({ params }: Params) {
               <Link
                 href="/service-area"
                 aria-label="View all Utah cities we serve"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700 hover:text-teal-800"
+                className="inline-flex items-center gap-1.5 py-1 text-sm font-semibold text-teal-700 hover:text-teal-800"
               >
                 View all Utah cities we serve →
               </Link>

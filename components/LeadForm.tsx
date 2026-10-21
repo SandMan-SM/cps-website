@@ -107,7 +107,7 @@ export default function LeadForm() {
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-100 text-teal-700">
           <CheckCircle2 className="h-8 w-8" aria-hidden={true} />
         </span>
-        <h3 className="mt-5 text-xl font-bold text-teal-950">Your request has been received.</h3>
+        <h3 className="mt-6 text-xl font-bold text-teal-950">Your request has been received.</h3>
         <p className="mt-2 text-teal-800/90">
           Our team will follow up using the contact method you selected.
         </p>
@@ -129,7 +129,7 @@ export default function LeadForm() {
   }
 
   const inputBase =
-    "mt-1.5 w-full rounded-xl border border-teal-200 bg-white px-4 py-3 text-teal-950 placeholder:text-teal-800/40 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30";
+    "mt-1.5 w-full rounded-xl border border-teal-200 bg-white px-4 py-4 text-teal-950 placeholder:text-teal-800/40 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/30";
 
   return (
     <form
@@ -207,7 +207,7 @@ export default function LeadForm() {
       </div>
 
       {error && (
-        <div className="mt-5 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
+        <div className="mt-6 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-4 text-sm text-red-800" role="alert">
           <AlertCircle className="mt-0.5 h-4 w-4 flex-none" aria-hidden={true} />
           <div className="min-w-0">
             <p>{error}</p>
@@ -230,7 +230,7 @@ export default function LeadForm() {
         </div>
       )}
 
-      <p className="mt-5 text-xs leading-relaxed text-teal-800/70">
+      <p className="mt-6 text-xs leading-relaxed text-teal-800/70">
         By submitting, you agree that Clinical and Professional Solutions may contact you by phone, text, or email about your request. There is no obligation to use any referred service. Message and data rates may apply.
       </p>
 
@@ -238,7 +238,7 @@ export default function LeadForm() {
         type="submit"
         disabled={status === "submitting" || submissionConflict}
         aria-label={status === "submitting" ? "Sending your solution request" : "Send solution request"}
-        className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "submitting" ? (
           <><Loader2 className="h-5 w-5 animate-spin" aria-hidden={true} /> Sending…</>

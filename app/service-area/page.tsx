@@ -121,14 +121,14 @@ export default function ServiceAreaPage() {
               aria-label="Breadcrumb"
               className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-teal-700/80"
             >
-              <Link href="/" aria-label="Home" className="hover:text-teal-800">
+              <Link href="/" aria-label="Home" className="inline-block py-1 hover:text-teal-800">
                 Home
               </Link>
               <span aria-hidden={true}>/</span>
               <span className="font-semibold text-teal-900">Utah Communities</span>
             </nav>
 
-            <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-3 py-1 text-sm font-semibold text-teal-800">
+            <p className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-4 py-1 text-sm font-semibold text-teal-800">
               <Handshake className="h-4 w-4" aria-hidden={true} /> In partnership with {brand.partnerName}
             </p>
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold tracking-tight text-teal-950 sm:text-5xl">
@@ -188,7 +188,7 @@ export default function ServiceAreaPage() {
               <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
                 Featured Utah solution categories
               </h2>
-              <p className="mt-3 text-lg leading-relaxed text-teal-800/90">
+              <p className="mt-4 text-lg leading-relaxed text-teal-800/90">
                 Start with the area that best matches what you are trying to solve, then review
                 practical questions, qualifications, costs, and next steps.
               </p>
@@ -223,7 +223,7 @@ export default function ServiceAreaPage() {
               <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
                 Request guidance from any Utah county
               </h2>
-              <p className="mt-3 text-lg leading-relaxed text-teal-800/90">
+              <p className="mt-4 text-lg leading-relaxed text-teal-800/90">
                 Choose your county to share the part of Utah most relevant to your request. County
                 names provide geographic context only and do not represent an office, business
                 location, guaranteed provider, or current service availability.
@@ -259,7 +259,7 @@ export default function ServiceAreaPage() {
               <h2 className="text-3xl font-extrabold tracking-tight text-teal-950 sm:text-4xl">
                 Explore detailed guides for selected Utah communities
               </h2>
-              <p className="mt-3 text-lg leading-relaxed text-teal-800/90">
+              <p className="mt-4 text-lg leading-relaxed text-teal-800/90">
                 These selected city guides add local geographic context and questions to consider
                 when exploring businesses, professional services, programs, and community
                 resources. They are not a complete list of Utah coverage or a list of office

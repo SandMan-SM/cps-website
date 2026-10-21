@@ -46,7 +46,7 @@ export default function Locations() {
                   Explore {loc.name} <ArrowRight className="h-4 w-4" aria-hidden={true} />
                 </Link>
 
-                <div className="mt-5 flex flex-col gap-2">
+                <div className="mt-6 flex flex-col gap-2">
                   <a
                     href="/#request"
                     data-book-appointment="true"
